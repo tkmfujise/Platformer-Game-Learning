@@ -45,8 +45,8 @@ namespace :gh do
     rm_r 'output'
     sh 'git clone . output'
     cd 'output' do
-      sh 'git checkout --orphan gd-pages'
-      sh 'git commit --m "Create gd-pages branch" --allow-empty'
+      sh 'git checkout --orphan gh-pages'
+      sh 'git commit --m "Create gh-pages branch" --allow-empty'
     end
   end
 
