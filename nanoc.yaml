@@ -15,12 +15,4 @@ data_sources:
 title: Platformer Game Learning
 
 #= HTML output dir
-output_dir: docs
-
-base_url: "https://tkmfujise.github.io/Platformer-Game-Learning/"
-
-deploy:
-  default:
-    kind: git
-    branch: gh-pages
-    forced: true
+output_dir: docs # for GitHub pages
