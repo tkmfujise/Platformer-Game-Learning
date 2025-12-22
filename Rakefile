@@ -47,7 +47,7 @@ namespace :gh do
     cd 'output' do
       sh 'git checkout --orphan gh-pages'
       sh 'git rm -rf .'
-      sh 'git commit --m 'Create gh-pages branch' --allow-empty'
+      sh 'git commit --m "Create gh-pages branch" --allow-empty'
     end
   end
 
