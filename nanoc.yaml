@@ -15,9 +15,5 @@ data_sources:
 title: Platformer Game Learning
 
 #= HTML output dir
-# output_dir: output
+output_dir: docs
 
-deploy:
-  default:
-    kind: git
-    branch: gh-pages
