@@ -1,0 +1,171 @@
+---
+title: res://src/beginning/chapters/menu/menu.gd
+---
+:toc:
+
+== src / beginning / chapters / menu / menu.gd
+
+```gdscript
+extends Control
+
+signal ui_backed
+signal get_started(stage_number: int)
+
+@export var grab_focus_first : bool = false : set = set_grab_focus_first
+@export var grab_focus_side  : bool = false : set = set_grab_focus_side
+@export var grab_focus_stage : bool = false : set = set_grab_focus_stage
+@export var shown : bool = false
+@export var chapter_resource : ChapterResource : set = load_chapter
+enum State { UNSELECTED, SELECTED }
+var state : State = State.UNSELECTED
+var chapter_number : int
+var stage_resources : Array[StageResource]
+
+
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('show')
+	FocusHelper.set_neighbors_h(%SideButtonContainer.get_children())
+	FocusHelper.set_neighbors_h(%StageButtonContainer.get_children())
+
+
+func load_chapter(resource: ChapterResource) -> void:
+	if not is_node_ready(): await ready
+	chapter_number      = resource.number
+	%ChapterNumber.text = 'Chapter %s' % resource.number
+	%ChapterName.text   = resource.name
+	%Banner.modulate    = resource.color
+	%BlueHeartIcon.visible = false
+	%MaxStrawberryCount.text = str(resource.strawberry_count())
+	load_chapter_stages(resource)
+	if Current.account: setup_from_account_resource()
+
+
+func load_chapter_stages(resource: ChapterResource) -> void:
+	clear_photos()
+	clear_stage_buttons()
+	stage_resources = []
+	for i in resource.stages.size():
+		var stage = resource.stages[i]
+		add_photo(stage, i)
+		add_stage_button(stage, i)
+		stage_resources.push_back(stage)
+
+
+func setup_from_account_resource() -> void:
+	var chapter = Current.account.get_chapter(chapter_number)
+	var stage_count = %StageButtonContainer.get_child_count() - 1
+	var hidden_numbers = ArrayHelper.build(stage_count, false)
+	if chapter:
+		%CassetteBookmark.visible = chapter.obtained_cassette
+		%BlueHeartIcon.visible    = chapter.obtained_blue_heart
+		%ObtainedStrawberryCount.text = str(chapter.obtained_strawberry_count())
+		%FailureCount.text = str(chapter.total_failure_count())
+		for i in stage_count:
+			hidden_numbers[i] = not chapter.has_stage(i+1)
+	else:
+		%CassetteBookmark.visible = false
+	for i in stage_count:
+		if hidden_numbers[i]:
+			hide_stage_button_and_photo(i + 1)
+
+
+func set_grab_focus_first(val) -> void:
+	if val: %AnimationPlayer.play("show")
+
+
+func set_grab_focus_side(val) -> void:
+	FocusHelper.grab_first(%SideButtonContainer, val)
+
+
+func set_grab_focus_stage(val) -> void:
+	FocusHelper.grab_first(%StageButtonContainer, val)
+
+
+func clear_photos() -> void:
+	%Photos.get_node('Template').hide()
+	for photo in %PhotoInstances.get_children():
+		photo.queue_free()
+
+
+func add_photo(resource: StageResource, idx: int) -> void:
+	var photo = %Photos.get_node('Template/Photo').duplicate()
+	photo.rotation = abs(photo.rotation) * (idx%2 * 2 - 1)
+	photo.position += Vector2(8, -8) * idx
+	photo.image = resource.photo
+	photo.set_meta('number', idx + 1)
+	%PhotoInstances.add_child(photo)
+	%PhotoInstances.move_child(photo, 0)
+
+
+func clear_stage_buttons() -> void:
+	for button in %StageButtonContainer.get_children():
+		button.hide()
+
+
+func add_stage_button(resource: StageResource, idx: int) -> void:
+	var stage = get_stage_button(idx)
+	stage.set_meta('name', resource.name)
+	stage.show()
+
+
+func get_stage_button(idx: int) -> Node:
+	return %StageButtonContainer.get_child(idx)
+
+
+func hide_stage_button_and_photo(number: int) -> void:
+	var button = %StageButtonContainer.get_child(number)
+	if button: button.hide()
+	for photo in %PhotoInstances.get_children():
+		if photo.get_meta('number') == number:
+			photo.hide()
+
+
+func stages_count() -> int:
+	return %StageButtonContainer.get_children().filter(func(c):
+		return c.visible).size()
+
+
+func _input(event: InputEvent) -> void:
+	if not shown: return
+	if event.is_action_pressed("ui_back"):
+		match state:
+			State.UNSELECTED: ui_backed.emit()
+			State.SELECTED:
+				state = State.UNSELECTED
+				%AnimationPlayer.play("climb_unselected")
+
+
+func _on_climb_button_pressed() -> void:
+	if stages_count() > 1:
+		state = State.SELECTED
+		%AnimationPlayer.play("climb_selected")
+	else:
+		get_started.emit(1)
+
+
+func _on_stage_button_focus_entered(number: int) -> void:
+	var photos = %PhotoInstances.get_children()
+	var button = get_stage_button(number - 1)
+	%StageLabel.text = str(button.get_meta('name'))
+	for i in photos.size():
+		var photo = photos.pop_back()
+		if i+1 < number: photo.flick()
+		else: photo.pull()
+
+
+func _on_stage_button_pressed(stage_number: int) -> void:
+	get_started.emit(stage_number)
+
+
+func _on_ui_backed() -> void:
+	if shown: %AnimationPlayer.play("hide")
+
+
+func _on_get_started(stage_number: int) -> void:
+	var stage = stage_resources.filter(func(r):
+		return r.number == stage_number)
+	if not (stage && stage[0].scene): return
+	%ClosingCurtain.play(stage[0].scene)
+
+```

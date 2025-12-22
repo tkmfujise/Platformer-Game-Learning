@@ -1,0 +1,36 @@
+---
+title: res://src/beginning/chapters/menu/bookmark/bookmark.gd
+---
+:toc:
+
+== src / beginning / chapters / menu / bookmark / bookmark.gd
+
+```gdscript
+extends MarginContainer
+
+signal pressed
+@export var focused : bool = false : set = set_focus
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept") && focused:
+		pressed.emit()
+
+
+func set_focus(val: bool) -> void:
+	focused = val
+	if val:
+		grab_focus()
+		%AnimationPlayer.play("focus")
+	else:
+		%AnimationPlayer.play("unfocus")
+
+
+func _on_focus_entered() -> void:
+	set_focus(true)
+
+
+func _on_focus_exited() -> void:
+	set_focus(false)
+
+```

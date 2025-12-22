@@ -1,0 +1,76 @@
+---
+title: src/player/ghost_effect/ghost_effect.tscn
+---
+:toc:
+
+== src / player / ghost_effect / ghost_effect.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "GhostEffect" <<Node2D>> {
+  - ALIVE_TIME
+  * rest_time
+---
+  + spawn()
+  + _process()
+}
+class Sprite2D as "Sprite2D" <<Sprite2D>> {
+}
+ROOT --o Sprite2D
+left to right direction
+
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#GhostEffect# [.node-type.type-2d]#Node2D#
+** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*shader* |`ExtResource("2_e52xy")`
+|_node_ |*scale* |`Vector2(6, 6)`
+|_node_ |*script* |`ExtResource("1_4vpau")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*modulate* |`Color(1, 1, 1, 0.392157)`
+|_node_ |*material* |`SubResource("ShaderMaterial_7eytl")`
+|_node_ |*texture* |`ExtResource("2_8hqx0")`
+|_node_ |*offset* |`Vector2(0, -12)`
+|_node_ |*hframes* |`7`
+|===
+
+
+=== link:/scripts/src/player/ghost_effect/ghost_effect.gd[ghost_effect.gd]
+
+```gdscript
+extends Node2D
+
+const ALIVE_TIME = 0.5
+var rest_time := ALIVE_TIME
+
+
+func spawn(player: Player) -> void:
+	position = player.position
+	var sprite = player.current_sprite_state().duplicate()
+	%Sprite2D.texture = sprite.texture
+	%Sprite2D.hframes = sprite.hframes
+	%Sprite2D.frame  = sprite.frame
+	%Sprite2D.flip_h = sprite.flip_h
+	%Sprite2D.flip_v = sprite.flip_v
+	player.get_parent().add_child(self)
+
+
+func _process(delta: float) -> void:
+	rest_time -= delta
+	modulate.a -= delta / ALIVE_TIME
+	if rest_time < 0: queue_free()
+
+```

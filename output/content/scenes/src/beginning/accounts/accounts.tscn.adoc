@@ -1,0 +1,623 @@
+---
+title: src/beginning/accounts/accounts.tscn
+---
+:toc:
+
+== src / beginning / accounts / accounts.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Accounts" <<MarginContainer>> {
+  ~ ui_backed
+  ~ get_started
+---
+  * grab_focus_first
+  * focus_returned
+  * current_idx
+---
+  + _ready()
+  + load_accounts()
+  + set_grab_focus_first()
+  + set_focus_returned()
+  + _on_account_1_selected()
+  + _on_account_1_unselected()
+  + _on_account_2_selected()
+  + _on_account_2_unselected()
+  + _on_account_3_selected()
+  + _on_account_3_unselected()
+  + _on_account_ui_backed()
+  + _on_account_get_started()
+  + _on_account_focus_entered()
+}
+class AccountsContainer as "AccountsContainer" <<Node2D>> {
+}
+class AccountsContainer_Account1 as "Account1" <<BoxContainer>> {
+  ~ ui_backed
+  ~ selected
+  ~ unselected
+  ~ get_started
+---
+  - LABELS_IN_RESOURCE
+  * resource
+  * state
+  * focus_top
+  * focus_menu
+---
+  + _ready()
+  + reset_summary_visiblity()
+  + _input()
+  + set_resource()
+  + load_resource()
+  + set_icon_visibility_on()
+  + set_focus_top()
+  + set_focus_menu()
+  + is_focused()
+  + is_unfocused()
+  + is_selected()
+  + _on_focus_entered()
+  + _on_focus_exited()
+  + _on_selected()
+  + _on_unselected()
+  + _on_get_started_button_pressed()
+}
+class AccountsContainer_Account2 as "Account2" <<BoxContainer>> {
+  ~ ui_backed
+  ~ selected
+  ~ unselected
+  ~ get_started
+---
+  - LABELS_IN_RESOURCE
+  * resource
+  * state
+  * focus_top
+  * focus_menu
+---
+  + _ready()
+  + reset_summary_visiblity()
+  + _input()
+  + set_resource()
+  + load_resource()
+  + set_icon_visibility_on()
+  + set_focus_top()
+  + set_focus_menu()
+  + is_focused()
+  + is_unfocused()
+  + is_selected()
+  + _on_focus_entered()
+  + _on_focus_exited()
+  + _on_selected()
+  + _on_unselected()
+  + _on_get_started_button_pressed()
+}
+class AccountsContainer_Account3 as "Account3" <<BoxContainer>> {
+  ~ ui_backed
+  ~ selected
+  ~ unselected
+  ~ get_started
+---
+  - LABELS_IN_RESOURCE
+  * resource
+  * state
+  * focus_top
+  * focus_menu
+---
+  + _ready()
+  + reset_summary_visiblity()
+  + _input()
+  + set_resource()
+  + load_resource()
+  + set_icon_visibility_on()
+  + set_focus_top()
+  + set_focus_menu()
+  + is_focused()
+  + is_unfocused()
+  + is_selected()
+  + _on_focus_entered()
+  + _on_focus_exited()
+  + _on_selected()
+  + _on_unselected()
+  + _on_get_started_button_pressed()
+}
+class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+}
+ROOT --o AccountsContainer
+ROOT --o AnimationPlayer
+AccountsContainer --o AccountsContainer_Account1
+AccountsContainer --o AccountsContainer_Account2
+AccountsContainer --o AccountsContainer_Account3
+left to right direction
+ROOT::_on_account_get_started <-[#blue,thickness=2]- AccountsContainer_Account1::get_started
+ROOT::_on_account_1_selected <-[#blue,thickness=2]- AccountsContainer_Account1::selected
+ROOT::_on_account_ui_backed <-[#blue,thickness=2]- AccountsContainer_Account1::ui_backed
+ROOT::_on_account_1_unselected <-[#blue,thickness=2]- AccountsContainer_Account1::unselected
+ROOT::_on_account_focus_entered <-[#blue,thickness=2]- AccountsContainer_Account2::focus_entered
+ROOT::_on_account_get_started <-[#blue,thickness=2]- AccountsContainer_Account2::get_started
+ROOT::_on_account_2_selected <-[#blue,thickness=2]- AccountsContainer_Account2::selected
+ROOT::_on_account_ui_backed <-[#blue,thickness=2]- AccountsContainer_Account2::ui_backed
+ROOT::_on_account_2_unselected <-[#blue,thickness=2]- AccountsContainer_Account2::unselected
+ROOT::_on_account_focus_entered <-[#blue,thickness=2]- AccountsContainer_Account3::focus_entered
+ROOT::_on_account_get_started <-[#blue,thickness=2]- AccountsContainer_Account3::get_started
+ROOT::_on_account_3_selected <-[#blue,thickness=2]- AccountsContainer_Account3::selected
+ROOT::_on_account_ui_backed <-[#blue,thickness=2]- AccountsContainer_Account3::ui_backed
+ROOT::_on_account_3_unselected <-[#blue,thickness=2]- AccountsContainer_Account3::unselected
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Accounts# [.node-type.type-control]#MarginContainer#
+** [.node-name.type-2d]#AccountsContainer# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-control]#Account1# [.node-type.type-control]#link:/scenes/src/account/account.tscn[res://src/account/account.tscn]#
+*** [.node-name.type-control]#Account2# [.node-type.type-control]#link:/scenes/src/account/account.tscn[res://src/account/account.tscn]#
+*** [.node-name.type-control]#Account3# [.node-type.type-control]#link:/scenes/src/account/account.tscn[res://src/account/account.tscn]#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[cols="1,1,1,2" options="header"]
+|===
+|From |Name |To |Method
+|_AccountsContainer / Account1_ |*get_started* |_._ |`_on_account_get_started`
+|_AccountsContainer / Account1_ |*selected* |_._ |`_on_account_1_selected`
+|_AccountsContainer / Account1_ |*ui_backed* |_._ |`_on_account_ui_backed`
+|_AccountsContainer / Account1_ |*unselected* |_._ |`_on_account_1_unselected`
+|_AccountsContainer / Account2_ |*focus_entered* |_._ |`_on_account_focus_entered`
+|_AccountsContainer / Account2_ |*get_started* |_._ |`_on_account_get_started`
+|_AccountsContainer / Account2_ |*selected* |_._ |`_on_account_2_selected`
+|_AccountsContainer / Account2_ |*ui_backed* |_._ |`_on_account_ui_backed`
+|_AccountsContainer / Account2_ |*unselected* |_._ |`_on_account_2_unselected`
+|_AccountsContainer / Account3_ |*focus_entered* |_._ |`_on_account_focus_entered`
+|_AccountsContainer / Account3_ |*get_started* |_._ |`_on_account_get_started`
+|_AccountsContainer / Account3_ |*selected* |_._ |`_on_account_3_selected`
+|_AccountsContainer / Account3_ |*ui_backed* |_._ |`_on_account_ui_backed`
+|_AccountsContainer / Account3_ |*unselected* |_._ |`_on_account_3_unselected`
+|===
+
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*resource_name* |`1st_selected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 50), Vector2(0, 300)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 356), Vector2(0, 1200)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 656), Vector2(0, 1200)]
+}`
+|_sub_resource_ |*resource_name* |`1st_unselected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 50)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 1200), Vector2(0, 356)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 1200), Vector2(0, 656)]
+}`
+|_sub_resource_ |*resource_name* |`2nd_selected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 50), Vector2(0, -800)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 356), Vector2(0, 300)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 656), Vector2(0, 1200)]
+}`
+|_sub_resource_ |*resource_name* |`2nd_unselected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 50)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 356)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 1200), Vector2(0, 656)]
+}`
+|_sub_resource_ |*resource_name* |`3rd_selected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 50), Vector2(0, -800)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, 356), Vector2(0, -800)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 656), Vector2(0, 300)]
+}`
+|_sub_resource_ |*resource_name* |`3rd_unselected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 50)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 356)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 656)]
+}`
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 50)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 356)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 656)]
+}`
+|_sub_resource_ |*resource_name* |`opening`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("AccountsContainer/Account1:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 50)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("AccountsContainer/Account2:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 356)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("AccountsContainer/Account3:position")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 656)]
+}`
+|_sub_resource_ |*_data* |`{
+&"1st_selected": SubResource("Animation_ryikv"),
+&"1st_unselected": SubResource("Animation_rdhld"),
+&"2nd_selected": SubResource("Animation_jbipm"),
+&"2nd_unselected": SubResource("Animation_iogkc"),
+&"3rd_selected": SubResource("Animation_aiakq"),
+&"3rd_unselected": SubResource("Animation_slw4c"),
+&"RESET": SubResource("Animation_l10c4"),
+&"opening": SubResource("Animation_cupia")
+}`
+|_node_ |*anchors_preset* |`15`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*anchor_bottom* |`1.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*grow_vertical* |`2`
+|_node_ |*theme_override_constants/margin_top* |`90`
+|_node_ |*theme_override_constants/margin_bottom* |`90`
+|_node_ |*script* |`ExtResource("1_t5yqj")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*anchors_preset* |`0`
+|_node_ |*anchor_right* |`0.0`
+|_node_ |*offset_top* |`50.0`
+|_node_ |*offset_right* |`1920.0`
+|_node_ |*offset_bottom* |`342.0`
+|_node_ |*grow_horizontal* |`1`
+|_node_ |*size_flags_horizontal* |`3`
+|_node_ |*focus_neighbor_left* |`NodePath(".")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath(".")`
+|_node_ |*focus_neighbor_bottom* |`NodePath("../Account2")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*anchors_preset* |`0`
+|_node_ |*anchor_right* |`0.0`
+|_node_ |*offset_top* |`356.0`
+|_node_ |*offset_right* |`1920.0`
+|_node_ |*offset_bottom* |`656.0`
+|_node_ |*grow_horizontal* |`1`
+|_node_ |*focus_neighbor_left* |`NodePath(".")`
+|_node_ |*focus_neighbor_top* |`NodePath("../Account1")`
+|_node_ |*focus_neighbor_right* |`NodePath(".")`
+|_node_ |*focus_neighbor_bottom* |`NodePath("../Account3")`
+|_node_ |*resource* |`null`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*anchors_preset* |`0`
+|_node_ |*anchor_right* |`0.0`
+|_node_ |*offset_top* |`656.0`
+|_node_ |*offset_right* |`1920.0`
+|_node_ |*offset_bottom* |`964.0`
+|_node_ |*grow_horizontal* |`1`
+|_node_ |*focus_neighbor_left* |`NodePath(".")`
+|_node_ |*focus_neighbor_top* |`NodePath("../Account2")`
+|_node_ |*focus_neighbor_right* |`NodePath(".")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*resource* |`null`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*libraries* |`{
+&"": SubResource("AnimationLibrary_uv55d")
+}`
+|_node_ |*autoplay* |`opening`
+|===
+
+
+=== link:/scripts/src/beginning/accounts/accounts.gd[accounts.gd]
+
+```gdscript
+extends MarginContainer
+
+signal ui_backed
+signal get_started(account: Account)
+
+@export var grab_focus_first : bool : set = set_grab_focus_first
+@export var focus_returned : bool : set = set_focus_returned
+var current_idx : int = 0
+
+
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		grab_focus_first = true
+	else:
+		load_accounts()
+
+
+func load_accounts() -> void:
+	for number in [1, 2, 3]:
+		var account = AccountResource.find(number)
+		var node = get_node('%Account'+str(number))
+		node.resource = account
+		node.load_resource()
+
+
+func set_grab_focus_first(val: bool) -> void:
+	FocusHelper.grab_first(%AccountsContainer, val)
+
+
+func set_focus_returned(val: bool) -> void:
+	if val:
+		%AnimationPlayer.play("RESET")
+		%AccountsContainer.get_child(current_idx).grab_focus()
+
+
+func _on_account_1_selected() -> void:
+	%AnimationPlayer.play("1st_selected")
+
+
+func _on_account_1_unselected() -> void:
+	%AnimationPlayer.play("1st_unselected")
+
+
+func _on_account_2_selected() -> void:
+	%AnimationPlayer.play("2nd_selected")
+
+
+func _on_account_2_unselected() -> void:
+	%AnimationPlayer.play("2nd_unselected")
+
+
+func _on_account_3_selected() -> void:
+	%AnimationPlayer.play("3rd_selected")
+
+
+func _on_account_3_unselected() -> void:
+	%AnimationPlayer.play("3rd_unselected")
+
+
+func _on_account_ui_backed() -> void:
+	%AnimationPlayer.play("RESET")
+	ui_backed.emit()
+
+
+func _on_account_get_started(number: int) -> void:
+	var account = get_node('%Account' + str(number))
+	Current.load_account(number)
+	get_started.emit(account)
+
+
+func _on_account_focus_entered(idx: int) -> void:
+	current_idx = idx
+
+```

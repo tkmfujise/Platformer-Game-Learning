@@ -1,0 +1,20 @@
+<% categories = %w[scenes scripts resources] %>
+<% current_category = categories.find{|c| @item.path.start_with? "/#{c}" } || categories[0] %>
+<nav>
+  <% categories.each do |category| %>
+    <details name="category" <%= 'open' if current_category == category %>>
+      <summary><b><%= category.capitalize %></b></summary>
+      <ul>
+        <% @items.find_all("/#{category}/**/*").each do |item| %>
+          <li>
+            <%= link_to(
+              item.path.delete_prefix("/#{category}/")[0..-2],
+              item,
+              class: (@rep&.path == item.path ? 'selected' : '')
+            ) %>
+          </li>
+        <% end %>
+      </ul>
+    </details>
+  <% end %>
+</nav>

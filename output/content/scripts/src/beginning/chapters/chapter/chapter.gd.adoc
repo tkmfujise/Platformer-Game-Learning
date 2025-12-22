@@ -1,0 +1,38 @@
+---
+title: res://src/beginning/chapters/chapter/chapter.gd
+---
+:toc:
+
+== src / beginning / chapters / chapter / chapter.gd
+
+```gdscript
+extends MarginContainer
+
+@export var play_opening := false : set = set_play_opening
+@export var resource : ChapterResource
+var focus_animation_skip := false
+
+
+func set_play_opening(val: bool) -> void:
+	if val: %AnimationPlayer.play("opening")
+
+
+func focus_returned() -> void:
+	focus_animation_skip = true
+	grab_focus()
+	focus_animation_skip = false
+
+
+func selected() -> void:
+	%AnimationPlayer.play('selected')
+
+
+func unselected() -> void:
+	%AnimationPlayer.play('unselected')
+
+
+func _on_focus_entered() -> void:
+	if focus_animation_skip: focus_animation_skip = false
+	else: %AnimationPlayer.play("focused")
+
+```

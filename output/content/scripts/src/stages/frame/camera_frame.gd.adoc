@@ -1,0 +1,22 @@
+---
+title: res://src/stages/frame/camera_frame.gd
+---
+:toc:
+
+== src / stages / frame / camera_frame.gd
+
+```gdscript
+extends Area2D
+
+const HALF_SIZE = Vector2(1920, 1080) / 2
+
+
+func corner() -> Dictionary:
+	return {
+		"left":   global_position.x - HALF_SIZE.x,
+		"right":  global_position.x + HALF_SIZE.x,
+		"top":    global_position.y - HALF_SIZE.y,
+		"bottom": global_position.y + HALF_SIZE.y,
+	}
+
+```

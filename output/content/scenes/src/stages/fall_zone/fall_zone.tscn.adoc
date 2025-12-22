@@ -1,0 +1,44 @@
+---
+title: src/stages/fall_zone/fall_zone.tscn
+---
+:toc:
+
+== src / stages / fall_zone / fall_zone.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "FallZone" <<Node2D>> {
+}
+class Area2D as "Area2D" <<Area2D>> {
+}
+class Area2D_CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+}
+ROOT --o Area2D
+Area2D --o Area2D_CollisionShape2D
+left to right direction
+
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#FallZone# [.node-type.type-2d]#Node2D#
+** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*size* |`Vector2(487, 283)`
+|_node_ |*collision_layer* |`8`
+|_node_ |*collision_mask* |`8`
+|_node_ |*shape* |`SubResource("RectangleShape2D_tvci5")`
+|===
+
+

@@ -1,0 +1,39 @@
+---
+title: res://src/beginning/screen/screen.gd
+---
+:toc:
+
+== src / beginning / screen / screen.gd
+
+```gdscript
+extends Control
+
+@export_file("*.tscn") var MenuScenePath : String
+var current_animation : StringName
+
+
+func _ready() -> void:
+	SceneHelper.preload_scene(MenuScenePath)
+
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		match current_animation:
+			'show_title': transit('hide_title')
+			'hide_title': pass
+			_: 		      transit('show_title')
+
+
+func transit(animation: String):
+	%AnimationTree.get('parameters/playback').start(animation)
+
+
+func _on_animation_tree_animation_started(anim_name: StringName) -> void:
+	current_animation = anim_name
+
+
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'hide_title':
+		SceneHelper.transit(self, MenuScenePath)
+
+```

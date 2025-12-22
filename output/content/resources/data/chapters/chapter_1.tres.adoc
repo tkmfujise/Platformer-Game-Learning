@@ -1,0 +1,42 @@
+---
+title: res://data/chapters/chapter_1.tres
+---
+:toc:
+
+== data / chapters / chapter_1.tres
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*script* |`ExtResource("2_tjkk5")`
+|_sub_resource_ |*name* |`Get Started`
+|_sub_resource_ |*number* |`1`
+|_sub_resource_ |*photo* |`ExtResource("3_ms81g")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_sub_resource_ |*script* |`ExtResource("2_tjkk5")`
+|_sub_resource_ |*name* |`Stage 2`
+|_sub_resource_ |*number* |`2`
+|_sub_resource_ |*photo* |`ExtResource("4_6nea2")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_sub_resource_ |*script* |`ExtResource("2_tjkk5")`
+|_sub_resource_ |*name* |`Stage 3`
+|_sub_resource_ |*number* |`3`
+|_sub_resource_ |*photo* |`ExtResource("5_nwbib")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_sub_resource_ |*script* |`ExtResource("2_tjkk5")`
+|_sub_resource_ |*name* |`Stage 4`
+|_sub_resource_ |*number* |`4`
+|_sub_resource_ |*photo* |`ExtResource("6_0vm7c")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_resource_ |*script* |`ExtResource("1_me4bj")`
+|_resource_ |*number* |`1`
+|_resource_ |*name* |`Ghost Town`
+|_resource_ |*color* |`Color(0.297198, 0.797481, 0.519937, 1)`
+|_resource_ |*stages* |`Array("[SubResource("Resource_6emry"), SubResource("Resource_va876"), SubResource("Resource_fpb8w"), SubResource("Resource_6vy6l")]")`
+|===
+

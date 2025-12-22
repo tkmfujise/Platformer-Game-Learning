@@ -1,0 +1,17 @@
+---
+title: res://resources/account_stage_resource.gd
+---
+:toc:
+
+== resources / account_stage_resource.gd
+
+```gdscript
+extends Resource
+class_name AccountStageResource
+
+@export var obtained_strawberry_count : int = 0
+@export var total_failure_count : int = 0
+@export var total_play_msec : int = 0
+@export var number : int = 1
+
+```

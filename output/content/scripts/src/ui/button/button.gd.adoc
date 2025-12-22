@@ -1,0 +1,48 @@
+---
+title: res://src/ui/button/button.gd
+---
+:toc:
+
+== src / ui / button / button.gd
+
+```gdscript
+extends Button
+
+@export var focus_move_direction : FocusMoveDirection
+@export_color_no_alpha var focus_color_1 : Color
+@export_color_no_alpha var focus_color_2 : Color
+enum FocusMoveDirection { RIGHT, UP, NONE }
+
+const BLINK_INTERVAL := 0.2
+var blink_time := 0.0
+var focused := false
+
+
+func _process(delta: float) -> void:
+	if not focused: return
+	blink_time += delta
+	add_theme_color_override("font_focus_color", get_focus_color())
+	if blink_time > BLINK_INTERVAL: blink_time = 0
+
+
+func get_focus_color() -> Color:
+	if blink_time > BLINK_INTERVAL / 2:
+		return focus_color_1
+	else:
+		return focus_color_2
+
+
+func focus_move_direction_key() -> String:
+	return FocusMoveDirection.find_key(focus_move_direction).to_lower()
+
+
+func _on_focus_entered() -> void:
+	focused = true
+	%AnimationPlayer.play("focused_%s" % [focus_move_direction_key()])
+
+
+func _on_focus_exited() -> void:
+	focused = false
+	%AnimationPlayer.play("unfocused_%s" % [focus_move_direction_key()])
+
+```

@@ -1,0 +1,192 @@
+---
+title: src/ui/button/button.tscn
+---
+:toc:
+
+== src / ui / button / button.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Button" <<Button>> {
+  - BLINK_INTERVAL
+  * focus_move_direction
+  * focus_color_1
+  * focus_color_2
+  * blink_time
+  * focused
+---
+  + _process()
+  + get_focus_color()
+  + focus_move_direction_key()
+  + _on_focus_entered()
+  + _on_focus_exited()
+}
+class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+}
+ROOT --o AnimationPlayer
+left to right direction
+ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
+ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Button# [.node-type.type-control]#Button#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[cols="1,1,1,2" options="header"]
+|===
+|From |Name |To |Method
+|_._ |*focus_entered* |_._ |`_on_focus_entered`
+|_._ |*focus_exited* |_._ |`_on_focus_exited`
+|===
+
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}`
+|_sub_resource_ |*resource_name* |`focused_none`
+|_sub_resource_ |*resource_name* |`focused_right`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.1, 0.233333, 1),
+"transitions": PackedFloat32Array(3, 0.5, 0.25, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(10, 2), Vector2(25, -5), Vector2(50, -5)]
+}`
+|_sub_resource_ |*resource_name* |`focused_up`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.1, 0.2, 1),
+"transitions": PackedFloat32Array(3, 3, 1, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, -10), Vector2(0, -5)]
+}`
+|_sub_resource_ |*resource_name* |`unfocused_none`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*resource_name* |`unfocused_right`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.353553, 1),
+"update": 0,
+"values": [Vector2(50, -5), Vector2(0, 0)]
+}`
+|_sub_resource_ |*resource_name* |`unfocused_up`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.353553, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, 0)]
+}`
+|_sub_resource_ |*_data* |`{
+&"RESET": SubResource("Animation_evwsm"),
+&"focused_none": SubResource("Animation_my8he"),
+&"focused_right": SubResource("Animation_ayrxx"),
+&"focused_up": SubResource("Animation_3m3hs"),
+&"unfocused_none": SubResource("Animation_kc4v6"),
+&"unfocused_right": SubResource("Animation_wyhl8"),
+&"unfocused_up": SubResource("Animation_8t8ey")
+}`
+|_node_ |*texture_filter* |`2`
+|_node_ |*offset_right* |`287.0`
+|_node_ |*offset_bottom* |`91.0`
+|_node_ |*theme* |`ExtResource("1_r8ale")`
+|_node_ |*text* |` Button`
+|_node_ |*icon* |`ExtResource("1_br72h")`
+|_node_ |*flat* |`true`
+|_node_ |*alignment* |`0`
+|_node_ |*script* |`ExtResource("2_cgon7")`
+|_node_ |*focus_color_1* |`Color(0.5, 1, 0.5, 1)`
+|_node_ |*focus_color_2* |`Color(1, 1, 0.5, 1)`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*libraries* |`{
+"": SubResource("AnimationLibrary_c4kiu")
+}`
+|===
+
+
+=== link:/scripts/src/ui/button/button.gd[button.gd]
+
+```gdscript
+extends Button
+
+@export var focus_move_direction : FocusMoveDirection
+@export_color_no_alpha var focus_color_1 : Color
+@export_color_no_alpha var focus_color_2 : Color
+enum FocusMoveDirection { RIGHT, UP, NONE }
+
+const BLINK_INTERVAL := 0.2
+var blink_time := 0.0
+var focused := false
+
+
+func _process(delta: float) -> void:
+	if not focused: return
+	blink_time += delta
+	add_theme_color_override("font_focus_color", get_focus_color())
+	if blink_time > BLINK_INTERVAL: blink_time = 0
+
+
+func get_focus_color() -> Color:
+	if blink_time > BLINK_INTERVAL / 2:
+		return focus_color_1
+	else:
+		return focus_color_2
+
+
+func focus_move_direction_key() -> String:
+	return FocusMoveDirection.find_key(focus_move_direction).to_lower()
+
+
+func _on_focus_entered() -> void:
+	focused = true
+	%AnimationPlayer.play("focused_%s" % [focus_move_direction_key()])
+
+
+func _on_focus_exited() -> void:
+	focused = false
+	%AnimationPlayer.play("unfocused_%s" % [focus_move_direction_key()])
+
+```

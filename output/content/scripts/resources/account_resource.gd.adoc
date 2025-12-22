@@ -1,0 +1,125 @@
+---
+title: res://resources/account_resource.gd
+---
+:toc:
+
+== resources / account_resource.gd
+
+```gdscript
+extends Resource
+class_name AccountResource
+
+const PATH = "user://data/account-data_%s.json"
+
+@export var number : int = 1
+@export var player_name : String = 'Player'
+@export var latest_chapter_name : String = 'Opening'
+@export var chapters : Array[AccountChapterResource]
+
+static func parse_mapping() -> Dictionary:
+	return { 'chapters': AccountChapterResource }
+
+
+static func find_or_initialize(number: int) -> AccountResource:
+	var resource = find(number)
+	if not resource:
+		resource = AccountResource.new()
+		resource.setup(number)
+	return resource
+
+
+static func find(number: int) -> AccountResource:
+	var path = PATH % number
+	if FileAccess.file_exists(path):
+		var f = FileAccess.open(path, FileAccess.READ)
+		var json = f.get_as_text()
+		f.close()
+		return ResourceHelper.parse(AccountResource, json)
+	else:
+		return null
+
+
+func setup(_number: int) -> void:
+	number = _number
+
+
+func save() -> void:
+	var path = PATH % number
+	var dir  = path.get_base_dir()
+	if not DirAccess.dir_exists_absolute(dir):
+		DirAccess.make_dir_recursive_absolute(dir)
+	var f = FileAccess.open(path, FileAccess.WRITE)
+	f.store_string(ResourceHelper.json(self))
+	f.close()
+
+
+func delete() -> void:
+	var path = PATH % number
+	if FileAccess.file_exists(path):
+		var dir = DirAccess.open(path.get_base_dir())
+		dir.remove(path)
+
+
+func attr(key) -> String:
+	match key:
+		'total_play_time': return total_play_time()
+		'obtained_strawberry_count': return str(obtained_strawberry_count())
+		'total_failure_count': return str(total_failure_count())
+		_: return str(get(key))
+
+
+func total_play_time() -> String:
+	var dict = total_play_time_dict()
+	return "%d:%02d:%02d.%03d" % [dict['hour'], dict['minute'], dict['second'], dict['msec']]
+
+
+func latest_chapter() -> AccountChapterResource:
+	var arr = chapters
+	arr.sort_custom(func(a, b): return a.number < b.number)
+	return arr[-1] if arr else null
+
+
+func get_chapter(number: int) -> AccountChapterResource:
+	var arr = chapters.filter(func(c): return c.number == number)
+	return arr[0] if arr else null
+
+
+func obtained_strawberry_count() -> int:
+	return ArrayHelper.sum(chapters, 'obtained_strawberry_count()')
+
+
+func total_failure_count() -> int:
+	return ArrayHelper.sum(chapters, 'total_failure_count()')
+
+
+func total_play_msec() -> int:
+	return ArrayHelper.sum(chapters, 'total_play_msec()')
+
+
+func obtained_blue_hearts() -> Array[bool]:
+	return obtained_in_chapters('obtained_blue_heart')
+
+
+func obtained_cassettes() -> Array[bool]:
+	return obtained_in_chapters('obtained_cassette')
+
+
+func total_play_time_dict() -> Dictionary:
+	var msec = total_play_msec()
+	return {
+		'hour':   (msec / 1000 / 60 / 60),
+		'minute': (msec / 1000 / 60) % 60,
+		'second': (msec / 1000) % 60,
+		'msec':   msec % 1000,
+	}
+
+
+func obtained_in_chapters(key: String) -> Array[bool]:
+	var arr : Array[bool] = []
+	for i in ChapterResource.MAX_NUMBER: arr.push_back(false)
+	for chapter in chapters:
+		if not chapter: continue
+		arr[chapter.number - 1] = chapter.get(key)
+	return arr
+
+```

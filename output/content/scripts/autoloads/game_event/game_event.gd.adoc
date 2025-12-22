@@ -1,0 +1,14 @@
+---
+title: res://autoloads/game_event/game_event.gd
+---
+:toc:
+
+== autoloads / game_event / game_event.gd
+
+```gdscript
+extends Node
+#class_name GameEvent
+
+signal falied
+
+```
