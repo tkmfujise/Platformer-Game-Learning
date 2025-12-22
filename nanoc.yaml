@@ -15,7 +15,7 @@ data_sources:
 title: Platformer Game Learning
 
 #= HTML output dir
-output_dir: output
+output_dir: docs
 
 base_url: "https://tkmfujise.github.io/Platformer-Game-Learning/"
 
