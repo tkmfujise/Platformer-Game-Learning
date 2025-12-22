@@ -1,0 +1,52 @@
+---
+title: res://src/helpers/resource_helper.gd
+---
+:toc:
+
+== src / helpers / resource_helper.gd
+
+```gdscript
+extends Node
+class_name ResourceHelper
+
+
+static func parse(klass, json_or_props) -> Resource:
+	var resource = klass.new()
+	var props = JSON.parse_string(json_or_props) \
+		if typeof(json_or_props) == TYPE_STRING \
+		else json_or_props
+	var mapper = klass.parse_mapping() \
+		if klass.has_method('parse_mapping') else {}
+	for key in props:
+		if mapper.has(key):
+			for hash in props[key]:
+				var child = parse(mapper[key], hash)
+				resource.get(key).push_back(child)
+		else: resource.set(key, props[key])
+	return resource
+
+
+static func json(resource: Resource) -> String:
+	return JSON.stringify(dict(resource))
+
+
+static func dict(value: Variant) -> Variant:
+	match typeof(value):
+		TYPE_OBJECT:
+			return properties_of(value).reduce(func(h, prop):
+				h[prop] = dict(value.get(prop))
+				return h, {})
+		TYPE_ARRAY:
+			return value.map(func(v): return dict(v))
+		_: return value
+
+
+static func properties_of(resource: Resource) -> Array:
+	var script = resource.get_script()
+	var s_arr = script.get_property_list().map(func(p): return p.name)
+	var p_arr = resource.get_property_list().map(func(p): return p.name)
+	return ArrayHelper.diff(p_arr, s_arr).filter(func(x):
+		return x != 'script' and x != 'Built-in script' \
+			and (not x.ends_with('.gd')))
+
+```

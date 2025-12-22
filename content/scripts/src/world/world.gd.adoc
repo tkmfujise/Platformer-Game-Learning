@@ -1,0 +1,57 @@
+---
+title: res://src/world/world.gd
+---
+:toc:
+
+== src / world / world.gd
+
+```gdscript
+extends Node3D
+
+@export_node_path("Camera3D") var CameraNode : NodePath
+
+
+func back_to_circular_move() -> void:
+	%AnimationPlayer.play('back_to_circular_move')
+
+
+func focus_chapter(idx: int) -> void:
+	var anim_name = "focus_chapter_%s" % idx
+	var animation = %AnimationPlayer.get_animation(anim_name)
+	initialize_animation_camera_key(animation, 'position')
+	initialize_animation_camera_key(animation, 'rotation')
+	%AnimationPlayer.play(anim_name)
+
+
+func zoom_chapter(idx: int) -> void:
+	var anim_name = "zoom_chapter_%s" % idx
+	%AnimationPlayer.play(anim_name)
+
+
+func initialize_animation_camera_key(animation: Animation, key: String) -> void:
+	var track_idx = animation.find_track(
+		'%s:%s' % [CameraNode, key], Animation.TrackType.TYPE_VALUE)
+	var value = %Camera3D.get(key)
+	var goal  = animation.track_get_key_value(track_idx, 1)
+	if key == 'rotation': value = smooth_rotation(value, goal)
+	animation.track_set_key_value(track_idx, 0, value)
+
+
+func smooth_rotation(rot: Vector3, goal: Vector3) -> Vector3:
+	return Vector3(rot.x, acute_angle(rot.y, goal.y), rot.z)
+
+
+func acute_angle(val: float, goal: float) -> float:
+	var delta = val - goal
+	if 	 delta >  PI: return val - 2*PI
+	elif delta < -PI: return val + 2*PI
+	else: return val
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		'opening': %AnimationPlayer.play('circular_move')
+		'back_to_circular_move': %AnimationPlayer.play('circular_move')
+		_: pass
+
+```

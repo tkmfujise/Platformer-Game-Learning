@@ -1,0 +1,11 @@
+---
+title: res://src/chapters/0/stages/0/stage_0.gd
+---
+:toc:
+
+== src / chapters / 0 / stages / 0 / stage_0.gd
+
+```gdscript
+extends Control
+
+```

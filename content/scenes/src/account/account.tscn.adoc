@@ -1,0 +1,1161 @@
+---
+title: src/account/account.tscn
+---
+:toc:
+
+== src / account / account.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Account" <<BoxContainer>> {
+  ~ ui_backed
+  ~ selected
+  ~ unselected
+  ~ get_started
+---
+  - LABELS_IN_RESOURCE
+  * resource
+  * state
+  * focus_top
+  * focus_menu
+---
+  + _ready()
+  + reset_summary_visiblity()
+  + _input()
+  + set_resource()
+  + load_resource()
+  + set_icon_visibility_on()
+  + set_focus_top()
+  + set_focus_menu()
+  + is_focused()
+  + is_unfocused()
+  + is_selected()
+  + _on_focus_entered()
+  + _on_focus_exited()
+  + _on_selected()
+  + _on_unselected()
+  + _on_get_started_button_pressed()
+}
+class VBoxContainer as "VBoxContainer" <<VBoxContainer>> {
+}
+class VBoxContainer_MainContainer as "MainContainer" <<MarginContainer>> {
+}
+class VBoxContainer_MainContainer_Background as "Background" <<ColorRect>> {
+}
+class VBoxContainer_MainContainer_TicketContainer as "TicketContainer" <<BoxContainer>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot as "TicketRoot" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_Tikect as "Tikect" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder as "TicketSummaryPlaceholder" <<Control>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder_Label as "Label" <<Label>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary as "TicketSummary" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Skull as "Skull" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Multiplication as "Multiplication" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot as "ControlRoot" <<Control>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalFailureCount as "TotalFailureCount" <<Label>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalPlayTime as "TotalPlayTime" <<Label>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder as "CassettesPlaceholder" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette1 as "Cassette1" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette2 as "Cassette2" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette3 as "Cassette3" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette4 as "Cassette4" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette5 as "Cassette5" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette6 as "Cassette6" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette7 as "Cassette7" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette8 as "Cassette8" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older as "BlueHeartsPlaceh1older" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart1 as "BlueHeart1" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart2 as "BlueHeart2" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart3 as "BlueHeart3" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart4 as "BlueHeart4" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart5 as "BlueHeart5" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart6 as "BlueHeart6" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart7 as "BlueHeart7" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart8 as "BlueHeart8" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes as "ObtainedCassettes" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette1 as "Cassette1" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette2 as "Cassette2" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette3 as "Cassette3" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette4 as "Cassette4" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette5 as "Cassette5" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette6 as "Cassette6" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette7 as "Cassette7" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette8 as "Cassette8" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts as "ObtainedBlueHearts" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart1 as "BlueHeart1" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart2 as "BlueHeart2" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart3 as "BlueHeart3" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart4 as "BlueHeart4" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart5 as "BlueHeart5" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart6 as "BlueHeart6" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart7 as "BlueHeart7" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart8 as "BlueHeart8" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer as "CoverContainer" <<BoxContainer>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot as "CoverRoot" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_TikectCover as "TikectCover" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary as "CoverSummary" <<Node2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Face as "Face" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeLeftTop as "SellotapeLeftTop" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeRightBottom as "SellotapeRightBottom" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_FacePhotoMask as "FacePhotoMask" <<PointLight2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Strawberry as "Strawberry" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Multiplication as "Multiplication" <<Sprite2D>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot as "ControlRoot" <<Control>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_PlayerName as "PlayerName" <<Label>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_LatestChapterName as "LatestChapterName" <<Label>> {
+}
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<Label>> {
+}
+class VBoxContainer_MenuContainer as "MenuContainer" <<MarginContainer>> {
+}
+class VBoxContainer_MenuContainer_VBoxContainer as "VBoxContainer" <<VBoxContainer>> {
+}
+class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer as "GetStartedContainer" <<BoxContainer>> {
+}
+class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton as "GetStartedButton" <<Button>> {
+  - BLINK_INTERVAL
+  * focus_move_direction
+  * focus_color_1
+  * focus_color_2
+  * blink_time
+  * focused
+---
+  + _process()
+  + get_focus_color()
+  + focus_move_direction_key()
+  + _on_focus_entered()
+  + _on_focus_exited()
+}
+class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer as "ChangeNameContainer" <<BoxContainer>> {
+}
+class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameButton as "ChangeNameButton" <<Button>> {
+  - BLINK_INTERVAL
+  * focus_move_direction
+  * focus_color_1
+  * focus_color_2
+  * blink_time
+  * focused
+---
+  + _process()
+  + get_focus_color()
+  + focus_move_direction_key()
+  + _on_focus_entered()
+  + _on_focus_exited()
+}
+class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer as "AssistModeContainer" <<BoxContainer>> {
+}
+class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeButton as "AssistModeButton" <<Button>> {
+  - BLINK_INTERVAL
+  * focus_move_direction
+  * focus_color_1
+  * focus_color_2
+  * blink_time
+  * focused
+---
+  + _process()
+  + get_focus_color()
+  + focus_move_direction_key()
+  + _on_focus_entered()
+  + _on_focus_exited()
+}
+class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+}
+ROOT --o VBoxContainer
+ROOT --o AnimationPlayer
+VBoxContainer --o VBoxContainer_MainContainer
+VBoxContainer --o VBoxContainer_MenuContainer
+VBoxContainer_MainContainer --o VBoxContainer_MainContainer_Background
+VBoxContainer_MainContainer --o VBoxContainer_MainContainer_TicketContainer
+VBoxContainer_MainContainer --o VBoxContainer_MainContainer_CoverContainer
+VBoxContainer_MainContainer_TicketContainer --o VBoxContainer_MainContainer_TicketContainer_TicketRoot
+VBoxContainer_MainContainer_TicketContainer_TicketRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_Tikect
+VBoxContainer_MainContainer_TicketContainer_TicketRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder
+VBoxContainer_MainContainer_TicketContainer_TicketRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder_Label
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Skull
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Multiplication
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalFailureCount
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalPlayTime
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette1
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette2
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette3
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette4
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette5
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette6
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette7
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette8
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart1
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart2
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart3
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart4
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart5
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart6
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart7
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart8
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette1
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette2
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette3
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette4
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette5
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette6
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette7
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette8
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart1
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart2
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart3
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart4
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart5
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart6
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart7
+VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart8
+VBoxContainer_MainContainer_CoverContainer --o VBoxContainer_MainContainer_CoverContainer_CoverRoot
+VBoxContainer_MainContainer_CoverContainer_CoverRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_TikectCover
+VBoxContainer_MainContainer_CoverContainer_CoverRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Face
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeLeftTop
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeRightBottom
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_FacePhotoMask
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Strawberry
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Multiplication
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_PlayerName
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_LatestChapterName
+VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_ObtainedStrawberryCount
+VBoxContainer_MenuContainer --o VBoxContainer_MenuContainer_VBoxContainer
+VBoxContainer_MenuContainer_VBoxContainer --o VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer
+VBoxContainer_MenuContainer_VBoxContainer --o VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer
+VBoxContainer_MenuContainer_VBoxContainer --o VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer
+VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer --o VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton
+VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer --o VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameButton
+VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer --o VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeButton
+left to right direction
+ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
+ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
+ROOT::_on_selected <-[#blue,thickness=2]- ROOT::selected
+ROOT::_on_unselected <-[#blue,thickness=2]- ROOT::unselected
+ROOT::_on_get_started_button_pressed <-[#blue,thickness=2]- VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton::pressed
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Account# [.node-type.type-control]#BoxContainer#
+** [.node-name.type-control]#VBoxContainer# [.node-type.type-control]#VBoxContainer#
+*** [.node-name.type-control]#MainContainer# [.node-type.type-control]#MarginContainer#
+**** [.node-name.type-control]#Background# [.node-type.type-control]#ColorRect#
+**** [.node-name.type-control]#TicketContainer# [.node-type.type-control]#BoxContainer#
+***** [.node-name.type-2d]#TicketRoot# [.node-type.type-2d]#Node2D#
+****** [.node-name.type-2d]#Tikect# [.node-type.type-2d]#Sprite2D#
+****** [.node-name.type-control]#TicketSummaryPlaceholder# [.node-type.type-control]#Control#
+******* [.node-name.type-control]#Label# [.node-type.type-control]#Label#
+****** [.node-name.type-2d]#TicketSummary# [.node-type.type-2d]#Node2D#
+******* [.node-name.type-2d]#Skull# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#Multiplication# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-control]#ControlRoot# [.node-type.type-control]#Control#
+******** [.node-name.type-control]#TotalFailureCount# [.node-type.type-control]#Label#
+******** [.node-name.type-control]#TotalPlayTime# [.node-type.type-control]#Label#
+******* [.node-name.type-2d]#CassettesPlaceholder# [.node-type.type-2d]#Node2D#
+******** [.node-name.type-2d]#Cassette1# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette2# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette3# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette4# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette5# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette6# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette7# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette8# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#BlueHeartsPlaceh1older# [.node-type.type-2d]#Node2D#
+******** [.node-name.type-2d]#BlueHeart1# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart2# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart3# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart4# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart5# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart6# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart7# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart8# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#ObtainedCassettes# [.node-type.type-2d]#Node2D#
+******** [.node-name.type-2d]#Cassette1# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette2# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette3# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette4# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette5# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette6# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette7# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#Cassette8# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#ObtainedBlueHearts# [.node-type.type-2d]#Node2D#
+******** [.node-name.type-2d]#BlueHeart1# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart2# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart3# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart4# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart5# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart6# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart7# [.node-type.type-2d]#Sprite2D#
+******** [.node-name.type-2d]#BlueHeart8# [.node-type.type-2d]#Sprite2D#
+**** [.node-name.type-control]#CoverContainer# [.node-type.type-control]#BoxContainer#
+***** [.node-name.type-2d]#CoverRoot# [.node-type.type-2d]#Node2D#
+****** [.node-name.type-2d]#TikectCover# [.node-type.type-2d]#Sprite2D#
+****** [.node-name.type-2d]#CoverSummary# [.node-type.type-2d]#Node2D#
+******* [.node-name.type-2d]#Face# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#SellotapeLeftTop# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#SellotapeRightBottom# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#FacePhotoMask# [.node-type.type-2d]#PointLight2D#
+******* [.node-name.type-2d]#Strawberry# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-2d]#Multiplication# [.node-type.type-2d]#Sprite2D#
+******* [.node-name.type-control]#ControlRoot# [.node-type.type-control]#Control#
+******** [.node-name.type-control]#PlayerName# [.node-type.type-control]#Label#
+******** [.node-name.type-control]#LatestChapterName# [.node-type.type-control]#Label#
+******** [.node-name.type-control]#ObtainedStrawberryCount# [.node-type.type-control]#Label#
+*** [.node-name.type-control]#MenuContainer# [.node-type.type-control]#MarginContainer#
+**** [.node-name.type-control]#VBoxContainer# [.node-type.type-control]#VBoxContainer#
+***** [.node-name.type-control]#GetStartedContainer# [.node-type.type-control]#BoxContainer#
+****** [.node-name.type-control]#GetStartedButton# [.node-type.type-control]#link:/scenes/src/ui/button/button.tscn[res://src/ui/button/button.tscn]#
+***** [.node-name.type-control]#ChangeNameContainer# [.node-type.type-control]#BoxContainer#
+****** [.node-name.type-control]#ChangeNameButton# [.node-type.type-control]#link:/scenes/src/ui/button/button.tscn[res://src/ui/button/button.tscn]#
+***** [.node-name.type-control]#AssistModeContainer# [.node-type.type-control]#BoxContainer#
+****** [.node-name.type-control]#AssistModeButton# [.node-type.type-control]#link:/scenes/src/ui/button/button.tscn[res://src/ui/button/button.tscn]#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[cols="1,1,1,2" options="header"]
+|===
+|From |Name |To |Method
+|_._ |*focus_entered* |_._ |`_on_focus_entered`
+|_._ |*focus_exited* |_._ |`_on_focus_exited`
+|_._ |*selected* |_._ |`_on_selected`
+|_._ |*unselected* |_._ |`_on_unselected`
+|_VBoxContainer / MenuContainer / VBoxContainer / GetStartedContainer / GetStartedButton_ |*pressed* |_._ |`_on_get_started_button_pressed`
+|===
+
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*light_mode* |`2`
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("VBoxContainer/MainContainer/CoverContainer/CoverRoot:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1720, 25)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("VBoxContainer/MainContainer/TicketContainer/TicketRoot:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 25)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("VBoxContainer/MenuContainer:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath(".:state")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}`
+|_sub_resource_ |*tracks/4/type* |`value`
+|_sub_resource_ |*tracks/4/imported* |`false`
+|_sub_resource_ |*tracks/4/enabled* |`true`
+|_sub_resource_ |*tracks/4/path* |`NodePath(".:focus_top")`
+|_sub_resource_ |*tracks/4/interp* |`1`
+|_sub_resource_ |*tracks/4/loop_wrap* |`true`
+|_sub_resource_ |*tracks/4/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/5/type* |`value`
+|_sub_resource_ |*tracks/5/imported* |`false`
+|_sub_resource_ |*tracks/5/enabled* |`true`
+|_sub_resource_ |*tracks/5/path* |`NodePath(".:focus_menu")`
+|_sub_resource_ |*tracks/5/interp* |`1`
+|_sub_resource_ |*tracks/5/loop_wrap* |`true`
+|_sub_resource_ |*tracks/5/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*resource_name* |`focused`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("VBoxContainer/MainContainer/CoverContainer/CoverRoot:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(2080, 25), Vector2(1720, 25)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("VBoxContainer/MainContainer/TicketContainer/TicketRoot:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(-120, 25), Vector2(150, 25)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath(".:state")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath("VBoxContainer/MenuContainer:visible")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*resource_name* |`opening`
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("VBoxContainer/MainContainer/CoverContainer/CoverRoot:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2080, 25)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("VBoxContainer/MainContainer/TicketContainer/TicketRoot:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120, 25)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath(".:state")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}`
+|_sub_resource_ |*resource_name* |`selected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("VBoxContainer/MainContainer/CoverContainer/CoverRoot:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1720, 25)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("VBoxContainer/MainContainer/TicketContainer/TicketRoot:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 25)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("VBoxContainer/MenuContainer:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath(".:state")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}`
+|_sub_resource_ |*tracks/4/type* |`value`
+|_sub_resource_ |*tracks/4/imported* |`false`
+|_sub_resource_ |*tracks/4/enabled* |`true`
+|_sub_resource_ |*tracks/4/path* |`NodePath(".:focus_menu")`
+|_sub_resource_ |*tracks/4/interp* |`1`
+|_sub_resource_ |*tracks/4/loop_wrap* |`true`
+|_sub_resource_ |*tracks/4/keys* |`{
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`unfocused`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("VBoxContainer/MainContainer/CoverContainer/CoverRoot:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1720, 25), Vector2(2080, 25)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("VBoxContainer/MainContainer/TicketContainer/TicketRoot:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(150, 25), Vector2(-120, 25)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath(".:state")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath("VBoxContainer/MenuContainer:visible")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*resource_name* |`unselected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("VBoxContainer/MainContainer/CoverContainer/CoverRoot:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1720, 25)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("VBoxContainer/MainContainer/TicketContainer/TicketRoot:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 25)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("VBoxContainer/MenuContainer:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath(".:state")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}`
+|_sub_resource_ |*tracks/4/type* |`value`
+|_sub_resource_ |*tracks/4/imported* |`false`
+|_sub_resource_ |*tracks/4/enabled* |`true`
+|_sub_resource_ |*tracks/4/path* |`NodePath(".:focus_top")`
+|_sub_resource_ |*tracks/4/interp* |`1`
+|_sub_resource_ |*tracks/4/loop_wrap* |`true`
+|_sub_resource_ |*tracks/4/keys* |`{
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*_data* |`{
+&"RESET": SubResource("Animation_qli4a"),
+&"focused": SubResource("Animation_vlmcd"),
+&"opening": SubResource("Animation_f8u78"),
+&"selected": SubResource("Animation_3rloe"),
+&"unfocused": SubResource("Animation_ysp2g"),
+&"unselected": SubResource("Animation_83gxg")
+}`
+|_node_ |*anchors_preset* |`10`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*offset_bottom* |`300.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*size_flags_vertical* |`3`
+|_node_ |*focus_mode* |`2`
+|_node_ |*theme* |`ExtResource("1_r7v0f")`
+|_node_ |*script* |`ExtResource("1_g0hv4")`
+|_node_ |*resource* |`ExtResource("3_23ixj")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*size_flags_horizontal* |`3`
+|_node_ |*layout_mode* |`2`
+|_node_ |*size_flags_horizontal* |`3`
+|_node_ |*size_flags_vertical* |`3`
+|_node_ |*theme_override_constants/margin_left* |`200`
+|_node_ |*theme_override_constants/margin_top* |`25`
+|_node_ |*theme_override_constants/margin_right* |`200`
+|_node_ |*theme_override_constants/margin_bottom* |`25`
+|_node_ |*visible* |`false`
+|_node_ |*layout_mode* |`2`
+|_node_ |*size_flags_horizontal* |`3`
+|_node_ |*color* |`Color(0.726355, 0.910634, 0.938029, 0.381)`
+|_node_ |*layout_mode* |`2`
+|_node_ |*texture_filter* |`2`
+|_node_ |*position* |`Vector2(200, 25)`
+|_node_ |*texture_filter* |`2`
+|_node_ |*position* |`Vector2(933.5, 103)`
+|_node_ |*scale* |`Vector2(0.873, 0.833333)`
+|_node_ |*texture* |`ExtResource("3_tcswg")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*visible* |`false`
+|_node_ |*layout_mode* |`3`
+|_node_ |*anchors_preset* |`0`
+|_node_ |*offset_left* |`737.0`
+|_node_ |*offset_top* |`5.0`
+|_node_ |*offset_right* |`1319.0`
+|_node_ |*offset_bottom* |`191.0`
+|_node_ |*theme* |`ExtResource("1_r7v0f")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*offset_left* |`7.0`
+|_node_ |*offset_top* |`59.0`
+|_node_ |*offset_right* |`527.0`
+|_node_ |*offset_bottom* |`126.0`
+|_node_ |*theme_override_colors/font_color* |`Color(0.53792, 0.416994, 0.382547, 1)`
+|_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
+|_node_ |*text* |`New Game`
+|_node_ |*horizontal_alignment* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*position* |`Vector2(783, 156)`
+|_node_ |*scale* |`Vector2(0.431641, 0.431641)`
+|_node_ |*texture* |`ExtResource("4_ixd0n")`
+|_node_ |*position* |`Vector2(842, 158)`
+|_node_ |*scale* |`Vector2(0.161157, 0.161157)`
+|_node_ |*texture* |`ExtResource("6_q55sp")`
+|_node_ |*layout_mode* |`3`
+|_node_ |*anchors_preset* |`0`
+|_node_ |*offset_left* |`674.0`
+|_node_ |*offset_right* |`1320.0`
+|_node_ |*offset_bottom* |`200.0`
+|_node_ |*theme* |`ExtResource("1_r7v0f")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`0`
+|_node_ |*offset_left* |`200.0`
+|_node_ |*offset_top* |`123.0`
+|_node_ |*offset_right* |`282.0`
+|_node_ |*offset_bottom* |`190.0`
+|_node_ |*text* |`123`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`0`
+|_node_ |*offset_left* |`345.0`
+|_node_ |*offset_top* |`123.0`
+|_node_ |*offset_right* |`631.0`
+|_node_ |*offset_bottom* |`190.0`
+|_node_ |*theme_override_colors/font_color* |`Color(0.51933, 0.412748, 0.413729, 1)`
+|_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
+|_node_ |*theme_override_font_sizes/font_size* |`32`
+|_node_ |*text* |`12:34:56.789`
+|_node_ |*horizontal_alignment* |`2`
+|_node_ |*vertical_alignment* |`1`
+|_node_ |*position* |`Vector2(788, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(858, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(927, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(997, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1066, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1135, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.306)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1205, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1275, 34)`
+|_node_ |*scale* |`Vector2(0.361, 0.361)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(788, 86.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(857, 86.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(927, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(996, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1066, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1135, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1205, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*position* |`Vector2(1275, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("7_ymbo3")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*position* |`Vector2(788, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(858, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(927, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(997, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(1066, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(1135, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(1205, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*position* |`Vector2(1275, 34)`
+|_node_ |*scale* |`Vector2(0.458984, 0.458984)`
+|_node_ |*texture* |`ExtResource("5_wglsh")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*position* |`Vector2(788, 86.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(857, 86.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(927, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(996, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(1066, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(1135, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(1205, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*position* |`Vector2(1275, 89.125)`
+|_node_ |*scale* |`Vector2(0.361328, 0.361328)`
+|_node_ |*texture* |`ExtResource("6_ectpy")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*texture_filter* |`2`
+|_node_ |*position* |`Vector2(1720, 25)`
+|_node_ |*position* |`Vector2(-1264, 103)`
+|_node_ |*scale* |`Vector2(0.878, 0.836667)`
+|_node_ |*texture* |`ExtResource("2_t0v8v")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*material* |`SubResource("CanvasItemMaterial_pgbv1")`
+|_node_ |*position* |`Vector2(-1539.67, 102.401)`
+|_node_ |*scale* |`Vector2(0.677092, 0.691006)`
+|_node_ |*texture* |`ExtResource("5_0qmxq")`
+|_node_ |*position* |`Vector2(-1621, 20)`
+|_node_ |*rotation* |`2.82394`
+|_node_ |*scale* |`Vector2(1.30551, 1.09847)`
+|_node_ |*texture* |`ExtResource("6_hjrdv")`
+|_node_ |*position* |`Vector2(-1466.23, 186.298)`
+|_node_ |*rotation* |`-0.174533`
+|_node_ |*scale* |`Vector2(1.2486, 1.12155)`
+|_node_ |*texture* |`ExtResource("6_hjrdv")`
+|_node_ |*position* |`Vector2(-1539.5, 102.5)`
+|_node_ |*scale* |`Vector2(0.675781, 0.691406)`
+|_node_ |*blend_mode* |`2`
+|_node_ |*texture* |`ExtResource("7_80d7o")`
+|_node_ |*position* |`Vector2(-1229.25, 158.75)`
+|_node_ |*scale* |`Vector2(0.279297, 0.279297)`
+|_node_ |*texture* |`ExtResource("8_rpibu")`
+|_node_ |*position* |`Vector2(-1171.25, 163.75)`
+|_node_ |*scale* |`Vector2(0.161157, 0.161157)`
+|_node_ |*texture* |`ExtResource("6_q55sp")`
+|_node_ |*layout_mode* |`3`
+|_node_ |*anchors_preset* |`0`
+|_node_ |*offset_left* |`-1420.0`
+|_node_ |*offset_right* |`-1420.0`
+|_node_ |*size_flags_horizontal* |`0`
+|_node_ |*theme* |`ExtResource("1_r7v0f")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`1`
+|_node_ |*anchors_preset* |`15`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*anchor_bottom* |`1.0`
+|_node_ |*offset_left* |`-33.0`
+|_node_ |*offset_top* |`5.0`
+|_node_ |*offset_right* |`529.0`
+|_node_ |*offset_bottom* |`77.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*grow_vertical* |`2`
+|_node_ |*size_flags_horizontal* |`0`
+|_node_ |*theme_override_colors/font_color* |`Color(0.362424, 0.294801, 0.28132, 1)`
+|_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
+|_node_ |*theme_override_font_sizes/font_size* |`46`
+|_node_ |*text* |`Madeline`
+|_node_ |*horizontal_alignment* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`1`
+|_node_ |*anchors_preset* |`15`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*anchor_bottom* |`1.0`
+|_node_ |*offset_left* |`-33.0`
+|_node_ |*offset_top* |`71.0`
+|_node_ |*offset_right* |`529.0`
+|_node_ |*offset_bottom* |`121.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*grow_vertical* |`2`
+|_node_ |*size_flags_horizontal* |`0`
+|_node_ |*theme_override_colors/font_color* |`Color(0.59645, 0.505738, 0.487581, 1)`
+|_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
+|_node_ |*theme_override_font_sizes/font_size* |`32`
+|_node_ |*text* |`1st Chapter`
+|_node_ |*horizontal_alignment* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`0`
+|_node_ |*offset_left* |`276.0`
+|_node_ |*offset_top* |`128.0`
+|_node_ |*offset_right* |`358.0`
+|_node_ |*offset_bottom* |`195.0`
+|_node_ |*text* |`123`
+|_node_ |*visible* |`false`
+|_node_ |*layout_mode* |`2`
+|_node_ |*size_flags_horizontal* |`6`
+|_node_ |*size_flags_vertical* |`2`
+|_node_ |*theme_override_constants/margin_top* |`250`
+|_node_ |*layout_mode* |`2`
+|_node_ |*layout_mode* |`2`
+|_node_ |*alignment* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_bottom* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|_node_ |*focus_next* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|_node_ |*text* |`Get Started`
+|_node_ |*icon* |`null`
+|_node_ |*focus_move_direction* |`2`
+|_node_ |*layout_mode* |`2`
+|_node_ |*alignment* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_top* |`NodePath("../../GetStartedContainer/GetStartedButton")`
+|_node_ |*focus_neighbor_bottom* |`NodePath("../../AssistModeContainer/AssistModeButton")`
+|_node_ |*focus_next* |`NodePath("../../AssistModeContainer/AssistModeButton")`
+|_node_ |*focus_previous* |`NodePath("../../GetStartedContainer/GetStartedButton")`
+|_node_ |*theme_override_font_sizes/font_size* |`40`
+|_node_ |*text* |`Change name`
+|_node_ |*icon* |`null`
+|_node_ |*focus_move_direction* |`2`
+|_node_ |*layout_mode* |`2`
+|_node_ |*alignment* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_top* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|_node_ |*focus_previous* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|_node_ |*theme_override_font_sizes/font_size* |`40`
+|_node_ |*text* |`Assist mode : OFF`
+|_node_ |*icon* |`null`
+|_node_ |*focus_move_direction* |`2`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*libraries* |`{
+&"": SubResource("AnimationLibrary_ci47f")
+}`
+|_node_ |*autoplay* |`opening`
+|===
+
+
+=== link:/scripts/src/account/account.gd[account.gd]
+
+```gdscript
+extends BoxContainer
+class_name Account
+
+signal ui_backed
+signal selected
+signal unselected
+signal get_started
+
+@export var resource : AccountResource : set = set_resource
+const LABELS_IN_RESOURCE = [
+	'player_name',
+	'latest_chapter_name',
+	'obtained_strawberry_count',
+	'total_failure_count',
+	'total_play_time',
+	'obtained_cassettes',
+	'obtained_blue_hearts',
+]
+enum State { UNFOCUSED, FOCUSED, SELECTED }
+@export var state : State = State.UNFOCUSED
+@export var focus_top : bool = false : set = set_focus_top
+@export var focus_menu : bool = false : set = set_focus_menu
+
+
+func _ready() -> void:
+	FocusHelper.set_neighbors_v(
+		[%GetStartedButton, %ChangeNameButton, %AssistModeButton])
+	reset_summary_visiblity()
+	if resource: load_resource()
+
+
+func reset_summary_visiblity() -> void:
+	if resource:
+		%TicketSummaryPlaceholder.hide()
+		%TicketSummary.show()
+		%CoverSummary.show()
+	else:
+		%TicketSummaryPlaceholder.show()
+		%TicketSummary.hide()
+		%CoverSummary.hide()
+
+
+func _input(event: InputEvent) -> void:
+	if is_focused() && event.is_action_pressed("ui_accept"):
+		selected.emit()
+	elif event.is_action_pressed("ui_back"):
+		if is_selected():  unselected.emit()
+		elif is_focused(): ui_backed.emit()
+
+
+func set_resource(_resource: AccountResource) -> void:
+	resource = _resource
+
+
+func load_resource() -> void:
+	reset_summary_visiblity()
+	if not resource: return
+	for key in LABELS_IN_RESOURCE:
+		var node = get_node("%" + key.to_pascal_case())
+		if node:
+			match key:
+				'obtained_cassettes':
+					set_icon_visibility_on(node,
+						resource.obtained_cassettes())
+				'obtained_blue_hearts':
+					set_icon_visibility_on(node,
+						resource.obtained_blue_hearts())
+				_:
+					node.text = str(resource.attr(key))
+
+
+func set_icon_visibility_on(node: Node, flags: Array[bool]) -> void:
+	for i in flags.size():
+		var child = node.get_child(i)
+		if child: child.visible = flags[i]
+
+
+func set_focus_top(val) -> void:
+	if val: grab_focus()
+
+
+func set_focus_menu(val) -> void:
+	if val: %GetStartedButton.grab_focus()
+
+
+func is_focused() -> bool:
+	return state == State.FOCUSED
+
+
+func is_unfocused() -> bool:
+	return state == State.UNFOCUSED
+
+
+func is_selected() -> bool:
+	return state == State.SELECTED
+
+
+func _on_focus_entered() -> void:
+	if is_unfocused():
+		%AnimationPlayer.play("focused")
+
+
+func _on_focus_exited() -> void:
+	if is_focused():
+		%AnimationPlayer.play("unfocused")
+
+
+func _on_selected() -> void:
+	%AnimationPlayer.play("selected")
+
+
+func _on_unselected() -> void:
+	%AnimationPlayer.play("unselected")
+
+
+func _on_get_started_button_pressed() -> void:
+	get_started.emit()
+
+```

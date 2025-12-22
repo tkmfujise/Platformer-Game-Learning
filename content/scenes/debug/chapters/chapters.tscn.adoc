@@ -1,0 +1,134 @@
+---
+title: debug/chapters/chapters.tscn
+---
+:toc:
+
+== debug / chapters / chapters.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Chapters" <<Control>> {
+  * full_resource
+---
+  + _ready()
+  + reload()
+  + dump_json()
+  + _on_reload_button_pressed()
+  + _on_chapters_ui_backed()
+}
+class Chapters as "Chapters" <<Control>> {
+  ~ focused
+  ~ selected
+  ~ ui_backed
+---
+  - ICON_OFFSET
+  - INITIAL_CHAPTERS_X
+  * grab_focus_first
+  * play_opening
+  * current_plate
+  * shown
+  * focused_chapter_idx
+  * selected_chapter_idx
+---
+  + _ready()
+  + setup_from_account_resource()
+  + _input()
+  + go_back()
+  + go_foward()
+  + set_grab_focus_first()
+  + set_play_opening()
+  + focus_pin_to()
+  + zoom_pin_to()
+  + force_focus_return()
+  + load_focused_chapter_to_menu()
+  + get_chapter()
+  + set_chapters_animation_offset()
+  + _on_chapater_focused()
+  + _on_animation_player_animation_finished()
+  + _on_selected()
+  + _on_menu_ui_backed()
+}
+class ReloadButton as "ReloadButton" <<Button>> {
+}
+ROOT --o Chapters
+ROOT --o ReloadButton
+left to right direction
+ROOT::_on_chapters_ui_backed <-[#blue,thickness=2]- Chapters::ui_backed
+ROOT::_on_reload_button_pressed <-[#blue,thickness=2]- ReloadButton::pressed
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Chapters# [.node-type.type-control]#Control#
+** [.node-name.type-control]#Chapters# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapters.tscn[res://src/beginning/chapters/chapters.tscn]#
+** [.node-name.type-control]#ReloadButton# [.node-type.type-control]#Button#
+
+
+=== Signal Connections
+[cols="1,1,1,2" options="header"]
+|===
+|From |Name |To |Method
+|_Chapters_ |*ui_backed* |_._ |`_on_chapters_ui_backed`
+|_ReloadButton_ |*pressed* |_._ |`_on_reload_button_pressed`
+|===
+
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_node_ |*layout_mode* |`3`
+|_node_ |*anchors_preset* |`15`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*anchor_bottom* |`1.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*grow_vertical* |`2`
+|_node_ |*theme* |`ExtResource("1_4kat4")`
+|_node_ |*script* |`ExtResource("1_x5h8o")`
+|_node_ |*full_resource* |`ExtResource("3_n6u80")`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`1`
+|_node_ |*layout_mode* |`0`
+|_node_ |*offset_left* |`128.0`
+|_node_ |*offset_top* |`796.0`
+|_node_ |*offset_right* |`335.0`
+|_node_ |*offset_bottom* |`887.0`
+|_node_ |*text* |`Reload`
+|===
+
+
+=== link:/scripts/debug/chapters/chapters.gd[chapters.gd]
+
+```gdscript
+extends Control
+
+@export var full_resource : AccountResource
+
+
+func _ready() -> void:
+	Current.account = full_resource
+	reload()
+	dump_json()
+
+
+func reload() -> void:
+	%Chapters.setup_from_account_resource()
+	%Chapters.play_opening = true
+
+
+func dump_json() -> void:
+	var json = ResourceHelper.json(Current.account)
+	var res  = JSON.parse_string(json)
+	true
+
+
+func _on_reload_button_pressed() -> void:
+	reload()
+
+
+func _on_chapters_ui_backed() -> void:
+	reload()
+
+```

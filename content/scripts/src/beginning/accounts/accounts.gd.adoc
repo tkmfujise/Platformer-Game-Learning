@@ -1,0 +1,82 @@
+---
+title: res://src/beginning/accounts/accounts.gd
+---
+:toc:
+
+== src / beginning / accounts / accounts.gd
+
+```gdscript
+extends MarginContainer
+
+signal ui_backed
+signal get_started(account: Account)
+
+@export var grab_focus_first : bool : set = set_grab_focus_first
+@export var focus_returned : bool : set = set_focus_returned
+var current_idx : int = 0
+
+
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		grab_focus_first = true
+	else:
+		load_accounts()
+
+
+func load_accounts() -> void:
+	for number in [1, 2, 3]:
+		var account = AccountResource.find(number)
+		var node = get_node('%Account'+str(number))
+		node.resource = account
+		node.load_resource()
+
+
+func set_grab_focus_first(val: bool) -> void:
+	FocusHelper.grab_first(%AccountsContainer, val)
+
+
+func set_focus_returned(val: bool) -> void:
+	if val:
+		%AnimationPlayer.play("RESET")
+		%AccountsContainer.get_child(current_idx).grab_focus()
+
+
+func _on_account_1_selected() -> void:
+	%AnimationPlayer.play("1st_selected")
+
+
+func _on_account_1_unselected() -> void:
+	%AnimationPlayer.play("1st_unselected")
+
+
+func _on_account_2_selected() -> void:
+	%AnimationPlayer.play("2nd_selected")
+
+
+func _on_account_2_unselected() -> void:
+	%AnimationPlayer.play("2nd_unselected")
+
+
+func _on_account_3_selected() -> void:
+	%AnimationPlayer.play("3rd_selected")
+
+
+func _on_account_3_unselected() -> void:
+	%AnimationPlayer.play("3rd_unselected")
+
+
+func _on_account_ui_backed() -> void:
+	%AnimationPlayer.play("RESET")
+	ui_backed.emit()
+
+
+func _on_account_get_started(number: int) -> void:
+	var account = get_node('%Account' + str(number))
+	Current.load_account(number)
+	get_started.emit(account)
+
+
+func _on_account_focus_entered(idx: int) -> void:
+	current_idx = idx
+
+```

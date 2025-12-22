@@ -1,0 +1,145 @@
+---
+title: res://src/beginning/chapters/chapters.gd
+---
+:toc:
+
+== src / beginning / chapters / chapters.gd
+
+```gdscript
+extends Control
+
+signal focused(idx: int)
+signal selected(idx: int)
+signal ui_backed
+
+@export var grab_focus_first : bool : set = set_grab_focus_first
+@export var play_opening := false : set = set_play_opening
+@export var current_plate : Plate = Plate.ROOT
+@export var shown : bool = false
+enum Plate { ROOT, MENU }
+const ICON_OFFSET := 164
+const INITIAL_CHAPTERS_X := 815
+var focused_chapter_idx : int = 0
+var selected_chapter_idx : int = -1
+
+
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('opening')
+	FocusHelper.set_neighbors_h(%ChaptersContainer.get_children())
+	for chapter in %ChaptersContainer.get_children():
+		chapter.focus_entered.connect(_on_chapater_focused.bind(chapter))
+	load_focused_chapter_to_menu()
+
+
+func setup_from_account_resource() -> void:
+	if not Current.account: return
+	var numbers = Current.account.chapters.map(func(c): return c.number)
+	for chapter in %ChaptersContainer.get_children():
+		var number = int(str(chapter.name)[-1])
+		if number == 0: continue
+		if not numbers.has(number): chapter.hide()
+
+
+func _input(event: InputEvent) -> void:
+	if not (shown && current_plate == Plate.ROOT): return
+	if event.is_action_pressed("ui_back"):
+		go_back()
+	elif event.is_action_pressed("ui_accept"):
+		go_foward()
+
+
+func go_back() -> void:
+	shown = false
+	%AnimationPlayer.play("RESET")
+	ui_backed.emit()
+
+
+func go_foward() -> void:
+	current_plate = Plate.MENU
+	selected.emit(focused_chapter_idx)
+
+
+func set_grab_focus_first(val: bool) -> void:
+	FocusHelper.grab_first(%ChaptersContainer, val)
+
+
+func set_play_opening(val: bool) -> void:
+	if val: %AnimationPlayer.play("opening")
+
+
+func focus_pin_to(idx: int) -> void:
+	var anim_name = "focus_pin_to_chapter_%s" % idx
+	if shown: %AnimationPlayer.play(anim_name)
+	else: %AnimationPlayer.queue(anim_name)
+
+
+func zoom_pin_to(idx: int) -> void:
+	var anim_name = "zoom_pin_to_chapter_%s" % idx
+	%AnimationPlayer.play(anim_name)
+
+
+func force_focus_return():
+	var target = get_chapter(focused_chapter_idx)
+	if not FocusHelper.is_focuesed(target):
+		target.focus_returned()
+
+
+func load_focused_chapter_to_menu():
+	var chapter = get_chapter(focused_chapter_idx)
+	%Menu.chapter_resource = chapter.resource
+
+
+func get_chapter(idx: int) -> Node:
+	return %ChaptersContainer.get_child(idx)
+
+
+func set_chapters_animation_offset() -> void:
+	var current_pos = %ChaptersContainer.position
+	var anim = %ChaptersAnimationPlayer.get_animation('selected')
+	var track_idx = anim.find_track('.:position', Animation.TrackType.TYPE_VALUE)
+	anim.track_set_key_value(track_idx, 0, current_pos)
+	var pos = anim.track_get_key_value(track_idx, 1)
+	pos.x = current_pos.x
+	anim.track_set_key_value(track_idx, 1, pos)
+	anim = %ChaptersAnimationPlayer.get_animation('unselected')
+	track_idx = anim.find_track('.:position', Animation.TrackType.TYPE_VALUE)
+	pos = anim.track_get_key_value(track_idx, 0)
+	pos.x = current_pos.x
+	anim.track_set_key_value(track_idx, 0, pos)
+	anim.track_set_key_value(track_idx, 1, current_pos)
+
+
+func _on_chapater_focused(chapter: Node) -> void:
+	var idx = int(str(chapter.name)[-1])
+	focused_chapter_idx = idx
+	%ChaptersContainer.position.x = INITIAL_CHAPTERS_X - (ICON_OFFSET * idx)
+	focus_pin_to(idx)
+	load_focused_chapter_to_menu()
+	focused.emit(idx)
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	if current_plate == Plate.ROOT:
+		force_focus_return()
+
+
+func _on_selected(idx: int) -> void:
+	%Menu.grab_focus_first = true
+	selected_chapter_idx = idx
+	zoom_pin_to(idx)
+	get_chapter(idx).selected()
+	set_chapters_animation_offset()
+	%ChaptersAnimationPlayer.play("selected")
+	current_plate = Plate.MENU
+
+
+func _on_menu_ui_backed() -> void:
+	if current_plate == Plate.MENU:
+		(func(): current_plate = Plate.ROOT).call_deferred()
+		get_chapter(selected_chapter_idx).unselected()
+		%ChaptersAnimationPlayer.play("unselected")
+		selected_chapter_idx = -1
+		force_focus_return()
+
+```

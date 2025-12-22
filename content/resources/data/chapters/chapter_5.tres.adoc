@@ -1,0 +1,36 @@
+---
+title: res://data/chapters/chapter_5.tres
+---
+:toc:
+
+== data / chapters / chapter_5.tres
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*script* |`ExtResource("2_n6td2")`
+|_sub_resource_ |*name* |`Get Started`
+|_sub_resource_ |*number* |`1`
+|_sub_resource_ |*photo* |`ExtResource("3_t5lo3")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_sub_resource_ |*script* |`ExtResource("2_n6td2")`
+|_sub_resource_ |*name* |`Stage 2`
+|_sub_resource_ |*number* |`2`
+|_sub_resource_ |*photo* |`ExtResource("4_kyqj2")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_sub_resource_ |*script* |`ExtResource("2_n6td2")`
+|_sub_resource_ |*name* |`Stage 3`
+|_sub_resource_ |*number* |`3`
+|_sub_resource_ |*photo* |`ExtResource("5_1wsba")`
+|_sub_resource_ |*strawberry_count* |`1`
+|_sub_resource_ |*scene* |``
+|_resource_ |*script* |`ExtResource("1_i1ev1")`
+|_resource_ |*number* |`5`
+|_resource_ |*name* |`Temple`
+|_resource_ |*color* |`Color(0.660382, 0.679387, 0.933217, 1)`
+|_resource_ |*stages* |`Array("[SubResource("Resource_2itat"), SubResource("Resource_urbgj"), SubResource("Resource_v6wsy")]")`
+|===
+

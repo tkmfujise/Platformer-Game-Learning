@@ -1,0 +1,19 @@
+---
+title: res://data/test/account/empty_account.tres
+---
+:toc:
+
+== data / test / account / empty_account.tres
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_resource_ |*script* |`ExtResource("2_vghn1")`
+|_resource_ |*number* |`1`
+|_resource_ |*player_name* |`Player`
+|_resource_ |*latest_chapter_name* |`Opening`
+|_resource_ |*chapters* |`Array("[]")`
+|_resource_ |*metadata/_custom_type_script* |`uid://du5n86ejtruti`
+|===
+

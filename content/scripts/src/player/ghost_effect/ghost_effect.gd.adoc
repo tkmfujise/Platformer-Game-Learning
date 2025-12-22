@@ -1,0 +1,31 @@
+---
+title: res://src/player/ghost_effect/ghost_effect.gd
+---
+:toc:
+
+== src / player / ghost_effect / ghost_effect.gd
+
+```gdscript
+extends Node2D
+
+const ALIVE_TIME = 0.5
+var rest_time := ALIVE_TIME
+
+
+func spawn(player: Player) -> void:
+	position = player.position
+	var sprite = player.current_sprite_state().duplicate()
+	%Sprite2D.texture = sprite.texture
+	%Sprite2D.hframes = sprite.hframes
+	%Sprite2D.frame  = sprite.frame
+	%Sprite2D.flip_h = sprite.flip_h
+	%Sprite2D.flip_v = sprite.flip_v
+	player.get_parent().add_child(self)
+
+
+func _process(delta: float) -> void:
+	rest_time -= delta
+	modulate.a -= delta / ALIVE_TIME
+	if rest_time < 0: queue_free()
+
+```

@@ -1,0 +1,109 @@
+---
+title: autoloads/bgm/bgm.tscn
+---
+:toc:
+
+== autoloads / bgm / bgm.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "BGM" <<Node>> {
+  - VOLUME_RANGE
+  * current
+---
+  + _ready()
+  + load_preference()
+  + play()
+  + mute()
+  + set_volume()
+  + stop()
+  + current_node()
+  + change()
+  + first_steps()
+}
+class FirstSteps as "FirstSteps" <<AudioStreamPlayer>> {
+}
+ROOT --o FirstSteps
+left to right direction
+
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-other]#BGM# [.node-type.type-other]#Node#
+** [.node-name.type-other]#FirstSteps# [.node-type.type-other]#AudioStreamPlayer#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_node_ |*script* |`ExtResource("1_mflce")`
+|_node_ |*stream* |`ExtResource("2_lngrj")`
+|_node_ |*parameters/looping* |`true`
+|===
+
+
+=== link:/scripts/autoloads/bgm/bgm.gd[bgm.gd]
+
+```gdscript
+extends Node
+#class_name BGM
+
+@export_node_path("AudioStreamPlayer")
+var current : NodePath
+const VOLUME_RANGE = [-20, 10]
+
+
+func _ready() -> void:
+	load_preference()
+
+
+func load_preference() -> void:
+	set_volume(Preference.bgm_volume())
+
+
+func play() -> void:
+	if not current: return
+	current_node().play()
+
+
+func mute(value: bool = true) -> void:
+	AudioServer.set_bus_mute(0, value)
+
+
+func set_volume(_volume: int) -> void:
+	var volume = clamp(_volume, 0, 100) * 0.01
+	if volume:
+		var _min = VOLUME_RANGE[0]
+		var _max = VOLUME_RANGE[1]
+		AudioServer.set_bus_volume_db(0, _min + volume * (_max - _min))
+		mute(false)
+	else: mute(true)
+
+
+func stop() -> void:
+	if not current: return
+	current_node().stop()
+
+
+func current_node() -> Node:
+	return get_node(current)
+
+
+func change(path: NodePath) -> void:
+	if current != path:
+		stop()
+		current = path
+		play()
+
+
+func first_steps() -> void:
+	change(^'FirstSteps')
+
+```

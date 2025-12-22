@@ -1,0 +1,69 @@
+---
+title: src/beginning/screen/snow/snow.tscn
+---
+:toc:
+
+== src / beginning / screen / snow / snow.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Show" <<Node3D>> {
+}
+class GPUParticles3D as "GPUParticles3D" <<GPUParticles3D>> {
+}
+class Camera3D as "Camera3D" <<Camera3D>> {
+}
+class DirectionalLight3D as "DirectionalLight3D" <<DirectionalLight3D>> {
+}
+ROOT --o GPUParticles3D
+ROOT --o Camera3D
+ROOT --o DirectionalLight3D
+left to right direction
+
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-3d]#Show# [.node-type.type-3d]#Node3D#
+** [.node-name.type-3d]#GPUParticles3D# [.node-type.type-3d]#GPUParticles3D#
+** [.node-name.type-3d]#Camera3D# [.node-type.type-3d]#Camera3D#
+** [.node-name.type-3d]#DirectionalLight3D# [.node-type.type-3d]#DirectionalLight3D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*emission_shape_scale* |`Vector3(30, 50, 10)`
+|_sub_resource_ |*emission_shape* |`1`
+|_sub_resource_ |*emission_sphere_radius* |`1.0`
+|_sub_resource_ |*direction* |`Vector3(-3, 0, -1)`
+|_sub_resource_ |*spread* |`20.0`
+|_sub_resource_ |*initial_velocity_min* |`5.0`
+|_sub_resource_ |*initial_velocity_max* |`30.0`
+|_sub_resource_ |*gravity* |`Vector3(-3, -2, 0)`
+|_sub_resource_ |*transparency* |`1`
+|_sub_resource_ |*shading_mode* |`0`
+|_sub_resource_ |*albedo_texture* |`ExtResource("1_juby7")`
+|_sub_resource_ |*billboard_mode* |`3`
+|_sub_resource_ |*billboard_keep_scale* |`true`
+|_sub_resource_ |*particles_anim_h_frames* |`1`
+|_sub_resource_ |*particles_anim_v_frames* |`1`
+|_sub_resource_ |*particles_anim_loop* |`false`
+|_sub_resource_ |*material* |`SubResource("StandardMaterial3D_f234g")`
+|_sub_resource_ |*size* |`Vector2(0.8, 0.8)`
+|_node_ |*transform* |`Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0284, 10.2323, -1.13856)`
+|_node_ |*amount* |`60`
+|_node_ |*lifetime* |`5.0`
+|_node_ |*process_material* |`SubResource("ParticleProcessMaterial_pmcxd")`
+|_node_ |*draw_pass_1* |`SubResource("QuadMesh_tbk4n")`
+|_node_ |*transform* |`Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)`
+|_node_ |*current* |`true`
+|===
+
+

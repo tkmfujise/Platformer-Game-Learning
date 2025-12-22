@@ -1,0 +1,18 @@
+---
+title: res://resources/stage_resource.gd
+---
+:toc:
+
+== resources / stage_resource.gd
+
+```gdscript
+extends Resource
+class_name StageResource
+
+@export var name : String = 'Get Started'
+@export var number : int = 0
+@export var photo : Texture2D
+@export var strawberry_count : int = 1
+@export_file('*.tscn') var scene : String
+
+```

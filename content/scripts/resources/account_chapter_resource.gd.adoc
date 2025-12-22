@@ -1,0 +1,36 @@
+---
+title: res://resources/account_chapter_resource.gd
+---
+:toc:
+
+== resources / account_chapter_resource.gd
+
+```gdscript
+extends Resource
+class_name AccountChapterResource
+
+@export var number : int = 1
+@export var obtained_blue_heart : bool = false
+@export var obtained_cassette : bool = false
+@export var stages : Array[AccountStageResource]
+
+static func parse_mapping() -> Dictionary:
+	return { 'stages': AccountStageResource }
+
+
+func obtained_strawberry_count() -> int:
+	return ArrayHelper.sum(stages, 'obtained_strawberry_count')
+
+
+func total_failure_count() -> int:
+	return ArrayHelper.sum(stages, 'total_failure_count')
+
+
+func total_play_msec() -> int:
+	return ArrayHelper.sum(stages, 'total_play_msec')
+
+
+func has_stage(number: int) -> bool:
+	return stages.any(func(s): return s.number == number)
+
+```

@@ -1,0 +1,1905 @@
+---
+title: src/beginning/chapters/chapters.tscn
+---
+:toc:
+
+== src / beginning / chapters / chapters.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Chapters" <<Control>> {
+  ~ focused
+  ~ selected
+  ~ ui_backed
+---
+  - ICON_OFFSET
+  - INITIAL_CHAPTERS_X
+  * grab_focus_first
+  * play_opening
+  * current_plate
+  * shown
+  * focused_chapter_idx
+  * selected_chapter_idx
+---
+  + _ready()
+  + setup_from_account_resource()
+  + _input()
+  + go_back()
+  + go_foward()
+  + set_grab_focus_first()
+  + set_play_opening()
+  + focus_pin_to()
+  + zoom_pin_to()
+  + force_focus_return()
+  + load_focused_chapter_to_menu()
+  + get_chapter()
+  + set_chapters_animation_offset()
+  + _on_chapater_focused()
+  + _on_animation_player_animation_finished()
+  + _on_selected()
+  + _on_menu_ui_backed()
+}
+class Banner as "Banner" <<TextureRect>> {
+}
+class ChaptersContainer as "ChaptersContainer" <<HBoxContainer>> {
+}
+class ChaptersContainer_Chapter_0 as "Chapter_0" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_1 as "Chapter_1" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_1_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_2 as "Chapter_2" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_2_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_3 as "Chapter_3" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_3_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_4 as "Chapter_4" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_4_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_5 as "Chapter_5" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_5_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_6 as "Chapter_6" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_6_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_7 as "Chapter_7" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_7_Sprite2D as "Sprite2D" <<Node>> {
+}
+class ChaptersContainer_Chapter_8 as "Chapter_8" <<MarginContainer>> {
+  * play_opening
+  * resource
+  * focus_animation_skip
+---
+  + set_play_opening()
+  + focus_returned()
+  + selected()
+  + unselected()
+  + _on_focus_entered()
+}
+class ChaptersContainer_Chapter_8_Sprite2D as "Sprite2D" <<Node>> {
+}
+class Grid1920x1080 as "Grid1920x1080" <<Sprite2D>> {
+}
+class Pin as "Pin" <<Node2D>> {
+}
+class Menu as "Menu" <<Control>> {
+  ~ ui_backed
+  ~ get_started
+---
+  * grab_focus_first
+  * grab_focus_side
+  * grab_focus_stage
+  * shown
+  * chapter_resource
+  * state
+  * chapter_number
+  * stage_resources
+---
+  + _ready()
+  + load_chapter()
+  + load_chapter_stages()
+  + setup_from_account_resource()
+  + set_grab_focus_first()
+  + set_grab_focus_side()
+  + set_grab_focus_stage()
+  + clear_photos()
+  + add_photo()
+  + clear_stage_buttons()
+  + add_stage_button()
+  + get_stage_button()
+  + hide_stage_button_and_photo()
+  + stages_count()
+  + _input()
+  + _on_climb_button_pressed()
+  + _on_stage_button_focus_entered()
+  + _on_stage_button_pressed()
+  + _on_ui_backed()
+  + _on_get_started()
+}
+class ChaptersAnimationPlayer as "ChaptersAnimationPlayer" <<AnimationPlayer>> {
+}
+class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+}
+ROOT --o Banner
+ROOT --o ChaptersContainer
+ROOT --o Grid1920x1080
+ROOT --o Pin
+ROOT --o Menu
+ROOT --o ChaptersAnimationPlayer
+ROOT --o AnimationPlayer
+ChaptersContainer --o ChaptersContainer_Chapter_0
+ChaptersContainer --o ChaptersContainer_Chapter_1
+ChaptersContainer --o ChaptersContainer_Chapter_2
+ChaptersContainer --o ChaptersContainer_Chapter_3
+ChaptersContainer --o ChaptersContainer_Chapter_4
+ChaptersContainer --o ChaptersContainer_Chapter_5
+ChaptersContainer --o ChaptersContainer_Chapter_6
+ChaptersContainer --o ChaptersContainer_Chapter_7
+ChaptersContainer --o ChaptersContainer_Chapter_8
+ChaptersContainer_Chapter_1 --o ChaptersContainer_Chapter_1_Sprite2D
+ChaptersContainer_Chapter_2 --o ChaptersContainer_Chapter_2_Sprite2D
+ChaptersContainer_Chapter_3 --o ChaptersContainer_Chapter_3_Sprite2D
+ChaptersContainer_Chapter_4 --o ChaptersContainer_Chapter_4_Sprite2D
+ChaptersContainer_Chapter_5 --o ChaptersContainer_Chapter_5_Sprite2D
+ChaptersContainer_Chapter_6 --o ChaptersContainer_Chapter_6_Sprite2D
+ChaptersContainer_Chapter_7 --o ChaptersContainer_Chapter_7_Sprite2D
+ChaptersContainer_Chapter_8 --o ChaptersContainer_Chapter_8_Sprite2D
+left to right direction
+ROOT::_on_selected <-[#blue,thickness=2]- ROOT::selected
+ROOT::_on_menu_ui_backed <-[#blue,thickness=2]- Menu::ui_backed
+ROOT::_on_animation_player_animation_finished <-[#blue,thickness=2]- AnimationPlayer::animation_finished
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Chapters# [.node-type.type-control]#Control#
+** [.node-name.type-control]#Banner# [.node-type.type-control]#link:/scenes/src/beginning/chapters/banner/banner.tscn[res://src/beginning/chapters/banner/banner.tscn]#
+** [.node-name.type-control]#ChaptersContainer# [.node-type.type-control]#HBoxContainer#
+*** [.node-name.type-control]#Chapter_0# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+*** [.node-name.type-control]#Chapter_1# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_2# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_3# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_4# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_5# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_6# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_7# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+*** [.node-name.type-control]#Chapter_8# [.node-type.type-control]#link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]#
+**** [.node-name.type-other]#Sprite2D# [.node-type.type-other]#Node#
+** [.node-name.type-2d]#Grid1920x1080# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#Pin# [.node-type.type-2d]#link:/scenes/src/world/pin/pin.tscn[res://src/world/pin/pin.tscn]#
+** [.node-name.type-control]#Menu# [.node-type.type-control]#link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]#
+** [.node-name.type-other]#ChaptersAnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[cols="1,1,1,2" options="header"]
+|===
+|From |Name |To |Method
+|_._ |*selected* |_._ |`_on_selected`
+|_Menu_ |*ui_backed* |_._ |`_on_menu_ui_backed`
+|_AnimationPlayer_ |*animation_finished* |_._ |`_on_animation_player_animation_finished`
+|===
+
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("%ChaptersContainer/../Banner:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, -250)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(815, -250)]
+}`
+|_sub_resource_ |*resource_name* |`selected`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("%ChaptersContainer/../Banner:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(800, 0), Vector2(800, -250)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(815, 8), Vector2(815, -250)]
+}`
+|_sub_resource_ |*resource_name* |`unselected`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("%ChaptersContainer/../Banner:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(800, -250), Vector2(800, 0)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath(".:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(815, -250), Vector2(815, 8)]
+}`
+|_sub_resource_ |*_data* |`{
+&"RESET": SubResource("Animation_f7nbf"),
+&"selected": SubResource("Animation_gqm2j"),
+&"unselected": SubResource("Animation_c4ypt")
+}`
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Banner:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, -220)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("ChaptersContainer:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(815, -150)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("ChaptersContainer/Chapter_0:play_opening")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath("ChaptersContainer/Chapter_1:play_opening")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/4/type* |`value`
+|_sub_resource_ |*tracks/4/imported* |`false`
+|_sub_resource_ |*tracks/4/enabled* |`true`
+|_sub_resource_ |*tracks/4/path* |`NodePath("ChaptersContainer/Chapter_2:play_opening")`
+|_sub_resource_ |*tracks/4/interp* |`1`
+|_sub_resource_ |*tracks/4/loop_wrap* |`true`
+|_sub_resource_ |*tracks/4/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/5/type* |`value`
+|_sub_resource_ |*tracks/5/imported* |`false`
+|_sub_resource_ |*tracks/5/enabled* |`true`
+|_sub_resource_ |*tracks/5/path* |`NodePath("ChaptersContainer/Chapter_3:play_opening")`
+|_sub_resource_ |*tracks/5/interp* |`1`
+|_sub_resource_ |*tracks/5/loop_wrap* |`true`
+|_sub_resource_ |*tracks/5/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/6/type* |`value`
+|_sub_resource_ |*tracks/6/imported* |`false`
+|_sub_resource_ |*tracks/6/enabled* |`true`
+|_sub_resource_ |*tracks/6/path* |`NodePath("ChaptersContainer/Chapter_4:play_opening")`
+|_sub_resource_ |*tracks/6/interp* |`1`
+|_sub_resource_ |*tracks/6/loop_wrap* |`true`
+|_sub_resource_ |*tracks/6/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/7/type* |`value`
+|_sub_resource_ |*tracks/7/imported* |`false`
+|_sub_resource_ |*tracks/7/enabled* |`true`
+|_sub_resource_ |*tracks/7/path* |`NodePath("ChaptersContainer/Chapter_5:play_opening")`
+|_sub_resource_ |*tracks/7/interp* |`1`
+|_sub_resource_ |*tracks/7/loop_wrap* |`true`
+|_sub_resource_ |*tracks/7/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/8/type* |`value`
+|_sub_resource_ |*tracks/8/imported* |`false`
+|_sub_resource_ |*tracks/8/enabled* |`true`
+|_sub_resource_ |*tracks/8/path* |`NodePath("ChaptersContainer/Chapter_6:play_opening")`
+|_sub_resource_ |*tracks/8/interp* |`1`
+|_sub_resource_ |*tracks/8/loop_wrap* |`true`
+|_sub_resource_ |*tracks/8/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/9/type* |`value`
+|_sub_resource_ |*tracks/9/imported* |`false`
+|_sub_resource_ |*tracks/9/enabled* |`true`
+|_sub_resource_ |*tracks/9/path* |`NodePath("ChaptersContainer/Chapter_7:play_opening")`
+|_sub_resource_ |*tracks/9/interp* |`1`
+|_sub_resource_ |*tracks/9/loop_wrap* |`true`
+|_sub_resource_ |*tracks/9/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/10/type* |`value`
+|_sub_resource_ |*tracks/10/imported* |`false`
+|_sub_resource_ |*tracks/10/enabled* |`true`
+|_sub_resource_ |*tracks/10/path* |`NodePath("ChaptersContainer/Chapter_8:play_opening")`
+|_sub_resource_ |*tracks/10/interp* |`1`
+|_sub_resource_ |*tracks/10/loop_wrap* |`true`
+|_sub_resource_ |*tracks/10/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/11/type* |`value`
+|_sub_resource_ |*tracks/11/imported* |`false`
+|_sub_resource_ |*tracks/11/enabled* |`true`
+|_sub_resource_ |*tracks/11/path* |`NodePath("ChaptersContainer/Chapter_0:visible")`
+|_sub_resource_ |*tracks/11/interp* |`1`
+|_sub_resource_ |*tracks/11/loop_wrap* |`true`
+|_sub_resource_ |*tracks/11/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/12/type* |`value`
+|_sub_resource_ |*tracks/12/imported* |`false`
+|_sub_resource_ |*tracks/12/enabled* |`true`
+|_sub_resource_ |*tracks/12/path* |`NodePath("ChaptersContainer/Chapter_1:visible")`
+|_sub_resource_ |*tracks/12/interp* |`1`
+|_sub_resource_ |*tracks/12/loop_wrap* |`true`
+|_sub_resource_ |*tracks/12/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/13/type* |`value`
+|_sub_resource_ |*tracks/13/imported* |`false`
+|_sub_resource_ |*tracks/13/enabled* |`true`
+|_sub_resource_ |*tracks/13/path* |`NodePath("ChaptersContainer/Chapter_2:visible")`
+|_sub_resource_ |*tracks/13/interp* |`1`
+|_sub_resource_ |*tracks/13/loop_wrap* |`true`
+|_sub_resource_ |*tracks/13/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/14/type* |`value`
+|_sub_resource_ |*tracks/14/imported* |`false`
+|_sub_resource_ |*tracks/14/enabled* |`true`
+|_sub_resource_ |*tracks/14/path* |`NodePath("ChaptersContainer/Chapter_3:visible")`
+|_sub_resource_ |*tracks/14/interp* |`1`
+|_sub_resource_ |*tracks/14/loop_wrap* |`true`
+|_sub_resource_ |*tracks/14/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/15/type* |`value`
+|_sub_resource_ |*tracks/15/imported* |`false`
+|_sub_resource_ |*tracks/15/enabled* |`true`
+|_sub_resource_ |*tracks/15/path* |`NodePath("ChaptersContainer/Chapter_4:visible")`
+|_sub_resource_ |*tracks/15/interp* |`1`
+|_sub_resource_ |*tracks/15/loop_wrap* |`true`
+|_sub_resource_ |*tracks/15/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/16/type* |`value`
+|_sub_resource_ |*tracks/16/imported* |`false`
+|_sub_resource_ |*tracks/16/enabled* |`true`
+|_sub_resource_ |*tracks/16/path* |`NodePath("ChaptersContainer/Chapter_5:visible")`
+|_sub_resource_ |*tracks/16/interp* |`1`
+|_sub_resource_ |*tracks/16/loop_wrap* |`true`
+|_sub_resource_ |*tracks/16/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/17/type* |`value`
+|_sub_resource_ |*tracks/17/imported* |`false`
+|_sub_resource_ |*tracks/17/enabled* |`true`
+|_sub_resource_ |*tracks/17/path* |`NodePath("ChaptersContainer/Chapter_6:visible")`
+|_sub_resource_ |*tracks/17/interp* |`1`
+|_sub_resource_ |*tracks/17/loop_wrap* |`true`
+|_sub_resource_ |*tracks/17/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/18/type* |`value`
+|_sub_resource_ |*tracks/18/imported* |`false`
+|_sub_resource_ |*tracks/18/enabled* |`true`
+|_sub_resource_ |*tracks/18/path* |`NodePath("ChaptersContainer/Chapter_7:visible")`
+|_sub_resource_ |*tracks/18/interp* |`1`
+|_sub_resource_ |*tracks/18/loop_wrap* |`true`
+|_sub_resource_ |*tracks/18/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/19/type* |`value`
+|_sub_resource_ |*tracks/19/imported* |`false`
+|_sub_resource_ |*tracks/19/enabled* |`true`
+|_sub_resource_ |*tracks/19/path* |`NodePath("ChaptersContainer/Chapter_8:visible")`
+|_sub_resource_ |*tracks/19/interp* |`1`
+|_sub_resource_ |*tracks/19/loop_wrap* |`true`
+|_sub_resource_ |*tracks/19/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/20/type* |`value`
+|_sub_resource_ |*tracks/20/imported* |`false`
+|_sub_resource_ |*tracks/20/enabled* |`true`
+|_sub_resource_ |*tracks/20/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/20/interp* |`1`
+|_sub_resource_ |*tracks/20/loop_wrap* |`true`
+|_sub_resource_ |*tracks/20/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(903, 554)]
+}`
+|_sub_resource_ |*tracks/21/type* |`value`
+|_sub_resource_ |*tracks/21/imported* |`false`
+|_sub_resource_ |*tracks/21/enabled* |`true`
+|_sub_resource_ |*tracks/21/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/21/interp* |`1`
+|_sub_resource_ |*tracks/21/loop_wrap* |`true`
+|_sub_resource_ |*tracks/21/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/22/type* |`value`
+|_sub_resource_ |*tracks/22/imported* |`false`
+|_sub_resource_ |*tracks/22/enabled* |`true`
+|_sub_resource_ |*tracks/22/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/22/interp* |`1`
+|_sub_resource_ |*tracks/22/loop_wrap* |`true`
+|_sub_resource_ |*tracks/22/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/23/type* |`value`
+|_sub_resource_ |*tracks/23/imported* |`false`
+|_sub_resource_ |*tracks/23/enabled* |`true`
+|_sub_resource_ |*tracks/23/path* |`NodePath(".:shown")`
+|_sub_resource_ |*tracks/23/interp* |`1`
+|_sub_resource_ |*tracks/23/loop_wrap* |`true`
+|_sub_resource_ |*tracks/23/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/24/type* |`value`
+|_sub_resource_ |*tracks/24/imported* |`false`
+|_sub_resource_ |*tracks/24/enabled* |`true`
+|_sub_resource_ |*tracks/24/path* |`NodePath(".:current_plate")`
+|_sub_resource_ |*tracks/24/interp* |`1`
+|_sub_resource_ |*tracks/24/loop_wrap* |`true`
+|_sub_resource_ |*tracks/24/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}`
+|_sub_resource_ |*tracks/25/type* |`value`
+|_sub_resource_ |*tracks/25/imported* |`false`
+|_sub_resource_ |*tracks/25/enabled* |`true`
+|_sub_resource_ |*tracks/25/path* |`NodePath("Menu:position")`
+|_sub_resource_ |*tracks/25/interp* |`1`
+|_sub_resource_ |*tracks/25/loop_wrap* |`true`
+|_sub_resource_ |*tracks/25/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 0)]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_0`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1039, 648)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_1`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1064, 682)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_2`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1046, 389)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_3`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(843, 545)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_4`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(939, 674)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_5`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(752, 514)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_6`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1156, 857)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_7`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1019, 404)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`focus_pin_to_chapter_8`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1051, 612)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`opening`
+|_sub_resource_ |*length* |`0.7`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Banner:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(800, -250), Vector2(800, 0)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("ChaptersContainer:position")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0, 0.466667, 0.7),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [Vector2(815, -150), Vector2(815, -150), Vector2(815, 8)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("ChaptersContainer/Chapter_0:play_opening")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.066667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/3/type* |`value`
+|_sub_resource_ |*tracks/3/imported* |`false`
+|_sub_resource_ |*tracks/3/enabled* |`true`
+|_sub_resource_ |*tracks/3/path* |`NodePath("ChaptersContainer/Chapter_1:play_opening")`
+|_sub_resource_ |*tracks/3/interp* |`1`
+|_sub_resource_ |*tracks/3/loop_wrap* |`true`
+|_sub_resource_ |*tracks/3/keys* |`{
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/4/type* |`value`
+|_sub_resource_ |*tracks/4/imported* |`false`
+|_sub_resource_ |*tracks/4/enabled* |`true`
+|_sub_resource_ |*tracks/4/path* |`NodePath("ChaptersContainer/Chapter_2:play_opening")`
+|_sub_resource_ |*tracks/4/interp* |`1`
+|_sub_resource_ |*tracks/4/loop_wrap* |`true`
+|_sub_resource_ |*tracks/4/keys* |`{
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/5/type* |`value`
+|_sub_resource_ |*tracks/5/imported* |`false`
+|_sub_resource_ |*tracks/5/enabled* |`true`
+|_sub_resource_ |*tracks/5/path* |`NodePath("ChaptersContainer/Chapter_3:play_opening")`
+|_sub_resource_ |*tracks/5/interp* |`1`
+|_sub_resource_ |*tracks/5/loop_wrap* |`true`
+|_sub_resource_ |*tracks/5/keys* |`{
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/6/type* |`value`
+|_sub_resource_ |*tracks/6/imported* |`false`
+|_sub_resource_ |*tracks/6/enabled* |`true`
+|_sub_resource_ |*tracks/6/path* |`NodePath("ChaptersContainer/Chapter_4:play_opening")`
+|_sub_resource_ |*tracks/6/interp* |`1`
+|_sub_resource_ |*tracks/6/loop_wrap* |`true`
+|_sub_resource_ |*tracks/6/keys* |`{
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/7/type* |`value`
+|_sub_resource_ |*tracks/7/imported* |`false`
+|_sub_resource_ |*tracks/7/enabled* |`true`
+|_sub_resource_ |*tracks/7/path* |`NodePath("ChaptersContainer/Chapter_5:play_opening")`
+|_sub_resource_ |*tracks/7/interp* |`1`
+|_sub_resource_ |*tracks/7/loop_wrap* |`true`
+|_sub_resource_ |*tracks/7/keys* |`{
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/8/type* |`value`
+|_sub_resource_ |*tracks/8/imported* |`false`
+|_sub_resource_ |*tracks/8/enabled* |`true`
+|_sub_resource_ |*tracks/8/path* |`NodePath("ChaptersContainer/Chapter_6:play_opening")`
+|_sub_resource_ |*tracks/8/interp* |`1`
+|_sub_resource_ |*tracks/8/loop_wrap* |`true`
+|_sub_resource_ |*tracks/8/keys* |`{
+"times": PackedFloat32Array(0, 0.466666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/9/type* |`value`
+|_sub_resource_ |*tracks/9/imported* |`false`
+|_sub_resource_ |*tracks/9/enabled* |`true`
+|_sub_resource_ |*tracks/9/path* |`NodePath("ChaptersContainer/Chapter_7:play_opening")`
+|_sub_resource_ |*tracks/9/interp* |`1`
+|_sub_resource_ |*tracks/9/loop_wrap* |`true`
+|_sub_resource_ |*tracks/9/keys* |`{
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/10/type* |`value`
+|_sub_resource_ |*tracks/10/imported* |`false`
+|_sub_resource_ |*tracks/10/enabled* |`true`
+|_sub_resource_ |*tracks/10/path* |`NodePath("ChaptersContainer/Chapter_8:play_opening")`
+|_sub_resource_ |*tracks/10/interp* |`1`
+|_sub_resource_ |*tracks/10/loop_wrap* |`true`
+|_sub_resource_ |*tracks/10/keys* |`{
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/11/type* |`value`
+|_sub_resource_ |*tracks/11/imported* |`false`
+|_sub_resource_ |*tracks/11/enabled* |`false`
+|_sub_resource_ |*tracks/11/path* |`NodePath("ChaptersContainer/Chapter_0:visible")`
+|_sub_resource_ |*tracks/11/interp* |`1`
+|_sub_resource_ |*tracks/11/loop_wrap* |`true`
+|_sub_resource_ |*tracks/11/keys* |`{
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/12/type* |`value`
+|_sub_resource_ |*tracks/12/imported* |`false`
+|_sub_resource_ |*tracks/12/enabled* |`false`
+|_sub_resource_ |*tracks/12/path* |`NodePath("ChaptersContainer/Chapter_1:visible")`
+|_sub_resource_ |*tracks/12/interp* |`1`
+|_sub_resource_ |*tracks/12/loop_wrap* |`true`
+|_sub_resource_ |*tracks/12/keys* |`{
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/13/type* |`value`
+|_sub_resource_ |*tracks/13/imported* |`false`
+|_sub_resource_ |*tracks/13/enabled* |`false`
+|_sub_resource_ |*tracks/13/path* |`NodePath("ChaptersContainer/Chapter_2:visible")`
+|_sub_resource_ |*tracks/13/interp* |`1`
+|_sub_resource_ |*tracks/13/loop_wrap* |`true`
+|_sub_resource_ |*tracks/13/keys* |`{
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/14/type* |`value`
+|_sub_resource_ |*tracks/14/imported* |`false`
+|_sub_resource_ |*tracks/14/enabled* |`false`
+|_sub_resource_ |*tracks/14/path* |`NodePath("ChaptersContainer/Chapter_3:visible")`
+|_sub_resource_ |*tracks/14/interp* |`1`
+|_sub_resource_ |*tracks/14/loop_wrap* |`true`
+|_sub_resource_ |*tracks/14/keys* |`{
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/15/type* |`value`
+|_sub_resource_ |*tracks/15/imported* |`false`
+|_sub_resource_ |*tracks/15/enabled* |`false`
+|_sub_resource_ |*tracks/15/path* |`NodePath("ChaptersContainer/Chapter_4:visible")`
+|_sub_resource_ |*tracks/15/interp* |`1`
+|_sub_resource_ |*tracks/15/loop_wrap* |`true`
+|_sub_resource_ |*tracks/15/keys* |`{
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/16/type* |`value`
+|_sub_resource_ |*tracks/16/imported* |`false`
+|_sub_resource_ |*tracks/16/enabled* |`false`
+|_sub_resource_ |*tracks/16/path* |`NodePath("ChaptersContainer/Chapter_5:visible")`
+|_sub_resource_ |*tracks/16/interp* |`1`
+|_sub_resource_ |*tracks/16/loop_wrap* |`true`
+|_sub_resource_ |*tracks/16/keys* |`{
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/17/type* |`value`
+|_sub_resource_ |*tracks/17/imported* |`false`
+|_sub_resource_ |*tracks/17/enabled* |`false`
+|_sub_resource_ |*tracks/17/path* |`NodePath("ChaptersContainer/Chapter_6:visible")`
+|_sub_resource_ |*tracks/17/interp* |`1`
+|_sub_resource_ |*tracks/17/loop_wrap* |`true`
+|_sub_resource_ |*tracks/17/keys* |`{
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/18/type* |`value`
+|_sub_resource_ |*tracks/18/imported* |`false`
+|_sub_resource_ |*tracks/18/enabled* |`false`
+|_sub_resource_ |*tracks/18/path* |`NodePath("ChaptersContainer/Chapter_7:visible")`
+|_sub_resource_ |*tracks/18/interp* |`1`
+|_sub_resource_ |*tracks/18/loop_wrap* |`true`
+|_sub_resource_ |*tracks/18/keys* |`{
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/19/type* |`value`
+|_sub_resource_ |*tracks/19/imported* |`false`
+|_sub_resource_ |*tracks/19/enabled* |`false`
+|_sub_resource_ |*tracks/19/path* |`NodePath("ChaptersContainer/Chapter_8:visible")`
+|_sub_resource_ |*tracks/19/interp* |`1`
+|_sub_resource_ |*tracks/19/loop_wrap* |`true`
+|_sub_resource_ |*tracks/19/keys* |`{
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}`
+|_sub_resource_ |*tracks/20/type* |`value`
+|_sub_resource_ |*tracks/20/imported* |`false`
+|_sub_resource_ |*tracks/20/enabled* |`true`
+|_sub_resource_ |*tracks/20/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/20/interp* |`1`
+|_sub_resource_ |*tracks/20/loop_wrap* |`true`
+|_sub_resource_ |*tracks/20/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/21/type* |`value`
+|_sub_resource_ |*tracks/21/imported* |`false`
+|_sub_resource_ |*tracks/21/enabled* |`true`
+|_sub_resource_ |*tracks/21/path* |`NodePath(".:shown")`
+|_sub_resource_ |*tracks/21/interp* |`1`
+|_sub_resource_ |*tracks/21/loop_wrap* |`true`
+|_sub_resource_ |*tracks/21/keys* |`{
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_0`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1039, 648), Vector2(868, 600)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_1`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1064, 682), Vector2(847, 597)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_2`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1046, 389), Vector2(977, 374)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_3`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(843, 545), Vector2(962, 462)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_4`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(939, 674), Vector2(887, 757)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_5`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(752, 514), Vector2(949, 348)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_6`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(1156, 857), Vector2(704, 680)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_7`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1019, 404), Vector2(1040, 355)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*resource_name* |`zoom_pin_to_chapter_8`
+|_sub_resource_ |*length* |`0.5`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Pin:position")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1051, 612), Vector2(1060, 719)]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Pin:modulate")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Pin:visible")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*_data* |`{
+&"RESET": SubResource("Animation_xd314"),
+&"focus_pin_to_chapter_0": SubResource("Animation_ixcp1"),
+&"focus_pin_to_chapter_1": SubResource("Animation_2np7n"),
+&"focus_pin_to_chapter_2": SubResource("Animation_vneyf"),
+&"focus_pin_to_chapter_3": SubResource("Animation_d6maq"),
+&"focus_pin_to_chapter_4": SubResource("Animation_djc3h"),
+&"focus_pin_to_chapter_5": SubResource("Animation_3fjhn"),
+&"focus_pin_to_chapter_6": SubResource("Animation_5h1qr"),
+&"focus_pin_to_chapter_7": SubResource("Animation_rsrt1"),
+&"focus_pin_to_chapter_8": SubResource("Animation_rgj2u"),
+&"opening": SubResource("Animation_7ie5c"),
+&"zoom_pin_to_chapter_0": SubResource("Animation_87m8g"),
+&"zoom_pin_to_chapter_1": SubResource("Animation_spga3"),
+&"zoom_pin_to_chapter_2": SubResource("Animation_x660n"),
+&"zoom_pin_to_chapter_3": SubResource("Animation_dllxb"),
+&"zoom_pin_to_chapter_4": SubResource("Animation_45tdc"),
+&"zoom_pin_to_chapter_5": SubResource("Animation_tmoss"),
+&"zoom_pin_to_chapter_6": SubResource("Animation_lo7xx"),
+&"zoom_pin_to_chapter_7": SubResource("Animation_4mwqf"),
+&"zoom_pin_to_chapter_8": SubResource("Animation_pb67w")
+}`
+|_node_ |*layout_mode* |`3`
+|_node_ |*anchors_preset* |`15`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*anchor_bottom* |`1.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*grow_vertical* |`2`
+|_node_ |*script* |`ExtResource("1_k1tcw")`
+|_node_ |*layout_mode* |`1`
+|_node_ |*anchors_preset* |`-1`
+|_node_ |*anchor_left* |`0.469`
+|_node_ |*anchor_right* |`0.469`
+|_node_ |*offset_left* |`-100.48`
+|_node_ |*offset_top* |`-250.0`
+|_node_ |*offset_right* |`99.52`
+|_node_ |*offset_bottom* |`-50.0`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`1`
+|_node_ |*anchors_preset* |`10`
+|_node_ |*anchor_right* |`1.0`
+|_node_ |*offset_left* |`815.0`
+|_node_ |*offset_top* |`-250.0`
+|_node_ |*offset_right* |`817.0`
+|_node_ |*offset_bottom* |`-82.0`
+|_node_ |*grow_horizontal* |`2`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath(".")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_1")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_1")`
+|_node_ |*focus_previous* |`NodePath(".")`
+|_node_ |*resource* |`ExtResource("4_p776p")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_0")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_2")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_2")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_0")`
+|_node_ |*resource* |`ExtResource("5_nuakg")`
+|_node_ |*texture* |`ExtResource("3_6pmeh")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_1")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_3")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_3")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_1")`
+|_node_ |*resource* |`ExtResource("7_vbe55")`
+|_node_ |*texture* |`ExtResource("4_bn10p")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_2")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_4")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_4")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_2")`
+|_node_ |*resource* |`ExtResource("9_v7ooo")`
+|_node_ |*texture* |`ExtResource("5_fq7id")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_3")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_5")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_5")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_3")`
+|_node_ |*resource* |`ExtResource("11_mdrma")`
+|_node_ |*texture* |`ExtResource("6_x2qy8")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_4")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_6")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_6")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_4")`
+|_node_ |*resource* |`ExtResource("13_y01i1")`
+|_node_ |*texture* |`ExtResource("7_nb1nd")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_5")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_7")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_7")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_5")`
+|_node_ |*resource* |`ExtResource("15_hivwg")`
+|_node_ |*texture* |`ExtResource("8_xsadn")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_6")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_8")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath("../Chapter_8")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_6")`
+|_node_ |*resource* |`ExtResource("17_7yar7")`
+|_node_ |*texture* |`ExtResource("9_meg0j")`
+|_node_ |*layout_mode* |`2`
+|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_7")`
+|_node_ |*focus_neighbor_top* |`NodePath(".")`
+|_node_ |*focus_neighbor_right* |`NodePath(".")`
+|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
+|_node_ |*focus_next* |`NodePath(".")`
+|_node_ |*focus_previous* |`NodePath("../Chapter_7")`
+|_node_ |*resource* |`ExtResource("19_klsch")`
+|_node_ |*texture* |`ExtResource("11_o1xm2")`
+|_node_ |*visible* |`false`
+|_node_ |*position* |`Vector2(960, 540)`
+|_node_ |*texture* |`ExtResource("11_2qc6p")`
+|_node_ |*visible* |`false`
+|_node_ |*position* |`Vector2(903, 554)`
+|_node_ |*scale* |`Vector2(0.5, 0.5)`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*layout_mode* |`1`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*root_node* |`NodePath("../ChaptersContainer")`
+|_node_ |*libraries* |`{
+&"": SubResource("AnimationLibrary_c4ypt")
+}`
+|_node_ |*unique_name_in_owner* |`true`
+|_node_ |*libraries* |`{
+&"": SubResource("AnimationLibrary_wkduh")
+}`
+|===
+
+
+=== link:/scripts/src/beginning/chapters/chapters.gd[chapters.gd]
+
+```gdscript
+extends Control
+
+signal focused(idx: int)
+signal selected(idx: int)
+signal ui_backed
+
+@export var grab_focus_first : bool : set = set_grab_focus_first
+@export var play_opening := false : set = set_play_opening
+@export var current_plate : Plate = Plate.ROOT
+@export var shown : bool = false
+enum Plate { ROOT, MENU }
+const ICON_OFFSET := 164
+const INITIAL_CHAPTERS_X := 815
+var focused_chapter_idx : int = 0
+var selected_chapter_idx : int = -1
+
+
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('opening')
+	FocusHelper.set_neighbors_h(%ChaptersContainer.get_children())
+	for chapter in %ChaptersContainer.get_children():
+		chapter.focus_entered.connect(_on_chapater_focused.bind(chapter))
+	load_focused_chapter_to_menu()
+
+
+func setup_from_account_resource() -> void:
+	if not Current.account: return
+	var numbers = Current.account.chapters.map(func(c): return c.number)
+	for chapter in %ChaptersContainer.get_children():
+		var number = int(str(chapter.name)[-1])
+		if number == 0: continue
+		if not numbers.has(number): chapter.hide()
+
+
+func _input(event: InputEvent) -> void:
+	if not (shown && current_plate == Plate.ROOT): return
+	if event.is_action_pressed("ui_back"):
+		go_back()
+	elif event.is_action_pressed("ui_accept"):
+		go_foward()
+
+
+func go_back() -> void:
+	shown = false
+	%AnimationPlayer.play("RESET")
+	ui_backed.emit()
+
+
+func go_foward() -> void:
+	current_plate = Plate.MENU
+	selected.emit(focused_chapter_idx)
+
+
+func set_grab_focus_first(val: bool) -> void:
+	FocusHelper.grab_first(%ChaptersContainer, val)
+
+
+func set_play_opening(val: bool) -> void:
+	if val: %AnimationPlayer.play("opening")
+
+
+func focus_pin_to(idx: int) -> void:
+	var anim_name = "focus_pin_to_chapter_%s" % idx
+	if shown: %AnimationPlayer.play(anim_name)
+	else: %AnimationPlayer.queue(anim_name)
+
+
+func zoom_pin_to(idx: int) -> void:
+	var anim_name = "zoom_pin_to_chapter_%s" % idx
+	%AnimationPlayer.play(anim_name)
+
+
+func force_focus_return():
+	var target = get_chapter(focused_chapter_idx)
+	if not FocusHelper.is_focuesed(target):
+		target.focus_returned()
+
+
+func load_focused_chapter_to_menu():
+	var chapter = get_chapter(focused_chapter_idx)
+	%Menu.chapter_resource = chapter.resource
+
+
+func get_chapter(idx: int) -> Node:
+	return %ChaptersContainer.get_child(idx)
+
+
+func set_chapters_animation_offset() -> void:
+	var current_pos = %ChaptersContainer.position
+	var anim = %ChaptersAnimationPlayer.get_animation('selected')
+	var track_idx = anim.find_track('.:position', Animation.TrackType.TYPE_VALUE)
+	anim.track_set_key_value(track_idx, 0, current_pos)
+	var pos = anim.track_get_key_value(track_idx, 1)
+	pos.x = current_pos.x
+	anim.track_set_key_value(track_idx, 1, pos)
+	anim = %ChaptersAnimationPlayer.get_animation('unselected')
+	track_idx = anim.find_track('.:position', Animation.TrackType.TYPE_VALUE)
+	pos = anim.track_get_key_value(track_idx, 0)
+	pos.x = current_pos.x
+	anim.track_set_key_value(track_idx, 0, pos)
+	anim.track_set_key_value(track_idx, 1, current_pos)
+
+
+func _on_chapater_focused(chapter: Node) -> void:
+	var idx = int(str(chapter.name)[-1])
+	focused_chapter_idx = idx
+	%ChaptersContainer.position.x = INITIAL_CHAPTERS_X - (ICON_OFFSET * idx)
+	focus_pin_to(idx)
+	load_focused_chapter_to_menu()
+	focused.emit(idx)
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	if current_plate == Plate.ROOT:
+		force_focus_return()
+
+
+func _on_selected(idx: int) -> void:
+	%Menu.grab_focus_first = true
+	selected_chapter_idx = idx
+	zoom_pin_to(idx)
+	get_chapter(idx).selected()
+	set_chapters_animation_offset()
+	%ChaptersAnimationPlayer.play("selected")
+	current_plate = Plate.MENU
+
+
+func _on_menu_ui_backed() -> void:
+	if current_plate == Plate.MENU:
+		(func(): current_plate = Plate.ROOT).call_deferred()
+		get_chapter(selected_chapter_idx).unselected()
+		%ChaptersAnimationPlayer.play("unselected")
+		selected_chapter_idx = -1
+		force_focus_return()
+
+```

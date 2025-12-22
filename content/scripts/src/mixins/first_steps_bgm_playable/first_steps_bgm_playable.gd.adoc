@@ -1,0 +1,16 @@
+---
+title: res://src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd
+---
+:toc:
+
+== src / mixins / first_steps_bgm_playable / first_steps_bgm_playable.gd
+
+```gdscript
+extends Node
+class_name FirstStepsBGMPlayable
+
+
+func _ready() -> void:
+	BGM.first_steps()
+
+```

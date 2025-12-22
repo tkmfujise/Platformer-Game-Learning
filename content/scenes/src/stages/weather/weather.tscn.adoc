@@ -1,0 +1,55 @@
+---
+title: src/stages/weather/weather.tscn
+---
+:toc:
+
+== src / stages / weather / weather.tscn
+
+=== Diagram
+[plantuml]
+....
+class ROOT as "Weather" <<Node2D>> {
+---
+  + _process()
+  + current_camera()
+}
+class Snow as "Snow" <<Node2D>> {
+}
+ROOT --o Snow
+left to right direction
+
+....
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Weather# [.node-type.type-2d]#Node2D#
+** [.node-name.type-2d]#Snow# [.node-type.type-2d]#link:/scenes/src/stages/weather/snow/snow.tscn[res://src/stages/weather/snow/snow.tscn]#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
+|_node_ |*script* |`ExtResource("1_r378c")`
+|===
+
+
+=== link:/scripts/src/stages/weather/weather.gd[weather.gd]
+
+```gdscript
+extends Node2D
+
+
+func _process(_delta: float) -> void:
+	var camera = current_camera()
+	if camera: global_position = camera.global_position
+
+
+func current_camera() -> Camera2D:
+	return get_viewport().get_camera_2d()
+
+```
