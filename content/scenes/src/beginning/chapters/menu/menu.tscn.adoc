@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/menu.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Menu" <<Control>> {
+class ROOT as "Menu" <<(C,lightgreen) Control>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -42,47 +42,47 @@ class ROOT as "Menu" <<Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class BannerBox as "BannerBox" <<Control>> {
+class BannerBox as "BannerBox" <<(C,lightgreen) Control>> {
 }
-class BannerBox_ChapterNumber as "ChapterNumber" <<Label>> {
+class BannerBox_ChapterNumber as "ChapterNumber" <<(L,lightgreen) Label>> {
 }
-class BannerBox_ChapterName as "ChapterName" <<Label>> {
+class BannerBox_ChapterName as "ChapterName" <<(L,lightgreen) Label>> {
 }
-class Box as "Box" <<NinePatchRect>> {
+class Box as "Box" <<(N,lightgreen) NinePatchRect>> {
 }
-class Banner as "Banner" <<Sprite2D>> {
+class Banner as "Banner" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection as "SideSelection" <<Node2D>> {
+class SideSelection as "SideSelection" <<(N,lightskyblue) Node2D>> {
 }
-class SideSelection_CenterBox as "CenterBox" <<Control>> {
+class SideSelection_CenterBox as "CenterBox" <<(C,lightgreen) Control>> {
 }
-class SideSelection_CenterBox_BlueHeartIcon as "BlueHeartIcon" <<Sprite2D>> {
+class SideSelection_CenterBox_BlueHeartIcon as "BlueHeartIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_StrawberryIcon as "StrawberryIcon" <<Sprite2D>> {
+class SideSelection_CenterBox_StrawberryIcon as "StrawberryIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_MultiplicationStrawberry as "MultiplicationStrawberry" <<Sprite2D>> {
+class SideSelection_CenterBox_MultiplicationStrawberry as "MultiplicationStrawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer as "StrawberryCountContainer" <<HBoxContainer>> {
+class SideSelection_CenterBox_StrawberryCountContainer as "StrawberryCountContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<Label>> {
+class SideSelection_CenterBox_StrawberryCountContainer_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer_Slash as "Slash" <<Label>> {
+class SideSelection_CenterBox_StrawberryCountContainer_Slash as "Slash" <<(L,lightgreen) Label>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer_MaxStrawberryCount as "MaxStrawberryCount" <<Label>> {
+class SideSelection_CenterBox_StrawberryCountContainer_MaxStrawberryCount as "MaxStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class SideSelection_CenterBox_FailureIcon as "FailureIcon" <<Sprite2D>> {
+class SideSelection_CenterBox_FailureIcon as "FailureIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_MultiplicationStrawberry2 as "MultiplicationStrawberry2" <<Sprite2D>> {
+class SideSelection_CenterBox_MultiplicationStrawberry2 as "MultiplicationStrawberry2" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_FailureCount as "FailureCount" <<Label>> {
+class SideSelection_CenterBox_FailureCount as "FailureCount" <<(L,lightgreen) Label>> {
 }
-class SideSelection_BottomBox as "BottomBox" <<Control>> {
+class SideSelection_BottomBox as "BottomBox" <<(C,lightgreen) Control>> {
 }
-class SideSelection_BottomBox_Label as "Label" <<Label>> {
+class SideSelection_BottomBox_Label as "Label" <<(L,lightgreen) Label>> {
 }
-class SideSelection_SideButtonContainer as "SideButtonContainer" <<BoxContainer>> {
+class SideSelection_SideButtonContainer as "SideButtonContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class SideSelection_SideButtonContainer_ClimbBookmark as "ClimbBookmark" <<MarginContainer>> {
+class SideSelection_SideButtonContainer_ClimbBookmark as "ClimbBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -92,7 +92,7 @@ class SideSelection_SideButtonContainer_ClimbBookmark as "ClimbBookmark" <<Margi
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class SideSelection_SideButtonContainer_CassetteBookmark as "CassetteBookmark" <<MarginContainer>> {
+class SideSelection_SideButtonContainer_CassetteBookmark as "CassetteBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -102,19 +102,19 @@ class SideSelection_SideButtonContainer_CassetteBookmark as "CassetteBookmark" <
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class SideSelection_SideButtonContainer_CassetteBookmark_Bookmark_Sprite2D as "Sprite2D" <<Node>> {
+class SideSelection_SideButtonContainer_CassetteBookmark_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection as "StageSelection" <<Node2D>> {
+class StageSelection as "StageSelection" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_BottomBox as "BottomBox" <<Control>> {
+class StageSelection_BottomBox as "BottomBox" <<(C,lightgreen) Control>> {
 }
-class StageSelection_BottomBox_StageLabel as "StageLabel" <<Label>> {
+class StageSelection_BottomBox_StageLabel as "StageLabel" <<(L,lightgreen) Label>> {
 }
-class StageSelection_Photos as "Photos" <<Node2D>> {
+class StageSelection_Photos as "Photos" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_Photos_Template as "Template" <<Node2D>> {
+class StageSelection_Photos_Template as "Template" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_Photos_Template_Photo as "Photo" <<Sprite2D>> {
+class StageSelection_Photos_Template_Photo as "Photo" <<(S,lightskyblue) Sprite2D>> {
   * flicked
   * image
 ---
@@ -122,11 +122,11 @@ class StageSelection_Photos_Template_Photo as "Photo" <<Sprite2D>> {
   + flick()
   + pull()
 }
-class StageSelection_Photos_PhotoInstances as "PhotoInstances" <<Node2D>> {
+class StageSelection_Photos_PhotoInstances as "PhotoInstances" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_StageButtonContainer as "StageButtonContainer" <<HBoxContainer>> {
+class StageSelection_StageButtonContainer as "StageButtonContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class StageSelection_StageButtonContainer_Stage1Button as "Stage1Button" <<MarginContainer>> {
+class StageSelection_StageButtonContainer_Stage1Button as "Stage1Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -136,11 +136,11 @@ class StageSelection_StageButtonContainer_Stage1Button as "Stage1Button" <<Margi
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage1Button_Bookmark as "Bookmark" <<Node>> {
+class StageSelection_StageButtonContainer_Stage1Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage1Button_Bookmark_Sprite2D as "Sprite2D" <<Node>> {
+class StageSelection_StageButtonContainer_Stage1Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage2Button as "Stage2Button" <<MarginContainer>> {
+class StageSelection_StageButtonContainer_Stage2Button as "Stage2Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -150,11 +150,11 @@ class StageSelection_StageButtonContainer_Stage2Button as "Stage2Button" <<Margi
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage2Button_Bookmark as "Bookmark" <<Node>> {
+class StageSelection_StageButtonContainer_Stage2Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage2Button_Bookmark_Sprite2D as "Sprite2D" <<Node>> {
+class StageSelection_StageButtonContainer_Stage2Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage3Button as "Stage3Button" <<MarginContainer>> {
+class StageSelection_StageButtonContainer_Stage3Button as "Stage3Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -164,11 +164,11 @@ class StageSelection_StageButtonContainer_Stage3Button as "Stage3Button" <<Margi
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage3Button_Bookmark as "Bookmark" <<Node>> {
+class StageSelection_StageButtonContainer_Stage3Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage3Button_Bookmark_Sprite2D as "Sprite2D" <<Node>> {
+class StageSelection_StageButtonContainer_Stage3Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage4Button as "Stage4Button" <<MarginContainer>> {
+class StageSelection_StageButtonContainer_Stage4Button as "Stage4Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -178,11 +178,11 @@ class StageSelection_StageButtonContainer_Stage4Button as "Stage4Button" <<Margi
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage4Button_Bookmark as "Bookmark" <<Node>> {
+class StageSelection_StageButtonContainer_Stage4Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage4Button_Bookmark_Sprite2D as "Sprite2D" <<Node>> {
+class StageSelection_StageButtonContainer_Stage4Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage5Button as "Stage5Button" <<MarginContainer>> {
+class StageSelection_StageButtonContainer_Stage5Button as "Stage5Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -192,18 +192,18 @@ class StageSelection_StageButtonContainer_Stage5Button as "Stage5Button" <<Margi
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage5Button_Bookmark as "Bookmark" <<Node>> {
+class StageSelection_StageButtonContainer_Stage5Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage5Button_Bookmark_Sprite2D as "Sprite2D" <<Node>> {
+class StageSelection_StageButtonContainer_Stage5Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ClosingCurtain as "ClosingCurtain" <<Control>> {
+class ClosingCurtain as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
 ---
   + play()
   + _on_animation_player_animation_finished()
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o BannerBox
 ROOT --o Box

@@ -8,14 +8,14 @@ title: src/player/ghost_effect/ghost_effect.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "GhostEffect" <<Node2D>> {
+class ROOT as "GhostEffect" <<(N,lightskyblue) Node2D>> {
   - ALIVE_TIME
   * rest_time
 ---
   + spawn()
   + _process()
 }
-class Sprite2D as "Sprite2D" <<Sprite2D>> {
+class Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
 ROOT --o Sprite2D
 left to right direction

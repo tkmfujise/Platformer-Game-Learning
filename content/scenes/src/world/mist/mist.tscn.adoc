@@ -8,9 +8,9 @@ title: src/world/mist/mist.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Mist" <<Node2D>> {
+class ROOT as "Mist" <<(N,lightskyblue) Node2D>> {
 }
-class Sprite2D as "Sprite2D" <<Sprite2D>> {
+class Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
 ROOT --o Sprite2D
 left to right direction

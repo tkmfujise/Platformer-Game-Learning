@@ -8,11 +8,11 @@ title: src/world/pin/pin.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Pin" <<Node2D>> {
+class ROOT as "Pin" <<(N,lightskyblue) Node2D>> {
 }
-class Background as "Background" <<Sprite2D>> {
+class Background as "Background" <<(S,lightskyblue) Sprite2D>> {
 }
-class Player as "Player" <<AnimatedSprite2D>> {
+class Player as "Player" <<(A,lightskyblue) AnimatedSprite2D>> {
 }
 ROOT --o Background
 ROOT --o Player

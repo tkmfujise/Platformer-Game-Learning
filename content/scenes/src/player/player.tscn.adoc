@@ -8,7 +8,7 @@ title: src/player/player.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Player" <<CharacterBody2D>> {
+class ROOT as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
 ---
   - SPEED
@@ -41,33 +41,33 @@ class ROOT as "Player" <<CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class Sprites as "Sprites" <<Node2D>> {
+class Sprites as "Sprites" <<(N,lightskyblue) Node2D>> {
 }
-class Sprites_SpriteStates as "SpriteStates" <<Node2D>> {
+class Sprites_SpriteStates as "SpriteStates" <<(N,lightskyblue) Node2D>> {
 }
-class Sprites_SpriteStates_IdleSprite2D as "IdleSprite2D" <<Sprite2D>> {
+class Sprites_SpriteStates_IdleSprite2D as "IdleSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteStates_RunSprite2D as "RunSprite2D" <<Sprite2D>> {
+class Sprites_SpriteStates_RunSprite2D as "RunSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteStates_JumpSprite2D as "JumpSprite2D" <<Sprite2D>> {
+class Sprites_SpriteStates_JumpSprite2D as "JumpSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteStates_FallSprite2D as "FallSprite2D" <<Sprite2D>> {
+class Sprites_SpriteStates_FallSprite2D as "FallSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteEffects as "SpriteEffects" <<Node2D>> {
+class Sprites_SpriteEffects as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
 }
-class Sprites_SpriteEffects_BurstSprite2D as "BurstSprite2D" <<Sprite2D>> {
+class Sprites_SpriteEffects_BurstSprite2D as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class FailureCollision as "FailureCollision" <<Area2D>> {
+class FailureCollision as "FailureCollision" <<(A,lightskyblue) Area2D>> {
 }
-class FailureCollision_CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class FailureCollision_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class FrameSubject as "FrameSubject" <<Area2D>> {
+class FrameSubject as "FrameSubject" <<(A,lightskyblue) Area2D>> {
 }
-class FrameSubject_CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class FrameSubject_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class Camera as "Camera" <<Camera2D>> {
+class Camera as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position
@@ -80,9 +80,9 @@ class Camera as "Camera" <<Camera2D>> {
   + shake()
   + shaking()
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-class AnimationTree as "AnimationTree" <<AnimationTree>> {
+class AnimationTree as "AnimationTree" <<(A,darkgray) AnimationTree>> {
 }
 ROOT --o Sprites
 ROOT --o CollisionShape2D

@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/photo/photo.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Photo" <<Sprite2D>> {
+class ROOT as "Photo" <<(S,lightskyblue) Sprite2D>> {
   * flicked
   * image
 ---
@@ -16,25 +16,25 @@ class ROOT as "Photo" <<Sprite2D>> {
   + flick()
   + pull()
 }
-class Frame as "Frame" <<Polygon2D>> {
+class Frame as "Frame" <<(P,lightskyblue) Polygon2D>> {
 }
-class Frame_Image as "Image" <<Sprite2D>> {
+class Frame_Image as "Image" <<(S,lightskyblue) Sprite2D>> {
 }
-class Strawberries as "Strawberries" <<HBoxContainer>> {
+class Strawberries as "Strawberries" <<(H,lightgreen) HBoxContainer>> {
 }
-class Strawberries_Strawberry1 as "Strawberry1" <<MarginContainer>> {
+class Strawberries_Strawberry1 as "Strawberry1" <<(M,lightgreen) MarginContainer>> {
 }
-class Strawberries_Strawberry1_Strawberry as "Strawberry" <<Sprite2D>> {
+class Strawberries_Strawberry1_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class Strawberries_Strawberry2 as "Strawberry2" <<MarginContainer>> {
+class Strawberries_Strawberry2 as "Strawberry2" <<(M,lightgreen) MarginContainer>> {
 }
-class Strawberries_Strawberry2_Strawberry as "Strawberry" <<Sprite2D>> {
+class Strawberries_Strawberry2_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class Strawberries_Strawberry3 as "Strawberry3" <<MarginContainer>> {
+class Strawberries_Strawberry3 as "Strawberry3" <<(M,lightgreen) MarginContainer>> {
 }
-class Strawberries_Strawberry3_Strawberry as "Strawberry" <<Sprite2D>> {
+class Strawberries_Strawberry3_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o Frame
 ROOT --o Strawberries

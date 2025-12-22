@@ -8,7 +8,7 @@ title: src/beginning/chapters/chapters.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Chapters" <<Control>> {
+class ROOT as "Chapters" <<(C,lightgreen) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -40,11 +40,11 @@ class ROOT as "Chapters" <<Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class Banner as "Banner" <<TextureRect>> {
+class Banner as "Banner" <<(T,lightgreen) TextureRect>> {
 }
-class ChaptersContainer as "ChaptersContainer" <<HBoxContainer>> {
+class ChaptersContainer as "ChaptersContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class ChaptersContainer_Chapter_0 as "Chapter_0" <<MarginContainer>> {
+class ChaptersContainer_Chapter_0 as "Chapter_0" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -55,7 +55,7 @@ class ChaptersContainer_Chapter_0 as "Chapter_0" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_1 as "Chapter_1" <<MarginContainer>> {
+class ChaptersContainer_Chapter_1 as "Chapter_1" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -66,9 +66,9 @@ class ChaptersContainer_Chapter_1 as "Chapter_1" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_1_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_1_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_2 as "Chapter_2" <<MarginContainer>> {
+class ChaptersContainer_Chapter_2 as "Chapter_2" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -79,9 +79,9 @@ class ChaptersContainer_Chapter_2 as "Chapter_2" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_2_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_2_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_3 as "Chapter_3" <<MarginContainer>> {
+class ChaptersContainer_Chapter_3 as "Chapter_3" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -92,9 +92,9 @@ class ChaptersContainer_Chapter_3 as "Chapter_3" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_3_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_3_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_4 as "Chapter_4" <<MarginContainer>> {
+class ChaptersContainer_Chapter_4 as "Chapter_4" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -105,9 +105,9 @@ class ChaptersContainer_Chapter_4 as "Chapter_4" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_4_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_4_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_5 as "Chapter_5" <<MarginContainer>> {
+class ChaptersContainer_Chapter_5 as "Chapter_5" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -118,9 +118,9 @@ class ChaptersContainer_Chapter_5 as "Chapter_5" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_5_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_5_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_6 as "Chapter_6" <<MarginContainer>> {
+class ChaptersContainer_Chapter_6 as "Chapter_6" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -131,9 +131,9 @@ class ChaptersContainer_Chapter_6 as "Chapter_6" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_6_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_6_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_7 as "Chapter_7" <<MarginContainer>> {
+class ChaptersContainer_Chapter_7 as "Chapter_7" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -144,9 +144,9 @@ class ChaptersContainer_Chapter_7 as "Chapter_7" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_7_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_7_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ChaptersContainer_Chapter_8 as "Chapter_8" <<MarginContainer>> {
+class ChaptersContainer_Chapter_8 as "Chapter_8" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -157,13 +157,13 @@ class ChaptersContainer_Chapter_8 as "Chapter_8" <<MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class ChaptersContainer_Chapter_8_Sprite2D as "Sprite2D" <<Node>> {
+class ChaptersContainer_Chapter_8_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class Grid1920x1080 as "Grid1920x1080" <<Sprite2D>> {
+class Grid1920x1080 as "Grid1920x1080" <<(S,lightskyblue) Sprite2D>> {
 }
-class Pin as "Pin" <<Node2D>> {
+class Pin as "Pin" <<(N,lightskyblue) Node2D>> {
 }
-class Menu as "Menu" <<Control>> {
+class Menu as "Menu" <<(C,lightgreen) Control>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -197,9 +197,9 @@ class Menu as "Menu" <<Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class ChaptersAnimationPlayer as "ChaptersAnimationPlayer" <<AnimationPlayer>> {
+class ChaptersAnimationPlayer as "ChaptersAnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o Banner
 ROOT --o ChaptersContainer

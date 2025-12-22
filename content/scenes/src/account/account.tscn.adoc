@@ -8,7 +8,7 @@ title: src/account/account.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Account" <<BoxContainer>> {
+class ROOT as "Account" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -37,141 +37,141 @@ class ROOT as "Account" <<BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class VBoxContainer as "VBoxContainer" <<VBoxContainer>> {
+class VBoxContainer as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class VBoxContainer_MainContainer as "MainContainer" <<MarginContainer>> {
+class VBoxContainer_MainContainer as "MainContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class VBoxContainer_MainContainer_Background as "Background" <<ColorRect>> {
+class VBoxContainer_MainContainer_Background as "Background" <<(C,lightgreen) ColorRect>> {
 }
-class VBoxContainer_MainContainer_TicketContainer as "TicketContainer" <<BoxContainer>> {
+class VBoxContainer_MainContainer_TicketContainer as "TicketContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot as "TicketRoot" <<Node2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot as "TicketRoot" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_Tikect as "Tikect" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_Tikect as "Tikect" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder as "TicketSummaryPlaceholder" <<Control>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder as "TicketSummaryPlaceholder" <<(C,lightgreen) Control>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder_Label as "Label" <<Label>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder_Label as "Label" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary as "TicketSummary" <<Node2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary as "TicketSummary" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Skull as "Skull" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Skull as "Skull" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Multiplication as "Multiplication" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Multiplication as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot as "ControlRoot" <<Control>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot as "ControlRoot" <<(C,lightgreen) Control>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalFailureCount as "TotalFailureCount" <<Label>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalFailureCount as "TotalFailureCount" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalPlayTime as "TotalPlayTime" <<Label>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalPlayTime as "TotalPlayTime" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder as "CassettesPlaceholder" <<Node2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder as "CassettesPlaceholder" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette1 as "Cassette1" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette1 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette2 as "Cassette2" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette2 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette3 as "Cassette3" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette3 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette4 as "Cassette4" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette4 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette5 as "Cassette5" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette5 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette6 as "Cassette6" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette6 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette7 as "Cassette7" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette7 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette8 as "Cassette8" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette8 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older as "BlueHeartsPlaceh1older" <<Node2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older as "BlueHeartsPlaceh1older" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart1 as "BlueHeart1" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart1 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart2 as "BlueHeart2" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart2 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart3 as "BlueHeart3" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart3 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart4 as "BlueHeart4" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart4 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart5 as "BlueHeart5" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart5 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart6 as "BlueHeart6" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart6 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart7 as "BlueHeart7" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart7 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart8 as "BlueHeart8" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart8 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes as "ObtainedCassettes" <<Node2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes as "ObtainedCassettes" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette1 as "Cassette1" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette1 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette2 as "Cassette2" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette2 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette3 as "Cassette3" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette3 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette4 as "Cassette4" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette4 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette5 as "Cassette5" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette5 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette6 as "Cassette6" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette6 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette7 as "Cassette7" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette7 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette8 as "Cassette8" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette8 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts as "ObtainedBlueHearts" <<Node2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts as "ObtainedBlueHearts" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart1 as "BlueHeart1" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart1 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart2 as "BlueHeart2" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart2 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart3 as "BlueHeart3" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart3 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart4 as "BlueHeart4" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart4 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart5 as "BlueHeart5" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart5 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart6 as "BlueHeart6" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart6 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart7 as "BlueHeart7" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart7 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart8 as "BlueHeart8" <<Sprite2D>> {
+class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart8 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer as "CoverContainer" <<BoxContainer>> {
+class VBoxContainer_MainContainer_CoverContainer as "CoverContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot as "CoverRoot" <<Node2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot as "CoverRoot" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_TikectCover as "TikectCover" <<Sprite2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_TikectCover as "TikectCover" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary as "CoverSummary" <<Node2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary as "CoverSummary" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Face as "Face" <<Sprite2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Face as "Face" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeLeftTop as "SellotapeLeftTop" <<Sprite2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeLeftTop as "SellotapeLeftTop" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeRightBottom as "SellotapeRightBottom" <<Sprite2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeRightBottom as "SellotapeRightBottom" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_FacePhotoMask as "FacePhotoMask" <<PointLight2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_FacePhotoMask as "FacePhotoMask" <<(P,lightskyblue) PointLight2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Strawberry as "Strawberry" <<Sprite2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Multiplication as "Multiplication" <<Sprite2D>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Multiplication as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot as "ControlRoot" <<Control>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot as "ControlRoot" <<(C,lightgreen) Control>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_PlayerName as "PlayerName" <<Label>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_PlayerName as "PlayerName" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_LatestChapterName as "LatestChapterName" <<Label>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_LatestChapterName as "LatestChapterName" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<Label>> {
+class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MenuContainer as "MenuContainer" <<MarginContainer>> {
+class VBoxContainer_MenuContainer as "MenuContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer as "VBoxContainer" <<VBoxContainer>> {
+class VBoxContainer_MenuContainer_VBoxContainer as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer as "GetStartedContainer" <<BoxContainer>> {
+class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer as "GetStartedContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton as "GetStartedButton" <<Button>> {
+class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton as "GetStartedButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -185,9 +185,9 @@ class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedBu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer as "ChangeNameContainer" <<BoxContainer>> {
+class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer as "ChangeNameContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameButton as "ChangeNameButton" <<Button>> {
+class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameButton as "ChangeNameButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -201,9 +201,9 @@ class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameBu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer as "AssistModeContainer" <<BoxContainer>> {
+class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer as "AssistModeContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeButton as "AssistModeButton" <<Button>> {
+class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeButton as "AssistModeButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -217,7 +217,7 @@ class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeBu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o VBoxContainer
 ROOT --o AnimationPlayer

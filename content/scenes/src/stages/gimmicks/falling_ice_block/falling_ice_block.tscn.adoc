@@ -8,7 +8,7 @@ title: src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "FallingIceBlock" <<RigidBody2D>> {
+class ROOT as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 ---
   + _ready()
   + fall()
@@ -16,19 +16,19 @@ class ROOT as "FallingIceBlock" <<RigidBody2D>> {
   + _on_detection_area_2d_body_entered()
   + _on_failed()
 }
-class Sprite2D as "Sprite2D" <<Sprite2D>> {
+class Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class FailureCollision as "FailureCollision" <<Area2D>> {
+class FailureCollision as "FailureCollision" <<(A,lightskyblue) Area2D>> {
 }
-class FailureCollision_CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class FailureCollision_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class DetectionArea2D as "DetectionArea2D" <<Area2D>> {
+class DetectionArea2D as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
 }
-class DetectionArea2D_CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class DetectionArea2D_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o Sprite2D
 ROOT --o CollisionShape2D

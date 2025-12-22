@@ -8,7 +8,7 @@ title: src/beginning/screen/screen.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Screen" <<Control>> {
+class ROOT as "Screen" <<(C,lightgreen) Control>> {
   * MenuScenePath
   * current_animation
 ---
@@ -18,39 +18,39 @@ class ROOT as "Screen" <<Control>> {
   + _on_animation_tree_animation_started()
   + _on_animation_tree_animation_finished()
 }
-class Background as "Background" <<ColorRect>> {
+class Background as "Background" <<(C,lightgreen) ColorRect>> {
 }
-class Author as "Author" <<Control>> {
+class Author as "Author" <<(C,lightgreen) Control>> {
 }
-class Author_Container as "Container" <<VBoxContainer>> {
+class Author_Container as "Container" <<(V,lightgreen) VBoxContainer>> {
 }
-class Author_Container_NameContainer as "NameContainer" <<MarginContainer>> {
+class Author_Container_NameContainer as "NameContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class Author_Container_NameContainer_Name as "Name" <<Label>> {
+class Author_Container_NameContainer_Name as "Name" <<(L,lightgreen) Label>> {
 }
-class Author_Container_Presents as "Presents" <<Label>> {
+class Author_Container_Presents as "Presents" <<(L,lightgreen) Label>> {
 }
-class Title as "Title" <<Control>> {
+class Title as "Title" <<(C,lightgreen) Control>> {
 }
-class Title_TitleContainer as "TitleContainer" <<CenterContainer>> {
+class Title_TitleContainer as "TitleContainer" <<(C,lightgreen) CenterContainer>> {
 }
-class Title_TitleContainer_TitleLogo as "TitleLogo" <<Sprite2D>> {
+class Title_TitleContainer_TitleLogo as "TitleLogo" <<(S,lightskyblue) Sprite2D>> {
 }
-class Title_ButtonContainer as "ButtonContainer" <<MarginContainer>> {
+class Title_ButtonContainer as "ButtonContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class Title_ButtonContainer_JoyAButton as "JoyAButton" <<Sprite2D>> {
+class Title_ButtonContainer_JoyAButton as "JoyAButton" <<(S,lightskyblue) Sprite2D>> {
 }
-class SubViewportContainer as "SubViewportContainer" <<SubViewportContainer>> {
+class SubViewportContainer as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class SubViewportContainer_SubViewport as "SubViewport" <<SubViewport>> {
+class SubViewportContainer_SubViewport as "SubViewport" <<(S,darkgray) SubViewport>> {
 }
-class SubViewportContainer_SubViewport_Show as "Show" <<Node3D>> {
+class SubViewportContainer_SubViewport_Show as "Show" <<(N,hotpink) Node3D>> {
 }
-class Blinder as "Blinder" <<ColorRect>> {
+class Blinder as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-class AnimationTree as "AnimationTree" <<AnimationTree>> {
+class AnimationTree as "AnimationTree" <<(A,darkgray) AnimationTree>> {
 }
 ROOT --o Background
 ROOT --o Author

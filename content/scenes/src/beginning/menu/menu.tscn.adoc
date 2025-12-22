@@ -8,7 +8,7 @@ title: src/beginning/menu/menu.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Menu" <<Control>> {
+class ROOT as "Menu" <<(C,lightgreen) Control>> {
   * current_plate
   * grab_focus_root
 ---
@@ -25,13 +25,13 @@ class ROOT as "Menu" <<Control>> {
   + _on_chapters_focused()
   + _on_chapters_selected()
 }
-class SubViewportContainer as "SubViewportContainer" <<SubViewportContainer>> {
+class SubViewportContainer as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class SubViewportContainer_Snow as "Snow" <<Node2D>> {
+class SubViewportContainer_Snow as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class SubViewportContainer_SubViewport as "SubViewport" <<SubViewport>> {
+class SubViewportContainer_SubViewport as "SubViewport" <<(S,darkgray) SubViewport>> {
 }
-class SubViewportContainer_SubViewport_World as "World" <<Node3D>> {
+class SubViewportContainer_SubViewport_World as "World" <<(N,hotpink) Node3D>> {
   * CameraNode
 ---
   + back_to_circular_move()
@@ -42,19 +42,19 @@ class SubViewportContainer_SubViewport_World as "World" <<Node3D>> {
   + acute_angle()
   + _on_animation_player_animation_finished()
 }
-class RootContainer as "RootContainer" <<MarginContainer>> {
+class RootContainer as "RootContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class RootContainer_MenuContainer as "MenuContainer" <<VBoxContainer>> {
+class RootContainer_MenuContainer as "MenuContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class RootContainer_MenuContainer_ClimbContainer as "ClimbContainer" <<Node2D>> {
+class RootContainer_MenuContainer_ClimbContainer as "ClimbContainer" <<(N,lightskyblue) Node2D>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_LogoContainer as "LogoContainer" <<CenterContainer>> {
+class RootContainer_MenuContainer_ClimbContainer_LogoContainer as "LogoContainer" <<(C,lightgreen) CenterContainer>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_LogoContainer_Sprite2D as "Sprite2D" <<Sprite2D>> {
+class RootContainer_MenuContainer_ClimbContainer_LogoContainer_Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_ButtonContainer as "ButtonContainer" <<BoxContainer>> {
+class RootContainer_MenuContainer_ClimbContainer_ButtonContainer as "ButtonContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton as "ClimbButton" <<Button>> {
+class RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton as "ClimbButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -68,13 +68,13 @@ class RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton as 
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class RootContainer_MenuContainer_OthersContainer as "OthersContainer" <<Node2D>> {
+class RootContainer_MenuContainer_OthersContainer as "OthersContainer" <<(N,lightskyblue) Node2D>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer as "VBoxContainer" <<VBoxContainer>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer as "OptionsContainer" <<BoxContainer>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer as "OptionsContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer_OptionsButton as "OptionsButton" <<Button>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer_OptionsButton as "OptionsButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -88,9 +88,9 @@ class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer as "CreditsContainer" <<BoxContainer>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer as "CreditsContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer_CreditsButton as "CreditsButton" <<Button>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer_CreditsButton as "CreditsButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -104,9 +104,9 @@ class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer as "QuitContainer" <<BoxContainer>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer as "QuitContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_QuitButton as "QuitButton" <<Button>> {
+class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_QuitButton as "QuitButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -120,7 +120,7 @@ class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_Qu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class Accounts as "Accounts" <<MarginContainer>> {
+class Accounts as "Accounts" <<(M,lightgreen) MarginContainer>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -142,7 +142,7 @@ class Accounts as "Accounts" <<MarginContainer>> {
   + _on_account_get_started()
   + _on_account_focus_entered()
 }
-class Chapters as "Chapters" <<Control>> {
+class Chapters as "Chapters" <<(C,lightgreen) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -174,7 +174,7 @@ class Chapters as "Chapters" <<Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o SubViewportContainer
 ROOT --o RootContainer

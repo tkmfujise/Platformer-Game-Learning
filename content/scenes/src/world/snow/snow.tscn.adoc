@@ -8,11 +8,11 @@ title: src/world/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Snow" <<Node2D>> {
+class ROOT as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class ColorRect as "ColorRect" <<ColorRect>> {
+class ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class CPUParticles2D as "CPUParticles2D" <<CPUParticles2D>> {
+class CPUParticles2D as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
 }
 ROOT --o ColorRect
 ROOT --o CPUParticles2D

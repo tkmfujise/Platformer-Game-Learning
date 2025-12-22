@@ -8,19 +8,19 @@ title: src/main.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Main" <<Control>> {
+class ROOT as "Main" <<(C,lightgreen) Control>> {
 }
-class ColorRect as "ColorRect" <<ColorRect>> {
+class ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class World as "World" <<Node2D>> {
+class World as "World" <<(N,lightskyblue) Node2D>> {
 }
-class World_StaticBody2D as "StaticBody2D" <<StaticBody2D>> {
+class World_StaticBody2D as "StaticBody2D" <<(S,lightskyblue) StaticBody2D>> {
 }
-class World_StaticBody2D_ColorRect as "ColorRect" <<ColorRect>> {
+class World_StaticBody2D_ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class World_StaticBody2D_CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class World_StaticBody2D_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class World_Player as "Player" <<CharacterBody2D>> {
+class World_Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
 ---
   - SPEED
@@ -53,7 +53,7 @@ class World_Player as "Player" <<CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class FirstStepsBGMPlayable as "FirstStepsBGMPlayable" <<Node>> {
+class FirstStepsBGMPlayable as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
 ---
   + _ready()
 }

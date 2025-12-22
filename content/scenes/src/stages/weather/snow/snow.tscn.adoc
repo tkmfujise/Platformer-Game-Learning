@@ -8,9 +8,9 @@ title: src/stages/weather/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Snow" <<Node2D>> {
+class ROOT as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class CPUParticles2D as "CPUParticles2D" <<CPUParticles2D>> {
+class CPUParticles2D as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
 }
 ROOT --o CPUParticles2D
 left to right direction

@@ -8,12 +8,12 @@ title: src/stages/frame/camera_frame.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "CameraFrame" <<Area2D>> {
+class ROOT as "CameraFrame" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class CollisionShape2D as "CollisionShape2D" <<CollisionShape2D>> {
+class CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
 ROOT --o CollisionShape2D
 left to right direction

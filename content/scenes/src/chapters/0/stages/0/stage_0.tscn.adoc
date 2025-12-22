@@ -8,42 +8,42 @@ title: src/chapters/0/stages/0/stage_0.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Stage0" <<Control>> {
+class ROOT as "Stage0" <<(C,lightgreen) Control>> {
 ---
 }
-class OpeningCurtain as "OpeningCurtain" <<Control>> {
+class OpeningCurtain as "OpeningCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * center
 ---
   + set_center()
   + play()
 }
-class ColorRect as "ColorRect" <<ColorRect>> {
+class ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class Forest as "Forest" <<Node2D>> {
+class Forest as "Forest" <<(N,lightskyblue) Node2D>> {
 }
-class Frames as "Frames" <<Node2D>> {
+class Frames as "Frames" <<(N,lightskyblue) Node2D>> {
 }
-class Frames_CameralFrame as "CameralFrame" <<Area2D>> {
+class Frames_CameralFrame as "CameralFrame" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class Frames_CameraFrame2 as "CameraFrame2" <<Area2D>> {
+class Frames_CameraFrame2 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class Frames_CameraFrame3 as "CameraFrame3" <<Area2D>> {
+class Frames_CameraFrame3 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class StageGround0 as "StageGround0" <<TileMapLayer>> {
+class StageGround0 as "StageGround0" <<(T,darkgray) TileMapLayer>> {
 }
-class Gimmicks as "Gimmicks" <<Node2D>> {
+class Gimmicks as "Gimmicks" <<(N,lightskyblue) Node2D>> {
 }
-class Gimmicks_FallingIceBlock as "FallingIceBlock" <<RigidBody2D>> {
+class Gimmicks_FallingIceBlock as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 ---
   + _ready()
   + fall()
@@ -51,11 +51,11 @@ class Gimmicks_FallingIceBlock as "FallingIceBlock" <<RigidBody2D>> {
   + _on_detection_area_2d_body_entered()
   + _on_failed()
 }
-class FallZones as "FallZones" <<Node2D>> {
+class FallZones as "FallZones" <<(N,lightskyblue) Node2D>> {
 }
-class FallZones_FallZone as "FallZone" <<Node2D>> {
+class FallZones_FallZone as "FallZone" <<(N,lightskyblue) Node2D>> {
 }
-class Player as "Player" <<CharacterBody2D>> {
+class Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
 ---
   - SPEED
@@ -88,12 +88,12 @@ class Player as "Player" <<CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class Weather as "Weather" <<Node2D>> {
+class Weather as "Weather" <<(N,lightskyblue) Node2D>> {
 ---
   + _process()
   + current_camera()
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o OpeningCurtain
 ROOT --o ColorRect

@@ -8,24 +8,24 @@ title: src/curtain/closing/closing.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "ClosingCurtain" <<Control>> {
+class ROOT as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
 ---
   + play()
   + _on_animation_player_animation_finished()
 }
-class Pattern1 as "Pattern1" <<Node2D>> {
+class Pattern1 as "Pattern1" <<(N,lightskyblue) Node2D>> {
 }
-class Pattern1_LeftCurtain as "LeftCurtain" <<Polygon2D>> {
+class Pattern1_LeftCurtain as "LeftCurtain" <<(P,lightskyblue) Polygon2D>> {
 }
-class Pattern1_RightCurtain as "RightCurtain" <<Polygon2D>> {
+class Pattern1_RightCurtain as "RightCurtain" <<(P,lightskyblue) Polygon2D>> {
 }
-class Pattern2 as "Pattern2" <<ColorRect>> {
+class Pattern2 as "Pattern2" <<(C,lightgreen) ColorRect>> {
 }
-class Pattern3 as "Pattern3" <<ColorRect>> {
+class Pattern3 as "Pattern3" <<(C,lightgreen) ColorRect>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o Pattern1
 ROOT --o Pattern2

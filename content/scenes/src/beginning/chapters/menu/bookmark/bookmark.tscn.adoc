@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/bookmark/bookmark.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "BagBookmark" <<MarginContainer>> {
+class ROOT as "BagBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -18,11 +18,11 @@ class ROOT as "BagBookmark" <<MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class Bookmark as "Bookmark" <<Sprite2D>> {
+class Bookmark as "Bookmark" <<(S,lightskyblue) Sprite2D>> {
 }
-class Bookmark_Sprite2D as "Sprite2D" <<Sprite2D>> {
+class Bookmark_Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<AnimationPlayer>> {
+class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
 ROOT --o Bookmark
 ROOT --o AnimationPlayer
