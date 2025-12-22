@@ -38,3 +38,21 @@ end
 desc 'Alias for `rake watch`'
 task :w => :watch
 
+
+namespace :gh do
+  desc 'Setup for GitHub pages'
+  task :setup do
+    rm_r 'output'
+    sh 'git clone . output'
+    cd 'output' do
+      sh 'git checkout --orphan gh-pages'
+      sh 'git rm -rf .'
+      sh 'git commit --m 'Create gh-pages branch' --allow-empty'
+    end
+  end
+
+  desc 'Deploy to GitHub pages'
+  task :deploy do
+    sh 'bundle exec nanoc deploy'
+  end
+end
