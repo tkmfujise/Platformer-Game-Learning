@@ -20,6 +20,18 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 * link:/scenes/src/beginning/screen/screen.tscn[res://src/beginning/screen/screen.tscn]
 
 
+=== Autoloads
+[cols="1,3" options="header"]
+|===
+|Name |Path
+|_Preference_ |link:/scripts/autoloads/preference/preference.gd[res://autoloads/preference/preference.gd]
+|_BGM_ |link:/scenes/autoloads/bgm/bgm.tscn[res://autoloads/bgm/bgm.tscn]
+|_Panku_ |link:/scenes/addons/panku_console/console.tscn[res://addons/panku_console/console.tscn]
+|_KeyboardHandler_ |link:/scenes/autoloads/keyboard_handler/keyboard_handler.tscn[res://autoloads/keyboard_handler/keyboard_handler.tscn]
+|_Current_ |link:/scenes/autoloads/current/current.tscn[res://autoloads/current/current.tscn]
+|===
+
+
 === Properties
 [cols="1,1,3" options="header"]
 |===
