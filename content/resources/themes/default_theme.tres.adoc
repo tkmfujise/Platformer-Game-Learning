@@ -5,6 +5,9 @@ title: res://themes/default_theme.tres
 
 == themes / default_theme.tres
 
+=== Type
+* Theme
+
 === Properties
 [cols="1,1,3" options="header"]
 |===

@@ -5,6 +5,9 @@ title: res://data/chapters/chapter_2.tres
 
 == data / chapters / chapter_2.tres
 
+=== Type
+* ChapterResource (link:/scripts/resources/chapter_resource.gd[res://resources/chapter_resource.gd])
+
 === Properties
 [cols="1,1,3" options="header"]
 |===

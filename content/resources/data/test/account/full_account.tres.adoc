@@ -5,6 +5,9 @@ title: res://data/test/account/full_account.tres
 
 == data / test / account / full_account.tres
 
+=== Type
+* AccountResource (link:/scripts/resources/account_chapter_resource.gd[res://resources/account_chapter_resource.gd])
+
 === Properties
 [cols="1,1,3" options="header"]
 |===
