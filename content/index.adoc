@@ -17,7 +17,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 === Main Scene
-CAUTION: This project has no main scene.
+* link:/scenes/src/beginning/screen/screen.tscn[res://src/beginning/screen/screen.tscn]
+
 
 === Properties
 [cols="1,1,3" options="header"]
