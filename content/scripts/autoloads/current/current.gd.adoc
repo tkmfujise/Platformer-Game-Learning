@@ -5,6 +5,12 @@ title: res://autoloads/current/current.gd
 
 == autoloads / current / current.gd
 
+=== Attached Scenes
+* link:/scenes/autoloads/current/current.tscn[res://autoloads/current/current.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node
 #class_name Current

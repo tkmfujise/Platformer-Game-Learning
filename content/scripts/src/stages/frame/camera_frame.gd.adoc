@@ -5,6 +5,12 @@ title: res://src/stages/frame/camera_frame.gd
 
 == src / stages / frame / camera_frame.gd
 
+=== Attached Scenes
+* link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Area2D
 

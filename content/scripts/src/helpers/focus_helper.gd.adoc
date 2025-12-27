@@ -5,6 +5,11 @@ title: res://src/helpers/focus_helper.gd
 
 == src / helpers / focus_helper.gd
 
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
 ```gdscript
 extends Node
 class_name FocusHelper

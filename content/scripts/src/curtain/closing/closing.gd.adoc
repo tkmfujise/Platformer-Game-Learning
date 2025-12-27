@@ -5,6 +5,12 @@ title: res://src/curtain/closing/closing.gd
 
 == src / curtain / closing / closing.gd
 
+=== Attached Scenes
+* link:/scenes/src/curtain/closing/closing.tscn[res://src/curtain/closing/closing.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Control
 

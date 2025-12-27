@@ -5,6 +5,12 @@ title: res://autoloads/keyboard_handler/keyboard_handler.gd
 
 == autoloads / keyboard_handler / keyboard_handler.gd
 
+=== Attached Scenes
+* link:/scenes/autoloads/keyboard_handler/keyboard_handler.tscn[res://autoloads/keyboard_handler/keyboard_handler.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node
 #class_name KeyboardHandler # defined in autoloads

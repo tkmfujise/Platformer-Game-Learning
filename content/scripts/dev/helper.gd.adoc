@@ -5,6 +5,11 @@ title: res://dev/helper.gd
 
 == dev / helper.gd
 
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
 ```gdscript
 @tool
 extends EditorScript

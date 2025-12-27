@@ -5,6 +5,12 @@ title: res://src/stages/weather/weather.gd
 
 == src / stages / weather / weather.gd
 
+=== Attached Scenes
+* link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node2D
 

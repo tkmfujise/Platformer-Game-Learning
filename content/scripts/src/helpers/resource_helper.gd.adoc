@@ -5,6 +5,11 @@ title: res://src/helpers/resource_helper.gd
 
 == src / helpers / resource_helper.gd
 
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
 ```gdscript
 extends Node
 class_name ResourceHelper

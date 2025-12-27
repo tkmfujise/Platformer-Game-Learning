@@ -5,6 +5,12 @@ title: res://src/beginning/chapters/chapter/chapter.gd
 
 == src / beginning / chapters / chapter / chapter.gd
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/chapter/chapter.tscn[res://src/beginning/chapters/chapter/chapter.tscn]
+
+
+
+=== Code
 ```gdscript
 extends MarginContainer
 

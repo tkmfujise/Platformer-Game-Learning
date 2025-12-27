@@ -22,6 +22,7 @@ class World_StaticBody2D_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblu
 }
 class World_Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
+  ~ failed
 ---
   - SPEED
   - DASH_SPEED
@@ -38,7 +39,6 @@ class World_Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * grounding
   * is_failed
 ---
-  + _ready()
   + _physics_process()
   + animate()
   + vibrate()

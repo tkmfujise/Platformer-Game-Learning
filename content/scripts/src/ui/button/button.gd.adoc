@@ -5,6 +5,12 @@ title: res://src/ui/button/button.gd
 
 == src / ui / button / button.gd
 
+=== Attached Scenes
+* link:/scenes/src/ui/button/button.tscn[res://src/ui/button/button.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Button
 

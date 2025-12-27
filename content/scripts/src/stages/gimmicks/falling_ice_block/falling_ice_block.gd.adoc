@@ -5,12 +5,17 @@ title: res://src/stages/gimmicks/falling_ice_block/falling_ice_block.gd
 
 == src / stages / gimmicks / falling_ice_block / falling_ice_block.gd
 
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn]
+
+
+
+=== Code
 ```gdscript
 extends RigidBody2D
 
 
 func _ready() -> void:
-	GameEvent.falied.connect(_on_failed)
 	freeze = true
 
 
@@ -18,15 +23,7 @@ func fall() -> void:
 	freeze = false
 
 
-func stop() -> void:
-	freeze = true
-
-
 func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 	fall.call_deferred()
-
-
-func _on_failed() -> void:
-	stop.call_deferred()
 
 ```

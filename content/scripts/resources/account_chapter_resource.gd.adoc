@@ -5,6 +5,11 @@ title: res://resources/account_chapter_resource.gd
 
 == resources / account_chapter_resource.gd
 
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
 ```gdscript
 extends Resource
 class_name AccountChapterResource

@@ -5,6 +5,12 @@ title: res://src/beginning/chapters/menu/photo/photo.gd
 
 == src / beginning / chapters / menu / photo / photo.gd
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/menu/photo/photo.tscn[res://src/beginning/chapters/menu/photo/photo.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Sprite2D
 

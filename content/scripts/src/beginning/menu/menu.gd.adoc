@@ -5,6 +5,12 @@ title: res://src/beginning/menu/menu.gd
 
 == src / beginning / menu / menu.gd
 
+=== Attached Scenes
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Control
 

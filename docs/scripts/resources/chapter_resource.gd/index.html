@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-  <nav class="container">
+  <nav>
     <ul>
       <li><strong><a href="../../../">Platformer Game Learning</a></strong></li>
     </ul>
@@ -140,10 +140,6 @@
           </li>
         
           <li>
-            <a class="" href="../../../scenes/src/stages/fall_zone/fall_zone.tscn/">src/stages/fall_zone/fall_zone.tscn</a>
-          </li>
-        
-          <li>
             <a class="" href="../../../scenes/src/stages/frame/camera_frame.tscn/">src/stages/frame/camera_frame.tscn</a>
           </li>
         
@@ -192,10 +188,6 @@
         
           <li>
             <a class="" href="../../autoloads/current/current.gd/">autoloads/current/current.gd</a>
-          </li>
-        
-          <li>
-            <a class="" href="../../autoloads/game_event/game_event.gd/">autoloads/game_event/game_event.gd</a>
           </li>
         
           <li>
@@ -403,12 +395,35 @@
         <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_resources_chapter_resource_gd">resources / chapter_resource.gd</a></li>
+<li>
+<a href="#_resources_chapter_resource_gd">resources / chapter_resource.gd</a>
+<ul class="sectlevel2">
+<li><a href="#_attached_scenes">Attached Scenes</a></li>
+<li><a href="#_code">Code</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="sect1">
 <h2 id="_resources_chapter_resource_gd">resources / chapter_resource.gd</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_attached_scenes">Attached Scenes</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+No attached scenes.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code">Code</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Resource</span>
@@ -423,6 +438,7 @@
 
 <span class="k">func</span> <span class="nf">strawberry_count</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">:</span>
 	<span class="k">return</span> <span class="n">ArrayHelper</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">stages</span><span class="p">,</span> <span class="s2">'</span><span class="s1">strawberry_count'</span><span class="p">)</span></code></pre>
+</div>
 </div>
 </div>
 </div>

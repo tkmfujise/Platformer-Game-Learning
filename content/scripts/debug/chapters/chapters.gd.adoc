@@ -5,6 +5,12 @@ title: res://debug/chapters/chapters.gd
 
 == debug / chapters / chapters.gd
 
+=== Attached Scenes
+* link:/scenes/debug/chapters/chapters.tscn[res://debug/chapters/chapters.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Control
 

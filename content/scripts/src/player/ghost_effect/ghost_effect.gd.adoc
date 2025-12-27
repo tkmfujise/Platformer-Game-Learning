@@ -5,6 +5,12 @@ title: res://src/player/ghost_effect/ghost_effect.gd
 
 == src / player / ghost_effect / ghost_effect.gd
 
+=== Attached Scenes
+* link:/scenes/src/player/ghost_effect/ghost_effect.tscn[res://src/player/ghost_effect/ghost_effect.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node2D
 

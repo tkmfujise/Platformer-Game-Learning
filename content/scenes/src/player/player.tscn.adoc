@@ -10,6 +10,7 @@ title: src/player/player.tscn
 ....
 class ROOT as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
+  ~ failed
 ---
   - SPEED
   - DASH_SPEED
@@ -26,7 +27,6 @@ class ROOT as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * grounding
   * is_failed
 ---
-  + _ready()
   + _physics_process()
   + animate()
   + vibrate()
@@ -102,6 +102,7 @@ FailureCollision --o FailureCollision_CollisionShape2D
 FrameSubject --o FrameSubject_CollisionShape2D
 left to right direction
 ROOT::_on_dashed <-[#blue,thickness=2]- ROOT::dashed
+ROOT::_on_failed <-[#blue,thickness=2]- ROOT::failed
 ROOT::_on_failure_collision_area_entered <-[#blue,thickness=2]- FailureCollision::area_entered
 ROOT::_on_frame_subject_area_entered <-[#blue,thickness=2]- FrameSubject::area_entered
 ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_exited
@@ -134,6 +135,7 @@ ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_ex
 |===
 |From |Name |To |Method
 |_._ |*dashed* |_._ |`_on_dashed`
+|_._ |*failed* |_._ |`_on_failed`
 |_FailureCollision_ |*area_entered* |_._ |`_on_failure_collision_area_entered`
 |_FrameSubject_ |*area_entered* |_._ |`_on_frame_subject_area_entered`
 |_FrameSubject_ |*area_exited* |_._ |`_on_frame_subject_area_exited`
@@ -157,82 +159,6 @@ ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_ex
 |_sub_resource_ |*radius* |`22.0`
 |_sub_resource_ |*height* |`84.0`
 |_sub_resource_ |*size* |`Vector2(93, 123)`
-|_sub_resource_ |*length* |`0.001`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:visible")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:frame")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [11]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("Sprites/SpriteStates:modulate")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}`
-|_sub_resource_ |*resource_name* |`burst`
-|_sub_resource_ |*length* |`5.0`
-|_sub_resource_ |*step* |`0.05`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:visible")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0.45),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:frame")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0.4000001, 0.4500001, 0.49, 0.5000001, 0.55, 0.6, 0.65000004, 0.7, 0.75, 0.8, 0.85, 0.90000004, 0.95, 1, 1.0500001, 1.1, 1.15, 1.2, 1.25, 1.3000001, 1.35, 1.4, 1.45, 1.5, 1.5500001, 1.6, 1.65, 1.7, 1.75, 1.8000001, 1.85, 1.9, 1.95, 2, 2.05, 2.1000001, 2.15, 2.2, 2.25, 2.3, 2.3500001, 2.4, 2.45, 2.5, 2.55, 2.6000001, 2.65, 2.7, 2.75, 2.8, 2.8500001, 2.9, 2.95, 3, 3.05, 3.1000001, 3.15, 3.2, 3.25, 3.3, 3.3500001, 3.4, 3.45, 3.5, 3.55, 3.6000001, 3.65, 3.7, 3.75, 3.8, 3.8500001, 3.9, 3.95, 4, 4.05, 4.1, 4.15, 4.2000003, 4.25, 4.3, 4.35, 4.4, 4.4500003, 4.5, 4.55, 4.6, 4.65, 4.7000003, 4.75, 4.8, 4.85, 4.9, 4.9500003, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("Sprites/SpriteStates:modulate")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0, 0.25, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(14.814934, 14.814934, 14.814934, 1), Color(14.814934, 14.814934, 14.814934, 0)]
-}`
 |_sub_resource_ |*resource_name* |`fall_left`
 |_sub_resource_ |*length* |`0.25`
 |_sub_resource_ |*loop_mode* |`1`
@@ -925,6 +851,82 @@ ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_ex
 "update": 1,
 "values": [false]
 }`
+|_sub_resource_ |*resource_name* |`burst`
+|_sub_resource_ |*length* |`5.0`
+|_sub_resource_ |*step* |`0.05`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:visible")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:frame")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0.4000001, 0.4500001, 0.49, 0.5000001, 0.55, 0.6, 0.65000004, 0.7, 0.75, 0.8, 0.85, 0.90000004, 0.95, 1, 1.0500001, 1.1, 1.15, 1.2, 1.25, 1.3000001, 1.35, 1.4, 1.45, 1.5, 1.5500001, 1.6, 1.65, 1.7, 1.75, 1.8000001, 1.85, 1.9, 1.95, 2, 2.05, 2.1000001, 2.15, 2.2, 2.25, 2.3, 2.3500001, 2.4, 2.45, 2.5, 2.55, 2.6000001, 2.65, 2.7, 2.75, 2.8, 2.8500001, 2.9, 2.95, 3, 3.05, 3.1000001, 3.15, 3.2, 3.25, 3.3, 3.3500001, 3.4, 3.45, 3.5, 3.55, 3.6000001, 3.65, 3.7, 3.75, 3.8, 3.8500001, 3.9, 3.95, 4, 4.05, 4.1, 4.15, 4.2000003, 4.25, 4.3, 4.35, 4.4, 4.4500003, 4.5, 4.55, 4.6, 4.65, 4.7000003, 4.75, 4.8, 4.85, 4.9, 4.9500003, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Sprites/SpriteStates:modulate")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0, 0.25, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(14.814934, 14.814934, 14.814934, 1), Color(14.814934, 14.814934, 14.814934, 0)]
+}`
+|_sub_resource_ |*length* |`0.001`
+|_sub_resource_ |*tracks/0/type* |`value`
+|_sub_resource_ |*tracks/0/imported* |`false`
+|_sub_resource_ |*tracks/0/enabled* |`true`
+|_sub_resource_ |*tracks/0/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:visible")`
+|_sub_resource_ |*tracks/0/interp* |`1`
+|_sub_resource_ |*tracks/0/loop_wrap* |`true`
+|_sub_resource_ |*tracks/0/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}`
+|_sub_resource_ |*tracks/1/type* |`value`
+|_sub_resource_ |*tracks/1/imported* |`false`
+|_sub_resource_ |*tracks/1/enabled* |`true`
+|_sub_resource_ |*tracks/1/path* |`NodePath("Sprites/SpriteEffects/BurstSprite2D:frame")`
+|_sub_resource_ |*tracks/1/interp* |`1`
+|_sub_resource_ |*tracks/1/loop_wrap* |`true`
+|_sub_resource_ |*tracks/1/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}`
+|_sub_resource_ |*tracks/2/type* |`value`
+|_sub_resource_ |*tracks/2/imported* |`false`
+|_sub_resource_ |*tracks/2/enabled* |`true`
+|_sub_resource_ |*tracks/2/path* |`NodePath("Sprites/SpriteStates:modulate")`
+|_sub_resource_ |*tracks/2/interp* |`1`
+|_sub_resource_ |*tracks/2/loop_wrap* |`true`
+|_sub_resource_ |*tracks/2/keys* |`{
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}`
 |_sub_resource_ |*_data* |`{
 &"RESET": SubResource("Animation_l271a"),
 &"burst": SubResource("Animation_x42xx"),
@@ -986,7 +988,7 @@ ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_ex
 |_node_ |*material* |`SubResource("ShaderMaterial_jm5te")`
 |_node_ |*texture* |`ExtResource("2_byvol")`
 |_node_ |*hframes* |`27`
-|_node_ |*frame* |`2`
+|_node_ |*frame* |`21`
 |_node_ |*visible* |`false`
 |_node_ |*material* |`SubResource("ShaderMaterial_c3wmo")`
 |_node_ |*texture* |`ExtResource("3_htsrw")`
@@ -1043,6 +1045,7 @@ class_name Player
 @export var GhostEffect : PackedScene
 
 signal dashed
+signal failed
 
 const SPEED = 1000.0
 const DASH_SPEED = SPEED * 4
@@ -1057,10 +1060,6 @@ var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var grounding : bool = true
 var is_failed : bool = false
-
-
-func _ready() -> void:
-	GameEvent.falied.connect(_on_failed)
 
 
 func _physics_process(delta: float) -> void:
@@ -1169,7 +1168,7 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 	%Camera.remove_frame(area)
 
 
-func _on_failure_collision_area_entered(_area: Area2D) -> void:
-	GameEvent.falied.emit()
+func _on_failure_collision_area_entered(area: Area2D) -> void:
+	failed.emit()
 
 ```

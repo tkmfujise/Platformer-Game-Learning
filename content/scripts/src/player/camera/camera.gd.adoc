@@ -5,6 +5,12 @@ title: res://src/player/camera/camera.gd
 
 == src / player / camera / camera.gd
 
+=== Attached Scenes
+* link:/scenes/src/player/camera/camera.tscn[res://src/player/camera/camera.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Camera2D
 

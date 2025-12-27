@@ -5,6 +5,12 @@ title: res://src/world/world.gd
 
 == src / world / world.gd
 
+=== Attached Scenes
+* link:/scenes/src/world/world.tscn[res://src/world/world.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node3D
 

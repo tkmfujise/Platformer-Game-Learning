@@ -5,6 +5,12 @@ title: res://src/beginning/chapters/menu/bookmark/bookmark.gd
 
 == src / beginning / chapters / menu / bookmark / bookmark.gd
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/menu/bookmark/bookmark.tscn[res://src/beginning/chapters/menu/bookmark/bookmark.tscn]
+
+
+
+=== Code
 ```gdscript
 extends MarginContainer
 

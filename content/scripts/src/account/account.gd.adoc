@@ -5,6 +5,12 @@ title: res://src/account/account.gd
 
 == src / account / account.gd
 
+=== Attached Scenes
+* link:/scenes/src/account/account.tscn[res://src/account/account.tscn]
+
+
+
+=== Code
 ```gdscript
 extends BoxContainer
 class_name Account

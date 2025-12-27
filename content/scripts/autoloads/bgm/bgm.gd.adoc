@@ -5,6 +5,12 @@ title: res://autoloads/bgm/bgm.gd
 
 == autoloads / bgm / bgm.gd
 
+=== Attached Scenes
+* link:/scenes/autoloads/bgm/bgm.tscn[res://autoloads/bgm/bgm.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node
 #class_name BGM

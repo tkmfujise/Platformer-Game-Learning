@@ -5,6 +5,12 @@ title: res://src/player/player.gd
 
 == src / player / player.gd
 
+=== Attached Scenes
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
+
+
+
+=== Code
 ```gdscript
 extends CharacterBody2D
 class_name Player
@@ -12,6 +18,7 @@ class_name Player
 @export var GhostEffect : PackedScene
 
 signal dashed
+signal failed
 
 const SPEED = 1000.0
 const DASH_SPEED = SPEED * 4
@@ -26,10 +33,6 @@ var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var grounding : bool = true
 var is_failed : bool = false
-
-
-func _ready() -> void:
-	GameEvent.falied.connect(_on_failed)
 
 
 func _physics_process(delta: float) -> void:
@@ -138,7 +141,7 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 	%Camera.remove_frame(area)
 
 
-func _on_failure_collision_area_entered(_area: Area2D) -> void:
-	GameEvent.falied.emit()
+func _on_failure_collision_area_entered(area: Area2D) -> void:
+	failed.emit()
 
 ```

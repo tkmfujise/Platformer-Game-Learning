@@ -5,6 +5,12 @@ title: res://src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd
 
 == src / mixins / first_steps_bgm_playable / first_steps_bgm_playable.gd
 
+=== Attached Scenes
+* link:/scenes/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn[res://src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn]
+
+
+
+=== Code
 ```gdscript
 extends Node
 class_name FirstStepsBGMPlayable
