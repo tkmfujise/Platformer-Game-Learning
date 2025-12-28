@@ -379,6 +379,147 @@ ROOT::_on_get_started_button_pressed <-[#blue,thickness=2]- VBoxContainer_MenuCo
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_qli4a
+
+[plantuml]
+....
+control "Root" as Root
+participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "VBoxContainer\n/MenuContainer" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1720, 25)
+Root  ->  T1 : position\n = Vector2(200, 25)
+Root  ->o  T2 : visible\n = false
+Root  ->o  Root : state\n = 0
+Root  ->o  Root : focus_top\n = false
+Root  ->o  Root : focus_menu\n = false
+
+
+....
+---
+
+==== focused
+
+[plantuml]
+....
+control "Root" as Root
+participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "VBoxContainer\n/MenuContainer" as T3
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(2080, 25)
+Root  ->  T1 : position\n = Vector2(-120, 25)
+Root  ->o  Root : state\n = 1
+Root  ->o  T3 : visible\n = false
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(1720, 25)
+Root  ->  T1 : position\n = Vector2(150, 25)
+
+
+....
+---
+
+==== opening
+
+[plantuml]
+....
+control "Root" as Root
+participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(2080, 25)
+Root  ->  T1 : position\n = Vector2(-120, 25)
+Root  ->o  Root : state\n = 0
+
+
+....
+---
+
+==== selected
+
+[plantuml]
+....
+control "Root" as Root
+participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "VBoxContainer\n/MenuContainer" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1720, 25)
+Root  ->  T1 : position\n = Vector2(150, 25)
+Root  ->o  T2 : visible\n = false
+== Time: 0.1 ==
+Root  ->o  T2 : visible\n = true
+Root  ->o  Root : state\n = 2
+Root  ->o  Root : focus_menu\n = true
+
+
+....
+---
+
+==== unfocused
+
+[plantuml]
+....
+control "Root" as Root
+participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "VBoxContainer\n/MenuContainer" as T3
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1720, 25)
+Root  ->  T1 : position\n = Vector2(150, 25)
+Root  ->o  Root : state\n = 0
+Root  ->o  T3 : visible\n = false
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(2080, 25)
+Root  ->  T1 : position\n = Vector2(-120, 25)
+
+
+....
+---
+
+==== unselected
+
+[plantuml]
+....
+control "Root" as Root
+participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "VBoxContainer\n/MenuContainer" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1720, 25)
+Root  ->  T1 : position\n = Vector2(150, 25)
+Root  ->o  T2 : visible\n = true
+== Time: 0.1 ==
+Root  ->o  T2 : visible\n = false
+Root  ->o  Root : state\n = 1
+Root  ->o  Root : focus_top\n = true
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -1159,3 +1300,5 @@ func _on_get_started_button_pressed() -> void:
 	get_started.emit()
 
 ```
+
+

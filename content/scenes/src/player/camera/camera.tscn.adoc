@@ -31,6 +31,8 @@ left to right direction
 * [.node-name.type-2d]#Camera# [.node-type.type-2d]#Camera2D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -99,3 +101,5 @@ func shaking() -> void:
 	offset.y = 8 * randf_range(-1, 1) * shaking_time
 
 ```
+
+

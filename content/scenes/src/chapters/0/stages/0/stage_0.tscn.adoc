@@ -125,6 +125,25 @@ left to right direction
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== opening
+
+[plantuml]
+....
+control "Root" as Root
+participant "OpeningCurtain" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->o  T0 : &"play"()
+
+
+....
+---
+
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -189,3 +208,5 @@ NOTE: No signal connections.
 extends Control
 
 ```
+
+

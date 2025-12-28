@@ -41,6 +41,128 @@ ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_ue4pb
+
+[plantuml]
+....
+control "Root" as Root
+participant "Sprite2D" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : rotation\n = 0.0
+Root  ->  T0 : position\n = Vector2(77, 72)
+Root  ->o  Root : focus_mode\n = 2
+Root  ->  T0 : skew\n = 0.0
+
+
+....
+---
+
+==== focused
+
+[plantuml]
+....
+control "Root" as Root
+participant "Sprite2D" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : rotation\n = 0.523599
+== Time: 0.2 ==
+Root  ->  T0 : scale\n = Vector2(1.2, 1.2)
+Root  ->  T0 : rotation\n = -0.349066
+== Time: 0.5 ==
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : rotation\n = 0.0
+
+
+....
+---
+
+==== opening
+
+[plantuml]
+....
+control "Root" as Root
+participant "Sprite2D" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(77, -50)
+Root  ->o  Root : focus_mode\n = 0
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(77, 72)
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : rotation\n = 0.0
+Root  ->o  Root : focus_mode\n = 2
+
+
+....
+---
+
+==== selected
+
+[plantuml]
+....
+control "Root" as Root
+participant "Sprite2D" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(77, 72)
+Root  ->  T0 : rotation\n = 0.0
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : skew\n = 0.0
+== Time: 0.233333 ==
+Root  ->  T0 : scale\n = Vector2(-0.2, 2)
+== Time: 0.234984 ==
+Root  ->  T0 : skew\n = -0.349066
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(1000, 420)
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : skew\n = 0.0
+
+
+....
+---
+
+==== unselected
+
+[plantuml]
+....
+control "Root" as Root
+participant "Sprite2D" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1000, 420)
+Root  ->  T0 : rotation\n = 0.0
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : skew\n = 0.0
+== Time: 0.10168 ==
+Root  ->  T0 : scale\n = Vector2(0, 2)
+Root  ->  T0 : skew\n = 0.349066
+== Time: 0.3 ==
+Root  ->  T0 : scale\n = Vector2(1, 1)
+Root  ->  T0 : skew\n = 0.0
+== Time: 0.4 ==
+Root  ->  T0 : position\n = Vector2(77, 72)
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -356,3 +478,5 @@ func _on_focus_entered() -> void:
 	else: %AnimationPlayer.play("focused")
 
 ```
+
+

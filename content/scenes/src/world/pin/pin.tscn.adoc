@@ -28,6 +28,8 @@ left to right direction
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#AnimatedSprite2D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -116,5 +118,7 @@ NOTE: No signal connections.
 |_node_ |*autoplay* |`default`
 |_node_ |*speed_scale* |`2.0`
 |===
+
+
 
 

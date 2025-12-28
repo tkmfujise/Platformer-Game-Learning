@@ -49,6 +49,114 @@ left to right direction
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_bwqwf
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pattern1\n/RightCurtain" as T0
+participant "Pattern1\n/LeftCurtain" as T1
+participant "Pattern1" as T2
+participant "Pattern2" as T3
+participant "Pattern3" as T5
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : polygon\n = PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1074)
+Root  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 960, 1080, 9, 548, 960, 0)
+Root  ->  T2 : visible\n = false
+Root  ->o  T3 : visible\n = false
+Root  ->  T3 : material\n = 0.0
+Root  ->o  T5 : visible\n = false
+Root  ->  T5 : material\n = 0.5
+
+
+....
+---
+
+==== pattern1
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pattern1\n/RightCurtain" as T0
+participant "Pattern1\n/LeftCurtain" as T1
+participant "Pattern1" as T2
+participant "Pattern2" as T3
+participant "Pattern3" as T4
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : polygon\n = PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 960, 540, 960, 1080)
+Root  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 960, 1080, 960, 548, 960, 0)
+Root  ->  T2 : visible\n = true
+Root  ->o  T3 : visible\n = false
+Root  ->o  T4 : visible\n = false
+== Time: 0.5 ==
+Root  ->  T0 : polygon\n = PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1080)
+Root  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 960, 1080, 0, 548, 960, 0)
+== Time: 1.0 ==
+Root  ->  T0 : polygon\n = PackedVector2Array(1920, 1080, 1920, 0, 1920, 0, 1920, 540, 1920, 1080)
+Root  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 0, 1080, 0, 548, 0, 0)
+
+
+....
+---
+
+==== pattern2
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pattern2" as T0
+participant "Pattern1" as T1
+participant "Pattern3" as T3
+
+
+
+== Time: 0.0 ==
+Root  ->o  T0 : visible\n = true
+Root  ->  T1 : visible\n = false
+Root  ->  T0 : material\n = -0.1
+Root  ->o  T3 : visible\n = false
+== Time: 0.5 ==
+Root  ->  T0 : material\n = 0.2
+== Time: 1.0 ==
+Root  ->o  T0 : visible\n = false
+Root  ->  T0 : material\n = 1.0
+
+
+....
+---
+
+==== pattern3
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pattern1" as T0
+participant "Pattern2" as T1
+participant "Pattern3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : visible\n = false
+Root  ->o  T1 : visible\n = false
+Root  ->o  T2 : visible\n = true
+Root  ->  T2 : material\n = 1.0
+== Time: 1.0 ==
+Root  ->  T2 : material\n = 0.0
+
+
+....
+---
+
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -373,3 +481,5 @@ func play() -> void:
 	%AnimationPlayer.play("pattern%s" % number)
 
 ```
+
+

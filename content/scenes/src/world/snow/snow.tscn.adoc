@@ -28,6 +28,8 @@ left to right direction
 ** [.node-name.type-2d]#CPUParticles2D# [.node-type.type-2d]#CPUParticles2D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -59,5 +61,7 @@ NOTE: No signal connections.
 |_node_ |*scale_amount_max* |`3.2`
 |_node_ |*scale_amount_curve* |`SubResource("Curve_d17m8")`
 |===
+
+
 
 

@@ -22,6 +22,8 @@ left to right direction
 * [.node-name.type-other]#FirstStepsBGMPlayable# [.node-type.type-other]#Node#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -44,3 +46,5 @@ func _ready() -> void:
 	BGM.first_steps()
 
 ```
+
+

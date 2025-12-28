@@ -23,6 +23,8 @@ left to right direction
 * [.node-name.type-other]#Current# [.node-type.type-other]#Node#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -47,3 +49,5 @@ func load_account(number: int) -> void:
 	account = AccountResource.find_or_initialize(number)
 
 ```
+
+

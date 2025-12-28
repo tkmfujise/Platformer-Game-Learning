@@ -48,6 +48,72 @@ left to right direction
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_w6bet
+
+[plantuml]
+....
+control "Root" as Root
+participant "Skeleton2D\n/Root" as T0
+participant "Skeleton2D\n/Root\n/Body" as T2
+participant "Skeleton2D\n/Root\n/Body\n/Edge" as T4
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(90, 0)
+Root  ->  T0 : rotation\n = 1.5708
+Root  ->  T2 : position\n = Vector2(71, -1.00023)
+Root  ->  T2 : rotation\n = 0.0
+Root  ->  T4 : position\n = Vector2(26.6667, -0.33343)
+Root  ->  T4 : rotation\n = 0.0
+
+
+....
+---
+
+==== calm
+
+[plantuml]
+....
+control "Root" as Root
+participant "Skeleton2D\n/Root" as T0
+participant "Skeleton2D\n/Root\n/Body" as T2
+participant "Skeleton2D\n/Root\n/Body\n/Edge" as T4
+
+
+loop
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(90, 0)
+Root  ->  T0 : rotation\n = 1.5708
+Root  ->  T2 : position\n = Vector2(71, -1.00023)
+Root  ->  T2 : rotation\n = 0.0
+Root  ->  T4 : position\n = Vector2(26, 0)
+Root  ->  T4 : rotation\n = 0.0
+== Time: 0.3 ==
+Root  ->  T2 : position\n = Vector2(69, -1)
+Root  ->  T2 : rotation\n = 0.0174533
+Root  ->  T4 : position\n = Vector2(25, 2)
+Root  ->  T4 : rotation\n = 0.0698132
+== Time: 2.0 ==
+Root  ->  T2 : position\n = Vector2(70, 0)
+Root  ->  T2 : rotation\n = -0.0174533
+Root  ->  T4 : position\n = Vector2(25, 3)
+Root  ->  T4 : rotation\n = -0.0349066
+== Time: 3.0 ==
+Root  ->  T0 : position\n = Vector2(90, 0)
+Root  ->  T0 : rotation\n = 1.5708
+Root  ->  T2 : position\n = Vector2(71, -1.00023)
+Root  ->  T2 : rotation\n = 0.0
+Root  ->  T4 : position\n = Vector2(26, 0)
+Root  ->  T4 : rotation\n = 0.0
+
+end
+....
+---
+
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -233,5 +299,7 @@ NOTE: No signal connections.
 }`
 |_node_ |*autoplay* |`calm`
 |===
+
+
 
 

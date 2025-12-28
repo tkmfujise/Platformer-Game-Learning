@@ -36,6 +36,8 @@ left to right direction
 ** [.node-name.type-other]#FirstSteps# [.node-type.type-other]#AudioStreamPlayer#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -107,3 +109,5 @@ func first_steps() -> void:
 	change(^'FirstSteps')
 
 ```
+
+

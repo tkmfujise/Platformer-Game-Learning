@@ -97,6 +97,122 @@ ROOT::_on_animation_tree_animation_started <-[#blue,thickness=2]- AnimationTree:
 ** [.node-name.type-other]#AnimationTree# [.node-type.type-other]#AnimationTree#
 
 
+=== Animations
+==== Animation_g86x5
+
+[plantuml]
+....
+control "Root" as Root
+participant "Author" as T0
+participant "Title" as T1
+participant "Title\n/TitleContainer\n/TitleLogo" as T4
+participant "Blinder" as T6
+participant "Title\n/ButtonContainer" as T7
+
+
+
+== Time: 0.0 ==
+Root  ->o  T0 : visible\n = false
+Root  ->o  T1 : visible\n = true
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->  T1 : modulate\n = Color(1, 1, 1, 1)
+Root  ->  T4 : scale\n = Vector2(1, 1)
+Root  ->  T4 : modulate\n = Color(1, 1, 1, 1)
+Root  ->  T6 : color\n = Color(0, 0, 0, 0)
+Root  ->  T7 : position\n = Vector2(1820, 980)
+
+
+....
+---
+
+==== hide_title
+
+[plantuml]
+....
+control "Root" as Root
+participant "Author" as T0
+participant "Title" as T1
+participant "Title\n/TitleContainer\n/TitleLogo" as T2
+participant "Blinder" as T4
+participant "Title\n/ButtonContainer" as T5
+
+
+
+== Time: 0.0 ==
+Root  ->o  T0 : visible\n = false
+Root  ->o  T1 : visible\n = true
+Root  ->  T2 : scale\n = Vector2(1, 1)
+Root  ->  T2 : modulate\n = Color(1, 1, 1, 1)
+Root  ->  T4 : color\n = Color(0, 0, 0, 0)
+Root  ->  T5 : position\n = Vector2(1820, 980)
+== Time: 0.1 ==
+Root  ->  T5 : position\n = Vector2(1820, 990)
+== Time: 0.3 ==
+Root  ->  T5 : position\n = Vector2(1820, 1100)
+== Time: 1.0 ==
+Root  ->  T2 : scale\n = Vector2(0.5, 0.5)
+Root  ->  T2 : modulate\n = Color(0, 0, 0, 0)
+Root  ->  T4 : color\n = Color(0.141176, 0.129412, 0.223529, 1)
+Root  ->  T5 : position\n = Vector2(1820, 1500)
+
+
+....
+---
+
+==== opening
+
+[plantuml]
+....
+control "Root" as Root
+participant "Author" as T0
+participant "Title" as T1
+participant "Blinder" as T3
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : visible\n = true
+Root  ->o  T1 : visible\n = false
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->  T3 : color\n = Color(0, 0, 0, 0)
+== Time: 1.0 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== show_title
+
+[plantuml]
+....
+control "Root" as Root
+participant "Author" as T0
+participant "Title" as T1
+participant "Title\n/TitleContainer\n/TitleLogo" as T4
+participant "Blinder" as T5
+
+
+
+== Time: 0.0 ==
+Root  ->o  T0 : visible\n = true
+Root  ->o  T1 : visible\n = true
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->  T4 : modulate\n = Color(1, 1, 1, 1)
+Root  ->  T5 : color\n = Color(0, 0, 0, 0)
+== Time: 1.0 ==
+Root  ->o  T0 : visible\n = false
+Root  ->  T1 : modulate\n = Color(1, 1, 1, 0)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+== Time: 2.0 ==
+Root  ->  T1 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -565,3 +681,5 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 		SceneHelper.transit(self, MenuScenePath)
 
 ```
+
+

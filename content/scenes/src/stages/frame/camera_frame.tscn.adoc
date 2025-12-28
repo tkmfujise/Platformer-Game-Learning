@@ -27,6 +27,8 @@ left to right direction
 ** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -61,3 +63,5 @@ func corner() -> Dictionary:
 	}
 
 ```
+
+

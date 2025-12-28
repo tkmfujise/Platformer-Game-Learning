@@ -32,6 +32,8 @@ left to right direction
 ** [.node-name.type-3d]#DirectionalLight3D# [.node-type.type-3d]#DirectionalLight3D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -65,5 +67,7 @@ NOTE: No signal connections.
 |_node_ |*transform* |`Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)`
 |_node_ |*current* |`true`
 |===
+
+
 
 

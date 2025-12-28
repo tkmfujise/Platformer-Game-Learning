@@ -36,6 +36,8 @@ left to right direction
 *** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -59,5 +61,7 @@ NOTE: No signal connections.
 |_node_ |*scale* |`Vector2(9.287109, 12.8828125)`
 |_node_ |*texture* |`ExtResource("1_er1ds")`
 |===
+
+
 
 

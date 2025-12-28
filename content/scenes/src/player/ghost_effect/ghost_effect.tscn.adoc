@@ -29,6 +29,8 @@ left to right direction
 ** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -74,3 +76,5 @@ func _process(delta: float) -> void:
 	if rest_time < 0: queue_free()
 
 ```
+
+

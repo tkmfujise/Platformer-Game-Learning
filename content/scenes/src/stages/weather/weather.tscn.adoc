@@ -27,6 +27,8 @@ left to right direction
 ** [.node-name.type-2d]#Snow# [.node-type.type-2d]#link:/scenes/src/stages/weather/snow/snow.tscn[res://src/stages/weather/snow/snow.tscn]#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -53,3 +55,5 @@ func current_camera() -> Camera2D:
 	return get_viewport().get_camera_2d()
 
 ```
+
+

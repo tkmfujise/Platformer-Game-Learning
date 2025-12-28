@@ -66,6 +66,8 @@ ROOT::_on_reload_button_pressed <-[#blue,thickness=2]- ReloadButton::pressed
 ** [.node-name.type-control]#ReloadButton# [.node-type.type-control]#Button#
 
 
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -132,3 +134,5 @@ func _on_chapters_ui_backed() -> void:
 	reload()
 
 ```
+
+

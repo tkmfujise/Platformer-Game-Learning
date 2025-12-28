@@ -154,6 +154,193 @@ ROOT::_on_account_3_unselected <-[#blue,thickness=2]- AccountsContainer_Account3
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== 1st_selected
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(0, 300)
+Root  ->  T1 : position\n = Vector2(0, 1200)
+Root  ->  T2 : position\n = Vector2(0, 1200)
+
+
+....
+---
+
+==== 1st_unselected
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, 300)
+Root  ->  T1 : position\n = Vector2(0, 1200)
+Root  ->  T2 : position\n = Vector2(0, 1200)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+
+
+....
+---
+
+==== 2nd_selected
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(0, -800)
+Root  ->  T1 : position\n = Vector2(0, 300)
+Root  ->  T2 : position\n = Vector2(0, 1200)
+
+
+....
+---
+
+==== 2nd_unselected
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, -800)
+Root  ->  T1 : position\n = Vector2(0, 300)
+Root  ->  T2 : position\n = Vector2(0, 1200)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+
+
+....
+---
+
+==== 3rd_selected
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(0, -800)
+Root  ->  T1 : position\n = Vector2(0, -800)
+Root  ->  T2 : position\n = Vector2(0, 300)
+
+
+....
+---
+
+==== 3rd_unselected
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, -800)
+Root  ->  T1 : position\n = Vector2(0, -800)
+Root  ->  T2 : position\n = Vector2(0, 300)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+
+
+....
+---
+
+==== Animation_l10c4
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+
+
+....
+---
+
+==== opening
+
+[plantuml]
+....
+control "Root" as Root
+participant "AccountsContainer\n/Account1" as T0
+participant "AccountsContainer\n/Account2" as T1
+participant "AccountsContainer\n/Account3" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(0, 50)
+Root  ->  T1 : position\n = Vector2(0, 356)
+Root  ->  T2 : position\n = Vector2(0, 656)
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -621,3 +808,5 @@ func _on_account_focus_entered(idx: int) -> void:
 	current_idx = idx
 
 ```
+
+

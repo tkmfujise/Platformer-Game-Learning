@@ -81,6 +81,8 @@ left to right direction
 ** [.node-name.type-other]#FirstStepsBGMPlayable# [.node-type.type-other]#link:/scenes/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn[res://src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn]#
 
 
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -110,5 +112,7 @@ NOTE: No signal connections.
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*position* |`Vector2(488, 874)`
 |===
+
+
 
 

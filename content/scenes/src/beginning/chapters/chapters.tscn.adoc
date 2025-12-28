@@ -261,6 +261,565 @@ ROOT::_on_animation_player_animation_finished <-[#blue,thickness=2]- AnimationPl
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_f7nbf
+
+[plantuml]
+....
+control "Root" as Root
+participant "%ChaptersContainer\n/..\n/Banner" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(800, -250)
+Root  ->  Root : position\n = Vector2(815, -250)
+
+
+....
+---
+
+==== selected
+
+[plantuml]
+....
+control "Root" as Root
+participant "%ChaptersContainer\n/..\n/Banner" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(800, 0)
+Root  ->  Root : position\n = Vector2(815, 8)
+== Time: 1.0 ==
+Root  ->  T0 : position\n = Vector2(800, -250)
+Root  ->  Root : position\n = Vector2(815, -250)
+
+
+....
+---
+
+==== unselected
+
+[plantuml]
+....
+control "Root" as Root
+participant "%ChaptersContainer\n/..\n/Banner" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(800, -250)
+Root  ->  Root : position\n = Vector2(815, -250)
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(800, 0)
+Root  ->  Root : position\n = Vector2(815, 8)
+
+
+....
+---
+
+==== Animation_xd314
+
+[plantuml]
+....
+control "Root" as Root
+participant "Banner" as T0
+participant "ChaptersContainer" as T1
+participant "ChaptersContainer\n/Chapter_0" as T2
+participant "ChaptersContainer\n/Chapter_1" as T3
+participant "ChaptersContainer\n/Chapter_2" as T4
+participant "ChaptersContainer\n/Chapter_3" as T5
+participant "ChaptersContainer\n/Chapter_4" as T6
+participant "ChaptersContainer\n/Chapter_5" as T7
+participant "ChaptersContainer\n/Chapter_6" as T8
+participant "ChaptersContainer\n/Chapter_7" as T9
+participant "ChaptersContainer\n/Chapter_8" as T10
+participant "Pin" as T20
+participant "Menu" as T25
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(800, -220)
+Root  ->  T1 : position\n = Vector2(815, -150)
+Root  ->o  T2 : play_opening\n = false
+Root  ->o  T3 : play_opening\n = false
+Root  ->o  T4 : play_opening\n = false
+Root  ->o  T5 : play_opening\n = false
+Root  ->o  T6 : play_opening\n = false
+Root  ->o  T7 : play_opening\n = false
+Root  ->o  T8 : play_opening\n = false
+Root  ->o  T9 : play_opening\n = false
+Root  ->o  T10 : play_opening\n = false
+Root  ->o  T2 : visible\n = true
+Root  ->o  T3 : visible\n = true
+Root  ->o  T4 : visible\n = true
+Root  ->o  T5 : visible\n = true
+Root  ->o  T6 : visible\n = true
+Root  ->o  T7 : visible\n = true
+Root  ->o  T8 : visible\n = true
+Root  ->o  T9 : visible\n = true
+Root  ->o  T10 : visible\n = true
+Root  ->  T20 : position\n = Vector2(903, 554)
+Root  ->  T20 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T20 : visible\n = false
+Root  ->o  Root : shown\n = false
+Root  ->o  Root : current_plate\n = 0
+Root  ->  T25 : position\n = Vector2(960, 0)
+
+
+....
+---
+
+==== focus_pin_to_chapter_0
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1039, 648)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_1
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1064, 682)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_2
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1046, 389)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_3
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(843, 545)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_4
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(939, 674)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_5
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(752, 514)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_6
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1156, 857)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_7
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1019, 404)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+== Time: 1.0 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== focus_pin_to_chapter_8
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1051, 612)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+== Time: 1.0 ==
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
+==== opening
+
+[plantuml]
+....
+control "Root" as Root
+participant "Banner" as T0
+participant "ChaptersContainer" as T1
+participant "ChaptersContainer\n/Chapter_0" as T2
+participant "ChaptersContainer\n/Chapter_1" as T3
+participant "ChaptersContainer\n/Chapter_2" as T4
+participant "ChaptersContainer\n/Chapter_3" as T5
+participant "ChaptersContainer\n/Chapter_4" as T6
+participant "ChaptersContainer\n/Chapter_5" as T7
+participant "ChaptersContainer\n/Chapter_6" as T8
+participant "ChaptersContainer\n/Chapter_7" as T9
+participant "ChaptersContainer\n/Chapter_8" as T10
+participant "Pin" as T20
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(800, -250)
+Root  ->  T1 : position\n = Vector2(815, -150)
+Root  ->o  T2 : play_opening\n = false
+Root  ->o  T3 : play_opening\n = false
+Root  ->o  T4 : play_opening\n = false
+Root  ->o  T5 : play_opening\n = false
+Root  ->o  T6 : play_opening\n = false
+Root  ->o  T7 : play_opening\n = false
+Root  ->o  T8 : play_opening\n = false
+Root  ->o  T9 : play_opening\n = false
+Root  ->o  T10 : play_opening\n = false
+Root  ->o  T2 : visible\n = false
+Root  ->o  T3 : visible\n = false
+Root  ->o  T4 : visible\n = false
+Root  ->o  T5 : visible\n = false
+Root  ->o  T6 : visible\n = false
+Root  ->o  T7 : visible\n = false
+Root  ->o  T8 : visible\n = false
+Root  ->o  T9 : visible\n = false
+Root  ->o  T10 : visible\n = false
+Root  ->o  T20 : visible\n = false
+== Time: 0.0666667 ==
+Root  ->o  T2 : visible\n = true
+== Time: 0.066667 ==
+Root  ->o  T2 : play_opening\n = true
+== Time: 0.133333 ==
+Root  ->o  T3 : play_opening\n = true
+Root  ->o  T3 : visible\n = true
+== Time: 0.2 ==
+Root  ->o  T4 : play_opening\n = true
+Root  ->o  T4 : visible\n = true
+== Time: 0.266667 ==
+Root  ->o  T5 : play_opening\n = true
+Root  ->o  T5 : visible\n = true
+== Time: 0.333333 ==
+Root  ->o  T6 : play_opening\n = true
+Root  ->o  T6 : visible\n = true
+== Time: 0.4 ==
+Root  ->o  T7 : play_opening\n = true
+Root  ->o  T7 : visible\n = true
+== Time: 0.466666 ==
+Root  ->o  T8 : play_opening\n = true
+== Time: 0.466667 ==
+Root  ->  T1 : position\n = Vector2(815, -150)
+Root  ->o  T8 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(800, 0)
+== Time: 0.533333 ==
+Root  ->o  T9 : play_opening\n = true
+Root  ->o  T9 : visible\n = true
+== Time: 0.6 ==
+Root  ->o  T10 : play_opening\n = true
+Root  ->o  T10 : visible\n = true
+== Time: 0.7 ==
+Root  ->  T1 : position\n = Vector2(815, 8)
+Root  ->o  Root : shown\n = true
+
+
+....
+---
+
+==== zoom_pin_to_chapter_0
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1039, 648)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(868, 600)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_1
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1064, 682)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(847, 597)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_2
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1046, 389)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(977, 374)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_3
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(843, 545)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(962, 462)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_4
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(939, 674)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(887, 757)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_5
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(752, 514)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(949, 348)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_6
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1156, 857)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(704, 680)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_7
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1019, 404)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(1040, 355)
+
+
+....
+---
+
+==== zoom_pin_to_chapter_8
+
+[plantuml]
+....
+control "Root" as Root
+participant "Pin" as T0
+
+
+
+== Time: 0.0 ==
+Root  ->  T0 : position\n = Vector2(1051, 612)
+Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  T0 : visible\n = true
+== Time: 0.5 ==
+Root  ->  T0 : position\n = Vector2(1060, 719)
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -1903,3 +2462,5 @@ func _on_menu_ui_backed() -> void:
 		force_focus_return()
 
 ```
+
+

@@ -52,6 +52,8 @@ ROOT::_on_detection_area_2d_body_entered <-[#blue,thickness=2]- DetectionArea2D:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -100,3 +102,5 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 	fall.call_deferred()
 
 ```
+
+

@@ -66,6 +66,63 @@ left to right direction
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_tk6ev
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+Root  ->o  Root : flicked\n = false
+
+
+....
+---
+
+==== flick
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+== Time: 0.0333333 ==
+Root  ->o  Root : flicked\n = true
+== Time: 0.5 ==
+Root  ->  Root : position\n = Vector2(1920, 0)
+
+
+....
+---
+
+==== pull
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(1920, 0)
+== Time: 0.0333333 ==
+Root  ->o  Root : flicked\n = false
+== Time: 0.5 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+
+
+....
+---
+
+
+
 === Signal Connections
 NOTE: No signal connections.
 
@@ -218,3 +275,5 @@ func pull() -> void:
 	if flicked: %AnimationPlayer.play("pull")
 
 ```
+
+

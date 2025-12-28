@@ -37,6 +37,126 @@ ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_evwsm
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+
+
+....
+---
+
+==== focused_none
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+
+
+....
+---
+
+==== focused_right
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+== Time: 0.1 ==
+Root  ->  Root : position\n = Vector2(10, 2)
+== Time: 0.233333 ==
+Root  ->  Root : position\n = Vector2(25, -5)
+== Time: 1.0 ==
+Root  ->  Root : position\n = Vector2(50, -5)
+
+
+....
+---
+
+==== focused_up
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+== Time: 0.1 ==
+Root  ->  Root : position\n = Vector2(0, 5)
+== Time: 0.2 ==
+Root  ->  Root : position\n = Vector2(0, -10)
+== Time: 1.0 ==
+Root  ->  Root : position\n = Vector2(0, -5)
+
+
+....
+---
+
+==== unfocused_none
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+
+
+....
+---
+
+==== unfocused_right
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(50, -5)
+== Time: 0.5 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+
+
+....
+---
+
+==== unfocused_up
+
+[plantuml]
+....
+control "Root" as Root
+
+
+
+== Time: 0.0 ==
+Root  ->  Root : position\n = Vector2(0, -5)
+== Time: 0.5 ==
+Root  ->  Root : position\n = Vector2(0, 0)
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -190,3 +310,5 @@ func _on_focus_exited() -> void:
 	%AnimationPlayer.play("unfocused_%s" % [focus_move_direction_key()])
 
 ```
+
+

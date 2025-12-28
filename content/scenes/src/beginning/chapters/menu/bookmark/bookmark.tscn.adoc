@@ -41,6 +41,78 @@ ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Animations
+==== Animation_ash1f
+
+[plantuml]
+....
+control "Root" as Root
+participant "Bookmark" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->o  Root : z_index\n = -1
+Root  ->  Root : modulate\n = Color(0.5, 0.5, 0.5, 1)
+Root  ->  T2 : position\n = Vector2(70, 106)
+Root  ->  T2 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+==== focus
+
+[plantuml]
+....
+control "Root" as Root
+participant "Bookmark" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T2 : position\n = Vector2(70, 106)
+Root  ->  T2 : scale\n = Vector2(1, 1)
+== Time: 0.14 ==
+Root  ->  Root : modulate\n = Color(1, 1, 1, 1)
+Root  ->o  Root : z_index\n = 1
+Root  ->  T2 : position\n = Vector2(70, 250)
+Root  ->  T2 : scale\n = Vector2(1.2, 1.2)
+== Time: 0.25 ==
+Root  ->  T2 : position\n = Vector2(70, 106)
+Root  ->  T2 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+==== unfocus
+
+[plantuml]
+....
+control "Root" as Root
+participant "Bookmark" as T2
+
+
+
+== Time: 0.0 ==
+Root  ->  T2 : position\n = Vector2(70, 106)
+Root  ->  T2 : scale\n = Vector2(1, 1)
+== Time: 0.11 ==
+Root  ->o  Root : z_index\n = 0
+Root  ->  Root : modulate\n = Color(0.5, 0.5, 0.5, 1)
+Root  ->  T2 : position\n = Vector2(70, 250)
+Root  ->  T2 : scale\n = Vector2(0.8, 0.8)
+== Time: 0.25 ==
+Root  ->  T2 : position\n = Vector2(70, 106)
+Root  ->  T2 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+
+
 === Signal Connections
 [cols="1,1,1,2" options="header"]
 |===
@@ -262,3 +334,5 @@ func _on_focus_exited() -> void:
 	set_focus(false)
 
 ```
+
+
