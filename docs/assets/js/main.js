@@ -28,7 +28,8 @@ function toggleTocContents() {
 }
 
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
+
   document.querySelectorAll('.toggle-contents-menu').forEach(elem => {
     elem.addEventListener('click', toggleContentsMenu)
   })
@@ -44,4 +45,5 @@ window.onload = () => {
   document.querySelectorAll('#toc .sectlevel1 a').forEach(elem => {
     elem.addEventListener('click', toggleTocContents)
   })
-}
+
+})
