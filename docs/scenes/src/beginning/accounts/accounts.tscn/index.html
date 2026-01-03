@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_beginning_accounts_accounts_tscn">src / beginning / accounts / accounts.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,21 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNrtlk1v2jAYx-98Cqu9lI4ccG4RqwQdh0ktTHQ9TZNlHEMtgo38MoGm7bPPMUlwSAiFjhvH53ny_P3y_zk2SbBSYDIefwdYgZs-IcJwrW5Ar3f33EnY_E3PJaW8DZ6xnDP-KLjGjFP58AB-twD4CwxDU0wWNHbRnGqkNJbaxkEQ2Nw9mEs8RTNBjEIzJpV2yW0sqTaSu957QIyUlGvE4nXW-wnYL3C8uWu7IBE4RjibYpZTdsD9AbxSeZisgATPZVAXKZpQog8UDW8oQ9RYbOwNUWOxsbfY8pqaZ0BNdbsddpOpdPU_LeIAyH0v7C3RUGQdFqMtFmqxmSaGtsFIxBR-cTwclENZpuvrdp3coETZQKyPIZZvzLbES2EVvwA89QfDpxf0dYQmw5fx6-Rx6GiTVAkjCXWB7dHU41KLlRctKTf1RFqRdESzXGK5Qb-YYtOE6byKGF8Zn8Z8TJ_nvVz6GSPWMifGUjVrYIVoO8FKLp1mlmRqmysgsAnDK6kaxvYJ2cuvWfnzGoVadD1j0NRobVMru3LVTGGODfSxgVdsrti8C5vQxya8YnPFpoQNZ0usmeDfErzJb7xyziHT78RYLuwbY9Pe78kuPfd8CgJRJdErlTtb1Ru3VqC4OE9tgKc2hK2EzjTQAsj0hICYSbutdsJuDVF04JEBesGP2_Qh0NFvjCy43eXP8GfQsJIo8s9NVXz3IjtHuzigVeHiYJ-ju_sr1M14R-FZ2rxh1qUjcrI6jKKSwH82Ex4zE55vJryQmbDZTPgRM-FFzQwva2Z4zMzwfDPDC5kZNpsZfsTM0DfzH8zYK3g=" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span> <span class="o">==</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+		<span class="n">grab_focus_first</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">load_accounts</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 </div>

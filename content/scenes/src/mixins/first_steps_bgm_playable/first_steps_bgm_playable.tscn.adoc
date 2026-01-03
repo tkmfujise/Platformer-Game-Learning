@@ -17,6 +17,14 @@ left to right direction
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	BGM.first_steps()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#FirstStepsBGMPlayable# [.node-type.type-other]#Node#

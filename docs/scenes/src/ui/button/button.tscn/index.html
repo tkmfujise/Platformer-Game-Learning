@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_ui_button_button_tscn">src / ui / button / button.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,21 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNqNkDFrwzAQhXf9iiNd4tYamjG4ARs6hIakhNClFKHIF0dYlookl5qS_15bDiSxO3S899497j6huHOw3Wx2wB1Mstp7oyeQJNMsVrI4-sIi6gh6Y7GAHwJAIVst1y9sud49b9_SVSvdw8GI2rHKfCHLpUXhpdFXhjDKWPY4UmZB2SupS-ZlhZcA5oRS2s4PwD6tEejcNApjgZ5ddZzVvw5gJTZnm7VTH0Ht0WI-1r-lD_KJiIAl1bLiXc2r4g3aQGigBVRpnHNbFpY30XAnEDuRAJhSM7SJwoMHb8B2rOECrluYz0c3Q0Lf7_aqxtgfpSh1y-Rp9kGhj99ExxXhvX81hOQvAH60lQ==" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">focused</span><span class="p">:</span> <span class="k">return</span>
+	<span class="n">blink_time</span> <span class="o">+=</span> <span class="n">delta</span>
+	<span class="n">add_theme_color_override</span><span class="p">(</span><span class="s2">"font_focus_color"</span><span class="p">,</span> <span class="n">get_focus_color</span><span class="p">())</span>
+	<span class="k">if</span> <span class="n">blink_time</span> <span class="o">&gt;</span> <span class="n">BLINK_INTERVAL</span><span class="p">:</span> <span class="n">blink_time</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+</div>
 </div>
 </div>
 </div>

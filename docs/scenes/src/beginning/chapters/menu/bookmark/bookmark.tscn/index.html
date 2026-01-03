@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_beginning_chapters_menu_bookmark_bookmark_tscn">src / beginning / chapters / menu / bookmark / bookmark.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,19 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNqNUUFugzAQvPOKVXoJLb7kGNFISXuNUjW9VRVyzYZYEButjVRUtW8vLIGkcMlxxjPj2V1VSOfgdbd7A-lgtpHZxtr8JCmfQRzPt1Ghs6PPCNGEsJWUafNkjZfaIK1W8B0A_EJJ6BymgRCiwfdwsKq64AdItCkrPw8ZOPQJC844sabDCRqPhOmU_9Ke6Z9Acd2-Ylf5uu--6-vy-rOoMIR9SY138cxVx_akf-WcHtyeszb6JL225qWQNRKnjDgOW0dp81tGsg7HnnMe718IO1S7MCNDMMx-LR8mCQo8ePAWqK0PqSZUrZnzlsvJriEW73ftiJE_apWb5o6Piw8BnfyfdBrBZ7kpgZV_pDbP_g==" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_input">_input</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_accept"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">focused</span><span class="p">:</span>
+		<span class="n">pressed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 </div>

@@ -301,6 +301,26 @@ ROOT::_on_get_started_button_pressed <-[#blue,thickness=2]- VBoxContainer_MenuCo
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	FocusHelper.set_neighbors_v(
+		[%GetStartedButton, %ChangeNameButton, %AssistModeButton])
+	reset_summary_visiblity()
+	if resource: load_resource()
+```
+==== _input
+```gdscript
+func _input(event: InputEvent) -> void:
+	if is_focused() && event.is_action_pressed("ui_accept"):
+		selected.emit()
+	elif event.is_action_pressed("ui_back"):
+		if is_selected():  unselected.emit()
+		elif is_focused(): ui_backed.emit()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Account# [.node-type.type-control]#BoxContainer#

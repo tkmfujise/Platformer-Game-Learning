@@ -51,6 +51,8 @@ left to right direction
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Photo# [.node-type.type-2d]#Sprite2D#

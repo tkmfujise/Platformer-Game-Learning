@@ -269,6 +269,28 @@ ROOT::_on_stage_button_pressed <-[#blue,thickness=2]- StageSelection_StageButton
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('show')
+	FocusHelper.set_neighbors_h(%SideButtonContainer.get_children())
+	FocusHelper.set_neighbors_h(%StageButtonContainer.get_children())
+```
+==== _input
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not shown: return
+	if event.is_action_pressed("ui_back"):
+		match state:
+			State.UNSELECTED: ui_backed.emit()
+			State.SELECTED:
+				state = State.UNSELECTED
+				%AnimationPlayer.play("climb_unselected")
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Menu# [.node-type.type-control]#Control#

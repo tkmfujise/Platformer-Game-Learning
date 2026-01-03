@@ -72,6 +72,8 @@ ROOT::_on_animation_player_animation_finished <-[#blue,thickness=2]- AnimationPl
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-3d]#World# [.node-type.type-3d]#Node3D#

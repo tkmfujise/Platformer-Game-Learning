@@ -33,6 +33,15 @@ ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
 ....
 
 
+=== Overridden virtual functions
+==== _input
+```gdscript
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept") && focused:
+		pressed.emit()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#BagBookmark# [.node-type.type-control]#MarginContainer#

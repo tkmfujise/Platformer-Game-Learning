@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_beginning_chapters_menu_menu_tscn">src / beginning / chapters / menu / menu.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,36 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNrdWkuP2zYQvutXCMklu40PleSLsQkQuyg2QPaBOLegIGiJaxMrUwZFIbso2t9eiqREUpaslx_FnqyZIWfm4wyp4VhhDNPU_f7w8MOFqfvuDpHsnXtz82HxMcbrDVtThMiVu0gIo0n8-bP7t-O6_7oZBisYPqNIUGvEQMogZZyeTCacd-2uKVyBpyTMUvCEacqqzBRHaI_H4Foy003yi4incAN3DFFAUZpkNFRiBhmyxCTbrhAthGtUjk-VR7-5nAWj1w9XgogTGAE1uYYlXUmVJEUs24EnmmwBDMMkI6xUr0eAKuJ6UY67QZKbVKIwRpCC3SZhSeEEjCLJsIZIsKuMsYSYI02-YqsoVdkb7pDFB5DYluRaAAFcsQAmu6wk-JwwxttVoWDHVydFkSG29Eu4iPB1bh60r6PMOYNnZB7n_uOEIpvnkBBE58mLSOmSasnrvdlgIZPhXuSW0GVxhL5vlr5vcIXatMEtsnRxupumAo9Ccm-Nv8cEPUIWbr6jkNV4YCyFmL2Us9Pn11WcoSt3uaOYIe8Pa-qS58YSxVwjTojQYHFMN0pF90l0UA1YiMgXaEqqY3QadIE5N37LdwT7GipXLc5AzIaBJaPwF486fS0t2KzxJu6ymOFdjEOYC7R2eTI3CI-JbJFv8XzVIS5SpkkozN5a4brlykr5KMvgYSUeosoA4VGDrNMe6u3Ikk_byIXIn05j5A6-1AHdZ48y_yfEcUZRmb0GfbrU9Q7mrjfesEKhV81kDFivecJfP1t91ipq0OlUzgbCqtAongb4lVNz8Wqs7M99vtA-t7R33Jk1ysAif7PPk-R5C-mzPLJNjjB2Zxm7g3SNiW0vLxPVK70sEUUdUNKVoiIvjsQA423fVDgo_gu2y4AO2PgwxBiy4VWYbwohKB-KXSazSBHqjR7xAbwyfZVvczth8iKtUhNYrM5FgTVr7L5rUAaEQO8-TXbbgrbaR1GPC0XycSBWORn8QNtdzC8yQmFBHEelpLWn7eesSFd-Qss73bWLt_ldrEjcPFcFR-WkGKmed1kcmzlZ65j4-Up4rU74nUw7VrIG4hZk7blYI-hXs7QbkszfJVdbVYz_87nRExuwDkjrYOxxWPSwc5zT6YBBrxo07-0EzTtT0LxzB82vBs1_O0HzzxQ0_9xBC6pBC95O0IIzBS04d9Cm1aBN307QpmcK2vRIQVvESYrJepHRXLu6gZms1n79tbuD_A5AZUedoBcG0hARXd7xmvHVWGFIeK0n0OUCjkcznjDB6cZa-C-F8FEMFg5WeMLDLwbIilzhFf9CTCaJbpoaLIsQck1b9yCDbYVK8-3l0_yKV47uI1tO2X3h1lFwixy7kbrnsu5ntI4srzatI2uug05TJ_aAR3ZndZAGu086SEVTB2mkP3YjbpAyo412VGTeGG8ELqd3w3fIojX1as9kXbRlz2RrvyHrNDUPD2xc2Qx02tt7nba03Z87ntZK38ip9H32j1fzZGodK7sCHQbWvV6dxtbRIa-MVpBT39dp9LNsq_SeaPc4nJY-ULsDkna6NEE6LqZ1_z6-Yu9Uiv1TKQ5OpXjaXbHdWBoSSdCwcfv0ekbZLatdp3dPZkiCDcDrjcLrjcfrD8HrD8brj8Lrj8cbDMEbDMYbjMIbjMc7HYJ3OhjvdBTextuqE6Mn5rLEpfn90o0wNa5Ts1nlKxz3ZvLzfd68_8g2OHwmKE0_eX9NXDnY_FBMTy8_7Dk8WX9zpqfWfXbUpKVnKTWbFR0Mba75M6ZGoz3Pz9nMUttkuw1qb6tnxepdBKt3Eaz-RbD6F8EaXARrcBGs04tgnVaw_gdCF7qW" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span> <span class="o">==</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">show'</span><span class="p">)</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_h</span><span class="p">(</span><span class="o">%</span><span class="n">SideButtonContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">())</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_h</span><span class="p">(</span><span class="o">%</span><span class="n">StageButtonContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">())</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_input">_input</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">shown</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_back"</span><span class="p">):</span>
+		<span class="k">match</span> <span class="n">state</span><span class="p">:</span>
+			<span class="n">State</span><span class="o">.</span><span class="n">UNSELECTED</span><span class="p">:</span> <span class="n">ui_backed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+			<span class="n">State</span><span class="o">.</span><span class="n">SELECTED</span><span class="p">:</span>
+				<span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">UNSELECTED</span>
+				<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"climb_unselected"</span><span class="p">)</span></code></pre>
+</div>
 </div>
 </div>
 </div>

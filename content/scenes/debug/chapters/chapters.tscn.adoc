@@ -59,6 +59,16 @@ ROOT::_on_reload_button_pressed <-[#blue,thickness=2]- ReloadButton::pressed
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	Current.account = full_resource
+	reload()
+	dump_json()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Chapters# [.node-type.type-control]#Control#

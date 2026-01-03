@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_beginning_screen_screen_tscn">src / beginning / screen / screen.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,31 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNqdlsGO2jAQhu9-Cmt7WVpy2d4QXQm2pwpYtEFcqsoyiTexyNrIdrSNqr57k3FC4mA2oRfkmbG_sSeeH0cZ1Rq_PD_vMNX4LowUY-IOz-f3T9OMJ6lJKscEP0lhlMweH_EfhPFnvGYiDyMm2JaaFDxRrhQThlDB36jhUqAgCMrIF0wUo3FxP7EGF6fc1IZRVGjeWESKdjUxZeKOqQ1VhsVjpr5ywXUKc_-iCA64pNExUTIXMRyzNb1HzaR6YZGBwzaERW5SqWC1HQ4UyV1HqhDlglnC2QLI3oHsl_L3Of4himzoG3PBjgfgawe-pirh4n_wYJ1zAHrloFf0wD4-OtkqpssrogHTGKNQO24ymx1GI2sPcwn8umVyXT5auTOm_HXyUa25kols-ZUF6NCi9bE4ZDmb4PCkuGEP3z3UZW6MFO5me74bv6qXS37IYmF9kKI1x284zA97zt5PUhl3v75AF1tv2jdtMAHpOPvJ6hwxVWVv08LJcBOYhKl8t_RyANjNNJXmxMVxgjcyZl_dUiwzLuLma9nxeF1pZGub0aJm9HzAWnQO1ov7ebsyq0urPNdZVbQmwd9BEMiObLY-29WtDResNX3F7QBtdTo09yieQLUvVKtvm79VFXShsL5ZrpiNXNNIFBpQ3uGEYCGrYuei9TTkItxrWuSVs2u0VpGQX1qu5umIA_I2-bXP3O0hNNi9YyjQiShjrwYbiVXVTDjmquyh6n1R3ZXZbNRTAM-Dn58qMZualEdHwbT-9vArcG_ZbHa5cEyS-mlyc4563T_R6V80" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">SceneHelper</span><span class="o">.</span><span class="n">preload_scene</span><span class="p">(</span><span class="n">MenuScenePath</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_input">_input</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">_event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"ui_accept"</span><span class="p">):</span>
+		<span class="k">match</span> <span class="n">current_animation</span><span class="p">:</span>
+			<span class="s2">'</span><span class="s1">show_title'</span><span class="p">:</span> <span class="n">transit</span><span class="p">(</span><span class="s2">'</span><span class="s1">hide_title'</span><span class="p">)</span>
+			<span class="s2">'</span><span class="s1">hide_title'</span><span class="p">:</span> <span class="k">pass</span>
+			<span class="n">_</span><span class="p">:</span> 		      <span class="n">transit</span><span class="p">(</span><span class="s2">'</span><span class="s1">show_title'</span><span class="p">)</span></code></pre>
+</div>
 </div>
 </div>
 </div>

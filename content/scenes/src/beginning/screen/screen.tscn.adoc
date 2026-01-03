@@ -75,6 +75,23 @@ ROOT::_on_animation_tree_animation_started <-[#blue,thickness=2]- AnimationTree:
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	SceneHelper.preload_scene(MenuScenePath)
+```
+==== _input
+```gdscript
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		match current_animation:
+			'show_title': transit('hide_title')
+			'hide_title': pass
+			_: 		      transit('show_title')
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Screen# [.node-type.type-control]#Control#

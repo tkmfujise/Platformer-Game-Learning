@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_stages_weather_weather_tscn">src / stages / weather / weather.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
 <li><a href="#_properties">Properties</a></li>
@@ -497,6 +498,19 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNqFjrEKwkAQRPv9iiVVgl5jHVJZJ6CCZTg3qwmet7J7QUTy75r7AbuZgfcYCt4MD113Qm9YnNmnkbXAui7bbZhuY7L7-xJmrrCVgXf7psEPOOcAcYP9U4XYrKxypVmVY-rJP1j9b1yAsv8Y5ZX9a_gnXyDfcU4yB4GvCZOgrgAOkzKlSSJ8AX7mO1Y=" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">camera</span> <span class="o">=</span> <span class="n">current_camera</span><span class="p">()</span>
+	<span class="k">if</span> <span class="n">camera</span><span class="p">:</span> <span class="n">global_position</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">global_position</span></code></pre>
+</div>
 </div>
 </div>
 </div>

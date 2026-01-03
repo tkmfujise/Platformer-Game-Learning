@@ -23,6 +23,16 @@ left to right direction
 ....
 
 
+=== Overridden virtual functions
+==== _process
+```gdscript
+func _process(delta: float) -> void:
+	rest_time -= delta
+	modulate.a -= delta / ALIVE_TIME
+	if rest_time < 0: queue_free()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#GhostEffect# [.node-type.type-2d]#Node2D#

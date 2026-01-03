@@ -30,6 +30,14 @@ left to right direction
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	load_preference()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#BGM# [.node-type.type-other]#Node#

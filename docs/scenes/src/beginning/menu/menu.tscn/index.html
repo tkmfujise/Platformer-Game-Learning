@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_beginning_menu_menu_tscn">src / beginning / menu / menu.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,20 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNrtWd1v2zYQf9dfQXQvzVY_1H0zsgKO02LBEruLg7TAMBC0RMuEZVKjqCXpsP7to6gvHi3JX2r6kjfxjrw78j7I38mPSJKg29nsDpEEvbqhPH2Fzs9fT95ELFypUFLKz9BEcCVF9P49-tdD6Gfkp1JSrnAcEUUNJZRkgZfCTxMshVDeYDDQ9F8QlpQET6_PzCChCjsTC46_IjykubyChAXHfsQ2C7xIldKDfJFWSyUNdkx6ZKp9TixpkgD23ylT7Vzi-yLlKsEpwwvir5uZod5cooh0FK9IrA1uXlsxjdXNrIRG1M9l_uf5xlvzdHHP6EMspMocQxin0niviWG8OQfebJpmXNulAM-5eMi16A8jdZpLTdZPiyilZ2gqAjq83ENSTXTNLqwNiFzrQHkCth4kGH8WMgqMePNVGLwSKmZ8ndv67rIK6AnZUEkyYhW5mbewEthn0k8jIvFG_FPGZh5lhY8K2lchNg6JcaYYidhXiglnG6JY5lmjCq9plRUbnQcrnQ3KTCioxE9VtiyM7ISoxehUedJbrglLrS1ZgUC51YJhhACKOZMbEBo3RIaMN0cFWIuzSgFlA4qRfQ9k31-Ix4Ml40mWuVARJO0bivsrwdciFFAloDQVSFOWTt0dVIznsdRlbHiZJ0kxsPO52m7JPFbvhSl9cMsOzei9AJvuwZ-u5pydE2tf5-MmCwyjyOIBuri-mv6Or6Z3H27vx9cmsfNMzVIXB0zqSqpTxWL4IhISv92iDA1lEelagRXb0HoCDeq7LZbC15dFkZ_ZBWDJAKUCGmAlP-642Jy7bJ_TnamVvjSgIx1aH_niiMQgtY1SQOmtGHTqxbM4O1x39w6xrzg-zJSSYEU2oLzE9qknPtHymXKc7xKfx_mu1pJglzWb8uL8U0_8D_1-h54HlOdxO1BpRpbD6-GLt_ODHhfAyRxPOdjzSYrQN1QBKjOy0FexMYBJl0wmyjoeSVUquVlbo1kWPDbj1kiQoAJ6zVjWKLBYUM02XsRvbWS3zUx5B3uIO5mda9_hTmbn2g782wJ_S64bG2UQTAqYmxfFYrCzAfGtiuHsuzTYiYrckwN0NZlN8ezjx_mHu3w8vbq7Gl_jyW_jTzrD5vhLe7BkIAuLmHLGw5bGR7ISD9zOqxIDmnAyMwr7AKOtP5LGeCk1kCwPTtJEpNKvMCDjcVrGWSjMXuvRUjwQGewXoPbWQI5rfKxhrw1qAWUptDUgvO0kcc9A4-eNLqFWaYEIOakpiYVlxXKpOU47hGQCtzsl-0HicnZDdGcGgtCuKlQp6JMRnBcqSDOhOrb6FQ6_uFpMf20wEI1ti5oL7p6aXBbHmlJmijUH6vUae0RtFpjezqFLaqK3s8uzj5S8Y-PBnsXWqcAb2evqSexY6yDRk0Q5DwPvgIbGYVbCDsF31OPgcu_o7skp-6s6IN4JvYzTNm43JLxDkPeBIQPfkt7x4PskvVu49YcZ4mKoH2YIeNV7PTYn-nUUbDB4PeLofv0IsbDXF-Tr0ccWcvMiulRICSSzpyiqkVd27Y5G3X-o0Pngz5-y7tobtWL-mmuE9evwr0FPtWg0Asp2WGSw1zMZZHS12VP8XPvephRqLCsa_vAdY8RxcdRkUNN_wzaLygfgaGTD3AZZ1St2t6QaKFmucv5Htkkpn5-Fz5tllC_t3UIqANcgZeeOajHV1P8BUkULAA==" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">ClimbButton</span><span class="o">.</span><span class="n">grab_focus</span><span class="p">()</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_v</span><span class="p">([</span>
+		<span class="o">%</span><span class="n">ClimbButton</span><span class="p">,</span> <span class="o">%</span><span class="n">OptionsButton</span><span class="p">,</span> <span class="o">%</span><span class="n">CreditsButton</span><span class="p">,</span> <span class="o">%</span><span class="n">QuitButton</span><span class="p">])</span></code></pre>
+</div>
 </div>
 </div>
 </div>

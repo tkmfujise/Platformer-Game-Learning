@@ -18,6 +18,8 @@ left to right direction
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#Current# [.node-type.type-other]#Node#

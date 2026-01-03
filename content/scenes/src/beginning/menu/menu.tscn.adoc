@@ -211,6 +211,16 @@ ROOT::_on_chapters_ui_backed <-[#blue,thickness=2]- Chapters::ui_backed
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	%ClimbButton.grab_focus()
+	FocusHelper.set_neighbors_v([
+		%ClimbButton, %OptionsButton, %CreditsButton, %QuitButton])
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Menu# [.node-type.type-control]#Control#

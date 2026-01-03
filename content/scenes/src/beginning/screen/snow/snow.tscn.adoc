@@ -24,6 +24,8 @@ left to right direction
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-3d]#Show# [.node-type.type-3d]#Node3D#

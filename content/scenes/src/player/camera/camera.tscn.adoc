@@ -26,6 +26,16 @@ left to right direction
 ....
 
 
+=== Overridden virtual functions
+==== _process
+```gdscript
+func _process(delta: float) -> void:
+	if shaking_time:
+		shaking_time = maxf(0.0, shaking_time - delta)
+		shaking()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Camera# [.node-type.type-2d]#Camera2D#

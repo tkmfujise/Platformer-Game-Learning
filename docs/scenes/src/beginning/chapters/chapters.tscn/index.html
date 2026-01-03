@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_beginning_chapters_chapters_tscn">src / beginning / chapters / chapters.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,36 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNrlWFtv2yAUfu-vQN1LuzVSc8-irlKbtWul9aI2D5OmCREbJygOWIDVdNP224cxDsZxaqfKW55izuXjnI8D4eCFSAjw9PAwBkiAw9EMRRJzcQjOzo5GJyGZzuSUY0yPwYhRyVl4fg7-HADwDwTMiwX29bfAIfakGcQETpA3V6NGo6EkDXA7eriHD9fXz1fjdHx_O769-A5HNxeP46unZ_hDiT-CKUcTqGFhQLiQWhiF6BWyCFNCp1rgxZxjKqFSSKwlYsZeqP4yMUEvTQMSf5lamPgcRRrdJwA5Rv7r0bEeCCzjCAacLSDyPBariTgWLOYeNhaQ0CiWZjBlOlc7CtgL4r4Fg8Wkcqp8akacGkaEQsmM6DdTsTiSgKloDCZX8XJqFCFDPixyIBlcYBpnIap5jSYXiZEIiChZIEkYhSwIlCbLWQkSG5QAmglyKuuVpKRMrCAglIiZY50tRk6UBAhXdaMUfw88XZiXiFLMdWmmn7owx05hjvFScYCfFKguzsw3q-WkcBHJYNakGvHGQby5ZMuV_m1MaCTwNI8OTzXqnYN6h_iUUBe3tMKzgrMlnSNUzEm0Kt03qygtDWyL0aE9piXrkDqq3YW5swyb0246aTf3Jm34HHEiceurzj8b6PTvT3zE52rfvx6De-bjmgXUcphs7QuTrd0z2XaYbO8Lk-3dM9lxmOzsC5Od3TPZdZjs7guT3d0z2XOY7O0Lk73dM9l3mOzvC5P93TM5cJgc7AuTg_cy-Y0Tv_m5dbpsng7Si7Mj0QDPKX9i_joJY3wMMnQH6JFQ7a5-zayuUzJzweVO9RraJ_mo0efadjYZJf2TkIjLVXu7oW_NCQXx8ZpMommxe806NqcElKFpczM1jRcTzDPlFK_sRXlLq7tCt-fLi9JQRO3-t6KpLeS9QZNMaVReiBGH0YxJlgWBfD8VOCZpspNYSkbzlnl5rsstEc9UQI5cbS13ppQLqBMv6_d1IxySxSQDiBQ7bjPs4Bf3VKnROka-Fc5kucor2ZwX2RnxqDtwp9Ut6HTNX-S2Z0Hv7JYy3Pfh6TemRoOZnt6O184Xq3JOBStWu90Okm28DlaIwRoUFeuvBKUx2T5_a4_m1h6trT3aW3t0tvbobu3R29qjv7XH4OCtx4mKlVn9fx281ZdXLFYdkHbV-tUB6VQtaR2QbtUq1wHpVS18HZB-VS3UARlUlYcFCXEggWSAJ3_2wCdcXYDUOaCPhuEw_zIJzho_PyQXiBM5I96cquP5S-tXA6SWq8du6-i-X25yT06q4dDeJ6x_jQfUTaCF82w4XHf9D1OYFvg=" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span> <span class="o">==</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">opening'</span><span class="p">)</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_h</span><span class="p">(</span><span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">())</span>
+	<span class="k">for</span> <span class="n">chapter</span> <span class="ow">in</span> <span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
+		<span class="n">chapter</span><span class="o">.</span><span class="n">focus_entered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_on_chapater_focused</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">chapter</span><span class="p">))</span>
+	<span class="n">load_focused_chapter_to_menu</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_input">_input</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">shown</span> <span class="o">&amp;&amp;</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">):</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_back"</span><span class="p">):</span>
+		<span class="n">go_back</span><span class="p">()</span>
+	<span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_accept"</span><span class="p">):</span>
+		<span class="n">go_foward</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 </div>

@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_autoloads_keyboard_handler_keyboard_handler_tscn">autoloads / keyboard_handler / keyboard_handler.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
 <li><a href="#_properties">Properties</a></li>
@@ -497,6 +498,20 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNpVy0EKwjAQheF9TjF01aK9QelaEFoQ9yFNpulgTGSSCEG8u6F04_K9j187FSPc5vkOKkJzxbIExeaivHHIDQxDO52N4odlVTqYgsFxhI_o-14AnECSf-XUdvvY9ko-Q44o3xRpcZTKgbqq_Uc8KAVra7dm56JmRF__r3C4pkrAZLcEhhh1ouDFDznoOtg=" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_input">_input</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+	<span class="n">handle_mouse_visiblity</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"toggle_fullscreen"</span><span class="p">):</span>
+		<span class="n">toggle_fullscreen</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 </div>

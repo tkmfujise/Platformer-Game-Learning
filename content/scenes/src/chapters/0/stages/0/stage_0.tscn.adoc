@@ -107,6 +107,8 @@ left to right direction
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Stage0# [.node-type.type-control]#Control#

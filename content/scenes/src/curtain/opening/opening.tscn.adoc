@@ -38,6 +38,8 @@ left to right direction
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#OpeningCurtain# [.node-type.type-control]#Control#

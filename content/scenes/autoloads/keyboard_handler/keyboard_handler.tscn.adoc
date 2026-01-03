@@ -20,6 +20,16 @@ left to right direction
 ....
 
 
+=== Overridden virtual functions
+==== _input
+```gdscript
+func _input(event):
+	handle_mouse_visiblity(event)
+	if Input.is_action_just_pressed("toggle_fullscreen"):
+		toggle_fullscreen()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#KeyboardHandler# [.node-type.type-other]#Node#

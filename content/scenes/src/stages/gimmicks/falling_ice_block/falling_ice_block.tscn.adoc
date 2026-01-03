@@ -40,6 +40,14 @@ ROOT::_on_detection_area_2d_body_entered <-[#blue,thickness=2]- DetectionArea2D:
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	freeze = true
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#RigidBody2D#

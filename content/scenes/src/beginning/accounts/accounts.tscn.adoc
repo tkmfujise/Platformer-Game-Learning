@@ -144,6 +144,17 @@ ROOT::_on_account_3_unselected <-[#blue,thickness=2]- AccountsContainer_Account3
 ....
 
 
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		grab_focus_first = true
+	else:
+		load_accounts()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Accounts# [.node-type.type-control]#MarginContainer#

@@ -36,6 +36,8 @@ left to right direction
 ....
 
 
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Banner# [.node-type.type-control]#TextureRect#

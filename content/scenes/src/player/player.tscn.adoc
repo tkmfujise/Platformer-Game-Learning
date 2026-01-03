@@ -109,6 +109,51 @@ ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_ex
 ....
 
 
+=== Overridden virtual functions
+==== _physics_process
+```gdscript
+func _physics_process(delta: float) -> void:
+	if is_failed:
+		return
+	if dash_rest_time > 0:
+		dash_rest_time -= delta
+		velocity *= DASH_ATTENUATION * delta
+	else:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y += GRAVITY * delta
+			falling_time += delta
+			grounding = false
+		else:
+			if not grounding: vibrate('Landed')
+			grounding = true
+			falling_time = 0
+			dash_rest_count = MAX_DASH_COUNT
+
+		# Handle jump.
+		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+			velocity.y = JUMP_VELOCITY
+
+		var direction_x := Input.get_axis("move_left", "move_right")
+		if direction_x:
+			velocity.x = direction_x * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+		# Handle dash.
+		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
+			var direction_y := Input.get_axis("move_up", "move_down")
+			var direction = Vector2(direction_x, direction_y).normalized()
+			if direction:
+				dashed.emit()
+				velocity = direction * DASH_SPEED
+				dash_rest_time = DASH_TIME
+				dash_rest_count -= 1
+	animate()
+	move_and_slide()
+```
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Player# [.node-type.type-2d]#CharacterBody2D#

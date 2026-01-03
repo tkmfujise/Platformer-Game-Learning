@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_player_camera_camera_tscn">src / player / camera / camera.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
 <li><a href="#_properties">Properties</a></li>
@@ -497,6 +498,20 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNpVj8EKgkAQhu8-xeApKy-dIwiLlKggvS-bjjW0urKzRhK9e6t2qNv83ww_3-RKMsP5dMpAMviRrNBIH5bLSTRXdL1ZvncX1WIA42qxWa3g5QGEsFmnsUjj9T457kSWHLaOToFv8k71VViqcAAlPbEQjWaypOsB5a0xWFtRGtfJXhiGDs9ANEbnyDwJhiiLYrz4ZoOVfuAfkk2jOqGoIiv79i_uHfBndj4uvT2FpQWrwfSPQUEG88HpAwW3UJM=" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">shaking_time</span><span class="p">:</span>
+		<span class="n">shaking_time</span> <span class="o">=</span> <span class="n">maxf</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">shaking_time</span> <span class="o">-</span> <span class="n">delta</span><span class="p">)</span>
+		<span class="n">shaking</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 </div>
