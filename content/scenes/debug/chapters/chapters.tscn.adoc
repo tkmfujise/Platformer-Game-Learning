@@ -67,6 +67,26 @@ func _ready() -> void:
 	reload()
 	dump_json()
 ```
+_$Chapters_
+```gdscript
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('opening')
+	FocusHelper.set_neighbors_h(%ChaptersContainer.get_children())
+	for chapter in %ChaptersContainer.get_children():
+		chapter.focus_entered.connect(_on_chapater_focused.bind(chapter))
+	load_focused_chapter_to_menu()
+```
+==== _input
+_$Chapters_
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not (shown && current_plate == Plate.ROOT): return
+	if event.is_action_pressed("ui_back"):
+		go_back()
+	elif event.is_action_pressed("ui_accept"):
+		go_foward()
+```
 
 
 === Scene Tree

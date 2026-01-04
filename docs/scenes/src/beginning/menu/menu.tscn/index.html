@@ -514,6 +514,63 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="o">%</span><span class="n">ClimbButton</span><span class="p">,</span> <span class="o">%</span><span class="n">OptionsButton</span><span class="p">,</span> <span class="o">%</span><span class="n">CreditsButton</span><span class="p">,</span> <span class="o">%</span><span class="n">QuitButton</span><span class="p">])</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>$Accounts</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span> <span class="o">==</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+		<span class="n">grab_focus_first</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">load_accounts</span><span class="p">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>$Chapters</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span> <span class="o">==</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">opening'</span><span class="p">)</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_h</span><span class="p">(</span><span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">())</span>
+	<span class="k">for</span> <span class="n">chapter</span> <span class="ow">in</span> <span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
+		<span class="n">chapter</span><span class="o">.</span><span class="n">focus_entered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_on_chapater_focused</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">chapter</span><span class="p">))</span>
+	<span class="n">load_focused_chapter_to_menu</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="paragraph">
+<p><em>$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">focused</span><span class="p">:</span> <span class="k">return</span>
+	<span class="n">blink_time</span> <span class="o">+=</span> <span class="n">delta</span>
+	<span class="n">add_theme_color_override</span><span class="p">(</span><span class="s2">"font_focus_color"</span><span class="p">,</span> <span class="n">get_focus_color</span><span class="p">())</span>
+	<span class="k">if</span> <span class="n">blink_time</span> <span class="o">&gt;</span> <span class="n">BLINK_INTERVAL</span><span class="p">:</span> <span class="n">blink_time</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_input">_input</h4>
+<div class="paragraph">
+<p><em>$Chapters</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">shown</span> <span class="o">&amp;&amp;</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">):</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_back"</span><span class="p">):</span>
+		<span class="n">go_back</span><span class="p">()</span>
+	<span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_accept"</span><span class="p">):</span>
+		<span class="n">go_foward</span><span class="p">()</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">

@@ -319,6 +319,15 @@ func _input(event: InputEvent) -> void:
 		if is_selected():  unselected.emit()
 		elif is_focused(): ui_backed.emit()
 ```
+==== _process
+_$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton, $VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer/ChangeNameButton, $VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer/AssistModeButton_
+```gdscript
+func _process(delta: float) -> void:
+	if not focused: return
+	blink_time += delta
+	add_theme_color_override("font_focus_color", get_focus_color())
+	if blink_time > BLINK_INTERVAL: blink_time = 0
+```
 
 
 === Scene Tree

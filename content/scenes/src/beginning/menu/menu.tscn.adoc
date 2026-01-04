@@ -219,6 +219,43 @@ func _ready() -> void:
 	FocusHelper.set_neighbors_v([
 		%ClimbButton, %OptionsButton, %CreditsButton, %QuitButton])
 ```
+_$Accounts_
+```gdscript
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		grab_focus_first = true
+	else:
+		load_accounts()
+```
+_$Chapters_
+```gdscript
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('opening')
+	FocusHelper.set_neighbors_h(%ChaptersContainer.get_children())
+	for chapter in %ChaptersContainer.get_children():
+		chapter.focus_entered.connect(_on_chapater_focused.bind(chapter))
+	load_focused_chapter_to_menu()
+```
+==== _process
+_$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton_
+```gdscript
+func _process(delta: float) -> void:
+	if not focused: return
+	blink_time += delta
+	add_theme_color_override("font_focus_color", get_focus_color())
+	if blink_time > BLINK_INTERVAL: blink_time = 0
+```
+==== _input
+_$Chapters_
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not (shown && current_plate == Plate.ROOT): return
+	if event.is_action_pressed("ui_back"):
+		go_back()
+	elif event.is_action_pressed("ui_accept"):
+		go_foward()
+```
 
 
 === Scene Tree

@@ -517,6 +517,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">load_focused_chapter_to_menu</span><span class="p">()</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><em>$Menu</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span> <span class="o">==</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">show'</span><span class="p">)</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_h</span><span class="p">(</span><span class="o">%</span><span class="n">SideButtonContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">())</span>
+	<span class="n">FocusHelper</span><span class="o">.</span><span class="n">set_neighbors_h</span><span class="p">(</span><span class="o">%</span><span class="n">StageButtonContainer</span><span class="o">.</span><span class="n">get_children</span><span class="p">())</span></code></pre>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_input">_input</h4>
@@ -528,6 +540,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">go_back</span><span class="p">()</span>
 	<span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_accept"</span><span class="p">):</span>
 		<span class="n">go_foward</span><span class="p">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>$Menu</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">shown</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">"ui_back"</span><span class="p">):</span>
+		<span class="k">match</span> <span class="n">state</span><span class="p">:</span>
+			<span class="n">State</span><span class="o">.</span><span class="n">UNSELECTED</span><span class="p">:</span> <span class="n">ui_backed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+			<span class="n">State</span><span class="o">.</span><span class="n">SELECTED</span><span class="p">:</span>
+				<span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">UNSELECTED</span>
+				<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"climb_unselected"</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

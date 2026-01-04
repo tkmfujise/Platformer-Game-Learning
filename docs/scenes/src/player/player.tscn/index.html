@@ -550,6 +550,20 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="paragraph">
+<p><em>$Camera</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">shaking_time</span><span class="p">:</span>
+		<span class="n">shaking_time</span> <span class="o">=</span> <span class="n">maxf</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">shaking_time</span> <span class="o">-</span> <span class="n">delta</span><span class="p">)</span>
+		<span class="n">shaking</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_scene_tree">Scene Tree</h3>

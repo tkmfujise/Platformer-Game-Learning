@@ -289,6 +289,12 @@ func _input(event: InputEvent) -> void:
 				state = State.UNSELECTED
 				%AnimationPlayer.play("climb_unselected")
 ```
+_$SideSelection/SideButtonContainer/ClimbBookmark, $SideSelection/SideButtonContainer/CassetteBookmark, $StageSelection/StageButtonContainer/Stage1Button, $StageSelection/StageButtonContainer/Stage2Button, $StageSelection/StageButtonContainer/Stage3Button, $StageSelection/StageButtonContainer/Stage4Button, $StageSelection/StageButtonContainer/Stage5Button_
+```gdscript
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept") && focused:
+		pressed.emit()
+```
 
 
 === Scene Tree

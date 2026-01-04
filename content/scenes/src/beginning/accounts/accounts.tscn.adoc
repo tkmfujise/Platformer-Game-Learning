@@ -153,6 +153,24 @@ func _ready() -> void:
 	else:
 		load_accounts()
 ```
+_$AccountsContainer/Account1, $AccountsContainer/Account2, $AccountsContainer/Account3_
+```gdscript
+func _ready() -> void:
+	FocusHelper.set_neighbors_v(
+		[%GetStartedButton, %ChangeNameButton, %AssistModeButton])
+	reset_summary_visiblity()
+	if resource: load_resource()
+```
+==== _input
+_$AccountsContainer/Account1, $AccountsContainer/Account2, $AccountsContainer/Account3_
+```gdscript
+func _input(event: InputEvent) -> void:
+	if is_focused() && event.is_action_pressed("ui_accept"):
+		selected.emit()
+	elif event.is_action_pressed("ui_back"):
+		if is_selected():  unselected.emit()
+		elif is_focused(): ui_backed.emit()
+```
 
 
 === Scene Tree

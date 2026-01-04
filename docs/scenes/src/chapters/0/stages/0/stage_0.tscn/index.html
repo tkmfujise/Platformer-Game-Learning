@@ -481,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_chapters_0_stages_0_stage_0_tscn">src / chapters / 0 / stages / 0 / stage_0.tscn</a>
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
+<li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -498,6 +499,83 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNq1VcFu2zAMvecrhJ6arQaK9loUcB03zZDEReK22y6CYimOFscyJGVbMGzfPpmSI9vr2g3YLgn5aPJRJEVlBVEKLZIkRUShk6UmOTs_QVdXp9FZwfONziVj5RBFotRSFNfX6NsgCILB90EGnknFSl7m0V5qwkuI0YVeiYXQG1QRrZksQc5YaWSgQOgtUkxjC50OAagKcjBiQx-JQsgFyzQwH7VnSZ0NaBv_WyGZss5WBM-59VTbw6rYsyGaC8ouRl1HSXZMWUcQ_84RR-ZXkgI0m3sLgFhhL1YoGXGxEArQXTi9xcvJx_hYq0zIEur0LBUoFy0qC_w3qss-1eU_ooIRHUuxL-m5n1kHAEd6Ronc5pIchijlBZuRakoOTHb6MOa7Hc-2toWN8qdNbL7Ht6QozKxPMnZTiGxr56GLQcxFL-aC55zeCHpwgZvTYlMOenCzvjaBnIhFiSnTZny5kYj5Cl9QvDIBMNwORlsVui_q00IuVmxfh2MK0YZIkhnfVhoI_UCUqA2jIK6JqR51yQVoeR_HI5BG4fIOe_Xdw-weP8bTJJqkHwAZL8LHRg6n0-QpHuF0MotxmuD6ax-lRr0Wpmk8fwjTSTIHcBa-x2CIkod5ChtivBFKx-u1qQXoa1turPmOAVAfANd3-TkoM2Ni_XKYGOMJGle4c1pT8mpzUDxTuJIiY0q5TpCS74hmTvvMV9JrudlWSnt9X1GjYFVJXv_VFoXVhlAmcUXqS2HK3wRWFflS4rw-HWZwPGfI9lKaJnfCOJPJ2rarPSZ9wJ6rDdTMWO1XnwyJHSY_RC999NXw9yPvJTNFNS1Qx8n8dSKfGNEbN5JOfu2q-TZ0yt8UI4PF0qIIoS8mh9b09zC3gPxy6NndFYfHMAhE723z-PEp8ZB9PFo67EOvt3eUR5s14hGbiNddsTzQS3ng3iHP2XlZfmu2y_9l8-XguCPbyfZ33qBga420QLJuJaJc2i01-AmtPaqq" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="paragraph">
+<p><em>$Gimmicks/FallingIceBlock</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_physics_process">_physics_process</h4>
+<div class="paragraph">
+<p><em>$Player</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">is_failed</span><span class="p">:</span>
+		<span class="k">return</span>
+	<span class="k">if</span> <span class="n">dash_rest_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="n">dash_rest_time</span> <span class="o">-=</span> <span class="n">delta</span>
+		<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># Add the gravity.</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">is_on_floor</span><span class="p">():</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+			<span class="n">falling_time</span> <span class="o">+=</span> <span class="n">delta</span>
+			<span class="n">grounding</span> <span class="o">=</span> <span class="bp">false</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">grounding</span><span class="p">:</span> <span class="n">vibrate</span><span class="p">(</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">)</span>
+			<span class="n">grounding</span> <span class="o">=</span> <span class="bp">true</span>
+			<span class="n">falling_time</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
+
+		<span class="c1"># Handle jump.</span>
+		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
+
+		<span class="k">var</span> <span class="n">direction_x</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_left"</span><span class="p">,</span> <span class="s2">"move_right"</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">direction_x</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">direction_x</span> <span class="o">*</span> <span class="n">SPEED</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+
+		<span class="c1"># Handle dash.</span>
+		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">var</span> <span class="n">direction_y</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_up"</span><span class="p">,</span> <span class="s2">"move_down"</span><span class="p">)</span>
+			<span class="k">var</span> <span class="n">direction</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="n">direction_x</span><span class="p">,</span> <span class="n">direction_y</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">direction</span><span class="p">:</span>
+				<span class="n">dashed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+				<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
+				<span class="n">dash_rest_time</span> <span class="o">=</span> <span class="n">DASH_TIME</span>
+				<span class="n">dash_rest_count</span> <span class="o">-=</span> <span class="mi">1</span>
+	<span class="n">animate</span><span class="p">()</span>
+	<span class="n">move_and_slide</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="paragraph">
+<p><em>$Weather</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">camera</span> <span class="o">=</span> <span class="n">current_camera</span><span class="p">()</span>
+	<span class="k">if</span> <span class="n">camera</span><span class="p">:</span> <span class="n">global_position</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">global_position</span></code></pre>
+</div>
 </div>
 </div>
 </div>

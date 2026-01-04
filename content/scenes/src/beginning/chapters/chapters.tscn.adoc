@@ -243,6 +243,14 @@ func _ready() -> void:
 		chapter.focus_entered.connect(_on_chapater_focused.bind(chapter))
 	load_focused_chapter_to_menu()
 ```
+_$Menu_
+```gdscript
+func _ready() -> void:
+	if get_parent() == get_tree().root:
+		%AnimationPlayer.play('show')
+	FocusHelper.set_neighbors_h(%SideButtonContainer.get_children())
+	FocusHelper.set_neighbors_h(%StageButtonContainer.get_children())
+```
 ==== _input
 ```gdscript
 func _input(event: InputEvent) -> void:
@@ -251,6 +259,17 @@ func _input(event: InputEvent) -> void:
 		go_back()
 	elif event.is_action_pressed("ui_accept"):
 		go_foward()
+```
+_$Menu_
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not shown: return
+	if event.is_action_pressed("ui_back"):
+		match state:
+			State.UNSELECTED: ui_backed.emit()
+			State.SELECTED:
+				state = State.UNSELECTED
+				%AnimationPlayer.play("climb_unselected")
 ```
 
 
