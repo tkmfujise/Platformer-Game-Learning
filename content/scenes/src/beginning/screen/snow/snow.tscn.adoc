@@ -26,6 +26,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/screen/screen.tscn[res://src/beginning/screen/screen.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-3d]#Show# [.node-type.type-3d]#Node3D#

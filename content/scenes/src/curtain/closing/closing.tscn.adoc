@@ -40,6 +40,11 @@ ROOT::_on_animation_player_animation_finished <-[#blue,thickness=2]- AnimationPl
 
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#ClosingCurtain# [.node-type.type-control]#Control#

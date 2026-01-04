@@ -20,6 +20,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/world/world.tscn[res://src/world/world.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Mist# [.node-type.type-2d]#Node2D#

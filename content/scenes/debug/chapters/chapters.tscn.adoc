@@ -67,7 +67,7 @@ func _ready() -> void:
 	reload()
 	dump_json()
 ```
-_$Chapters_
+.$Chapters
 ```gdscript
 func _ready() -> void:
 	if get_parent() == get_tree().root:
@@ -78,7 +78,7 @@ func _ready() -> void:
 	load_focused_chapter_to_menu()
 ```
 ==== _input
-_$Chapters_
+.$Chapters
 ```gdscript
 func _input(event: InputEvent) -> void:
 	if not (shown && current_plate == Plate.ROOT): return
@@ -88,6 +88,10 @@ func _input(event: InputEvent) -> void:
 		go_foward()
 ```
 
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
 
 === Scene Tree
 [.scene-tree]

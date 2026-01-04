@@ -25,6 +25,11 @@ func _ready() -> void:
 ```
 
 
+
+=== Instantiators
+* link:/scenes/src/main.tscn[res://src/main.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#FirstStepsBGMPlayable# [.node-type.type-other]#Node#

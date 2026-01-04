@@ -48,6 +48,11 @@ func _ready() -> void:
 ```
 
 
+
+=== Instantiators
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#RigidBody2D#

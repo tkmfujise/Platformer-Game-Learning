@@ -42,6 +42,12 @@ func _process(delta: float) -> void:
 ```
 
 
+
+=== Instantiators
+* link:/scenes/src/account/account.tscn[res://src/account/account.tscn]
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Button# [.node-type.type-control]#Button#

@@ -243,7 +243,7 @@ func _ready() -> void:
 		chapter.focus_entered.connect(_on_chapater_focused.bind(chapter))
 	load_focused_chapter_to_menu()
 ```
-_$Menu_
+.$Menu
 ```gdscript
 func _ready() -> void:
 	if get_parent() == get_tree().root:
@@ -260,7 +260,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept"):
 		go_foward()
 ```
-_$Menu_
+.$Menu
 ```gdscript
 func _input(event: InputEvent) -> void:
 	if not shown: return
@@ -271,6 +271,12 @@ func _input(event: InputEvent) -> void:
 				state = State.UNSELECTED
 				%AnimationPlayer.play("climb_unselected")
 ```
+
+
+
+=== Instantiators
+* link:/scenes/debug/chapters/chapters.tscn[res://debug/chapters/chapters.tscn]
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
 
 
 === Scene Tree

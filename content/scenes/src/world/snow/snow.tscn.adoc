@@ -23,6 +23,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Snow# [.node-type.type-2d]#Node2D#

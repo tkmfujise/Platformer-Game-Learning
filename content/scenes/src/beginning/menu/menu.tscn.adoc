@@ -219,7 +219,7 @@ func _ready() -> void:
 	FocusHelper.set_neighbors_v([
 		%ClimbButton, %OptionsButton, %CreditsButton, %QuitButton])
 ```
-_$Accounts_
+.$Accounts
 ```gdscript
 func _ready() -> void:
 	if get_parent() == get_tree().root:
@@ -227,7 +227,7 @@ func _ready() -> void:
 	else:
 		load_accounts()
 ```
-_$Chapters_
+.$Chapters
 ```gdscript
 func _ready() -> void:
 	if get_parent() == get_tree().root:
@@ -238,7 +238,7 @@ func _ready() -> void:
 	load_focused_chapter_to_menu()
 ```
 ==== _process
-_$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton_
+.$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton, $RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton
 ```gdscript
 func _process(delta: float) -> void:
 	if not focused: return
@@ -247,7 +247,7 @@ func _process(delta: float) -> void:
 	if blink_time > BLINK_INTERVAL: blink_time = 0
 ```
 ==== _input
-_$Chapters_
+.$Chapters
 ```gdscript
 func _input(event: InputEvent) -> void:
 	if not (shown && current_plate == Plate.ROOT): return
@@ -257,6 +257,10 @@ func _input(event: InputEvent) -> void:
 		go_foward()
 ```
 
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
 
 === Scene Tree
 [.scene-tree]

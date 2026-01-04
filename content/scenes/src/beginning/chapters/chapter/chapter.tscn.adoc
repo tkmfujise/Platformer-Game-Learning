@@ -35,6 +35,11 @@ ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
 
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/chapters/chapters.tscn[res://src/beginning/chapters/chapters.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Chapter# [.node-type.type-control]#MarginContainer#

@@ -29,6 +29,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Forest# [.node-type.type-2d]#Node2D#

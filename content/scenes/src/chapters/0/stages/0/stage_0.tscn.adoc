@@ -109,13 +109,13 @@ left to right direction
 
 === Overridden virtual functions
 ==== _ready
-_$Gimmicks/FallingIceBlock_
+.$Gimmicks/FallingIceBlock
 ```gdscript
 func _ready() -> void:
 	freeze = true
 ```
 ==== _physics_process
-_$Player_
+.$Player
 ```gdscript
 func _physics_process(delta: float) -> void:
 	if is_failed:
@@ -158,13 +158,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 ```
 ==== _process
-_$Weather_
+.$Weather
 ```gdscript
 func _process(_delta: float) -> void:
 	var camera = current_camera()
 	if camera: global_position = camera.global_position
 ```
 
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
 
 === Scene Tree
 [.scene-tree]

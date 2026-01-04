@@ -42,6 +42,11 @@ func _input(event: InputEvent) -> void:
 ```
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#BagBookmark# [.node-type.type-control]#MarginContainer#

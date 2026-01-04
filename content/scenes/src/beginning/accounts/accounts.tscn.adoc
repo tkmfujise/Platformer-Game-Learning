@@ -153,7 +153,7 @@ func _ready() -> void:
 	else:
 		load_accounts()
 ```
-_$AccountsContainer/Account1, $AccountsContainer/Account2, $AccountsContainer/Account3_
+.$AccountsContainer/Account1, $AccountsContainer/Account2, $AccountsContainer/Account3
 ```gdscript
 func _ready() -> void:
 	FocusHelper.set_neighbors_v(
@@ -162,7 +162,7 @@ func _ready() -> void:
 	if resource: load_resource()
 ```
 ==== _input
-_$AccountsContainer/Account1, $AccountsContainer/Account2, $AccountsContainer/Account3_
+.$AccountsContainer/Account1, $AccountsContainer/Account2, $AccountsContainer/Account3
 ```gdscript
 func _input(event: InputEvent) -> void:
 	if is_focused() && event.is_action_pressed("ui_accept"):
@@ -171,6 +171,11 @@ func _input(event: InputEvent) -> void:
 		if is_selected():  unselected.emit()
 		elif is_focused(): ui_backed.emit()
 ```
+
+
+
+=== Instantiators
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
 
 
 === Scene Tree

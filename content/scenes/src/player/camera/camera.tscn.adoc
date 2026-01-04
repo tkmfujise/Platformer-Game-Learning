@@ -36,6 +36,11 @@ func _process(delta: float) -> void:
 ```
 
 
+
+=== Instantiators
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Camera# [.node-type.type-2d]#Camera2D#

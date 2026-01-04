@@ -38,6 +38,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/chapters/chapters.tscn[res://src/beginning/chapters/chapters.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Banner# [.node-type.type-control]#TextureRect#

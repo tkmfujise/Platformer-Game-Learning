@@ -33,6 +33,10 @@ func _process(delta: float) -> void:
 ```
 
 
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#GhostEffect# [.node-type.type-2d]#Node2D#

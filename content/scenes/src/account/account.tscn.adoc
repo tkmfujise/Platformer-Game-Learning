@@ -320,7 +320,7 @@ func _input(event: InputEvent) -> void:
 		elif is_focused(): ui_backed.emit()
 ```
 ==== _process
-_$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton, $VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer/ChangeNameButton, $VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer/AssistModeButton_
+.$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton, $VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer/ChangeNameButton, $VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer/AssistModeButton
 ```gdscript
 func _process(delta: float) -> void:
 	if not focused: return
@@ -328,6 +328,11 @@ func _process(delta: float) -> void:
 	add_theme_color_override("font_focus_color", get_focus_color())
 	if blink_time > BLINK_INTERVAL: blink_time = 0
 ```
+
+
+
+=== Instantiators
+* link:/scenes/src/beginning/accounts/accounts.tscn[res://src/beginning/accounts/accounts.tscn]
 
 
 === Scene Tree

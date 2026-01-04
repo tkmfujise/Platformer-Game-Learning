@@ -53,6 +53,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Photo# [.node-type.type-2d]#Sprite2D#

@@ -3,7 +3,7 @@
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Platformer Game Learning - src/chapters/0/stages/0/stage_0.tscn</title>
+    <title>src/chapters/0/stages/0/stage_0.tscn - Platformer Game Learning</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../../../../../../../assets/css/pico.min.css">
     <link rel="stylesheet" href="../../../../../../../assets/css/style.css">
@@ -482,6 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <ul class="sectlevel2">
 <li><a href="#_diagram">Diagram</a></li>
 <li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
+<li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
@@ -506,10 +507,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
 <div class="sect3">
 <h4 id="_ready">_ready</h4>
-<div class="paragraph">
-<p><em>$Gimmicks/FallingIceBlock</em></p>
-</div>
 <div class="listingblock">
+<div class="title">$Gimmicks/FallingIceBlock</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
@@ -518,10 +517,8 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="sect3">
 <h4 id="_physics_process">_physics_process</h4>
-<div class="paragraph">
-<p><em>$Player</em></p>
-</div>
 <div class="listingblock">
+<div class="title">$Player</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">is_failed</span><span class="p">:</span>
@@ -567,16 +564,29 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="sect3">
 <h4 id="_process">_process</h4>
-<div class="paragraph">
-<p><em>$Weather</em></p>
-</div>
 <div class="listingblock">
+<div class="title">$Weather</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">var</span> <span class="n">camera</span> <span class="o">=</span> <span class="n">current_camera</span><span class="p">()</span>
 	<span class="k">if</span> <span class="n">camera</span><span class="p">:</span> <span class="n">global_position</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">global_position</span></code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_instantiators">Instantiators</h3>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+No other scene instantiate this scene.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">

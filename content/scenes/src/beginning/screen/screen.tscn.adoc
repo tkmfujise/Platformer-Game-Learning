@@ -92,6 +92,10 @@ func _input(_event: InputEvent) -> void:
 ```
 
 
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Screen# [.node-type.type-control]#Control#

@@ -20,6 +20,11 @@ left to right direction
 
 
 
+
+=== Instantiators
+* link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]
+
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#Snow# [.node-type.type-2d]#Node2D#

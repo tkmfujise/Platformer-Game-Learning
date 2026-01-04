@@ -20,6 +20,10 @@ left to right direction
 
 
 
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#Current# [.node-type.type-other]#Node#
