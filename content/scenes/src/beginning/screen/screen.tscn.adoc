@@ -124,24 +124,24 @@ CAUTION: No other scene instantiate this scene.
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Author" as T0
-participant "Title" as T1
-participant "Title\n/TitleContainer\n/TitleLogo" as T4
-participant "Blinder" as T6
-participant "Title\n/ButtonContainer" as T7
+control "Root" as R
+participant "$Author" as T0
+participant "$Title" as T1
+participant "$Title\n/TitleContainer\n/TitleLogo" as T4
+participant "$Blinder" as T6
+participant "$Title\n/ButtonContainer" as T7
 
 
 
 == Time: 0.0 ==
-Root  ->o  T0 : visible\n = false
-Root  ->o  T1 : visible\n = true
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->  T1 : modulate\n = Color(1, 1, 1, 1)
-Root  ->  T4 : scale\n = Vector2(1, 1)
-Root  ->  T4 : modulate\n = Color(1, 1, 1, 1)
-Root  ->  T6 : color\n = Color(0, 0, 0, 0)
-Root  ->  T7 : position\n = Vector2(1820, 980)
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = true
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T4 : scale\n = Vector2(1, 1)
+R  ->  T4 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T6 : color\n = Color(0, 0, 0, 0)
+R  ->  T7 : position\n = Vector2(1820, 980)
 
 
 ....
@@ -151,31 +151,31 @@ Root  ->  T7 : position\n = Vector2(1820, 980)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Author" as T0
-participant "Title" as T1
-participant "Title\n/TitleContainer\n/TitleLogo" as T2
-participant "Blinder" as T4
-participant "Title\n/ButtonContainer" as T5
+control "Root" as R
+participant "$Author" as T0
+participant "$Title" as T1
+participant "$Title\n/TitleContainer\n/TitleLogo" as T2
+participant "$Blinder" as T4
+participant "$Title\n/ButtonContainer" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->o  T0 : visible\n = false
-Root  ->o  T1 : visible\n = true
-Root  ->  T2 : scale\n = Vector2(1, 1)
-Root  ->  T2 : modulate\n = Color(1, 1, 1, 1)
-Root  ->  T4 : color\n = Color(0, 0, 0, 0)
-Root  ->  T5 : position\n = Vector2(1820, 980)
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = true
+R  ->  T2 : scale\n = Vector2(1, 1)
+R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T4 : color\n = Color(0, 0, 0, 0)
+R  ->  T5 : position\n = Vector2(1820, 980)
 == Time: 0.1 ==
-Root  ->  T5 : position\n = Vector2(1820, 990)
+R  ->  T5 : position\n = Vector2(1820, 990)
 == Time: 0.3 ==
-Root  ->  T5 : position\n = Vector2(1820, 1100)
+R  ->  T5 : position\n = Vector2(1820, 1100)
 == Time: 1.0 ==
-Root  ->  T2 : scale\n = Vector2(0.5, 0.5)
-Root  ->  T2 : modulate\n = Color(0, 0, 0, 0)
-Root  ->  T4 : color\n = Color(0.141176, 0.129412, 0.223529, 1)
-Root  ->  T5 : position\n = Vector2(1820, 1500)
+R  ->  T2 : scale\n = Vector2(0.5, 0.5)
+R  ->  T2 : modulate\n = Color(0, 0, 0, 0)
+R  ->  T4 : color\n = Color(0.141176, 0.129412, 0.223529, 1)
+R  ->  T5 : position\n = Vector2(1820, 1500)
 
 
 ....
@@ -185,20 +185,20 @@ Root  ->  T5 : position\n = Vector2(1820, 1500)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Author" as T0
-participant "Title" as T1
-participant "Blinder" as T3
+control "Root" as R
+participant "$Author" as T0
+participant "$Title" as T1
+participant "$Blinder" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : visible\n = true
-Root  ->o  T1 : visible\n = false
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->  T3 : color\n = Color(0, 0, 0, 0)
+R  ->  T0 : visible\n = true
+R  ->o  T1 : visible\n = false
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->  T3 : color\n = Color(0, 0, 0, 0)
 == Time: 1.0 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -208,26 +208,26 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Author" as T0
-participant "Title" as T1
-participant "Title\n/TitleContainer\n/TitleLogo" as T4
-participant "Blinder" as T5
+control "Root" as R
+participant "$Author" as T0
+participant "$Title" as T1
+participant "$Title\n/TitleContainer\n/TitleLogo" as T4
+participant "$Blinder" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->o  T0 : visible\n = true
-Root  ->o  T1 : visible\n = true
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->  T4 : modulate\n = Color(1, 1, 1, 1)
-Root  ->  T5 : color\n = Color(0, 0, 0, 0)
+R  ->o  T0 : visible\n = true
+R  ->o  T1 : visible\n = true
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T4 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T5 : color\n = Color(0, 0, 0, 0)
 == Time: 1.0 ==
-Root  ->o  T0 : visible\n = false
-Root  ->  T1 : modulate\n = Color(1, 1, 1, 0)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = false
+R  ->  T1 : modulate\n = Color(1, 1, 1, 0)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 == Time: 2.0 ==
-Root  ->  T1 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....

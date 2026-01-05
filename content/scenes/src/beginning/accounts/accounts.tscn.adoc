@@ -194,21 +194,21 @@ func _input(event: InputEvent) -> void:
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 300)
-Root  ->  T1 : position\n = Vector2(0, 1200)
-Root  ->  T2 : position\n = Vector2(0, 1200)
+R  ->  T0 : position\n = Vector2(0, 300)
+R  ->  T1 : position\n = Vector2(0, 1200)
+R  ->  T2 : position\n = Vector2(0, 1200)
 
 
 ....
@@ -218,21 +218,21 @@ Root  ->  T2 : position\n = Vector2(0, 1200)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 300)
-Root  ->  T1 : position\n = Vector2(0, 1200)
-Root  ->  T2 : position\n = Vector2(0, 1200)
+R  ->  T0 : position\n = Vector2(0, 300)
+R  ->  T1 : position\n = Vector2(0, 1200)
+R  ->  T2 : position\n = Vector2(0, 1200)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 
 
 ....
@@ -242,21 +242,21 @@ Root  ->  T2 : position\n = Vector2(0, 656)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, -800)
-Root  ->  T1 : position\n = Vector2(0, 300)
-Root  ->  T2 : position\n = Vector2(0, 1200)
+R  ->  T0 : position\n = Vector2(0, -800)
+R  ->  T1 : position\n = Vector2(0, 300)
+R  ->  T2 : position\n = Vector2(0, 1200)
 
 
 ....
@@ -266,21 +266,21 @@ Root  ->  T2 : position\n = Vector2(0, 1200)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, -800)
-Root  ->  T1 : position\n = Vector2(0, 300)
-Root  ->  T2 : position\n = Vector2(0, 1200)
+R  ->  T0 : position\n = Vector2(0, -800)
+R  ->  T1 : position\n = Vector2(0, 300)
+R  ->  T2 : position\n = Vector2(0, 1200)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 
 
 ....
@@ -290,21 +290,21 @@ Root  ->  T2 : position\n = Vector2(0, 656)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, -800)
-Root  ->  T1 : position\n = Vector2(0, -800)
-Root  ->  T2 : position\n = Vector2(0, 300)
+R  ->  T0 : position\n = Vector2(0, -800)
+R  ->  T1 : position\n = Vector2(0, -800)
+R  ->  T2 : position\n = Vector2(0, 300)
 
 
 ....
@@ -314,21 +314,21 @@ Root  ->  T2 : position\n = Vector2(0, 300)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, -800)
-Root  ->  T1 : position\n = Vector2(0, -800)
-Root  ->  T2 : position\n = Vector2(0, 300)
+R  ->  T0 : position\n = Vector2(0, -800)
+R  ->  T1 : position\n = Vector2(0, -800)
+R  ->  T2 : position\n = Vector2(0, 300)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 
 
 ....
@@ -338,17 +338,17 @@ Root  ->  T2 : position\n = Vector2(0, 656)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 
 
 ....
@@ -358,17 +358,17 @@ Root  ->  T2 : position\n = Vector2(0, 656)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "AccountsContainer\n/Account1" as T0
-participant "AccountsContainer\n/Account2" as T1
-participant "AccountsContainer\n/Account3" as T2
+control "Root" as R
+participant "$AccountsContainer\n/Account1" as T0
+participant "$AccountsContainer\n/Account2" as T1
+participant "$AccountsContainer\n/Account3" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 50)
-Root  ->  T1 : position\n = Vector2(0, 356)
-Root  ->  T2 : position\n = Vector2(0, 656)
+R  ->  T0 : position\n = Vector2(0, 50)
+R  ->  T1 : position\n = Vector2(0, 356)
+R  ->  T2 : position\n = Vector2(0, 656)
 
 
 ....

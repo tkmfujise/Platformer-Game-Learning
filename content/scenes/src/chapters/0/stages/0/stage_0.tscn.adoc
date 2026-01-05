@@ -194,13 +194,13 @@ CAUTION: No other scene instantiate this scene.
 
 [plantuml]
 ....
-control "Root" as Root
-participant "OpeningCurtain" as T0
+control "Root" as R
+participant "$OpeningCurtain" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->o  T0 : &"play"()
+R  ->o  T0 : &"play"()
 
 
 ....

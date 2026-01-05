@@ -295,31 +295,31 @@ CAUTION: No other scene instantiate this scene.
 
 [plantuml]
 ....
-control "Root" as Root
-participant "RootContainer" as T0
-participant "RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T1
-participant "Accounts" as T2
-participant "RootContainer\n/MenuContainer\n/OthersContainer" as T3
-participant "RootContainer\n/MenuContainer\n/ClimbContainer" as T4
-participant "Chapters" as T10
+control "Root" as R
+participant "$RootContainer" as T0
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T1
+participant "$Accounts" as T2
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T3
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T4
+participant "$Chapters" as T10
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T1 : position\n = Vector2(0, 0)
-Root  ->  T2 : position\n = Vector2(1920, 0)
-Root  ->  T3 : position\n = Vector2(10, 400)
-Root  ->  T4 : position\n = Vector2(0, 0)
-Root  ->o  T2 : grab_focus_first\n = false
-Root  ->o  Root : current_plate\n = 0
-Root  ->o  Root : grab_focus_root\n = false
-Root  ->  T1 : rotation\n = 0.0
-Root  ->  T1 : offset\n = Vector2(10, 140)
-Root  ->  T10 : position\n = Vector2(1920, 0)
-Root  ->o  T10 : play_opening\n = false
-Root  ->o  T10 : grab_focus_first\n = false
-Root  ->o  T2 : focus_returned\n = false
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(0, 0)
+R  ->  T2 : position\n = Vector2(1920, 0)
+R  ->  T3 : position\n = Vector2(10, 400)
+R  ->  T4 : position\n = Vector2(0, 0)
+R  ->o  T2 : grab_focus_first\n = false
+R  ->o  R : current_plate\n = 0
+R  ->o  R : grab_focus_root\n = false
+R  ->  T1 : rotation\n = 0.0
+R  ->  T1 : offset\n = Vector2(10, 140)
+R  ->  T10 : position\n = Vector2(1920, 0)
+R  ->o  T10 : play_opening\n = false
+R  ->o  T10 : grab_focus_first\n = false
+R  ->o  T2 : focus_returned\n = false
 
 
 ....
@@ -329,27 +329,27 @@ Root  ->o  T2 : focus_returned\n = false
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Accounts" as T0
-participant "Chapters" as T1
-participant "RootContainer\n/MenuContainer\n/ClimbContainer" as T2
-participant "RootContainer\n/MenuContainer\n/OthersContainer" as T3
+control "Root" as R
+participant "$Accounts" as T0
+participant "$Chapters" as T1
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T2
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(-1920, 1080)
-Root  ->  T1 : position\n = Vector2(0, 0)
-Root  ->  T2 : position\n = Vector2(-1000, 0)
-Root  ->  T3 : position\n = Vector2(-1000, 400)
+R  ->  T0 : position\n = Vector2(-1920, 1080)
+R  ->  T1 : position\n = Vector2(0, 0)
+R  ->  T2 : position\n = Vector2(-1000, 0)
+R  ->  T3 : position\n = Vector2(-1000, 400)
 == Time: 0.166667 ==
-Root  ->o  T0 : focus_returned\n = true
+R  ->o  T0 : focus_returned\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T1 : position\n = Vector2(1920, 0)
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(1920, 0)
 == Time: 1.0 ==
-Root  ->  T1 : position\n = Vector2(1920, 0)
-Root  ->o  Root : current_plate\n = 2
+R  ->  T1 : position\n = Vector2(1920, 0)
+R  ->o  R : current_plate\n = 2
 
 
 ....
@@ -359,26 +359,26 @@ Root  ->o  Root : current_plate\n = 2
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Accounts" as T0
-participant "Chapters" as T1
-participant "RootContainer\n/MenuContainer\n/ClimbContainer" as T5
-participant "RootContainer\n/MenuContainer\n/OthersContainer" as T6
+control "Root" as R
+participant "$Accounts" as T0
+participant "$Chapters" as T1
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T5
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T6
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T1 : position\n = Vector2(0, 0)
-Root  ->o  T1 : play_opening\n = true
-Root  ->o  T0 : grab_focus_first\n = false
-Root  ->  T5 : position\n = Vector2(-1000, 0)
-Root  ->  T6 : position\n = Vector2(-1000, 400)
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(0, 0)
+R  ->o  T1 : play_opening\n = true
+R  ->o  T0 : grab_focus_first\n = false
+R  ->  T5 : position\n = Vector2(-1000, 0)
+R  ->  T6 : position\n = Vector2(-1000, 400)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(-1920, 1080)
-Root  ->o  Root : current_plate\n = 3
+R  ->  T0 : position\n = Vector2(-1920, 1080)
+R  ->o  R : current_plate\n = 3
 == Time: 0.7 ==
-Root  ->o  T1 : grab_focus_first\n = true
+R  ->o  T1 : grab_focus_first\n = true
 
 
 ....
@@ -388,23 +388,23 @@ Root  ->o  T1 : grab_focus_first\n = true
 
 [plantuml]
 ....
-control "Root" as Root
-participant "RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T0
-participant "Chapters" as T1
-participant "Accounts" as T2
+control "Root" as R
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T0
+participant "$Chapters" as T1
+participant "$Accounts" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T1 : position\n = Vector2(1920, 0)
-Root  ->  T2 : position\n = Vector2(1920, 0)
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(1920, 0)
+R  ->  T2 : position\n = Vector2(1920, 0)
 == Time: 0.1 ==
-Root  ->  T0 : position\n = Vector2(0, 5)
+R  ->  T0 : position\n = Vector2(0, 5)
 == Time: 0.2 ==
-Root  ->  T0 : position\n = Vector2(0, -10)
+R  ->  T0 : position\n = Vector2(0, -10)
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector2(0, -5)
+R  ->  T0 : position\n = Vector2(0, -5)
 
 
 ....
@@ -414,47 +414,47 @@ Root  ->  T0 : position\n = Vector2(0, -5)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Accounts" as T0
-participant "RootContainer\n/MenuContainer\n/OthersContainer" as T1
-participant "RootContainer\n/MenuContainer\n/ClimbContainer" as T2
-participant "RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T5
-participant "Chapters" as T7
+control "Root" as R
+participant "$Accounts" as T0
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T1
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T2
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T5
+participant "$Chapters" as T7
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1920, 0)
-Root  ->  T1 : position\n = Vector2(10, 400)
-Root  ->  T2 : position\n = Vector2(0, 0)
-Root  ->o  T0 : grab_focus_first\n = false
-Root  ->o  Root : current_plate\n = 1
-Root  ->  T5 : rotation\n = 0.0
-Root  ->  T5 : offset\n = Vector2(10, 140)
-Root  ->  T7 : position\n = Vector2(1920, 0)
+R  ->  T0 : position\n = Vector2(1920, 0)
+R  ->  T1 : position\n = Vector2(10, 400)
+R  ->  T2 : position\n = Vector2(0, 0)
+R  ->o  T0 : grab_focus_first\n = false
+R  ->o  R : current_plate\n = 1
+R  ->  T5 : rotation\n = 0.0
+R  ->  T5 : offset\n = Vector2(10, 140)
+R  ->  T7 : position\n = Vector2(1920, 0)
 == Time: 0.05 ==
-Root  ->  T5 : rotation\n = -0.349066
-Root  ->  T5 : offset\n = Vector2(-80, 60)
+R  ->  T5 : rotation\n = -0.349066
+R  ->  T5 : offset\n = Vector2(-80, 60)
 == Time: 0.15 ==
-Root  ->  T5 : rotation\n = 0.0349066
-Root  ->  T5 : offset\n = Vector2(40, 110)
+R  ->  T5 : rotation\n = 0.0349066
+R  ->  T5 : offset\n = Vector2(40, 110)
 == Time: 0.25 ==
-Root  ->  T5 : rotation\n = 0.20944
-Root  ->  T5 : offset\n = Vector2(70, 110)
+R  ->  T5 : rotation\n = 0.20944
+R  ->  T5 : offset\n = Vector2(70, 110)
 == Time: 0.35 ==
-Root  ->  T5 : rotation\n = -0.174533
-Root  ->  T5 : offset\n = Vector2(-40, 120)
+R  ->  T5 : rotation\n = -0.174533
+R  ->  T5 : offset\n = Vector2(-40, 120)
 == Time: 0.7 ==
-Root  ->  T0 : position\n = Vector2(1920, 0)
-Root  ->  T1 : position\n = Vector2(-1000, 400)
-Root  ->  T2 : position\n = Vector2(0, 0)
-Root  ->o  Root : current_plate\n = 2
-Root  ->  T5 : rotation\n = 0.0
-Root  ->  T5 : offset\n = Vector2(10, 140)
+R  ->  T0 : position\n = Vector2(1920, 0)
+R  ->  T1 : position\n = Vector2(-1000, 400)
+R  ->  T2 : position\n = Vector2(0, 0)
+R  ->o  R : current_plate\n = 2
+R  ->  T5 : rotation\n = 0.0
+R  ->  T5 : offset\n = Vector2(10, 140)
 == Time: 1.5 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T2 : position\n = Vector2(-1000, 0)
-Root  ->o  T0 : grab_focus_first\n = true
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T2 : position\n = Vector2(-1000, 0)
+R  ->o  T0 : grab_focus_first\n = true
 
 
 ....
@@ -464,15 +464,15 @@ Root  ->o  T0 : grab_focus_first\n = true
 
 [plantuml]
 ....
-control "Root" as Root
-participant "RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T0
+control "Root" as R
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, -5)
+R  ->  T0 : position\n = Vector2(0, -5)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T0 : position\n = Vector2(0, 0)
 
 
 ....
@@ -482,33 +482,33 @@ Root  ->  T0 : position\n = Vector2(0, 0)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Accounts" as T0
-participant "RootContainer\n/MenuContainer\n/OthersContainer" as T1
-participant "RootContainer\n/MenuContainer\n/ClimbContainer" as T2
-participant "Chapters" as T6
+control "Root" as R
+participant "$Accounts" as T0
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T1
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T2
+participant "$Chapters" as T6
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T1 : position\n = Vector2(-1000, 400)
-Root  ->  T2 : position\n = Vector2(-1000, 0)
-Root  ->o  T0 : grab_focus_first\n = true
-Root  ->o  Root : current_plate\n = 2
-Root  ->o  Root : grab_focus_root\n = false
-Root  ->  T6 : position\n = Vector2(1920, 0)
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(-1000, 400)
+R  ->  T2 : position\n = Vector2(-1000, 0)
+R  ->o  T0 : grab_focus_first\n = true
+R  ->o  R : current_plate\n = 2
+R  ->o  R : grab_focus_root\n = false
+R  ->  T6 : position\n = Vector2(1920, 0)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(1920, 0)
-Root  ->  T2 : position\n = Vector2(0, 0)
-Root  ->o  Root : current_plate\n = 1
+R  ->  T0 : position\n = Vector2(1920, 0)
+R  ->  T2 : position\n = Vector2(0, 0)
+R  ->o  R : current_plate\n = 1
 == Time: 0.55 ==
-Root  ->o  T0 : grab_focus_first\n = false
-Root  ->o  Root : grab_focus_root\n = true
+R  ->o  T0 : grab_focus_first\n = false
+R  ->o  R : grab_focus_root\n = true
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector2(1920, 0)
-Root  ->  T1 : position\n = Vector2(10, 400)
-Root  ->  T2 : position\n = Vector2(0, 0)
+R  ->  T0 : position\n = Vector2(1920, 0)
+R  ->  T1 : position\n = Vector2(10, 400)
+R  ->  T2 : position\n = Vector2(0, 0)
 
 
 ....
@@ -518,28 +518,28 @@ Root  ->  T2 : position\n = Vector2(0, 0)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "RootContainer" as T0
-participant "RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T1
-participant "Accounts" as T2
-participant "Chapters" as T5
+control "Root" as R
+participant "$RootContainer" as T0
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T1
+participant "$Accounts" as T2
+participant "$Chapters" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T1 : position\n = Vector2(0, -5)
-Root  ->  T2 : position\n = Vector2(1920, 0)
-Root  ->o  Root : current_plate\n = 0
-Root  ->o  T5 : play_opening\n = false
-Root  ->o  T2 : grab_focus_first\n = false
-Root  ->o  T5 : grab_focus_first\n = false
+R  ->  T1 : position\n = Vector2(0, -5)
+R  ->  T2 : position\n = Vector2(1920, 0)
+R  ->o  R : current_plate\n = 0
+R  ->o  T5 : play_opening\n = false
+R  ->o  T2 : grab_focus_first\n = false
+R  ->o  T5 : grab_focus_first\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(-800, 0)
+R  ->  T0 : position\n = Vector2(-800, 0)
 == Time: 0.966667 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T0 : position\n = Vector2(0, 0)
 == Time: 1.0 ==
-Root  ->o  Root : current_plate\n = 1
-Root  ->o  Root : grab_focus_root\n = true
+R  ->o  R : current_plate\n = 1
+R  ->o  R : grab_focus_root\n = true
 
 
 ....

@@ -79,13 +79,13 @@ left to right direction
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, 0)
-Root  ->o  Root : flicked\n = false
+R  ->  R : position\n = Vector2(0, 0)
+R  ->o  R : flicked\n = false
 
 
 ....
@@ -95,16 +95,16 @@ Root  ->o  Root : flicked\n = false
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 == Time: 0.0333333 ==
-Root  ->o  Root : flicked\n = true
+R  ->o  R : flicked\n = true
 == Time: 0.5 ==
-Root  ->  Root : position\n = Vector2(1920, 0)
+R  ->  R : position\n = Vector2(1920, 0)
 
 
 ....
@@ -114,16 +114,16 @@ Root  ->  Root : position\n = Vector2(1920, 0)
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(1920, 0)
+R  ->  R : position\n = Vector2(1920, 0)
 == Time: 0.0333333 ==
-Root  ->o  Root : flicked\n = false
+R  ->o  R : flicked\n = false
 == Time: 0.5 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 
 
 ....

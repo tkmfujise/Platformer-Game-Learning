@@ -61,16 +61,16 @@ func _input(event: InputEvent) -> void:
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Bookmark" as T2
+control "Root" as R
+participant "$Bookmark" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->o  Root : z_index\n = -1
-Root  ->  Root : modulate\n = Color(0.5, 0.5, 0.5, 1)
-Root  ->  T2 : position\n = Vector2(70, 106)
-Root  ->  T2 : scale\n = Vector2(1, 1)
+R  ->o  R : z_index\n = -1
+R  ->  R : modulate\n = Color(0.5, 0.5, 0.5, 1)
+R  ->  T2 : position\n = Vector2(70, 106)
+R  ->  T2 : scale\n = Vector2(1, 1)
 
 
 ....
@@ -80,22 +80,22 @@ Root  ->  T2 : scale\n = Vector2(1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Bookmark" as T2
+control "Root" as R
+participant "$Bookmark" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T2 : position\n = Vector2(70, 106)
-Root  ->  T2 : scale\n = Vector2(1, 1)
+R  ->  T2 : position\n = Vector2(70, 106)
+R  ->  T2 : scale\n = Vector2(1, 1)
 == Time: 0.14 ==
-Root  ->  Root : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  Root : z_index\n = 1
-Root  ->  T2 : position\n = Vector2(70, 250)
-Root  ->  T2 : scale\n = Vector2(1.2, 1.2)
+R  ->  R : modulate\n = Color(1, 1, 1, 1)
+R  ->o  R : z_index\n = 1
+R  ->  T2 : position\n = Vector2(70, 250)
+R  ->  T2 : scale\n = Vector2(1.2, 1.2)
 == Time: 0.25 ==
-Root  ->  T2 : position\n = Vector2(70, 106)
-Root  ->  T2 : scale\n = Vector2(1, 1)
+R  ->  T2 : position\n = Vector2(70, 106)
+R  ->  T2 : scale\n = Vector2(1, 1)
 
 
 ....
@@ -105,22 +105,22 @@ Root  ->  T2 : scale\n = Vector2(1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Bookmark" as T2
+control "Root" as R
+participant "$Bookmark" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T2 : position\n = Vector2(70, 106)
-Root  ->  T2 : scale\n = Vector2(1, 1)
+R  ->  T2 : position\n = Vector2(70, 106)
+R  ->  T2 : scale\n = Vector2(1, 1)
 == Time: 0.11 ==
-Root  ->o  Root : z_index\n = 0
-Root  ->  Root : modulate\n = Color(0.5, 0.5, 0.5, 1)
-Root  ->  T2 : position\n = Vector2(70, 250)
-Root  ->  T2 : scale\n = Vector2(0.8, 0.8)
+R  ->o  R : z_index\n = 0
+R  ->  R : modulate\n = Color(0.5, 0.5, 0.5, 1)
+R  ->  T2 : position\n = Vector2(70, 250)
+R  ->  T2 : scale\n = Vector2(0.8, 0.8)
 == Time: 0.25 ==
-Root  ->  T2 : position\n = Vector2(70, 106)
-Root  ->  T2 : scale\n = Vector2(1, 1)
+R  ->  T2 : position\n = Vector2(70, 106)
+R  ->  T2 : scale\n = Vector2(1, 1)
 
 
 ....

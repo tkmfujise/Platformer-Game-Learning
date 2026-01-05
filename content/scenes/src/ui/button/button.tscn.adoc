@@ -60,12 +60,12 @@ func _process(delta: float) -> void:
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 
 
 ....
@@ -75,7 +75,7 @@ Root  ->  Root : position\n = Vector2(0, 0)
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
@@ -88,18 +88,18 @@ control "Root" as Root
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 == Time: 0.1 ==
-Root  ->  Root : position\n = Vector2(10, 2)
+R  ->  R : position\n = Vector2(10, 2)
 == Time: 0.233333 ==
-Root  ->  Root : position\n = Vector2(25, -5)
+R  ->  R : position\n = Vector2(25, -5)
 == Time: 1.0 ==
-Root  ->  Root : position\n = Vector2(50, -5)
+R  ->  R : position\n = Vector2(50, -5)
 
 
 ....
@@ -109,18 +109,18 @@ Root  ->  Root : position\n = Vector2(50, -5)
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 == Time: 0.1 ==
-Root  ->  Root : position\n = Vector2(0, 5)
+R  ->  R : position\n = Vector2(0, 5)
 == Time: 0.2 ==
-Root  ->  Root : position\n = Vector2(0, -10)
+R  ->  R : position\n = Vector2(0, -10)
 == Time: 1.0 ==
-Root  ->  Root : position\n = Vector2(0, -5)
+R  ->  R : position\n = Vector2(0, -5)
 
 
 ....
@@ -130,7 +130,7 @@ Root  ->  Root : position\n = Vector2(0, -5)
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
@@ -143,14 +143,14 @@ control "Root" as Root
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(50, -5)
+R  ->  R : position\n = Vector2(50, -5)
 == Time: 0.5 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 
 
 ....
@@ -160,14 +160,14 @@ Root  ->  Root : position\n = Vector2(0, 0)
 
 [plantuml]
 ....
-control "Root" as Root
+control "Root" as R
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, -5)
+R  ->  R : position\n = Vector2(0, -5)
 == Time: 0.5 ==
-Root  ->  Root : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
 
 
 ....

@@ -106,26 +106,26 @@ _(R::_on_animation_player_animation_finished, N16::animation_finished)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D" as T0
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T1
-participant "Blinder" as T3
-participant "Mountain\n/MountainCoreSurface" as T5
-participant "WorldEnvironment" as T6
-participant "Mist" as T7
+control "Root" as R
+participant "$Path3D\n/PathFollow3D" as T0
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T1
+participant "$Blinder" as T3
+participant "$Mountain\n/MountainCoreSurface" as T5
+participant "$WorldEnvironment" as T6
+participant "$Mist" as T7
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : progress_ratio\n = 0.0
-Root  ->  T1 : position\n = Vector3(0.52904, 0.621466, -0.783036)
-Root  ->  T1 : rotation\n = Vector3(-0.0879928, -2.11665, 0.000439632)
-Root  ->  T3 : modulate\n = Color(0, 0, 0, 0.784314)
-Root  ->  T0 : h_offset\n = -0.005
-Root  ->  T5 : blend_shapes/Hide\n = 0.0
-Root  ->  T6 : environment\n = 0.0
-Root  ->o  T7 : visible\n = true
-Root  ->  T7 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : progress_ratio\n = 0.0
+R  ->  T1 : position\n = Vector3(0.52904, 0.621466, -0.783036)
+R  ->  T1 : rotation\n = Vector3(-0.0879928, -2.11665, 0.000439632)
+R  ->  T3 : modulate\n = Color(0, 0, 0, 0.784314)
+R  ->  T0 : h_offset\n = -0.005
+R  ->  T5 : blend_shapes/Hide\n = 0.0
+R  ->  T6 : environment\n = 0.0
+R  ->o  T7 : visible\n = true
+R  ->  T7 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -135,21 +135,21 @@ Root  ->  T7 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "WorldEnvironment" as T3
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$WorldEnvironment" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.887, 0.0630711, -0.405323)
-Root  ->  T0 : rotation\n = Vector3(-0.0655383, 1.96273, 0.00803841)
-Root  ->  T3 : environment\n = 0.0
+R  ->  T0 : position\n = Vector3(2.887, 0.0630711, -0.405323)
+R  ->  T0 : rotation\n = Vector3(-0.0655383, 1.96273, 0.00803841)
+R  ->  T3 : environment\n = 0.0
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(0.529, 0.621, -0.783)
-Root  ->  T0 : rotation\n = Vector3(-0.0872665, 4.18879, 0)
-Root  ->  T2 : progress_ratio\n = 0.0
+R  ->  T0 : position\n = Vector3(0.529, 0.621, -0.783)
+R  ->  T0 : rotation\n = Vector3(-0.0872665, 4.18879, 0)
+R  ->  T2 : progress_ratio\n = 0.0
 
 
 ....
@@ -159,29 +159,29 @@ Root  ->  T2 : progress_ratio\n = 0.0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D" as T0
-participant "Blinder" as T1
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T3
-participant "WorldEnvironment" as T5
-participant "Mist" as T6
+control "Root" as R
+participant "$Path3D\n/PathFollow3D" as T0
+participant "$Blinder" as T1
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T3
+participant "$WorldEnvironment" as T5
+participant "$Mist" as T6
 
 
 loop
 == Time: 0.0 ==
-Root  ->  T0 : progress_ratio\n = 0.0
-Root  ->  T1 : modulate\n = Color(0, 0, 0, 0)
-Root  ->  T0 : h_offset\n = 0.0
-Root  ->  T3 : position\n = Vector3(0.52904, 0.621466, -0.783036)
-Root  ->  T3 : rotation\n = Vector3(-0.0872665, 4.18879, 0)
-Root  ->  T5 : environment\n = 0.0
-Root  ->o  T6 : visible\n = true
-Root  ->  T6 : modulate\n = Color(1, 1, 1, 0)
+R  ->  T0 : progress_ratio\n = 0.0
+R  ->  T1 : modulate\n = Color(0, 0, 0, 0)
+R  ->  T0 : h_offset\n = 0.0
+R  ->  T3 : position\n = Vector3(0.52904, 0.621466, -0.783036)
+R  ->  T3 : rotation\n = Vector3(-0.0872665, 4.18879, 0)
+R  ->  T5 : environment\n = 0.0
+R  ->o  T6 : visible\n = true
+R  ->  T6 : modulate\n = Color(1, 1, 1, 0)
 == Time: 2.0 ==
-Root  ->  T6 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T6 : modulate\n = Color(1, 1, 1, 1)
 == Time: 60.0 ==
-Root  ->  T0 : progress_ratio\n = 1.0
-Root  ->  T0 : h_offset\n = 0.0
+R  ->  T0 : progress_ratio\n = 1.0
+R  ->  T0 : h_offset\n = 0.0
 
 end
 ....
@@ -191,25 +191,25 @@ end
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(0.529, 0.621, -0.783)
-Root  ->  T0 : rotation\n = Vector3(-0.0872665, -2.0944, 0)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = -0.1
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(0.529, 0.621, -0.783)
+R  ->  T0 : rotation\n = Vector3(-0.0872665, -2.0944, 0)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = -0.1
+R  ->o  T5 : visible\n = false
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(2.887, 0.0630711, -0.405323)
-Root  ->  T0 : rotation\n = Vector3(-0.0663225, 1.91986, 0.00872665)
-Root  ->  T2 : progress_ratio\n = 0.0
+R  ->  T0 : position\n = Vector3(2.887, 0.0630711, -0.405323)
+R  ->  T0 : rotation\n = Vector3(-0.0663225, 1.91986, 0.00872665)
+R  ->  T2 : progress_ratio\n = 0.0
 
 
 ....
@@ -219,25 +219,25 @@ Root  ->  T2 : progress_ratio\n = 0.0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.887, 0.063, -0.405)
-Root  ->  T0 : rotation\n = Vector3(-0.0663225, 1.91986, 0.00872665)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.887, 0.063, -0.405)
+R  ->  T0 : rotation\n = Vector3(-0.0663225, 1.91986, 0.00872665)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(2.27175, 0.33458, -0.958952)
-Root  ->  T0 : rotation\n = Vector3(-0.239332, 2.68677, -0.00974663)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T4 : environment\n = -0.08
+R  ->  T0 : position\n = Vector3(2.27175, 0.33458, -0.958952)
+R  ->  T0 : rotation\n = Vector3(-0.239332, 2.68677, -0.00974663)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T4 : environment\n = -0.08
 
 
 ....
@@ -247,25 +247,25 @@ Root  ->  T4 : environment\n = -0.08
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.272, 0.335, -0.959)
-Root  ->  T0 : rotation\n = Vector3(-0.23911, 2.68606, -0.010472)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.272, 0.335, -0.959)
+R  ->  T0 : rotation\n = Vector3(-0.23911, 2.68606, -0.010472)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(1.72521, 0.334661, -0.878079)
-Root  ->  T0 : rotation\n = Vector3(-0.23926, 2.89845, -0.00954221)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T4 : environment\n = -0.05
+R  ->  T0 : position\n = Vector3(1.72521, 0.334661, -0.878079)
+R  ->  T0 : rotation\n = Vector3(-0.23926, 2.89845, -0.00954221)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T4 : environment\n = -0.05
 
 
 ....
@@ -275,26 +275,26 @@ Root  ->  T4 : environment\n = -0.05
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.725, 0.335, -0.878)
-Root  ->  T0 : rotation\n = Vector3(-0.23911, 2.89899, -0.00872665)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.725, 0.335, -0.878)
+R  ->  T0 : rotation\n = Vector3(-0.23911, 2.89899, -0.00872665)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 0.666667 ==
-Root  ->  T4 : environment\n = 0.0
+R  ->  T4 : environment\n = 0.0
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(1.048, 0.454, -0.205)
-Root  ->  T0 : rotation\n = Vector3(-0.298451, -1.74533, 0.00523599)
-Root  ->  T2 : progress_ratio\n = 0.0
+R  ->  T0 : position\n = Vector3(1.048, 0.454, -0.205)
+R  ->  T0 : rotation\n = Vector3(-0.298451, -1.74533, 0.00523599)
+R  ->  T2 : progress_ratio\n = 0.0
 
 
 ....
@@ -304,26 +304,26 @@ Root  ->  T2 : progress_ratio\n = 0.0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.048, 0.524, -0.205)
-Root  ->  T0 : rotation\n = Vector3(-0.0872665, -2.0944, 0)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.048, 0.524, -0.205)
+R  ->  T0 : rotation\n = Vector3(-0.0872665, -2.0944, 0)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 0.633333 ==
-Root  ->  T4 : environment\n = 0.1
+R  ->  T4 : environment\n = 0.1
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(0.89739, 0.524141, 0.372991)
-Root  ->  T0 : rotation\n = Vector3(-0.197222, -1.309, 0.0383972)
-Root  ->  T2 : progress_ratio\n = 0.0
+R  ->  T0 : position\n = Vector3(0.89739, 0.524141, 0.372991)
+R  ->  T0 : rotation\n = Vector3(-0.197222, -1.309, 0.0383972)
+R  ->  T2 : progress_ratio\n = 0.0
 
 
 ....
@@ -333,25 +333,25 @@ Root  ->  T2 : progress_ratio\n = 0.0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(0.897, 0.524, 0.373)
-Root  ->  T0 : rotation\n = Vector3(-0.0872665, -2.0944, 0)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(0.897, 0.524, 0.373)
+R  ->  T0 : rotation\n = Vector3(-0.0872665, -2.0944, 0)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(1.505, 0.533, 0.685)
-Root  ->  T0 : rotation\n = Vector3(-0.139626, -0.523599, 0.0733038)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T4 : environment\n = 0.2
+R  ->  T0 : position\n = Vector3(1.505, 0.533, 0.685)
+R  ->  T0 : rotation\n = Vector3(-0.139626, -0.523599, 0.0733038)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T4 : environment\n = 0.2
 
 
 ....
@@ -361,25 +361,25 @@ Root  ->  T4 : environment\n = 0.2
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.505, 0.608, 0.685)
-Root  ->  T0 : rotation\n = Vector3(-0.139626, -0.523599, 0.0733038)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.505, 0.608, 0.685)
+R  ->  T0 : rotation\n = Vector3(-0.139626, -0.523599, 0.0733038)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(2.6676, 0.843824, 0.187534)
-Root  ->  T0 : rotation\n = Vector3(-0.249582, 1.46259, 0.0139626)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T4 : environment\n = 0.6
+R  ->  T0 : position\n = Vector3(2.6676, 0.843824, 0.187534)
+R  ->  T0 : rotation\n = Vector3(-0.249582, 1.46259, 0.0139626)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T4 : environment\n = 0.6
 
 
 ....
@@ -389,26 +389,26 @@ Root  ->  T4 : environment\n = 0.6
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.668, 0.844, 0.188)
-Root  ->  T0 : rotation\n = Vector3(-0.249582, 1.46259, 0.0139626)
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.668, 0.844, 0.188)
+R  ->  T0 : rotation\n = Vector3(-0.249582, 1.46259, 0.0139626)
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 0.633333 ==
-Root  ->  T4 : environment\n = 0.75
+R  ->  T4 : environment\n = 0.75
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(2.238, 0.179, -1.871)
-Root  ->  T0 : rotation\n = Vector3(0.307178, 3.01942, 0.00174533)
-Root  ->  T2 : progress_ratio\n = 0.0
+R  ->  T0 : position\n = Vector3(2.238, 0.179, -1.871)
+R  ->  T0 : rotation\n = Vector3(0.307178, 3.01942, 0.00174533)
+R  ->  T2 : progress_ratio\n = 0.0
 
 
 ....
@@ -418,26 +418,26 @@ Root  ->  T2 : progress_ratio\n = 0.0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.238, 0.179, -1.871)
-Root  ->  T0 : rotation\n = Vector3(0.307178, 3.01942, 0.00174533)
-Root  ->  T3 : blend_shapes/Hide\n = 1.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.238, 0.179, -1.871)
+R  ->  T0 : rotation\n = Vector3(0.307178, 3.01942, 0.00174533)
+R  ->  T3 : blend_shapes/Hide\n = 1.0
+R  ->o  T5 : visible\n = false
 == Time: 0.666667 ==
-Root  ->  T4 : environment\n = 1.0
+R  ->  T4 : environment\n = 1.0
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector3(1.957, 0.82, -0.531)
-Root  ->  T0 : rotation\n = Vector3(-0.406981, 3.12041, 0.0460821)
-Root  ->  T2 : progress_ratio\n = 0.0
+R  ->  T0 : position\n = Vector3(1.957, 0.82, -0.531)
+R  ->  T0 : rotation\n = Vector3(-0.406981, 3.12041, 0.0460821)
+R  ->  T2 : progress_ratio\n = 0.0
 
 
 ....
@@ -447,28 +447,28 @@ Root  ->  T2 : progress_ratio\n = 0.0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D" as T0
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T1
-participant "Blinder" as T3
-participant "Mountain\n/MountainCoreSurface" as T4
-participant "WorldEnvironment" as T5
-participant "Mist" as T6
+control "Root" as R
+participant "$Path3D\n/PathFollow3D" as T0
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T1
+participant "$Blinder" as T3
+participant "$Mountain\n/MountainCoreSurface" as T4
+participant "$WorldEnvironment" as T5
+participant "$Mist" as T6
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : progress_ratio\n = 0.0
-Root  ->  T1 : position\n = Vector3(0.299, 0.621, -0.968)
-Root  ->  T1 : rotation\n = Vector3(-0.195477, 4.18879, 0)
-Root  ->  T3 : modulate\n = Color(0.141176, 0.129412, 0.223529, 1)
-Root  ->  T4 : blend_shapes/Hide\n = 0.0
-Root  ->  T5 : environment\n = 0.0
-Root  ->o  T6 : visible\n = false
+R  ->  T0 : progress_ratio\n = 0.0
+R  ->  T1 : position\n = Vector3(0.299, 0.621, -0.968)
+R  ->  T1 : rotation\n = Vector3(-0.195477, 4.18879, 0)
+R  ->  T3 : modulate\n = Color(0.141176, 0.129412, 0.223529, 1)
+R  ->  T4 : blend_shapes/Hide\n = 0.0
+R  ->  T5 : environment\n = 0.0
+R  ->o  T6 : visible\n = false
 == Time: 1.0 ==
-Root  ->  T1 : position\n = Vector3(0.52904, 0.621466, -0.783036)
-Root  ->  T1 : rotation\n = Vector3(-0.0872665, 4.18879, 0)
-Root  ->  T3 : modulate\n = Color(0, 0, 0, 0)
+R  ->  T1 : position\n = Vector3(0.52904, 0.621466, -0.783036)
+R  ->  T1 : rotation\n = Vector3(-0.0872665, 4.18879, 0)
+R  ->  T3 : modulate\n = Color(0, 0, 0, 0)
 
 
 ....
@@ -478,25 +478,25 @@ Root  ->  T3 : modulate\n = Color(0, 0, 0, 0)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.887, 0.0630711, -0.405323)
-Root  ->  T0 : rotation\n = Vector3(-0.0663225, 1.91986, 0.00872665)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 
-Root  ->  T4 : environment\n = -0.1
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.887, 0.0630711, -0.405323)
+R  ->  T0 : rotation\n = Vector3(-0.0663225, 1.91986, 0.00872665)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 
+R  ->  T4 : environment\n = -0.1
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(2.627, 0.072, -0.594)
-Root  ->  T0 : rotation\n = Vector3(-0.190241, 2.78904, 0.0279253)
+R  ->  T0 : position\n = Vector3(2.627, 0.072, -0.594)
+R  ->  T0 : rotation\n = Vector3(-0.190241, 2.78904, 0.0279253)
 
 
 ....
@@ -506,25 +506,25 @@ Root  ->  T0 : rotation\n = Vector3(-0.190241, 2.78904, 0.0279253)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.27175, 0.33458, -0.958952)
-Root  ->  T0 : rotation\n = Vector3(-0.239332, 2.68677, -0.00974663)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = -0.08
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.27175, 0.33458, -0.958952)
+R  ->  T0 : rotation\n = Vector3(-0.239332, 2.68677, -0.00974663)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = -0.08
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(2.095, 0.153, -0.811)
-Root  ->  T0 : rotation\n = Vector3(0.00872665, 2.77507, 0.0226893)
+R  ->  T0 : position\n = Vector3(2.095, 0.153, -0.811)
+R  ->  T0 : rotation\n = Vector3(0.00872665, 2.77507, 0.0226893)
 
 
 ....
@@ -534,25 +534,25 @@ Root  ->  T0 : rotation\n = Vector3(0.00872665, 2.77507, 0.0226893)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.72521, 0.334661, -0.878079)
-Root  ->  T0 : rotation\n = Vector3(-0.23926, 2.89845, -0.00954221)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = -0.05
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.72521, 0.334661, -0.878079)
+R  ->  T0 : rotation\n = Vector3(-0.23926, 2.89845, -0.00954221)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = -0.05
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(1.54829, 0.245408, -0.742679)
-Root  ->  T0 : rotation\n = Vector3(0.0820305, 3.49589, -0.0174533)
+R  ->  T0 : position\n = Vector3(1.54829, 0.245408, -0.742679)
+R  ->  T0 : rotation\n = Vector3(0.0820305, 3.49589, -0.0174533)
 
 
 ....
@@ -562,25 +562,25 @@ Root  ->  T0 : rotation\n = Vector3(0.0820305, 3.49589, -0.0174533)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.048, 0.454, -0.205)
-Root  ->  T0 : rotation\n = Vector3(-0.298451, -1.74533, 0.00523599)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = 0.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.048, 0.454, -0.205)
+R  ->  T0 : rotation\n = Vector3(-0.298451, -1.74533, 0.00523599)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = 0.0
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(1.205, 0.324, -0.205)
-Root  ->  T0 : rotation\n = Vector3(0.0663225, -1.73486, -0.00523599)
+R  ->  T0 : position\n = Vector3(1.205, 0.324, -0.205)
+R  ->  T0 : rotation\n = Vector3(0.0663225, -1.73486, -0.00523599)
 
 
 ....
@@ -590,25 +590,25 @@ Root  ->  T0 : rotation\n = Vector3(0.0663225, -1.73486, -0.00523599)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(0.89739, 0.524141, 0.372991)
-Root  ->  T0 : rotation\n = Vector3(-0.197222, -1.309, 0.0383972)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = 0.1
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(0.89739, 0.524141, 0.372991)
+R  ->  T0 : rotation\n = Vector3(-0.197222, -1.309, 0.0383972)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = 0.1
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(1.414, 0.365, 0.54)
-Root  ->  T0 : rotation\n = Vector3(0.111701, -0.0453786, -0.0174533)
+R  ->  T0 : position\n = Vector3(1.414, 0.365, 0.54)
+R  ->  T0 : rotation\n = Vector3(0.111701, -0.0453786, -0.0174533)
 
 
 ....
@@ -618,25 +618,25 @@ Root  ->  T0 : rotation\n = Vector3(0.111701, -0.0453786, -0.0174533)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.505, 0.533, 0.685)
-Root  ->  T0 : rotation\n = Vector3(-0.139626, -0.523599, 0.0733038)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = 0.2
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.505, 0.533, 0.685)
+R  ->  T0 : rotation\n = Vector3(-0.139626, -0.523599, 0.0733038)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = 0.2
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(1.433, 0.392, 0.255)
-Root  ->  T0 : rotation\n = Vector3(0.20944, -1.72089, -0.00698132)
+R  ->  T0 : position\n = Vector3(1.433, 0.392, 0.255)
+R  ->  T0 : rotation\n = Vector3(0.20944, -1.72089, -0.00698132)
 
 
 ....
@@ -646,25 +646,25 @@ Root  ->  T0 : rotation\n = Vector3(0.20944, -1.72089, -0.00698132)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.6676, 0.843824, 0.187534)
-Root  ->  T0 : rotation\n = Vector3(-0.249582, 1.46259, 0.0139626)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = 0.6
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.6676, 0.843824, 0.187534)
+R  ->  T0 : rotation\n = Vector3(-0.249582, 1.46259, 0.0139626)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = 0.6
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(2.075, 0.676, -0.28)
-Root  ->  T0 : rotation\n = Vector3(-0.185005, 3.27947, -0.0558505)
+R  ->  T0 : position\n = Vector3(2.075, 0.676, -0.28)
+R  ->  T0 : rotation\n = Vector3(-0.185005, 3.27947, -0.0558505)
 
 
 ....
@@ -674,25 +674,25 @@ Root  ->  T0 : rotation\n = Vector3(-0.185005, 3.27947, -0.0558505)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(2.238, 0.179, -1.871)
-Root  ->  T0 : rotation\n = Vector3(0.307178, 3.01942, 0.00174533)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 0.0
-Root  ->  T4 : environment\n = 0.75
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(2.238, 0.179, -1.871)
+R  ->  T0 : rotation\n = Vector3(0.307178, 3.01942, 0.00174533)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 0.0
+R  ->  T4 : environment\n = 0.75
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(2.238, 0.291302, -1.73145)
-Root  ->  T0 : rotation\n = Vector3(0.241115, 3.02168, 0.0100912)
+R  ->  T0 : position\n = Vector3(2.238, 0.291302, -1.73145)
+R  ->  T0 : rotation\n = Vector3(0.241115, 3.02168, 0.0100912)
 
 
 ....
@@ -702,25 +702,25 @@ Root  ->  T0 : rotation\n = Vector3(0.241115, 3.02168, 0.0100912)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Path3D\n/PathFollow3D\n/Camera3D" as T0
-participant "Path3D\n/PathFollow3D" as T2
-participant "Mountain\n/MountainCoreSurface" as T3
-participant "WorldEnvironment" as T4
-participant "Mist" as T5
+control "Root" as R
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0
+participant "$Path3D\n/PathFollow3D" as T2
+participant "$Mountain\n/MountainCoreSurface" as T3
+participant "$WorldEnvironment" as T4
+participant "$Mist" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector3(1.957, 0.82, -0.531)
-Root  ->  T0 : rotation\n = Vector3(-0.406981, 3.12041, 0.0460821)
-Root  ->  T2 : progress_ratio\n = 0.0
-Root  ->  T3 : blend_shapes/Hide\n = 1.0
-Root  ->  T4 : environment\n = 1.0
-Root  ->o  T5 : visible\n = false
+R  ->  T0 : position\n = Vector3(1.957, 0.82, -0.531)
+R  ->  T0 : rotation\n = Vector3(-0.406981, 3.12041, 0.0460821)
+R  ->  T2 : progress_ratio\n = 0.0
+R  ->  T3 : blend_shapes/Hide\n = 1.0
+R  ->  T4 : environment\n = 1.0
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector3(1.957, 0.812906, -0.450644)
-Root  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
+R  ->  T0 : position\n = Vector3(1.957, 0.812906, -0.450644)
+R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 
 
 ....

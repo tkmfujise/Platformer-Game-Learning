@@ -419,20 +419,20 @@ func _process(delta: float) -> void:
 
 [plantuml]
 ....
-control "Root" as Root
-participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
-participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
-participant "VBoxContainer\n/MenuContainer" as T2
+control "Root" as R
+participant "$VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "$VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "$VBoxContainer\n/MenuContainer" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1720, 25)
-Root  ->  T1 : position\n = Vector2(200, 25)
-Root  ->o  T2 : visible\n = false
-Root  ->o  Root : state\n = 0
-Root  ->o  Root : focus_top\n = false
-Root  ->o  Root : focus_menu\n = false
+R  ->  T0 : position\n = Vector2(1720, 25)
+R  ->  T1 : position\n = Vector2(200, 25)
+R  ->o  T2 : visible\n = false
+R  ->o  R : state\n = 0
+R  ->o  R : focus_top\n = false
+R  ->o  R : focus_menu\n = false
 
 
 ....
@@ -442,21 +442,21 @@ Root  ->o  Root : focus_menu\n = false
 
 [plantuml]
 ....
-control "Root" as Root
-participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
-participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
-participant "VBoxContainer\n/MenuContainer" as T3
+control "Root" as R
+participant "$VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "$VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "$VBoxContainer\n/MenuContainer" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(2080, 25)
-Root  ->  T1 : position\n = Vector2(-120, 25)
-Root  ->o  Root : state\n = 1
-Root  ->o  T3 : visible\n = false
+R  ->  T0 : position\n = Vector2(2080, 25)
+R  ->  T1 : position\n = Vector2(-120, 25)
+R  ->o  R : state\n = 1
+R  ->o  T3 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(1720, 25)
-Root  ->  T1 : position\n = Vector2(150, 25)
+R  ->  T0 : position\n = Vector2(1720, 25)
+R  ->  T1 : position\n = Vector2(150, 25)
 
 
 ....
@@ -466,16 +466,16 @@ Root  ->  T1 : position\n = Vector2(150, 25)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
-participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+control "Root" as R
+participant "$VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "$VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(2080, 25)
-Root  ->  T1 : position\n = Vector2(-120, 25)
-Root  ->o  Root : state\n = 0
+R  ->  T0 : position\n = Vector2(2080, 25)
+R  ->  T1 : position\n = Vector2(-120, 25)
+R  ->o  R : state\n = 0
 
 
 ....
@@ -485,21 +485,21 @@ Root  ->o  Root : state\n = 0
 
 [plantuml]
 ....
-control "Root" as Root
-participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
-participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
-participant "VBoxContainer\n/MenuContainer" as T2
+control "Root" as R
+participant "$VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "$VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "$VBoxContainer\n/MenuContainer" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1720, 25)
-Root  ->  T1 : position\n = Vector2(150, 25)
-Root  ->o  T2 : visible\n = false
+R  ->  T0 : position\n = Vector2(1720, 25)
+R  ->  T1 : position\n = Vector2(150, 25)
+R  ->o  T2 : visible\n = false
 == Time: 0.1 ==
-Root  ->o  T2 : visible\n = true
-Root  ->o  Root : state\n = 2
-Root  ->o  Root : focus_menu\n = true
+R  ->o  T2 : visible\n = true
+R  ->o  R : state\n = 2
+R  ->o  R : focus_menu\n = true
 
 
 ....
@@ -509,21 +509,21 @@ Root  ->o  Root : focus_menu\n = true
 
 [plantuml]
 ....
-control "Root" as Root
-participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
-participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
-participant "VBoxContainer\n/MenuContainer" as T3
+control "Root" as R
+participant "$VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "$VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "$VBoxContainer\n/MenuContainer" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1720, 25)
-Root  ->  T1 : position\n = Vector2(150, 25)
-Root  ->o  Root : state\n = 0
-Root  ->o  T3 : visible\n = false
+R  ->  T0 : position\n = Vector2(1720, 25)
+R  ->  T1 : position\n = Vector2(150, 25)
+R  ->o  R : state\n = 0
+R  ->o  T3 : visible\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(2080, 25)
-Root  ->  T1 : position\n = Vector2(-120, 25)
+R  ->  T0 : position\n = Vector2(2080, 25)
+R  ->  T1 : position\n = Vector2(-120, 25)
 
 
 ....
@@ -533,21 +533,21 @@ Root  ->  T1 : position\n = Vector2(-120, 25)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
-participant "VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
-participant "VBoxContainer\n/MenuContainer" as T2
+control "Root" as R
+participant "$VBoxContainer\n/MainContainer\n/CoverContainer\n/CoverRoot" as T0
+participant "$VBoxContainer\n/MainContainer\n/TicketContainer\n/TicketRoot" as T1
+participant "$VBoxContainer\n/MenuContainer" as T2
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1720, 25)
-Root  ->  T1 : position\n = Vector2(150, 25)
-Root  ->o  T2 : visible\n = true
+R  ->  T0 : position\n = Vector2(1720, 25)
+R  ->  T1 : position\n = Vector2(150, 25)
+R  ->o  T2 : visible\n = true
 == Time: 0.1 ==
-Root  ->o  T2 : visible\n = false
-Root  ->o  Root : state\n = 1
-Root  ->o  Root : focus_top\n = true
+R  ->o  T2 : visible\n = false
+R  ->o  R : state\n = 1
+R  ->o  R : focus_top\n = true
 
 
 ....

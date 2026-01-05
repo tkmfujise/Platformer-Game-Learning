@@ -361,30 +361,30 @@ func _input(event: InputEvent) -> void:
 
 [plantuml]
 ....
-control "Root" as Root
-participant "SideSelection\n/CenterBox\n/StrawberryIcon" as T1
-participant "SideSelection\n/CenterBox\n/FailureIcon" as T2
-participant "SideSelection" as T3
-participant "StageSelection" as T4
-participant "Box" as T5
-participant "SideSelection\n/SideButtonContainer\n/ClimbBookmark" as T6
-participant "SideSelection\n/CenterBox\n/BlueHeartIcon" as T10
+control "Root" as R
+participant "$SideSelection\n/CenterBox\n/StrawberryIcon" as T1
+participant "$SideSelection\n/CenterBox\n/FailureIcon" as T2
+participant "$SideSelection" as T3
+participant "$StageSelection" as T4
+participant "$Box" as T5
+participant "$SideSelection\n/SideButtonContainer\n/ClimbBookmark" as T6
+participant "$SideSelection\n/CenterBox\n/BlueHeartIcon" as T10
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(960, 0)
-Root  ->  T1 : scale\n = Vector2(0.269531, 0.269531)
-Root  ->  T2 : scale\n = Vector2(0.392578, 0.392578)
-Root  ->  T3 : position\n = Vector2(0, 0)
-Root  ->  T4 : position\n = Vector2(0, 0)
-Root  ->  T5 : size\n = Vector2(725, 678)
-Root  ->o  T6 : focused\n = false
-Root  ->o  Root : grab_focus_side\n = false
-Root  ->o  Root : grab_focus_stage\n = false
-Root  ->o  Root : shown\n = false
-Root  ->  T10 : rotation\n = 0.0
-Root  ->  T10 : scale\n = Vector2(1.38281, 1.38281)
+R  ->  R : position\n = Vector2(960, 0)
+R  ->  T1 : scale\n = Vector2(0.269531, 0.269531)
+R  ->  T2 : scale\n = Vector2(0.392578, 0.392578)
+R  ->  T3 : position\n = Vector2(0, 0)
+R  ->  T4 : position\n = Vector2(0, 0)
+R  ->  T5 : size\n = Vector2(725, 678)
+R  ->o  T6 : focused\n = false
+R  ->o  R : grab_focus_side\n = false
+R  ->o  R : grab_focus_stage\n = false
+R  ->o  R : shown\n = false
+R  ->  T10 : rotation\n = 0.0
+R  ->  T10 : scale\n = Vector2(1.38281, 1.38281)
 
 
 ....
@@ -394,25 +394,25 @@ Root  ->  T10 : scale\n = Vector2(1.38281, 1.38281)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "SideSelection" as T0
-participant "StageSelection" as T1
-participant "Box" as T3
+control "Root" as R
+participant "$SideSelection" as T0
+participant "$StageSelection" as T1
+participant "$Box" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
-Root  ->  T1 : position\n = Vector2(1000, 0)
-Root  ->  Root : position\n = Vector2(0, 0)
-Root  ->  T3 : size\n = Vector2(725, 678)
-Root  ->o  Root : grab_focus_stage\n = true
-Root  ->o  Root : grab_focus_side\n = false
+R  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(1000, 0)
+R  ->  R : position\n = Vector2(0, 0)
+R  ->  T3 : size\n = Vector2(725, 678)
+R  ->o  R : grab_focus_stage\n = true
+R  ->o  R : grab_focus_side\n = false
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(1000, 0)
-Root  ->  T3 : size\n = Vector2(725, 760)
+R  ->  T0 : position\n = Vector2(1000, 0)
+R  ->  T3 : size\n = Vector2(725, 760)
 == Time: 0.7 ==
-Root  ->  T1 : position\n = Vector2(0, 0)
+R  ->  T1 : position\n = Vector2(0, 0)
 
 
 ....
@@ -422,26 +422,26 @@ Root  ->  T1 : position\n = Vector2(0, 0)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "SideSelection" as T0
-participant "StageSelection" as T1
-participant "Box" as T3
+control "Root" as R
+participant "$SideSelection" as T0
+participant "$StageSelection" as T1
+participant "$Box" as T3
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1000, 0)
-Root  ->  T1 : position\n = Vector2(0, 0)
-Root  ->  Root : position\n = Vector2(0, 0)
-Root  ->  T3 : size\n = Vector2(725, 760)
-Root  ->o  Root : grab_focus_stage\n = false
+R  ->  T0 : position\n = Vector2(1000, 0)
+R  ->  T1 : position\n = Vector2(0, 0)
+R  ->  R : position\n = Vector2(0, 0)
+R  ->  T3 : size\n = Vector2(725, 760)
+R  ->o  R : grab_focus_stage\n = false
 == Time: 0.1 ==
-Root  ->o  Root : grab_focus_side\n = true
+R  ->o  R : grab_focus_side\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(0, 0)
+R  ->  T0 : position\n = Vector2(0, 0)
 == Time: 0.7 ==
-Root  ->  T1 : position\n = Vector2(1000, 0)
-Root  ->  T3 : size\n = Vector2(725, 678)
+R  ->  T1 : position\n = Vector2(1000, 0)
+R  ->  T3 : size\n = Vector2(725, 678)
 
 
 ....
@@ -451,26 +451,26 @@ Root  ->  T3 : size\n = Vector2(725, 678)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Box" as T1
-participant "SideSelection\n/SideButtonContainer\n/ClimbBookmark" as T2
-participant "SideSelection" as T4
-participant "StageSelection" as T5
+control "Root" as R
+participant "$Box" as T1
+participant "$SideSelection\n/SideButtonContainer\n/ClimbBookmark" as T2
+participant "$SideSelection" as T4
+participant "$StageSelection" as T5
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(0, 0)
-Root  ->  T1 : size\n = Vector2(725, 678)
-Root  ->  T4 : position\n = Vector2(0, 0)
-Root  ->  T5 : position\n = Vector2(1000, 0)
-Root  ->o  Root : shown\n = false
+R  ->  R : position\n = Vector2(0, 0)
+R  ->  T1 : size\n = Vector2(725, 678)
+R  ->  T4 : position\n = Vector2(0, 0)
+R  ->  T5 : position\n = Vector2(1000, 0)
+R  ->o  R : shown\n = false
 == Time: 0.1 ==
-Root  ->o  T2 : focused\n = false
+R  ->o  T2 : focused\n = false
 == Time: 0.2 ==
-Root  ->o  Root : grab_focus_side\n = false
+R  ->o  R : grab_focus_side\n = false
 == Time: 0.5 ==
-Root  ->  Root : position\n = Vector2(960, 0)
+R  ->  R : position\n = Vector2(960, 0)
 
 
 ....
@@ -480,43 +480,43 @@ Root  ->  Root : position\n = Vector2(960, 0)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "SideSelection\n/CenterBox\n/StrawberryIcon" as T1
-participant "SideSelection\n/CenterBox\n/FailureIcon" as T2
-participant "Box" as T3
-participant "SideSelection\n/SideButtonContainer\n/ClimbBookmark" as T4
-participant "SideSelection" as T6
-participant "StageSelection" as T7
-participant "SideSelection\n/CenterBox\n/BlueHeartIcon" as T9
+control "Root" as R
+participant "$SideSelection\n/CenterBox\n/StrawberryIcon" as T1
+participant "$SideSelection\n/CenterBox\n/FailureIcon" as T2
+participant "$Box" as T3
+participant "$SideSelection\n/SideButtonContainer\n/ClimbBookmark" as T4
+participant "$SideSelection" as T6
+participant "$StageSelection" as T7
+participant "$SideSelection\n/CenterBox\n/BlueHeartIcon" as T9
 
 
 
 == Time: 0.0 ==
-Root  ->  Root : position\n = Vector2(960, 0)
-Root  ->  T3 : size\n = Vector2(725, 678)
-Root  ->o  T4 : focused\n = true
-Root  ->  T6 : position\n = Vector2(0, 0)
-Root  ->  T7 : position\n = Vector2(1000, 0)
-Root  ->o  Root : shown\n = true
+R  ->  R : position\n = Vector2(960, 0)
+R  ->  T3 : size\n = Vector2(725, 678)
+R  ->o  T4 : focused\n = true
+R  ->  T6 : position\n = Vector2(0, 0)
+R  ->  T7 : position\n = Vector2(1000, 0)
+R  ->o  R : shown\n = true
 == Time: 0.12 ==
-Root  ->o  Root : grab_focus_side\n = true
+R  ->o  R : grab_focus_side\n = true
 == Time: 0.23 ==
-Root  ->  T1 : scale\n = Vector2(0.269531, 0.269531)
-Root  ->  T2 : scale\n = Vector2(0.392578, 0.392578)
-Root  ->  T9 : rotation\n = 0.0
+R  ->  T1 : scale\n = Vector2(0.269531, 0.269531)
+R  ->  T2 : scale\n = Vector2(0.392578, 0.392578)
+R  ->  T9 : rotation\n = 0.0
 == Time: 0.230703 ==
-Root  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
+R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 == Time: 0.38 ==
-Root  ->  T1 : scale\n = Vector2(0.32, 0.32)
-Root  ->  T2 : scale\n = Vector2(0.443, 0.443)
-Root  ->  T9 : rotation\n = 0.0890118
-Root  ->  T9 : scale\n = Vector2(1.583, 1.583)
+R  ->  T1 : scale\n = Vector2(0.32, 0.32)
+R  ->  T2 : scale\n = Vector2(0.443, 0.443)
+R  ->  T9 : rotation\n = 0.0890118
+R  ->  T9 : scale\n = Vector2(1.583, 1.583)
 == Time: 0.5 ==
-Root  ->  Root : position\n = Vector2(0, 0)
-Root  ->  T1 : scale\n = Vector2(0.269531, 0.269531)
-Root  ->  T2 : scale\n = Vector2(0.392578, 0.392578)
-Root  ->  T9 : rotation\n = 0.0
-Root  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
+R  ->  R : position\n = Vector2(0, 0)
+R  ->  T1 : scale\n = Vector2(0.269531, 0.269531)
+R  ->  T2 : scale\n = Vector2(0.392578, 0.392578)
+R  ->  T9 : rotation\n = 0.0
+R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 
 
 ....

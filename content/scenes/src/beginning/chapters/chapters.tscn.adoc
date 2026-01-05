@@ -314,14 +314,14 @@ func _input(event: InputEvent) -> void:
 
 [plantuml]
 ....
-control "Root" as Root
-participant "%ChaptersContainer\n/..\n/Banner" as T0
+control "Root" as R
+participant "$%ChaptersContainer\n/..\n/Banner" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(800, -250)
-Root  ->  Root : position\n = Vector2(815, -250)
+R  ->  T0 : position\n = Vector2(800, -250)
+R  ->  R : position\n = Vector2(815, -250)
 
 
 ....
@@ -331,17 +331,17 @@ Root  ->  Root : position\n = Vector2(815, -250)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "%ChaptersContainer\n/..\n/Banner" as T0
+control "Root" as R
+participant "$%ChaptersContainer\n/..\n/Banner" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(800, 0)
-Root  ->  Root : position\n = Vector2(815, 8)
+R  ->  T0 : position\n = Vector2(800, 0)
+R  ->  R : position\n = Vector2(815, 8)
 == Time: 1.0 ==
-Root  ->  T0 : position\n = Vector2(800, -250)
-Root  ->  Root : position\n = Vector2(815, -250)
+R  ->  T0 : position\n = Vector2(800, -250)
+R  ->  R : position\n = Vector2(815, -250)
 
 
 ....
@@ -351,17 +351,17 @@ Root  ->  Root : position\n = Vector2(815, -250)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "%ChaptersContainer\n/..\n/Banner" as T0
+control "Root" as R
+participant "$%ChaptersContainer\n/..\n/Banner" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(800, -250)
-Root  ->  Root : position\n = Vector2(815, -250)
+R  ->  T0 : position\n = Vector2(800, -250)
+R  ->  R : position\n = Vector2(815, -250)
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(800, 0)
-Root  ->  Root : position\n = Vector2(815, 8)
+R  ->  T0 : position\n = Vector2(800, 0)
+R  ->  R : position\n = Vector2(815, 8)
 
 
 ....
@@ -371,50 +371,50 @@ Root  ->  Root : position\n = Vector2(815, 8)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Banner" as T0
-participant "ChaptersContainer" as T1
-participant "ChaptersContainer\n/Chapter_0" as T2
-participant "ChaptersContainer\n/Chapter_1" as T3
-participant "ChaptersContainer\n/Chapter_2" as T4
-participant "ChaptersContainer\n/Chapter_3" as T5
-participant "ChaptersContainer\n/Chapter_4" as T6
-participant "ChaptersContainer\n/Chapter_5" as T7
-participant "ChaptersContainer\n/Chapter_6" as T8
-participant "ChaptersContainer\n/Chapter_7" as T9
-participant "ChaptersContainer\n/Chapter_8" as T10
-participant "Pin" as T20
-participant "Menu" as T25
+control "Root" as R
+participant "$Banner" as T0
+participant "$ChaptersContainer" as T1
+participant "$ChaptersContainer\n/Chapter_0" as T2
+participant "$ChaptersContainer\n/Chapter_1" as T3
+participant "$ChaptersContainer\n/Chapter_2" as T4
+participant "$ChaptersContainer\n/Chapter_3" as T5
+participant "$ChaptersContainer\n/Chapter_4" as T6
+participant "$ChaptersContainer\n/Chapter_5" as T7
+participant "$ChaptersContainer\n/Chapter_6" as T8
+participant "$ChaptersContainer\n/Chapter_7" as T9
+participant "$ChaptersContainer\n/Chapter_8" as T10
+participant "$Pin" as T20
+participant "$Menu" as T25
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(800, -220)
-Root  ->  T1 : position\n = Vector2(815, -150)
-Root  ->o  T2 : play_opening\n = false
-Root  ->o  T3 : play_opening\n = false
-Root  ->o  T4 : play_opening\n = false
-Root  ->o  T5 : play_opening\n = false
-Root  ->o  T6 : play_opening\n = false
-Root  ->o  T7 : play_opening\n = false
-Root  ->o  T8 : play_opening\n = false
-Root  ->o  T9 : play_opening\n = false
-Root  ->o  T10 : play_opening\n = false
-Root  ->o  T2 : visible\n = true
-Root  ->o  T3 : visible\n = true
-Root  ->o  T4 : visible\n = true
-Root  ->o  T5 : visible\n = true
-Root  ->o  T6 : visible\n = true
-Root  ->o  T7 : visible\n = true
-Root  ->o  T8 : visible\n = true
-Root  ->o  T9 : visible\n = true
-Root  ->o  T10 : visible\n = true
-Root  ->  T20 : position\n = Vector2(903, 554)
-Root  ->  T20 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T20 : visible\n = false
-Root  ->o  Root : shown\n = false
-Root  ->o  Root : current_plate\n = 0
-Root  ->  T25 : position\n = Vector2(960, 0)
+R  ->  T0 : position\n = Vector2(800, -220)
+R  ->  T1 : position\n = Vector2(815, -150)
+R  ->o  T2 : play_opening\n = false
+R  ->o  T3 : play_opening\n = false
+R  ->o  T4 : play_opening\n = false
+R  ->o  T5 : play_opening\n = false
+R  ->o  T6 : play_opening\n = false
+R  ->o  T7 : play_opening\n = false
+R  ->o  T8 : play_opening\n = false
+R  ->o  T9 : play_opening\n = false
+R  ->o  T10 : play_opening\n = false
+R  ->o  T2 : visible\n = true
+R  ->o  T3 : visible\n = true
+R  ->o  T4 : visible\n = true
+R  ->o  T5 : visible\n = true
+R  ->o  T6 : visible\n = true
+R  ->o  T7 : visible\n = true
+R  ->o  T8 : visible\n = true
+R  ->o  T9 : visible\n = true
+R  ->o  T10 : visible\n = true
+R  ->  T20 : position\n = Vector2(903, 554)
+R  ->  T20 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T20 : visible\n = false
+R  ->o  R : shown\n = false
+R  ->o  R : current_plate\n = 0
+R  ->  T25 : position\n = Vector2(960, 0)
 
 
 ....
@@ -424,17 +424,17 @@ Root  ->  T25 : position\n = Vector2(960, 0)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1039, 648)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1039, 648)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -444,17 +444,17 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1064, 682)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1064, 682)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -464,17 +464,17 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1046, 389)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1046, 389)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -484,17 +484,17 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(843, 545)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(843, 545)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -504,17 +504,17 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(939, 674)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(939, 674)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -524,17 +524,17 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(752, 514)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(752, 514)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -544,17 +544,17 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1156, 857)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1156, 857)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -564,19 +564,19 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1019, 404)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1019, 404)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 == Time: 1.0 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -586,19 +586,19 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1051, 612)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1051, 612)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 == Time: 1.0 ==
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 
 ....
@@ -608,79 +608,79 @@ Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Banner" as T0
-participant "ChaptersContainer" as T1
-participant "ChaptersContainer\n/Chapter_0" as T2
-participant "ChaptersContainer\n/Chapter_1" as T3
-participant "ChaptersContainer\n/Chapter_2" as T4
-participant "ChaptersContainer\n/Chapter_3" as T5
-participant "ChaptersContainer\n/Chapter_4" as T6
-participant "ChaptersContainer\n/Chapter_5" as T7
-participant "ChaptersContainer\n/Chapter_6" as T8
-participant "ChaptersContainer\n/Chapter_7" as T9
-participant "ChaptersContainer\n/Chapter_8" as T10
-participant "Pin" as T20
+control "Root" as R
+participant "$Banner" as T0
+participant "$ChaptersContainer" as T1
+participant "$ChaptersContainer\n/Chapter_0" as T2
+participant "$ChaptersContainer\n/Chapter_1" as T3
+participant "$ChaptersContainer\n/Chapter_2" as T4
+participant "$ChaptersContainer\n/Chapter_3" as T5
+participant "$ChaptersContainer\n/Chapter_4" as T6
+participant "$ChaptersContainer\n/Chapter_5" as T7
+participant "$ChaptersContainer\n/Chapter_6" as T8
+participant "$ChaptersContainer\n/Chapter_7" as T9
+participant "$ChaptersContainer\n/Chapter_8" as T10
+participant "$Pin" as T20
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(800, -250)
-Root  ->  T1 : position\n = Vector2(815, -150)
-Root  ->o  T2 : play_opening\n = false
-Root  ->o  T3 : play_opening\n = false
-Root  ->o  T4 : play_opening\n = false
-Root  ->o  T5 : play_opening\n = false
-Root  ->o  T6 : play_opening\n = false
-Root  ->o  T7 : play_opening\n = false
-Root  ->o  T8 : play_opening\n = false
-Root  ->o  T9 : play_opening\n = false
-Root  ->o  T10 : play_opening\n = false
-Root  ->o  T2 : visible\n = false
-Root  ->o  T3 : visible\n = false
-Root  ->o  T4 : visible\n = false
-Root  ->o  T5 : visible\n = false
-Root  ->o  T6 : visible\n = false
-Root  ->o  T7 : visible\n = false
-Root  ->o  T8 : visible\n = false
-Root  ->o  T9 : visible\n = false
-Root  ->o  T10 : visible\n = false
-Root  ->o  T20 : visible\n = false
+R  ->  T0 : position\n = Vector2(800, -250)
+R  ->  T1 : position\n = Vector2(815, -150)
+R  ->o  T2 : play_opening\n = false
+R  ->o  T3 : play_opening\n = false
+R  ->o  T4 : play_opening\n = false
+R  ->o  T5 : play_opening\n = false
+R  ->o  T6 : play_opening\n = false
+R  ->o  T7 : play_opening\n = false
+R  ->o  T8 : play_opening\n = false
+R  ->o  T9 : play_opening\n = false
+R  ->o  T10 : play_opening\n = false
+R  ->o  T2 : visible\n = false
+R  ->o  T3 : visible\n = false
+R  ->o  T4 : visible\n = false
+R  ->o  T5 : visible\n = false
+R  ->o  T6 : visible\n = false
+R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
+R  ->o  T9 : visible\n = false
+R  ->o  T10 : visible\n = false
+R  ->o  T20 : visible\n = false
 == Time: 0.0666667 ==
-Root  ->o  T2 : visible\n = true
+R  ->o  T2 : visible\n = true
 == Time: 0.066667 ==
-Root  ->o  T2 : play_opening\n = true
+R  ->o  T2 : play_opening\n = true
 == Time: 0.133333 ==
-Root  ->o  T3 : play_opening\n = true
-Root  ->o  T3 : visible\n = true
+R  ->o  T3 : play_opening\n = true
+R  ->o  T3 : visible\n = true
 == Time: 0.2 ==
-Root  ->o  T4 : play_opening\n = true
-Root  ->o  T4 : visible\n = true
+R  ->o  T4 : play_opening\n = true
+R  ->o  T4 : visible\n = true
 == Time: 0.266667 ==
-Root  ->o  T5 : play_opening\n = true
-Root  ->o  T5 : visible\n = true
+R  ->o  T5 : play_opening\n = true
+R  ->o  T5 : visible\n = true
 == Time: 0.333333 ==
-Root  ->o  T6 : play_opening\n = true
-Root  ->o  T6 : visible\n = true
+R  ->o  T6 : play_opening\n = true
+R  ->o  T6 : visible\n = true
 == Time: 0.4 ==
-Root  ->o  T7 : play_opening\n = true
-Root  ->o  T7 : visible\n = true
+R  ->o  T7 : play_opening\n = true
+R  ->o  T7 : visible\n = true
 == Time: 0.466666 ==
-Root  ->o  T8 : play_opening\n = true
+R  ->o  T8 : play_opening\n = true
 == Time: 0.466667 ==
-Root  ->  T1 : position\n = Vector2(815, -150)
-Root  ->o  T8 : visible\n = true
+R  ->  T1 : position\n = Vector2(815, -150)
+R  ->o  T8 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(800, 0)
+R  ->  T0 : position\n = Vector2(800, 0)
 == Time: 0.533333 ==
-Root  ->o  T9 : play_opening\n = true
-Root  ->o  T9 : visible\n = true
+R  ->o  T9 : play_opening\n = true
+R  ->o  T9 : visible\n = true
 == Time: 0.6 ==
-Root  ->o  T10 : play_opening\n = true
-Root  ->o  T10 : visible\n = true
+R  ->o  T10 : play_opening\n = true
+R  ->o  T10 : visible\n = true
 == Time: 0.7 ==
-Root  ->  T1 : position\n = Vector2(815, 8)
-Root  ->o  Root : shown\n = true
+R  ->  T1 : position\n = Vector2(815, 8)
+R  ->o  R : shown\n = true
 
 
 ....
@@ -690,17 +690,17 @@ Root  ->o  Root : shown\n = true
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1039, 648)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1039, 648)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(868, 600)
+R  ->  T0 : position\n = Vector2(868, 600)
 
 
 ....
@@ -710,17 +710,17 @@ Root  ->  T0 : position\n = Vector2(868, 600)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1064, 682)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1064, 682)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(847, 597)
+R  ->  T0 : position\n = Vector2(847, 597)
 
 
 ....
@@ -730,17 +730,17 @@ Root  ->  T0 : position\n = Vector2(847, 597)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1046, 389)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1046, 389)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(977, 374)
+R  ->  T0 : position\n = Vector2(977, 374)
 
 
 ....
@@ -750,17 +750,17 @@ Root  ->  T0 : position\n = Vector2(977, 374)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(843, 545)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(843, 545)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(962, 462)
+R  ->  T0 : position\n = Vector2(962, 462)
 
 
 ....
@@ -770,17 +770,17 @@ Root  ->  T0 : position\n = Vector2(962, 462)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(939, 674)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(939, 674)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(887, 757)
+R  ->  T0 : position\n = Vector2(887, 757)
 
 
 ....
@@ -790,17 +790,17 @@ Root  ->  T0 : position\n = Vector2(887, 757)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(752, 514)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(752, 514)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(949, 348)
+R  ->  T0 : position\n = Vector2(949, 348)
 
 
 ....
@@ -810,17 +810,17 @@ Root  ->  T0 : position\n = Vector2(949, 348)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1156, 857)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1156, 857)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(704, 680)
+R  ->  T0 : position\n = Vector2(704, 680)
 
 
 ....
@@ -830,17 +830,17 @@ Root  ->  T0 : position\n = Vector2(704, 680)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1019, 404)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1019, 404)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(1040, 355)
+R  ->  T0 : position\n = Vector2(1040, 355)
 
 
 ....
@@ -850,17 +850,17 @@ Root  ->  T0 : position\n = Vector2(1040, 355)
 
 [plantuml]
 ....
-control "Root" as Root
-participant "Pin" as T0
+control "Root" as R
+participant "$Pin" as T0
 
 
 
 == Time: 0.0 ==
-Root  ->  T0 : position\n = Vector2(1051, 612)
-Root  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-Root  ->o  T0 : visible\n = true
+R  ->  T0 : position\n = Vector2(1051, 612)
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T0 : visible\n = true
 == Time: 0.5 ==
-Root  ->  T0 : position\n = Vector2(1060, 719)
+R  ->  T0 : position\n = Vector2(1060, 719)
 
 
 ....
