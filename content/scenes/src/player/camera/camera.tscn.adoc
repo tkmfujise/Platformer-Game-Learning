@@ -47,10 +47,10 @@ func _process(delta: float) -> void:
 * [.node-name.type-2d]#Camera# [.node-type.type-2d]#Camera2D#
 
 
-
-
 === Signal Connections
 NOTE: No signal connections.
+
+
 
 === Properties
 [cols="1,1,3" options="header"]

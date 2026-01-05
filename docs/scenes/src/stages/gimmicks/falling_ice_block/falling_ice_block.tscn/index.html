@@ -570,30 +570,13 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="sect2">
 <h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DetectionArea2D</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>body_entered</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_detection_area_2d_body_entered</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock signal-connection">
+<div class="title">$DetectionArea2D:[<mark><em>body_entered</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_detection_area_2d_body_entered</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">Node2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">fall</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span></code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

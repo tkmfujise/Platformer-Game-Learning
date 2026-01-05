@@ -290,6 +290,73 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton:[#_focus_entered_#]=>$.
+```gdscript
+func _on_climb_button_focus_entered() -> void:
+	if current_plate == Plate.ROOT:
+		%AnimationPlayer.play('climb_focused')
+```
+[.signal-connection]
+.$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton:[#_focus_exited_#]=>$.
+```gdscript
+func _on_climb_button_focus_exited() -> void:
+	if current_plate == Plate.ROOT:
+		%AnimationPlayer.play('climb_unfocused')
+```
+[.signal-connection]
+.$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton:[#_pressed_#]=>$.
+```gdscript
+func _on_climb_button_pressed() -> void:
+	if current_plate == Plate.ROOT:
+		Input.start_joy_vibration(0, 0.4, 0.6, 0.2)
+		%AnimationPlayer.play('climb_selected')
+```
+[.signal-connection]
+.$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton:[#_pressed_#]=>$.
+```gdscript
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+```
+[.signal-connection]
+.$Accounts:[#_get_started_#]=>$.
+```gdscript
+func _on_accounts_get_started(account: Account) -> void:
+	%Chapters.setup_from_account_resource()
+	%AnimationPlayer.play("chapters_show")
+```
+[.signal-connection]
+.$Accounts:[#_ui_backed_#]=>$.
+```gdscript
+func _on_accounts_ui_backed() -> void:
+	if current_plate == Plate.ACCOUNTS:
+		%AnimationPlayer.play('climb_unselected')
+```
+[.signal-connection]
+.$Chapters:[#_focused_#]=>$.
+```gdscript
+func _on_chapters_focused(idx: int) -> void:
+	if current_plate == Plate.CHAPTERS:
+		%World.focus_chapter(idx)
+```
+[.signal-connection]
+.$Chapters:[#_selected_#]=>$.
+```gdscript
+func _on_chapters_selected(idx: int) -> void:
+	if current_plate == Plate.CHAPTERS:
+		%World.zoom_chapter(idx)
+```
+[.signal-connection]
+.$Chapters:[#_ui_backed_#]=>$.
+```gdscript
+func _on_chapters_ui_backed() -> void:
+	if current_plate == Plate.CHAPTERS || current_plate == Plate.ACCOUNTS:
+		%AnimationPlayer.play('chapters_hide')
+		%World.back_to_circular_move()
+```
+
+
 === Animations
 ==== Animation_f84do
 
@@ -545,22 +612,6 @@ R  ->o  R : grab_focus_root\n = true
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_RootContainer / MenuContainer / ClimbContainer / ButtonContainer / ClimbButton_ |*focus_entered* |_._ |`_on_climb_button_focus_entered`
-|_RootContainer / MenuContainer / ClimbContainer / ButtonContainer / ClimbButton_ |*focus_exited* |_._ |`_on_climb_button_focus_exited`
-|_RootContainer / MenuContainer / ClimbContainer / ButtonContainer / ClimbButton_ |*pressed* |_._ |`_on_climb_button_pressed`
-|_RootContainer / MenuContainer / OthersContainer / VBoxContainer / QuitContainer / QuitButton_ |*pressed* |_._ |`_on_quit_button_pressed`
-|_Accounts_ |*get_started* |_._ |`_on_accounts_get_started`
-|_Accounts_ |*ui_backed* |_._ |`_on_accounts_ui_backed`
-|_Chapters_ |*focused* |_._ |`_on_chapters_focused`
-|_Chapters_ |*selected* |_._ |`_on_chapters_selected`
-|_Chapters_ |*ui_backed* |_._ |`_on_chapters_ui_backed`
-|===
 
 
 === Properties

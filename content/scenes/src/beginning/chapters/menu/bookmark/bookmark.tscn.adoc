@@ -56,6 +56,21 @@ func _input(event: InputEvent) -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_focus_entered_#]=>$.
+```gdscript
+func _on_focus_entered() -> void:
+	set_focus(true)
+```
+[.signal-connection]
+.$.:[#_focus_exited_#]=>$.
+```gdscript
+func _on_focus_exited() -> void:
+	set_focus(false)
+```
+
+
 === Animations
 ==== Animation_ash1f
 
@@ -126,15 +141,6 @@ R  ->  T2 : scale\n = Vector2(1, 1)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*focus_entered* |_._ |`_on_focus_entered`
-|_._ |*focus_exited* |_._ |`_on_focus_exited`
-|===
 
 
 === Properties

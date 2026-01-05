@@ -119,6 +119,22 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-other]#AnimationTree# [.node-type.type-other]#AnimationTree#
 
 
+=== Signal Connections
+[.signal-connection]
+.$AnimationTree:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'hide_title':
+		SceneHelper.transit(self, MenuScenePath)
+```
+[.signal-connection]
+.$AnimationTree:[#_animation_started_#]=>$.
+```gdscript
+func _on_animation_tree_animation_started(anim_name: StringName) -> void:
+	current_animation = anim_name
+```
+
+
 === Animations
 ==== Animation_g86x5
 
@@ -233,15 +249,6 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_AnimationTree_ |*animation_finished* |_._ |`_on_animation_tree_animation_finished`
-|_AnimationTree_ |*animation_started* |_._ |`_on_animation_tree_animation_started`
-|===
 
 
 === Properties

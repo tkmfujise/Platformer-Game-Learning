@@ -309,6 +309,39 @@ func _input(event: InputEvent) -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_selected_#]=>$.
+```gdscript
+func _on_selected(idx: int) -> void:
+	%Menu.grab_focus_first = true
+	selected_chapter_idx = idx
+	zoom_pin_to(idx)
+	get_chapter(idx).selected()
+	set_chapters_animation_offset()
+	%ChaptersAnimationPlayer.play("selected")
+	current_plate = Plate.MENU
+```
+[.signal-connection]
+.$Menu:[#_ui_backed_#]=>$.
+```gdscript
+func _on_menu_ui_backed() -> void:
+	if current_plate == Plate.MENU:
+		(func(): current_plate = Plate.ROOT).call_deferred()
+		get_chapter(selected_chapter_idx).unselected()
+		%ChaptersAnimationPlayer.play("unselected")
+		selected_chapter_idx = -1
+		force_focus_return()
+```
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	if current_plate == Plate.ROOT:
+		force_focus_return()
+```
+
+
 === Animations
 ==== Animation_f7nbf
 
@@ -866,16 +899,6 @@ R  ->  T0 : position\n = Vector2(1060, 719)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*selected* |_._ |`_on_selected`
-|_Menu_ |*ui_backed* |_._ |`_on_menu_ui_backed`
-|_AnimationPlayer_ |*animation_finished* |_._ |`_on_animation_player_animation_finished`
-|===
 
 
 === Properties

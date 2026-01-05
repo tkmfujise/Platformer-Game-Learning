@@ -485,8 +485,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
-<li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_account_gd">account.gd</a></li>
 </ul>
@@ -869,6 +869,46 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 <div class="sect2">
+<h3 id="_signal_connections">Signal Connections</h3>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>focus_entered</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_focus_entered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">is_unfocused</span><span class="p">():</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"focused"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>focus_exited</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_focus_exited</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">is_focused</span><span class="p">():</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"unfocused"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>selected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_selected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"selected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>unselected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_unselected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"unselected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton:[<mark><em>pressed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_get_started_button_pressed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">get_started</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_animations">Animations</h3>
 <div class="sect3">
 <h4 id="_animation_qli4a">Animation_qli4a</h4>
@@ -924,57 +964,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <hr>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_entered</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_focus_entered</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_exited</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_focus_exited</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>selected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_selected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unselected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_unselected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>VBoxContainer / MenuContainer / VBoxContainer / GetStartedContainer / GetStartedButton</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>pressed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_get_started_button_pressed</code></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

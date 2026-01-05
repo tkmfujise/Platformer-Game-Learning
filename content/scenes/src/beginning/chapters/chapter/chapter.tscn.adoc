@@ -49,6 +49,16 @@ _(R::_on_focus_entered, R::focus_entered)
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_focus_entered_#]=>$.
+```gdscript
+func _on_focus_entered() -> void:
+	if focus_animation_skip: focus_animation_skip = false
+	else: %AnimationPlayer.play("focused")
+```
+
+
 === Animations
 ==== Animation_ue4pb
 
@@ -169,14 +179,6 @@ R  ->  T0 : position\n = Vector2(77, 72)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*focus_entered* |_._ |`_on_focus_entered`
-|===
 
 
 === Properties

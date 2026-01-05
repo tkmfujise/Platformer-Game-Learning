@@ -356,6 +356,52 @@ func _input(event: InputEvent) -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_get_started_#]=>$.
+```gdscript
+func _on_get_started(stage_number: int) -> void:
+	var stage = stage_resources.filter(func(r):
+		return r.number == stage_number)
+	if not (stage && stage[0].scene): return
+	%ClosingCurtain.play(stage[0].scene)
+```
+[.signal-connection]
+.$.:[#_ui_backed_#]=>$.
+```gdscript
+func _on_ui_backed() -> void:
+	if shown: %AnimationPlayer.play("hide")
+```
+[.signal-connection]
+.$SideSelection/SideButtonContainer/ClimbBookmark:[#_pressed_#]=>$.
+```gdscript
+func _on_climb_button_pressed() -> void:
+	if stages_count() > 1:
+		state = State.SELECTED
+		%AnimationPlayer.play("climb_selected")
+	else:
+		get_started.emit(1)
+```
+[.signal-connection]
+.$StageSelection/StageButtonContainer/Stage1Button:[#_focus_entered_#]=>$., $StageSelection/StageButtonContainer/Stage2Button:[#_focus_entered_#]=>$., $StageSelection/StageButtonContainer/Stage3Button:[#_focus_entered_#]=>$., $StageSelection/StageButtonContainer/Stage4Button:[#_focus_entered_#]=>$., $StageSelection/StageButtonContainer/Stage5Button:[#_focus_entered_#]=>$.
+```gdscript
+func _on_stage_button_focus_entered(number: int) -> void:
+	var photos = %PhotoInstances.get_children()
+	var button = get_stage_button(number - 1)
+	%StageLabel.text = str(button.get_meta('name'))
+	for i in photos.size():
+		var photo = photos.pop_back()
+		if i+1 < number: photo.flick()
+		else: photo.pull()
+```
+[.signal-connection]
+.$StageSelection/StageButtonContainer/Stage1Button:[#_pressed_#]=>$., $StageSelection/StageButtonContainer/Stage2Button:[#_pressed_#]=>$., $StageSelection/StageButtonContainer/Stage3Button:[#_pressed_#]=>$., $StageSelection/StageButtonContainer/Stage4Button:[#_pressed_#]=>$., $StageSelection/StageButtonContainer/Stage5Button:[#_pressed_#]=>$.
+```gdscript
+func _on_stage_button_pressed(stage_number: int) -> void:
+	get_started.emit(stage_number)
+```
+
+
 === Animations
 ==== Animation_m3sah
 
@@ -522,26 +568,6 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*get_started* |_._ |`_on_get_started`
-|_._ |*ui_backed* |_._ |`_on_ui_backed`
-|_SideSelection / SideButtonContainer / ClimbBookmark_ |*pressed* |_._ |`_on_climb_button_pressed`
-|_StageSelection / StageButtonContainer / Stage1Button_ |*focus_entered* |_._ |`_on_stage_button_focus_entered`
-|_StageSelection / StageButtonContainer / Stage1Button_ |*pressed* |_._ |`_on_stage_button_pressed`
-|_StageSelection / StageButtonContainer / Stage2Button_ |*focus_entered* |_._ |`_on_stage_button_focus_entered`
-|_StageSelection / StageButtonContainer / Stage2Button_ |*pressed* |_._ |`_on_stage_button_pressed`
-|_StageSelection / StageButtonContainer / Stage3Button_ |*focus_entered* |_._ |`_on_stage_button_focus_entered`
-|_StageSelection / StageButtonContainer / Stage3Button_ |*pressed* |_._ |`_on_stage_button_pressed`
-|_StageSelection / StageButtonContainer / Stage4Button_ |*focus_entered* |_._ |`_on_stage_button_focus_entered`
-|_StageSelection / StageButtonContainer / Stage4Button_ |*pressed* |_._ |`_on_stage_button_pressed`
-|_StageSelection / StageButtonContainer / Stage5Button_ |*focus_entered* |_._ |`_on_stage_button_focus_entered`
-|_StageSelection / StageButtonContainer / Stage5Button_ |*pressed* |_._ |`_on_stage_button_pressed`
-|===
 
 
 === Properties

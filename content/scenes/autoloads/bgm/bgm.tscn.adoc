@@ -49,10 +49,10 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-other]#FirstSteps# [.node-type.type-other]#AudioStreamPlayer#
 
 
-
-
 === Signal Connections
 NOTE: No signal connections.
+
+
 
 === Properties
 [cols="1,1,3" options="header"]

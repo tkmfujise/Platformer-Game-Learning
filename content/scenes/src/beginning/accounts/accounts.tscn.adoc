@@ -189,6 +189,66 @@ func _input(event: InputEvent) -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$AccountsContainer/Account1:[#_get_started_#]=>$., $AccountsContainer/Account2:[#_get_started_#]=>$., $AccountsContainer/Account3:[#_get_started_#]=>$.
+```gdscript
+func _on_account_get_started(number: int) -> void:
+	var account = get_node('%Account' + str(number))
+	Current.load_account(number)
+	get_started.emit(account)
+```
+[.signal-connection]
+.$AccountsContainer/Account1:[#_selected_#]=>$.
+```gdscript
+func _on_account_1_selected() -> void:
+	%AnimationPlayer.play("1st_selected")
+```
+[.signal-connection]
+.$AccountsContainer/Account1:[#_ui_backed_#]=>$., $AccountsContainer/Account2:[#_ui_backed_#]=>$., $AccountsContainer/Account3:[#_ui_backed_#]=>$.
+```gdscript
+func _on_account_ui_backed() -> void:
+	%AnimationPlayer.play("RESET")
+	ui_backed.emit()
+```
+[.signal-connection]
+.$AccountsContainer/Account1:[#_unselected_#]=>$.
+```gdscript
+func _on_account_1_unselected() -> void:
+	%AnimationPlayer.play("1st_unselected")
+```
+[.signal-connection]
+.$AccountsContainer/Account2:[#_focus_entered_#]=>$., $AccountsContainer/Account3:[#_focus_entered_#]=>$.
+```gdscript
+func _on_account_focus_entered(idx: int) -> void:
+	current_idx = idx
+```
+[.signal-connection]
+.$AccountsContainer/Account2:[#_selected_#]=>$.
+```gdscript
+func _on_account_2_selected() -> void:
+	%AnimationPlayer.play("2nd_selected")
+```
+[.signal-connection]
+.$AccountsContainer/Account2:[#_unselected_#]=>$.
+```gdscript
+func _on_account_2_unselected() -> void:
+	%AnimationPlayer.play("2nd_unselected")
+```
+[.signal-connection]
+.$AccountsContainer/Account3:[#_selected_#]=>$.
+```gdscript
+func _on_account_3_selected() -> void:
+	%AnimationPlayer.play("3rd_selected")
+```
+[.signal-connection]
+.$AccountsContainer/Account3:[#_unselected_#]=>$.
+```gdscript
+func _on_account_3_unselected() -> void:
+	%AnimationPlayer.play("3rd_unselected")
+```
+
+
 === Animations
 ==== 1st_selected
 
@@ -374,27 +434,6 @@ R  ->  T2 : position\n = Vector2(0, 656)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_AccountsContainer / Account1_ |*get_started* |_._ |`_on_account_get_started`
-|_AccountsContainer / Account1_ |*selected* |_._ |`_on_account_1_selected`
-|_AccountsContainer / Account1_ |*ui_backed* |_._ |`_on_account_ui_backed`
-|_AccountsContainer / Account1_ |*unselected* |_._ |`_on_account_1_unselected`
-|_AccountsContainer / Account2_ |*focus_entered* |_._ |`_on_account_focus_entered`
-|_AccountsContainer / Account2_ |*get_started* |_._ |`_on_account_get_started`
-|_AccountsContainer / Account2_ |*selected* |_._ |`_on_account_2_selected`
-|_AccountsContainer / Account2_ |*ui_backed* |_._ |`_on_account_ui_backed`
-|_AccountsContainer / Account2_ |*unselected* |_._ |`_on_account_2_unselected`
-|_AccountsContainer / Account3_ |*focus_entered* |_._ |`_on_account_focus_entered`
-|_AccountsContainer / Account3_ |*get_started* |_._ |`_on_account_get_started`
-|_AccountsContainer / Account3_ |*selected* |_._ |`_on_account_3_selected`
-|_AccountsContainer / Account3_ |*ui_backed* |_._ |`_on_account_ui_backed`
-|_AccountsContainer / Account3_ |*unselected* |_._ |`_on_account_3_unselected`
-|===
 
 
 === Properties

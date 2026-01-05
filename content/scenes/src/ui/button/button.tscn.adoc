@@ -55,6 +55,23 @@ func _process(delta: float) -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_focus_entered_#]=>$.
+```gdscript
+func _on_focus_entered() -> void:
+	focused = true
+	%AnimationPlayer.play("focused_%s" % [focus_move_direction_key()])
+```
+[.signal-connection]
+.$.:[#_focus_exited_#]=>$.
+```gdscript
+func _on_focus_exited() -> void:
+	focused = false
+	%AnimationPlayer.play("unfocused_%s" % [focus_move_direction_key()])
+```
+
+
 === Animations
 ==== Animation_evwsm
 
@@ -173,15 +190,6 @@ R  ->  R : position\n = Vector2(0, 0)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*focus_entered* |_._ |`_on_focus_entered`
-|_._ |*focus_exited* |_._ |`_on_focus_exited`
-|===
 
 
 === Properties

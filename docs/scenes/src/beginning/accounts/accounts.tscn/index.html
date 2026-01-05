@@ -485,8 +485,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
-<li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_accounts_gd">accounts.gd</a></li>
 </ul>
@@ -587,6 +587,75 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 <div class="sect2">
+<h3 id="_signal_connections">Signal Connections</h3>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account1:[<mark><em>get_started</em></mark>]⇒$., $AccountsContainer/Account2:[<mark><em>get_started</em></mark>]⇒$., $AccountsContainer/Account3:[<mark><em>get_started</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_get_started</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">account</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="s2">'</span><span class="s1">%Account'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+	<span class="n">Current</span><span class="o">.</span><span class="n">load_account</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+	<span class="n">get_started</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">account</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account1:[<mark><em>selected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_1_selected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"1st_selected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account1:[<mark><em>ui_backed</em></mark>]⇒$., $AccountsContainer/Account2:[<mark><em>ui_backed</em></mark>]⇒$., $AccountsContainer/Account3:[<mark><em>ui_backed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_ui_backed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"RESET"</span><span class="p">)</span>
+	<span class="n">ui_backed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account1:[<mark><em>unselected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_1_unselected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"1st_unselected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account2:[<mark><em>focus_entered</em></mark>]⇒$., $AccountsContainer/Account3:[<mark><em>focus_entered</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_focus_entered</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current_idx</span> <span class="o">=</span> <span class="n">idx</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account2:[<mark><em>selected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_2_selected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"2nd_selected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account2:[<mark><em>unselected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_2_unselected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"2nd_unselected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account3:[<mark><em>selected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_3_selected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"3rd_selected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AccountsContainer/Account3:[<mark><em>unselected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_account_3_unselected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"3rd_unselected"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_animations">Animations</h3>
 <div class="sect3">
 <h4 id="_1st_selected">1st_selected</h4>
@@ -660,111 +729,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <hr>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account1</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>get_started</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_get_started</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account1</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>selected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_1_selected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account1</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ui_backed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_ui_backed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account1</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unselected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_1_unselected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account2</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_entered</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_focus_entered</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account2</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>get_started</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_get_started</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account2</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>selected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_2_selected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account2</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ui_backed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_ui_backed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account2</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unselected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_2_unselected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account3</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_entered</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_focus_entered</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account3</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>get_started</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_get_started</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account3</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>selected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_3_selected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account3</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ui_backed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_ui_backed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AccountsContainer / Account3</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unselected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_account_3_unselected</code></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

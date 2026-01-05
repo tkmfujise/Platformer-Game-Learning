@@ -66,14 +66,15 @@ func _ready() -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
-
-
 === Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_DetectionArea2D_ |*body_entered* |_._ |`_on_detection_area_2d_body_entered`
-|===
+[.signal-connection]
+.$DetectionArea2D:[#_body_entered_#]=>$.
+```gdscript
+func _on_detection_area_2d_body_entered(body: Node2D) -> void:
+	fall.call_deferred()
+```
+
+
 
 
 === Properties

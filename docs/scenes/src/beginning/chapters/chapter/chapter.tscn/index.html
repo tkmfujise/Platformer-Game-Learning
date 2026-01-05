@@ -484,8 +484,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_diagram">Diagram</a></li>
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
-<li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_chapter_gd">chapter.gd</a></li>
 </ul>
@@ -537,6 +537,17 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 <div class="sect2">
+<h3 id="_signal_connections">Signal Connections</h3>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>focus_entered</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_focus_entered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">focus_animation_skip</span><span class="p">:</span> <span class="n">focus_animation_skip</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="k">else</span><span class="p">:</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"focused"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_animations">Animations</h3>
 <div class="sect3">
 <h4 id="_animation_ue4pb">Animation_ue4pb</h4>
@@ -583,33 +594,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <hr>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_entered</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_focus_entered</code></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

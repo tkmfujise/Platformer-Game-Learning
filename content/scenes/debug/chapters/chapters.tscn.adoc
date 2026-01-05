@@ -101,15 +101,21 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-control]#ReloadButton# [.node-type.type-control]#Button#
 
 
-
-
 === Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_Chapters_ |*ui_backed* |_._ |`_on_chapters_ui_backed`
-|_ReloadButton_ |*pressed* |_._ |`_on_reload_button_pressed`
-|===
+[.signal-connection]
+.$Chapters:[#_ui_backed_#]=>$.
+```gdscript
+func _on_chapters_ui_backed() -> void:
+	reload()
+```
+[.signal-connection]
+.$ReloadButton:[#_pressed_#]=>$.
+```gdscript
+func _on_reload_button_pressed() -> void:
+	reload()
+```
+
+
 
 
 === Properties

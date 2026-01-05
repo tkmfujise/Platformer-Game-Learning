@@ -57,6 +57,15 @@ _(R::_on_animation_player_animation_finished, N6::animation_finished)
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	if next_scene: SceneHelper.transit(self, next_scene)
+```
+
+
 === Animations
 ==== Animation_bwqwf
 
@@ -162,14 +171,6 @@ R  ->  T2 : material\n = 1.0
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_AnimationPlayer_ |*animation_finished* |_._ |`_on_animation_player_animation_finished`
-|===
 
 
 === Properties

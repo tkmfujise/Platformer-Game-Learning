@@ -414,6 +414,41 @@ func _process(delta: float) -> void:
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_focus_entered_#]=>$.
+```gdscript
+func _on_focus_entered() -> void:
+	if is_unfocused():
+		%AnimationPlayer.play("focused")
+```
+[.signal-connection]
+.$.:[#_focus_exited_#]=>$.
+```gdscript
+func _on_focus_exited() -> void:
+	if is_focused():
+		%AnimationPlayer.play("unfocused")
+```
+[.signal-connection]
+.$.:[#_selected_#]=>$.
+```gdscript
+func _on_selected() -> void:
+	%AnimationPlayer.play("selected")
+```
+[.signal-connection]
+.$.:[#_unselected_#]=>$.
+```gdscript
+func _on_unselected() -> void:
+	%AnimationPlayer.play("unselected")
+```
+[.signal-connection]
+.$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton:[#_pressed_#]=>$.
+```gdscript
+func _on_get_started_button_pressed() -> void:
+	get_started.emit()
+```
+
+
 === Animations
 ==== Animation_qli4a
 
@@ -553,18 +588,6 @@ R  ->o  R : focus_top\n = true
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*focus_entered* |_._ |`_on_focus_entered`
-|_._ |*focus_exited* |_._ |`_on_focus_exited`
-|_._ |*selected* |_._ |`_on_selected`
-|_._ |*unselected* |_._ |`_on_unselected`
-|_VBoxContainer / MenuContainer / VBoxContainer / GetStartedContainer / GetStartedButton_ |*pressed* |_._ |`_on_get_started_button_pressed`
-|===
 
 
 === Properties

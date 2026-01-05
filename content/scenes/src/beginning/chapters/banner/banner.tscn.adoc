@@ -56,6 +56,9 @@ left to right direction
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+NOTE: No signal connections.
+
 === Animations
 ==== Animation_w6bet
 
@@ -121,9 +124,6 @@ end
 ---
 
 
-
-=== Signal Connections
-NOTE: No signal connections.
 
 === Properties
 [cols="1,1,3" options="header"]

@@ -484,8 +484,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_diagram">Diagram</a></li>
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
-<li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_world_gd">world.gd</a></li>
 </ul>
@@ -585,6 +585,19 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_signal_connections">Signal Connections</h3>
+<div class="listingblock signal-connection">
+<div class="title">$AnimationPlayer:[<mark><em>animation_finished</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">match</span> <span class="n">anim_name</span><span class="p">:</span>
+		<span class="s2">'</span><span class="s1">opening'</span><span class="p">:</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">circular_move'</span><span class="p">)</span>
+		<span class="s2">'</span><span class="s1">back_to_circular_move'</span><span class="p">:</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">circular_move'</span><span class="p">)</span>
+		<span class="n">_</span><span class="p">:</span> <span class="k">pass</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -787,33 +800,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <hr>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AnimationPlayer</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>animation_finished</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_animation_player_animation_finished</code></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

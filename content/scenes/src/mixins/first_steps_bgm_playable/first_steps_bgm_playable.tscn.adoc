@@ -36,10 +36,10 @@ func _ready() -> void:
 * [.node-name.type-other]#FirstStepsBGMPlayable# [.node-type.type-other]#Node#
 
 
-
-
 === Signal Connections
 NOTE: No signal connections.
+
+
 
 === Properties
 [cols="1,1,3" options="header"]

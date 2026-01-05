@@ -485,8 +485,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
-<li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_menu_gd">menu.gd</a></li>
 </ul>
@@ -711,6 +711,82 @@ No other scene instantiate this scene.
 </div>
 </div>
 <div class="sect2">
+<h3 id="_signal_connections">Signal Connections</h3>
+<div class="listingblock signal-connection">
+<div class="title">$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton:[<mark><em>focus_entered</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_climb_button_focus_entered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">climb_focused'</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton:[<mark><em>focus_exited</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_climb_button_focus_exited</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">climb_unfocused'</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton:[<mark><em>pressed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_climb_button_pressed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">:</span>
+		<span class="n">Input</span><span class="o">.</span><span class="n">start_joy_vibration</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">climb_selected'</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton:[<mark><em>pressed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_quit_button_pressed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$Accounts:[<mark><em>get_started</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_accounts_get_started</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">Chapters</span><span class="o">.</span><span class="n">setup_from_account_resource</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"chapters_show"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$Accounts:[<mark><em>ui_backed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_accounts_ui_backed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ACCOUNTS</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">climb_unselected'</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$Chapters:[<mark><em>focused</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_chapters_focused</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">CHAPTERS</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">World</span><span class="o">.</span><span class="n">focus_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$Chapters:[<mark><em>selected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_chapters_selected</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">CHAPTERS</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">World</span><span class="o">.</span><span class="n">zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$Chapters:[<mark><em>ui_backed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_chapters_ui_backed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">CHAPTERS</span> <span class="o">||</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ACCOUNTS</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">chapters_hide'</span><span class="p">)</span>
+		<span class="o">%</span><span class="n">World</span><span class="o">.</span><span class="n">back_to_circular_move</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_animations">Animations</h3>
 <div class="sect3">
 <h4 id="_animation_f84do">Animation_f84do</h4>
@@ -784,81 +860,6 @@ No other scene instantiate this scene.
 </div>
 <hr>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>RootContainer / MenuContainer / ClimbContainer / ButtonContainer / ClimbButton</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_entered</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_climb_button_focus_entered</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>RootContainer / MenuContainer / ClimbContainer / ButtonContainer / ClimbButton</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focus_exited</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_climb_button_focus_exited</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>RootContainer / MenuContainer / ClimbContainer / ButtonContainer / ClimbButton</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>pressed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_climb_button_pressed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>RootContainer / MenuContainer / OthersContainer / VBoxContainer / QuitContainer / QuitButton</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>pressed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_quit_button_pressed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Accounts</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>get_started</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_accounts_get_started</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Accounts</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ui_backed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_accounts_ui_backed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Chapters</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>focused</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_chapters_focused</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Chapters</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>selected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_chapters_selected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Chapters</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ui_backed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_chapters_ui_backed</code></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

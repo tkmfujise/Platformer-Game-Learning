@@ -485,8 +485,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_overridden_virtual_functions">Overridden virtual functions</a></li>
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
-<li><a href="#_animations">Animations</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_chapters_gd">chapters.gd</a></li>
 </ul>
@@ -690,6 +690,42 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_signal_connections">Signal Connections</h3>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>selected</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_selected</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">Menu</span><span class="o">.</span><span class="n">grab_focus_first</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="n">selected_chapter_idx</span> <span class="o">=</span> <span class="n">idx</span>
+	<span class="n">zoom_pin_to</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+	<span class="n">get_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">selected</span><span class="p">()</span>
+	<span class="n">set_chapters_animation_offset</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"selected"</span><span class="p">)</span>
+	<span class="n">current_plate</span> <span class="o">=</span> <span class="n">Plate</span><span class="o">.</span><span class="n">MENU</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$Menu:[<mark><em>ui_backed</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_menu_ui_backed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">MENU</span><span class="p">:</span>
+		<span class="p">(</span><span class="k">func</span><span class="p">():</span> <span class="n">current_plate</span> <span class="o">=</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">)</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span>
+		<span class="n">get_chapter</span><span class="p">(</span><span class="n">selected_chapter_idx</span><span class="p">)</span><span class="o">.</span><span class="n">unselected</span><span class="p">()</span>
+		<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"unselected"</span><span class="p">)</span>
+		<span class="n">selected_chapter_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+		<span class="n">force_focus_return</span><span class="p">()</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$AnimationPlayer:[<mark><em>animation_finished</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">_anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_plate</span> <span class="o">==</span> <span class="n">Plate</span><span class="o">.</span><span class="n">ROOT</span><span class="p">:</span>
+		<span class="n">force_focus_return</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -901,45 +937,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <hr>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_signal_connections">Signal Connections</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">From</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">To</th>
-<th class="tableblock halign-left valign-top">Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>selected</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_selected</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Menu</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ui_backed</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_menu_ui_backed</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>AnimationPlayer</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>animation_finished</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>.</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_on_animation_player_animation_finished</code></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>

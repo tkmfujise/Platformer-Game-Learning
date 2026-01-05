@@ -190,6 +190,42 @@ func _process(delta: float) -> void:
 ** [.node-name.type-other]#AnimationTree# [.node-type.type-other]#AnimationTree#
 
 
+=== Signal Connections
+[.signal-connection]
+.$.:[#_dashed_#]=>$.
+```gdscript
+func _on_dashed() -> void:
+	vibrate('Dashed')
+	%Camera.shake(&'dash')
+```
+[.signal-connection]
+.$.:[#_failed_#]=>$.
+```gdscript
+func _on_failed() -> void:
+	is_failed = true
+	%AnimationTree.active = false
+	%AnimationPlayer.play("burst")
+```
+[.signal-connection]
+.$FailureCollision:[#_area_entered_#]=>$.
+```gdscript
+func _on_failure_collision_area_entered(area: Area2D) -> void:
+	failed.emit()
+```
+[.signal-connection]
+.$FrameSubject:[#_area_entered_#]=>$.
+```gdscript
+func _on_frame_subject_area_entered(area: Area2D) -> void:
+	%Camera.add_frame(area)
+```
+[.signal-connection]
+.$FrameSubject:[#_area_exited_#]=>$.
+```gdscript
+func _on_frame_subject_area_exited(area: Area2D) -> void:
+	%Camera.remove_frame(area)
+```
+
+
 === Animations
 ==== fall_left
 
@@ -758,18 +794,6 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_._ |*dashed* |_._ |`_on_dashed`
-|_._ |*failed* |_._ |`_on_failed`
-|_FailureCollision_ |*area_entered* |_._ |`_on_failure_collision_area_entered`
-|_FrameSubject_ |*area_entered* |_._ |`_on_frame_subject_area_entered`
-|_FrameSubject_ |*area_exited* |_._ |`_on_frame_subject_area_exited`
-|===
 
 
 === Properties

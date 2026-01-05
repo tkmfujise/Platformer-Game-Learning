@@ -74,6 +74,9 @@ left to right direction
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+NOTE: No signal connections.
+
 === Animations
 ==== Animation_tk6ev
 
@@ -130,9 +133,6 @@ R  ->  R : position\n = Vector2(0, 0)
 ---
 
 
-
-=== Signal Connections
-NOTE: No signal connections.
 
 === Properties
 [cols="1,1,3" options="header"]

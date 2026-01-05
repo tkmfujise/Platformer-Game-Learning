@@ -101,6 +101,18 @@ _(R::_on_animation_player_animation_finished, N16::animation_finished)
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
+=== Signal Connections
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		'opening': %AnimationPlayer.play('circular_move')
+		'back_to_circular_move': %AnimationPlayer.play('circular_move')
+		_: pass
+```
+
+
 === Animations
 ==== Animation_kwh1a
 
@@ -726,14 +738,6 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 ....
 ---
 
-
-
-=== Signal Connections
-[cols="1,1,1,2" options="header"]
-|===
-|From |Name |To |Method
-|_AnimationPlayer_ |*animation_finished* |_._ |`_on_animation_player_animation_finished`
-|===
 
 
 === Properties
