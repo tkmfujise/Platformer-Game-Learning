@@ -431,6 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return new Fuse(generateFuseItems(elements), {
         keys: ['path'],
         threshold: 0.3,
+        ignoreLocation: true,
       })
     }
 
