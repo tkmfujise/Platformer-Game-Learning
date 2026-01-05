@@ -8,11 +8,12 @@ title: src/stages/weather/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Snow" <<(N,lightskyblue) Node2D>> {
+class R as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class CPUParticles2D as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
+class N1 as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
 }
-ROOT --o CPUParticles2D
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

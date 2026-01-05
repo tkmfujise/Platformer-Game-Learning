@@ -8,7 +8,7 @@ title: src/beginning/menu/menu.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Menu" <<(C,lightgreen) Control>> {
+class R as "Menu" <<(C,lightgreen) Control>> {
   * current_plate
   * grab_focus_root
 ---
@@ -25,13 +25,13 @@ class ROOT as "Menu" <<(C,lightgreen) Control>> {
   + _on_chapters_focused()
   + _on_chapters_selected()
 }
-class SubViewportContainer as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
+class N1 as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class SubViewportContainer_Snow as "Snow" <<(N,lightskyblue) Node2D>> {
+class N2 as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class SubViewportContainer_SubViewport as "SubViewport" <<(S,darkgray) SubViewport>> {
+class N3 as "SubViewport" <<(S,darkgray) SubViewport>> {
 }
-class SubViewportContainer_SubViewport_World as "World" <<(N,hotpink) Node3D>> {
+class N4 as "World" <<(N,hotpink) Node3D>> {
   * CameraNode
 ---
   + back_to_circular_move()
@@ -42,19 +42,19 @@ class SubViewportContainer_SubViewport_World as "World" <<(N,hotpink) Node3D>> {
   + acute_angle()
   + _on_animation_player_animation_finished()
 }
-class RootContainer as "RootContainer" <<(M,lightgreen) MarginContainer>> {
+class N5 as "RootContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class RootContainer_MenuContainer as "MenuContainer" <<(V,lightgreen) VBoxContainer>> {
+class N6 as "MenuContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class RootContainer_MenuContainer_ClimbContainer as "ClimbContainer" <<(N,lightskyblue) Node2D>> {
+class N7 as "ClimbContainer" <<(N,lightskyblue) Node2D>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_LogoContainer as "LogoContainer" <<(C,lightgreen) CenterContainer>> {
+class N8 as "LogoContainer" <<(C,lightgreen) CenterContainer>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_LogoContainer_Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N9 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_ButtonContainer as "ButtonContainer" <<(B,lightgreen) BoxContainer>> {
+class N10 as "ButtonContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton as "ClimbButton" <<(B,lightgreen) Button>> {
+class N11 as "ClimbButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -68,13 +68,13 @@ class RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton as 
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class RootContainer_MenuContainer_OthersContainer as "OthersContainer" <<(N,lightskyblue) Node2D>> {
+class N12 as "OthersContainer" <<(N,lightskyblue) Node2D>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
+class N13 as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer as "OptionsContainer" <<(B,lightgreen) BoxContainer>> {
+class N14 as "OptionsContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer_OptionsButton as "OptionsButton" <<(B,lightgreen) Button>> {
+class N15 as "OptionsButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -88,9 +88,9 @@ class RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer as "CreditsContainer" <<(B,lightgreen) BoxContainer>> {
+class N16 as "CreditsContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer_CreditsButton as "CreditsButton" <<(B,lightgreen) Button>> {
+class N17 as "CreditsButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -104,9 +104,9 @@ class RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer as "QuitContainer" <<(B,lightgreen) BoxContainer>> {
+class N18 as "QuitContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_QuitButton as "QuitButton" <<(B,lightgreen) Button>> {
+class N19 as "QuitButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -120,7 +120,7 @@ class RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_Qu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class Accounts as "Accounts" <<(M,lightgreen) MarginContainer>> {
+class N20 as "Accounts" <<(M,lightgreen) MarginContainer>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -142,7 +142,7 @@ class Accounts as "Accounts" <<(M,lightgreen) MarginContainer>> {
   + _on_account_get_started()
   + _on_account_focus_entered()
 }
-class Chapters as "Chapters" <<(C,lightgreen) Control>> {
+class N21 as "Chapters" <<(C,lightgreen) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -174,40 +174,41 @@ class Chapters as "Chapters" <<(C,lightgreen) Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N22 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o SubViewportContainer
-ROOT --o RootContainer
-ROOT --o Accounts
-ROOT --o Chapters
-ROOT --o AnimationPlayer
-SubViewportContainer --o SubViewportContainer_Snow
-SubViewportContainer --o SubViewportContainer_SubViewport
-SubViewportContainer_SubViewport --o SubViewportContainer_SubViewport_World
-RootContainer --o RootContainer_MenuContainer
-RootContainer_MenuContainer --o RootContainer_MenuContainer_ClimbContainer
-RootContainer_MenuContainer --o RootContainer_MenuContainer_OthersContainer
-RootContainer_MenuContainer_ClimbContainer --o RootContainer_MenuContainer_ClimbContainer_LogoContainer
-RootContainer_MenuContainer_ClimbContainer --o RootContainer_MenuContainer_ClimbContainer_ButtonContainer
-RootContainer_MenuContainer_ClimbContainer_LogoContainer --o RootContainer_MenuContainer_ClimbContainer_LogoContainer_Sprite2D
-RootContainer_MenuContainer_ClimbContainer_ButtonContainer --o RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton
-RootContainer_MenuContainer_OthersContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer
-RootContainer_MenuContainer_OthersContainer_VBoxContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer
-RootContainer_MenuContainer_OthersContainer_VBoxContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer
-RootContainer_MenuContainer_OthersContainer_VBoxContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer
-RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer_OptionsContainer_OptionsButton
-RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer_CreditsContainer_CreditsButton
-RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer --o RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_QuitButton
+R --o N1
+R --o N5
+R --o N20
+R --o N21
+R --o N22
+N1 --o N2
+N1 --o N3
+N3 --o N4
+N5 --o N6
+N6 --o N7
+N6 --o N12
+N7 --o N8
+N7 --o N10
+N8 --o N9
+N10 --o N11
+N12 --o N13
+N13 --o N14
+N13 --o N16
+N13 --o N18
+N14 --o N15
+N16 --o N17
+N18 --o N19
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_climb_button_focus_entered <-[#blue,thickness=2]- RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton::focus_entered
-ROOT::_on_climb_button_focus_exited <-[#blue,thickness=2]- RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton::focus_exited
-ROOT::_on_climb_button_pressed <-[#blue,thickness=2]- RootContainer_MenuContainer_ClimbContainer_ButtonContainer_ClimbButton::pressed
-ROOT::_on_quit_button_pressed <-[#blue,thickness=2]- RootContainer_MenuContainer_OthersContainer_VBoxContainer_QuitContainer_QuitButton::pressed
-ROOT::_on_accounts_get_started <-[#blue,thickness=2]- Accounts::get_started
-ROOT::_on_accounts_ui_backed <-[#blue,thickness=2]- Accounts::ui_backed
-ROOT::_on_chapters_focused <-[#blue,thickness=2]- Chapters::focused
-ROOT::_on_chapters_selected <-[#blue,thickness=2]- Chapters::selected
-ROOT::_on_chapters_ui_backed <-[#blue,thickness=2]- Chapters::ui_backed
+_(R::_on_climb_button_focus_entered, N11::focus_entered)
+_(R::_on_climb_button_focus_exited, N11::focus_exited)
+_(R::_on_climb_button_pressed, N11::pressed)
+_(R::_on_quit_button_pressed, N19::pressed)
+_(R::_on_accounts_get_started, N20::get_started)
+_(R::_on_accounts_ui_backed, N20::ui_backed)
+_(R::_on_chapters_focused, N21::focused)
+_(R::_on_chapters_selected, N21::selected)
+_(R::_on_chapters_ui_backed, N21::ui_backed)
 ....
 
 

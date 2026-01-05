@@ -8,19 +8,19 @@ title: src/main.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Main" <<(C,lightgreen) Control>> {
+class R as "Main" <<(C,lightgreen) Control>> {
 }
-class ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
+class N1 as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class World as "World" <<(N,lightskyblue) Node2D>> {
+class N2 as "World" <<(N,lightskyblue) Node2D>> {
 }
-class World_StaticBody2D as "StaticBody2D" <<(S,lightskyblue) StaticBody2D>> {
+class N3 as "StaticBody2D" <<(S,lightskyblue) StaticBody2D>> {
 }
-class World_StaticBody2D_ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
+class N4 as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class World_StaticBody2D_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N5 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class World_Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -53,17 +53,18 @@ class World_Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class FirstStepsBGMPlayable as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
+class N7 as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
 ---
   + _ready()
 }
-ROOT --o ColorRect
-ROOT --o World
-ROOT --o FirstStepsBGMPlayable
-World --o World_StaticBody2D
-World --o World_Player
-World_StaticBody2D --o World_StaticBody2D_ColorRect
-World_StaticBody2D --o World_StaticBody2D_CollisionShape2D
+R --o N1
+R --o N2
+R --o N7
+N2 --o N3
+N2 --o N6
+N3 --o N4
+N3 --o N5
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

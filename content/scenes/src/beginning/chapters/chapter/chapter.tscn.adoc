@@ -8,7 +8,7 @@ title: src/beginning/chapters/chapter/chapter.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Chapter" <<(M,lightgreen) MarginContainer>> {
+class R as "Chapter" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -19,17 +19,18 @@ class ROOT as "Chapter" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class Placeholder as "Placeholder" <<(T,lightgreen) TextureRect>> {
+class N1 as "Placeholder" <<(T,lightgreen) TextureRect>> {
 }
-class Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N3 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o Placeholder
-ROOT --o Sprite2D
-ROOT --o AnimationPlayer
+R --o N1
+R --o N2
+R --o N3
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
+_(R::_on_focus_entered, R::focus_entered)
 ....
 
 

@@ -8,10 +8,11 @@ title: src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
+class R as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
 ---
   + _ready()
 }
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

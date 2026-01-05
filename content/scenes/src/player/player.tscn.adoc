@@ -8,7 +8,7 @@ title: src/player/player.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -41,33 +41,33 @@ class ROOT as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class Sprites as "Sprites" <<(N,lightskyblue) Node2D>> {
+class N1 as "Sprites" <<(N,lightskyblue) Node2D>> {
 }
-class Sprites_SpriteStates as "SpriteStates" <<(N,lightskyblue) Node2D>> {
+class N2 as "SpriteStates" <<(N,lightskyblue) Node2D>> {
 }
-class Sprites_SpriteStates_IdleSprite2D as "IdleSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N3 as "IdleSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteStates_RunSprite2D as "RunSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N4 as "RunSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteStates_JumpSprite2D as "JumpSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N5 as "JumpSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteStates_FallSprite2D as "FallSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N6 as "FallSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Sprites_SpriteEffects as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
+class N7 as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
 }
-class Sprites_SpriteEffects_BurstSprite2D as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N8 as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N9 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class FailureCollision as "FailureCollision" <<(A,lightskyblue) Area2D>> {
+class N10 as "FailureCollision" <<(A,lightskyblue) Area2D>> {
 }
-class FailureCollision_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N11 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class FrameSubject as "FrameSubject" <<(A,lightskyblue) Area2D>> {
+class N12 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
 }
-class FrameSubject_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N13 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class Camera as "Camera" <<(C,lightskyblue) Camera2D>> {
+class N14 as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position
@@ -80,32 +80,33 @@ class Camera as "Camera" <<(C,lightskyblue) Camera2D>> {
   + shake()
   + shaking()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N15 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-class AnimationTree as "AnimationTree" <<(A,darkgray) AnimationTree>> {
+class N16 as "AnimationTree" <<(A,darkgray) AnimationTree>> {
 }
-ROOT --o Sprites
-ROOT --o CollisionShape2D
-ROOT --o FailureCollision
-ROOT --o FrameSubject
-ROOT --o Camera
-ROOT --o AnimationPlayer
-ROOT --o AnimationTree
-Sprites --o Sprites_SpriteStates
-Sprites --o Sprites_SpriteEffects
-Sprites_SpriteStates --o Sprites_SpriteStates_IdleSprite2D
-Sprites_SpriteStates --o Sprites_SpriteStates_RunSprite2D
-Sprites_SpriteStates --o Sprites_SpriteStates_JumpSprite2D
-Sprites_SpriteStates --o Sprites_SpriteStates_FallSprite2D
-Sprites_SpriteEffects --o Sprites_SpriteEffects_BurstSprite2D
-FailureCollision --o FailureCollision_CollisionShape2D
-FrameSubject --o FrameSubject_CollisionShape2D
+R --o N1
+R --o N9
+R --o N10
+R --o N12
+R --o N14
+R --o N15
+R --o N16
+N1 --o N2
+N1 --o N7
+N2 --o N3
+N2 --o N4
+N2 --o N5
+N2 --o N6
+N7 --o N8
+N10 --o N11
+N12 --o N13
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_dashed <-[#blue,thickness=2]- ROOT::dashed
-ROOT::_on_failed <-[#blue,thickness=2]- ROOT::failed
-ROOT::_on_failure_collision_area_entered <-[#blue,thickness=2]- FailureCollision::area_entered
-ROOT::_on_frame_subject_area_entered <-[#blue,thickness=2]- FrameSubject::area_entered
-ROOT::_on_frame_subject_area_exited <-[#blue,thickness=2]- FrameSubject::area_exited
+_(R::_on_dashed, R::dashed)
+_(R::_on_failed, R::failed)
+_(R::_on_failure_collision_area_entered, N10::area_entered)
+_(R::_on_frame_subject_area_entered, N12::area_entered)
+_(R::_on_frame_subject_area_exited, N12::area_exited)
 ....
 
 

@@ -8,7 +8,7 @@ title: src/account/account.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Account" <<(B,lightgreen) BoxContainer>> {
+class R as "Account" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -37,141 +37,141 @@ class ROOT as "Account" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class VBoxContainer as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
+class N1 as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class VBoxContainer_MainContainer as "MainContainer" <<(M,lightgreen) MarginContainer>> {
+class N2 as "MainContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class VBoxContainer_MainContainer_Background as "Background" <<(C,lightgreen) ColorRect>> {
+class N3 as "Background" <<(C,lightgreen) ColorRect>> {
 }
-class VBoxContainer_MainContainer_TicketContainer as "TicketContainer" <<(B,lightgreen) BoxContainer>> {
+class N4 as "TicketContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot as "TicketRoot" <<(N,lightskyblue) Node2D>> {
+class N5 as "TicketRoot" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_Tikect as "Tikect" <<(S,lightskyblue) Sprite2D>> {
+class N6 as "Tikect" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder as "TicketSummaryPlaceholder" <<(C,lightgreen) Control>> {
+class N7 as "TicketSummaryPlaceholder" <<(C,lightgreen) Control>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder_Label as "Label" <<(L,lightgreen) Label>> {
+class N8 as "Label" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary as "TicketSummary" <<(N,lightskyblue) Node2D>> {
+class N9 as "TicketSummary" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Skull as "Skull" <<(S,lightskyblue) Sprite2D>> {
+class N10 as "Skull" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Multiplication as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
+class N11 as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot as "ControlRoot" <<(C,lightgreen) Control>> {
+class N12 as "ControlRoot" <<(C,lightgreen) Control>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalFailureCount as "TotalFailureCount" <<(L,lightgreen) Label>> {
+class N13 as "TotalFailureCount" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalPlayTime as "TotalPlayTime" <<(L,lightgreen) Label>> {
+class N14 as "TotalPlayTime" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder as "CassettesPlaceholder" <<(N,lightskyblue) Node2D>> {
+class N15 as "CassettesPlaceholder" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette1 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
+class N16 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette2 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
+class N17 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette3 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
+class N18 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette4 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
+class N19 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette5 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
+class N20 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette6 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
+class N21 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette7 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
+class N22 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette8 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
+class N23 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older as "BlueHeartsPlaceh1older" <<(N,lightskyblue) Node2D>> {
+class N24 as "BlueHeartsPlaceh1older" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart1 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
+class N25 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart2 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
+class N26 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart3 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
+class N27 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart4 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
+class N28 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart5 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
+class N29 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart6 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
+class N30 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart7 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
+class N31 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart8 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
+class N32 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes as "ObtainedCassettes" <<(N,lightskyblue) Node2D>> {
+class N33 as "ObtainedCassettes" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette1 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
+class N34 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette2 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
+class N35 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette3 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
+class N36 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette4 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
+class N37 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette5 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
+class N38 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette6 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
+class N39 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette7 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
+class N40 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette8 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
+class N41 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts as "ObtainedBlueHearts" <<(N,lightskyblue) Node2D>> {
+class N42 as "ObtainedBlueHearts" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart1 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
+class N43 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart2 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
+class N44 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart3 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
+class N45 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart4 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
+class N46 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart5 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
+class N47 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart6 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
+class N48 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart7 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
+class N49 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart8 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
+class N50 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer as "CoverContainer" <<(B,lightgreen) BoxContainer>> {
+class N51 as "CoverContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot as "CoverRoot" <<(N,lightskyblue) Node2D>> {
+class N52 as "CoverRoot" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_TikectCover as "TikectCover" <<(S,lightskyblue) Sprite2D>> {
+class N53 as "TikectCover" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary as "CoverSummary" <<(N,lightskyblue) Node2D>> {
+class N54 as "CoverSummary" <<(N,lightskyblue) Node2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Face as "Face" <<(S,lightskyblue) Sprite2D>> {
+class N55 as "Face" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeLeftTop as "SellotapeLeftTop" <<(S,lightskyblue) Sprite2D>> {
+class N56 as "SellotapeLeftTop" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeRightBottom as "SellotapeRightBottom" <<(S,lightskyblue) Sprite2D>> {
+class N57 as "SellotapeRightBottom" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_FacePhotoMask as "FacePhotoMask" <<(P,lightskyblue) PointLight2D>> {
+class N58 as "FacePhotoMask" <<(P,lightskyblue) PointLight2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
+class N59 as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Multiplication as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
+class N60 as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot as "ControlRoot" <<(C,lightgreen) Control>> {
+class N61 as "ControlRoot" <<(C,lightgreen) Control>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_PlayerName as "PlayerName" <<(L,lightgreen) Label>> {
+class N62 as "PlayerName" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_LatestChapterName as "LatestChapterName" <<(L,lightgreen) Label>> {
+class N63 as "LatestChapterName" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
+class N64 as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class VBoxContainer_MenuContainer as "MenuContainer" <<(M,lightgreen) MarginContainer>> {
+class N65 as "MenuContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
+class N66 as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer as "GetStartedContainer" <<(B,lightgreen) BoxContainer>> {
+class N67 as "GetStartedContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton as "GetStartedButton" <<(B,lightgreen) Button>> {
+class N68 as "GetStartedButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -185,9 +185,9 @@ class VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedBu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer as "ChangeNameContainer" <<(B,lightgreen) BoxContainer>> {
+class N69 as "ChangeNameContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameButton as "ChangeNameButton" <<(B,lightgreen) Button>> {
+class N70 as "ChangeNameButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -201,9 +201,9 @@ class VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameBu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer as "AssistModeContainer" <<(B,lightgreen) BoxContainer>> {
+class N71 as "AssistModeContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeButton as "AssistModeButton" <<(B,lightgreen) Button>> {
+class N72 as "AssistModeButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -217,87 +217,88 @@ class VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeBu
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N73 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o VBoxContainer
-ROOT --o AnimationPlayer
-VBoxContainer --o VBoxContainer_MainContainer
-VBoxContainer --o VBoxContainer_MenuContainer
-VBoxContainer_MainContainer --o VBoxContainer_MainContainer_Background
-VBoxContainer_MainContainer --o VBoxContainer_MainContainer_TicketContainer
-VBoxContainer_MainContainer --o VBoxContainer_MainContainer_CoverContainer
-VBoxContainer_MainContainer_TicketContainer --o VBoxContainer_MainContainer_TicketContainer_TicketRoot
-VBoxContainer_MainContainer_TicketContainer_TicketRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_Tikect
-VBoxContainer_MainContainer_TicketContainer_TicketRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder
-VBoxContainer_MainContainer_TicketContainer_TicketRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummaryPlaceholder_Label
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Skull
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_Multiplication
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalFailureCount
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ControlRoot_TotalPlayTime
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette1
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette2
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette3
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette4
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette5
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette6
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette7
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_CassettesPlaceholder_Cassette8
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart1
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart2
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart3
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart4
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart5
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart6
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart7
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_BlueHeartsPlaceh1older_BlueHeart8
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette1
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette2
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette3
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette4
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette5
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette6
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette7
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedCassettes_Cassette8
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart1
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart2
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart3
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart4
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart5
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart6
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart7
-VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts --o VBoxContainer_MainContainer_TicketContainer_TicketRoot_TicketSummary_ObtainedBlueHearts_BlueHeart8
-VBoxContainer_MainContainer_CoverContainer --o VBoxContainer_MainContainer_CoverContainer_CoverRoot
-VBoxContainer_MainContainer_CoverContainer_CoverRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_TikectCover
-VBoxContainer_MainContainer_CoverContainer_CoverRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Face
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeLeftTop
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_SellotapeRightBottom
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_FacePhotoMask
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Strawberry
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_Multiplication
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_PlayerName
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_LatestChapterName
-VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot --o VBoxContainer_MainContainer_CoverContainer_CoverRoot_CoverSummary_ControlRoot_ObtainedStrawberryCount
-VBoxContainer_MenuContainer --o VBoxContainer_MenuContainer_VBoxContainer
-VBoxContainer_MenuContainer_VBoxContainer --o VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer
-VBoxContainer_MenuContainer_VBoxContainer --o VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer
-VBoxContainer_MenuContainer_VBoxContainer --o VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer
-VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer --o VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton
-VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer --o VBoxContainer_MenuContainer_VBoxContainer_ChangeNameContainer_ChangeNameButton
-VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer --o VBoxContainer_MenuContainer_VBoxContainer_AssistModeContainer_AssistModeButton
+R --o N1
+R --o N73
+N1 --o N2
+N1 --o N65
+N2 --o N3
+N2 --o N4
+N2 --o N51
+N4 --o N5
+N5 --o N6
+N5 --o N7
+N5 --o N9
+N7 --o N8
+N9 --o N10
+N9 --o N11
+N9 --o N12
+N9 --o N15
+N9 --o N24
+N9 --o N33
+N9 --o N42
+N12 --o N13
+N12 --o N14
+N15 --o N16
+N15 --o N17
+N15 --o N18
+N15 --o N19
+N15 --o N20
+N15 --o N21
+N15 --o N22
+N15 --o N23
+N24 --o N25
+N24 --o N26
+N24 --o N27
+N24 --o N28
+N24 --o N29
+N24 --o N30
+N24 --o N31
+N24 --o N32
+N33 --o N34
+N33 --o N35
+N33 --o N36
+N33 --o N37
+N33 --o N38
+N33 --o N39
+N33 --o N40
+N33 --o N41
+N42 --o N43
+N42 --o N44
+N42 --o N45
+N42 --o N46
+N42 --o N47
+N42 --o N48
+N42 --o N49
+N42 --o N50
+N51 --o N52
+N52 --o N53
+N52 --o N54
+N54 --o N55
+N54 --o N56
+N54 --o N57
+N54 --o N58
+N54 --o N59
+N54 --o N60
+N54 --o N61
+N61 --o N62
+N61 --o N63
+N61 --o N64
+N65 --o N66
+N66 --o N67
+N66 --o N69
+N66 --o N71
+N67 --o N68
+N69 --o N70
+N71 --o N72
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
-ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
-ROOT::_on_selected <-[#blue,thickness=2]- ROOT::selected
-ROOT::_on_unselected <-[#blue,thickness=2]- ROOT::unselected
-ROOT::_on_get_started_button_pressed <-[#blue,thickness=2]- VBoxContainer_MenuContainer_VBoxContainer_GetStartedContainer_GetStartedButton::pressed
+_(R::_on_focus_entered, R::focus_entered)
+_(R::_on_focus_exited, R::focus_exited)
+_(R::_on_selected, R::selected)
+_(R::_on_unselected, R::unselected)
+_(R::_on_get_started_button_pressed, N68::pressed)
 ....
 
 

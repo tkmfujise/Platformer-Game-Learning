@@ -8,17 +8,18 @@ title: src/beginning/screen/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Show" <<(N,hotpink) Node3D>> {
+class R as "Show" <<(N,hotpink) Node3D>> {
 }
-class GPUParticles3D as "GPUParticles3D" <<(G,hotpink) GPUParticles3D>> {
+class N1 as "GPUParticles3D" <<(G,hotpink) GPUParticles3D>> {
 }
-class Camera3D as "Camera3D" <<(C,hotpink) Camera3D>> {
+class N2 as "Camera3D" <<(C,hotpink) Camera3D>> {
 }
-class DirectionalLight3D as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
+class N3 as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
 }
-ROOT --o GPUParticles3D
-ROOT --o Camera3D
-ROOT --o DirectionalLight3D
+R --o N1
+R --o N2
+R --o N3
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

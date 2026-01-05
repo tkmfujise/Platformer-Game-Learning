@@ -8,7 +8,7 @@ title: src/beginning/accounts/accounts.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Accounts" <<(M,lightgreen) MarginContainer>> {
+class R as "Accounts" <<(M,lightgreen) MarginContainer>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -30,9 +30,9 @@ class ROOT as "Accounts" <<(M,lightgreen) MarginContainer>> {
   + _on_account_get_started()
   + _on_account_focus_entered()
 }
-class AccountsContainer as "AccountsContainer" <<(N,lightskyblue) Node2D>> {
+class N1 as "AccountsContainer" <<(N,lightskyblue) Node2D>> {
 }
-class AccountsContainer_Account1 as "Account1" <<(B,lightgreen) BoxContainer>> {
+class N2 as "Account1" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -61,7 +61,7 @@ class AccountsContainer_Account1 as "Account1" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class AccountsContainer_Account2 as "Account2" <<(B,lightgreen) BoxContainer>> {
+class N3 as "Account2" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -90,7 +90,7 @@ class AccountsContainer_Account2 as "Account2" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class AccountsContainer_Account3 as "Account3" <<(B,lightgreen) BoxContainer>> {
+class N4 as "Account3" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -119,28 +119,29 @@ class AccountsContainer_Account3 as "Account3" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N5 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o AccountsContainer
-ROOT --o AnimationPlayer
-AccountsContainer --o AccountsContainer_Account1
-AccountsContainer --o AccountsContainer_Account2
-AccountsContainer --o AccountsContainer_Account3
+R --o N1
+R --o N5
+N1 --o N2
+N1 --o N3
+N1 --o N4
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_account_get_started <-[#blue,thickness=2]- AccountsContainer_Account1::get_started
-ROOT::_on_account_1_selected <-[#blue,thickness=2]- AccountsContainer_Account1::selected
-ROOT::_on_account_ui_backed <-[#blue,thickness=2]- AccountsContainer_Account1::ui_backed
-ROOT::_on_account_1_unselected <-[#blue,thickness=2]- AccountsContainer_Account1::unselected
-ROOT::_on_account_focus_entered <-[#blue,thickness=2]- AccountsContainer_Account2::focus_entered
-ROOT::_on_account_get_started <-[#blue,thickness=2]- AccountsContainer_Account2::get_started
-ROOT::_on_account_2_selected <-[#blue,thickness=2]- AccountsContainer_Account2::selected
-ROOT::_on_account_ui_backed <-[#blue,thickness=2]- AccountsContainer_Account2::ui_backed
-ROOT::_on_account_2_unselected <-[#blue,thickness=2]- AccountsContainer_Account2::unselected
-ROOT::_on_account_focus_entered <-[#blue,thickness=2]- AccountsContainer_Account3::focus_entered
-ROOT::_on_account_get_started <-[#blue,thickness=2]- AccountsContainer_Account3::get_started
-ROOT::_on_account_3_selected <-[#blue,thickness=2]- AccountsContainer_Account3::selected
-ROOT::_on_account_ui_backed <-[#blue,thickness=2]- AccountsContainer_Account3::ui_backed
-ROOT::_on_account_3_unselected <-[#blue,thickness=2]- AccountsContainer_Account3::unselected
+_(R::_on_account_get_started, N2::get_started)
+_(R::_on_account_1_selected, N2::selected)
+_(R::_on_account_ui_backed, N2::ui_backed)
+_(R::_on_account_1_unselected, N2::unselected)
+_(R::_on_account_focus_entered, N3::focus_entered)
+_(R::_on_account_get_started, N3::get_started)
+_(R::_on_account_2_selected, N3::selected)
+_(R::_on_account_ui_backed, N3::ui_backed)
+_(R::_on_account_2_unselected, N3::unselected)
+_(R::_on_account_focus_entered, N4::focus_entered)
+_(R::_on_account_get_started, N4::get_started)
+_(R::_on_account_3_selected, N4::selected)
+_(R::_on_account_ui_backed, N4::ui_backed)
+_(R::_on_account_3_unselected, N4::unselected)
 ....
 
 

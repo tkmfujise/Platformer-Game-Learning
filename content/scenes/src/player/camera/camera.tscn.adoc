@@ -8,7 +8,7 @@ title: src/player/camera/camera.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Camera" <<(C,lightskyblue) Camera2D>> {
+class R as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position
@@ -21,6 +21,7 @@ class ROOT as "Camera" <<(C,lightskyblue) Camera2D>> {
   + shake()
   + shaking()
 }
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

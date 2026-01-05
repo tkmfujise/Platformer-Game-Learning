@@ -8,7 +8,7 @@ title: src/ui/button/button.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Button" <<(B,lightgreen) Button>> {
+class R as "Button" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -22,12 +22,13 @@ class ROOT as "Button" <<(B,lightgreen) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N1 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o AnimationPlayer
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_focus_entered <-[#blue,thickness=2]- ROOT::focus_entered
-ROOT::_on_focus_exited <-[#blue,thickness=2]- ROOT::focus_exited
+_(R::_on_focus_entered, R::focus_entered)
+_(R::_on_focus_exited, R::focus_exited)
 ....
 
 

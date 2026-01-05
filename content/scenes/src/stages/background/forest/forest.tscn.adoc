@@ -8,20 +8,21 @@ title: src/stages/background/forest/forest.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Forest" <<(N,lightskyblue) Node2D>> {
+class R as "Forest" <<(N,lightskyblue) Node2D>> {
 }
-class Far as "Far" <<(P,lightskyblue) Parallax2D>> {
+class N1 as "Far" <<(P,lightskyblue) Parallax2D>> {
 }
-class Far_Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class Near as "Near" <<(P,lightskyblue) Parallax2D>> {
+class N3 as "Near" <<(P,lightskyblue) Parallax2D>> {
 }
-class Near_Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N4 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-ROOT --o Far
-ROOT --o Near
-Far --o Far_Sprite2D
-Near --o Near_Sprite2D
+R --o N1
+R --o N3
+N1 --o N2
+N3 --o N4
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

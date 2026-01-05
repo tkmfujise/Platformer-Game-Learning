@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/menu.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Menu" <<(C,lightgreen) Control>> {
+class R as "Menu" <<(C,lightgreen) Control>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -42,47 +42,47 @@ class ROOT as "Menu" <<(C,lightgreen) Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class BannerBox as "BannerBox" <<(C,lightgreen) Control>> {
+class N1 as "BannerBox" <<(C,lightgreen) Control>> {
 }
-class BannerBox_ChapterNumber as "ChapterNumber" <<(L,lightgreen) Label>> {
+class N2 as "ChapterNumber" <<(L,lightgreen) Label>> {
 }
-class BannerBox_ChapterName as "ChapterName" <<(L,lightgreen) Label>> {
+class N3 as "ChapterName" <<(L,lightgreen) Label>> {
 }
-class Box as "Box" <<(N,lightgreen) NinePatchRect>> {
+class N4 as "Box" <<(N,lightgreen) NinePatchRect>> {
 }
-class Banner as "Banner" <<(S,lightskyblue) Sprite2D>> {
+class N5 as "Banner" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection as "SideSelection" <<(N,lightskyblue) Node2D>> {
+class N6 as "SideSelection" <<(N,lightskyblue) Node2D>> {
 }
-class SideSelection_CenterBox as "CenterBox" <<(C,lightgreen) Control>> {
+class N7 as "CenterBox" <<(C,lightgreen) Control>> {
 }
-class SideSelection_CenterBox_BlueHeartIcon as "BlueHeartIcon" <<(S,lightskyblue) Sprite2D>> {
+class N8 as "BlueHeartIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_StrawberryIcon as "StrawberryIcon" <<(S,lightskyblue) Sprite2D>> {
+class N9 as "StrawberryIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_MultiplicationStrawberry as "MultiplicationStrawberry" <<(S,lightskyblue) Sprite2D>> {
+class N10 as "MultiplicationStrawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer as "StrawberryCountContainer" <<(H,lightgreen) HBoxContainer>> {
+class N11 as "StrawberryCountContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer_ObtainedStrawberryCount as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
+class N12 as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer_Slash as "Slash" <<(L,lightgreen) Label>> {
+class N13 as "Slash" <<(L,lightgreen) Label>> {
 }
-class SideSelection_CenterBox_StrawberryCountContainer_MaxStrawberryCount as "MaxStrawberryCount" <<(L,lightgreen) Label>> {
+class N14 as "MaxStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class SideSelection_CenterBox_FailureIcon as "FailureIcon" <<(S,lightskyblue) Sprite2D>> {
+class N15 as "FailureIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_MultiplicationStrawberry2 as "MultiplicationStrawberry2" <<(S,lightskyblue) Sprite2D>> {
+class N16 as "MultiplicationStrawberry2" <<(S,lightskyblue) Sprite2D>> {
 }
-class SideSelection_CenterBox_FailureCount as "FailureCount" <<(L,lightgreen) Label>> {
+class N17 as "FailureCount" <<(L,lightgreen) Label>> {
 }
-class SideSelection_BottomBox as "BottomBox" <<(C,lightgreen) Control>> {
+class N18 as "BottomBox" <<(C,lightgreen) Control>> {
 }
-class SideSelection_BottomBox_Label as "Label" <<(L,lightgreen) Label>> {
+class N19 as "Label" <<(L,lightgreen) Label>> {
 }
-class SideSelection_SideButtonContainer as "SideButtonContainer" <<(B,lightgreen) BoxContainer>> {
+class N20 as "SideButtonContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class SideSelection_SideButtonContainer_ClimbBookmark as "ClimbBookmark" <<(M,lightgreen) MarginContainer>> {
+class N21 as "ClimbBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -92,7 +92,7 @@ class SideSelection_SideButtonContainer_ClimbBookmark as "ClimbBookmark" <<(M,li
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class SideSelection_SideButtonContainer_CassetteBookmark as "CassetteBookmark" <<(M,lightgreen) MarginContainer>> {
+class N22 as "CassetteBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -102,19 +102,19 @@ class SideSelection_SideButtonContainer_CassetteBookmark as "CassetteBookmark" <
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class SideSelection_SideButtonContainer_CassetteBookmark_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
+class N23 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection as "StageSelection" <<(N,lightskyblue) Node2D>> {
+class N24 as "StageSelection" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_BottomBox as "BottomBox" <<(C,lightgreen) Control>> {
+class N25 as "BottomBox" <<(C,lightgreen) Control>> {
 }
-class StageSelection_BottomBox_StageLabel as "StageLabel" <<(L,lightgreen) Label>> {
+class N26 as "StageLabel" <<(L,lightgreen) Label>> {
 }
-class StageSelection_Photos as "Photos" <<(N,lightskyblue) Node2D>> {
+class N27 as "Photos" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_Photos_Template as "Template" <<(N,lightskyblue) Node2D>> {
+class N28 as "Template" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_Photos_Template_Photo as "Photo" <<(S,lightskyblue) Sprite2D>> {
+class N29 as "Photo" <<(S,lightskyblue) Sprite2D>> {
   * flicked
   * image
 ---
@@ -122,11 +122,11 @@ class StageSelection_Photos_Template_Photo as "Photo" <<(S,lightskyblue) Sprite2
   + flick()
   + pull()
 }
-class StageSelection_Photos_PhotoInstances as "PhotoInstances" <<(N,lightskyblue) Node2D>> {
+class N30 as "PhotoInstances" <<(N,lightskyblue) Node2D>> {
 }
-class StageSelection_StageButtonContainer as "StageButtonContainer" <<(H,lightgreen) HBoxContainer>> {
+class N31 as "StageButtonContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class StageSelection_StageButtonContainer_Stage1Button as "Stage1Button" <<(M,lightgreen) MarginContainer>> {
+class N32 as "Stage1Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -136,11 +136,11 @@ class StageSelection_StageButtonContainer_Stage1Button as "Stage1Button" <<(M,li
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage1Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
+class N33 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage1Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
+class N34 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage2Button as "Stage2Button" <<(M,lightgreen) MarginContainer>> {
+class N35 as "Stage2Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -150,11 +150,11 @@ class StageSelection_StageButtonContainer_Stage2Button as "Stage2Button" <<(M,li
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage2Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
+class N36 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage2Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
+class N37 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage3Button as "Stage3Button" <<(M,lightgreen) MarginContainer>> {
+class N38 as "Stage3Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -164,11 +164,11 @@ class StageSelection_StageButtonContainer_Stage3Button as "Stage3Button" <<(M,li
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage3Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
+class N39 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage3Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
+class N40 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage4Button as "Stage4Button" <<(M,lightgreen) MarginContainer>> {
+class N41 as "Stage4Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -178,11 +178,11 @@ class StageSelection_StageButtonContainer_Stage4Button as "Stage4Button" <<(M,li
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage4Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
+class N42 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage4Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
+class N43 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage5Button as "Stage5Button" <<(M,lightgreen) MarginContainer>> {
+class N44 as "Stage5Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -192,80 +192,81 @@ class StageSelection_StageButtonContainer_Stage5Button as "Stage5Button" <<(M,li
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class StageSelection_StageButtonContainer_Stage5Button_Bookmark as "Bookmark" <<(N,darkgray) Node>> {
+class N45 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class StageSelection_StageButtonContainer_Stage5Button_Bookmark_Sprite2D as "Sprite2D" <<(N,darkgray) Node>> {
+class N46 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class ClosingCurtain as "ClosingCurtain" <<(C,lightgreen) Control>> {
+class N47 as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
 ---
   + play()
   + _on_animation_player_animation_finished()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N48 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o BannerBox
-ROOT --o Box
-ROOT --o Banner
-ROOT --o SideSelection
-ROOT --o StageSelection
-ROOT --o ClosingCurtain
-ROOT --o AnimationPlayer
-BannerBox --o BannerBox_ChapterNumber
-BannerBox --o BannerBox_ChapterName
-SideSelection --o SideSelection_CenterBox
-SideSelection --o SideSelection_BottomBox
-SideSelection --o SideSelection_SideButtonContainer
-SideSelection_CenterBox --o SideSelection_CenterBox_BlueHeartIcon
-SideSelection_CenterBox --o SideSelection_CenterBox_StrawberryIcon
-SideSelection_CenterBox --o SideSelection_CenterBox_MultiplicationStrawberry
-SideSelection_CenterBox --o SideSelection_CenterBox_StrawberryCountContainer
-SideSelection_CenterBox --o SideSelection_CenterBox_FailureIcon
-SideSelection_CenterBox --o SideSelection_CenterBox_MultiplicationStrawberry2
-SideSelection_CenterBox --o SideSelection_CenterBox_FailureCount
-SideSelection_CenterBox_StrawberryCountContainer --o SideSelection_CenterBox_StrawberryCountContainer_ObtainedStrawberryCount
-SideSelection_CenterBox_StrawberryCountContainer --o SideSelection_CenterBox_StrawberryCountContainer_Slash
-SideSelection_CenterBox_StrawberryCountContainer --o SideSelection_CenterBox_StrawberryCountContainer_MaxStrawberryCount
-SideSelection_BottomBox --o SideSelection_BottomBox_Label
-SideSelection_SideButtonContainer --o SideSelection_SideButtonContainer_ClimbBookmark
-SideSelection_SideButtonContainer --o SideSelection_SideButtonContainer_CassetteBookmark
-StageSelection --o StageSelection_BottomBox
-StageSelection --o StageSelection_Photos
-StageSelection --o StageSelection_StageButtonContainer
-StageSelection_BottomBox --o StageSelection_BottomBox_StageLabel
-StageSelection_Photos --o StageSelection_Photos_Template
-StageSelection_Photos --o StageSelection_Photos_PhotoInstances
-StageSelection_Photos_Template --o StageSelection_Photos_Template_Photo
-StageSelection_StageButtonContainer --o StageSelection_StageButtonContainer_Stage1Button
-StageSelection_StageButtonContainer --o StageSelection_StageButtonContainer_Stage2Button
-StageSelection_StageButtonContainer --o StageSelection_StageButtonContainer_Stage3Button
-StageSelection_StageButtonContainer --o StageSelection_StageButtonContainer_Stage4Button
-StageSelection_StageButtonContainer --o StageSelection_StageButtonContainer_Stage5Button
-StageSelection_StageButtonContainer_Stage1Button --o StageSelection_StageButtonContainer_Stage1Button_Bookmark
-StageSelection_StageButtonContainer_Stage1Button_Bookmark --o StageSelection_StageButtonContainer_Stage1Button_Bookmark_Sprite2D
-StageSelection_StageButtonContainer_Stage2Button --o StageSelection_StageButtonContainer_Stage2Button_Bookmark
-StageSelection_StageButtonContainer_Stage2Button_Bookmark --o StageSelection_StageButtonContainer_Stage2Button_Bookmark_Sprite2D
-StageSelection_StageButtonContainer_Stage3Button --o StageSelection_StageButtonContainer_Stage3Button_Bookmark
-StageSelection_StageButtonContainer_Stage3Button_Bookmark --o StageSelection_StageButtonContainer_Stage3Button_Bookmark_Sprite2D
-StageSelection_StageButtonContainer_Stage4Button --o StageSelection_StageButtonContainer_Stage4Button_Bookmark
-StageSelection_StageButtonContainer_Stage4Button_Bookmark --o StageSelection_StageButtonContainer_Stage4Button_Bookmark_Sprite2D
-StageSelection_StageButtonContainer_Stage5Button --o StageSelection_StageButtonContainer_Stage5Button_Bookmark
-StageSelection_StageButtonContainer_Stage5Button_Bookmark --o StageSelection_StageButtonContainer_Stage5Button_Bookmark_Sprite2D
+R --o N1
+R --o N4
+R --o N5
+R --o N6
+R --o N24
+R --o N47
+R --o N48
+N1 --o N2
+N1 --o N3
+N6 --o N7
+N6 --o N18
+N6 --o N20
+N7 --o N8
+N7 --o N9
+N7 --o N10
+N7 --o N11
+N7 --o N15
+N7 --o N16
+N7 --o N17
+N11 --o N12
+N11 --o N13
+N11 --o N14
+N18 --o N19
+N20 --o N21
+N20 --o N22
+N24 --o N25
+N24 --o N27
+N24 --o N31
+N25 --o N26
+N27 --o N28
+N27 --o N30
+N28 --o N29
+N31 --o N32
+N31 --o N35
+N31 --o N38
+N31 --o N41
+N31 --o N44
+N32 --o N33
+N33 --o N34
+N35 --o N36
+N36 --o N37
+N38 --o N39
+N39 --o N40
+N41 --o N42
+N42 --o N43
+N44 --o N45
+N45 --o N46
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_get_started <-[#blue,thickness=2]- ROOT::get_started
-ROOT::_on_ui_backed <-[#blue,thickness=2]- ROOT::ui_backed
-ROOT::_on_climb_button_pressed <-[#blue,thickness=2]- SideSelection_SideButtonContainer_ClimbBookmark::pressed
-ROOT::_on_stage_button_focus_entered <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage1Button::focus_entered
-ROOT::_on_stage_button_pressed <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage1Button::pressed
-ROOT::_on_stage_button_focus_entered <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage2Button::focus_entered
-ROOT::_on_stage_button_pressed <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage2Button::pressed
-ROOT::_on_stage_button_focus_entered <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage3Button::focus_entered
-ROOT::_on_stage_button_pressed <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage3Button::pressed
-ROOT::_on_stage_button_focus_entered <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage4Button::focus_entered
-ROOT::_on_stage_button_pressed <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage4Button::pressed
-ROOT::_on_stage_button_focus_entered <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage5Button::focus_entered
-ROOT::_on_stage_button_pressed <-[#blue,thickness=2]- StageSelection_StageButtonContainer_Stage5Button::pressed
+_(R::_on_get_started, R::get_started)
+_(R::_on_ui_backed, R::ui_backed)
+_(R::_on_climb_button_pressed, N21::pressed)
+_(R::_on_stage_button_focus_entered, N32::focus_entered)
+_(R::_on_stage_button_pressed, N32::pressed)
+_(R::_on_stage_button_focus_entered, N35::focus_entered)
+_(R::_on_stage_button_pressed, N35::pressed)
+_(R::_on_stage_button_focus_entered, N38::focus_entered)
+_(R::_on_stage_button_pressed, N38::pressed)
+_(R::_on_stage_button_focus_entered, N41::focus_entered)
+_(R::_on_stage_button_pressed, N41::pressed)
+_(R::_on_stage_button_focus_entered, N44::focus_entered)
+_(R::_on_stage_button_pressed, N44::pressed)
 ....
 
 

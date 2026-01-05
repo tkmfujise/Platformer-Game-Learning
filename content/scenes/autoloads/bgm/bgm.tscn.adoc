@@ -8,7 +8,7 @@ title: autoloads/bgm/bgm.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "BGM" <<(N,darkgray) Node>> {
+class R as "BGM" <<(N,darkgray) Node>> {
   - VOLUME_RANGE
   * current
 ---
@@ -22,9 +22,10 @@ class ROOT as "BGM" <<(N,darkgray) Node>> {
   + change()
   + first_steps()
 }
-class FirstSteps as "FirstSteps" <<(A,darkgray) AudioStreamPlayer>> {
+class N1 as "FirstSteps" <<(A,darkgray) AudioStreamPlayer>> {
 }
-ROOT --o FirstSteps
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

@@ -8,48 +8,48 @@ title: src/chapters/0/stages/0/stage_0.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Stage0" <<(C,lightgreen) Control>> {
+class R as "Stage0" <<(C,lightgreen) Control>> {
 ---
 }
-class OpeningCurtain as "OpeningCurtain" <<(C,lightgreen) Control>> {
+class N1 as "OpeningCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * center
 ---
   + set_center()
   + play()
 }
-class ColorRect as "ColorRect" <<(C,lightgreen) ColorRect>> {
+class N2 as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class Forest as "Forest" <<(N,lightskyblue) Node2D>> {
+class N3 as "Forest" <<(N,lightskyblue) Node2D>> {
 }
-class Frames as "Frames" <<(N,lightskyblue) Node2D>> {
+class N4 as "Frames" <<(N,lightskyblue) Node2D>> {
 }
-class Frames_CameralFrame as "CameralFrame" <<(A,lightskyblue) Area2D>> {
+class N5 as "CameralFrame" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class Frames_CameraFrame2 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
+class N6 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class Frames_CameraFrame3 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
+class N7 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class StageGround0 as "StageGround0" <<(T,darkgray) TileMapLayer>> {
+class N8 as "StageGround0" <<(T,darkgray) TileMapLayer>> {
 }
-class Gimmicks as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+class N9 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
 }
-class Gimmicks_FallingIceBlock as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+class N10 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 ---
   + _ready()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
-class Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N11 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -82,26 +82,27 @@ class Player as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class Weather as "Weather" <<(N,lightskyblue) Node2D>> {
+class N12 as "Weather" <<(N,lightskyblue) Node2D>> {
 ---
   + _process()
   + current_camera()
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N13 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o OpeningCurtain
-ROOT --o ColorRect
-ROOT --o Forest
-ROOT --o Frames
-ROOT --o StageGround0
-ROOT --o Gimmicks
-ROOT --o Player
-ROOT --o Weather
-ROOT --o AnimationPlayer
-Frames --o Frames_CameralFrame
-Frames --o Frames_CameraFrame2
-Frames --o Frames_CameraFrame3
-Gimmicks --o Gimmicks_FallingIceBlock
+R --o N1
+R --o N2
+R --o N3
+R --o N4
+R --o N8
+R --o N9
+R --o N11
+R --o N12
+R --o N13
+N4 --o N5
+N4 --o N6
+N4 --o N7
+N9 --o N10
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

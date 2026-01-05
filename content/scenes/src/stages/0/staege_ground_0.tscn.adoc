@@ -8,8 +8,9 @@ title: src/stages/0/staege_ground_0.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "StageGround0" <<(T,darkgray) TileMapLayer>> {
+class R as "StageGround0" <<(T,darkgray) TileMapLayer>> {
 }
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

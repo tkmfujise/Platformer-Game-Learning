@@ -8,14 +8,15 @@ title: src/world/pin/pin.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Pin" <<(N,lightskyblue) Node2D>> {
+class R as "Pin" <<(N,lightskyblue) Node2D>> {
 }
-class Background as "Background" <<(S,lightskyblue) Sprite2D>> {
+class N1 as "Background" <<(S,lightskyblue) Sprite2D>> {
 }
-class Player as "Player" <<(A,lightskyblue) AnimatedSprite2D>> {
+class N2 as "Player" <<(A,lightskyblue) AnimatedSprite2D>> {
 }
-ROOT --o Background
-ROOT --o Player
+R --o N1
+R --o N2
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

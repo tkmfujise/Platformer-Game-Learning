@@ -8,7 +8,7 @@ title: debug/chapters/chapters.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Chapters" <<(C,lightgreen) Control>> {
+class R as "Chapters" <<(C,lightgreen) Control>> {
   * full_resource
 ---
   + _ready()
@@ -17,7 +17,7 @@ class ROOT as "Chapters" <<(C,lightgreen) Control>> {
   + _on_reload_button_pressed()
   + _on_chapters_ui_backed()
 }
-class Chapters as "Chapters" <<(C,lightgreen) Control>> {
+class N1 as "Chapters" <<(C,lightgreen) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -49,13 +49,14 @@ class Chapters as "Chapters" <<(C,lightgreen) Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class ReloadButton as "ReloadButton" <<(B,lightgreen) Button>> {
+class N2 as "ReloadButton" <<(B,lightgreen) Button>> {
 }
-ROOT --o Chapters
-ROOT --o ReloadButton
+R --o N1
+R --o N2
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_chapters_ui_backed <-[#blue,thickness=2]- Chapters::ui_backed
-ROOT::_on_reload_button_pressed <-[#blue,thickness=2]- ReloadButton::pressed
+_(R::_on_chapters_ui_backed, N1::ui_backed)
+_(R::_on_reload_button_pressed, N2::pressed)
 ....
 
 

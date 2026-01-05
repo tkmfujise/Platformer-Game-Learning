@@ -8,33 +8,34 @@ title: src/curtain/closing/closing.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "ClosingCurtain" <<(C,lightgreen) Control>> {
+class R as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
 ---
   + play()
   + _on_animation_player_animation_finished()
 }
-class Pattern1 as "Pattern1" <<(N,lightskyblue) Node2D>> {
+class N1 as "Pattern1" <<(N,lightskyblue) Node2D>> {
 }
-class Pattern1_LeftCurtain as "LeftCurtain" <<(P,lightskyblue) Polygon2D>> {
+class N2 as "LeftCurtain" <<(P,lightskyblue) Polygon2D>> {
 }
-class Pattern1_RightCurtain as "RightCurtain" <<(P,lightskyblue) Polygon2D>> {
+class N3 as "RightCurtain" <<(P,lightskyblue) Polygon2D>> {
 }
-class Pattern2 as "Pattern2" <<(C,lightgreen) ColorRect>> {
+class N4 as "Pattern2" <<(C,lightgreen) ColorRect>> {
 }
-class Pattern3 as "Pattern3" <<(C,lightgreen) ColorRect>> {
+class N5 as "Pattern3" <<(C,lightgreen) ColorRect>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N6 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o Pattern1
-ROOT --o Pattern2
-ROOT --o Pattern3
-ROOT --o AnimationPlayer
-Pattern1 --o Pattern1_LeftCurtain
-Pattern1 --o Pattern1_RightCurtain
+R --o N1
+R --o N4
+R --o N5
+R --o N6
+N1 --o N2
+N1 --o N3
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_animation_player_animation_finished <-[#blue,thickness=2]- AnimationPlayer::animation_finished
+_(R::_on_animation_player_animation_finished, N6::animation_finished)
 ....
 
 

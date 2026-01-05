@@ -8,35 +8,36 @@ title: src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+class R as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 ---
   + _ready()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
-class Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N2 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class FailureCollision as "FailureCollision" <<(A,lightskyblue) Area2D>> {
+class N3 as "FailureCollision" <<(A,lightskyblue) Area2D>> {
 }
-class FailureCollision_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class DetectionArea2D as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
+class N5 as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
 }
-class DetectionArea2D_CollisionShape2D as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o Sprite2D
-ROOT --o CollisionShape2D
-ROOT --o FailureCollision
-ROOT --o DetectionArea2D
-ROOT --o AnimationPlayer
-FailureCollision --o FailureCollision_CollisionShape2D
-DetectionArea2D --o DetectionArea2D_CollisionShape2D
+R --o N1
+R --o N2
+R --o N3
+R --o N5
+R --o N7
+N3 --o N4
+N5 --o N6
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_detection_area_2d_body_entered <-[#blue,thickness=2]- DetectionArea2D::body_entered
+_(R::_on_detection_area_2d_body_entered, N5::body_entered)
 ....
 
 

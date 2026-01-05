@@ -8,7 +8,7 @@ title: src/world/world.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "World" <<(N,hotpink) Node3D>> {
+class R as "World" <<(N,hotpink) Node3D>> {
   * CameraNode
 ---
   + back_to_circular_move()
@@ -19,56 +19,57 @@ class ROOT as "World" <<(N,hotpink) Node3D>> {
   + acute_angle()
   + _on_animation_player_animation_finished()
 }
-class Mountain as "Mountain" <<(N,darkgray) Node>> {
+class N1 as "Mountain" <<(N,darkgray) Node>> {
 }
-class SpotLights as "SpotLights" <<(N,darkgray) Node>> {
+class N2 as "SpotLights" <<(N,darkgray) Node>> {
 }
-class SpotLights_Chapter0 as "Chapter0" <<(S,hotpink) SpotLight3D>> {
+class N3 as "Chapter0" <<(S,hotpink) SpotLight3D>> {
 }
-class SpotLights_Chapter1 as "Chapter1" <<(S,hotpink) SpotLight3D>> {
+class N4 as "Chapter1" <<(S,hotpink) SpotLight3D>> {
 }
-class SpotLights_Chapter2_1 as "Chapter2_1" <<(S,hotpink) SpotLight3D>> {
+class N5 as "Chapter2_1" <<(S,hotpink) SpotLight3D>> {
 }
-class SpotLights_Chapter2_2 as "Chapter2_2" <<(S,hotpink) SpotLight3D>> {
+class N6 as "Chapter2_2" <<(S,hotpink) SpotLight3D>> {
 }
-class SpotLights_Chapter3 as "Chapter3" <<(S,hotpink) SpotLight3D>> {
+class N7 as "Chapter3" <<(S,hotpink) SpotLight3D>> {
 }
-class SpotLights_Chapter8 as "Chapter8" <<(S,hotpink) SpotLight3D>> {
+class N8 as "Chapter8" <<(S,hotpink) SpotLight3D>> {
 }
-class DirectionalLight3D as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
+class N9 as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
 }
-class WorldEnvironment as "WorldEnvironment" <<(W,darkgray) WorldEnvironment>> {
+class N10 as "WorldEnvironment" <<(W,darkgray) WorldEnvironment>> {
 }
-class Path3D as "Path3D" <<(P,hotpink) Path3D>> {
+class N11 as "Path3D" <<(P,hotpink) Path3D>> {
 }
-class Path3D_PathFollow3D as "PathFollow3D" <<(P,hotpink) PathFollow3D>> {
+class N12 as "PathFollow3D" <<(P,hotpink) PathFollow3D>> {
 }
-class Path3D_PathFollow3D_Camera3D as "Camera3D" <<(C,hotpink) Camera3D>> {
+class N13 as "Camera3D" <<(C,hotpink) Camera3D>> {
 }
-class Blinder as "Blinder" <<(C,lightgreen) ColorRect>> {
+class N14 as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
-class Mist as "Mist" <<(N,lightskyblue) Node2D>> {
+class N15 as "Mist" <<(N,lightskyblue) Node2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N16 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o Mountain
-ROOT --o SpotLights
-ROOT --o DirectionalLight3D
-ROOT --o WorldEnvironment
-ROOT --o Path3D
-ROOT --o Blinder
-ROOT --o Mist
-ROOT --o AnimationPlayer
-SpotLights --o SpotLights_Chapter0
-SpotLights --o SpotLights_Chapter1
-SpotLights --o SpotLights_Chapter2_1
-SpotLights --o SpotLights_Chapter2_2
-SpotLights --o SpotLights_Chapter3
-SpotLights --o SpotLights_Chapter8
-Path3D --o Path3D_PathFollow3D
-Path3D_PathFollow3D --o Path3D_PathFollow3D_Camera3D
+R --o N1
+R --o N2
+R --o N9
+R --o N10
+R --o N11
+R --o N14
+R --o N15
+R --o N16
+N2 --o N3
+N2 --o N4
+N2 --o N5
+N2 --o N6
+N2 --o N7
+N2 --o N8
+N11 --o N12
+N12 --o N13
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_animation_player_animation_finished <-[#blue,thickness=2]- AnimationPlayer::animation_finished
+_(R::_on_animation_player_animation_finished, N16::animation_finished)
 ....
 
 

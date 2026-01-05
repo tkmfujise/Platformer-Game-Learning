@@ -8,11 +8,12 @@ title: src/world/mist/mist.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Mist" <<(N,lightskyblue) Node2D>> {
+class R as "Mist" <<(N,lightskyblue) Node2D>> {
 }
-class Sprite2D as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-ROOT --o Sprite2D
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

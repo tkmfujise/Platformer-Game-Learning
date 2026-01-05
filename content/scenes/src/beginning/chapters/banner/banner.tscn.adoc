@@ -8,29 +8,30 @@ title: src/beginning/chapters/banner/banner.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Banner" <<(T,lightgreen) TextureRect>> {
+class R as "Banner" <<(T,lightgreen) TextureRect>> {
 }
-class Polygons as "Polygons" <<(N,lightskyblue) Node2D>> {
+class N1 as "Polygons" <<(N,lightskyblue) Node2D>> {
 }
-class Polygons_Polygon2D as "Polygon2D" <<(P,lightskyblue) Polygon2D>> {
+class N2 as "Polygon2D" <<(P,lightskyblue) Polygon2D>> {
 }
-class Skeleton2D as "Skeleton2D" <<(S,lightskyblue) Skeleton2D>> {
+class N3 as "Skeleton2D" <<(S,lightskyblue) Skeleton2D>> {
 }
-class Skeleton2D_Root as "Root" <<(B,lightskyblue) Bone2D>> {
+class N4 as "Root" <<(B,lightskyblue) Bone2D>> {
 }
-class Skeleton2D_Root_Body as "Body" <<(B,lightskyblue) Bone2D>> {
+class N5 as "Body" <<(B,lightskyblue) Bone2D>> {
 }
-class Skeleton2D_Root_Body_Edge as "Edge" <<(B,lightskyblue) Bone2D>> {
+class N6 as "Edge" <<(B,lightskyblue) Bone2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o Polygons
-ROOT --o Skeleton2D
-ROOT --o AnimationPlayer
-Polygons --o Polygons_Polygon2D
-Skeleton2D --o Skeleton2D_Root
-Skeleton2D_Root --o Skeleton2D_Root_Body
-Skeleton2D_Root_Body --o Skeleton2D_Root_Body_Edge
+R --o N1
+R --o N3
+R --o N7
+N1 --o N2
+N3 --o N4
+N4 --o N5
+N5 --o N6
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

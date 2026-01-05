@@ -8,13 +8,14 @@ title: autoloads/keyboard_handler/keyboard_handler.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "KeyboardHandler" <<(N,darkgray) Node>> {
+class R as "KeyboardHandler" <<(N,darkgray) Node>> {
 ---
   + _input()
   + handle_mouse_visiblity()
   + change_mouse_visible()
   + toggle_fullscreen()
 }
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

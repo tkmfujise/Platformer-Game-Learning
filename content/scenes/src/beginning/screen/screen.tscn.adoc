@@ -8,7 +8,7 @@ title: src/beginning/screen/screen.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Screen" <<(C,lightgreen) Control>> {
+class R as "Screen" <<(C,lightgreen) Control>> {
   * MenuScenePath
   * current_animation
 ---
@@ -18,60 +18,61 @@ class ROOT as "Screen" <<(C,lightgreen) Control>> {
   + _on_animation_tree_animation_started()
   + _on_animation_tree_animation_finished()
 }
-class Background as "Background" <<(C,lightgreen) ColorRect>> {
+class N1 as "Background" <<(C,lightgreen) ColorRect>> {
 }
-class Author as "Author" <<(C,lightgreen) Control>> {
+class N2 as "Author" <<(C,lightgreen) Control>> {
 }
-class Author_Container as "Container" <<(V,lightgreen) VBoxContainer>> {
+class N3 as "Container" <<(V,lightgreen) VBoxContainer>> {
 }
-class Author_Container_NameContainer as "NameContainer" <<(M,lightgreen) MarginContainer>> {
+class N4 as "NameContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class Author_Container_NameContainer_Name as "Name" <<(L,lightgreen) Label>> {
+class N5 as "Name" <<(L,lightgreen) Label>> {
 }
-class Author_Container_Presents as "Presents" <<(L,lightgreen) Label>> {
+class N6 as "Presents" <<(L,lightgreen) Label>> {
 }
-class Title as "Title" <<(C,lightgreen) Control>> {
+class N7 as "Title" <<(C,lightgreen) Control>> {
 }
-class Title_TitleContainer as "TitleContainer" <<(C,lightgreen) CenterContainer>> {
+class N8 as "TitleContainer" <<(C,lightgreen) CenterContainer>> {
 }
-class Title_TitleContainer_TitleLogo as "TitleLogo" <<(S,lightskyblue) Sprite2D>> {
+class N9 as "TitleLogo" <<(S,lightskyblue) Sprite2D>> {
 }
-class Title_ButtonContainer as "ButtonContainer" <<(M,lightgreen) MarginContainer>> {
+class N10 as "ButtonContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class Title_ButtonContainer_JoyAButton as "JoyAButton" <<(S,lightskyblue) Sprite2D>> {
+class N11 as "JoyAButton" <<(S,lightskyblue) Sprite2D>> {
 }
-class SubViewportContainer as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
+class N12 as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class SubViewportContainer_SubViewport as "SubViewport" <<(S,darkgray) SubViewport>> {
+class N13 as "SubViewport" <<(S,darkgray) SubViewport>> {
 }
-class SubViewportContainer_SubViewport_Show as "Show" <<(N,hotpink) Node3D>> {
+class N14 as "Show" <<(N,hotpink) Node3D>> {
 }
-class Blinder as "Blinder" <<(C,lightgreen) ColorRect>> {
+class N15 as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N16 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-class AnimationTree as "AnimationTree" <<(A,darkgray) AnimationTree>> {
+class N17 as "AnimationTree" <<(A,darkgray) AnimationTree>> {
 }
-ROOT --o Background
-ROOT --o Author
-ROOT --o Title
-ROOT --o SubViewportContainer
-ROOT --o Blinder
-ROOT --o AnimationPlayer
-ROOT --o AnimationTree
-Author --o Author_Container
-Author_Container --o Author_Container_NameContainer
-Author_Container --o Author_Container_Presents
-Author_Container_NameContainer --o Author_Container_NameContainer_Name
-Title --o Title_TitleContainer
-Title --o Title_ButtonContainer
-Title_TitleContainer --o Title_TitleContainer_TitleLogo
-Title_ButtonContainer --o Title_ButtonContainer_JoyAButton
-SubViewportContainer --o SubViewportContainer_SubViewport
-SubViewportContainer_SubViewport --o SubViewportContainer_SubViewport_Show
+R --o N1
+R --o N2
+R --o N7
+R --o N12
+R --o N15
+R --o N16
+R --o N17
+N2 --o N3
+N3 --o N4
+N3 --o N6
+N4 --o N5
+N7 --o N8
+N7 --o N10
+N8 --o N9
+N10 --o N11
+N12 --o N13
+N13 --o N14
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-ROOT::_on_animation_tree_animation_finished <-[#blue,thickness=2]- AnimationTree::animation_finished
-ROOT::_on_animation_tree_animation_started <-[#blue,thickness=2]- AnimationTree::animation_started
+_(R::_on_animation_tree_animation_finished, N17::animation_finished)
+_(R::_on_animation_tree_animation_started, N17::animation_started)
 ....
 
 

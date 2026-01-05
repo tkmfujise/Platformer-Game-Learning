@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/photo/photo.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Photo" <<(S,lightskyblue) Sprite2D>> {
+class R as "Photo" <<(S,lightskyblue) Sprite2D>> {
   * flicked
   * image
 ---
@@ -16,36 +16,37 @@ class ROOT as "Photo" <<(S,lightskyblue) Sprite2D>> {
   + flick()
   + pull()
 }
-class Frame as "Frame" <<(P,lightskyblue) Polygon2D>> {
+class N1 as "Frame" <<(P,lightskyblue) Polygon2D>> {
 }
-class Frame_Image as "Image" <<(S,lightskyblue) Sprite2D>> {
+class N2 as "Image" <<(S,lightskyblue) Sprite2D>> {
 }
-class Strawberries as "Strawberries" <<(H,lightgreen) HBoxContainer>> {
+class N3 as "Strawberries" <<(H,lightgreen) HBoxContainer>> {
 }
-class Strawberries_Strawberry1 as "Strawberry1" <<(M,lightgreen) MarginContainer>> {
+class N4 as "Strawberry1" <<(M,lightgreen) MarginContainer>> {
 }
-class Strawberries_Strawberry1_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
+class N5 as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class Strawberries_Strawberry2 as "Strawberry2" <<(M,lightgreen) MarginContainer>> {
+class N6 as "Strawberry2" <<(M,lightgreen) MarginContainer>> {
 }
-class Strawberries_Strawberry2_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
+class N7 as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class Strawberries_Strawberry3 as "Strawberry3" <<(M,lightgreen) MarginContainer>> {
+class N8 as "Strawberry3" <<(M,lightgreen) MarginContainer>> {
 }
-class Strawberries_Strawberry3_Strawberry as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
+class N9 as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class AnimationPlayer as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N10 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
 }
-ROOT --o Frame
-ROOT --o Strawberries
-ROOT --o AnimationPlayer
-Frame --o Frame_Image
-Strawberries --o Strawberries_Strawberry1
-Strawberries --o Strawberries_Strawberry2
-Strawberries --o Strawberries_Strawberry3
-Strawberries_Strawberry1 --o Strawberries_Strawberry1_Strawberry
-Strawberries_Strawberry2 --o Strawberries_Strawberry2_Strawberry
-Strawberries_Strawberry3 --o Strawberries_Strawberry3_Strawberry
+R --o N1
+R --o N3
+R --o N10
+N1 --o N2
+N3 --o N4
+N3 --o N6
+N3 --o N8
+N4 --o N5
+N6 --o N7
+N8 --o N9
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....

@@ -8,11 +8,12 @@ title: autoloads/current/current.tscn
 === Diagram
 [plantuml]
 ....
-class ROOT as "Current" <<(N,darkgray) Node>> {
+class R as "Current" <<(N,darkgray) Node>> {
   * account
 ---
   + load_account()
 }
+!define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....
