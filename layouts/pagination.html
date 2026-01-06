@@ -1,0 +1,25 @@
+<footer>
+  <div class="grid">
+    <% if prev_item = prev_item_of(@item) %>
+      <%= link_to(
+        "<small><< Previous</small><br>#{link_text_of(prev_item)}",
+        prev_item,
+        class: 'outline',
+        role: 'button'
+      ) %>
+    <% else %>
+      <div></div>
+    <% end %>
+
+    <% if next_item = next_item_of(@item) %>
+      <%= link_to(
+        "<small>Next >></small><br>#{link_text_of(next_item)}",
+        next_item ,
+        class: 'outline',
+        role: 'button'
+      ) %>
+    <% else %>
+      <div></div>
+    <% end %>
+  </div>
+</footer>
