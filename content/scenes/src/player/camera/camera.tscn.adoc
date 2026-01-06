@@ -54,14 +54,14 @@ NOTE: No signal connections.
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*limit_left* |`0`
-|_node_ |*limit_bottom* |`1080`
-|_node_ |*limit_smoothed* |`true`
-|_node_ |*position_smoothing_enabled* |`true`
-|_node_ |*script* |`ExtResource("1_ak8su")`
+|Name |Value
+|*limit_left* |`0`
+|*limit_bottom* |`1080`
+|*limit_smoothed* |`true`
+|*position_smoothing_enabled* |`true`
+|*script* |`ExtResource("1_ak8su")`
 |===
 
 

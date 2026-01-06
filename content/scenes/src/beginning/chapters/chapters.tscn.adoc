@@ -903,248 +903,248 @@ R  ->  T0 : position\n = Vector2(1060, 719)
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*script* |`ExtResource("1_k1tcw")`
+|Name |Value
+|*layout_mode* |`3`
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*script* |`ExtResource("1_k1tcw")`
 |===
 .$Banner properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_left* |`0.469`
-|_node_ |*anchor_right* |`0.469`
-|_node_ |*offset_left* |`-100.48`
-|_node_ |*offset_top* |`-250.0`
-|_node_ |*offset_right* |`99.52`
-|_node_ |*offset_bottom* |`-50.0`
+|Name |Value
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_left* |`0.469`
+|*anchor_right* |`0.469`
+|*offset_left* |`-100.48`
+|*offset_top* |`-250.0`
+|*offset_right* |`99.52`
+|*offset_bottom* |`-50.0`
 |===
 .$ChaptersContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`10`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*offset_left* |`815.0`
-|_node_ |*offset_top* |`-250.0`
-|_node_ |*offset_right* |`817.0`
-|_node_ |*offset_bottom* |`-82.0`
-|_node_ |*grow_horizontal* |`2`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*anchors_preset* |`10`
+|*anchor_right* |`1.0`
+|*offset_left* |`815.0`
+|*offset_top* |`-250.0`
+|*offset_right* |`817.0`
+|*offset_bottom* |`-82.0`
+|*grow_horizontal* |`2`
 |===
 .$ChaptersContainer/Chapter_0 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath(".")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_1")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_1")`
-|_node_ |*focus_previous* |`NodePath(".")`
-|_node_ |*resource* |`ExtResource("4_p776p")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath(".")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_1")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_1")`
+|*focus_previous* |`NodePath(".")`
+|*resource* |`ExtResource("4_p776p")`
 |===
 .$ChaptersContainer/Chapter_1 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_0")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_2")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_2")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_0")`
-|_node_ |*resource* |`ExtResource("5_nuakg")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_0")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_2")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_2")`
+|*focus_previous* |`NodePath("../Chapter_0")`
+|*resource* |`ExtResource("5_nuakg")`
 |===
 .$ChaptersContainer/Chapter_1/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("3_6pmeh")`
+|Name |Value
+|*texture* |`ExtResource("3_6pmeh")`
 |===
 .$ChaptersContainer/Chapter_2 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_1")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_3")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_3")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_1")`
-|_node_ |*resource* |`ExtResource("7_vbe55")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_1")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_3")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_3")`
+|*focus_previous* |`NodePath("../Chapter_1")`
+|*resource* |`ExtResource("7_vbe55")`
 |===
 .$ChaptersContainer/Chapter_2/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("4_bn10p")`
+|Name |Value
+|*texture* |`ExtResource("4_bn10p")`
 |===
 .$ChaptersContainer/Chapter_3 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_2")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_4")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_4")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_2")`
-|_node_ |*resource* |`ExtResource("9_v7ooo")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_2")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_4")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_4")`
+|*focus_previous* |`NodePath("../Chapter_2")`
+|*resource* |`ExtResource("9_v7ooo")`
 |===
 .$ChaptersContainer/Chapter_3/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("5_fq7id")`
+|Name |Value
+|*texture* |`ExtResource("5_fq7id")`
 |===
 .$ChaptersContainer/Chapter_4 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_3")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_5")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_5")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_3")`
-|_node_ |*resource* |`ExtResource("11_mdrma")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_3")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_5")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_5")`
+|*focus_previous* |`NodePath("../Chapter_3")`
+|*resource* |`ExtResource("11_mdrma")`
 |===
 .$ChaptersContainer/Chapter_4/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("6_x2qy8")`
+|Name |Value
+|*texture* |`ExtResource("6_x2qy8")`
 |===
 .$ChaptersContainer/Chapter_5 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_4")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_6")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_6")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_4")`
-|_node_ |*resource* |`ExtResource("13_y01i1")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_4")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_6")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_6")`
+|*focus_previous* |`NodePath("../Chapter_4")`
+|*resource* |`ExtResource("13_y01i1")`
 |===
 .$ChaptersContainer/Chapter_5/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("7_nb1nd")`
+|Name |Value
+|*texture* |`ExtResource("7_nb1nd")`
 |===
 .$ChaptersContainer/Chapter_6 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_5")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_7")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_7")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_5")`
-|_node_ |*resource* |`ExtResource("15_hivwg")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_5")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_7")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_7")`
+|*focus_previous* |`NodePath("../Chapter_5")`
+|*resource* |`ExtResource("15_hivwg")`
 |===
 .$ChaptersContainer/Chapter_6/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("8_xsadn")`
+|Name |Value
+|*texture* |`ExtResource("8_xsadn")`
 |===
 .$ChaptersContainer/Chapter_7 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_6")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath("../Chapter_8")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath("../Chapter_8")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_6")`
-|_node_ |*resource* |`ExtResource("17_7yar7")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_6")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath("../Chapter_8")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath("../Chapter_8")`
+|*focus_previous* |`NodePath("../Chapter_6")`
+|*resource* |`ExtResource("17_7yar7")`
 |===
 .$ChaptersContainer/Chapter_7/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("9_meg0j")`
+|Name |Value
+|*texture* |`ExtResource("9_meg0j")`
 |===
 .$ChaptersContainer/Chapter_8 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath("../Chapter_7")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath(".")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*focus_next* |`NodePath(".")`
-|_node_ |*focus_previous* |`NodePath("../Chapter_7")`
-|_node_ |*resource* |`ExtResource("19_klsch")`
+|Name |Value
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath("../Chapter_7")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath(".")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*focus_next* |`NodePath(".")`
+|*focus_previous* |`NodePath("../Chapter_7")`
+|*resource* |`ExtResource("19_klsch")`
 |===
 .$ChaptersContainer/Chapter_8/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("11_o1xm2")`
+|Name |Value
+|*texture* |`ExtResource("11_o1xm2")`
 |===
 .$Grid1920x1080 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*position* |`Vector2(960, 540)`
-|_node_ |*texture* |`ExtResource("11_2qc6p")`
+|Name |Value
+|*visible* |`false`
+|*position* |`Vector2(960, 540)`
+|*texture* |`ExtResource("11_2qc6p")`
 |===
 .$Pin properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*position* |`Vector2(903, 554)`
-|_node_ |*scale* |`Vector2(0.5, 0.5)`
+|Name |Value
+|*visible* |`false`
+|*position* |`Vector2(903, 554)`
+|*scale* |`Vector2(0.5, 0.5)`
 |===
 .$Menu properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
 |===
 .$ChaptersAnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*root_node* |`NodePath("../ChaptersContainer")`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*root_node* |`NodePath("../ChaptersContainer")`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_c4ypt")
 }`
 |===
 .$AnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_wkduh")
 }`
 |===

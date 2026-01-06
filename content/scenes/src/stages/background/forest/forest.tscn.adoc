@@ -51,39 +51,39 @@ NOTE: No signal connections.
 
 === Properties
 .$Far properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*modulate* |`Color(0.26293266, 0.2629324, 0.26293254, 1)`
-|_node_ |*scroll_scale* |`Vector2(1.1, 0.9)`
-|_node_ |*scroll_offset* |`Vector2(1875, 115)`
-|_node_ |*repeat_size* |`Vector2(1000, 0)`
-|_node_ |*repeat_times* |`8`
+|Name |Value
+|*modulate* |`Color(0.26293266, 0.2629324, 0.26293254, 1)`
+|*scroll_scale* |`Vector2(1.1, 0.9)`
+|*scroll_offset* |`Vector2(1875, 115)`
+|*repeat_size* |`Vector2(1000, 0)`
+|*repeat_times* |`8`
 |===
 .$Far/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(1831.2499, 390.25)`
-|_node_ |*scale* |`Vector2(9.333982, 11.2890625)`
-|_node_ |*texture* |`ExtResource("1_er1ds")`
+|Name |Value
+|*position* |`Vector2(1831.2499, 390.25)`
+|*scale* |`Vector2(9.333982, 11.2890625)`
+|*texture* |`ExtResource("1_er1ds")`
 |===
 .$Near properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*modulate* |`Color(0.4670229, 0.5335627, 0.5659914, 1)`
-|_node_ |*scroll_offset* |`Vector2(1318, 779)`
-|_node_ |*repeat_size* |`Vector2(1000, 0)`
-|_node_ |*repeat_times* |`7`
+|Name |Value
+|*modulate* |`Color(0.4670229, 0.5335627, 0.5659914, 1)`
+|*scroll_offset* |`Vector2(1318, 779)`
+|*repeat_size* |`Vector2(1000, 0)`
+|*repeat_times* |`7`
 |===
 .$Near/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(1844.25, -28.74997)`
-|_node_ |*scale* |`Vector2(9.287109, 12.8828125)`
-|_node_ |*texture* |`ExtResource("1_er1ds")`
+|Name |Value
+|*position* |`Vector2(1844.25, -28.74997)`
+|*scale* |`Vector2(9.287109, 12.8828125)`
+|*texture* |`ExtResource("1_er1ds")`
 |===
 
 

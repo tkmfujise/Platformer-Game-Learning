@@ -616,195 +616,195 @@ R  ->o  R : grab_focus_root\n = true
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*theme* |`ExtResource("1_w62bb")`
-|_node_ |*script* |`ExtResource("2_7v8tq")`
+|Name |Value
+|*layout_mode* |`3`
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*theme* |`ExtResource("1_w62bb")`
+|*script* |`ExtResource("2_7v8tq")`
 |===
 .$SubViewportContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*focus_mode* |`0`
+|Name |Value
+|*layout_mode* |`1`
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*focus_mode* |`0`
 |===
 .$SubViewportContainer/SubViewport properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*handle_input_locally* |`false`
-|_node_ |*gui_disable_input* |`true`
-|_node_ |*size* |`Vector2i(1920, 1080)`
-|_node_ |*render_target_update_mode* |`4`
+|Name |Value
+|*handle_input_locally* |`false`
+|*gui_disable_input* |`true`
+|*size* |`Vector2i(1920, 1080)`
+|*render_target_update_mode* |`4`
 |===
 .$SubViewportContainer/SubViewport/World properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
+|Name |Value
+|*unique_name_in_owner* |`true`
 |===
 .$RootContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`9`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*offset_right* |`663.0`
-|_node_ |*offset_bottom* |`30.0`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*theme_override_constants/margin_left* |`180`
-|_node_ |*theme_override_constants/margin_top* |`120`
-|_node_ |*theme_override_constants/margin_bottom* |`100`
+|Name |Value
+|*layout_mode* |`1`
+|*anchors_preset* |`9`
+|*anchor_bottom* |`1.0`
+|*offset_right* |`663.0`
+|*offset_bottom* |`30.0`
+|*grow_vertical* |`2`
+|*theme_override_constants/margin_left* |`180`
+|*theme_override_constants/margin_top* |`120`
+|*theme_override_constants/margin_bottom* |`100`
 |===
 .$RootContainer/MenuContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$RootContainer/MenuContainer/ClimbContainer/LogoContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*custom_minimum_size* |`Vector2(0, 240)`
-|_node_ |*offset_left* |`170.0`
-|_node_ |*offset_right* |`170.0`
-|_node_ |*offset_bottom* |`240.0`
-|_node_ |*size_flags_horizontal* |`4`
+|Name |Value
+|*custom_minimum_size* |`Vector2(0, 240)`
+|*offset_left* |`170.0`
+|*offset_right* |`170.0`
+|*offset_bottom* |`240.0`
+|*size_flags_horizontal* |`4`
 |===
 .$RootContainer/MenuContainer/ClimbContainer/LogoContainer/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture_filter* |`2`
-|_node_ |*texture* |`ExtResource("5_wprcb")`
-|_node_ |*offset* |`Vector2(10, 140)`
+|Name |Value
+|*texture_filter* |`2`
+|*texture* |`ExtResource("5_wprcb")`
+|*offset* |`Vector2(10, 140)`
 |===
 .$RootContainer/MenuContainer/ClimbContainer/ButtonContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*offset_top* |`244.0`
-|_node_ |*offset_right* |`340.0`
-|_node_ |*offset_bottom* |`389.0`
+|Name |Value
+|*offset_top* |`244.0`
+|*offset_right* |`340.0`
+|*offset_bottom* |`389.0`
 |===
 .$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_left* |`NodePath(".")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath(".")`
-|_node_ |*focus_neighbor_bottom* |`NodePath("../../../OthersContainer/VBoxContainer/OptionsContainer/OptionsButton")`
-|_node_ |*theme_override_font_sizes/font_size* |`100`
-|_node_ |*text* |` CLIMB`
-|_node_ |*icon* |`null`
-|_node_ |*focus_move_direction* |`1`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
+|*focus_neighbor_left* |`NodePath(".")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath(".")`
+|*focus_neighbor_bottom* |`NodePath("../../../OthersContainer/VBoxContainer/OptionsContainer/OptionsButton")`
+|*theme_override_font_sizes/font_size* |`100`
+|*text* |` CLIMB`
+|*icon* |`null`
+|*focus_move_direction* |`1`
 |===
 .$RootContainer/MenuContainer/OthersContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(10, 400)`
+|Name |Value
+|*position* |`Vector2(10, 400)`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*offset_right* |`483.0`
-|_node_ |*offset_bottom* |`281.0`
+|Name |Value
+|*offset_right* |`483.0`
+|*offset_bottom* |`281.0`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_top* |`NodePath("../../../../ClimbContainer/ButtonContainer/ClimbButton")`
-|_node_ |*focus_neighbor_bottom* |`NodePath("../../CreditsContainer/CreditsButton")`
-|_node_ |*text* |` Options`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
+|*focus_neighbor_top* |`NodePath("../../../../ClimbContainer/ButtonContainer/ClimbButton")`
+|*focus_neighbor_bottom* |`NodePath("../../CreditsContainer/CreditsButton")`
+|*text* |` Options`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_top* |`NodePath("../../OptionsContainer/OptionsButton")`
-|_node_ |*focus_neighbor_bottom* |`NodePath("../../QuitContainer/QuitButton")`
-|_node_ |*text* |` Credits`
-|_node_ |*icon* |`ExtResource("7_tps4m")`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
+|*focus_neighbor_top* |`NodePath("../../OptionsContainer/OptionsButton")`
+|*focus_neighbor_bottom* |`NodePath("../../QuitContainer/QuitButton")`
+|*text* |` Credits`
+|*icon* |`ExtResource("7_tps4m")`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
-|_node_ |*focus_neighbor_top* |`NodePath("../../CreditsContainer/CreditsButton")`
-|_node_ |*text* |` Quit`
-|_node_ |*icon* |`ExtResource("8_lywrx")`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
+|*focus_neighbor_top* |`NodePath("../../CreditsContainer/CreditsButton")`
+|*text* |` Quit`
+|*icon* |`ExtResource("8_lywrx")`
 |===
 .$Accounts properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*offset_left* |`1920.0`
-|_node_ |*offset_right* |`1920.0`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*offset_left* |`1920.0`
+|*offset_right* |`1920.0`
 |===
 .$Chapters properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*offset_left* |`1920.0`
-|_node_ |*offset_right* |`1920.0`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*offset_left* |`1920.0`
+|*offset_right* |`1920.0`
 |===
 .$AnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_dft0i")
 }`
-|_node_ |*autoplay* |`opening`
+|*autoplay* |`opening`
 |===
 
 

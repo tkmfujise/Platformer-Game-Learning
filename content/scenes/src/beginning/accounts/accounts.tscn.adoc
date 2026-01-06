@@ -438,84 +438,84 @@ R  ->  T2 : position\n = Vector2(0, 656)
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*theme_override_constants/margin_top* |`90`
-|_node_ |*theme_override_constants/margin_bottom* |`90`
-|_node_ |*script* |`ExtResource("1_t5yqj")`
+|Name |Value
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*theme_override_constants/margin_top* |`90`
+|*theme_override_constants/margin_bottom* |`90`
+|*script* |`ExtResource("1_t5yqj")`
 |===
 .$AccountsContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
+|Name |Value
+|*unique_name_in_owner* |`true`
 |===
 .$AccountsContainer/Account1 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*anchors_preset* |`0`
-|_node_ |*anchor_right* |`0.0`
-|_node_ |*offset_top* |`50.0`
-|_node_ |*offset_right* |`1920.0`
-|_node_ |*offset_bottom* |`342.0`
-|_node_ |*grow_horizontal* |`1`
-|_node_ |*size_flags_horizontal* |`3`
-|_node_ |*focus_neighbor_left* |`NodePath(".")`
-|_node_ |*focus_neighbor_top* |`NodePath(".")`
-|_node_ |*focus_neighbor_right* |`NodePath(".")`
-|_node_ |*focus_neighbor_bottom* |`NodePath("../Account2")`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*anchors_preset* |`0`
+|*anchor_right* |`0.0`
+|*offset_top* |`50.0`
+|*offset_right* |`1920.0`
+|*offset_bottom* |`342.0`
+|*grow_horizontal* |`1`
+|*size_flags_horizontal* |`3`
+|*focus_neighbor_left* |`NodePath(".")`
+|*focus_neighbor_top* |`NodePath(".")`
+|*focus_neighbor_right* |`NodePath(".")`
+|*focus_neighbor_bottom* |`NodePath("../Account2")`
 |===
 .$AccountsContainer/Account2 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*anchors_preset* |`0`
-|_node_ |*anchor_right* |`0.0`
-|_node_ |*offset_top* |`356.0`
-|_node_ |*offset_right* |`1920.0`
-|_node_ |*offset_bottom* |`656.0`
-|_node_ |*grow_horizontal* |`1`
-|_node_ |*focus_neighbor_left* |`NodePath(".")`
-|_node_ |*focus_neighbor_top* |`NodePath("../Account1")`
-|_node_ |*focus_neighbor_right* |`NodePath(".")`
-|_node_ |*focus_neighbor_bottom* |`NodePath("../Account3")`
-|_node_ |*resource* |`null`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*anchors_preset* |`0`
+|*anchor_right* |`0.0`
+|*offset_top* |`356.0`
+|*offset_right* |`1920.0`
+|*offset_bottom* |`656.0`
+|*grow_horizontal* |`1`
+|*focus_neighbor_left* |`NodePath(".")`
+|*focus_neighbor_top* |`NodePath("../Account1")`
+|*focus_neighbor_right* |`NodePath(".")`
+|*focus_neighbor_bottom* |`NodePath("../Account3")`
+|*resource* |`null`
 |===
 .$AccountsContainer/Account3 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*anchors_preset* |`0`
-|_node_ |*anchor_right* |`0.0`
-|_node_ |*offset_top* |`656.0`
-|_node_ |*offset_right* |`1920.0`
-|_node_ |*offset_bottom* |`964.0`
-|_node_ |*grow_horizontal* |`1`
-|_node_ |*focus_neighbor_left* |`NodePath(".")`
-|_node_ |*focus_neighbor_top* |`NodePath("../Account2")`
-|_node_ |*focus_neighbor_right* |`NodePath(".")`
-|_node_ |*focus_neighbor_bottom* |`NodePath(".")`
-|_node_ |*resource* |`null`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*anchors_preset* |`0`
+|*anchor_right* |`0.0`
+|*offset_top* |`656.0`
+|*offset_right* |`1920.0`
+|*offset_bottom* |`964.0`
+|*grow_horizontal* |`1`
+|*focus_neighbor_left* |`NodePath(".")`
+|*focus_neighbor_top* |`NodePath("../Account2")`
+|*focus_neighbor_right* |`NodePath(".")`
+|*focus_neighbor_bottom* |`NodePath(".")`
+|*resource* |`null`
 |===
 .$AnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_uv55d")
 }`
-|_node_ |*autoplay* |`opening`
+|*autoplay* |`opening`
 |===
 
 

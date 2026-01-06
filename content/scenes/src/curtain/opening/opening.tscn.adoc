@@ -170,76 +170,76 @@ R  ->  T2 : material\n = 0.0
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*z_index* |`5`
-|_node_ |*z_as_relative* |`false`
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*script* |`ExtResource("1_2igm1")`
+|Name |Value
+|*z_index* |`5`
+|*z_as_relative* |`false`
+|*layout_mode* |`3`
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*script* |`ExtResource("1_2igm1")`
 |===
 .$Pattern1 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
+|Name |Value
+|*visible* |`false`
 |===
 .$Pattern1/LeftCurtain properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*color* |`Color(0, 0, 0, 1)`
-|_node_ |*polygon* |`PackedVector2Array(0, 0, 0, 1080, 960, 1080, 9, 548, 960, 0)`
-|_node_ |*uv* |`PackedVector2Array(572.5, -87.75, 575.5, -85.75)`
+|Name |Value
+|*color* |`Color(0, 0, 0, 1)`
+|*polygon* |`PackedVector2Array(0, 0, 0, 1080, 960, 1080, 9, 548, 960, 0)`
+|*uv* |`PackedVector2Array(572.5, -87.75, 575.5, -85.75)`
 |===
 .$Pattern1/RightCurtain properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*color* |`Color(0, 0, 0, 1)`
-|_node_ |*polygon* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1074)`
-|_node_ |*uv* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 960, 540, 960, 1080, 492, 40.75)`
+|Name |Value
+|*color* |`Color(0, 0, 0, 1)`
+|*polygon* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1074)`
+|*uv* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 960, 540, 960, 1080, 492, 40.75)`
 |===
 .$Pattern2 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*visible* |`false`
-|_node_ |*material* |`SubResource("ShaderMaterial_kivlp")`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*offset_top* |`-450.0`
-|_node_ |*offset_bottom* |`390.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*visible* |`false`
+|*material* |`SubResource("ShaderMaterial_kivlp")`
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*offset_top* |`-450.0`
+|*offset_bottom* |`390.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
 |===
 .$Pattern3 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*material* |`SubResource("ShaderMaterial_663td")`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
+|Name |Value
+|*visible* |`false`
+|*material* |`SubResource("ShaderMaterial_663td")`
+|*layout_mode* |`1`
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
 |===
 .$AnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_kivlp")
 }`
 |===

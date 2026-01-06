@@ -51,22 +51,22 @@ NOTE: No signal connections.
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(6, 6)`
-|_node_ |*script* |`ExtResource("1_4vpau")`
+|Name |Value
+|*scale* |`Vector2(6, 6)`
+|*script* |`ExtResource("1_4vpau")`
 |===
 .$Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*modulate* |`Color(1, 1, 1, 0.392157)`
-|_node_ |*material* |`SubResource("ShaderMaterial_7eytl")`
-|_node_ |*texture* |`ExtResource("2_8hqx0")`
-|_node_ |*offset* |`Vector2(0, -12)`
-|_node_ |*hframes* |`7`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*modulate* |`Color(1, 1, 1, 0.392157)`
+|*material* |`SubResource("ShaderMaterial_7eytl")`
+|*texture* |`ExtResource("2_8hqx0")`
+|*offset* |`Vector2(0, -12)`
+|*hframes* |`7`
 |===
 
 

@@ -798,144 +798,144 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*collision_layer* |`3`
-|_node_ |*script* |`ExtResource("1_5irfl")`
-|_node_ |*GhostEffect* |`ExtResource("2_xv5vk")`
+|Name |Value
+|*collision_layer* |`3`
+|*script* |`ExtResource("1_5irfl")`
+|*GhostEffect* |`ExtResource("2_xv5vk")`
 |===
 .$Sprites properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*position* |`Vector2(-12, -72)`
-|_node_ |*scale* |`Vector2(6, 6)`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*position* |`Vector2(-12, -72)`
+|*scale* |`Vector2(6, 6)`
 |===
 .$Sprites/SpriteStates properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
+|Name |Value
+|*unique_name_in_owner* |`true`
 |===
 .$Sprites/SpriteStates/IdleSprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*material* |`SubResource("ShaderMaterial_jm5te")`
-|_node_ |*texture* |`ExtResource("2_byvol")`
-|_node_ |*hframes* |`27`
-|_node_ |*frame* |`21`
+|Name |Value
+|*material* |`SubResource("ShaderMaterial_jm5te")`
+|*texture* |`ExtResource("2_byvol")`
+|*hframes* |`27`
+|*frame* |`21`
 |===
 .$Sprites/SpriteStates/RunSprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*material* |`SubResource("ShaderMaterial_c3wmo")`
-|_node_ |*texture* |`ExtResource("3_htsrw")`
-|_node_ |*hframes* |`8`
+|Name |Value
+|*visible* |`false`
+|*material* |`SubResource("ShaderMaterial_c3wmo")`
+|*texture* |`ExtResource("3_htsrw")`
+|*hframes* |`8`
 |===
 .$Sprites/SpriteStates/JumpSprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*material* |`SubResource("ShaderMaterial_osywq")`
-|_node_ |*texture* |`ExtResource("4_gf1li")`
-|_node_ |*hframes* |`2`
+|Name |Value
+|*visible* |`false`
+|*material* |`SubResource("ShaderMaterial_osywq")`
+|*texture* |`ExtResource("4_gf1li")`
+|*hframes* |`2`
 |===
 .$Sprites/SpriteStates/FallSprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*material* |`SubResource("ShaderMaterial_jpi3j")`
-|_node_ |*texture* |`ExtResource("5_vvr2x")`
-|_node_ |*hframes* |`2`
+|Name |Value
+|*visible* |`false`
+|*material* |`SubResource("ShaderMaterial_jpi3j")`
+|*texture* |`ExtResource("5_vvr2x")`
+|*hframes* |`2`
 |===
 .$Sprites/SpriteEffects properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*position* |`Vector2(2.1666667, 4)`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*position* |`Vector2(2.1666667, 4)`
 |===
 .$Sprites/SpriteEffects/BurstSprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*position* |`Vector2(-1.6666666, -2.8333335)`
-|_node_ |*texture* |`ExtResource("8_l271a")`
-|_node_ |*hframes* |`53`
-|_node_ |*frame* |`11`
+|Name |Value
+|*visible* |`false`
+|*position* |`Vector2(-1.6666666, -2.8333335)`
+|*texture* |`ExtResource("8_l271a")`
+|*hframes* |`53`
+|*frame* |`11`
 |===
 .$CollisionShape2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(2, -51)`
-|_node_ |*shape* |`SubResource("CapsuleShape2D_opnj4")`
+|Name |Value
+|*position* |`Vector2(2, -51)`
+|*shape* |`SubResource("CapsuleShape2D_opnj4")`
 |===
 .$FailureCollision properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*collision_layer* |`8`
-|_node_ |*collision_mask* |`8`
+|Name |Value
+|*collision_layer* |`8`
+|*collision_mask* |`8`
 |===
 .$FailureCollision/CollisionShape2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*position* |`Vector2(0, -56)`
-|_node_ |*shape* |`SubResource("CapsuleShape2D_l271a")`
+|Name |Value
+|*visible* |`false`
+|*position* |`Vector2(0, -56)`
+|*shape* |`SubResource("CapsuleShape2D_l271a")`
 |===
 .$FrameSubject properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*collision_layer* |`4`
-|_node_ |*collision_mask* |`4`
+|Name |Value
+|*collision_layer* |`4`
+|*collision_mask* |`4`
 |===
 .$FrameSubject/CollisionShape2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*visible* |`false`
-|_node_ |*position* |`Vector2(3.5, -51.5)`
-|_node_ |*shape* |`SubResource("RectangleShape2D_x42xx")`
+|Name |Value
+|*visible* |`false`
+|*position* |`Vector2(3.5, -51.5)`
+|*shape* |`SubResource("RectangleShape2D_x42xx")`
 |===
 .$Camera properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
+|Name |Value
+|*unique_name_in_owner* |`true`
 |===
 .$AnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_u5nx7")
 }`
 |===
 .$AnimationTree properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*root_node* |`NodePath("%AnimationTree/..")`
-|_node_ |*tree_root* |`SubResource("AnimationNodeStateMachine_mwkb6")`
-|_node_ |*anim_player* |`NodePath("../AnimationPlayer")`
-|_node_ |*parameters/Fall/blend_position* |`0.195104`
-|_node_ |*parameters/Idle/blend_position* |`-0.27003`
-|_node_ |*parameters/Jump/blend_position* |`0.414688`
-|_node_ |*parameters/Run/blend_position* |`-0.997033`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*root_node* |`NodePath("%AnimationTree/..")`
+|*tree_root* |`SubResource("AnimationNodeStateMachine_mwkb6")`
+|*anim_player* |`NodePath("../AnimationPlayer")`
+|*parameters/Fall/blend_position* |`0.195104`
+|*parameters/Idle/blend_position* |`-0.27003`
+|*parameters/Jump/blend_position* |`0.414688`
+|*parameters/Run/blend_position* |`-0.997033`
 |===
 
 

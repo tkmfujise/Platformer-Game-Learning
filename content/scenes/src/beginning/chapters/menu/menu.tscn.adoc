@@ -572,454 +572,454 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 
 === Properties
 .Root properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchors_preset* |`15`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`1.0`
-|_node_ |*offset_left* |`960.0`
-|_node_ |*offset_right* |`960.0`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*theme* |`ExtResource("1_hp5xr")`
-|_node_ |*script* |`ExtResource("2_prk84")`
-|_node_ |*chapter_resource* |`ExtResource("3_54dmq")`
+|Name |Value
+|*layout_mode* |`3`
+|*anchors_preset* |`15`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`1.0`
+|*offset_left* |`960.0`
+|*offset_right* |`960.0`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*theme* |`ExtResource("1_hp5xr")`
+|*script* |`ExtResource("2_prk84")`
+|*chapter_resource* |`ExtResource("3_54dmq")`
 |===
 .$BannerBox properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*z_index* |`4`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchor_left* |`1.0`
-|_node_ |*anchor_top* |`0.162`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`0.162`
-|_node_ |*offset_left* |`-721.0`
-|_node_ |*offset_top* |`-70.96`
-|_node_ |*offset_right* |`4.0`
-|_node_ |*offset_bottom* |`72.04`
-|_node_ |*grow_horizontal* |`0`
+|Name |Value
+|*z_index* |`4`
+|*layout_mode* |`1`
+|*anchor_left* |`1.0`
+|*anchor_top* |`0.162`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`0.162`
+|*offset_left* |`-721.0`
+|*offset_top* |`-70.96`
+|*offset_right* |`4.0`
+|*offset_bottom* |`72.04`
+|*grow_horizontal* |`0`
 |===
 .$BannerBox/ChapterNumber properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_left* |`0.709`
-|_node_ |*anchor_top* |`0.276`
-|_node_ |*anchor_right* |`0.709`
-|_node_ |*anchor_bottom* |`0.276`
-|_node_ |*offset_left* |`-590.189`
-|_node_ |*offset_top* |`-27.468`
-|_node_ |*offset_right* |`-0.189026`
-|_node_ |*offset_bottom* |`27.532`
-|_node_ |*theme_override_colors/font_color* |`Color(0.242966, 0.242966, 0.242966, 1)`
-|_node_ |*theme_override_colors/font_outline_color* |`Color(0.239, 0.239, 0.239, 0)`
-|_node_ |*theme_override_font_sizes/font_size* |`36`
-|_node_ |*text* |`Chapter 1`
-|_node_ |*horizontal_alignment* |`2`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_left* |`0.709`
+|*anchor_top* |`0.276`
+|*anchor_right* |`0.709`
+|*anchor_bottom* |`0.276`
+|*offset_left* |`-590.189`
+|*offset_top* |`-27.468`
+|*offset_right* |`-0.189026`
+|*offset_bottom* |`27.532`
+|*theme_override_colors/font_color* |`Color(0.242966, 0.242966, 0.242966, 1)`
+|*theme_override_colors/font_outline_color* |`Color(0.239, 0.239, 0.239, 0)`
+|*theme_override_font_sizes/font_size* |`36`
+|*text* |`Chapter 1`
+|*horizontal_alignment* |`2`
 |===
 .$BannerBox/ChapterName properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_left* |`0.709`
-|_node_ |*anchor_top* |`0.64`
-|_node_ |*anchor_right* |`0.709`
-|_node_ |*anchor_bottom* |`0.64`
-|_node_ |*offset_left* |`-590.189`
-|_node_ |*offset_top* |`-33.52`
-|_node_ |*offset_right* |`-0.189026`
-|_node_ |*offset_bottom* |`33.48`
-|_node_ |*text* |`Ghost town`
-|_node_ |*horizontal_alignment* |`2`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_left* |`0.709`
+|*anchor_top* |`0.64`
+|*anchor_right* |`0.709`
+|*anchor_bottom* |`0.64`
+|*offset_left* |`-590.189`
+|*offset_top* |`-33.52`
+|*offset_right* |`-0.189026`
+|*offset_bottom* |`33.48`
+|*text* |`Ghost town`
+|*horizontal_alignment* |`2`
 |===
 .$Box properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*z_index* |`2`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_left* |`1.0`
-|_node_ |*anchor_top* |`0.069`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`0.069`
-|_node_ |*offset_left* |`-721.0`
-|_node_ |*offset_top* |`0.479996`
-|_node_ |*offset_right* |`4.0`
-|_node_ |*offset_bottom* |`678.48`
-|_node_ |*texture* |`ExtResource("1_avfsq")`
-|_node_ |*region_rect* |`Rect2(235, 116, 725, 760)`
-|_node_ |*patch_margin_bottom* |`300`
+|Name |Value
+|*z_index* |`2`
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_left* |`1.0`
+|*anchor_top* |`0.069`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`0.069`
+|*offset_left* |`-721.0`
+|*offset_top* |`0.479996`
+|*offset_right* |`4.0`
+|*offset_bottom* |`678.48`
+|*texture* |`ExtResource("1_avfsq")`
+|*region_rect* |`Rect2(235, 116, 725, 760)`
+|*patch_margin_bottom* |`300`
 |===
 .$Banner properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*z_index* |`3`
-|_node_ |*texture_filter* |`2`
-|_node_ |*position* |`Vector2(1639, 175)`
-|_node_ |*texture* |`ExtResource("4_30gw0")`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*z_index* |`3`
+|*texture_filter* |`2`
+|*position* |`Vector2(1639, 175)`
+|*texture* |`ExtResource("4_30gw0")`
 |===
 .$SideSelection properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture_filter* |`2`
+|Name |Value
+|*texture_filter* |`2`
 |===
 .$SideSelection/CenterBox properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*z_index* |`2`
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchors_preset* |`0`
-|_node_ |*offset_left* |`1256.0`
-|_node_ |*offset_top* |`247.0`
-|_node_ |*offset_right* |`1884.0`
-|_node_ |*offset_bottom* |`517.0`
-|_node_ |*theme* |`ExtResource("1_hp5xr")`
+|Name |Value
+|*z_index* |`2`
+|*layout_mode* |`3`
+|*anchors_preset* |`0`
+|*offset_left* |`1256.0`
+|*offset_top* |`247.0`
+|*offset_right* |`1884.0`
+|*offset_bottom* |`517.0`
+|*theme* |`ExtResource("1_hp5xr")`
 |===
 .$SideSelection/CenterBox/BlueHeartIcon properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*position* |`Vector2(150.5, 133.5)`
-|_node_ |*scale* |`Vector2(1.38281, 1.38281)`
-|_node_ |*texture* |`ExtResource("5_gfqg8")`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*position* |`Vector2(150.5, 133.5)`
+|*scale* |`Vector2(1.38281, 1.38281)`
+|*texture* |`ExtResource("5_gfqg8")`
 |===
 .$SideSelection/CenterBox/StrawberryIcon properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(303, 92.5)`
-|_node_ |*scale* |`Vector2(0.269531, 0.269531)`
-|_node_ |*texture* |`ExtResource("5_trs7h")`
+|Name |Value
+|*position* |`Vector2(303, 92.5)`
+|*scale* |`Vector2(0.269531, 0.269531)`
+|*texture* |`ExtResource("5_trs7h")`
 |===
 .$SideSelection/CenterBox/MultiplicationStrawberry properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(353, 94.5)`
-|_node_ |*scale* |`Vector2(0.145145, 0.145145)`
-|_node_ |*texture* |`ExtResource("5_tb0qi")`
+|Name |Value
+|*position* |`Vector2(353, 94.5)`
+|*scale* |`Vector2(0.145145, 0.145145)`
+|*texture* |`ExtResource("5_tb0qi")`
 |===
 .$SideSelection/CenterBox/StrawberryCountContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_left* |`0.637`
-|_node_ |*anchor_top* |`0.322`
-|_node_ |*anchor_right* |`0.637`
-|_node_ |*anchor_bottom* |`0.322`
-|_node_ |*offset_left* |`-10.036`
-|_node_ |*offset_top* |`-28.94`
-|_node_ |*offset_right* |`126.964`
-|_node_ |*offset_bottom* |`38.06`
+|Name |Value
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_left* |`0.637`
+|*anchor_top* |`0.322`
+|*anchor_right* |`0.637`
+|*anchor_bottom* |`0.322`
+|*offset_left* |`-10.036`
+|*offset_top* |`-28.94`
+|*offset_right* |`126.964`
+|*offset_bottom* |`38.06`
 |===
 .$SideSelection/CenterBox/StrawberryCountContainer/ObtainedStrawberryCount properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
-|_node_ |*text* |`0`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
+|*text* |`0`
 |===
 .$SideSelection/CenterBox/StrawberryCountContainer/Slash properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
-|_node_ |*text* |`/`
+|Name |Value
+|*layout_mode* |`2`
+|*text* |`/`
 |===
 .$SideSelection/CenterBox/StrawberryCountContainer/MaxStrawberryCount properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
-|_node_ |*text* |`20`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
+|*text* |`20`
 |===
 .$SideSelection/CenterBox/FailureIcon properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(327, 187.5)`
-|_node_ |*scale* |`Vector2(0.392578, 0.392578)`
-|_node_ |*texture* |`ExtResource("6_6dned")`
+|Name |Value
+|*position* |`Vector2(327, 187.5)`
+|*scale* |`Vector2(0.392578, 0.392578)`
+|*texture* |`ExtResource("6_6dned")`
 |===
 .$SideSelection/CenterBox/MultiplicationStrawberry2 properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*position* |`Vector2(383, 188.5)`
-|_node_ |*scale* |`Vector2(0.145, 0.145)`
-|_node_ |*texture* |`ExtResource("5_tb0qi")`
+|Name |Value
+|*position* |`Vector2(383, 188.5)`
+|*scale* |`Vector2(0.145, 0.145)`
+|*texture* |`ExtResource("5_tb0qi")`
 |===
 .$SideSelection/CenterBox/FailureCount properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`0`
-|_node_ |*offset_left* |`413.0`
-|_node_ |*offset_top* |`151.5`
-|_node_ |*offset_right* |`541.0`
-|_node_ |*offset_bottom* |`218.5`
-|_node_ |*text* |`0`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`0`
+|*offset_left* |`413.0`
+|*offset_top* |`151.5`
+|*offset_right* |`541.0`
+|*offset_bottom* |`218.5`
+|*text* |`0`
 |===
 .$SideSelection/BottomBox properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*z_index* |`2`
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchor_left* |`1.0`
-|_node_ |*anchor_top* |`0.713`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`0.713`
-|_node_ |*offset_left* |`1199.0`
-|_node_ |*offset_top* |`517.0`
-|_node_ |*offset_right* |`1920.0`
-|_node_ |*offset_bottom* |`753.0`
-|_node_ |*grow_horizontal* |`0`
-|_node_ |*theme* |`ExtResource("1_hp5xr")`
+|Name |Value
+|*z_index* |`2`
+|*layout_mode* |`3`
+|*anchor_left* |`1.0`
+|*anchor_top* |`0.713`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`0.713`
+|*offset_left* |`1199.0`
+|*offset_top* |`517.0`
+|*offset_right* |`1920.0`
+|*offset_bottom* |`753.0`
+|*grow_horizontal* |`0`
+|*theme* |`ExtResource("1_hp5xr")`
 |===
 .$SideSelection/BottomBox/Label properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`-1`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`0.913`
-|_node_ |*offset_bottom* |`-61.468`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*theme_override_colors/font_color* |`Color(0.508731, 0.408952, 0.432275, 1)`
-|_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|_node_ |*text* |`Climb`
-|_node_ |*horizontal_alignment* |`1`
-|_node_ |*vertical_alignment* |`1`
+|Name |Value
+|*layout_mode* |`1`
+|*anchors_preset* |`-1`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`0.913`
+|*offset_bottom* |`-61.468`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*theme_override_colors/font_color* |`Color(0.508731, 0.408952, 0.432275, 1)`
+|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
+|*text* |`Climb`
+|*horizontal_alignment* |`1`
+|*vertical_alignment* |`1`
 |===
 .$SideSelection/SideButtonContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*z_index* |`1`
-|_node_ |*offset_left* |`1402.0`
-|_node_ |*offset_top* |`648.0`
-|_node_ |*offset_right* |`1739.0`
-|_node_ |*offset_bottom* |`875.0`
-|_node_ |*size_flags_horizontal* |`6`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*z_index* |`1`
+|*offset_left* |`1402.0`
+|*offset_top* |`648.0`
+|*offset_right* |`1739.0`
+|*offset_bottom* |`875.0`
+|*size_flags_horizontal* |`6`
 |===
 .$SideSelection/SideButtonContainer/ClimbBookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$SideSelection/SideButtonContainer/CassetteBookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`2`
 |===
 .$SideSelection/SideButtonContainer/CassetteBookmark/Bookmark/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(0.8, 0.8)`
-|_node_ |*texture* |`ExtResource("5_sr4qr")`
+|Name |Value
+|*scale* |`Vector2(0.8, 0.8)`
+|*texture* |`ExtResource("5_sr4qr")`
 |===
 .$StageSelection/BottomBox properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*z_index* |`2`
-|_node_ |*layout_mode* |`3`
-|_node_ |*anchor_left* |`1.0`
-|_node_ |*anchor_top* |`0.713`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`0.713`
-|_node_ |*offset_left* |`1199.0`
-|_node_ |*offset_top* |`648.269`
-|_node_ |*offset_right* |`1920.0`
-|_node_ |*offset_bottom* |`791.269`
-|_node_ |*grow_horizontal* |`0`
-|_node_ |*theme* |`ExtResource("1_hp5xr")`
+|Name |Value
+|*z_index* |`2`
+|*layout_mode* |`3`
+|*anchor_left* |`1.0`
+|*anchor_top* |`0.713`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`0.713`
+|*offset_left* |`1199.0`
+|*offset_top* |`648.269`
+|*offset_right* |`1920.0`
+|*offset_bottom* |`791.269`
+|*grow_horizontal* |`0`
+|*theme* |`ExtResource("1_hp5xr")`
 |===
 .$StageSelection/BottomBox/StageLabel properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*anchors_preset* |`14`
-|_node_ |*anchor_top* |`0.5`
-|_node_ |*anchor_right* |`1.0`
-|_node_ |*anchor_bottom* |`0.5`
-|_node_ |*offset_top* |`-45.5`
-|_node_ |*offset_bottom* |`33.5`
-|_node_ |*grow_horizontal* |`2`
-|_node_ |*grow_vertical* |`2`
-|_node_ |*theme_override_colors/font_color* |`Color(0.508731, 0.408952, 0.432275, 1)`
-|_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|_node_ |*text* |`Get started`
-|_node_ |*horizontal_alignment* |`1`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*anchors_preset* |`14`
+|*anchor_top* |`0.5`
+|*anchor_right* |`1.0`
+|*anchor_bottom* |`0.5`
+|*offset_top* |`-45.5`
+|*offset_bottom* |`33.5`
+|*grow_horizontal* |`2`
+|*grow_vertical* |`2`
+|*theme_override_colors/font_color* |`Color(0.508731, 0.408952, 0.432275, 1)`
+|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
+|*text* |`Get started`
+|*horizontal_alignment* |`1`
 |===
 .$StageSelection/Photos properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*z_index* |`2`
-|_node_ |*position* |`Vector2(1545, 451)`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*z_index* |`2`
+|*position* |`Vector2(1545, 451)`
 |===
 .$StageSelection/Photos/PhotoInstances properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
+|Name |Value
+|*unique_name_in_owner* |`true`
 |===
 .$StageSelection/StageButtonContainer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*z_index* |`1`
-|_node_ |*offset_left* |`1293.0`
-|_node_ |*offset_top* |`755.0`
-|_node_ |*offset_right* |`1843.0`
-|_node_ |*offset_bottom* |`951.0`
-|_node_ |*size_flags_horizontal* |`4`
-|_node_ |*alignment* |`1`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*z_index* |`1`
+|*offset_left* |`1293.0`
+|*offset_top* |`755.0`
+|*offset_right* |`1843.0`
+|*offset_bottom* |`951.0`
+|*size_flags_horizontal* |`4`
+|*alignment* |`1`
 |===
 .$StageSelection/StageButtonContainer/Stage1Button properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$StageSelection/StageButtonContainer/Stage1Button/Bookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("13_jxwkk")`
+|Name |Value
+|*texture* |`ExtResource("13_jxwkk")`
 |===
 .$StageSelection/StageButtonContainer/Stage1Button/Bookmark/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(0.7, 0.7)`
-|_node_ |*texture* |`ExtResource("13_hfos7")`
+|Name |Value
+|*scale* |`Vector2(0.7, 0.7)`
+|*texture* |`ExtResource("13_hfos7")`
 |===
 .$StageSelection/StageButtonContainer/Stage2Button properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$StageSelection/StageButtonContainer/Stage2Button/Bookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("15_7vn6q")`
+|Name |Value
+|*texture* |`ExtResource("15_7vn6q")`
 |===
 .$StageSelection/StageButtonContainer/Stage2Button/Bookmark/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(0.7, 0.7)`
-|_node_ |*texture* |`ExtResource("15_wdor7")`
+|Name |Value
+|*scale* |`Vector2(0.7, 0.7)`
+|*texture* |`ExtResource("15_wdor7")`
 |===
 .$StageSelection/StageButtonContainer/Stage3Button properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$StageSelection/StageButtonContainer/Stage3Button/Bookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("15_7vn6q")`
+|Name |Value
+|*texture* |`ExtResource("15_7vn6q")`
 |===
 .$StageSelection/StageButtonContainer/Stage3Button/Bookmark/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(0.7, 0.7)`
-|_node_ |*texture* |`ExtResource("15_wdor7")`
+|Name |Value
+|*scale* |`Vector2(0.7, 0.7)`
+|*texture* |`ExtResource("15_wdor7")`
 |===
 .$StageSelection/StageButtonContainer/Stage4Button properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$StageSelection/StageButtonContainer/Stage4Button/Bookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("15_7vn6q")`
+|Name |Value
+|*texture* |`ExtResource("15_7vn6q")`
 |===
 .$StageSelection/StageButtonContainer/Stage4Button/Bookmark/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(0.7, 0.7)`
-|_node_ |*texture* |`ExtResource("15_wdor7")`
+|Name |Value
+|*scale* |`Vector2(0.7, 0.7)`
+|*texture* |`ExtResource("15_wdor7")`
 |===
 .$StageSelection/StageButtonContainer/Stage5Button properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*layout_mode* |`2`
+|Name |Value
+|*layout_mode* |`2`
 |===
 .$StageSelection/StageButtonContainer/Stage5Button/Bookmark properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*texture* |`ExtResource("15_7vn6q")`
+|Name |Value
+|*texture* |`ExtResource("15_7vn6q")`
 |===
 .$StageSelection/StageButtonContainer/Stage5Button/Bookmark/Sprite2D properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*scale* |`Vector2(0.7, 0.7)`
-|_node_ |*texture* |`ExtResource("15_wdor7")`
+|Name |Value
+|*scale* |`Vector2(0.7, 0.7)`
+|*texture* |`ExtResource("15_wdor7")`
 |===
 .$ClosingCurtain properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*layout_mode* |`1`
-|_node_ |*offset_top* |`-1.0`
-|_node_ |*offset_bottom* |`-1.0`
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*layout_mode* |`1`
+|*offset_top* |`-1.0`
+|*offset_bottom* |`-1.0`
 |===
 .$AnimationPlayer properties
-[cols="1,1,3" options="header"]
+[cols="1,3" options="header"]
 |===
-|Section |Name |Value
-|_node_ |*unique_name_in_owner* |`true`
-|_node_ |*libraries* |`{
+|Name |Value
+|*unique_name_in_owner* |`true`
+|*libraries* |`{
 &"": SubResource("AnimationLibrary_ebi0a")
 }`
 |===
