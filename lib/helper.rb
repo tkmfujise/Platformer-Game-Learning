@@ -23,16 +23,19 @@ module Helper
     all_items_of(category_of(item))
   end
 
-  def prev_item_of(item)
-    list = siblings_of(item)
-    idx = list.index(item)
-    idx && idx > 0 ? list[idx - 1] : nil
+  def neighbor_items_of(item)
+    items = siblings_of(item)
+    [prev_item_in(items, item), next_item_in(items, item)]
   end
 
-  def next_item_of(item)
-    list = siblings_of(item)
-    idx = list.index(item)
-    idx ? list[idx + 1] : nil
+  def prev_item_in(items, item)
+    idx = items.index(item)
+    idx && idx > 0 ? items[idx - 1] : nil
+  end
+
+  def next_item_in(items, item)
+    idx = items.index(item)
+    idx ? items[idx + 1] : nil
   end
 
 
