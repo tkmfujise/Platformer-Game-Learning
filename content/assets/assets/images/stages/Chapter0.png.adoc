@@ -1,0 +1,22 @@
+---
+title: assets/images/stages/Chapter0.png
+---
+:toc:
+
+== assets / images / stages / Chapter0.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |96×48 px
+|Type |png
+|Content Length |2.24 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/Chapter0.png[]
+

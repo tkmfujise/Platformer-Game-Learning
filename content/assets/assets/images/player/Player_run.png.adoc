@@ -1,0 +1,22 @@
+---
+title: assets/images/player/Player_run.png
+---
+:toc:
+
+== assets / images / player / Player_run.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |192×24 px
+|Type |png
+|Content Length |1.13 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/Player_run.png[]
+

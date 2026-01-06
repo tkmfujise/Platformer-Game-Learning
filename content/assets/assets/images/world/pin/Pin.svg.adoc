@@ -1,0 +1,22 @@
+---
+title: assets/images/world/pin/Pin.svg
+---
+:toc:
+
+== assets / images / world / pin / Pin.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |128×164 px
+|Type |svg
+|Content Length |3.21 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/world/pin/Pin.svg[]
+

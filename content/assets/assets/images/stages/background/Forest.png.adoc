@@ -1,0 +1,22 @@
+---
+title: assets/images/stages/background/Forest.png
+---
+:toc:
+
+== assets / images / stages / background / Forest.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |256×64 px
+|Type |png
+|Content Length |2.62 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/background/Forest.png[]
+

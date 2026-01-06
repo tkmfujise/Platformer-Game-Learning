@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64mm"
+   height="64mm"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="Multiplication.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.8102132"
+     inkscape:cx="109.10317"
+     inkscape:cy="109.37938"
+     inkscape:window-width="1920"
+     inkscape:window-height="1010"
+     inkscape:window-x="2553"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="text2"
+       style="font-size:75.1409px;font-family:'Leelawadee UI';-inkscape-font-specification:'Leelawadee UI, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.175;stroke-dasharray:none;stroke-opacity:1"
+       d="m 4.8624704,17.067843 c 4.981885,4.986429 9.9631946,9.973435 14.9454426,14.959501 -4.990386,4.95214 -9.9774336,9.907646 -14.9665316,14.861084 4.08668,4.08668 8.1733616,8.173361 12.2600426,12.260042 4.953439,-4.989097 9.908943,-9.976147 14.861084,-14.966531 4.985357,4.982177 9.971498,9.963569 14.957158,14.945442 4.07965,-4.079651 8.159301,-8.159302 12.238953,-12.238953 C 54.169521,41.93499 49.182472,36.979484 44.192087,32.027344 49.174263,27.041988 54.155655,22.055846 59.137529,17.070187 55.064907,12.997565 50.992286,8.9249436 46.919666,4.8523228 41.932443,9.8357579 36.944742,14.818714 31.957821,19.802451 27.006825,14.816392 22.051677,9.8344513 17.099081,4.8499796 13.02021,8.9226005 8.9413404,12.995222 4.8624704,17.067843 Z" />
+  </g>
+</svg>

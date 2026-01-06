@@ -1,0 +1,22 @@
+---
+title: assets/images/world/pin/running_in_pin.png
+---
+:toc:
+
+== assets / images / world / pin / running_in_pin.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |3328×256 px
+|Type |png
+|Content Length |274.25 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/world/pin/running_in_pin.png[]
+

@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Credits.svg
+---
+:toc:
+
+== assets / images / ui / Credits.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |16×16 px
+|Type |svg
+|Content Length |4.92 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Credits.svg[]
+

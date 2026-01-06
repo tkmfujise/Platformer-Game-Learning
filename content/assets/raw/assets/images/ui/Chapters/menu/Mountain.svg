@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 33.866666 33.866666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="Mountain.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.1200562"
+     inkscape:cx="77.635867"
+     inkscape:cy="73.436694"
+     inkscape:window-width="1280"
+     inkscape:window-height="730"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1"
+       style="fill:#3a3c3d;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-linejoin:round"
+       inkscape:transform-center-x="-0.060220758"
+       inkscape:transform-center-y="-3.3225065"
+       d="M 12.591996,3.6576499 C 9.9724159,4.0194736 4.1294263,17.859305 1.0821046,24.009896 c 1.6545099,-0.01064 6.4859209,-0.01552 11.7336504,-0.01705 l 0,-2.908867 6.66626,0 0,2.912484 c 4.391939,0.0024 8.982035,0.0039 12.598197,0.01344 C 30.641015,21.3655 25.303856,8.8461862 23.487455,8.766382 22.040531,8.5596786 19.340422,14.80374 19.340422,14.80374 17.14213,10.2274 14.89306,4.0485866 12.591996,3.6576499 Z" />
+    <path
+       id="rect3"
+       style="fill:#3a3c3d;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-linejoin:round"
+       d="m 6.2528114,24.545781 v 2.170423 h 4.8761536 v 1.956678 h 10.058354 v -1.956678 h 5.942333 v -2.170423 h -7.647637 v 1.808667 h -6.647746 v -1.808667 z"
+       sodipodi:nodetypes="ccccccccccccc" />
+    <rect
+       style="fill:#3a3c3d;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-linejoin:round"
+       id="rect4"
+       width="4.6508279"
+       height="3.6689863"
+       x="13.849132"
+       y="21.807215" />
+  </g>
+</svg>

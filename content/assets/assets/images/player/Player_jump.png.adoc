@@ -1,0 +1,22 @@
+---
+title: assets/images/player/Player_jump.png
+---
+:toc:
+
+== assets / images / player / Player_jump.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |48×24 px
+|Type |png
+|Content Length |621.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/Player_jump.png[]
+

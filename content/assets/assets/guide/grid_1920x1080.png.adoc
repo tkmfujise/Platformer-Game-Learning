@@ -1,0 +1,22 @@
+---
+title: assets/guide/grid_1920x1080.png
+---
+:toc:
+
+== assets / guide / grid_1920x1080.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |1920×1080 px
+|Type |png
+|Content Length |81.99 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/guide/grid_1920x1080.png[]
+

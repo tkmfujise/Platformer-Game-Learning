@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/Photo.svg
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / Photo.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |140×105 px
+|Type |svg
+|Content Length |3.76 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/Photo.svg[]
+

@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/Mountain.svg
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / Mountain.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |128×128 px
+|Type |svg
+|Content Length |2.39 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[]
+

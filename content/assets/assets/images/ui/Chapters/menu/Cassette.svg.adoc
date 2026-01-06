@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/Cassette.svg
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / Cassette.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |128×128 px
+|Type |svg
+|Content Length |5.2 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[]
+

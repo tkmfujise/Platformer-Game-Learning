@@ -1,0 +1,22 @@
+---
+title: data/chapters/photos/6/Chapter6_2.png
+---
+:toc:
+
+== data / chapters / photos / 6 / Chapter6_2.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |600×339 px
+|Type |png
+|Content Length |3.83 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/data/chapters/photos/6/Chapter6_2.png[]
+

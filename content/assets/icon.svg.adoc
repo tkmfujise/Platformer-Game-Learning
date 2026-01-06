@@ -1,0 +1,22 @@
+---
+title: icon.svg
+---
+:toc:
+
+== icon.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |128×128 px
+|Type |svg
+|Content Length |994.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/icon.svg[]
+

@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/Chapter_2.png
+---
+:toc:
+
+== assets / images / ui / Chapters / Chapter_2.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |128×128 px
+|Type |png
+|Content Length |17.75 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/Chapter_2.png[]
+

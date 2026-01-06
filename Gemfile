@@ -11,6 +11,7 @@ gem 'asciidoctor'
 gem 'asciidoctor-kroki'
 gem 'rouge'
 gem 'nokogiri'
+gem 'fastimage'
 
 group 'nanoc' do
   gem 'nanoc-live'

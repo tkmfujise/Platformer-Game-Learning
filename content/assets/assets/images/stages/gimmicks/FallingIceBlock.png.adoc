@@ -1,0 +1,22 @@
+---
+title: assets/images/stages/gimmicks/FallingIceBlock.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / FallingIceBlock.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |48×26 px
+|Type |png
+|Content Length |858.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[]
+

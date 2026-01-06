@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Quit.svg
+---
+:toc:
+
+== assets / images / ui / Quit.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |16×16 px
+|Type |svg
+|Content Length |6.01 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Quit.svg[]
+

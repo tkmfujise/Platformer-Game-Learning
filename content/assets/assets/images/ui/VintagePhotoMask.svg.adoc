@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/VintagePhotoMask.svg
+---
+:toc:
+
+== assets / images / ui / VintagePhotoMask.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |256×256 px
+|Type |svg
+|Content Length |2.16 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/VintagePhotoMask.svg[]
+

@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/Banner.png
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / Banner.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |1076×179 px
+|Type |png
+|Content Length |10.63 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/Banner.png[]
+

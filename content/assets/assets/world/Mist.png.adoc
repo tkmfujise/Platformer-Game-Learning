@@ -1,0 +1,22 @@
+---
+title: assets/world/Mist.png
+---
+:toc:
+
+== assets / world / Mist.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |320×180 px
+|Type |png
+|Content Length |50.83 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/world/Mist.png[]
+

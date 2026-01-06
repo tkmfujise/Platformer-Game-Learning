@@ -1,0 +1,22 @@
+---
+title: assets/world/Panorama.png
+---
+:toc:
+
+== assets / world / Panorama.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |2048×2048 px
+|Type |png
+|Content Length |711.88 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/world/Panorama.png[]
+

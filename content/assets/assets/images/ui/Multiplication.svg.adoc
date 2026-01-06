@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Multiplication.svg
+---
+:toc:
+
+== assets / images / ui / Multiplication.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |64×64 px
+|Type |svg
+|Content Length |2.22 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Multiplication.svg[]
+

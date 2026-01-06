@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/Box.svg
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / Box.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |960×1080 px
+|Type |svg
+|Content Length |8.06 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/Box.svg[]
+

@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/BlueHeart.svg
+---
+:toc:
+
+== assets / images / ui / BlueHeart.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |128×128 px
+|Type |svg
+|Content Length |4.8 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+

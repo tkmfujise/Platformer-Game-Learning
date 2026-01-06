@@ -1,0 +1,22 @@
+---
+title: assets/images/player/effects/Burst.png
+---
+:toc:
+
+== assets / images / player / effects / Burst.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |3392×64 px
+|Type |png
+|Content Length |14.59 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/effects/Burst.png[]
+

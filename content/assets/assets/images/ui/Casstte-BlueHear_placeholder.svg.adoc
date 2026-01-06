@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Casstte-BlueHear_placeholder.svg
+---
+:toc:
+
+== assets / images / ui / Casstte-BlueHear_placeholder.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |64×64 px
+|Type |svg
+|Content Length |1.36 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+

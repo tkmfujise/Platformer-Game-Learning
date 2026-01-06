@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Strawberry.png
+---
+:toc:
+
+== assets / images / ui / Strawberry.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |256×256 px
+|Type |png
+|Content Length |59.57 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Strawberry.png[]
+

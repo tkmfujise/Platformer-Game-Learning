@@ -1,0 +1,22 @@
+---
+title: assets/images/player/Player_idle.png
+---
+:toc:
+
+== assets / images / player / Player_idle.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |648×24 px
+|Type |png
+|Content Length |1.78 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/Player_idle.png[]
+

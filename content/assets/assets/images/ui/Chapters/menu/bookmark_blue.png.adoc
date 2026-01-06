@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/bookmark_blue.png
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / bookmark_blue.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |178×255 px
+|Type |png
+|Content Length |8.32 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_blue.png[]
+

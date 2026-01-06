@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Joy_A_button.svg
+---
+:toc:
+
+== assets / images / ui / Joy_A_button.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |48×48 px
+|Type |svg
+|Content Length |3.46 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Joy_A_button.svg[]
+

@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/Chapters/menu/bookmark_yellow.png
+---
+:toc:
+
+== assets / images / ui / Chapters / menu / bookmark_yellow.png
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |145×256 px
+|Type |png
+|Content Length |7.55 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_yellow.png[]
+

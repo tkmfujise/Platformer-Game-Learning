@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/sellotape.svg
+---
+:toc:
+
+== assets / images / ui / sellotape.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |64×64 px
+|Type |svg
+|Content Length |4.51 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/sellotape.svg[]
+

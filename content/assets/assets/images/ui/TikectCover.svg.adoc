@@ -1,0 +1,22 @@
+---
+title: assets/images/ui/TikectCover.svg
+---
+:toc:
+
+== assets / images / ui / TikectCover.svg
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |1000×300 px
+|Type |svg
+|Content Length |8.18 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/TikectCover.svg[]
+
