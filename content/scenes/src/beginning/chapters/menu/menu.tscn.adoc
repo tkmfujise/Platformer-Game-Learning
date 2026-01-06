@@ -571,529 +571,10 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 
 
 === Properties
+.Root properties
 [cols="1,1,3" options="header"]
 |===
 |Section |Name |Value
-|_sub_resource_ |*length* |`0.001`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 0)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("SideSelection/CenterBox/StrawberryIcon:scale")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.269531, 0.269531)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("SideSelection/CenterBox/FailureIcon:scale")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.392578, 0.392578)]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("SideSelection:position")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath("StageSelection:position")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/5/type* |`value`
-|_sub_resource_ |*tracks/5/imported* |`false`
-|_sub_resource_ |*tracks/5/enabled* |`true`
-|_sub_resource_ |*tracks/5/path* |`NodePath("Box:size")`
-|_sub_resource_ |*tracks/5/interp* |`1`
-|_sub_resource_ |*tracks/5/loop_wrap* |`true`
-|_sub_resource_ |*tracks/5/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(725, 678)]
-}`
-|_sub_resource_ |*tracks/6/type* |`value`
-|_sub_resource_ |*tracks/6/imported* |`false`
-|_sub_resource_ |*tracks/6/enabled* |`true`
-|_sub_resource_ |*tracks/6/path* |`NodePath("SideSelection/SideButtonContainer/ClimbBookmark:focused")`
-|_sub_resource_ |*tracks/6/interp* |`1`
-|_sub_resource_ |*tracks/6/loop_wrap* |`true`
-|_sub_resource_ |*tracks/6/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/7/type* |`value`
-|_sub_resource_ |*tracks/7/imported* |`false`
-|_sub_resource_ |*tracks/7/enabled* |`true`
-|_sub_resource_ |*tracks/7/path* |`NodePath(".:grab_focus_side")`
-|_sub_resource_ |*tracks/7/interp* |`1`
-|_sub_resource_ |*tracks/7/loop_wrap* |`true`
-|_sub_resource_ |*tracks/7/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/8/type* |`value`
-|_sub_resource_ |*tracks/8/imported* |`false`
-|_sub_resource_ |*tracks/8/enabled* |`true`
-|_sub_resource_ |*tracks/8/path* |`NodePath(".:grab_focus_stage")`
-|_sub_resource_ |*tracks/8/interp* |`1`
-|_sub_resource_ |*tracks/8/loop_wrap* |`true`
-|_sub_resource_ |*tracks/8/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/9/type* |`value`
-|_sub_resource_ |*tracks/9/imported* |`false`
-|_sub_resource_ |*tracks/9/enabled* |`true`
-|_sub_resource_ |*tracks/9/path* |`NodePath(".:shown")`
-|_sub_resource_ |*tracks/9/interp* |`1`
-|_sub_resource_ |*tracks/9/loop_wrap* |`true`
-|_sub_resource_ |*tracks/9/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/10/type* |`value`
-|_sub_resource_ |*tracks/10/imported* |`false`
-|_sub_resource_ |*tracks/10/enabled* |`true`
-|_sub_resource_ |*tracks/10/path* |`NodePath("SideSelection/CenterBox/BlueHeartIcon:rotation")`
-|_sub_resource_ |*tracks/10/interp* |`1`
-|_sub_resource_ |*tracks/10/loop_wrap* |`true`
-|_sub_resource_ |*tracks/10/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}`
-|_sub_resource_ |*tracks/11/type* |`value`
-|_sub_resource_ |*tracks/11/imported* |`false`
-|_sub_resource_ |*tracks/11/enabled* |`true`
-|_sub_resource_ |*tracks/11/path* |`NodePath("SideSelection/CenterBox/BlueHeartIcon:scale")`
-|_sub_resource_ |*tracks/11/interp* |`1`
-|_sub_resource_ |*tracks/11/loop_wrap* |`true`
-|_sub_resource_ |*tracks/11/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.38281, 1.38281)]
-}`
-|_sub_resource_ |*resource_name* |`climb_selected`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("SideSelection:position")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1000, 0)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("StageSelection:position")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(1000, 0), Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath(".:position")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Box:size")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(725, 678), Vector2(725, 760)]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath(".:grab_focus_stage")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/5/type* |`value`
-|_sub_resource_ |*tracks/5/imported* |`false`
-|_sub_resource_ |*tracks/5/enabled* |`true`
-|_sub_resource_ |*tracks/5/path* |`NodePath(".:grab_focus_side")`
-|_sub_resource_ |*tracks/5/interp* |`1`
-|_sub_resource_ |*tracks/5/loop_wrap* |`true`
-|_sub_resource_ |*tracks/5/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*resource_name* |`climb_unselected`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("SideSelection:position")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.25, 0.5),
-"update": 0,
-"values": [Vector2(1000, 0), Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("StageSelection:position")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1000, 0)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath(".:position")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Box:size")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(725, 760), Vector2(725, 678)]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath(".:grab_focus_side")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/5/type* |`value`
-|_sub_resource_ |*tracks/5/imported* |`false`
-|_sub_resource_ |*tracks/5/enabled* |`true`
-|_sub_resource_ |*tracks/5/path* |`NodePath(".:grab_focus_stage")`
-|_sub_resource_ |*tracks/5/interp* |`1`
-|_sub_resource_ |*tracks/5/loop_wrap* |`true`
-|_sub_resource_ |*tracks/5/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*resource_name* |`hide`
-|_sub_resource_ |*length* |`0.5`
-|_sub_resource_ |*step* |`0.01`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(960, 0)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Box:size")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(725, 678)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("SideSelection/SideButtonContainer/ClimbBookmark:focused")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath(".:grab_focus_side")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath("SideSelection:position")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/5/type* |`value`
-|_sub_resource_ |*tracks/5/imported* |`false`
-|_sub_resource_ |*tracks/5/enabled* |`true`
-|_sub_resource_ |*tracks/5/path* |`NodePath("StageSelection:position")`
-|_sub_resource_ |*tracks/5/interp* |`1`
-|_sub_resource_ |*tracks/5/loop_wrap* |`true`
-|_sub_resource_ |*tracks/5/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1000, 0)]
-}`
-|_sub_resource_ |*tracks/6/type* |`value`
-|_sub_resource_ |*tracks/6/imported* |`false`
-|_sub_resource_ |*tracks/6/enabled* |`true`
-|_sub_resource_ |*tracks/6/path* |`NodePath(".:shown")`
-|_sub_resource_ |*tracks/6/interp* |`1`
-|_sub_resource_ |*tracks/6/loop_wrap* |`true`
-|_sub_resource_ |*tracks/6/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*resource_name* |`show`
-|_sub_resource_ |*length* |`0.5`
-|_sub_resource_ |*step* |`0.01`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath(".:position")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(960, 0), Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("SideSelection/CenterBox/StrawberryIcon:scale")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0.23, 0.38, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.269531, 0.269531), Vector2(0.32, 0.32), Vector2(0.269531, 0.269531)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("SideSelection/CenterBox/FailureIcon:scale")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0.23, 0.38, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.392578, 0.392578), Vector2(0.443, 0.443), Vector2(0.392578, 0.392578)]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Box:size")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(725, 678)]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath("SideSelection/SideButtonContainer/ClimbBookmark:focused")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/5/type* |`value`
-|_sub_resource_ |*tracks/5/imported* |`false`
-|_sub_resource_ |*tracks/5/enabled* |`true`
-|_sub_resource_ |*tracks/5/path* |`NodePath(".:grab_focus_side")`
-|_sub_resource_ |*tracks/5/interp* |`1`
-|_sub_resource_ |*tracks/5/loop_wrap* |`true`
-|_sub_resource_ |*tracks/5/keys* |`{
-"times": PackedFloat32Array(0.12),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/6/type* |`value`
-|_sub_resource_ |*tracks/6/imported* |`false`
-|_sub_resource_ |*tracks/6/enabled* |`true`
-|_sub_resource_ |*tracks/6/path* |`NodePath("SideSelection:position")`
-|_sub_resource_ |*tracks/6/interp* |`1`
-|_sub_resource_ |*tracks/6/loop_wrap* |`true`
-|_sub_resource_ |*tracks/6/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}`
-|_sub_resource_ |*tracks/7/type* |`value`
-|_sub_resource_ |*tracks/7/imported* |`false`
-|_sub_resource_ |*tracks/7/enabled* |`true`
-|_sub_resource_ |*tracks/7/path* |`NodePath("StageSelection:position")`
-|_sub_resource_ |*tracks/7/interp* |`1`
-|_sub_resource_ |*tracks/7/loop_wrap* |`true`
-|_sub_resource_ |*tracks/7/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1000, 0)]
-}`
-|_sub_resource_ |*tracks/8/type* |`value`
-|_sub_resource_ |*tracks/8/imported* |`false`
-|_sub_resource_ |*tracks/8/enabled* |`true`
-|_sub_resource_ |*tracks/8/path* |`NodePath(".:shown")`
-|_sub_resource_ |*tracks/8/interp* |`1`
-|_sub_resource_ |*tracks/8/loop_wrap* |`true`
-|_sub_resource_ |*tracks/8/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/9/type* |`value`
-|_sub_resource_ |*tracks/9/imported* |`false`
-|_sub_resource_ |*tracks/9/enabled* |`true`
-|_sub_resource_ |*tracks/9/path* |`NodePath("SideSelection/CenterBox/BlueHeartIcon:rotation")`
-|_sub_resource_ |*tracks/9/interp* |`1`
-|_sub_resource_ |*tracks/9/loop_wrap* |`true`
-|_sub_resource_ |*tracks/9/keys* |`{
-"times": PackedFloat32Array(0.23, 0.38, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0890118, 0.0]
-}`
-|_sub_resource_ |*tracks/10/type* |`value`
-|_sub_resource_ |*tracks/10/imported* |`false`
-|_sub_resource_ |*tracks/10/enabled* |`true`
-|_sub_resource_ |*tracks/10/path* |`NodePath("SideSelection/CenterBox/BlueHeartIcon:scale")`
-|_sub_resource_ |*tracks/10/interp* |`1`
-|_sub_resource_ |*tracks/10/loop_wrap* |`true`
-|_sub_resource_ |*tracks/10/keys* |`{
-"times": PackedFloat32Array(0.230703, 0.38, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1.38281, 1.38281), Vector2(1.583, 1.583), Vector2(1.38281, 1.38281)]
-}`
-|_sub_resource_ |*_data* |`{
-&"RESET": SubResource("Animation_m3sah"),
-&"climb_selected": SubResource("Animation_y3fl8"),
-&"climb_unselected": SubResource("Animation_7mnsa"),
-&"hide": SubResource("Animation_vm8b4"),
-&"show": SubResource("Animation_txdb4")
-}`
 |_node_ |*layout_mode* |`3`
 |_node_ |*anchors_preset* |`15`
 |_node_ |*anchor_right* |`1.0`
@@ -1105,6 +586,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*theme* |`ExtResource("1_hp5xr")`
 |_node_ |*script* |`ExtResource("2_prk84")`
 |_node_ |*chapter_resource* |`ExtResource("3_54dmq")`
+|===
+.$BannerBox properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*z_index* |`4`
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchor_left* |`1.0`
@@ -1116,6 +602,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_right* |`4.0`
 |_node_ |*offset_bottom* |`72.04`
 |_node_ |*grow_horizontal* |`0`
+|===
+.$BannerBox/ChapterNumber properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchors_preset* |`-1`
@@ -1132,6 +623,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*theme_override_font_sizes/font_size* |`36`
 |_node_ |*text* |`Chapter 1`
 |_node_ |*horizontal_alignment* |`2`
+|===
+.$BannerBox/ChapterName properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchors_preset* |`-1`
@@ -1145,6 +641,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_bottom* |`33.48`
 |_node_ |*text* |`Ghost town`
 |_node_ |*horizontal_alignment* |`2`
+|===
+.$Box properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*z_index* |`2`
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchors_preset* |`-1`
@@ -1159,12 +660,27 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*texture* |`ExtResource("1_avfsq")`
 |_node_ |*region_rect* |`Rect2(235, 116, 725, 760)`
 |_node_ |*patch_margin_bottom* |`300`
+|===
+.$Banner properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*z_index* |`3`
 |_node_ |*texture_filter* |`2`
 |_node_ |*position* |`Vector2(1639, 175)`
 |_node_ |*texture* |`ExtResource("4_30gw0")`
+|===
+.$SideSelection properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*texture_filter* |`2`
+|===
+.$SideSelection/CenterBox properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*z_index* |`2`
 |_node_ |*layout_mode* |`3`
 |_node_ |*anchors_preset* |`0`
@@ -1173,16 +689,36 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_right* |`1884.0`
 |_node_ |*offset_bottom* |`517.0`
 |_node_ |*theme* |`ExtResource("1_hp5xr")`
+|===
+.$SideSelection/CenterBox/BlueHeartIcon properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*position* |`Vector2(150.5, 133.5)`
 |_node_ |*scale* |`Vector2(1.38281, 1.38281)`
 |_node_ |*texture* |`ExtResource("5_gfqg8")`
+|===
+.$SideSelection/CenterBox/StrawberryIcon properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*position* |`Vector2(303, 92.5)`
 |_node_ |*scale* |`Vector2(0.269531, 0.269531)`
 |_node_ |*texture* |`ExtResource("5_trs7h")`
+|===
+.$SideSelection/CenterBox/MultiplicationStrawberry properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*position* |`Vector2(353, 94.5)`
 |_node_ |*scale* |`Vector2(0.145145, 0.145145)`
 |_node_ |*texture* |`ExtResource("5_tb0qi")`
+|===
+.$SideSelection/CenterBox/StrawberryCountContainer properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchors_preset* |`-1`
 |_node_ |*anchor_left* |`0.637`
@@ -1193,20 +729,50 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_top* |`-28.94`
 |_node_ |*offset_right* |`126.964`
 |_node_ |*offset_bottom* |`38.06`
+|===
+.$SideSelection/CenterBox/StrawberryCountContainer/ObtainedStrawberryCount properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`2`
 |_node_ |*text* |`0`
+|===
+.$SideSelection/CenterBox/StrawberryCountContainer/Slash properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
 |_node_ |*text* |`/`
+|===
+.$SideSelection/CenterBox/StrawberryCountContainer/MaxStrawberryCount properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`2`
 |_node_ |*text* |`20`
+|===
+.$SideSelection/CenterBox/FailureIcon properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*position* |`Vector2(327, 187.5)`
 |_node_ |*scale* |`Vector2(0.392578, 0.392578)`
 |_node_ |*texture* |`ExtResource("6_6dned")`
+|===
+.$SideSelection/CenterBox/MultiplicationStrawberry2 properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*position* |`Vector2(383, 188.5)`
 |_node_ |*scale* |`Vector2(0.145, 0.145)`
 |_node_ |*texture* |`ExtResource("5_tb0qi")`
+|===
+.$SideSelection/CenterBox/FailureCount properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`0`
 |_node_ |*offset_left* |`413.0`
@@ -1214,6 +780,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_right* |`541.0`
 |_node_ |*offset_bottom* |`218.5`
 |_node_ |*text* |`0`
+|===
+.$SideSelection/BottomBox properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*z_index* |`2`
 |_node_ |*layout_mode* |`3`
 |_node_ |*anchor_left* |`1.0`
@@ -1226,6 +797,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_bottom* |`753.0`
 |_node_ |*grow_horizontal* |`0`
 |_node_ |*theme* |`ExtResource("1_hp5xr")`
+|===
+.$SideSelection/BottomBox/Label properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchors_preset* |`-1`
 |_node_ |*anchor_right* |`1.0`
@@ -1238,6 +814,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*text* |`Climb`
 |_node_ |*horizontal_alignment* |`1`
 |_node_ |*vertical_alignment* |`1`
+|===
+.$SideSelection/SideButtonContainer properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*z_index* |`1`
 |_node_ |*offset_left* |`1402.0`
@@ -1245,11 +826,31 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_right* |`1739.0`
 |_node_ |*offset_bottom* |`875.0`
 |_node_ |*size_flags_horizontal* |`6`
+|===
+.$SideSelection/SideButtonContainer/ClimbBookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
+|===
+.$SideSelection/SideButtonContainer/CassetteBookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`2`
+|===
+.$SideSelection/SideButtonContainer/CassetteBookmark/Bookmark/Sprite2D properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*scale* |`Vector2(0.8, 0.8)`
 |_node_ |*texture* |`ExtResource("5_sr4qr")`
+|===
+.$StageSelection/BottomBox properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*z_index* |`2`
 |_node_ |*layout_mode* |`3`
 |_node_ |*anchor_left* |`1.0`
@@ -1262,6 +863,11 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_bottom* |`791.269`
 |_node_ |*grow_horizontal* |`0`
 |_node_ |*theme* |`ExtResource("1_hp5xr")`
+|===
+.$StageSelection/BottomBox/StageLabel properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`1`
 |_node_ |*anchors_preset* |`14`
@@ -1276,10 +882,25 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
 |_node_ |*text* |`Get started`
 |_node_ |*horizontal_alignment* |`1`
+|===
+.$StageSelection/Photos properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*z_index* |`2`
 |_node_ |*position* |`Vector2(1545, 451)`
+|===
+.$StageSelection/Photos/PhotoInstances properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
+|===
+.$StageSelection/StageButtonContainer properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*z_index* |`1`
 |_node_ |*offset_left* |`1293.0`
@@ -1288,30 +909,115 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |_node_ |*offset_bottom* |`951.0`
 |_node_ |*size_flags_horizontal* |`4`
 |_node_ |*alignment* |`1`
+|===
+.$StageSelection/StageButtonContainer/Stage1Button properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
+|===
+.$StageSelection/StageButtonContainer/Stage1Button/Bookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*texture* |`ExtResource("13_jxwkk")`
+|===
+.$StageSelection/StageButtonContainer/Stage1Button/Bookmark/Sprite2D properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*scale* |`Vector2(0.7, 0.7)`
 |_node_ |*texture* |`ExtResource("13_hfos7")`
+|===
+.$StageSelection/StageButtonContainer/Stage2Button properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
+|===
+.$StageSelection/StageButtonContainer/Stage2Button/Bookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*texture* |`ExtResource("15_7vn6q")`
+|===
+.$StageSelection/StageButtonContainer/Stage2Button/Bookmark/Sprite2D properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*scale* |`Vector2(0.7, 0.7)`
 |_node_ |*texture* |`ExtResource("15_wdor7")`
+|===
+.$StageSelection/StageButtonContainer/Stage3Button properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
+|===
+.$StageSelection/StageButtonContainer/Stage3Button/Bookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*texture* |`ExtResource("15_7vn6q")`
+|===
+.$StageSelection/StageButtonContainer/Stage3Button/Bookmark/Sprite2D properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*scale* |`Vector2(0.7, 0.7)`
 |_node_ |*texture* |`ExtResource("15_wdor7")`
+|===
+.$StageSelection/StageButtonContainer/Stage4Button properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
+|===
+.$StageSelection/StageButtonContainer/Stage4Button/Bookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*texture* |`ExtResource("15_7vn6q")`
+|===
+.$StageSelection/StageButtonContainer/Stage4Button/Bookmark/Sprite2D properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*scale* |`Vector2(0.7, 0.7)`
 |_node_ |*texture* |`ExtResource("15_wdor7")`
+|===
+.$StageSelection/StageButtonContainer/Stage5Button properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*layout_mode* |`2`
+|===
+.$StageSelection/StageButtonContainer/Stage5Button/Bookmark properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*texture* |`ExtResource("15_7vn6q")`
+|===
+.$StageSelection/StageButtonContainer/Stage5Button/Bookmark/Sprite2D properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*scale* |`Vector2(0.7, 0.7)`
 |_node_ |*texture* |`ExtResource("15_wdor7")`
+|===
+.$ClosingCurtain properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*layout_mode* |`1`
 |_node_ |*offset_top* |`-1.0`
 |_node_ |*offset_bottom* |`-1.0`
+|===
+.$AnimationPlayer properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*libraries* |`{
 &"": SubResource("AnimationLibrary_ebi0a")

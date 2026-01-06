@@ -169,264 +169,10 @@ R  ->  T2 : material\n = 0.0
 
 
 === Properties
+.Root properties
 [cols="1,1,3" options="header"]
 |===
 |Section |Name |Value
-|_sub_resource_ |*shader* |`ExtResource("2_rtx6v")`
-|_sub_resource_ |*shader_parameter/radius* |`0.0`
-|_sub_resource_ |*shader_parameter/center* |`Vector2(0.5, 0.5)`
-|_sub_resource_ |*shader* |`ExtResource("3_sqii1")`
-|_sub_resource_ |*shader_parameter/ratio* |`0.5`
-|_sub_resource_ |*length* |`0.001`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("Pattern1/RightCurtain:polygon")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1074)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Pattern1/LeftCurtain:polygon")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(0, 0, 0, 1080, 960, 1080, 9, 548, 960, 0)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("Pattern1:visible")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Pattern2:visible")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath("Pattern2:material:shader_parameter/radius")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}`
-|_sub_resource_ |*tracks/5/type* |`value`
-|_sub_resource_ |*tracks/5/imported* |`false`
-|_sub_resource_ |*tracks/5/enabled* |`true`
-|_sub_resource_ |*tracks/5/path* |`NodePath("Pattern3:visible")`
-|_sub_resource_ |*tracks/5/interp* |`1`
-|_sub_resource_ |*tracks/5/loop_wrap* |`true`
-|_sub_resource_ |*tracks/5/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/6/type* |`value`
-|_sub_resource_ |*tracks/6/imported* |`false`
-|_sub_resource_ |*tracks/6/enabled* |`true`
-|_sub_resource_ |*tracks/6/path* |`NodePath("Pattern3:material:shader_parameter/ratio")`
-|_sub_resource_ |*tracks/6/interp* |`1`
-|_sub_resource_ |*tracks/6/loop_wrap* |`true`
-|_sub_resource_ |*tracks/6/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.5]
-}`
-|_sub_resource_ |*resource_name* |`pattern1`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("Pattern1/RightCurtain:polygon")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 0.25, 1),
-"update": 0,
-"values": [PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 960, 540, 960, 1080), PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1080), PackedVector2Array(1920, 1080, 1920, 0, 1920, 0, 1920, 540, 1920, 1080)]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Pattern1/LeftCurtain:polygon")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 0.25, 1),
-"update": 0,
-"values": [PackedVector2Array(0, 0, 0, 1080, 960, 1080, 960, 548, 960, 0), PackedVector2Array(0, 0, 0, 1080, 960, 1080, 0, 548, 960, 0), PackedVector2Array(0, 0, 0, 1080, 0, 1080, 0, 548, 0, 0)]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("Pattern1:visible")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Pattern2:visible")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/4/type* |`value`
-|_sub_resource_ |*tracks/4/imported* |`false`
-|_sub_resource_ |*tracks/4/enabled* |`true`
-|_sub_resource_ |*tracks/4/path* |`NodePath("Pattern3:visible")`
-|_sub_resource_ |*tracks/4/interp* |`1`
-|_sub_resource_ |*tracks/4/loop_wrap* |`true`
-|_sub_resource_ |*tracks/4/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*resource_name* |`pattern2`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("Pattern2:visible")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Pattern1:visible")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("Pattern2:material:shader_parameter/radius")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(0.25, 1, 1),
-"update": 0,
-"values": [-0.1, 0.2, 1.0]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Pattern3:visible")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*resource_name* |`pattern3`
-|_sub_resource_ |*tracks/0/type* |`value`
-|_sub_resource_ |*tracks/0/imported* |`false`
-|_sub_resource_ |*tracks/0/enabled* |`true`
-|_sub_resource_ |*tracks/0/path* |`NodePath("Pattern1:visible")`
-|_sub_resource_ |*tracks/0/interp* |`1`
-|_sub_resource_ |*tracks/0/loop_wrap* |`true`
-|_sub_resource_ |*tracks/0/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/1/type* |`value`
-|_sub_resource_ |*tracks/1/imported* |`false`
-|_sub_resource_ |*tracks/1/enabled* |`true`
-|_sub_resource_ |*tracks/1/path* |`NodePath("Pattern2:visible")`
-|_sub_resource_ |*tracks/1/interp* |`1`
-|_sub_resource_ |*tracks/1/loop_wrap* |`true`
-|_sub_resource_ |*tracks/1/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}`
-|_sub_resource_ |*tracks/2/type* |`value`
-|_sub_resource_ |*tracks/2/imported* |`false`
-|_sub_resource_ |*tracks/2/enabled* |`true`
-|_sub_resource_ |*tracks/2/path* |`NodePath("Pattern3:visible")`
-|_sub_resource_ |*tracks/2/interp* |`1`
-|_sub_resource_ |*tracks/2/loop_wrap* |`true`
-|_sub_resource_ |*tracks/2/keys* |`{
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}`
-|_sub_resource_ |*tracks/3/type* |`value`
-|_sub_resource_ |*tracks/3/imported* |`false`
-|_sub_resource_ |*tracks/3/enabled* |`true`
-|_sub_resource_ |*tracks/3/path* |`NodePath("Pattern3:material:shader_parameter/ratio")`
-|_sub_resource_ |*tracks/3/interp* |`1`
-|_sub_resource_ |*tracks/3/loop_wrap* |`true`
-|_sub_resource_ |*tracks/3/keys* |`{
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}`
-|_sub_resource_ |*_data* |`{
-&"RESET": SubResource("Animation_bwqwf"),
-&"pattern1": SubResource("Animation_y3iny"),
-&"pattern2": SubResource("Animation_kivlp"),
-&"pattern3": SubResource("Animation_663td")
-}`
 |_node_ |*z_index* |`5`
 |_node_ |*z_as_relative* |`false`
 |_node_ |*layout_mode* |`3`
@@ -436,13 +182,33 @@ R  ->  T2 : material\n = 0.0
 |_node_ |*grow_horizontal* |`2`
 |_node_ |*grow_vertical* |`2`
 |_node_ |*script* |`ExtResource("1_2igm1")`
+|===
+.$Pattern1 properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*visible* |`false`
+|===
+.$Pattern1/LeftCurtain properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*color* |`Color(0, 0, 0, 1)`
 |_node_ |*polygon* |`PackedVector2Array(0, 0, 0, 1080, 960, 1080, 9, 548, 960, 0)`
 |_node_ |*uv* |`PackedVector2Array(572.5, -87.75, 575.5, -85.75)`
+|===
+.$Pattern1/RightCurtain properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*color* |`Color(0, 0, 0, 1)`
 |_node_ |*polygon* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1074)`
 |_node_ |*uv* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 960, 540, 960, 1080, 492, 40.75)`
+|===
+.$Pattern2 properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*visible* |`false`
 |_node_ |*material* |`SubResource("ShaderMaterial_kivlp")`
@@ -454,6 +220,11 @@ R  ->  T2 : material\n = 0.0
 |_node_ |*offset_bottom* |`390.0`
 |_node_ |*grow_horizontal* |`2`
 |_node_ |*grow_vertical* |`2`
+|===
+.$Pattern3 properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*visible* |`false`
 |_node_ |*material* |`SubResource("ShaderMaterial_663td")`
 |_node_ |*layout_mode* |`1`
@@ -462,6 +233,11 @@ R  ->  T2 : material\n = 0.0
 |_node_ |*anchor_bottom* |`1.0`
 |_node_ |*grow_horizontal* |`2`
 |_node_ |*grow_vertical* |`2`
+|===
+.$AnimationPlayer properties
+[cols="1,1,3" options="header"]
+|===
+|Section |Name |Value
 |_node_ |*unique_name_in_owner* |`true`
 |_node_ |*libraries* |`{
 &"": SubResource("AnimationLibrary_kivlp")
