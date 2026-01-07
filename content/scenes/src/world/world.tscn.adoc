@@ -73,6 +73,13 @@ _(R::_on_animation_player_animation_finished, N16::animation_finished)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/world/Panorama.png
+[link=/assets/assets/world/Panorama.png] 
+image::/assets/raw/assets/world/Panorama.png[200, 100] 
+
+
 
 
 

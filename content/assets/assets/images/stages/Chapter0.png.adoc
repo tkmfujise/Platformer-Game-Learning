@@ -5,6 +5,11 @@ title: assets/images/stages/Chapter0.png
 
 == assets / images / stages / Chapter0.png
 
+=== Attached Scenes
+* link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

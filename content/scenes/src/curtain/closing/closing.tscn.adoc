@@ -42,6 +42,7 @@ _(R::_on_animation_player_animation_finished, N6::animation_finished)
 
 
 
+
 === Instantiators
 * link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]
 

@@ -5,6 +5,12 @@ title: assets/images/ui/Skull.svg
 
 == assets / images / ui / Skull.svg
 
+=== Attached Scenes
+* link:/scenes/src/account/account.tscn[res://src/account/account.tscn]
+* link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

@@ -5,6 +5,9 @@ title: icon.svg
 
 == icon.svg
 
+=== Attached Scenes
+NOTE: No attached scenes.
+
 
 === Metadata
 [cols="1,1" options="header"]

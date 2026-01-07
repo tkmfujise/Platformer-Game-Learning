@@ -5,6 +5,11 @@ title: assets/images/world/pin/running_in_pin.png
 
 == assets / images / world / pin / running_in_pin.png
 
+=== Attached Scenes
+* link:/scenes/src/world/pin/pin.tscn[res://src/world/pin/pin.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

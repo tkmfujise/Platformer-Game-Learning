@@ -5,6 +5,11 @@ title: data/chapters/photos/0/Dummy.png
 
 == data / chapters / photos / 0 / Dummy.png
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/menu/photo/photo.tscn[res://src/beginning/chapters/menu/photo/photo.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

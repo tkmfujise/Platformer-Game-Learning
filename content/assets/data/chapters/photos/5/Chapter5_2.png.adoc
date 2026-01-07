@@ -5,6 +5,9 @@ title: data/chapters/photos/5/Chapter5_2.png
 
 == data / chapters / photos / 5 / Chapter5_2.png
 
+=== Attached Scenes
+NOTE: No attached scenes.
+
 
 === Metadata
 [cols="1,1" options="header"]

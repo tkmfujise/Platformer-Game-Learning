@@ -37,6 +37,13 @@ left to right direction
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_banner.png
+[link=/assets/assets/images/ui/Chapters/Chapter_banner.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_banner.png[200, 100] 
+
+
 
 
 

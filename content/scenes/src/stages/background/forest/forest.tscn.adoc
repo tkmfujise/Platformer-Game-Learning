@@ -28,6 +28,13 @@ left to right direction
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/stages/background/Forest.png
+[link=/assets/assets/images/stages/background/Forest.png] 
+image::/assets/raw/assets/images/stages/background/Forest.png[200, 100] 
+
+
 
 
 

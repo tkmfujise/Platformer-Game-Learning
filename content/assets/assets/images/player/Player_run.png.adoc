@@ -5,6 +5,12 @@ title: assets/images/player/Player_run.png
 
 == assets / images / player / Player_run.png
 
+=== Attached Scenes
+* link:/scenes/src/player/ghost_effect/ghost_effect.tscn[res://src/player/ghost_effect/ghost_effect.tscn]
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

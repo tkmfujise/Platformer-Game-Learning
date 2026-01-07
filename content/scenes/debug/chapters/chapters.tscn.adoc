@@ -60,6 +60,8 @@ _(R::_on_reload_button_pressed, N2::pressed)
 ....
 
 
+
+
 === Overridden virtual functions
 ==== _ready
 ```gdscript
@@ -88,7 +90,6 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept"):
 		go_foward()
 ```
-
 
 
 === Instantiators

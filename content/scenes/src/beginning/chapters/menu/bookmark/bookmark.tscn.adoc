@@ -34,6 +34,19 @@ _(R::_on_focus_exited, R::focus_exited)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/bookmark_blue.png
+[link=/assets/assets/images/ui/Chapters/menu/bookmark_blue.png] 
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_blue.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Bag.png
+[link=/assets/assets/images/ui/Chapters/menu/Bag.png] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Bag.png[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _input
 ```gdscript
@@ -41,7 +54,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") && focused:
 		pressed.emit()
 ```
-
 
 
 === Instantiators

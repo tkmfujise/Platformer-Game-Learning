@@ -76,6 +76,14 @@ _(R::_on_animation_tree_animation_started, N17::animation_started)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/ui/Joy_A_button.svg
+[link=/assets/assets/images/ui/Joy_A_button.svg] 
+image::/assets/raw/assets/images/ui/Joy_A_button.svg[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _ready
 ```gdscript
@@ -91,7 +99,6 @@ func _input(_event: InputEvent) -> void:
 			'hide_title': pass
 			_: 		      transit('show_title')
 ```
-
 
 
 === Instantiators

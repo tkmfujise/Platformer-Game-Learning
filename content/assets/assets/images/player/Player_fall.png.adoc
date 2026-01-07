@@ -5,6 +5,11 @@ title: assets/images/player/Player_fall.png
 
 == assets / images / player / Player_fall.png
 
+=== Attached Scenes
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

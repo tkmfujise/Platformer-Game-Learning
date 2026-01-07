@@ -110,6 +110,34 @@ _(R::_on_frame_subject_area_exited, N12::area_exited)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/player/Player_idle.png
+[link=/assets/assets/images/player/Player_idle.png] 
+image::/assets/raw/assets/images/player/Player_idle.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/player/Player_run.png
+[link=/assets/assets/images/player/Player_run.png] 
+image::/assets/raw/assets/images/player/Player_run.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/player/Player_jump.png
+[link=/assets/assets/images/player/Player_jump.png] 
+image::/assets/raw/assets/images/player/Player_jump.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/player/Player_fall.png
+[link=/assets/assets/images/player/Player_fall.png] 
+image::/assets/raw/assets/images/player/Player_fall.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/player/effects/Burst.png
+[link=/assets/assets/images/player/effects/Burst.png] 
+image::/assets/raw/assets/images/player/effects/Burst.png[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _physics_process
 ```gdscript
@@ -161,7 +189,6 @@ func _process(delta: float) -> void:
 		shaking_time = maxf(0.0, shaking_time - delta)
 		shaking()
 ```
-
 
 
 === Instantiators

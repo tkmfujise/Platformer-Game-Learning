@@ -212,6 +212,19 @@ _(R::_on_chapters_ui_backed, N21::ui_backed)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/ui/Credits.svg
+[link=/assets/assets/images/ui/Credits.svg] 
+image::/assets/raw/assets/images/ui/Credits.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Quit.svg
+[link=/assets/assets/images/ui/Quit.svg] 
+image::/assets/raw/assets/images/ui/Quit.svg[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _ready
 ```gdscript
@@ -257,7 +270,6 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept"):
 		go_foward()
 ```
-
 
 
 === Instantiators

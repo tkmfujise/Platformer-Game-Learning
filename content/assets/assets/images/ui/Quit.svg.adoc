@@ -5,6 +5,11 @@ title: assets/images/ui/Quit.svg
 
 == assets / images / ui / Quit.svg
 
+=== Attached Scenes
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

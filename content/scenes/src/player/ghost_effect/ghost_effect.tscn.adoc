@@ -24,6 +24,14 @@ left to right direction
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/player/Player_run.png
+[link=/assets/assets/images/player/Player_run.png] 
+image::/assets/raw/assets/images/player/Player_run.png[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _process
 ```gdscript
@@ -32,7 +40,6 @@ func _process(delta: float) -> void:
 	modulate.a -= delta / ALIVE_TIME
 	if rest_time < 0: queue_free()
 ```
-
 
 
 === Instantiators

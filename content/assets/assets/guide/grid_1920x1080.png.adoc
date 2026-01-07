@@ -5,6 +5,11 @@ title: assets/guide/grid_1920x1080.png
 
 == assets / guide / grid_1920x1080.png
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/chapters.tscn[res://src/beginning/chapters/chapters.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

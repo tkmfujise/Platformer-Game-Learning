@@ -5,6 +5,11 @@ title: assets/images/ui/Chapters/menu/Photo.svg
 
 == assets / images / ui / Chapters / menu / Photo.svg
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/menu/photo/photo.tscn[res://src/beginning/chapters/menu/photo/photo.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

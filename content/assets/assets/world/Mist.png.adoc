@@ -5,6 +5,11 @@ title: assets/world/Mist.png
 
 == assets / world / Mist.png
 
+=== Attached Scenes
+* link:/scenes/src/world/mist/mist.tscn[res://src/world/mist/mist.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

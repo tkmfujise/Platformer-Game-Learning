@@ -5,6 +5,11 @@ title: assets/world/Panorama.png
 
 == assets / world / Panorama.png
 
+=== Attached Scenes
+* link:/scenes/src/world/world.tscn[res://src/world/world.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

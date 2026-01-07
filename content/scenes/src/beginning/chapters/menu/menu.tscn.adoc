@@ -270,6 +270,64 @@ _(R::_on_stage_button_pressed, N44::pressed)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Box.svg
+[link=/assets/assets/images/ui/Chapters/menu/Box.svg] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Box.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Banner.png
+[link=/assets/assets/images/ui/Chapters/menu/Banner.png] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Banner.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/BlueHeart.svg
+[link=/assets/assets/images/ui/BlueHeart.svg] 
+image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Cassette.svg
+[link=/assets/assets/images/ui/Chapters/menu/Cassette.svg] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Multiplication.svg
+[link=/assets/assets/images/ui/Multiplication.svg] 
+image::/assets/raw/assets/images/ui/Multiplication.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Strawberry.png
+[link=/assets/assets/images/ui/Strawberry.png] 
+image::/assets/raw/assets/images/ui/Strawberry.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Skull.svg
+[link=/assets/assets/images/ui/Skull.svg] 
+image::/assets/raw/assets/images/ui/Skull.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Star.svg
+[link=/assets/assets/images/ui/Chapters/menu/Star.svg] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Star.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/bookmark_yellow.png
+[link=/assets/assets/images/ui/Chapters/menu/bookmark_yellow.png] 
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_yellow.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/bookmark_navy.png
+[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png] 
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_navy.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Mountain.svg
+[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _ready
 ```gdscript
@@ -296,7 +354,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") && focused:
 		pressed.emit()
 ```
-
 
 
 === Instantiators

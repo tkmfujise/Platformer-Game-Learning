@@ -22,6 +22,8 @@ left to right direction
 ....
 
 
+
+
 === Overridden virtual functions
 ==== _process
 ```gdscript
@@ -29,7 +31,6 @@ func _process(_delta: float) -> void:
 	var camera = current_camera()
 	if camera: global_position = camera.global_position
 ```
-
 
 
 === Instantiators

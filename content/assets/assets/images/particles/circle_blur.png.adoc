@@ -5,6 +5,13 @@ title: assets/images/particles/circle_blur.png
 
 == assets / images / particles / circle_blur.png
 
+=== Attached Scenes
+* link:/scenes/src/beginning/screen/snow/snow.tscn[res://src/beginning/screen/snow/snow.tscn]
+* link:/scenes/src/stages/weather/snow/snow.tscn[res://src/stages/weather/snow/snow.tscn]
+* link:/scenes/src/world/snow/snow.tscn[res://src/world/snow/snow.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

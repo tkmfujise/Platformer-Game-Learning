@@ -19,6 +19,13 @@ left to right direction
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/world/Mist.png
+[link=/assets/assets/world/Mist.png] 
+image::/assets/raw/assets/world/Mist.png[200, 100] 
+
+
 
 
 

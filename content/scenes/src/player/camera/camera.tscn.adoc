@@ -27,6 +27,8 @@ left to right direction
 ....
 
 
+
+
 === Overridden virtual functions
 ==== _process
 ```gdscript
@@ -35,7 +37,6 @@ func _process(delta: float) -> void:
 		shaking_time = maxf(0.0, shaking_time - delta)
 		shaking()
 ```
-
 
 
 === Instantiators

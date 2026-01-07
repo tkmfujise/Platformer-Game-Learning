@@ -41,13 +41,20 @@ _(R::_on_detection_area_2d_body_entered, N5::body_entered)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/stages/gimmicks/FallingIceBlock.png
+[link=/assets/assets/images/stages/gimmicks/FallingIceBlock.png] 
+image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _ready
 ```gdscript
 func _ready() -> void:
 	freeze = true
 ```
-
 
 
 === Instantiators

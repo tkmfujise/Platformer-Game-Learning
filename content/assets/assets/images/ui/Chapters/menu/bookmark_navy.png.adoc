@@ -5,6 +5,11 @@ title: assets/images/ui/Chapters/menu/bookmark_navy.png
 
 == assets / images / ui / Chapters / menu / bookmark_navy.png
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/menu/menu.tscn[res://src/beginning/chapters/menu/menu.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

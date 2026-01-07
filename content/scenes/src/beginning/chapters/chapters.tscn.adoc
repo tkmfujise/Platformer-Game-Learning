@@ -233,6 +233,54 @@ _(R::_on_animation_player_animation_finished, N24::animation_finished)
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_1.png
+[link=/assets/assets/images/ui/Chapters/Chapter_1.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_1.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_2.png
+[link=/assets/assets/images/ui/Chapters/Chapter_2.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_2.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_3.png
+[link=/assets/assets/images/ui/Chapters/Chapter_3.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_3.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_4.png
+[link=/assets/assets/images/ui/Chapters/Chapter_4.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_4.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_5.png
+[link=/assets/assets/images/ui/Chapters/Chapter_5.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_5.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_6.png
+[link=/assets/assets/images/ui/Chapters/Chapter_6.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_6.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_7.png
+[link=/assets/assets/images/ui/Chapters/Chapter_7.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_7.png[200, 100] 
+
+[.scene-assets]
+.res://assets/guide/grid_1920x1080.png
+[link=/assets/assets/guide/grid_1920x1080.png] 
+image::/assets/raw/assets/guide/grid_1920x1080.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/Chapter_8.png
+[link=/assets/assets/images/ui/Chapters/Chapter_8.png] 
+image::/assets/raw/assets/images/ui/Chapters/Chapter_8.png[200, 100] 
+
+
+
 === Overridden virtual functions
 ==== _ready
 ```gdscript
@@ -272,7 +320,6 @@ func _input(event: InputEvent) -> void:
 				state = State.UNSELECTED
 				%AnimationPlayer.play("climb_unselected")
 ```
-
 
 
 === Instantiators

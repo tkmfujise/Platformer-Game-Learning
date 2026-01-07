@@ -16,6 +16,13 @@ left to right direction
 ....
 
 
+=== Assets
+[.scene-assets]
+.res://assets/images/stages/Chapter0.png
+[link=/assets/assets/images/stages/Chapter0.png] 
+image::/assets/raw/assets/images/stages/Chapter0.png[200, 100] 
+
+
 
 
 

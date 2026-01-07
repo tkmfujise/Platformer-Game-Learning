@@ -5,6 +5,11 @@ title: assets/images/ui/Joy_A_button.svg
 
 == assets / images / ui / Joy_A_button.svg
 
+=== Attached Scenes
+* link:/scenes/src/beginning/screen/screen.tscn[res://src/beginning/screen/screen.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

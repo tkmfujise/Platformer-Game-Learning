@@ -5,6 +5,11 @@ title: assets/images/ui/Tikect.svg
 
 == assets / images / ui / Tikect.svg
 
+=== Attached Scenes
+* link:/scenes/src/account/account.tscn[res://src/account/account.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]

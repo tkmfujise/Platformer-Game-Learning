@@ -5,6 +5,11 @@ title: assets/images/ui/Strawberry_blank.png
 
 == assets / images / ui / Strawberry_blank.png
 
+=== Attached Scenes
+* link:/scenes/src/beginning/chapters/menu/photo/photo.tscn[res://src/beginning/chapters/menu/photo/photo.tscn]
+
+
+
 
 === Metadata
 [cols="1,1" options="header"]
