@@ -197,7 +197,7 @@ R  ->  T5 : position\n = Vector2(1820, 1500)
 ....
 ---
 
-==== opening
+==== opening (autoplay)
 
 [plantuml]
 ....

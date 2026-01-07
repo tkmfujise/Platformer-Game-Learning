@@ -455,7 +455,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 ....
 ---
 
-==== opening
+==== opening (autoplay)
 
 [plantuml]
 ....

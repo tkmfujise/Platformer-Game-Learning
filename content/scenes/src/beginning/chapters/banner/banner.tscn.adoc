@@ -83,7 +83,7 @@ R  ->  T4 : rotation\n = 0.0
 ....
 ---
 
-==== calm
+==== calm (autoplay)
 
 [plantuml]
 ....

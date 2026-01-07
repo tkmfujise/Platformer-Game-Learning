@@ -497,7 +497,7 @@ R  ->  T1 : position\n = Vector2(150, 25)
 ....
 ---
 
-==== opening
+==== opening (autoplay)
 
 [plantuml]
 ....

@@ -193,7 +193,7 @@ CAUTION: No other scene instantiate this scene.
 NOTE: No signal connections.
 
 === Animations
-==== opening
+==== opening (autoplay)
 
 [plantuml]
 ....
