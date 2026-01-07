@@ -37,7 +37,7 @@ CAUTION: No other scene instantiate this scene.
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-other]#KeyboardHandler# [.node-type.type-other]#Node#
+* [.node-name.type-plain]#KeyboardHandler# [.node-type.type-plain]#Node#
 
 
 === Signal Connections

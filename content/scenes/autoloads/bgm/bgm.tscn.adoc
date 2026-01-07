@@ -45,7 +45,7 @@ CAUTION: No other scene instantiate this scene.
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-other]#BGM# [.node-type.type-other]#Node#
+* [.node-name.type-plain]#BGM# [.node-type.type-plain]#Node#
 ** [.node-name.type-other]#FirstSteps# [.node-type.type-other]#AudioStreamPlayer#
 
 

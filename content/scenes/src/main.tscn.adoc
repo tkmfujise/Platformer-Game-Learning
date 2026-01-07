@@ -135,7 +135,7 @@ CAUTION: No other scene instantiate this scene.
 **** [.node-name.type-control]#ColorRect# [.node-type.type-control]#ColorRect#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 *** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
-** [.node-name.type-other]#FirstStepsBGMPlayable# [.node-type.type-other]#link:/scenes/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn[res://src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn]#
+** [.node-name.type-plain]#FirstStepsBGMPlayable# [.node-type.type-plain]#link:/scenes/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn[res://src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn]#
 
 
 === Signal Connections

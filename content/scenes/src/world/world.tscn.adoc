@@ -83,8 +83,8 @@ _(R::_on_animation_player_animation_finished, N16::animation_finished)
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-3d]#World# [.node-type.type-3d]#Node3D#
-** [.node-name.type-other]#Mountain# [.node-type.type-other]#Node#
-** [.node-name.type-other]#SpotLights# [.node-type.type-other]#Node#
+** [.node-name.type-plain]#Mountain# [.node-type.type-plain]#Node#
+** [.node-name.type-plain]#SpotLights# [.node-type.type-plain]#Node#
 *** [.node-name.type-3d]#Chapter0# [.node-type.type-3d]#SpotLight3D#
 *** [.node-name.type-3d]#Chapter1# [.node-type.type-3d]#SpotLight3D#
 *** [.node-name.type-3d]#Chapter2_1# [.node-type.type-3d]#SpotLight3D#
