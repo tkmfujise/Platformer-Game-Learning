@@ -34,7 +34,7 @@ class N8 as "Strawberry3" <<(M,lightgreen) MarginContainer>> {
 }
 class N9 as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class N10 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N10 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N3

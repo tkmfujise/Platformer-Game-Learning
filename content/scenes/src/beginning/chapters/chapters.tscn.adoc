@@ -197,9 +197,9 @@ class N22 as "Menu" <<(C,lightgreen) Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class N23 as "ChaptersAnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N23 as "ChaptersAnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N24 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N24 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2

@@ -29,7 +29,7 @@ class N1 as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
 class N2 as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class N3 as "SubViewport" <<(S,darkgray) SubViewport>> {
+class N3 as "SubViewport" <<(S,yellow) SubViewport>> {
 }
 class N4 as "World" <<(N,hotpink) Node3D>> {
   * CameraNode
@@ -174,7 +174,7 @@ class N21 as "Chapters" <<(C,lightgreen) Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class N22 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N22 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N5

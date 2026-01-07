@@ -203,7 +203,7 @@ class N47 as "ClosingCurtain" <<(C,lightgreen) Control>> {
   + play()
   + _on_animation_player_animation_finished()
 }
-class N48 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N48 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4

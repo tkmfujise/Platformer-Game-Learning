@@ -26,7 +26,7 @@ class N5 as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
 }
 class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N7 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2

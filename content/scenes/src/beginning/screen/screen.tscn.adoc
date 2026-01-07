@@ -42,15 +42,15 @@ class N11 as "JoyAButton" <<(S,lightskyblue) Sprite2D>> {
 }
 class N12 as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class N13 as "SubViewport" <<(S,darkgray) SubViewport>> {
+class N13 as "SubViewport" <<(S,yellow) SubViewport>> {
 }
 class N14 as "Show" <<(N,hotpink) Node3D>> {
 }
 class N15 as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
-class N16 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N16 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N17 as "AnimationTree" <<(A,darkgray) AnimationTree>> {
+class N17 as "AnimationTree" <<(A,yellow) AnimationTree>> {
 }
 R --o N1
 R --o N2

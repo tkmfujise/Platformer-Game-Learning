@@ -22,7 +22,7 @@ class N5 as "Body" <<(B,lightskyblue) Bone2D>> {
 }
 class N6 as "Edge" <<(B,lightskyblue) Bone2D>> {
 }
-class N7 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N3

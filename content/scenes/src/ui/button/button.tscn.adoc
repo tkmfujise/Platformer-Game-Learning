@@ -22,7 +22,7 @@ class R as "Button" <<(B,lightgreen) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N1 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N1 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

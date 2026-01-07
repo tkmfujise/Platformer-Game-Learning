@@ -80,9 +80,9 @@ class N14 as "Camera" <<(C,lightskyblue) Camera2D>> {
   + shake()
   + shaking()
 }
-class N15 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N15 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N16 as "AnimationTree" <<(A,darkgray) AnimationTree>> {
+class N16 as "AnimationTree" <<(A,yellow) AnimationTree>> {
 }
 R --o N1
 R --o N9

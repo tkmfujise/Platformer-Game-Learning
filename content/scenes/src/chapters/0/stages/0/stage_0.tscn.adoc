@@ -39,7 +39,7 @@ class N7 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
 ---
   + corner()
 }
-class N8 as "StageGround0" <<(T,darkgray) TileMapLayer>> {
+class N8 as "StageGround0" <<(T,yellow) TileMapLayer>> {
 }
 class N9 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
 }
@@ -87,7 +87,7 @@ class N12 as "Weather" <<(N,lightskyblue) Node2D>> {
   + _process()
   + current_camera()
 }
-class N13 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N13 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2

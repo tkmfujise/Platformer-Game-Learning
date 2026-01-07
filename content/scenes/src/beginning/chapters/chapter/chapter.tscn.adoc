@@ -23,7 +23,7 @@ class N1 as "Placeholder" <<(T,lightgreen) TextureRect>> {
 }
 class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N3 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N3 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2

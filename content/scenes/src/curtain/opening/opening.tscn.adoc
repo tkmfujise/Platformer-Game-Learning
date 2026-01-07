@@ -25,7 +25,7 @@ class N4 as "Pattern2" <<(C,lightgreen) ColorRect>> {
 }
 class N5 as "Pattern3" <<(C,lightgreen) ColorRect>> {
 }
-class N6 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N6 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4

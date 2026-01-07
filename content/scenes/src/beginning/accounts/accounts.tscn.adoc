@@ -119,7 +119,7 @@ class N4 as "Account3" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N5 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N5 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N5

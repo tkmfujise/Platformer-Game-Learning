@@ -22,7 +22,7 @@ class R as "BGM" <<(N,darkgray) Node>> {
   + change()
   + first_steps()
 }
-class N1 as "FirstSteps" <<(A,darkgray) AudioStreamPlayer>> {
+class N1 as "FirstSteps" <<(A,yellow) AudioStreamPlayer>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

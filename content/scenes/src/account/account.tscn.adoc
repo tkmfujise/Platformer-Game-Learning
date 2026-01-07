@@ -217,7 +217,7 @@ class N72 as "AssistModeButton" <<(B,lightgreen) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N73 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N73 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N73

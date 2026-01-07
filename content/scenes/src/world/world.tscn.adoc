@@ -37,7 +37,7 @@ class N8 as "Chapter8" <<(S,hotpink) SpotLight3D>> {
 }
 class N9 as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
 }
-class N10 as "WorldEnvironment" <<(W,darkgray) WorldEnvironment>> {
+class N10 as "WorldEnvironment" <<(W,yellow) WorldEnvironment>> {
 }
 class N11 as "Path3D" <<(P,hotpink) Path3D>> {
 }
@@ -49,7 +49,7 @@ class N14 as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
 class N15 as "Mist" <<(N,lightskyblue) Node2D>> {
 }
-class N16 as "AnimationPlayer" <<(A,darkgray) AnimationPlayer>> {
+class N16 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
