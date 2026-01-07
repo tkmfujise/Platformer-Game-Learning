@@ -119,7 +119,7 @@ func _on_reload_button_pressed() -> void:
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -133,14 +133,14 @@ func _on_reload_button_pressed() -> void:
 |*script* |`ExtResource("1_x5h8o")`
 |*full_resource* |`ExtResource("3_n6u80")`
 |===
-.$Chapters properties
+.#$Chapters# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |*layout_mode* |`1`
 |===
-.$ReloadButton properties
+.#$ReloadButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

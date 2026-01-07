@@ -174,7 +174,7 @@ R  ->  T2 : material\n = 1.0
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -188,13 +188,13 @@ R  ->  T2 : material\n = 1.0
 |*grow_vertical* |`2`
 |*script* |`ExtResource("1_56cl0")`
 |===
-.$Pattern1 properties
+.#$Pattern1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*visible* |`false`
 |===
-.$Pattern1/LeftCurtain properties
+.#$Pattern1/LeftCurtain# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -202,7 +202,7 @@ R  ->  T2 : material\n = 1.0
 |*polygon* |`PackedVector2Array(0, 0, 0, 1080, 960, 1080, 9, 548, 960, 0)`
 |*uv* |`PackedVector2Array(572.5, -87.75, 575.5, -85.75)`
 |===
-.$Pattern1/RightCurtain properties
+.#$Pattern1/RightCurtain# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -210,7 +210,7 @@ R  ->  T2 : material\n = 1.0
 |*polygon* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1074)`
 |*uv* |`PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 960, 540, 960, 1080, 492, 40.75)`
 |===
-.$Pattern2 properties
+.#$Pattern2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -225,7 +225,7 @@ R  ->  T2 : material\n = 1.0
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$Pattern3 properties
+.#$Pattern3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -238,7 +238,7 @@ R  ->  T2 : material\n = 1.0
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$AnimationPlayer properties
+.#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

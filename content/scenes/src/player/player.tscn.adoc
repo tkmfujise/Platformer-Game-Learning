@@ -797,7 +797,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -805,7 +805,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*script* |`ExtResource("1_5irfl")`
 |*GhostEffect* |`ExtResource("2_xv5vk")`
 |===
-.$Sprites properties
+.#$Sprites# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -813,13 +813,13 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(-12, -72)`
 |*scale* |`Vector2(6, 6)`
 |===
-.$Sprites/SpriteStates properties
+.#$Sprites/SpriteStates# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
-.$Sprites/SpriteStates/IdleSprite2D properties
+.#$Sprites/SpriteStates/IdleSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -828,7 +828,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*hframes* |`27`
 |*frame* |`21`
 |===
-.$Sprites/SpriteStates/RunSprite2D properties
+.#$Sprites/SpriteStates/RunSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -837,7 +837,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*texture* |`ExtResource("3_htsrw")`
 |*hframes* |`8`
 |===
-.$Sprites/SpriteStates/JumpSprite2D properties
+.#$Sprites/SpriteStates/JumpSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -846,7 +846,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*texture* |`ExtResource("4_gf1li")`
 |*hframes* |`2`
 |===
-.$Sprites/SpriteStates/FallSprite2D properties
+.#$Sprites/SpriteStates/FallSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -855,14 +855,14 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*texture* |`ExtResource("5_vvr2x")`
 |*hframes* |`2`
 |===
-.$Sprites/SpriteEffects properties
+.#$Sprites/SpriteEffects# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |*position* |`Vector2(2.1666667, 4)`
 |===
-.$Sprites/SpriteEffects/BurstSprite2D properties
+.#$Sprites/SpriteEffects/BurstSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -872,21 +872,21 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*hframes* |`53`
 |*frame* |`11`
 |===
-.$CollisionShape2D properties
+.#$CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*position* |`Vector2(2, -51)`
 |*shape* |`SubResource("CapsuleShape2D_opnj4")`
 |===
-.$FailureCollision properties
+.#$FailureCollision# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*collision_layer* |`8`
 |*collision_mask* |`8`
 |===
-.$FailureCollision/CollisionShape2D properties
+.#$FailureCollision/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -894,14 +894,14 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(0, -56)`
 |*shape* |`SubResource("CapsuleShape2D_l271a")`
 |===
-.$FrameSubject properties
+.#$FrameSubject# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*collision_layer* |`4`
 |*collision_mask* |`4`
 |===
-.$FrameSubject/CollisionShape2D properties
+.#$FrameSubject/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -909,13 +909,13 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(3.5, -51.5)`
 |*shape* |`SubResource("RectangleShape2D_x42xx")`
 |===
-.$Camera properties
+.#$Camera# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
-.$AnimationPlayer properties
+.#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -924,7 +924,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 &"": SubResource("AnimationLibrary_u5nx7")
 }`
 |===
-.$AnimationTree properties
+.#$AnimationTree# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

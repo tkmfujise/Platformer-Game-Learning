@@ -36,7 +36,7 @@ NOTE: No signal connections.
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

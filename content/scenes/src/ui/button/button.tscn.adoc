@@ -193,7 +193,7 @@ R  ->  R : position\n = Vector2(0, 0)
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -209,7 +209,7 @@ R  ->  R : position\n = Vector2(0, 0)
 |*focus_color_1* |`Color(0.5, 1, 0.5, 1)`
 |*focus_color_2* |`Color(1, 1, 0.5, 1)`
 |===
-.$AnimationPlayer properties
+.#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

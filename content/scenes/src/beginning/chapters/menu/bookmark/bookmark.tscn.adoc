@@ -144,7 +144,7 @@ R  ->  T2 : scale\n = Vector2(1, 1)
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -159,7 +159,7 @@ R  ->  T2 : scale\n = Vector2(1, 1)
 |*focus_mode* |`2`
 |*script* |`ExtResource("1_mnmi2")`
 |===
-.$Bookmark properties
+.#$Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -167,13 +167,13 @@ R  ->  T2 : scale\n = Vector2(1, 1)
 |*position* |`Vector2(70, 106)`
 |*texture* |`ExtResource("2_12ipe")`
 |===
-.$Bookmark/Sprite2D properties
+.#$Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("2_hvo0s")`
 |===
-.$AnimationPlayer properties
+.#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

@@ -252,7 +252,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -265,7 +265,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*script* |`ExtResource("1_nlnab")`
 |*MenuScenePath* |`res://src/beginning/menu/menu.tscn`
 |===
-.$Background properties
+.#$Background# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -277,7 +277,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_vertical* |`2`
 |*color* |`Color(0.186624, 0.185867, 0.286366, 1)`
 |===
-.$Author properties
+.#$Author# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -291,7 +291,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$Author/Container properties
+.#$Author/Container# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -308,14 +308,14 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$Author/Container/NameContainer properties
+.#$Author/Container/NameContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |*theme_override_constants/margin_bottom* |`80`
 |===
-.$Author/Container/NameContainer/Name properties
+.#$Author/Container/NameContainer/Name# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -325,7 +325,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*text* |`tkmfujise`
 |*horizontal_alignment* |`1`
 |===
-.$Author/Container/Presents properties
+.#$Author/Container/Presents# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -335,7 +335,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*text* |`presents`
 |*horizontal_alignment* |`1`
 |===
-.$Title properties
+.#$Title# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -347,7 +347,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$Title/TitleContainer properties
+.#$Title/TitleContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -358,14 +358,14 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$Title/TitleContainer/TitleLogo properties
+.#$Title/TitleContainer/TitleLogo# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*position* |`Vector2(950, 522)`
 |*texture* |`ExtResource("3_sre7x")`
 |===
-.$Title/ButtonContainer properties
+.#$Title/ButtonContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -382,13 +382,13 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*theme_override_constants/margin_right* |`100`
 |*theme_override_constants/margin_bottom* |`100`
 |===
-.$Title/ButtonContainer/JoyAButton properties
+.#$Title/ButtonContainer/JoyAButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("4_vi604")`
 |===
-.$SubViewportContainer properties
+.#$SubViewportContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -399,7 +399,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
-.$SubViewportContainer/SubViewport properties
+.#$SubViewportContainer/SubViewport# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -408,7 +408,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*size* |`Vector2i(1920, 1080)`
 |*render_target_update_mode* |`4`
 |===
-.$Blinder properties
+.#$Blinder# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -420,7 +420,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_vertical* |`2`
 |*color* |`Color(0, 0, 0, 0)`
 |===
-.$AnimationPlayer properties
+.#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -430,7 +430,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 }`
 |*autoplay* |`opening`
 |===
-.$AnimationTree properties
+.#$AnimationTree# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

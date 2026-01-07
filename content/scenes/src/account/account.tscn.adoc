@@ -591,7 +591,7 @@ R  ->o  R : focus_top\n = true
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -605,14 +605,14 @@ R  ->o  R : focus_top\n = true
 |*script* |`ExtResource("1_g0hv4")`
 |*resource* |`ExtResource("3_23ixj")`
 |===
-.$VBoxContainer properties
+.#$VBoxContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |*size_flags_horizontal* |`3`
 |===
-.$VBoxContainer/MainContainer properties
+.#$VBoxContainer/MainContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -624,7 +624,7 @@ R  ->o  R : focus_top\n = true
 |*theme_override_constants/margin_right* |`200`
 |*theme_override_constants/margin_bottom* |`25`
 |===
-.$VBoxContainer/MainContainer/Background properties
+.#$VBoxContainer/MainContainer/Background# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -633,20 +633,20 @@ R  ->o  R : focus_top\n = true
 |*size_flags_horizontal* |`3`
 |*color* |`Color(0.726355, 0.910634, 0.938029, 0.381)`
 |===
-.$VBoxContainer/MainContainer/TicketContainer properties
+.#$VBoxContainer/MainContainer/TicketContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture_filter* |`2`
 |*position* |`Vector2(200, 25)`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/Tikect properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/Tikect# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -655,7 +655,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.873, 0.833333)`
 |*texture* |`ExtResource("3_tcswg")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -669,7 +669,7 @@ R  ->o  R : focus_top\n = true
 |*offset_bottom* |`191.0`
 |*theme* |`ExtResource("1_r7v0f")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder/Label properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder/Label# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -683,13 +683,13 @@ R  ->o  R : focus_top\n = true
 |*text* |`New Game`
 |*horizontal_alignment* |`1`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/Skull properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/Skull# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -697,7 +697,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.431641, 0.431641)`
 |*texture* |`ExtResource("4_ixd0n")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/Multiplication properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/Multiplication# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -705,7 +705,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.161157, 0.161157)`
 |*texture* |`ExtResource("6_q55sp")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -716,7 +716,7 @@ R  ->o  R : focus_top\n = true
 |*offset_bottom* |`200.0`
 |*theme* |`ExtResource("1_r7v0f")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalFailureCount properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalFailureCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -728,7 +728,7 @@ R  ->o  R : focus_top\n = true
 |*offset_bottom* |`190.0`
 |*text* |`123`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalPlayTime properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalPlayTime# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -745,7 +745,7 @@ R  ->o  R : focus_top\n = true
 |*horizontal_alignment* |`2`
 |*vertical_alignment* |`1`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette1 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -753,7 +753,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette2 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -761,7 +761,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette3 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -769,7 +769,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette4 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -777,7 +777,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette5 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -785,7 +785,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette6 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -793,7 +793,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.306)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette7 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -801,7 +801,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette8 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -809,7 +809,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361, 0.361)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart1 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -817,7 +817,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart2 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -825,7 +825,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart3 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -833,7 +833,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart4 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -841,7 +841,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart5 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -849,7 +849,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart6 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -857,7 +857,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart7 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -865,7 +865,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart8 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -873,13 +873,13 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("7_ymbo3")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette1 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -887,7 +887,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette2 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -895,7 +895,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette3 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -903,7 +903,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette4 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -911,7 +911,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette5 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -919,7 +919,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette6 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -927,7 +927,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette7 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -935,7 +935,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette8 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -943,13 +943,13 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.458984, 0.458984)`
 |*texture* |`ExtResource("5_wglsh")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart1 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -957,7 +957,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart2 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -965,7 +965,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart3 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -973,7 +973,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart4 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -981,7 +981,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart5 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -989,7 +989,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart6 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -997,7 +997,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart7 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1005,7 +1005,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart8 properties
+.#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1013,20 +1013,20 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.361328, 0.361328)`
 |*texture* |`ExtResource("6_ectpy")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer properties
+.#$VBoxContainer/MainContainer/CoverContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture_filter* |`2`
 |*position* |`Vector2(1720, 25)`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/TikectCover properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/TikectCover# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1034,13 +1034,13 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.878, 0.836667)`
 |*texture* |`ExtResource("2_t0v8v")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Face properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Face# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1049,7 +1049,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.677092, 0.691006)`
 |*texture* |`ExtResource("5_0qmxq")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeLeftTop properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeLeftTop# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1058,7 +1058,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(1.30551, 1.09847)`
 |*texture* |`ExtResource("6_hjrdv")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeRightBottom properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeRightBottom# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1067,7 +1067,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(1.2486, 1.12155)`
 |*texture* |`ExtResource("6_hjrdv")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/FacePhotoMask properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/FacePhotoMask# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1076,7 +1076,7 @@ R  ->o  R : focus_top\n = true
 |*blend_mode* |`2`
 |*texture* |`ExtResource("7_80d7o")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Strawberry properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Strawberry# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1084,7 +1084,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.279297, 0.279297)`
 |*texture* |`ExtResource("8_rpibu")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Multiplication properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Multiplication# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1092,7 +1092,7 @@ R  ->o  R : focus_top\n = true
 |*scale* |`Vector2(0.161157, 0.161157)`
 |*texture* |`ExtResource("6_q55sp")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1103,7 +1103,7 @@ R  ->o  R : focus_top\n = true
 |*size_flags_horizontal* |`0`
 |*theme* |`ExtResource("1_r7v0f")`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/PlayerName properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/PlayerName# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1125,7 +1125,7 @@ R  ->o  R : focus_top\n = true
 |*text* |`Madeline`
 |*horizontal_alignment* |`1`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/LatestChapterName properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/LatestChapterName# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1147,7 +1147,7 @@ R  ->o  R : focus_top\n = true
 |*text* |`1st Chapter`
 |*horizontal_alignment* |`1`
 |===
-.$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/ObtainedStrawberryCount properties
+.#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/ObtainedStrawberryCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1159,7 +1159,7 @@ R  ->o  R : focus_top\n = true
 |*offset_bottom* |`195.0`
 |*text* |`123`
 |===
-.$VBoxContainer/MenuContainer properties
+.#$VBoxContainer/MenuContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1169,20 +1169,20 @@ R  ->o  R : focus_top\n = true
 |*size_flags_vertical* |`2`
 |*theme_override_constants/margin_top* |`250`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer properties
+.#$VBoxContainer/MenuContainer/VBoxContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer properties
+.#$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |*alignment* |`1`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton properties
+.#$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1194,14 +1194,14 @@ R  ->o  R : focus_top\n = true
 |*icon* |`null`
 |*focus_move_direction* |`2`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer properties
+.#$VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |*alignment* |`1`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer/ChangeNameButton properties
+.#$VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer/ChangeNameButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1216,14 +1216,14 @@ R  ->o  R : focus_top\n = true
 |*icon* |`null`
 |*focus_move_direction* |`2`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer properties
+.#$VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |*alignment* |`1`
 |===
-.$VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer/AssistModeButton properties
+.#$VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer/AssistModeButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -1236,7 +1236,7 @@ R  ->o  R : focus_top\n = true
 |*icon* |`null`
 |*focus_move_direction* |`2`
 |===
-.$AnimationPlayer properties
+.#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value

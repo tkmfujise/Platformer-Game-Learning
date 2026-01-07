@@ -50,14 +50,14 @@ NOTE: No signal connections.
 
 
 === Properties
-.Root properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*scale* |`Vector2(6, 6)`
 |*script* |`ExtResource("1_4vpau")`
 |===
-.$Sprite2D properties
+.#$Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
