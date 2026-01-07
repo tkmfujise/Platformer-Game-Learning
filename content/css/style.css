@@ -35,7 +35,7 @@ body>main>aside {
 body>main>aside>nav {
   padding: 0.5rem 1rem 2rem 2rem;
   position: sticky;
-  top: 0;
+  top: 3.5rem;
   max-height: 90vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -203,7 +203,7 @@ table.tableblock caption.title {
     width: 70vw;
     position: fixed;
     visibility: hidden;
-    z-index: 1;
+    z-index: 3;
   }
   body>main>aside.open {
     visibility: visible;
@@ -211,6 +211,10 @@ table.tableblock caption.title {
 
   body>main>article.content {
     width: 100vw;
+  }
+
+  body>main>aside>nav {
+    top: 4.5rem;
   }
 
   .visible-if-portrait {
