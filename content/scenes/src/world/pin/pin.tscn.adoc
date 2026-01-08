@@ -24,14 +24,14 @@ left to right direction
 
 === Assets
 [.scene-assets]
-.res://assets/images/world/pin/Pin.svg
-[link=/assets/assets/images/world/pin/Pin.svg] 
-image::/assets/raw/assets/images/world/pin/Pin.svg[200, 100] 
-
-[.scene-assets]
 .res://assets/images/world/pin/running_in_pin.png
 [link=/assets/assets/images/world/pin/running_in_pin.png] 
 image::/assets/raw/assets/images/world/pin/running_in_pin.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/world/pin/Pin.svg
+[link=/assets/assets/images/world/pin/Pin.svg] 
+image::/assets/raw/assets/images/world/pin/Pin.svg[200, 100] 
 
 
 

@@ -287,9 +287,9 @@ image::/assets/raw/assets/images/ui/Chapters/menu/Banner.png[200, 100]
 image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100] 
 
 [.scene-assets]
-.res://assets/images/ui/Chapters/menu/Cassette.svg
-[link=/assets/assets/images/ui/Chapters/menu/Cassette.svg] 
-image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[200, 100] 
+.res://assets/images/ui/Strawberry.png
+[link=/assets/assets/images/ui/Strawberry.png] 
+image::/assets/raw/assets/images/ui/Strawberry.png[200, 100] 
 
 [.scene-assets]
 .res://assets/images/ui/Multiplication.svg
@@ -297,24 +297,24 @@ image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[200, 100]
 image::/assets/raw/assets/images/ui/Multiplication.svg[200, 100] 
 
 [.scene-assets]
-.res://assets/images/ui/Strawberry.png
-[link=/assets/assets/images/ui/Strawberry.png] 
-image::/assets/raw/assets/images/ui/Strawberry.png[200, 100] 
-
-[.scene-assets]
 .res://assets/images/ui/Skull.svg
 [link=/assets/assets/images/ui/Skull.svg] 
 image::/assets/raw/assets/images/ui/Skull.svg[200, 100] 
 
 [.scene-assets]
-.res://assets/images/ui/Chapters/menu/Star.svg
-[link=/assets/assets/images/ui/Chapters/menu/Star.svg] 
-image::/assets/raw/assets/images/ui/Chapters/menu/Star.svg[200, 100] 
+.res://assets/images/ui/Chapters/menu/Cassette.svg
+[link=/assets/assets/images/ui/Chapters/menu/Cassette.svg] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[200, 100] 
 
 [.scene-assets]
 .res://assets/images/ui/Chapters/menu/bookmark_yellow.png
 [link=/assets/assets/images/ui/Chapters/menu/bookmark_yellow.png] 
 image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_yellow.png[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Chapters/menu/Star.svg
+[link=/assets/assets/images/ui/Chapters/menu/Star.svg] 
+image::/assets/raw/assets/images/ui/Chapters/menu/Star.svg[200, 100] 
 
 [.scene-assets]
 .res://assets/images/ui/Chapters/menu/bookmark_navy.png

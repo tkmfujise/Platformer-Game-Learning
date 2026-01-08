@@ -59,6 +59,11 @@ left to right direction
 image::/assets/raw/assets/images/ui/Chapters/menu/Photo.svg[200, 100] 
 
 [.scene-assets]
+.res://data/chapters/photos/0/Dummy.png
+[link=/assets/data/chapters/photos/0/Dummy.png] 
+image::/assets/raw/data/chapters/photos/0/Dummy.png[200, 100] 
+
+[.scene-assets]
 .res://assets/images/ui/Strawberry.png
 [link=/assets/assets/images/ui/Strawberry.png] 
 image::/assets/raw/assets/images/ui/Strawberry.png[200, 100] 
@@ -67,11 +72,6 @@ image::/assets/raw/assets/images/ui/Strawberry.png[200, 100]
 .res://assets/images/ui/Strawberry_blank.png
 [link=/assets/assets/images/ui/Strawberry_blank.png] 
 image::/assets/raw/assets/images/ui/Strawberry_blank.png[200, 100] 
-
-[.scene-assets]
-.res://data/chapters/photos/0/Dummy.png
-[link=/assets/data/chapters/photos/0/Dummy.png] 
-image::/assets/raw/data/chapters/photos/0/Dummy.png[200, 100] 
 
 
 

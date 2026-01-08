@@ -270,14 +270,14 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_6.png[200, 100]
 image::/assets/raw/assets/images/ui/Chapters/Chapter_7.png[200, 100] 
 
 [.scene-assets]
-.res://assets/guide/grid_1920x1080.png
-[link=/assets/assets/guide/grid_1920x1080.png] 
-image::/assets/raw/assets/guide/grid_1920x1080.png[200, 100] 
-
-[.scene-assets]
 .res://assets/images/ui/Chapters/Chapter_8.png
 [link=/assets/assets/images/ui/Chapters/Chapter_8.png] 
 image::/assets/raw/assets/images/ui/Chapters/Chapter_8.png[200, 100] 
+
+[.scene-assets]
+.res://assets/guide/grid_1920x1080.png
+[link=/assets/assets/guide/grid_1920x1080.png] 
+image::/assets/raw/assets/guide/grid_1920x1080.png[200, 100] 
 
 
 

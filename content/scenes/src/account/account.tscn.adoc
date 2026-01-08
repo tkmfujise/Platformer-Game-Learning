@@ -304,11 +304,6 @@ _(R::_on_get_started_button_pressed, N68::pressed)
 
 === Assets
 [.scene-assets]
-.res://assets/images/ui/TikectCover.svg
-[link=/assets/assets/images/ui/TikectCover.svg] 
-image::/assets/raw/assets/images/ui/TikectCover.svg[200, 100] 
-
-[.scene-assets]
 .res://assets/images/ui/Tikect.svg
 [link=/assets/assets/images/ui/Tikect.svg] 
 image::/assets/raw/assets/images/ui/Tikect.svg[200, 100] 
@@ -317,6 +312,16 @@ image::/assets/raw/assets/images/ui/Tikect.svg[200, 100]
 .res://assets/images/ui/Skull.svg
 [link=/assets/assets/images/ui/Skull.svg] 
 image::/assets/raw/assets/images/ui/Skull.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Multiplication.svg
+[link=/assets/assets/images/ui/Multiplication.svg] 
+image::/assets/raw/assets/images/ui/Multiplication.svg[200, 100] 
+
+[.scene-assets]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg] 
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[200, 100] 
 
 [.scene-assets]
 .res://assets/images/ui/Cassette.svg
@@ -329,24 +334,19 @@ image::/assets/raw/assets/images/ui/Cassette.svg[200, 100]
 image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100] 
 
 [.scene-assets]
+.res://assets/images/ui/TikectCover.svg
+[link=/assets/assets/images/ui/TikectCover.svg] 
+image::/assets/raw/assets/images/ui/TikectCover.svg[200, 100] 
+
+[.scene-assets]
 .res://assets/images/ui/sellotape.svg
 [link=/assets/assets/images/ui/sellotape.svg] 
 image::/assets/raw/assets/images/ui/sellotape.svg[200, 100] 
 
 [.scene-assets]
-.res://assets/images/ui/Multiplication.svg
-[link=/assets/assets/images/ui/Multiplication.svg] 
-image::/assets/raw/assets/images/ui/Multiplication.svg[200, 100] 
-
-[.scene-assets]
 .res://assets/images/ui/VintagePhotoMask.svg
 [link=/assets/assets/images/ui/VintagePhotoMask.svg] 
 image::/assets/raw/assets/images/ui/VintagePhotoMask.svg[200, 100] 
-
-[.scene-assets]
-.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
-[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg] 
-image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[200, 100] 
 
 [.scene-assets]
 .res://assets/images/ui/Strawberry.png
