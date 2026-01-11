@@ -637,7 +637,7 @@ R  ->o  R : grab_focus_root\n = true
 |*anchor_bottom* a|`1.0`
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
-|*theme* a|`ExtResource("1_w62bb")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |*script* a|link:/scripts/src/beginning/menu/menu.gd[res://src/beginning/menu/menu.gd]
 |===
 [.node-property.node-control]
@@ -709,7 +709,7 @@ R  ->o  R : grab_focus_root\n = true
 |===
 |Name |Value
 |*texture_filter* a|`2`
-|*texture* a|`ExtResource("5_wprcb")`
+|*texture* a|`res://assets/images/beginning/MenuLogo.svg`
 |*offset* a|`Vector2(10, 140)`
 |===
 [.node-property.node-control]

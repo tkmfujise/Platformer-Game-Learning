@@ -68,7 +68,7 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*stream* a|`ExtResource("2_lngrj")`
+|*stream* a|`res://assets/audio/bgm/First_Steps_imitation_1bd.mp3`
 |*parameters/looping* a|`true`
 |===
 

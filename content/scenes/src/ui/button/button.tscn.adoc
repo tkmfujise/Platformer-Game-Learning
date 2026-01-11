@@ -208,7 +208,7 @@ R  ->  R : position\n = Vector2(0, 0)
 |*texture_filter* a|`2`
 |*offset_right* a|`287.0`
 |*offset_bottom* a|`91.0`
-|*theme* a|`ExtResource("1_r8ale")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |*text* a|` Button`
 |*icon* a|[link=/assets/assets/images/ui/Options.svg]
 [.asset-image]

@@ -271,7 +271,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
 |*script* a|link:/scripts/src/beginning/screen/screen.gd[res://src/beginning/screen/screen.gd]
-|*MenuScenePath* a|`res://src/beginning/menu/menu.tscn`
+|*MenuScenePath* a|link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
 |===
 [.node-property.node-control]
 .#$Background# properties
@@ -333,7 +333,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |===
 |Name |Value
 |*layout_mode* a|`2`
-|*theme_override_fonts/font* a|`ExtResource("2_khub0")`
+|*theme_override_fonts/font* a|`res://assets/fonts/Brownhill-Script/Brownhill Script.ttf`
 |*theme_override_font_sizes/font_size* a|`250`
 |*text* a|`tkmfujise`
 |*horizontal_alignment* a|`1`
@@ -380,7 +380,7 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |===
 |Name |Value
 |*position* a|`Vector2(950, 522)`
-|*texture* a|`ExtResource("3_sre7x")`
+|*texture* a|`res://assets/images/beginning/Title.svg`
 |===
 [.node-property.node-control]
 .#$Title/ButtonContainer# properties

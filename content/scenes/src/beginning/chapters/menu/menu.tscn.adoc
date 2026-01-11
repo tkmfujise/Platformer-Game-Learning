@@ -631,9 +631,9 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_right* a|`960.0`
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
-|*theme* a|`ExtResource("1_hp5xr")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |*script* a|link:/scripts/src/beginning/chapters/menu/menu.gd[res://src/beginning/chapters/menu/menu.gd]
-|*chapter_resource* a|`ExtResource("3_54dmq")`
+|*chapter_resource* a|link:/resources/data/chapters/chapter_1.tres[res://data/chapters/chapter_1.tres]
 |===
 [.node-property.node-control]
 .#$BannerBox# properties
@@ -751,7 +751,7 @@ image::/assets/raw/assets/images/ui/Chapters/menu/Banner.png[]
 |*offset_top* a|`247.0`
 |*offset_right* a|`1884.0`
 |*offset_bottom* a|`517.0`
-|*theme* a|`ExtResource("1_hp5xr")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |===
 [.node-property.node-2d]
 .#$SideSelection/CenterBox/BlueHeartIcon# properties
@@ -890,7 +890,7 @@ image::/assets/raw/assets/images/ui/Multiplication.svg[]
 |*offset_right* a|`1920.0`
 |*offset_bottom* a|`753.0`
 |*grow_horizontal* a|`0`
-|*theme* a|`ExtResource("1_hp5xr")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |===
 [.node-property.node-control]
 .#$SideSelection/BottomBox/Label# properties
@@ -966,7 +966,7 @@ image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[]
 |*offset_right* a|`1920.0`
 |*offset_bottom* a|`791.269`
 |*grow_horizontal* a|`0`
-|*theme* a|`ExtResource("1_hp5xr")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |===
 [.node-property.node-control]
 .#$StageSelection/BottomBox/StageLabel# properties

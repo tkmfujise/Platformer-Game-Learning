@@ -645,9 +645,9 @@ R  ->o  R : focus_top\n = true
 |*grow_horizontal* a|`2`
 |*size_flags_vertical* a|`3`
 |*focus_mode* a|`2`
-|*theme* a|`ExtResource("1_r7v0f")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |*script* a|link:/scripts/src/account/account.gd[res://src/account/account.gd]
-|*resource* a|`ExtResource("3_23ixj")`
+|*resource* a|link:/resources/data/test/account/test_account.tres[res://data/test/account/test_account.tres]
 |===
 [.node-property.node-control]
 .#$VBoxContainer# properties
@@ -722,7 +722,7 @@ image::/assets/raw/assets/images/ui/Tikect.svg[]
 |*offset_top* a|`5.0`
 |*offset_right* a|`1319.0`
 |*offset_bottom* a|`191.0`
-|*theme* a|`ExtResource("1_r7v0f")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder/Label# properties
@@ -782,7 +782,7 @@ image::/assets/raw/assets/images/ui/Multiplication.svg[]
 |*offset_left* a|`674.0`
 |*offset_right* a|`1320.0`
 |*offset_bottom* a|`200.0`
-|*theme* a|`ExtResource("1_r7v0f")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalFailureCount# properties
@@ -1288,7 +1288,7 @@ image::/assets/raw/assets/images/ui/TikectCover.svg[]
 |*material* a|`SubResource("CanvasItemMaterial_pgbv1")`
 |*position* a|`Vector2(-1539.67, 102.401)`
 |*scale* a|`Vector2(0.677092, 0.691006)`
-|*texture* a|`ExtResource("5_0qmxq")`
+|*texture* a|`res://assets/images/faces/Player_face.png`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeLeftTop# properties
@@ -1368,7 +1368,7 @@ image::/assets/raw/assets/images/ui/Multiplication.svg[]
 |*offset_left* a|`-1420.0`
 |*offset_right* a|`-1420.0`
 |*size_flags_horizontal* a|`0`
-|*theme* a|`ExtResource("1_r7v0f")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/PlayerName# properties

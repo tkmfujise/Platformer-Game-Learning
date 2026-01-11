@@ -995,7 +995,7 @@ R  ->  T0 : position\n = Vector2(1060, 719)
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_1")`
 |*focus_previous* a|`NodePath(".")`
-|*resource* a|`ExtResource("4_p776p")`
+|*resource* a|link:/resources/data/chapters/chapter_0.tres[res://data/chapters/chapter_0.tres]
 |===
 [.node-property.node-control]
 .#$ChaptersContainer/Chapter_1# properties
@@ -1009,7 +1009,7 @@ R  ->  T0 : position\n = Vector2(1060, 719)
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_2")`
 |*focus_previous* a|`NodePath("../Chapter_0")`
-|*resource* a|`ExtResource("5_nuakg")`
+|*resource* a|link:/resources/data/chapters/chapter_1.tres[res://data/chapters/chapter_1.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_1/Sprite2D# properties
@@ -1034,7 +1034,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_1.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_3")`
 |*focus_previous* a|`NodePath("../Chapter_1")`
-|*resource* a|`ExtResource("7_vbe55")`
+|*resource* a|link:/resources/data/chapters/chapter_2.tres[res://data/chapters/chapter_2.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_2/Sprite2D# properties
@@ -1059,7 +1059,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_2.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_4")`
 |*focus_previous* a|`NodePath("../Chapter_2")`
-|*resource* a|`ExtResource("9_v7ooo")`
+|*resource* a|link:/resources/data/chapters/chapter_3.tres[res://data/chapters/chapter_3.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_3/Sprite2D# properties
@@ -1084,7 +1084,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_3.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_5")`
 |*focus_previous* a|`NodePath("../Chapter_3")`
-|*resource* a|`ExtResource("11_mdrma")`
+|*resource* a|link:/resources/data/chapters/chapter_4.tres[res://data/chapters/chapter_4.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_4/Sprite2D# properties
@@ -1109,7 +1109,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_4.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_6")`
 |*focus_previous* a|`NodePath("../Chapter_4")`
-|*resource* a|`ExtResource("13_y01i1")`
+|*resource* a|link:/resources/data/chapters/chapter_5.tres[res://data/chapters/chapter_5.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_5/Sprite2D# properties
@@ -1134,7 +1134,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_5.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_7")`
 |*focus_previous* a|`NodePath("../Chapter_5")`
-|*resource* a|`ExtResource("15_hivwg")`
+|*resource* a|link:/resources/data/chapters/chapter_6.tres[res://data/chapters/chapter_6.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_6/Sprite2D# properties
@@ -1159,7 +1159,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_6.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath("../Chapter_8")`
 |*focus_previous* a|`NodePath("../Chapter_6")`
-|*resource* a|`ExtResource("17_7yar7")`
+|*resource* a|link:/resources/data/chapters/chapter_7.tres[res://data/chapters/chapter_7.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_7/Sprite2D# properties
@@ -1184,7 +1184,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_7.png[]
 |*focus_neighbor_bottom* a|`NodePath(".")`
 |*focus_next* a|`NodePath(".")`
 |*focus_previous* a|`NodePath("../Chapter_7")`
-|*resource* a|`ExtResource("19_klsch")`
+|*resource* a|link:/resources/data/chapters/chapter_8.tres[res://data/chapters/chapter_8.tres]
 |===
 [.node-property.node-plain]
 .#$ChaptersContainer/Chapter_8/Sprite2D# properties

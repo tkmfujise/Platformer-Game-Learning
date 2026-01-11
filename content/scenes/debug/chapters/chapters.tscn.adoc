@@ -131,9 +131,9 @@ func _on_reload_button_pressed() -> void:
 |*anchor_bottom* a|`1.0`
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
-|*theme* a|`ExtResource("1_4kat4")`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
 |*script* a|link:/scripts/debug/chapters/chapters.gd[res://debug/chapters/chapters.gd]
-|*full_resource* a|`ExtResource("3_n6u80")`
+|*full_resource* a|link:/resources/data/test/account/full_account.tres[res://data/test/account/full_account.tres]
 |===
 [.node-property.node-control]
 .#$Chapters# properties
