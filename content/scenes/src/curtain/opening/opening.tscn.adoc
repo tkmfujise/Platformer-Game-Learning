@@ -8,24 +8,24 @@ title: src/curtain/opening/opening.tscn
 === Diagram
 [plantuml]
 ....
-class R as "OpeningCurtain" <<(C,#90EE90) Control>> {
+class R as "OpeningCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * center
 ---
   + set_center()
   + play()
 }
-class N1 as "Pattern1" <<(N,#87CEFA) Node2D>> {
+class N1 as "Pattern1" <<(N,lightskyblue) Node2D>> {
 }
-class N2 as "LeftCurtain" <<(P,#87CEFA) Polygon2D>> {
+class N2 as "LeftCurtain" <<(P,lightskyblue) Polygon2D>> {
 }
-class N3 as "RightCurtain" <<(P,#87CEFA) Polygon2D>> {
+class N3 as "RightCurtain" <<(P,lightskyblue) Polygon2D>> {
 }
-class N4 as "Pattern2" <<(C,#90EE90) ColorRect>> {
+class N4 as "Pattern2" <<(C,lightgreen) ColorRect>> {
 }
-class N5 as "Pattern3" <<(C,#90EE90) ColorRect>> {
+class N5 as "Pattern3" <<(C,lightgreen) ColorRect>> {
 }
-class N6 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N6 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4

@@ -8,7 +8,7 @@ title: autoloads/keyboard_handler/keyboard_handler.tscn
 === Diagram
 [plantuml]
 ....
-class R as "KeyboardHandler" <<(N,#A9A9A9) Node>> {
+class R as "KeyboardHandler" <<(N,darkgray) Node>> {
 ---
   + _input()
   + handle_mouse_visiblity()

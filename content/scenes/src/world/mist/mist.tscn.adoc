@@ -8,9 +8,9 @@ title: src/world/mist/mist.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Mist" <<(N,#87CEFA) Node2D>> {
+class R as "Mist" <<(N,lightskyblue) Node2D>> {
 }
-class N1 as "Sprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

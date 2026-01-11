@@ -8,7 +8,7 @@ title: src/account/account.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Account" <<(B,#90EE90) BoxContainer>> {
+class R as "Account" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -37,141 +37,141 @@ class R as "Account" <<(B,#90EE90) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N1 as "VBoxContainer" <<(V,#90EE90) VBoxContainer>> {
+class N1 as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class N2 as "MainContainer" <<(M,#90EE90) MarginContainer>> {
+class N2 as "MainContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class N3 as "Background" <<(C,#90EE90) ColorRect>> {
+class N3 as "Background" <<(C,lightgreen) ColorRect>> {
 }
-class N4 as "TicketContainer" <<(B,#90EE90) BoxContainer>> {
+class N4 as "TicketContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N5 as "TicketRoot" <<(N,#87CEFA) Node2D>> {
+class N5 as "TicketRoot" <<(N,lightskyblue) Node2D>> {
 }
-class N6 as "Tikect" <<(S,#87CEFA) Sprite2D>> {
+class N6 as "Tikect" <<(S,lightskyblue) Sprite2D>> {
 }
-class N7 as "TicketSummaryPlaceholder" <<(C,#90EE90) Control>> {
+class N7 as "TicketSummaryPlaceholder" <<(C,lightgreen) Control>> {
 }
-class N8 as "Label" <<(L,#90EE90) Label>> {
+class N8 as "Label" <<(L,lightgreen) Label>> {
 }
-class N9 as "TicketSummary" <<(N,#87CEFA) Node2D>> {
+class N9 as "TicketSummary" <<(N,lightskyblue) Node2D>> {
 }
-class N10 as "Skull" <<(S,#87CEFA) Sprite2D>> {
+class N10 as "Skull" <<(S,lightskyblue) Sprite2D>> {
 }
-class N11 as "Multiplication" <<(S,#87CEFA) Sprite2D>> {
+class N11 as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
 }
-class N12 as "ControlRoot" <<(C,#90EE90) Control>> {
+class N12 as "ControlRoot" <<(C,lightgreen) Control>> {
 }
-class N13 as "TotalFailureCount" <<(L,#90EE90) Label>> {
+class N13 as "TotalFailureCount" <<(L,lightgreen) Label>> {
 }
-class N14 as "TotalPlayTime" <<(L,#90EE90) Label>> {
+class N14 as "TotalPlayTime" <<(L,lightgreen) Label>> {
 }
-class N15 as "CassettesPlaceholder" <<(N,#87CEFA) Node2D>> {
+class N15 as "CassettesPlaceholder" <<(N,lightskyblue) Node2D>> {
 }
-class N16 as "Cassette1" <<(S,#87CEFA) Sprite2D>> {
+class N16 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
 }
-class N17 as "Cassette2" <<(S,#87CEFA) Sprite2D>> {
+class N17 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
 }
-class N18 as "Cassette3" <<(S,#87CEFA) Sprite2D>> {
+class N18 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
 }
-class N19 as "Cassette4" <<(S,#87CEFA) Sprite2D>> {
+class N19 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
 }
-class N20 as "Cassette5" <<(S,#87CEFA) Sprite2D>> {
+class N20 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
 }
-class N21 as "Cassette6" <<(S,#87CEFA) Sprite2D>> {
+class N21 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
 }
-class N22 as "Cassette7" <<(S,#87CEFA) Sprite2D>> {
+class N22 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
 }
-class N23 as "Cassette8" <<(S,#87CEFA) Sprite2D>> {
+class N23 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
 }
-class N24 as "BlueHeartsPlaceh1older" <<(N,#87CEFA) Node2D>> {
+class N24 as "BlueHeartsPlaceh1older" <<(N,lightskyblue) Node2D>> {
 }
-class N25 as "BlueHeart1" <<(S,#87CEFA) Sprite2D>> {
+class N25 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
 }
-class N26 as "BlueHeart2" <<(S,#87CEFA) Sprite2D>> {
+class N26 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
 }
-class N27 as "BlueHeart3" <<(S,#87CEFA) Sprite2D>> {
+class N27 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
 }
-class N28 as "BlueHeart4" <<(S,#87CEFA) Sprite2D>> {
+class N28 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
 }
-class N29 as "BlueHeart5" <<(S,#87CEFA) Sprite2D>> {
+class N29 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
 }
-class N30 as "BlueHeart6" <<(S,#87CEFA) Sprite2D>> {
+class N30 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
 }
-class N31 as "BlueHeart7" <<(S,#87CEFA) Sprite2D>> {
+class N31 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
 }
-class N32 as "BlueHeart8" <<(S,#87CEFA) Sprite2D>> {
+class N32 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
 }
-class N33 as "ObtainedCassettes" <<(N,#87CEFA) Node2D>> {
+class N33 as "ObtainedCassettes" <<(N,lightskyblue) Node2D>> {
 }
-class N34 as "Cassette1" <<(S,#87CEFA) Sprite2D>> {
+class N34 as "Cassette1" <<(S,lightskyblue) Sprite2D>> {
 }
-class N35 as "Cassette2" <<(S,#87CEFA) Sprite2D>> {
+class N35 as "Cassette2" <<(S,lightskyblue) Sprite2D>> {
 }
-class N36 as "Cassette3" <<(S,#87CEFA) Sprite2D>> {
+class N36 as "Cassette3" <<(S,lightskyblue) Sprite2D>> {
 }
-class N37 as "Cassette4" <<(S,#87CEFA) Sprite2D>> {
+class N37 as "Cassette4" <<(S,lightskyblue) Sprite2D>> {
 }
-class N38 as "Cassette5" <<(S,#87CEFA) Sprite2D>> {
+class N38 as "Cassette5" <<(S,lightskyblue) Sprite2D>> {
 }
-class N39 as "Cassette6" <<(S,#87CEFA) Sprite2D>> {
+class N39 as "Cassette6" <<(S,lightskyblue) Sprite2D>> {
 }
-class N40 as "Cassette7" <<(S,#87CEFA) Sprite2D>> {
+class N40 as "Cassette7" <<(S,lightskyblue) Sprite2D>> {
 }
-class N41 as "Cassette8" <<(S,#87CEFA) Sprite2D>> {
+class N41 as "Cassette8" <<(S,lightskyblue) Sprite2D>> {
 }
-class N42 as "ObtainedBlueHearts" <<(N,#87CEFA) Node2D>> {
+class N42 as "ObtainedBlueHearts" <<(N,lightskyblue) Node2D>> {
 }
-class N43 as "BlueHeart1" <<(S,#87CEFA) Sprite2D>> {
+class N43 as "BlueHeart1" <<(S,lightskyblue) Sprite2D>> {
 }
-class N44 as "BlueHeart2" <<(S,#87CEFA) Sprite2D>> {
+class N44 as "BlueHeart2" <<(S,lightskyblue) Sprite2D>> {
 }
-class N45 as "BlueHeart3" <<(S,#87CEFA) Sprite2D>> {
+class N45 as "BlueHeart3" <<(S,lightskyblue) Sprite2D>> {
 }
-class N46 as "BlueHeart4" <<(S,#87CEFA) Sprite2D>> {
+class N46 as "BlueHeart4" <<(S,lightskyblue) Sprite2D>> {
 }
-class N47 as "BlueHeart5" <<(S,#87CEFA) Sprite2D>> {
+class N47 as "BlueHeart5" <<(S,lightskyblue) Sprite2D>> {
 }
-class N48 as "BlueHeart6" <<(S,#87CEFA) Sprite2D>> {
+class N48 as "BlueHeart6" <<(S,lightskyblue) Sprite2D>> {
 }
-class N49 as "BlueHeart7" <<(S,#87CEFA) Sprite2D>> {
+class N49 as "BlueHeart7" <<(S,lightskyblue) Sprite2D>> {
 }
-class N50 as "BlueHeart8" <<(S,#87CEFA) Sprite2D>> {
+class N50 as "BlueHeart8" <<(S,lightskyblue) Sprite2D>> {
 }
-class N51 as "CoverContainer" <<(B,#90EE90) BoxContainer>> {
+class N51 as "CoverContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N52 as "CoverRoot" <<(N,#87CEFA) Node2D>> {
+class N52 as "CoverRoot" <<(N,lightskyblue) Node2D>> {
 }
-class N53 as "TikectCover" <<(S,#87CEFA) Sprite2D>> {
+class N53 as "TikectCover" <<(S,lightskyblue) Sprite2D>> {
 }
-class N54 as "CoverSummary" <<(N,#87CEFA) Node2D>> {
+class N54 as "CoverSummary" <<(N,lightskyblue) Node2D>> {
 }
-class N55 as "Face" <<(S,#87CEFA) Sprite2D>> {
+class N55 as "Face" <<(S,lightskyblue) Sprite2D>> {
 }
-class N56 as "SellotapeLeftTop" <<(S,#87CEFA) Sprite2D>> {
+class N56 as "SellotapeLeftTop" <<(S,lightskyblue) Sprite2D>> {
 }
-class N57 as "SellotapeRightBottom" <<(S,#87CEFA) Sprite2D>> {
+class N57 as "SellotapeRightBottom" <<(S,lightskyblue) Sprite2D>> {
 }
-class N58 as "FacePhotoMask" <<(P,#87CEFA) PointLight2D>> {
+class N58 as "FacePhotoMask" <<(P,lightskyblue) PointLight2D>> {
 }
-class N59 as "Strawberry" <<(S,#87CEFA) Sprite2D>> {
+class N59 as "Strawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class N60 as "Multiplication" <<(S,#87CEFA) Sprite2D>> {
+class N60 as "Multiplication" <<(S,lightskyblue) Sprite2D>> {
 }
-class N61 as "ControlRoot" <<(C,#90EE90) Control>> {
+class N61 as "ControlRoot" <<(C,lightgreen) Control>> {
 }
-class N62 as "PlayerName" <<(L,#90EE90) Label>> {
+class N62 as "PlayerName" <<(L,lightgreen) Label>> {
 }
-class N63 as "LatestChapterName" <<(L,#90EE90) Label>> {
+class N63 as "LatestChapterName" <<(L,lightgreen) Label>> {
 }
-class N64 as "ObtainedStrawberryCount" <<(L,#90EE90) Label>> {
+class N64 as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class N65 as "MenuContainer" <<(M,#90EE90) MarginContainer>> {
+class N65 as "MenuContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class N66 as "VBoxContainer" <<(V,#90EE90) VBoxContainer>> {
+class N66 as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class N67 as "GetStartedContainer" <<(B,#90EE90) BoxContainer>> {
+class N67 as "GetStartedContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N68 as "GetStartedButton" <<(B,#90EE90) Button>> {
+class N68 as "GetStartedButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -185,9 +185,9 @@ class N68 as "GetStartedButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N69 as "ChangeNameContainer" <<(B,#90EE90) BoxContainer>> {
+class N69 as "ChangeNameContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N70 as "ChangeNameButton" <<(B,#90EE90) Button>> {
+class N70 as "ChangeNameButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -201,9 +201,9 @@ class N70 as "ChangeNameButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N71 as "AssistModeContainer" <<(B,#90EE90) BoxContainer>> {
+class N71 as "AssistModeContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N72 as "AssistModeButton" <<(B,#90EE90) Button>> {
+class N72 as "AssistModeButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -217,7 +217,7 @@ class N72 as "AssistModeButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N73 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N73 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N73

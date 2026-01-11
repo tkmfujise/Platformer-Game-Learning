@@ -8,7 +8,7 @@ title: src/beginning/screen/screen.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Screen" <<(C,#90EE90) Control>> {
+class R as "Screen" <<(C,lightgreen) Control>> {
   * MenuScenePath
   * current_animation
 ---
@@ -18,39 +18,39 @@ class R as "Screen" <<(C,#90EE90) Control>> {
   + _on_animation_tree_animation_started()
   + _on_animation_tree_animation_finished()
 }
-class N1 as "Background" <<(C,#90EE90) ColorRect>> {
+class N1 as "Background" <<(C,lightgreen) ColorRect>> {
 }
-class N2 as "Author" <<(C,#90EE90) Control>> {
+class N2 as "Author" <<(C,lightgreen) Control>> {
 }
-class N3 as "Container" <<(V,#90EE90) VBoxContainer>> {
+class N3 as "Container" <<(V,lightgreen) VBoxContainer>> {
 }
-class N4 as "NameContainer" <<(M,#90EE90) MarginContainer>> {
+class N4 as "NameContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class N5 as "Name" <<(L,#90EE90) Label>> {
+class N5 as "Name" <<(L,lightgreen) Label>> {
 }
-class N6 as "Presents" <<(L,#90EE90) Label>> {
+class N6 as "Presents" <<(L,lightgreen) Label>> {
 }
-class N7 as "Title" <<(C,#90EE90) Control>> {
+class N7 as "Title" <<(C,lightgreen) Control>> {
 }
-class N8 as "TitleContainer" <<(C,#90EE90) CenterContainer>> {
+class N8 as "TitleContainer" <<(C,lightgreen) CenterContainer>> {
 }
-class N9 as "TitleLogo" <<(S,#87CEFA) Sprite2D>> {
+class N9 as "TitleLogo" <<(S,lightskyblue) Sprite2D>> {
 }
-class N10 as "ButtonContainer" <<(M,#90EE90) MarginContainer>> {
+class N10 as "ButtonContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class N11 as "JoyAButton" <<(S,#87CEFA) Sprite2D>> {
+class N11 as "JoyAButton" <<(S,lightskyblue) Sprite2D>> {
 }
-class N12 as "SubViewportContainer" <<(S,#90EE90) SubViewportContainer>> {
+class N12 as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class N13 as "SubViewport" <<(S,#FFFF00) SubViewport>> {
+class N13 as "SubViewport" <<(S,yellow) SubViewport>> {
 }
-class N14 as "Show" <<(N,#FF69B4) Node3D>> {
+class N14 as "Show" <<(N,hotpink) Node3D>> {
 }
-class N15 as "Blinder" <<(C,#90EE90) ColorRect>> {
+class N15 as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
-class N16 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N16 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N17 as "AnimationTree" <<(A,#FFFF00) AnimationTree>> {
+class N17 as "AnimationTree" <<(A,yellow) AnimationTree>> {
 }
 R --o N1
 R --o N2

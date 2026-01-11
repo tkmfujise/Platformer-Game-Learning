@@ -8,7 +8,7 @@ title: src/beginning/chapters/chapters.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Chapters" <<(C,#90EE90) Control>> {
+class R as "Chapters" <<(C,lightgreen) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -40,11 +40,11 @@ class R as "Chapters" <<(C,#90EE90) Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class N1 as "Banner" <<(T,#90EE90) TextureRect>> {
+class N1 as "Banner" <<(T,lightgreen) TextureRect>> {
 }
-class N2 as "ChaptersContainer" <<(H,#90EE90) HBoxContainer>> {
+class N2 as "ChaptersContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class N3 as "Chapter_0" <<(M,#90EE90) MarginContainer>> {
+class N3 as "Chapter_0" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -55,7 +55,7 @@ class N3 as "Chapter_0" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N4 as "Chapter_1" <<(M,#90EE90) MarginContainer>> {
+class N4 as "Chapter_1" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -66,9 +66,9 @@ class N4 as "Chapter_1" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N5 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N5 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N6 as "Chapter_2" <<(M,#90EE90) MarginContainer>> {
+class N6 as "Chapter_2" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -79,9 +79,9 @@ class N6 as "Chapter_2" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N7 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N7 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N8 as "Chapter_3" <<(M,#90EE90) MarginContainer>> {
+class N8 as "Chapter_3" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -92,9 +92,9 @@ class N8 as "Chapter_3" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N9 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N9 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N10 as "Chapter_4" <<(M,#90EE90) MarginContainer>> {
+class N10 as "Chapter_4" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -105,9 +105,9 @@ class N10 as "Chapter_4" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N11 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N11 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N12 as "Chapter_5" <<(M,#90EE90) MarginContainer>> {
+class N12 as "Chapter_5" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -118,9 +118,9 @@ class N12 as "Chapter_5" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N13 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N13 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N14 as "Chapter_6" <<(M,#90EE90) MarginContainer>> {
+class N14 as "Chapter_6" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -131,9 +131,9 @@ class N14 as "Chapter_6" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N15 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N15 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N16 as "Chapter_7" <<(M,#90EE90) MarginContainer>> {
+class N16 as "Chapter_7" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -144,9 +144,9 @@ class N16 as "Chapter_7" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N17 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N17 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N18 as "Chapter_8" <<(M,#90EE90) MarginContainer>> {
+class N18 as "Chapter_8" <<(M,lightgreen) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -157,13 +157,13 @@ class N18 as "Chapter_8" <<(M,#90EE90) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N19 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N19 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N20 as "Grid1920x1080" <<(S,#87CEFA) Sprite2D>> {
+class N20 as "Grid1920x1080" <<(S,lightskyblue) Sprite2D>> {
 }
-class N21 as "Pin" <<(N,#87CEFA) Node2D>> {
+class N21 as "Pin" <<(N,lightskyblue) Node2D>> {
 }
-class N22 as "Menu" <<(C,#90EE90) Control>> {
+class N22 as "Menu" <<(C,lightgreen) Control>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -197,9 +197,9 @@ class N22 as "Menu" <<(C,#90EE90) Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class N23 as "ChaptersAnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N23 as "ChaptersAnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N24 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N24 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2

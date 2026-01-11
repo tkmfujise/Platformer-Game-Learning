@@ -8,7 +8,7 @@ title: src/player/camera/camera.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Camera" <<(C,#87CEFA) Camera2D>> {
+class R as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position

@@ -8,19 +8,19 @@ title: src/main.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Main" <<(C,#90EE90) Control>> {
+class R as "Main" <<(C,lightgreen) Control>> {
 }
-class N1 as "ColorRect" <<(C,#90EE90) ColorRect>> {
+class N1 as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class N2 as "World" <<(N,#87CEFA) Node2D>> {
+class N2 as "World" <<(N,lightskyblue) Node2D>> {
 }
-class N3 as "StaticBody2D" <<(S,#87CEFA) StaticBody2D>> {
+class N3 as "StaticBody2D" <<(S,lightskyblue) StaticBody2D>> {
 }
-class N4 as "ColorRect" <<(C,#90EE90) ColorRect>> {
+class N4 as "ColorRect" <<(C,lightgreen) ColorRect>> {
 }
-class N5 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
+class N5 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N6 as "Player" <<(C,#87CEFA) CharacterBody2D>> {
+class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -53,7 +53,7 @@ class N6 as "Player" <<(C,#87CEFA) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N7 as "FirstStepsBGMPlayable" <<(N,#A9A9A9) Node>> {
+class N7 as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
 ---
   + _ready()
 }

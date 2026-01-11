@@ -8,7 +8,7 @@ title: src/world/world.tscn
 === Diagram
 [plantuml]
 ....
-class R as "World" <<(N,#FF69B4) Node3D>> {
+class R as "World" <<(N,hotpink) Node3D>> {
   * CameraNode
 ---
   + back_to_circular_move()
@@ -19,37 +19,37 @@ class R as "World" <<(N,#FF69B4) Node3D>> {
   + acute_angle()
   + _on_animation_player_animation_finished()
 }
-class N1 as "Mountain" <<(N,#A9A9A9) Node>> {
+class N1 as "Mountain" <<(N,darkgray) Node>> {
 }
-class N2 as "SpotLights" <<(N,#A9A9A9) Node>> {
+class N2 as "SpotLights" <<(N,darkgray) Node>> {
 }
-class N3 as "Chapter0" <<(S,#FF69B4) SpotLight3D>> {
+class N3 as "Chapter0" <<(S,hotpink) SpotLight3D>> {
 }
-class N4 as "Chapter1" <<(S,#FF69B4) SpotLight3D>> {
+class N4 as "Chapter1" <<(S,hotpink) SpotLight3D>> {
 }
-class N5 as "Chapter2_1" <<(S,#FF69B4) SpotLight3D>> {
+class N5 as "Chapter2_1" <<(S,hotpink) SpotLight3D>> {
 }
-class N6 as "Chapter2_2" <<(S,#FF69B4) SpotLight3D>> {
+class N6 as "Chapter2_2" <<(S,hotpink) SpotLight3D>> {
 }
-class N7 as "Chapter3" <<(S,#FF69B4) SpotLight3D>> {
+class N7 as "Chapter3" <<(S,hotpink) SpotLight3D>> {
 }
-class N8 as "Chapter8" <<(S,#FF69B4) SpotLight3D>> {
+class N8 as "Chapter8" <<(S,hotpink) SpotLight3D>> {
 }
-class N9 as "DirectionalLight3D" <<(D,#FF69B4) DirectionalLight3D>> {
+class N9 as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
 }
-class N10 as "WorldEnvironment" <<(W,#FFFF00) WorldEnvironment>> {
+class N10 as "WorldEnvironment" <<(W,yellow) WorldEnvironment>> {
 }
-class N11 as "Path3D" <<(P,#FF69B4) Path3D>> {
+class N11 as "Path3D" <<(P,hotpink) Path3D>> {
 }
-class N12 as "PathFollow3D" <<(P,#FF69B4) PathFollow3D>> {
+class N12 as "PathFollow3D" <<(P,hotpink) PathFollow3D>> {
 }
-class N13 as "Camera3D" <<(C,#FF69B4) Camera3D>> {
+class N13 as "Camera3D" <<(C,hotpink) Camera3D>> {
 }
-class N14 as "Blinder" <<(C,#90EE90) ColorRect>> {
+class N14 as "Blinder" <<(C,lightgreen) ColorRect>> {
 }
-class N15 as "Mist" <<(N,#87CEFA) Node2D>> {
+class N15 as "Mist" <<(N,lightskyblue) Node2D>> {
 }
-class N16 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N16 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
@@ -126,8 +126,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T1 #FF69B4
+participant "$Path3D\n/PathFollow3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T1 #FFC0CB
 participant "$Blinder" as T3 #90EE90
 participant "$Mountain\n/MountainCoreSurface" as T5 
 participant "$WorldEnvironment" as T6 #FFFF00
@@ -155,8 +155,8 @@ R  ->  T7 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$WorldEnvironment" as T3 #FFFF00
 
 
@@ -179,9 +179,9 @@ R  ->  T2 : progress_ratio\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D" as T0 #FF69B4
+participant "$Path3D\n/PathFollow3D" as T0 #FFC0CB
 participant "$Blinder" as T1 #90EE90
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T3 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T3 #FFC0CB
 participant "$WorldEnvironment" as T5 #FFFF00
 participant "$Mist" as T6 #87CEFA
 
@@ -211,8 +211,8 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -239,8 +239,8 @@ R  ->  T2 : progress_ratio\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -267,8 +267,8 @@ R  ->  T4 : environment\n = -0.08
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -295,8 +295,8 @@ R  ->  T4 : environment\n = -0.05
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -324,8 +324,8 @@ R  ->  T2 : progress_ratio\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -353,8 +353,8 @@ R  ->  T2 : progress_ratio\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -381,8 +381,8 @@ R  ->  T4 : environment\n = 0.2
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -409,8 +409,8 @@ R  ->  T4 : environment\n = 0.6
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -438,8 +438,8 @@ R  ->  T2 : progress_ratio\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -467,8 +467,8 @@ R  ->  T2 : progress_ratio\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T1 #FF69B4
+participant "$Path3D\n/PathFollow3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T1 #FFC0CB
 participant "$Blinder" as T3 #90EE90
 participant "$Mountain\n/MountainCoreSurface" as T4 
 participant "$WorldEnvironment" as T5 #FFFF00
@@ -498,8 +498,8 @@ R  ->  T3 : modulate\n = Color(0, 0, 0, 0)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -526,8 +526,8 @@ R  ->  T0 : rotation\n = Vector3(-0.190241, 2.78904, 0.0279253)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -554,8 +554,8 @@ R  ->  T0 : rotation\n = Vector3(0.00872665, 2.77507, 0.0226893)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -582,8 +582,8 @@ R  ->  T0 : rotation\n = Vector3(0.0820305, 3.49589, -0.0174533)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -610,8 +610,8 @@ R  ->  T0 : rotation\n = Vector3(0.0663225, -1.73486, -0.00523599)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -638,8 +638,8 @@ R  ->  T0 : rotation\n = Vector3(0.111701, -0.0453786, -0.0174533)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -666,8 +666,8 @@ R  ->  T0 : rotation\n = Vector3(0.20944, -1.72089, -0.00698132)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -694,8 +694,8 @@ R  ->  T0 : rotation\n = Vector3(-0.185005, 3.27947, -0.0558505)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
@@ -722,8 +722,8 @@ R  ->  T0 : rotation\n = Vector3(0.241115, 3.02168, 0.0100912)
 [plantuml]
 ....
 control "Root" as R
-participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FF69B4
-participant "$Path3D\n/PathFollow3D" as T2 #FF69B4
+participant "$Path3D\n/PathFollow3D\n/Camera3D" as T0 #FFC0CB
+participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA

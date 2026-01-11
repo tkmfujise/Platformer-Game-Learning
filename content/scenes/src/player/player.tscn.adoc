@@ -8,7 +8,7 @@ title: src/player/player.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Player" <<(C,#87CEFA) CharacterBody2D>> {
+class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -41,33 +41,33 @@ class R as "Player" <<(C,#87CEFA) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N1 as "Sprites" <<(N,#87CEFA) Node2D>> {
+class N1 as "Sprites" <<(N,lightskyblue) Node2D>> {
 }
-class N2 as "SpriteStates" <<(N,#87CEFA) Node2D>> {
+class N2 as "SpriteStates" <<(N,lightskyblue) Node2D>> {
 }
-class N3 as "IdleSprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N3 as "IdleSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N4 as "RunSprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N4 as "RunSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N5 as "JumpSprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N5 as "JumpSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N6 as "FallSprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N6 as "FallSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N7 as "SpriteEffects" <<(N,#87CEFA) Node2D>> {
+class N7 as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
 }
-class N8 as "BurstSprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N8 as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N9 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
+class N9 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N10 as "FailureCollision" <<(A,#87CEFA) Area2D>> {
+class N10 as "FailureCollision" <<(A,lightskyblue) Area2D>> {
 }
-class N11 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
+class N11 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N12 as "FrameSubject" <<(A,#87CEFA) Area2D>> {
+class N12 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
 }
-class N13 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
+class N13 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N14 as "Camera" <<(C,#87CEFA) Camera2D>> {
+class N14 as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position
@@ -80,9 +80,9 @@ class N14 as "Camera" <<(C,#87CEFA) Camera2D>> {
   + shake()
   + shaking()
 }
-class N15 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N15 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N16 as "AnimationTree" <<(A,#FFFF00) AnimationTree>> {
+class N16 as "AnimationTree" <<(A,yellow) AnimationTree>> {
 }
 R --o N1
 R --o N9

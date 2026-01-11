@@ -8,21 +8,21 @@ title: src/beginning/chapters/banner/banner.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Banner" <<(T,#90EE90) TextureRect>> {
+class R as "Banner" <<(T,lightgreen) TextureRect>> {
 }
-class N1 as "Polygons" <<(N,#87CEFA) Node2D>> {
+class N1 as "Polygons" <<(N,lightskyblue) Node2D>> {
 }
-class N2 as "Polygon2D" <<(P,#87CEFA) Polygon2D>> {
+class N2 as "Polygon2D" <<(P,lightskyblue) Polygon2D>> {
 }
-class N3 as "Skeleton2D" <<(S,#87CEFA) Skeleton2D>> {
+class N3 as "Skeleton2D" <<(S,lightskyblue) Skeleton2D>> {
 }
-class N4 as "Root" <<(B,#87CEFA) Bone2D>> {
+class N4 as "Root" <<(B,lightskyblue) Bone2D>> {
 }
-class N5 as "Body" <<(B,#87CEFA) Bone2D>> {
+class N5 as "Body" <<(B,lightskyblue) Bone2D>> {
 }
-class N6 as "Edge" <<(B,#87CEFA) Bone2D>> {
+class N6 as "Edge" <<(B,lightskyblue) Bone2D>> {
 }
-class N7 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N3

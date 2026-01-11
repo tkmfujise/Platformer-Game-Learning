@@ -8,7 +8,7 @@ title: src/beginning/menu/menu.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Menu" <<(C,#90EE90) Control>> {
+class R as "Menu" <<(C,lightgreen) Control>> {
   * current_plate
   * grab_focus_root
 ---
@@ -25,13 +25,13 @@ class R as "Menu" <<(C,#90EE90) Control>> {
   + _on_chapters_focused()
   + _on_chapters_selected()
 }
-class N1 as "SubViewportContainer" <<(S,#90EE90) SubViewportContainer>> {
+class N1 as "SubViewportContainer" <<(S,lightgreen) SubViewportContainer>> {
 }
-class N2 as "Snow" <<(N,#87CEFA) Node2D>> {
+class N2 as "Snow" <<(N,lightskyblue) Node2D>> {
 }
-class N3 as "SubViewport" <<(S,#FFFF00) SubViewport>> {
+class N3 as "SubViewport" <<(S,yellow) SubViewport>> {
 }
-class N4 as "World" <<(N,#FF69B4) Node3D>> {
+class N4 as "World" <<(N,hotpink) Node3D>> {
   * CameraNode
 ---
   + back_to_circular_move()
@@ -42,19 +42,19 @@ class N4 as "World" <<(N,#FF69B4) Node3D>> {
   + acute_angle()
   + _on_animation_player_animation_finished()
 }
-class N5 as "RootContainer" <<(M,#90EE90) MarginContainer>> {
+class N5 as "RootContainer" <<(M,lightgreen) MarginContainer>> {
 }
-class N6 as "MenuContainer" <<(V,#90EE90) VBoxContainer>> {
+class N6 as "MenuContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class N7 as "ClimbContainer" <<(N,#87CEFA) Node2D>> {
+class N7 as "ClimbContainer" <<(N,lightskyblue) Node2D>> {
 }
-class N8 as "LogoContainer" <<(C,#90EE90) CenterContainer>> {
+class N8 as "LogoContainer" <<(C,lightgreen) CenterContainer>> {
 }
-class N9 as "Sprite2D" <<(S,#87CEFA) Sprite2D>> {
+class N9 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N10 as "ButtonContainer" <<(B,#90EE90) BoxContainer>> {
+class N10 as "ButtonContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N11 as "ClimbButton" <<(B,#90EE90) Button>> {
+class N11 as "ClimbButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -68,13 +68,13 @@ class N11 as "ClimbButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N12 as "OthersContainer" <<(N,#87CEFA) Node2D>> {
+class N12 as "OthersContainer" <<(N,lightskyblue) Node2D>> {
 }
-class N13 as "VBoxContainer" <<(V,#90EE90) VBoxContainer>> {
+class N13 as "VBoxContainer" <<(V,lightgreen) VBoxContainer>> {
 }
-class N14 as "OptionsContainer" <<(B,#90EE90) BoxContainer>> {
+class N14 as "OptionsContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N15 as "OptionsButton" <<(B,#90EE90) Button>> {
+class N15 as "OptionsButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -88,9 +88,9 @@ class N15 as "OptionsButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N16 as "CreditsContainer" <<(B,#90EE90) BoxContainer>> {
+class N16 as "CreditsContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N17 as "CreditsButton" <<(B,#90EE90) Button>> {
+class N17 as "CreditsButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -104,9 +104,9 @@ class N17 as "CreditsButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N18 as "QuitContainer" <<(B,#90EE90) BoxContainer>> {
+class N18 as "QuitContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N19 as "QuitButton" <<(B,#90EE90) Button>> {
+class N19 as "QuitButton" <<(B,lightgreen) Button>> {
   - BLINK_INTERVAL
   * focus_move_direction
   * focus_color_1
@@ -120,7 +120,7 @@ class N19 as "QuitButton" <<(B,#90EE90) Button>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N20 as "Accounts" <<(M,#90EE90) MarginContainer>> {
+class N20 as "Accounts" <<(M,lightgreen) MarginContainer>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -142,7 +142,7 @@ class N20 as "Accounts" <<(M,#90EE90) MarginContainer>> {
   + _on_account_get_started()
   + _on_account_focus_entered()
 }
-class N21 as "Chapters" <<(C,#90EE90) Control>> {
+class N21 as "Chapters" <<(C,lightgreen) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -174,7 +174,7 @@ class N21 as "Chapters" <<(C,#90EE90) Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class N22 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N22 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N5

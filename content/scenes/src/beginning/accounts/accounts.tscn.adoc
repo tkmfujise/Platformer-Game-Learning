@@ -8,7 +8,7 @@ title: src/beginning/accounts/accounts.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Accounts" <<(M,#90EE90) MarginContainer>> {
+class R as "Accounts" <<(M,lightgreen) MarginContainer>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -30,9 +30,9 @@ class R as "Accounts" <<(M,#90EE90) MarginContainer>> {
   + _on_account_get_started()
   + _on_account_focus_entered()
 }
-class N1 as "AccountsContainer" <<(N,#87CEFA) Node2D>> {
+class N1 as "AccountsContainer" <<(N,lightskyblue) Node2D>> {
 }
-class N2 as "Account1" <<(B,#90EE90) BoxContainer>> {
+class N2 as "Account1" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -61,7 +61,7 @@ class N2 as "Account1" <<(B,#90EE90) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N3 as "Account2" <<(B,#90EE90) BoxContainer>> {
+class N3 as "Account2" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -90,7 +90,7 @@ class N3 as "Account2" <<(B,#90EE90) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N4 as "Account3" <<(B,#90EE90) BoxContainer>> {
+class N4 as "Account3" <<(B,lightgreen) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -119,7 +119,7 @@ class N4 as "Account3" <<(B,#90EE90) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N5 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N5 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N5

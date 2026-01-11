@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/menu.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Menu" <<(C,#90EE90) Control>> {
+class R as "Menu" <<(C,lightgreen) Control>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -42,47 +42,47 @@ class R as "Menu" <<(C,#90EE90) Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class N1 as "BannerBox" <<(C,#90EE90) Control>> {
+class N1 as "BannerBox" <<(C,lightgreen) Control>> {
 }
-class N2 as "ChapterNumber" <<(L,#90EE90) Label>> {
+class N2 as "ChapterNumber" <<(L,lightgreen) Label>> {
 }
-class N3 as "ChapterName" <<(L,#90EE90) Label>> {
+class N3 as "ChapterName" <<(L,lightgreen) Label>> {
 }
-class N4 as "Box" <<(N,#90EE90) NinePatchRect>> {
+class N4 as "Box" <<(N,lightgreen) NinePatchRect>> {
 }
-class N5 as "Banner" <<(S,#87CEFA) Sprite2D>> {
+class N5 as "Banner" <<(S,lightskyblue) Sprite2D>> {
 }
-class N6 as "SideSelection" <<(N,#87CEFA) Node2D>> {
+class N6 as "SideSelection" <<(N,lightskyblue) Node2D>> {
 }
-class N7 as "CenterBox" <<(C,#90EE90) Control>> {
+class N7 as "CenterBox" <<(C,lightgreen) Control>> {
 }
-class N8 as "BlueHeartIcon" <<(S,#87CEFA) Sprite2D>> {
+class N8 as "BlueHeartIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class N9 as "StrawberryIcon" <<(S,#87CEFA) Sprite2D>> {
+class N9 as "StrawberryIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class N10 as "MultiplicationStrawberry" <<(S,#87CEFA) Sprite2D>> {
+class N10 as "MultiplicationStrawberry" <<(S,lightskyblue) Sprite2D>> {
 }
-class N11 as "StrawberryCountContainer" <<(H,#90EE90) HBoxContainer>> {
+class N11 as "StrawberryCountContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class N12 as "ObtainedStrawberryCount" <<(L,#90EE90) Label>> {
+class N12 as "ObtainedStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class N13 as "Slash" <<(L,#90EE90) Label>> {
+class N13 as "Slash" <<(L,lightgreen) Label>> {
 }
-class N14 as "MaxStrawberryCount" <<(L,#90EE90) Label>> {
+class N14 as "MaxStrawberryCount" <<(L,lightgreen) Label>> {
 }
-class N15 as "FailureIcon" <<(S,#87CEFA) Sprite2D>> {
+class N15 as "FailureIcon" <<(S,lightskyblue) Sprite2D>> {
 }
-class N16 as "MultiplicationStrawberry2" <<(S,#87CEFA) Sprite2D>> {
+class N16 as "MultiplicationStrawberry2" <<(S,lightskyblue) Sprite2D>> {
 }
-class N17 as "FailureCount" <<(L,#90EE90) Label>> {
+class N17 as "FailureCount" <<(L,lightgreen) Label>> {
 }
-class N18 as "BottomBox" <<(C,#90EE90) Control>> {
+class N18 as "BottomBox" <<(C,lightgreen) Control>> {
 }
-class N19 as "Label" <<(L,#90EE90) Label>> {
+class N19 as "Label" <<(L,lightgreen) Label>> {
 }
-class N20 as "SideButtonContainer" <<(B,#90EE90) BoxContainer>> {
+class N20 as "SideButtonContainer" <<(B,lightgreen) BoxContainer>> {
 }
-class N21 as "ClimbBookmark" <<(M,#90EE90) MarginContainer>> {
+class N21 as "ClimbBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -92,7 +92,7 @@ class N21 as "ClimbBookmark" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N22 as "CassetteBookmark" <<(M,#90EE90) MarginContainer>> {
+class N22 as "CassetteBookmark" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -102,19 +102,19 @@ class N22 as "CassetteBookmark" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N23 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N23 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N24 as "StageSelection" <<(N,#87CEFA) Node2D>> {
+class N24 as "StageSelection" <<(N,lightskyblue) Node2D>> {
 }
-class N25 as "BottomBox" <<(C,#90EE90) Control>> {
+class N25 as "BottomBox" <<(C,lightgreen) Control>> {
 }
-class N26 as "StageLabel" <<(L,#90EE90) Label>> {
+class N26 as "StageLabel" <<(L,lightgreen) Label>> {
 }
-class N27 as "Photos" <<(N,#87CEFA) Node2D>> {
+class N27 as "Photos" <<(N,lightskyblue) Node2D>> {
 }
-class N28 as "Template" <<(N,#87CEFA) Node2D>> {
+class N28 as "Template" <<(N,lightskyblue) Node2D>> {
 }
-class N29 as "Photo" <<(S,#87CEFA) Sprite2D>> {
+class N29 as "Photo" <<(S,lightskyblue) Sprite2D>> {
   * flicked
   * image
 ---
@@ -122,11 +122,11 @@ class N29 as "Photo" <<(S,#87CEFA) Sprite2D>> {
   + flick()
   + pull()
 }
-class N30 as "PhotoInstances" <<(N,#87CEFA) Node2D>> {
+class N30 as "PhotoInstances" <<(N,lightskyblue) Node2D>> {
 }
-class N31 as "StageButtonContainer" <<(H,#90EE90) HBoxContainer>> {
+class N31 as "StageButtonContainer" <<(H,lightgreen) HBoxContainer>> {
 }
-class N32 as "Stage1Button" <<(M,#90EE90) MarginContainer>> {
+class N32 as "Stage1Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -136,11 +136,11 @@ class N32 as "Stage1Button" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N33 as "Bookmark" <<(N,#A9A9A9) Node>> {
+class N33 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class N34 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N34 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N35 as "Stage2Button" <<(M,#90EE90) MarginContainer>> {
+class N35 as "Stage2Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -150,11 +150,11 @@ class N35 as "Stage2Button" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N36 as "Bookmark" <<(N,#A9A9A9) Node>> {
+class N36 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class N37 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N37 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N38 as "Stage3Button" <<(M,#90EE90) MarginContainer>> {
+class N38 as "Stage3Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -164,11 +164,11 @@ class N38 as "Stage3Button" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N39 as "Bookmark" <<(N,#A9A9A9) Node>> {
+class N39 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class N40 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N40 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N41 as "Stage4Button" <<(M,#90EE90) MarginContainer>> {
+class N41 as "Stage4Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -178,11 +178,11 @@ class N41 as "Stage4Button" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N42 as "Bookmark" <<(N,#A9A9A9) Node>> {
+class N42 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class N43 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N43 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N44 as "Stage5Button" <<(M,#90EE90) MarginContainer>> {
+class N44 as "Stage5Button" <<(M,lightgreen) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -192,18 +192,18 @@ class N44 as "Stage5Button" <<(M,#90EE90) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N45 as "Bookmark" <<(N,#A9A9A9) Node>> {
+class N45 as "Bookmark" <<(N,darkgray) Node>> {
 }
-class N46 as "Sprite2D" <<(N,#A9A9A9) Node>> {
+class N46 as "Sprite2D" <<(N,darkgray) Node>> {
 }
-class N47 as "ClosingCurtain" <<(C,#90EE90) Control>> {
+class N47 as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
 ---
   + play()
   + _on_animation_player_animation_finished()
 }
-class N48 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
+class N48 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4

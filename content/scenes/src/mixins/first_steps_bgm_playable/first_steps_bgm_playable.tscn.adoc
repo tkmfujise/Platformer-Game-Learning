@@ -8,7 +8,7 @@ title: src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn
 === Diagram
 [plantuml]
 ....
-class R as "FirstStepsBGMPlayable" <<(N,#A9A9A9) Node>> {
+class R as "FirstStepsBGMPlayable" <<(N,darkgray) Node>> {
 ---
   + _ready()
 }
