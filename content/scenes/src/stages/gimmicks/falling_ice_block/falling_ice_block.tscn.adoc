@@ -85,12 +85,14 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 
 
 === Properties
+[.node-property.node-2d]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*script* |`ExtResource("2_snubb")`
 |===
+[.node-property.node-2d]
 .#$Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -98,6 +100,7 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 |*scale* |`Vector2(8, 8)`
 |*texture* |`ExtResource("1_snubb")`
 |===
+[.node-property.node-2d]
 .#$CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
@@ -105,6 +108,7 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 |*position* |`Vector2(-1.5, 2)`
 |*shape* |`SubResource("RectangleShape2D_snubb")`
 |===
+[.node-property.node-2d]
 .#$FailureCollision# properties
 [cols="1,3" options="header"]
 |===
@@ -112,6 +116,7 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 |*collision_layer* |`8`
 |*collision_mask* |`8`
 |===
+[.node-property.node-2d]
 .#$FailureCollision/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
@@ -119,12 +124,14 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 |*position* |`Vector2(4, 78)`
 |*shape* |`SubResource("RectangleShape2D_snubb")`
 |===
+[.node-property.node-2d]
 .#$DetectionArea2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*collision_mask* |`2`
 |===
+[.node-property.node-2d]
 .#$DetectionArea2D/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===

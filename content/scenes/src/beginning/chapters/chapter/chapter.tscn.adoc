@@ -189,6 +189,7 @@ R  ->  T0 : position\n = Vector2(77, 72)
 
 
 === Properties
+[.node-property.node-control]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
@@ -205,6 +206,7 @@ R  ->  T0 : position\n = Vector2(77, 72)
 |*theme_override_constants/margin_bottom* |`20`
 |*script* |`ExtResource("1_v6bqu")`
 |===
+[.node-property.node-control]
 .#$Placeholder# properties
 [cols="1,3" options="header"]
 |===
@@ -213,6 +215,7 @@ R  ->  T0 : position\n = Vector2(77, 72)
 |*custom_minimum_size* |`Vector2(120, 0)`
 |*layout_mode* |`2`
 |===
+[.node-property.node-2d]
 .#$Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -223,6 +226,7 @@ R  ->  T0 : position\n = Vector2(77, 72)
 |*position* |`Vector2(77, 72)`
 |*texture* |`ExtResource("1_ix5pl")`
 |===
+[.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===

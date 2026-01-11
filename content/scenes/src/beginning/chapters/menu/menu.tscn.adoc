@@ -628,6 +628,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 
 
 === Properties
+[.node-property.node-control]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
@@ -644,6 +645,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*script* |`ExtResource("2_prk84")`
 |*chapter_resource* |`ExtResource("3_54dmq")`
 |===
+[.node-property.node-control]
 .#$BannerBox# properties
 [cols="1,3" options="header"]
 |===
@@ -660,6 +662,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_bottom* |`72.04`
 |*grow_horizontal* |`0`
 |===
+[.node-property.node-control]
 .#$BannerBox/ChapterNumber# properties
 [cols="1,3" options="header"]
 |===
@@ -681,6 +684,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*text* |`Chapter 1`
 |*horizontal_alignment* |`2`
 |===
+[.node-property.node-control]
 .#$BannerBox/ChapterName# properties
 [cols="1,3" options="header"]
 |===
@@ -699,6 +703,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*text* |`Ghost town`
 |*horizontal_alignment* |`2`
 |===
+[.node-property.node-control]
 .#$Box# properties
 [cols="1,3" options="header"]
 |===
@@ -718,6 +723,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*region_rect* |`Rect2(235, 116, 725, 760)`
 |*patch_margin_bottom* |`300`
 |===
+[.node-property.node-2d]
 .#$Banner# properties
 [cols="1,3" options="header"]
 |===
@@ -728,12 +734,14 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*position* |`Vector2(1639, 175)`
 |*texture* |`ExtResource("4_30gw0")`
 |===
+[.node-property.node-2d]
 .#$SideSelection# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture_filter* |`2`
 |===
+[.node-property.node-control]
 .#$SideSelection/CenterBox# properties
 [cols="1,3" options="header"]
 |===
@@ -747,6 +755,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_bottom* |`517.0`
 |*theme* |`ExtResource("1_hp5xr")`
 |===
+[.node-property.node-2d]
 .#$SideSelection/CenterBox/BlueHeartIcon# properties
 [cols="1,3" options="header"]
 |===
@@ -756,6 +765,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(1.38281, 1.38281)`
 |*texture* |`ExtResource("5_gfqg8")`
 |===
+[.node-property.node-2d]
 .#$SideSelection/CenterBox/StrawberryIcon# properties
 [cols="1,3" options="header"]
 |===
@@ -764,6 +774,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.269531, 0.269531)`
 |*texture* |`ExtResource("5_trs7h")`
 |===
+[.node-property.node-2d]
 .#$SideSelection/CenterBox/MultiplicationStrawberry# properties
 [cols="1,3" options="header"]
 |===
@@ -772,6 +783,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.145145, 0.145145)`
 |*texture* |`ExtResource("5_tb0qi")`
 |===
+[.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -787,6 +799,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_right* |`126.964`
 |*offset_bottom* |`38.06`
 |===
+[.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer/ObtainedStrawberryCount# properties
 [cols="1,3" options="header"]
 |===
@@ -795,6 +808,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*layout_mode* |`2`
 |*text* |`0`
 |===
+[.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer/Slash# properties
 [cols="1,3" options="header"]
 |===
@@ -802,6 +816,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*layout_mode* |`2`
 |*text* |`/`
 |===
+[.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer/MaxStrawberryCount# properties
 [cols="1,3" options="header"]
 |===
@@ -810,6 +825,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*layout_mode* |`2`
 |*text* |`20`
 |===
+[.node-property.node-2d]
 .#$SideSelection/CenterBox/FailureIcon# properties
 [cols="1,3" options="header"]
 |===
@@ -818,6 +834,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.392578, 0.392578)`
 |*texture* |`ExtResource("6_6dned")`
 |===
+[.node-property.node-2d]
 .#$SideSelection/CenterBox/MultiplicationStrawberry2# properties
 [cols="1,3" options="header"]
 |===
@@ -826,6 +843,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.145, 0.145)`
 |*texture* |`ExtResource("5_tb0qi")`
 |===
+[.node-property.node-control]
 .#$SideSelection/CenterBox/FailureCount# properties
 [cols="1,3" options="header"]
 |===
@@ -838,6 +856,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_bottom* |`218.5`
 |*text* |`0`
 |===
+[.node-property.node-control]
 .#$SideSelection/BottomBox# properties
 [cols="1,3" options="header"]
 |===
@@ -855,6 +874,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*grow_horizontal* |`0`
 |*theme* |`ExtResource("1_hp5xr")`
 |===
+[.node-property.node-control]
 .#$SideSelection/BottomBox/Label# properties
 [cols="1,3" options="header"]
 |===
@@ -872,6 +892,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*horizontal_alignment* |`1`
 |*vertical_alignment* |`1`
 |===
+[.node-property.node-control]
 .#$SideSelection/SideButtonContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -884,12 +905,14 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_bottom* |`875.0`
 |*size_flags_horizontal* |`6`
 |===
+[.node-property.node-control]
 .#$SideSelection/SideButtonContainer/ClimbBookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-control]
 .#$SideSelection/SideButtonContainer/CassetteBookmark# properties
 [cols="1,3" options="header"]
 |===
@@ -897,6 +920,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*unique_name_in_owner* |`true`
 |*layout_mode* |`2`
 |===
+[.node-property.node-plain]
 .#$SideSelection/SideButtonContainer/CassetteBookmark/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -904,6 +928,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.8, 0.8)`
 |*texture* |`ExtResource("5_sr4qr")`
 |===
+[.node-property.node-control]
 .#$StageSelection/BottomBox# properties
 [cols="1,3" options="header"]
 |===
@@ -921,6 +946,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*grow_horizontal* |`0`
 |*theme* |`ExtResource("1_hp5xr")`
 |===
+[.node-property.node-control]
 .#$StageSelection/BottomBox/StageLabel# properties
 [cols="1,3" options="header"]
 |===
@@ -940,6 +966,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*text* |`Get started`
 |*horizontal_alignment* |`1`
 |===
+[.node-property.node-2d]
 .#$StageSelection/Photos# properties
 [cols="1,3" options="header"]
 |===
@@ -948,12 +975,14 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*z_index* |`2`
 |*position* |`Vector2(1545, 451)`
 |===
+[.node-property.node-2d]
 .#$StageSelection/Photos/PhotoInstances# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
+[.node-property.node-control]
 .#$StageSelection/StageButtonContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -967,18 +996,21 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*size_flags_horizontal* |`4`
 |*alignment* |`1`
 |===
+[.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage1Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage1Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("13_jxwkk")`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage1Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -986,18 +1018,21 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.7, 0.7)`
 |*texture* |`ExtResource("13_hfos7")`
 |===
+[.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage2Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage2Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("15_7vn6q")`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage2Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -1005,18 +1040,21 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.7, 0.7)`
 |*texture* |`ExtResource("15_wdor7")`
 |===
+[.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage3Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage3Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("15_7vn6q")`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage3Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -1024,18 +1062,21 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.7, 0.7)`
 |*texture* |`ExtResource("15_wdor7")`
 |===
+[.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage4Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage4Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("15_7vn6q")`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage4Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -1043,18 +1084,21 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.7, 0.7)`
 |*texture* |`ExtResource("15_wdor7")`
 |===
+[.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage5Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage5Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*texture* |`ExtResource("15_7vn6q")`
 |===
+[.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage5Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -1062,6 +1106,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*scale* |`Vector2(0.7, 0.7)`
 |*texture* |`ExtResource("15_wdor7")`
 |===
+[.node-property.node-control]
 .#$ClosingCurtain# properties
 [cols="1,3" options="header"]
 |===
@@ -1071,6 +1116,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*offset_top* |`-1.0`
 |*offset_bottom* |`-1.0`
 |===
+[.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===

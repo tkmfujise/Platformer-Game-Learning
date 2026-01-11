@@ -824,6 +824,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 
 
 === Properties
+[.node-property.node-2d]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
@@ -832,6 +833,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*script* |`ExtResource("1_5irfl")`
 |*GhostEffect* |`ExtResource("2_xv5vk")`
 |===
+[.node-property.node-2d]
 .#$Sprites# properties
 [cols="1,3" options="header"]
 |===
@@ -840,12 +842,14 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(-12, -72)`
 |*scale* |`Vector2(6, 6)`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteStates# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteStates/IdleSprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -855,6 +859,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*hframes* |`27`
 |*frame* |`21`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -864,6 +869,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*texture* |`ExtResource("3_htsrw")`
 |*hframes* |`8`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteStates/JumpSprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -873,6 +879,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*texture* |`ExtResource("4_gf1li")`
 |*hframes* |`2`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteStates/FallSprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -882,6 +889,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*texture* |`ExtResource("5_vvr2x")`
 |*hframes* |`2`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteEffects# properties
 [cols="1,3" options="header"]
 |===
@@ -889,6 +897,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*unique_name_in_owner* |`true`
 |*position* |`Vector2(2.1666667, 4)`
 |===
+[.node-property.node-2d]
 .#$Sprites/SpriteEffects/BurstSprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -899,6 +908,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*hframes* |`53`
 |*frame* |`11`
 |===
+[.node-property.node-2d]
 .#$CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
@@ -906,6 +916,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(2, -51)`
 |*shape* |`SubResource("CapsuleShape2D_opnj4")`
 |===
+[.node-property.node-2d]
 .#$FailureCollision# properties
 [cols="1,3" options="header"]
 |===
@@ -913,6 +924,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*collision_layer* |`8`
 |*collision_mask* |`8`
 |===
+[.node-property.node-2d]
 .#$FailureCollision/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
@@ -921,6 +933,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(0, -56)`
 |*shape* |`SubResource("CapsuleShape2D_l271a")`
 |===
+[.node-property.node-2d]
 .#$FrameSubject# properties
 [cols="1,3" options="header"]
 |===
@@ -928,6 +941,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*collision_layer* |`4`
 |*collision_mask* |`4`
 |===
+[.node-property.node-2d]
 .#$FrameSubject/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
@@ -936,12 +950,14 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 |*position* |`Vector2(3.5, -51.5)`
 |*shape* |`SubResource("RectangleShape2D_x42xx")`
 |===
+[.node-property.node-2d]
 .#$Camera# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
+[.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
@@ -951,6 +967,7 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 &"": SubResource("AnimationLibrary_u5nx7")
 }`
 |===
+[.node-property.node-other]
 .#$AnimationTree# properties
 [cols="1,3" options="header"]
 |===

@@ -41,6 +41,7 @@ NOTE: No signal connections.
 
 
 === Properties
+[.node-property.node-other]
 .#Root# properties
 [cols="1,3" options="header"]
 |===

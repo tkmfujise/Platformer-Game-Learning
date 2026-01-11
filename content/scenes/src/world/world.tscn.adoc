@@ -748,6 +748,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 
 
 === Properties
+[.node-property.node-3d]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
@@ -755,6 +756,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*script* |`ExtResource("1_phfn5")`
 |*CameraNode* |`NodePath("Path3D/PathFollow3D/Camera3D")`
 |===
+[.node-property.node-3d]
 .#$SpotLights/Chapter0# properties
 [cols="1,3" options="header"]
 |===
@@ -763,6 +765,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*light_color* |`Color(0.914361, 0.553244, 0.844536, 1)`
 |*spot_range* |`0.1`
 |===
+[.node-property.node-3d]
 .#$SpotLights/Chapter1# properties
 [cols="1,3" options="header"]
 |===
@@ -775,6 +778,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*spot_range* |`0.091`
 |*spot_angle* |`67.956`
 |===
+[.node-property.node-3d]
 .#$SpotLights/Chapter2_1# properties
 [cols="1,3" options="header"]
 |===
@@ -785,6 +789,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*light_specular* |`5.0`
 |*spot_range* |`0.1`
 |===
+[.node-property.node-3d]
 .#$SpotLights/Chapter2_2# properties
 [cols="1,3" options="header"]
 |===
@@ -795,6 +800,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*light_specular* |`5.0`
 |*spot_range* |`0.1`
 |===
+[.node-property.node-3d]
 .#$SpotLights/Chapter3# properties
 [cols="1,3" options="header"]
 |===
@@ -804,6 +810,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*light_energy* |`0.1`
 |*spot_range* |`0.1`
 |===
+[.node-property.node-3d]
 .#$SpotLights/Chapter8# properties
 [cols="1,3" options="header"]
 |===
@@ -812,6 +819,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*light_color* |`Color(0.914361, 0.553244, 0.844536, 1)`
 |*spot_range* |`0.1`
 |===
+[.node-property.node-3d]
 .#$DirectionalLight3D# properties
 [cols="1,3" options="header"]
 |===
@@ -820,6 +828,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*light_color* |`Color(0.427192, 0.516328, 0.867139, 1)`
 |*sky_mode* |`1`
 |===
+[.node-property.node-other]
 .#$WorldEnvironment# properties
 [cols="1,3" options="header"]
 |===
@@ -827,6 +836,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*environment* |`SubResource("Environment_b1s5s")`
 |*compositor* |`SubResource("Compositor_vow5d")`
 |===
+[.node-property.node-3d]
 .#$Path3D# properties
 [cols="1,3" options="header"]
 |===
@@ -834,6 +844,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*transform* |`Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0614908, 0, -0.286387)`
 |*curve* |`SubResource("Curve3D_bt8sv")`
 |===
+[.node-property.node-3d]
 .#$Path3D/PathFollow3D# properties
 [cols="1,3" options="header"]
 |===
@@ -841,6 +852,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*transform* |`Transform3D(7.5485e-08, 0.000999828, 0.999827, -5.81978e-11, 0.999828, -0.000999827, -0.99983, 1.72872e-11, 7.54849e-08, -3.77489e-10, 2.91038e-13, 2.005)`
 |*h_offset* |`-0.005`
 |===
+[.node-property.node-3d]
 .#$Path3D/PathFollow3D/Camera3D# properties
 [cols="1,3" options="header"]
 |===
@@ -850,6 +862,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*fov* |`40.0`
 |*near* |`0.057`
 |===
+[.node-property.node-control]
 .#$Blinder# properties
 [cols="1,3" options="header"]
 |===
@@ -861,6 +874,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*grow_horizontal* |`2`
 |*grow_vertical* |`2`
 |===
+[.node-property.node-2d]
 .#$Mist# properties
 [cols="1,3" options="header"]
 |===
@@ -868,6 +882,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |*modulate* |`Color(1, 1, 1, 1)`
 |*position* |`Vector2(0, -1)`
 |===
+[.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===

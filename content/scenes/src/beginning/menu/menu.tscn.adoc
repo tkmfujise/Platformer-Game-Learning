@@ -627,6 +627,7 @@ R  ->o  R : grab_focus_root\n = true
 
 
 === Properties
+[.node-property.node-control]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
@@ -640,6 +641,7 @@ R  ->o  R : grab_focus_root\n = true
 |*theme* |`ExtResource("1_w62bb")`
 |*script* |`ExtResource("2_7v8tq")`
 |===
+[.node-property.node-control]
 .#$SubViewportContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -652,6 +654,7 @@ R  ->o  R : grab_focus_root\n = true
 |*grow_vertical* |`2`
 |*focus_mode* |`0`
 |===
+[.node-property.node-other]
 .#$SubViewportContainer/SubViewport# properties
 [cols="1,3" options="header"]
 |===
@@ -661,12 +664,14 @@ R  ->o  R : grab_focus_root\n = true
 |*size* |`Vector2i(1920, 1080)`
 |*render_target_update_mode* |`4`
 |===
+[.node-property.node-3d]
 .#$SubViewportContainer/SubViewport/World# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* |`true`
 |===
+[.node-property.node-control]
 .#$RootContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -681,12 +686,14 @@ R  ->o  R : grab_focus_root\n = true
 |*theme_override_constants/margin_top* |`120`
 |*theme_override_constants/margin_bottom* |`100`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/ClimbContainer/LogoContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -697,6 +704,7 @@ R  ->o  R : grab_focus_root\n = true
 |*offset_bottom* |`240.0`
 |*size_flags_horizontal* |`4`
 |===
+[.node-property.node-2d]
 .#$RootContainer/MenuContainer/ClimbContainer/LogoContainer/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
@@ -705,6 +713,7 @@ R  ->o  R : grab_focus_root\n = true
 |*texture* |`ExtResource("5_wprcb")`
 |*offset* |`Vector2(10, 140)`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/ClimbContainer/ButtonContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -713,6 +722,7 @@ R  ->o  R : grab_focus_root\n = true
 |*offset_right* |`340.0`
 |*offset_bottom* |`389.0`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton# properties
 [cols="1,3" options="header"]
 |===
@@ -728,12 +738,14 @@ R  ->o  R : grab_focus_root\n = true
 |*icon* |`null`
 |*focus_move_direction* |`1`
 |===
+[.node-property.node-2d]
 .#$RootContainer/MenuContainer/OthersContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*position* |`Vector2(10, 400)`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer# properties
 [cols="1,3" options="header"]
 |===
@@ -741,12 +753,14 @@ R  ->o  R : grab_focus_root\n = true
 |*offset_right* |`483.0`
 |*offset_bottom* |`281.0`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton# properties
 [cols="1,3" options="header"]
 |===
@@ -757,12 +771,14 @@ R  ->o  R : grab_focus_root\n = true
 |*focus_neighbor_bottom* |`NodePath("../../CreditsContainer/CreditsButton")`
 |*text* |` Options`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton# properties
 [cols="1,3" options="header"]
 |===
@@ -774,12 +790,14 @@ R  ->o  R : grab_focus_root\n = true
 |*text* |` Credits`
 |*icon* |`ExtResource("7_tps4m")`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*layout_mode* |`2`
 |===
+[.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton# properties
 [cols="1,3" options="header"]
 |===
@@ -790,6 +808,7 @@ R  ->o  R : grab_focus_root\n = true
 |*text* |` Quit`
 |*icon* |`ExtResource("8_lywrx")`
 |===
+[.node-property.node-control]
 .#$Accounts# properties
 [cols="1,3" options="header"]
 |===
@@ -799,6 +818,7 @@ R  ->o  R : grab_focus_root\n = true
 |*offset_left* |`1920.0`
 |*offset_right* |`1920.0`
 |===
+[.node-property.node-control]
 .#$Chapters# properties
 [cols="1,3" options="header"]
 |===
@@ -808,6 +828,7 @@ R  ->o  R : grab_focus_root\n = true
 |*offset_left* |`1920.0`
 |*offset_right* |`1920.0`
 |===
+[.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===

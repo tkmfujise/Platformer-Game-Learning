@@ -43,6 +43,7 @@ NOTE: No signal connections.
 
 
 === Properties
+[.node-property.node-plain]
 .#Root# properties
 [cols="1,3" options="header"]
 |===
