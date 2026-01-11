@@ -54,7 +54,7 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*script* |`ExtResource("1_r378c")`
+|*script* a|link:/scripts/src/stages/weather/weather.gd[res://src/stages/weather/weather.gd]
 |===
 
 

@@ -61,15 +61,15 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*script* |`ExtResource("1_mflce")`
+|*script* a|link:/scripts/autoloads/bgm/bgm.gd[res://autoloads/bgm/bgm.gd]
 |===
 [.node-property.node-other]
 .#$FirstSteps# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*stream* |`ExtResource("2_lngrj")`
-|*parameters/looping* |`true`
+|*stream* a|`ExtResource("2_lngrj")`
+|*parameters/looping* a|`true`
 |===
 
 

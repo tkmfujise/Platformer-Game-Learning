@@ -270,60 +270,50 @@ _(R::_on_stage_button_pressed, N44::pressed)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/ui/Chapters/menu/Box.svg
-[link=/assets/assets/images/ui/Chapters/menu/Box.svg] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/Box.svg]
 image::/assets/raw/assets/images/ui/Chapters/menu/Box.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Chapters/menu/Banner.png
-[link=/assets/assets/images/ui/Chapters/menu/Banner.png] 
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/Banner.png]
 image::/assets/raw/assets/images/ui/Chapters/menu/Banner.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/BlueHeart.svg
-[link=/assets/assets/images/ui/BlueHeart.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/BlueHeart.svg]
 image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Strawberry.png
-[link=/assets/assets/images/ui/Strawberry.png] 
+[.asset-image]
+[link=/assets/assets/images/ui/Strawberry.png]
 image::/assets/raw/assets/images/ui/Strawberry.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Multiplication.svg
-[link=/assets/assets/images/ui/Multiplication.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Multiplication.svg]
 image::/assets/raw/assets/images/ui/Multiplication.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Skull.svg
-[link=/assets/assets/images/ui/Skull.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Skull.svg]
 image::/assets/raw/assets/images/ui/Skull.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Chapters/menu/Cassette.svg
-[link=/assets/assets/images/ui/Chapters/menu/Cassette.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/Cassette.svg]
 image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Chapters/menu/bookmark_yellow.png
-[link=/assets/assets/images/ui/Chapters/menu/bookmark_yellow.png] 
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/bookmark_yellow.png]
 image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_yellow.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Chapters/menu/Star.svg
-[link=/assets/assets/images/ui/Chapters/menu/Star.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/Star.svg]
 image::/assets/raw/assets/images/ui/Chapters/menu/Star.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Chapters/menu/bookmark_navy.png
-[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png] 
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png]
 image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_navy.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Chapters/menu/Mountain.svg
-[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg]
 image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[200, 100] 
 
 
@@ -633,496 +623,568 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`3`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*offset_left* |`960.0`
-|*offset_right* |`960.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*theme* |`ExtResource("1_hp5xr")`
-|*script* |`ExtResource("2_prk84")`
-|*chapter_resource* |`ExtResource("3_54dmq")`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`960.0`
+|*offset_right* a|`960.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*theme* a|`ExtResource("1_hp5xr")`
+|*script* a|link:/scripts/src/beginning/chapters/menu/menu.gd[res://src/beginning/chapters/menu/menu.gd]
+|*chapter_resource* a|`ExtResource("3_54dmq")`
 |===
 [.node-property.node-control]
 .#$BannerBox# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*z_index* |`4`
-|*layout_mode* |`1`
-|*anchor_left* |`1.0`
-|*anchor_top* |`0.162`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`0.162`
-|*offset_left* |`-721.0`
-|*offset_top* |`-70.96`
-|*offset_right* |`4.0`
-|*offset_bottom* |`72.04`
-|*grow_horizontal* |`0`
+|*z_index* a|`4`
+|*layout_mode* a|`1`
+|*anchor_left* a|`1.0`
+|*anchor_top* a|`0.162`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`0.162`
+|*offset_left* a|`-721.0`
+|*offset_top* a|`-70.96`
+|*offset_right* a|`4.0`
+|*offset_bottom* a|`72.04`
+|*grow_horizontal* a|`0`
 |===
 [.node-property.node-control]
 .#$BannerBox/ChapterNumber# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*anchors_preset* |`-1`
-|*anchor_left* |`0.709`
-|*anchor_top* |`0.276`
-|*anchor_right* |`0.709`
-|*anchor_bottom* |`0.276`
-|*offset_left* |`-590.189`
-|*offset_top* |`-27.468`
-|*offset_right* |`-0.189026`
-|*offset_bottom* |`27.532`
-|*theme_override_colors/font_color* |`Color(0.242966, 0.242966, 0.242966, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0.239, 0.239, 0.239, 0)`
-|*theme_override_font_sizes/font_size* |`36`
-|*text* |`Chapter 1`
-|*horizontal_alignment* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`-1`
+|*anchor_left* a|`0.709`
+|*anchor_top* a|`0.276`
+|*anchor_right* a|`0.709`
+|*anchor_bottom* a|`0.276`
+|*offset_left* a|`-590.189`
+|*offset_top* a|`-27.468`
+|*offset_right* a|`-0.189026`
+|*offset_bottom* a|`27.532`
+|*theme_override_colors/font_color* a|`Color(0.242966, 0.242966, 0.242966, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0.239, 0.239, 0.239, 0)`
+|*theme_override_font_sizes/font_size* a|`36`
+|*text* a|`Chapter 1`
+|*horizontal_alignment* a|`2`
 |===
 [.node-property.node-control]
 .#$BannerBox/ChapterName# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*anchors_preset* |`-1`
-|*anchor_left* |`0.709`
-|*anchor_top* |`0.64`
-|*anchor_right* |`0.709`
-|*anchor_bottom* |`0.64`
-|*offset_left* |`-590.189`
-|*offset_top* |`-33.52`
-|*offset_right* |`-0.189026`
-|*offset_bottom* |`33.48`
-|*text* |`Ghost town`
-|*horizontal_alignment* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`-1`
+|*anchor_left* a|`0.709`
+|*anchor_top* a|`0.64`
+|*anchor_right* a|`0.709`
+|*anchor_bottom* a|`0.64`
+|*offset_left* a|`-590.189`
+|*offset_top* a|`-33.52`
+|*offset_right* a|`-0.189026`
+|*offset_bottom* a|`33.48`
+|*text* a|`Ghost town`
+|*horizontal_alignment* a|`2`
 |===
 [.node-property.node-control]
 .#$Box# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*z_index* |`2`
-|*layout_mode* |`1`
-|*anchors_preset* |`-1`
-|*anchor_left* |`1.0`
-|*anchor_top* |`0.069`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`0.069`
-|*offset_left* |`-721.0`
-|*offset_top* |`0.479996`
-|*offset_right* |`4.0`
-|*offset_bottom* |`678.48`
-|*texture* |`ExtResource("1_avfsq")`
-|*region_rect* |`Rect2(235, 116, 725, 760)`
-|*patch_margin_bottom* |`300`
+|*z_index* a|`2`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`-1`
+|*anchor_left* a|`1.0`
+|*anchor_top* a|`0.069`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`0.069`
+|*offset_left* a|`-721.0`
+|*offset_top* a|`0.479996`
+|*offset_right* a|`4.0`
+|*offset_bottom* a|`678.48`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Box.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Box.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Box.svg[]
+
+|*region_rect* a|`Rect2(235, 116, 725, 760)`
+|*patch_margin_bottom* a|`300`
 |===
 [.node-property.node-2d]
 .#$Banner# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*z_index* |`3`
-|*texture_filter* |`2`
-|*position* |`Vector2(1639, 175)`
-|*texture* |`ExtResource("4_30gw0")`
+|*unique_name_in_owner* a|`true`
+|*z_index* a|`3`
+|*texture_filter* a|`2`
+|*position* a|`Vector2(1639, 175)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Banner.png]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Banner.png
+image::/assets/raw/assets/images/ui/Chapters/menu/Banner.png[]
+
 |===
 [.node-property.node-2d]
 .#$SideSelection# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
+|*texture_filter* a|`2`
 |===
 [.node-property.node-control]
 .#$SideSelection/CenterBox# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*z_index* |`2`
-|*layout_mode* |`3`
-|*anchors_preset* |`0`
-|*offset_left* |`1256.0`
-|*offset_top* |`247.0`
-|*offset_right* |`1884.0`
-|*offset_bottom* |`517.0`
-|*theme* |`ExtResource("1_hp5xr")`
+|*z_index* a|`2`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`0`
+|*offset_left* a|`1256.0`
+|*offset_top* a|`247.0`
+|*offset_right* a|`1884.0`
+|*offset_bottom* a|`517.0`
+|*theme* a|`ExtResource("1_hp5xr")`
 |===
 [.node-property.node-2d]
 .#$SideSelection/CenterBox/BlueHeartIcon# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*position* |`Vector2(150.5, 133.5)`
-|*scale* |`Vector2(1.38281, 1.38281)`
-|*texture* |`ExtResource("5_gfqg8")`
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(150.5, 133.5)`
+|*scale* a|`Vector2(1.38281, 1.38281)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$SideSelection/CenterBox/StrawberryIcon# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(303, 92.5)`
-|*scale* |`Vector2(0.269531, 0.269531)`
-|*texture* |`ExtResource("5_trs7h")`
+|*position* a|`Vector2(303, 92.5)`
+|*scale* a|`Vector2(0.269531, 0.269531)`
+|*texture* a|[link=/assets/assets/images/ui/Strawberry.png]
+[.asset-image]
+.res://assets/images/ui/Strawberry.png
+image::/assets/raw/assets/images/ui/Strawberry.png[]
+
 |===
 [.node-property.node-2d]
 .#$SideSelection/CenterBox/MultiplicationStrawberry# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(353, 94.5)`
-|*scale* |`Vector2(0.145145, 0.145145)`
-|*texture* |`ExtResource("5_tb0qi")`
+|*position* a|`Vector2(353, 94.5)`
+|*scale* a|`Vector2(0.145145, 0.145145)`
+|*texture* a|[link=/assets/assets/images/ui/Multiplication.svg]
+[.asset-image]
+.res://assets/images/ui/Multiplication.svg
+image::/assets/raw/assets/images/ui/Multiplication.svg[]
+
 |===
 [.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`-1`
-|*anchor_left* |`0.637`
-|*anchor_top* |`0.322`
-|*anchor_right* |`0.637`
-|*anchor_bottom* |`0.322`
-|*offset_left* |`-10.036`
-|*offset_top* |`-28.94`
-|*offset_right* |`126.964`
-|*offset_bottom* |`38.06`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`-1`
+|*anchor_left* a|`0.637`
+|*anchor_top* a|`0.322`
+|*anchor_right* a|`0.637`
+|*anchor_bottom* a|`0.322`
+|*offset_left* a|`-10.036`
+|*offset_top* a|`-28.94`
+|*offset_right* a|`126.964`
+|*offset_bottom* a|`38.06`
 |===
 [.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer/ObtainedStrawberryCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*text* |`0`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*text* a|`0`
 |===
 [.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer/Slash# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*text* |`/`
+|*layout_mode* a|`2`
+|*text* a|`/`
 |===
 [.node-property.node-control]
 .#$SideSelection/CenterBox/StrawberryCountContainer/MaxStrawberryCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*text* |`20`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*text* a|`20`
 |===
 [.node-property.node-2d]
 .#$SideSelection/CenterBox/FailureIcon# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(327, 187.5)`
-|*scale* |`Vector2(0.392578, 0.392578)`
-|*texture* |`ExtResource("6_6dned")`
+|*position* a|`Vector2(327, 187.5)`
+|*scale* a|`Vector2(0.392578, 0.392578)`
+|*texture* a|[link=/assets/assets/images/ui/Skull.svg]
+[.asset-image]
+.res://assets/images/ui/Skull.svg
+image::/assets/raw/assets/images/ui/Skull.svg[]
+
 |===
 [.node-property.node-2d]
 .#$SideSelection/CenterBox/MultiplicationStrawberry2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(383, 188.5)`
-|*scale* |`Vector2(0.145, 0.145)`
-|*texture* |`ExtResource("5_tb0qi")`
+|*position* a|`Vector2(383, 188.5)`
+|*scale* a|`Vector2(0.145, 0.145)`
+|*texture* a|[link=/assets/assets/images/ui/Multiplication.svg]
+[.asset-image]
+.res://assets/images/ui/Multiplication.svg
+image::/assets/raw/assets/images/ui/Multiplication.svg[]
+
 |===
 [.node-property.node-control]
 .#$SideSelection/CenterBox/FailureCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`0`
-|*offset_left* |`413.0`
-|*offset_top* |`151.5`
-|*offset_right* |`541.0`
-|*offset_bottom* |`218.5`
-|*text* |`0`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`0`
+|*offset_left* a|`413.0`
+|*offset_top* a|`151.5`
+|*offset_right* a|`541.0`
+|*offset_bottom* a|`218.5`
+|*text* a|`0`
 |===
 [.node-property.node-control]
 .#$SideSelection/BottomBox# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*z_index* |`2`
-|*layout_mode* |`3`
-|*anchor_left* |`1.0`
-|*anchor_top* |`0.713`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`0.713`
-|*offset_left* |`1199.0`
-|*offset_top* |`517.0`
-|*offset_right* |`1920.0`
-|*offset_bottom* |`753.0`
-|*grow_horizontal* |`0`
-|*theme* |`ExtResource("1_hp5xr")`
+|*z_index* a|`2`
+|*layout_mode* a|`3`
+|*anchor_left* a|`1.0`
+|*anchor_top* a|`0.713`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`0.713`
+|*offset_left* a|`1199.0`
+|*offset_top* a|`517.0`
+|*offset_right* a|`1920.0`
+|*offset_bottom* a|`753.0`
+|*grow_horizontal* a|`0`
+|*theme* a|`ExtResource("1_hp5xr")`
 |===
 [.node-property.node-control]
 .#$SideSelection/BottomBox/Label# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`-1`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`0.913`
-|*offset_bottom* |`-61.468`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*theme_override_colors/font_color* |`Color(0.508731, 0.408952, 0.432275, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|*text* |`Climb`
-|*horizontal_alignment* |`1`
-|*vertical_alignment* |`1`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`-1`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`0.913`
+|*offset_bottom* a|`-61.468`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*theme_override_colors/font_color* a|`Color(0.508731, 0.408952, 0.432275, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0, 0, 0, 0)`
+|*text* a|`Climb`
+|*horizontal_alignment* a|`1`
+|*vertical_alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$SideSelection/SideButtonContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*z_index* |`1`
-|*offset_left* |`1402.0`
-|*offset_top* |`648.0`
-|*offset_right* |`1739.0`
-|*offset_bottom* |`875.0`
-|*size_flags_horizontal* |`6`
+|*unique_name_in_owner* a|`true`
+|*z_index* a|`1`
+|*offset_left* a|`1402.0`
+|*offset_top* a|`648.0`
+|*offset_right* a|`1739.0`
+|*offset_bottom* a|`875.0`
+|*size_flags_horizontal* a|`6`
 |===
 [.node-property.node-control]
 .#$SideSelection/SideButtonContainer/ClimbBookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-control]
 .#$SideSelection/SideButtonContainer/CassetteBookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-plain]
 .#$SideSelection/SideButtonContainer/CassetteBookmark/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*scale* |`Vector2(0.8, 0.8)`
-|*texture* |`ExtResource("5_sr4qr")`
+|*scale* a|`Vector2(0.8, 0.8)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Cassette.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Cassette.svg[]
+
 |===
 [.node-property.node-control]
 .#$StageSelection/BottomBox# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*z_index* |`2`
-|*layout_mode* |`3`
-|*anchor_left* |`1.0`
-|*anchor_top* |`0.713`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`0.713`
-|*offset_left* |`1199.0`
-|*offset_top* |`648.269`
-|*offset_right* |`1920.0`
-|*offset_bottom* |`791.269`
-|*grow_horizontal* |`0`
-|*theme* |`ExtResource("1_hp5xr")`
+|*z_index* a|`2`
+|*layout_mode* a|`3`
+|*anchor_left* a|`1.0`
+|*anchor_top* a|`0.713`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`0.713`
+|*offset_left* a|`1199.0`
+|*offset_top* a|`648.269`
+|*offset_right* a|`1920.0`
+|*offset_bottom* a|`791.269`
+|*grow_horizontal* a|`0`
+|*theme* a|`ExtResource("1_hp5xr")`
 |===
 [.node-property.node-control]
 .#$StageSelection/BottomBox/StageLabel# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*anchors_preset* |`14`
-|*anchor_top* |`0.5`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`0.5`
-|*offset_top* |`-45.5`
-|*offset_bottom* |`33.5`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*theme_override_colors/font_color* |`Color(0.508731, 0.408952, 0.432275, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|*text* |`Get started`
-|*horizontal_alignment* |`1`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`14`
+|*anchor_top* a|`0.5`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`0.5`
+|*offset_top* a|`-45.5`
+|*offset_bottom* a|`33.5`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*theme_override_colors/font_color* a|`Color(0.508731, 0.408952, 0.432275, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0, 0, 0, 0)`
+|*text* a|`Get started`
+|*horizontal_alignment* a|`1`
 |===
 [.node-property.node-2d]
 .#$StageSelection/Photos# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*z_index* |`2`
-|*position* |`Vector2(1545, 451)`
+|*unique_name_in_owner* a|`true`
+|*z_index* a|`2`
+|*position* a|`Vector2(1545, 451)`
 |===
 [.node-property.node-2d]
 .#$StageSelection/Photos/PhotoInstances# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-control]
 .#$StageSelection/StageButtonContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*z_index* |`1`
-|*offset_left* |`1293.0`
-|*offset_top* |`755.0`
-|*offset_right* |`1843.0`
-|*offset_bottom* |`951.0`
-|*size_flags_horizontal* |`4`
-|*alignment* |`1`
+|*unique_name_in_owner* a|`true`
+|*z_index* a|`1`
+|*offset_left* a|`1293.0`
+|*offset_top* a|`755.0`
+|*offset_right* a|`1843.0`
+|*offset_bottom* a|`951.0`
+|*size_flags_horizontal* a|`4`
+|*alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage1Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage1Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* |`ExtResource("13_jxwkk")`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/bookmark_yellow.png]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/bookmark_yellow.png
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_yellow.png[]
+
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage1Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*scale* |`Vector2(0.7, 0.7)`
-|*texture* |`ExtResource("13_hfos7")`
+|*scale* a|`Vector2(0.7, 0.7)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Star.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Star.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Star.svg[]
+
 |===
 [.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage2Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage2Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* |`ExtResource("15_7vn6q")`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/bookmark_navy.png
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_navy.png[]
+
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage2Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*scale* |`Vector2(0.7, 0.7)`
-|*texture* |`ExtResource("15_wdor7")`
+|*scale* a|`Vector2(0.7, 0.7)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Mountain.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[]
+
 |===
 [.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage3Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage3Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* |`ExtResource("15_7vn6q")`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/bookmark_navy.png
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_navy.png[]
+
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage3Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*scale* |`Vector2(0.7, 0.7)`
-|*texture* |`ExtResource("15_wdor7")`
+|*scale* a|`Vector2(0.7, 0.7)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Mountain.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[]
+
 |===
 [.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage4Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage4Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* |`ExtResource("15_7vn6q")`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/bookmark_navy.png
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_navy.png[]
+
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage4Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*scale* |`Vector2(0.7, 0.7)`
-|*texture* |`ExtResource("15_wdor7")`
+|*scale* a|`Vector2(0.7, 0.7)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Mountain.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[]
+
 |===
 [.node-property.node-control]
 .#$StageSelection/StageButtonContainer/Stage5Button# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage5Button/Bookmark# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* |`ExtResource("15_7vn6q")`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/bookmark_navy.png]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/bookmark_navy.png
+image::/assets/raw/assets/images/ui/Chapters/menu/bookmark_navy.png[]
+
 |===
 [.node-property.node-plain]
 .#$StageSelection/StageButtonContainer/Stage5Button/Bookmark/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*scale* |`Vector2(0.7, 0.7)`
-|*texture* |`ExtResource("15_wdor7")`
+|*scale* a|`Vector2(0.7, 0.7)`
+|*texture* a|[link=/assets/assets/images/ui/Chapters/menu/Mountain.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/menu/Mountain.svg
+image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[]
+
 |===
 [.node-property.node-control]
 .#$ClosingCurtain# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*offset_top* |`-1.0`
-|*offset_bottom* |`-1.0`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*offset_top* a|`-1.0`
+|*offset_bottom* a|`-1.0`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 &"": SubResource("AnimationLibrary_ebi0a")
 }`
 |===

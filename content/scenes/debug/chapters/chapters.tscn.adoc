@@ -125,35 +125,35 @@ func _on_reload_button_pressed() -> void:
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`3`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*theme* |`ExtResource("1_4kat4")`
-|*script* |`ExtResource("1_x5h8o")`
-|*full_resource* |`ExtResource("3_n6u80")`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*theme* a|`ExtResource("1_4kat4")`
+|*script* a|link:/scripts/debug/chapters/chapters.gd[res://debug/chapters/chapters.gd]
+|*full_resource* a|`ExtResource("3_n6u80")`
 |===
 [.node-property.node-control]
 .#$Chapters# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
 |===
 [.node-property.node-control]
 .#$ReloadButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`0`
-|*offset_left* |`128.0`
-|*offset_top* |`796.0`
-|*offset_right* |`335.0`
-|*offset_bottom* |`887.0`
-|*text* |`Reload`
+|*layout_mode* a|`0`
+|*offset_left* a|`128.0`
+|*offset_top* a|`796.0`
+|*offset_right* a|`335.0`
+|*offset_bottom* a|`887.0`
+|*text* a|`Reload`
 |===
 
 

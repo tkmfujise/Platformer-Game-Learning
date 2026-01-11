@@ -73,10 +73,10 @@ _(R::_on_animation_player_animation_finished, N16::animation_finished)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/world/Panorama.png
-[link=/assets/assets/world/Panorama.png] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/world/Panorama.png]
 image::/assets/raw/assets/world/Panorama.png[200, 100] 
 
 
@@ -753,145 +753,145 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*script* |`ExtResource("1_phfn5")`
-|*CameraNode* |`NodePath("Path3D/PathFollow3D/Camera3D")`
+|*script* a|link:/scripts/src/world/world.gd[res://src/world/world.gd]
+|*CameraNode* a|`NodePath("Path3D/PathFollow3D/Camera3D")`
 |===
 [.node-property.node-3d]
 .#$SpotLights/Chapter0# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(0.00701346, -0.958252, 0.285839, 0.0572578, 0.285762, 0.956589, -0.998335, 0.00965756, 0.0568716, -0.28715, 0.0306233, -0.840506)`
-|*light_color* |`Color(0.914361, 0.553244, 0.844536, 1)`
-|*spot_range* |`0.1`
+|*transform* a|`Transform3D(0.00701346, -0.958252, 0.285839, 0.0572578, 0.285762, 0.956589, -0.998335, 0.00965756, 0.0568716, -0.28715, 0.0306233, -0.840506)`
+|*light_color* a|`Color(0.914361, 0.553244, 0.844536, 1)`
+|*spot_range* a|`0.1`
 |===
 [.node-property.node-3d]
 .#$SpotLights/Chapter1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(0.0801051, -0.989197, -0.122772, 0.00810283, -0.122517, 0.992433, -0.996754, -0.0804937, -0.00179896, -0.453171, 0.118333, -0.297492)`
-|*light_color* |`Color(0.295293, 0.426444, 0.435629, 1)`
-|*light_energy* |`0.5`
-|*light_specular* |`5.0`
-|*light_bake_mode* |`1`
-|*spot_range* |`0.091`
-|*spot_angle* |`67.956`
+|*transform* a|`Transform3D(0.0801051, -0.989197, -0.122772, 0.00810283, -0.122517, 0.992433, -0.996754, -0.0804937, -0.00179896, -0.453171, 0.118333, -0.297492)`
+|*light_color* a|`Color(0.295293, 0.426444, 0.435629, 1)`
+|*light_energy* a|`0.5`
+|*light_specular* a|`5.0`
+|*light_bake_mode* a|`1`
+|*spot_range* a|`0.091`
+|*spot_angle* a|`67.956`
 |===
 [.node-property.node-3d]
 .#$SpotLights/Chapter2_1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(0.872807, -0.440018, -0.211168, 0.178005, -0.115872, 0.977184, -0.454447, -0.890482, -0.0228083, -0.469845, 0.233757, 0.0936139)`
-|*light_color* |`Color(0.369019, 0.215366, 0.133746, 1)`
-|*light_energy* |`0.5`
-|*light_specular* |`5.0`
-|*spot_range* |`0.1`
+|*transform* a|`Transform3D(0.872807, -0.440018, -0.211168, 0.178005, -0.115872, 0.977184, -0.454447, -0.890482, -0.0228083, -0.469845, 0.233757, 0.0936139)`
+|*light_color* a|`Color(0.369019, 0.215366, 0.133746, 1)`
+|*light_energy* a|`0.5`
+|*light_specular* a|`5.0`
+|*spot_range* a|`0.1`
 |===
 [.node-property.node-3d]
 .#$SpotLights/Chapter2_2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(0.882029, -0.453417, 0.128208, -0.124509, 0.0381462, 0.991485, -0.454447, -0.890482, -0.0228083, -0.469845, 0.274668, 0.0936139)`
-|*light_color* |`Color(0.369019, 0.215366, 0.133746, 1)`
-|*light_energy* |`0.5`
-|*light_specular* |`5.0`
-|*spot_range* |`0.1`
+|*transform* a|`Transform3D(0.882029, -0.453417, 0.128208, -0.124509, 0.0381462, 0.991485, -0.454447, -0.890482, -0.0228083, -0.469845, 0.274668, 0.0936139)`
+|*light_color* a|`Color(0.369019, 0.215366, 0.133746, 1)`
+|*light_energy* a|`0.5`
+|*light_specular* a|`5.0`
+|*spot_range* a|`0.1`
 |===
 [.node-property.node-3d]
 .#$SpotLights/Chapter3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(-0.92179, -0.371002, 0.112523, 0.223451, -0.271233, 0.936217, -0.316818, 0.888139, 0.332921, -0.110666, 0.373874, 0.347782)`
-|*light_color* |`Color(0.816799, 0.597135, 0.462843, 1)`
-|*light_energy* |`0.1`
-|*spot_range* |`0.1`
+|*transform* a|`Transform3D(-0.92179, -0.371002, 0.112523, 0.223451, -0.271233, 0.936217, -0.316818, 0.888139, 0.332921, -0.110666, 0.373874, 0.347782)`
+|*light_color* a|`Color(0.816799, 0.597135, 0.462843, 1)`
+|*light_energy* a|`0.1`
+|*spot_range* a|`0.1`
 |===
 [.node-property.node-3d]
 .#$SpotLights/Chapter8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(-0.250815, 0.0633653, 0.965959, 0.00601347, 0.997938, -0.0639017, -0.968017, -0.0102187, -0.250678, -0.0657851, 0.607352, -0.217476)`
-|*light_color* |`Color(0.914361, 0.553244, 0.844536, 1)`
-|*spot_range* |`0.1`
+|*transform* a|`Transform3D(-0.250815, 0.0633653, 0.965959, 0.00601347, 0.997938, -0.0639017, -0.968017, -0.0102187, -0.250678, -0.0657851, 0.607352, -0.217476)`
+|*light_color* a|`Color(0.914361, 0.553244, 0.844536, 1)`
+|*spot_range* a|`0.1`
 |===
 [.node-property.node-3d]
 .#$DirectionalLight3D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(1, 0, 0, 0, 0.318943, 0.947774, 0, -0.947774, 0.318943, 0, 0, 0)`
-|*light_color* |`Color(0.427192, 0.516328, 0.867139, 1)`
-|*sky_mode* |`1`
+|*transform* a|`Transform3D(1, 0, 0, 0, 0.318943, 0.947774, 0, -0.947774, 0.318943, 0, 0, 0)`
+|*light_color* a|`Color(0.427192, 0.516328, 0.867139, 1)`
+|*sky_mode* a|`1`
 |===
 [.node-property.node-other]
 .#$WorldEnvironment# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*environment* |`SubResource("Environment_b1s5s")`
-|*compositor* |`SubResource("Compositor_vow5d")`
+|*environment* a|`SubResource("Environment_b1s5s")`
+|*compositor* a|`SubResource("Compositor_vow5d")`
 |===
 [.node-property.node-3d]
 .#$Path3D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0614908, 0, -0.286387)`
-|*curve* |`SubResource("Curve3D_bt8sv")`
+|*transform* a|`Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0614908, 0, -0.286387)`
+|*curve* a|`SubResource("Curve3D_bt8sv")`
 |===
 [.node-property.node-3d]
 .#$Path3D/PathFollow3D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* |`Transform3D(7.5485e-08, 0.000999828, 0.999827, -5.81978e-11, 0.999828, -0.000999827, -0.99983, 1.72872e-11, 7.54849e-08, -3.77489e-10, 2.91038e-13, 2.005)`
-|*h_offset* |`-0.005`
+|*transform* a|`Transform3D(7.5485e-08, 0.000999828, 0.999827, -5.81978e-11, 0.999828, -0.000999827, -0.99983, 1.72872e-11, 7.54849e-08, -3.77489e-10, 2.91038e-13, 2.005)`
+|*h_offset* a|`-0.005`
 |===
 [.node-property.node-3d]
 .#$Path3D/PathFollow3D/Camera3D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*transform* |`Transform3D(-0.519203, 0.0753502, -0.851524, 0.000438006, 0.996302, 0.0878944, 0.85485, 0.0452544, -0.517228, 0.52904, 0.621466, -0.783036)`
-|*fov* |`40.0`
-|*near* |`0.057`
+|*unique_name_in_owner* a|`true`
+|*transform* a|`Transform3D(-0.519203, 0.0753502, -0.851524, 0.000438006, 0.996302, 0.0878944, 0.85485, 0.0452544, -0.517228, 0.52904, 0.621466, -0.783036)`
+|*fov* a|`40.0`
+|*near* a|`0.057`
 |===
 [.node-property.node-control]
 .#$Blinder# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*modulate* |`Color(0, 0, 0, 0.784314)`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
+|*modulate* a|`Color(0, 0, 0, 0.784314)`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
 |===
 [.node-property.node-2d]
 .#$Mist# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*modulate* |`Color(1, 1, 1, 1)`
-|*position* |`Vector2(0, -1)`
+|*modulate* a|`Color(1, 1, 1, 1)`
+|*position* a|`Vector2(0, -1)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 &"": SubResource("AnimationLibrary_as40k")
 }`
-|*autoplay* |`opening`
+|*autoplay* a|`opening`
 |===
 
 

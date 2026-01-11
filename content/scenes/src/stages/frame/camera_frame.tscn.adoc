@@ -47,18 +47,18 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*collision_layer* |`4`
-|*collision_mask* |`4`
-|*script* |`ExtResource("1_1tugu")`
+|*collision_layer* a|`4`
+|*collision_mask* a|`4`
+|*script* a|link:/scripts/src/stages/frame/camera_frame.gd[res://src/stages/frame/camera_frame.gd]
 |===
 [.node-property.node-2d]
 .#$CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*shape* |`SubResource("RectangleShape2D_jyj6x")`
-|*debug_color* |`Color(1, 0.23921569, 0.5372549, 0.03529412)`
+|*unique_name_in_owner* a|`true`
+|*shape* a|`SubResource("RectangleShape2D_jyj6x")`
+|*debug_color* a|`Color(1, 0.23921569, 0.5372549, 0.03529412)`
 |===
 
 

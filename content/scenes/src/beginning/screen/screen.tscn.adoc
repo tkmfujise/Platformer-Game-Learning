@@ -76,10 +76,10 @@ _(R::_on_animation_tree_animation_started, N17::animation_started)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/ui/Joy_A_button.svg
-[link=/assets/assets/images/ui/Joy_A_button.svg] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/ui/Joy_A_button.svg]
 image::/assets/raw/assets/images/ui/Joy_A_button.svg[200, 100] 
 
 
@@ -264,204 +264,208 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`3`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*script* |`ExtResource("1_nlnab")`
-|*MenuScenePath* |`res://src/beginning/menu/menu.tscn`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*script* a|link:/scripts/src/beginning/screen/screen.gd[res://src/beginning/screen/screen.gd]
+|*MenuScenePath* a|`res://src/beginning/menu/menu.tscn`
 |===
 [.node-property.node-control]
 .#$Background# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*color* |`Color(0.186624, 0.185867, 0.286366, 1)`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*color* a|`Color(0.186624, 0.185867, 0.286366, 1)`
 |===
 [.node-property.node-control]
 .#$Author# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*visible* |`false`
-|*modulate* |`Color(1, 1, 1, 0)`
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
+|*unique_name_in_owner* a|`true`
+|*visible* a|`false`
+|*modulate* a|`Color(1, 1, 1, 0)`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
 |===
 [.node-property.node-control]
 .#$Author/Container# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`8`
-|*anchor_left* |`0.5`
-|*anchor_top* |`0.5`
-|*anchor_right* |`0.5`
-|*anchor_bottom* |`0.5`
-|*offset_left* |`-267.0`
-|*offset_top* |`-215.5`
-|*offset_right* |`267.0`
-|*offset_bottom* |`215.5`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`8`
+|*anchor_left* a|`0.5`
+|*anchor_top* a|`0.5`
+|*anchor_right* a|`0.5`
+|*anchor_bottom* a|`0.5`
+|*offset_left* a|`-267.0`
+|*offset_top* a|`-215.5`
+|*offset_right* a|`267.0`
+|*offset_bottom* a|`215.5`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
 |===
 [.node-property.node-control]
 .#$Author/Container/NameContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*theme_override_constants/margin_bottom* |`80`
+|*layout_mode* a|`2`
+|*theme_override_constants/margin_bottom* a|`80`
 |===
 [.node-property.node-control]
 .#$Author/Container/NameContainer/Name# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*theme_override_fonts/font* |`ExtResource("2_khub0")`
-|*theme_override_font_sizes/font_size* |`250`
-|*text* |`tkmfujise`
-|*horizontal_alignment* |`1`
+|*layout_mode* a|`2`
+|*theme_override_fonts/font* a|`ExtResource("2_khub0")`
+|*theme_override_font_sizes/font_size* a|`250`
+|*text* a|`tkmfujise`
+|*horizontal_alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$Author/Container/Presents# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*theme_override_colors/font_color* |`Color(1, 1, 1, 0.196078)`
-|*theme_override_font_sizes/font_size* |`70`
-|*text* |`presents`
-|*horizontal_alignment* |`1`
+|*layout_mode* a|`2`
+|*theme_override_colors/font_color* a|`Color(1, 1, 1, 0.196078)`
+|*theme_override_font_sizes/font_size* a|`70`
+|*text* a|`presents`
+|*horizontal_alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$Title# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
 |===
 [.node-property.node-control]
 .#$Title/TitleContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
 |===
 [.node-property.node-2d]
 .#$Title/TitleContainer/TitleLogo# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(950, 522)`
-|*texture* |`ExtResource("3_sre7x")`
+|*position* a|`Vector2(950, 522)`
+|*texture* a|`ExtResource("3_sre7x")`
 |===
 [.node-property.node-control]
 .#$Title/ButtonContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`3`
-|*anchor_left* |`1.0`
-|*anchor_top* |`1.0`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*offset_left* |`-100.0`
-|*offset_top* |`-100.0`
-|*grow_horizontal* |`0`
-|*grow_vertical* |`0`
-|*theme_override_constants/margin_right* |`100`
-|*theme_override_constants/margin_bottom* |`100`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`3`
+|*anchor_left* a|`1.0`
+|*anchor_top* a|`1.0`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`-100.0`
+|*offset_top* a|`-100.0`
+|*grow_horizontal* a|`0`
+|*grow_vertical* a|`0`
+|*theme_override_constants/margin_right* a|`100`
+|*theme_override_constants/margin_bottom* a|`100`
 |===
 [.node-property.node-2d]
 .#$Title/ButtonContainer/JoyAButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* |`ExtResource("4_vi604")`
+|*texture* a|[link=/assets/assets/images/ui/Joy_A_button.svg]
+[.asset-image]
+.res://assets/images/ui/Joy_A_button.svg
+image::/assets/raw/assets/images/ui/Joy_A_button.svg[]
+
 |===
 [.node-property.node-control]
 .#$SubViewportContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
 |===
 [.node-property.node-other]
 .#$SubViewportContainer/SubViewport# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transparent_bg* |`true`
-|*handle_input_locally* |`false`
-|*size* |`Vector2i(1920, 1080)`
-|*render_target_update_mode* |`4`
+|*transparent_bg* a|`true`
+|*handle_input_locally* a|`false`
+|*size* a|`Vector2i(1920, 1080)`
+|*render_target_update_mode* a|`4`
 |===
 [.node-property.node-control]
 .#$Blinder# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*color* |`Color(0, 0, 0, 0)`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*color* a|`Color(0, 0, 0, 0)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 &"": SubResource("AnimationLibrary_5ydpp")
 }`
-|*autoplay* |`opening`
+|*autoplay* a|`opening`
 |===
 [.node-property.node-other]
 .#$AnimationTree# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*root_node* |`NodePath("%AnimationTree/..")`
-|*tree_root* |`SubResource("AnimationNodeStateMachine_f1cge")`
-|*anim_player* |`NodePath("../AnimationPlayer")`
+|*unique_name_in_owner* a|`true`
+|*root_node* a|`NodePath("%AnimationTree/..")`
+|*tree_root* a|`SubResource("AnimationNodeStateMachine_f1cge")`
+|*anim_player* a|`NodePath("../AnimationPlayer")`
 |===
 
 

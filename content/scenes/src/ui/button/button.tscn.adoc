@@ -32,10 +32,10 @@ _(R::_on_focus_exited, R::focus_exited)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/ui/Options.svg
-[link=/assets/assets/images/ui/Options.svg] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/ui/Options.svg]
 image::/assets/raw/assets/images/ui/Options.svg[200, 100] 
 
 
@@ -205,25 +205,29 @@ R  ->  R : position\n = Vector2(0, 0)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*offset_right* |`287.0`
-|*offset_bottom* |`91.0`
-|*theme* |`ExtResource("1_r8ale")`
-|*text* |` Button`
-|*icon* |`ExtResource("1_br72h")`
-|*flat* |`true`
-|*alignment* |`0`
-|*script* |`ExtResource("2_cgon7")`
-|*focus_color_1* |`Color(0.5, 1, 0.5, 1)`
-|*focus_color_2* |`Color(1, 1, 0.5, 1)`
+|*texture_filter* a|`2`
+|*offset_right* a|`287.0`
+|*offset_bottom* a|`91.0`
+|*theme* a|`ExtResource("1_r8ale")`
+|*text* a|` Button`
+|*icon* a|[link=/assets/assets/images/ui/Options.svg]
+[.asset-image]
+.res://assets/images/ui/Options.svg
+image::/assets/raw/assets/images/ui/Options.svg[]
+
+|*flat* a|`true`
+|*alignment* a|`0`
+|*script* a|link:/scripts/src/ui/button/button.gd[res://src/ui/button/button.gd]
+|*focus_color_1* a|`Color(0.5, 1, 0.5, 1)`
+|*focus_color_2* a|`Color(1, 1, 0.5, 1)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 "": SubResource("AnimationLibrary_c4kiu")
 }`
 |===

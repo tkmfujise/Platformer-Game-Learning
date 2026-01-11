@@ -52,7 +52,7 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*script* |`ExtResource("1_0fgx6")`
+|*script* a|link:/scripts/autoloads/keyboard_handler/keyboard_handler.gd[res://autoloads/keyboard_handler/keyboard_handler.gd]
 |===
 
 

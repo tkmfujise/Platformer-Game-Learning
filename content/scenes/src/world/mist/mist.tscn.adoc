@@ -19,10 +19,10 @@ left to right direction
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/world/Mist.png
-[link=/assets/assets/world/Mist.png] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/world/Mist.png]
 image::/assets/raw/assets/world/Mist.png[200, 100] 
 
 
@@ -50,12 +50,16 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*modulate* |`Color(0.595363, 0.624759, 0.704783, 0.097)`
-|*texture_repeat* |`2`
-|*material* |`SubResource("ShaderMaterial_rngof")`
-|*scale* |`Vector2(6, 6)`
-|*texture* |`ExtResource("2_fj6js")`
-|*offset* |`Vector2(160, 90)`
+|*modulate* a|`Color(0.595363, 0.624759, 0.704783, 0.097)`
+|*texture_repeat* a|`2`
+|*material* a|`SubResource("ShaderMaterial_rngof")`
+|*scale* a|`Vector2(6, 6)`
+|*texture* a|[link=/assets/assets/world/Mist.png]
+[.asset-image]
+.res://assets/world/Mist.png
+image::/assets/raw/assets/world/Mist.png[]
+
+|*offset* a|`Vector2(160, 90)`
 |===
 
 

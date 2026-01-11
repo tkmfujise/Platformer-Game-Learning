@@ -59,11 +59,11 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*limit_left* |`0`
-|*limit_bottom* |`1080`
-|*limit_smoothed* |`true`
-|*position_smoothing_enabled* |`true`
-|*script* |`ExtResource("1_ak8su")`
+|*limit_left* a|`0`
+|*limit_bottom* a|`1080`
+|*limit_smoothed* a|`true`
+|*position_smoothing_enabled* a|`true`
+|*script* a|link:/scripts/src/player/camera/camera.gd[res://src/player/camera/camera.gd]
 |===
 
 

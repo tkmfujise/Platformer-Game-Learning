@@ -302,55 +302,46 @@ _(R::_on_get_started_button_pressed, N68::pressed)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/ui/Tikect.svg
-[link=/assets/assets/images/ui/Tikect.svg] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/ui/Tikect.svg]
 image::/assets/raw/assets/images/ui/Tikect.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Skull.svg
-[link=/assets/assets/images/ui/Skull.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Skull.svg]
 image::/assets/raw/assets/images/ui/Skull.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Multiplication.svg
-[link=/assets/assets/images/ui/Multiplication.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Multiplication.svg]
 image::/assets/raw/assets/images/ui/Multiplication.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
-[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
 image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Cassette.svg
-[link=/assets/assets/images/ui/Cassette.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Cassette.svg]
 image::/assets/raw/assets/images/ui/Cassette.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/BlueHeart.svg
-[link=/assets/assets/images/ui/BlueHeart.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/BlueHeart.svg]
 image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/TikectCover.svg
-[link=/assets/assets/images/ui/TikectCover.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/TikectCover.svg]
 image::/assets/raw/assets/images/ui/TikectCover.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/sellotape.svg
-[link=/assets/assets/images/ui/sellotape.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/sellotape.svg]
 image::/assets/raw/assets/images/ui/sellotape.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/VintagePhotoMask.svg
-[link=/assets/assets/images/ui/VintagePhotoMask.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/VintagePhotoMask.svg]
 image::/assets/raw/assets/images/ui/VintagePhotoMask.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Strawberry.png
-[link=/assets/assets/images/ui/Strawberry.png] 
+[.asset-image]
+[link=/assets/assets/images/ui/Strawberry.png]
 image::/assets/raw/assets/images/ui/Strawberry.png[200, 100] 
 
 
@@ -648,727 +639,891 @@ R  ->o  R : focus_top\n = true
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*anchors_preset* |`10`
-|*anchor_right* |`1.0`
-|*offset_bottom* |`300.0`
-|*grow_horizontal* |`2`
-|*size_flags_vertical* |`3`
-|*focus_mode* |`2`
-|*theme* |`ExtResource("1_r7v0f")`
-|*script* |`ExtResource("1_g0hv4")`
-|*resource* |`ExtResource("3_23ixj")`
+|*anchors_preset* a|`10`
+|*anchor_right* a|`1.0`
+|*offset_bottom* a|`300.0`
+|*grow_horizontal* a|`2`
+|*size_flags_vertical* a|`3`
+|*focus_mode* a|`2`
+|*theme* a|`ExtResource("1_r7v0f")`
+|*script* a|link:/scripts/src/account/account.gd[res://src/account/account.gd]
+|*resource* a|`ExtResource("3_23ixj")`
 |===
 [.node-property.node-control]
 .#$VBoxContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*size_flags_horizontal* |`3`
+|*layout_mode* a|`2`
+|*size_flags_horizontal* a|`3`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*size_flags_horizontal* |`3`
-|*size_flags_vertical* |`3`
-|*theme_override_constants/margin_left* |`200`
-|*theme_override_constants/margin_top* |`25`
-|*theme_override_constants/margin_right* |`200`
-|*theme_override_constants/margin_bottom* |`25`
+|*layout_mode* a|`2`
+|*size_flags_horizontal* a|`3`
+|*size_flags_vertical* a|`3`
+|*theme_override_constants/margin_left* a|`200`
+|*theme_override_constants/margin_top* a|`25`
+|*theme_override_constants/margin_right* a|`200`
+|*theme_override_constants/margin_bottom* a|`25`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/Background# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*layout_mode* |`2`
-|*size_flags_horizontal* |`3`
-|*color* |`Color(0.726355, 0.910634, 0.938029, 0.381)`
+|*visible* a|`false`
+|*layout_mode* a|`2`
+|*size_flags_horizontal* a|`3`
+|*color* a|`Color(0.726355, 0.910634, 0.938029, 0.381)`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*position* |`Vector2(200, 25)`
+|*texture_filter* a|`2`
+|*position* a|`Vector2(200, 25)`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/Tikect# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*position* |`Vector2(933.5, 103)`
-|*scale* |`Vector2(0.873, 0.833333)`
-|*texture* |`ExtResource("3_tcswg")`
+|*texture_filter* a|`2`
+|*position* a|`Vector2(933.5, 103)`
+|*scale* a|`Vector2(0.873, 0.833333)`
+|*texture* a|[link=/assets/assets/images/ui/Tikect.svg]
+[.asset-image]
+.res://assets/images/ui/Tikect.svg
+image::/assets/raw/assets/images/ui/Tikect.svg[]
+
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*visible* |`false`
-|*layout_mode* |`3`
-|*anchors_preset* |`0`
-|*offset_left* |`737.0`
-|*offset_top* |`5.0`
-|*offset_right* |`1319.0`
-|*offset_bottom* |`191.0`
-|*theme* |`ExtResource("1_r7v0f")`
+|*unique_name_in_owner* a|`true`
+|*visible* a|`false`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`0`
+|*offset_left* a|`737.0`
+|*offset_top* a|`5.0`
+|*offset_right* a|`1319.0`
+|*offset_bottom* a|`191.0`
+|*theme* a|`ExtResource("1_r7v0f")`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummaryPlaceholder/Label# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*offset_left* |`7.0`
-|*offset_top* |`59.0`
-|*offset_right* |`527.0`
-|*offset_bottom* |`126.0`
-|*theme_override_colors/font_color* |`Color(0.53792, 0.416994, 0.382547, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|*text* |`New Game`
-|*horizontal_alignment* |`1`
+|*layout_mode* a|`2`
+|*offset_left* a|`7.0`
+|*offset_top* a|`59.0`
+|*offset_right* a|`527.0`
+|*offset_bottom* a|`126.0`
+|*theme_override_colors/font_color* a|`Color(0.53792, 0.416994, 0.382547, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0, 0, 0, 0)`
+|*text* a|`New Game`
+|*horizontal_alignment* a|`1`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/Skull# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(783, 156)`
-|*scale* |`Vector2(0.431641, 0.431641)`
-|*texture* |`ExtResource("4_ixd0n")`
+|*position* a|`Vector2(783, 156)`
+|*scale* a|`Vector2(0.431641, 0.431641)`
+|*texture* a|[link=/assets/assets/images/ui/Skull.svg]
+[.asset-image]
+.res://assets/images/ui/Skull.svg
+image::/assets/raw/assets/images/ui/Skull.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/Multiplication# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(842, 158)`
-|*scale* |`Vector2(0.161157, 0.161157)`
-|*texture* |`ExtResource("6_q55sp")`
+|*position* a|`Vector2(842, 158)`
+|*scale* a|`Vector2(0.161157, 0.161157)`
+|*texture* a|[link=/assets/assets/images/ui/Multiplication.svg]
+[.asset-image]
+.res://assets/images/ui/Multiplication.svg
+image::/assets/raw/assets/images/ui/Multiplication.svg[]
+
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`3`
-|*anchors_preset* |`0`
-|*offset_left* |`674.0`
-|*offset_right* |`1320.0`
-|*offset_bottom* |`200.0`
-|*theme* |`ExtResource("1_r7v0f")`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`0`
+|*offset_left* a|`674.0`
+|*offset_right* a|`1320.0`
+|*offset_bottom* a|`200.0`
+|*theme* a|`ExtResource("1_r7v0f")`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalFailureCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`0`
-|*offset_left* |`200.0`
-|*offset_top* |`123.0`
-|*offset_right* |`282.0`
-|*offset_bottom* |`190.0`
-|*text* |`123`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`0`
+|*offset_left* a|`200.0`
+|*offset_top* a|`123.0`
+|*offset_right* a|`282.0`
+|*offset_bottom* a|`190.0`
+|*text* a|`123`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ControlRoot/TotalPlayTime# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`0`
-|*offset_left* |`345.0`
-|*offset_top* |`123.0`
-|*offset_right* |`631.0`
-|*offset_bottom* |`190.0`
-|*theme_override_colors/font_color* |`Color(0.51933, 0.412748, 0.413729, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|*theme_override_font_sizes/font_size* |`32`
-|*text* |`12:34:56.789`
-|*horizontal_alignment* |`2`
-|*vertical_alignment* |`1`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`0`
+|*offset_left* a|`345.0`
+|*offset_top* a|`123.0`
+|*offset_right* a|`631.0`
+|*offset_bottom* a|`190.0`
+|*theme_override_colors/font_color* a|`Color(0.51933, 0.412748, 0.413729, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0, 0, 0, 0)`
+|*theme_override_font_sizes/font_size* a|`32`
+|*text* a|`12:34:56.789`
+|*horizontal_alignment* a|`2`
+|*vertical_alignment* a|`1`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(788, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(788, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(858, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(858, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(927, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(927, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(997, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(997, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1066, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1066, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1135, 34)`
-|*scale* |`Vector2(0.361, 0.306)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1135, 34)`
+|*scale* a|`Vector2(0.361, 0.306)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1205, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1205, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/CassettesPlaceholder/Cassette8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1275, 34)`
-|*scale* |`Vector2(0.361, 0.361)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1275, 34)`
+|*scale* a|`Vector2(0.361, 0.361)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(788, 86.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(788, 86.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(857, 86.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(857, 86.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(927, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(927, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(996, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(996, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1066, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1066, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1135, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1135, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1205, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1205, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/BlueHeartsPlaceh1older/BlueHeart8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1275, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("7_ymbo3")`
+|*position* a|`Vector2(1275, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg]
+[.asset-image]
+.res://assets/images/ui/Casstte-BlueHear_placeholder.svg
+image::/assets/raw/assets/images/ui/Casstte-BlueHear_placeholder.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(788, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(788, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(858, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(858, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(927, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(927, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(997, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(997, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1066, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(1066, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1135, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(1135, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1205, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(1205, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedCassettes/Cassette8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1275, 34)`
-|*scale* |`Vector2(0.458984, 0.458984)`
-|*texture* |`ExtResource("5_wglsh")`
+|*position* a|`Vector2(1275, 34)`
+|*scale* a|`Vector2(0.458984, 0.458984)`
+|*texture* a|[link=/assets/assets/images/ui/Cassette.svg]
+[.asset-image]
+.res://assets/images/ui/Cassette.svg
+image::/assets/raw/assets/images/ui/Cassette.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(788, 86.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(788, 86.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(857, 86.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(857, 86.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(927, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(927, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart4# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(996, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(996, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart5# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1066, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(1066, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart6# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1135, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(1135, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart7# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1205, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(1205, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/TicketContainer/TicketRoot/TicketSummary/ObtainedBlueHearts/BlueHeart8# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1275, 89.125)`
-|*scale* |`Vector2(0.361328, 0.361328)`
-|*texture* |`ExtResource("6_ectpy")`
+|*position* a|`Vector2(1275, 89.125)`
+|*scale* a|`Vector2(0.361328, 0.361328)`
+|*texture* a|[link=/assets/assets/images/ui/BlueHeart.svg]
+[.asset-image]
+.res://assets/images/ui/BlueHeart.svg
+image::/assets/raw/assets/images/ui/BlueHeart.svg[]
+
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/CoverContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*position* |`Vector2(1720, 25)`
+|*texture_filter* a|`2`
+|*position* a|`Vector2(1720, 25)`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/TikectCover# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(-1264, 103)`
-|*scale* |`Vector2(0.878, 0.836667)`
-|*texture* |`ExtResource("2_t0v8v")`
+|*position* a|`Vector2(-1264, 103)`
+|*scale* a|`Vector2(0.878, 0.836667)`
+|*texture* a|[link=/assets/assets/images/ui/TikectCover.svg]
+[.asset-image]
+.res://assets/images/ui/TikectCover.svg
+image::/assets/raw/assets/images/ui/TikectCover.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Face# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*material* |`SubResource("CanvasItemMaterial_pgbv1")`
-|*position* |`Vector2(-1539.67, 102.401)`
-|*scale* |`Vector2(0.677092, 0.691006)`
-|*texture* |`ExtResource("5_0qmxq")`
+|*material* a|`SubResource("CanvasItemMaterial_pgbv1")`
+|*position* a|`Vector2(-1539.67, 102.401)`
+|*scale* a|`Vector2(0.677092, 0.691006)`
+|*texture* a|`ExtResource("5_0qmxq")`
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeLeftTop# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(-1621, 20)`
-|*rotation* |`2.82394`
-|*scale* |`Vector2(1.30551, 1.09847)`
-|*texture* |`ExtResource("6_hjrdv")`
+|*position* a|`Vector2(-1621, 20)`
+|*rotation* a|`2.82394`
+|*scale* a|`Vector2(1.30551, 1.09847)`
+|*texture* a|[link=/assets/assets/images/ui/sellotape.svg]
+[.asset-image]
+.res://assets/images/ui/sellotape.svg
+image::/assets/raw/assets/images/ui/sellotape.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeRightBottom# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(-1466.23, 186.298)`
-|*rotation* |`-0.174533`
-|*scale* |`Vector2(1.2486, 1.12155)`
-|*texture* |`ExtResource("6_hjrdv")`
+|*position* a|`Vector2(-1466.23, 186.298)`
+|*rotation* a|`-0.174533`
+|*scale* a|`Vector2(1.2486, 1.12155)`
+|*texture* a|[link=/assets/assets/images/ui/sellotape.svg]
+[.asset-image]
+.res://assets/images/ui/sellotape.svg
+image::/assets/raw/assets/images/ui/sellotape.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/FacePhotoMask# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(-1539.5, 102.5)`
-|*scale* |`Vector2(0.675781, 0.691406)`
-|*blend_mode* |`2`
-|*texture* |`ExtResource("7_80d7o")`
+|*position* a|`Vector2(-1539.5, 102.5)`
+|*scale* a|`Vector2(0.675781, 0.691406)`
+|*blend_mode* a|`2`
+|*texture* a|[link=/assets/assets/images/ui/VintagePhotoMask.svg]
+[.asset-image]
+.res://assets/images/ui/VintagePhotoMask.svg
+image::/assets/raw/assets/images/ui/VintagePhotoMask.svg[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Strawberry# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(-1229.25, 158.75)`
-|*scale* |`Vector2(0.279297, 0.279297)`
-|*texture* |`ExtResource("8_rpibu")`
+|*position* a|`Vector2(-1229.25, 158.75)`
+|*scale* a|`Vector2(0.279297, 0.279297)`
+|*texture* a|[link=/assets/assets/images/ui/Strawberry.png]
+[.asset-image]
+.res://assets/images/ui/Strawberry.png
+image::/assets/raw/assets/images/ui/Strawberry.png[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/Multiplication# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(-1171.25, 163.75)`
-|*scale* |`Vector2(0.161157, 0.161157)`
-|*texture* |`ExtResource("6_q55sp")`
+|*position* a|`Vector2(-1171.25, 163.75)`
+|*scale* a|`Vector2(0.161157, 0.161157)`
+|*texture* a|[link=/assets/assets/images/ui/Multiplication.svg]
+[.asset-image]
+.res://assets/images/ui/Multiplication.svg
+image::/assets/raw/assets/images/ui/Multiplication.svg[]
+
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`3`
-|*anchors_preset* |`0`
-|*offset_left* |`-1420.0`
-|*offset_right* |`-1420.0`
-|*size_flags_horizontal* |`0`
-|*theme* |`ExtResource("1_r7v0f")`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`0`
+|*offset_left* a|`-1420.0`
+|*offset_right* a|`-1420.0`
+|*size_flags_horizontal* a|`0`
+|*theme* a|`ExtResource("1_r7v0f")`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/PlayerName# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*offset_left* |`-33.0`
-|*offset_top* |`5.0`
-|*offset_right* |`529.0`
-|*offset_bottom* |`77.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*size_flags_horizontal* |`0`
-|*theme_override_colors/font_color* |`Color(0.362424, 0.294801, 0.28132, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|*theme_override_font_sizes/font_size* |`46`
-|*text* |`Madeline`
-|*horizontal_alignment* |`1`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`-33.0`
+|*offset_top* a|`5.0`
+|*offset_right* a|`529.0`
+|*offset_bottom* a|`77.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*size_flags_horizontal* a|`0`
+|*theme_override_colors/font_color* a|`Color(0.362424, 0.294801, 0.28132, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0, 0, 0, 0)`
+|*theme_override_font_sizes/font_size* a|`46`
+|*text* a|`Madeline`
+|*horizontal_alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/LatestChapterName# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*offset_left* |`-33.0`
-|*offset_top* |`71.0`
-|*offset_right* |`529.0`
-|*offset_bottom* |`121.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*size_flags_horizontal* |`0`
-|*theme_override_colors/font_color* |`Color(0.59645, 0.505738, 0.487581, 1)`
-|*theme_override_colors/font_outline_color* |`Color(0, 0, 0, 0)`
-|*theme_override_font_sizes/font_size* |`32`
-|*text* |`1st Chapter`
-|*horizontal_alignment* |`1`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`-33.0`
+|*offset_top* a|`71.0`
+|*offset_right* a|`529.0`
+|*offset_bottom* a|`121.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*size_flags_horizontal* a|`0`
+|*theme_override_colors/font_color* a|`Color(0.59645, 0.505738, 0.487581, 1)`
+|*theme_override_colors/font_outline_color* a|`Color(0, 0, 0, 0)`
+|*theme_override_font_sizes/font_size* a|`32`
+|*text* a|`1st Chapter`
+|*horizontal_alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/ControlRoot/ObtainedStrawberryCount# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`0`
-|*offset_left* |`276.0`
-|*offset_top* |`128.0`
-|*offset_right* |`358.0`
-|*offset_bottom* |`195.0`
-|*text* |`123`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`0`
+|*offset_left* a|`276.0`
+|*offset_top* a|`128.0`
+|*offset_right* a|`358.0`
+|*offset_bottom* a|`195.0`
+|*text* a|`123`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*layout_mode* |`2`
-|*size_flags_horizontal* |`6`
-|*size_flags_vertical* |`2`
-|*theme_override_constants/margin_top* |`250`
+|*visible* a|`false`
+|*layout_mode* a|`2`
+|*size_flags_horizontal* a|`6`
+|*size_flags_vertical* a|`2`
+|*theme_override_constants/margin_top* a|`250`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*alignment* |`1`
+|*layout_mode* a|`2`
+|*alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer/GetStartedContainer/GetStartedButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_bottom* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
-|*focus_next* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
-|*text* |`Get Started`
-|*icon* |`null`
-|*focus_move_direction* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_bottom* a|`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|*focus_next* a|`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|*text* a|`Get Started`
+|*icon* a|`null`
+|*focus_move_direction* a|`2`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*alignment* |`1`
+|*layout_mode* a|`2`
+|*alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer/ChangeNameContainer/ChangeNameButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_top* |`NodePath("../../GetStartedContainer/GetStartedButton")`
-|*focus_neighbor_bottom* |`NodePath("../../AssistModeContainer/AssistModeButton")`
-|*focus_next* |`NodePath("../../AssistModeContainer/AssistModeButton")`
-|*focus_previous* |`NodePath("../../GetStartedContainer/GetStartedButton")`
-|*theme_override_font_sizes/font_size* |`40`
-|*text* |`Change name`
-|*icon* |`null`
-|*focus_move_direction* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_top* a|`NodePath("../../GetStartedContainer/GetStartedButton")`
+|*focus_neighbor_bottom* a|`NodePath("../../AssistModeContainer/AssistModeButton")`
+|*focus_next* a|`NodePath("../../AssistModeContainer/AssistModeButton")`
+|*focus_previous* a|`NodePath("../../GetStartedContainer/GetStartedButton")`
+|*theme_override_font_sizes/font_size* a|`40`
+|*text* a|`Change name`
+|*icon* a|`null`
+|*focus_move_direction* a|`2`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
-|*alignment* |`1`
+|*layout_mode* a|`2`
+|*alignment* a|`1`
 |===
 [.node-property.node-control]
 .#$VBoxContainer/MenuContainer/VBoxContainer/AssistModeContainer/AssistModeButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_top* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
-|*focus_previous* |`NodePath("../../ChangeNameContainer/ChangeNameButton")`
-|*theme_override_font_sizes/font_size* |`40`
-|*text* |`Assist mode : OFF`
-|*icon* |`null`
-|*focus_move_direction* |`2`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_top* a|`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|*focus_previous* a|`NodePath("../../ChangeNameContainer/ChangeNameButton")`
+|*theme_override_font_sizes/font_size* a|`40`
+|*text* a|`Assist mode : OFF`
+|*icon* a|`null`
+|*focus_move_direction* a|`2`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 &"": SubResource("AnimationLibrary_ci47f")
 }`
-|*autoplay* |`opening`
+|*autoplay* a|`opening`
 |===
 
 

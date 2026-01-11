@@ -212,15 +212,14 @@ _(R::_on_chapters_ui_backed, N21::ui_backed)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/ui/Credits.svg
-[link=/assets/assets/images/ui/Credits.svg] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/ui/Credits.svg]
 image::/assets/raw/assets/images/ui/Credits.svg[200, 100] 
 
-[.scene-assets]
-.res://assets/images/ui/Quit.svg
-[link=/assets/assets/images/ui/Quit.svg] 
+[.asset-image]
+[link=/assets/assets/images/ui/Quit.svg]
 image::/assets/raw/assets/images/ui/Quit.svg[200, 100] 
 
 
@@ -632,212 +631,220 @@ R  ->o  R : grab_focus_root\n = true
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`3`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*theme* |`ExtResource("1_w62bb")`
-|*script* |`ExtResource("2_7v8tq")`
+|*layout_mode* a|`3`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*theme* a|`ExtResource("1_w62bb")`
+|*script* a|link:/scripts/src/beginning/menu/menu.gd[res://src/beginning/menu/menu.gd]
 |===
 [.node-property.node-control]
 .#$SubViewportContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`15`
-|*anchor_right* |`1.0`
-|*anchor_bottom* |`1.0`
-|*grow_horizontal* |`2`
-|*grow_vertical* |`2`
-|*focus_mode* |`0`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*focus_mode* a|`0`
 |===
 [.node-property.node-other]
 .#$SubViewportContainer/SubViewport# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*handle_input_locally* |`false`
-|*gui_disable_input* |`true`
-|*size* |`Vector2i(1920, 1080)`
-|*render_target_update_mode* |`4`
+|*handle_input_locally* a|`false`
+|*gui_disable_input* a|`true`
+|*size* a|`Vector2i(1920, 1080)`
+|*render_target_update_mode* a|`4`
 |===
 [.node-property.node-3d]
 .#$SubViewportContainer/SubViewport/World# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-control]
 .#$RootContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`1`
-|*anchors_preset* |`9`
-|*anchor_bottom* |`1.0`
-|*offset_right* |`663.0`
-|*offset_bottom* |`30.0`
-|*grow_vertical* |`2`
-|*theme_override_constants/margin_left* |`180`
-|*theme_override_constants/margin_top* |`120`
-|*theme_override_constants/margin_bottom* |`100`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`9`
+|*anchor_bottom* a|`1.0`
+|*offset_right* a|`663.0`
+|*offset_bottom* a|`30.0`
+|*grow_vertical* a|`2`
+|*theme_override_constants/margin_left* a|`180`
+|*theme_override_constants/margin_top* a|`120`
+|*theme_override_constants/margin_bottom* a|`100`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/ClimbContainer/LogoContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*custom_minimum_size* |`Vector2(0, 240)`
-|*offset_left* |`170.0`
-|*offset_right* |`170.0`
-|*offset_bottom* |`240.0`
-|*size_flags_horizontal* |`4`
+|*custom_minimum_size* a|`Vector2(0, 240)`
+|*offset_left* a|`170.0`
+|*offset_right* a|`170.0`
+|*offset_bottom* a|`240.0`
+|*size_flags_horizontal* a|`4`
 |===
 [.node-property.node-2d]
 .#$RootContainer/MenuContainer/ClimbContainer/LogoContainer/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*texture* |`ExtResource("5_wprcb")`
-|*offset* |`Vector2(10, 140)`
+|*texture_filter* a|`2`
+|*texture* a|`ExtResource("5_wprcb")`
+|*offset* a|`Vector2(10, 140)`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/ClimbContainer/ButtonContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*offset_top* |`244.0`
-|*offset_right* |`340.0`
-|*offset_bottom* |`389.0`
+|*offset_top* a|`244.0`
+|*offset_right* a|`340.0`
+|*offset_bottom* a|`389.0`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/ClimbContainer/ButtonContainer/ClimbButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_left* |`NodePath(".")`
-|*focus_neighbor_top* |`NodePath(".")`
-|*focus_neighbor_right* |`NodePath(".")`
-|*focus_neighbor_bottom* |`NodePath("../../../OthersContainer/VBoxContainer/OptionsContainer/OptionsButton")`
-|*theme_override_font_sizes/font_size* |`100`
-|*text* |` CLIMB`
-|*icon* |`null`
-|*focus_move_direction* |`1`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_left* a|`NodePath(".")`
+|*focus_neighbor_top* a|`NodePath(".")`
+|*focus_neighbor_right* a|`NodePath(".")`
+|*focus_neighbor_bottom* a|`NodePath("../../../OthersContainer/VBoxContainer/OptionsContainer/OptionsButton")`
+|*theme_override_font_sizes/font_size* a|`100`
+|*text* a|` CLIMB`
+|*icon* a|`null`
+|*focus_move_direction* a|`1`
 |===
 [.node-property.node-2d]
 .#$RootContainer/MenuContainer/OthersContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(10, 400)`
+|*position* a|`Vector2(10, 400)`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*offset_right* |`483.0`
-|*offset_bottom* |`281.0`
+|*offset_right* a|`483.0`
+|*offset_bottom* a|`281.0`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/OptionsContainer/OptionsButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_top* |`NodePath("../../../../ClimbContainer/ButtonContainer/ClimbButton")`
-|*focus_neighbor_bottom* |`NodePath("../../CreditsContainer/CreditsButton")`
-|*text* |` Options`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_top* a|`NodePath("../../../../ClimbContainer/ButtonContainer/ClimbButton")`
+|*focus_neighbor_bottom* a|`NodePath("../../CreditsContainer/CreditsButton")`
+|*text* a|` Options`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/CreditsContainer/CreditsButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_top* |`NodePath("../../OptionsContainer/OptionsButton")`
-|*focus_neighbor_bottom* |`NodePath("../../QuitContainer/QuitButton")`
-|*text* |` Credits`
-|*icon* |`ExtResource("7_tps4m")`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_top* a|`NodePath("../../OptionsContainer/OptionsButton")`
+|*focus_neighbor_bottom* a|`NodePath("../../QuitContainer/QuitButton")`
+|*text* a|` Credits`
+|*icon* a|[link=/assets/assets/images/ui/Credits.svg]
+[.asset-image]
+.res://assets/images/ui/Credits.svg
+image::/assets/raw/assets/images/ui/Credits.svg[]
+
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*layout_mode* |`2`
+|*layout_mode* a|`2`
 |===
 [.node-property.node-control]
 .#$RootContainer/MenuContainer/OthersContainer/VBoxContainer/QuitContainer/QuitButton# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`2`
-|*focus_neighbor_top* |`NodePath("../../CreditsContainer/CreditsButton")`
-|*text* |` Quit`
-|*icon* |`ExtResource("8_lywrx")`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`2`
+|*focus_neighbor_top* a|`NodePath("../../CreditsContainer/CreditsButton")`
+|*text* a|` Quit`
+|*icon* a|[link=/assets/assets/images/ui/Quit.svg]
+[.asset-image]
+.res://assets/images/ui/Quit.svg
+image::/assets/raw/assets/images/ui/Quit.svg[]
+
 |===
 [.node-property.node-control]
 .#$Accounts# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*offset_left* |`1920.0`
-|*offset_right* |`1920.0`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*offset_left* a|`1920.0`
+|*offset_right* a|`1920.0`
 |===
 [.node-property.node-control]
 .#$Chapters# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*layout_mode* |`1`
-|*offset_left* |`1920.0`
-|*offset_right* |`1920.0`
+|*unique_name_in_owner* a|`true`
+|*layout_mode* a|`1`
+|*offset_left* a|`1920.0`
+|*offset_right* a|`1920.0`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 &"": SubResource("AnimationLibrary_dft0i")
 }`
-|*autoplay* |`opening`
+|*autoplay* a|`opening`
 |===
 
 

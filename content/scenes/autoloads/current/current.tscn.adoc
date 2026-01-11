@@ -42,7 +42,7 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*script* |`ExtResource("1_djdtf")`
+|*script* a|link:/scripts/autoloads/current/current.gd[res://autoloads/current/current.gd]
 |===
 
 

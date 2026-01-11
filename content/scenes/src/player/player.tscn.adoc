@@ -110,30 +110,26 @@ _(R::_on_frame_subject_area_exited, N12::area_exited)
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/player/Player_idle.png
-[link=/assets/assets/images/player/Player_idle.png] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/player/Player_idle.png]
 image::/assets/raw/assets/images/player/Player_idle.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/player/Player_run.png
-[link=/assets/assets/images/player/Player_run.png] 
+[.asset-image]
+[link=/assets/assets/images/player/Player_run.png]
 image::/assets/raw/assets/images/player/Player_run.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/player/Player_jump.png
-[link=/assets/assets/images/player/Player_jump.png] 
+[.asset-image]
+[link=/assets/assets/images/player/Player_jump.png]
 image::/assets/raw/assets/images/player/Player_jump.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/player/Player_fall.png
-[link=/assets/assets/images/player/Player_fall.png] 
+[.asset-image]
+[link=/assets/assets/images/player/Player_fall.png]
 image::/assets/raw/assets/images/player/Player_fall.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/player/effects/Burst.png
-[link=/assets/assets/images/player/effects/Burst.png] 
+[.asset-image]
+[link=/assets/assets/images/player/effects/Burst.png]
 image::/assets/raw/assets/images/player/effects/Burst.png[200, 100] 
 
 
@@ -829,141 +825,161 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*collision_layer* |`3`
-|*script* |`ExtResource("1_5irfl")`
-|*GhostEffect* |`ExtResource("2_xv5vk")`
+|*collision_layer* a|`3`
+|*script* a|link:/scripts/src/player/player.gd[res://src/player/player.gd]
+|*GhostEffect* a|link:/scenes/src/player/ghost_effect/ghost_effect.tscn[res://src/player/ghost_effect/ghost_effect.tscn]
 |===
 [.node-property.node-2d]
 .#$Sprites# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*position* |`Vector2(-12, -72)`
-|*scale* |`Vector2(6, 6)`
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-12, -72)`
+|*scale* a|`Vector2(6, 6)`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/IdleSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*material* |`SubResource("ShaderMaterial_jm5te")`
-|*texture* |`ExtResource("2_byvol")`
-|*hframes* |`27`
-|*frame* |`21`
+|*material* a|`SubResource("ShaderMaterial_jm5te")`
+|*texture* a|[link=/assets/assets/images/player/Player_idle.png]
+[.asset-image]
+.res://assets/images/player/Player_idle.png
+image::/assets/raw/assets/images/player/Player_idle.png[]
+
+|*hframes* a|`27`
+|*frame* a|`21`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*material* |`SubResource("ShaderMaterial_c3wmo")`
-|*texture* |`ExtResource("3_htsrw")`
-|*hframes* |`8`
+|*visible* a|`false`
+|*material* a|`SubResource("ShaderMaterial_c3wmo")`
+|*texture* a|[link=/assets/assets/images/player/Player_run.png]
+[.asset-image]
+.res://assets/images/player/Player_run.png
+image::/assets/raw/assets/images/player/Player_run.png[]
+
+|*hframes* a|`8`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/JumpSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*material* |`SubResource("ShaderMaterial_osywq")`
-|*texture* |`ExtResource("4_gf1li")`
-|*hframes* |`2`
+|*visible* a|`false`
+|*material* a|`SubResource("ShaderMaterial_osywq")`
+|*texture* a|[link=/assets/assets/images/player/Player_jump.png]
+[.asset-image]
+.res://assets/images/player/Player_jump.png
+image::/assets/raw/assets/images/player/Player_jump.png[]
+
+|*hframes* a|`2`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/FallSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*material* |`SubResource("ShaderMaterial_jpi3j")`
-|*texture* |`ExtResource("5_vvr2x")`
-|*hframes* |`2`
+|*visible* a|`false`
+|*material* a|`SubResource("ShaderMaterial_jpi3j")`
+|*texture* a|[link=/assets/assets/images/player/Player_fall.png]
+[.asset-image]
+.res://assets/images/player/Player_fall.png
+image::/assets/raw/assets/images/player/Player_fall.png[]
+
+|*hframes* a|`2`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteEffects# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*position* |`Vector2(2.1666667, 4)`
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(2.1666667, 4)`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteEffects/BurstSprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*position* |`Vector2(-1.6666666, -2.8333335)`
-|*texture* |`ExtResource("8_l271a")`
-|*hframes* |`53`
-|*frame* |`11`
+|*visible* a|`false`
+|*position* a|`Vector2(-1.6666666, -2.8333335)`
+|*texture* a|[link=/assets/assets/images/player/effects/Burst.png]
+[.asset-image]
+.res://assets/images/player/effects/Burst.png
+image::/assets/raw/assets/images/player/effects/Burst.png[]
+
+|*hframes* a|`53`
+|*frame* a|`11`
 |===
 [.node-property.node-2d]
 .#$CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(2, -51)`
-|*shape* |`SubResource("CapsuleShape2D_opnj4")`
+|*position* a|`Vector2(2, -51)`
+|*shape* a|`SubResource("CapsuleShape2D_opnj4")`
 |===
 [.node-property.node-2d]
 .#$FailureCollision# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*collision_layer* |`8`
-|*collision_mask* |`8`
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
 |===
 [.node-property.node-2d]
 .#$FailureCollision/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*position* |`Vector2(0, -56)`
-|*shape* |`SubResource("CapsuleShape2D_l271a")`
+|*visible* a|`false`
+|*position* a|`Vector2(0, -56)`
+|*shape* a|`SubResource("CapsuleShape2D_l271a")`
 |===
 [.node-property.node-2d]
 .#$FrameSubject# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*collision_layer* |`4`
-|*collision_mask* |`4`
+|*collision_layer* a|`4`
+|*collision_mask* a|`4`
 |===
 [.node-property.node-2d]
 .#$FrameSubject/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*visible* |`false`
-|*position* |`Vector2(3.5, -51.5)`
-|*shape* |`SubResource("RectangleShape2D_x42xx")`
+|*visible* a|`false`
+|*position* a|`Vector2(3.5, -51.5)`
+|*shape* a|`SubResource("RectangleShape2D_x42xx")`
 |===
 [.node-property.node-2d]
 .#$Camera# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*libraries* |`{
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
 &"": SubResource("AnimationLibrary_u5nx7")
 }`
 |===
@@ -972,14 +988,14 @@ R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* |`true`
-|*root_node* |`NodePath("%AnimationTree/..")`
-|*tree_root* |`SubResource("AnimationNodeStateMachine_mwkb6")`
-|*anim_player* |`NodePath("../AnimationPlayer")`
-|*parameters/Fall/blend_position* |`0.195104`
-|*parameters/Idle/blend_position* |`-0.27003`
-|*parameters/Jump/blend_position* |`0.414688`
-|*parameters/Run/blend_position* |`-0.997033`
+|*unique_name_in_owner* a|`true`
+|*root_node* a|`NodePath("%AnimationTree/..")`
+|*tree_root* a|`SubResource("AnimationNodeStateMachine_mwkb6")`
+|*anim_player* a|`NodePath("../AnimationPlayer")`
+|*parameters/Fall/blend_position* a|`0.195104`
+|*parameters/Idle/blend_position* a|`-0.27003`
+|*parameters/Jump/blend_position* a|`0.414688`
+|*parameters/Run/blend_position* a|`-0.997033`
 |===
 
 

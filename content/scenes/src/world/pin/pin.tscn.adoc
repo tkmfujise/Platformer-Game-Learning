@@ -22,15 +22,14 @@ left to right direction
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/world/pin/running_in_pin.png
-[link=/assets/assets/images/world/pin/running_in_pin.png] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/world/pin/running_in_pin.png]
 image::/assets/raw/assets/images/world/pin/running_in_pin.png[200, 100] 
 
-[.scene-assets]
-.res://assets/images/world/pin/Pin.svg
-[link=/assets/assets/images/world/pin/Pin.svg] 
+[.asset-image]
+[link=/assets/assets/images/world/pin/Pin.svg]
 image::/assets/raw/assets/images/world/pin/Pin.svg[200, 100] 
 
 
@@ -59,27 +58,31 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(141, 356)`
+|*position* a|`Vector2(141, 356)`
 |===
 [.node-property.node-2d]
 .#$Background# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*position* |`Vector2(0, -170)`
-|*texture* |`ExtResource("1_4bhg1")`
+|*texture_filter* a|`2`
+|*position* a|`Vector2(0, -170)`
+|*texture* a|[link=/assets/assets/images/world/pin/Pin.svg]
+[.asset-image]
+.res://assets/images/world/pin/Pin.svg
+image::/assets/raw/assets/images/world/pin/Pin.svg[]
+
 |===
 [.node-property.node-2d]
 .#$Player# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture_filter* |`2`
-|*position* |`Vector2(9, -225)`
-|*sprite_frames* |`SubResource("SpriteFrames_glyxl")`
-|*autoplay* |`default`
-|*speed_scale* |`2.0`
+|*texture_filter* a|`2`
+|*position* a|`Vector2(9, -225)`
+|*sprite_frames* a|`SubResource("SpriteFrames_glyxl")`
+|*autoplay* a|`default`
+|*speed_scale* a|`2.0`
 |===
 
 

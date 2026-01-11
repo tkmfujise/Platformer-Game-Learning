@@ -28,10 +28,10 @@ left to right direction
 ....
 
 
-=== Assets
 [.scene-assets]
-.res://assets/images/stages/background/Forest.png
-[link=/assets/assets/images/stages/background/Forest.png] 
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/background/Forest.png]
 image::/assets/raw/assets/images/stages/background/Forest.png[200, 100] 
 
 
@@ -62,39 +62,47 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*modulate* |`Color(0.26293266, 0.2629324, 0.26293254, 1)`
-|*scroll_scale* |`Vector2(1.1, 0.9)`
-|*scroll_offset* |`Vector2(1875, 115)`
-|*repeat_size* |`Vector2(1000, 0)`
-|*repeat_times* |`8`
+|*modulate* a|`Color(0.26293266, 0.2629324, 0.26293254, 1)`
+|*scroll_scale* a|`Vector2(1.1, 0.9)`
+|*scroll_offset* a|`Vector2(1875, 115)`
+|*repeat_size* a|`Vector2(1000, 0)`
+|*repeat_times* a|`8`
 |===
 [.node-property.node-2d]
 .#$Far/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1831.2499, 390.25)`
-|*scale* |`Vector2(9.333982, 11.2890625)`
-|*texture* |`ExtResource("1_er1ds")`
+|*position* a|`Vector2(1831.2499, 390.25)`
+|*scale* a|`Vector2(9.333982, 11.2890625)`
+|*texture* a|[link=/assets/assets/images/stages/background/Forest.png]
+[.asset-image]
+.res://assets/images/stages/background/Forest.png
+image::/assets/raw/assets/images/stages/background/Forest.png[]
+
 |===
 [.node-property.node-2d]
 .#$Near# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*modulate* |`Color(0.4670229, 0.5335627, 0.5659914, 1)`
-|*scroll_offset* |`Vector2(1318, 779)`
-|*repeat_size* |`Vector2(1000, 0)`
-|*repeat_times* |`7`
+|*modulate* a|`Color(0.4670229, 0.5335627, 0.5659914, 1)`
+|*scroll_offset* a|`Vector2(1318, 779)`
+|*repeat_size* a|`Vector2(1000, 0)`
+|*repeat_times* a|`7`
 |===
 [.node-property.node-2d]
 .#$Near/Sprite2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* |`Vector2(1844.25, -28.74997)`
-|*scale* |`Vector2(9.287109, 12.8828125)`
-|*texture* |`ExtResource("1_er1ds")`
+|*position* a|`Vector2(1844.25, -28.74997)`
+|*scale* a|`Vector2(9.287109, 12.8828125)`
+|*texture* a|[link=/assets/assets/images/stages/background/Forest.png]
+[.asset-image]
+.res://assets/images/stages/background/Forest.png
+image::/assets/raw/assets/images/stages/background/Forest.png[]
+
 |===
 
 
