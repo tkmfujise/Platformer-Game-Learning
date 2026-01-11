@@ -8,25 +8,25 @@ title: src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn
 === Diagram
 [plantuml]
 ....
-class R as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+class R as "FallingIceBlock" <<(R,#87CEFA) RigidBody2D>> {
 ---
   + _ready()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
-class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N1 as "Sprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N2 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N2 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
-class N3 as "FailureCollision" <<(A,lightskyblue) Area2D>> {
+class N3 as "FailureCollision" <<(A,#87CEFA) Area2D>> {
 }
-class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N4 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
-class N5 as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
+class N5 as "DetectionArea2D" <<(A,#87CEFA) Area2D>> {
 }
-class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N6 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
-class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N2

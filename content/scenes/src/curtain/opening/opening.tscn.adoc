@@ -8,24 +8,24 @@ title: src/curtain/opening/opening.tscn
 === Diagram
 [plantuml]
 ....
-class R as "OpeningCurtain" <<(C,lightgreen) Control>> {
+class R as "OpeningCurtain" <<(C,#90EE90) Control>> {
   * pattern
   * center
 ---
   + set_center()
   + play()
 }
-class N1 as "Pattern1" <<(N,lightskyblue) Node2D>> {
+class N1 as "Pattern1" <<(N,#87CEFA) Node2D>> {
 }
-class N2 as "LeftCurtain" <<(P,lightskyblue) Polygon2D>> {
+class N2 as "LeftCurtain" <<(P,#87CEFA) Polygon2D>> {
 }
-class N3 as "RightCurtain" <<(P,lightskyblue) Polygon2D>> {
+class N3 as "RightCurtain" <<(P,#87CEFA) Polygon2D>> {
 }
-class N4 as "Pattern2" <<(C,lightgreen) ColorRect>> {
+class N4 as "Pattern2" <<(C,#90EE90) ColorRect>> {
 }
-class N5 as "Pattern3" <<(C,lightgreen) ColorRect>> {
+class N5 as "Pattern3" <<(C,#90EE90) ColorRect>> {
 }
-class N6 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N6 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N4
@@ -67,11 +67,11 @@ NOTE: No signal connections.
 [plantuml]
 ....
 control "Root" as R
-participant "$Pattern1\n/RightCurtain" as T0
-participant "$Pattern1\n/LeftCurtain" as T1
-participant "$Pattern1" as T2
-participant "$Pattern2" as T3
-participant "$Pattern3" as T5
+participant "$Pattern1\n/RightCurtain" as T0 #87CEFA
+participant "$Pattern1\n/LeftCurtain" as T1 #87CEFA
+participant "$Pattern1" as T2 #87CEFA
+participant "$Pattern2" as T3 #90EE90
+participant "$Pattern3" as T5 #90EE90
 
 
 
@@ -93,11 +93,11 @@ R  ->  T5 : material\n = 0.5
 [plantuml]
 ....
 control "Root" as R
-participant "$Pattern1\n/RightCurtain" as T0
-participant "$Pattern1\n/LeftCurtain" as T1
-participant "$Pattern1" as T2
-participant "$Pattern2" as T3
-participant "$Pattern3" as T4
+participant "$Pattern1\n/RightCurtain" as T0 #87CEFA
+participant "$Pattern1\n/LeftCurtain" as T1 #87CEFA
+participant "$Pattern1" as T2 #87CEFA
+participant "$Pattern2" as T3 #90EE90
+participant "$Pattern3" as T4 #90EE90
 
 
 
@@ -123,9 +123,9 @@ R  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 0, 1080, 0, 548, 0, 0)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pattern2" as T0
-participant "$Pattern1" as T1
-participant "$Pattern3" as T3
+participant "$Pattern2" as T0 #90EE90
+participant "$Pattern1" as T1 #87CEFA
+participant "$Pattern3" as T3 #90EE90
 
 
 
@@ -149,9 +149,9 @@ R  ->  T0 : material\n = 1.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Pattern1" as T0
-participant "$Pattern2" as T1
-participant "$Pattern3" as T2
+participant "$Pattern1" as T0 #87CEFA
+participant "$Pattern2" as T1 #90EE90
+participant "$Pattern3" as T2 #90EE90
 
 
 

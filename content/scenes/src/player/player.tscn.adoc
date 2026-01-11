@@ -8,7 +8,7 @@ title: src/player/player.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class R as "Player" <<(C,#87CEFA) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -41,33 +41,33 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N1 as "Sprites" <<(N,lightskyblue) Node2D>> {
+class N1 as "Sprites" <<(N,#87CEFA) Node2D>> {
 }
-class N2 as "SpriteStates" <<(N,lightskyblue) Node2D>> {
+class N2 as "SpriteStates" <<(N,#87CEFA) Node2D>> {
 }
-class N3 as "IdleSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N3 as "IdleSprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N4 as "RunSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N4 as "RunSprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N5 as "JumpSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N5 as "JumpSprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N6 as "FallSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N6 as "FallSprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N7 as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
+class N7 as "SpriteEffects" <<(N,#87CEFA) Node2D>> {
 }
-class N8 as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N8 as "BurstSprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N9 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N9 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
-class N10 as "FailureCollision" <<(A,lightskyblue) Area2D>> {
+class N10 as "FailureCollision" <<(A,#87CEFA) Area2D>> {
 }
-class N11 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N11 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
-class N12 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
+class N12 as "FrameSubject" <<(A,#87CEFA) Area2D>> {
 }
-class N13 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N13 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
-class N14 as "Camera" <<(C,lightskyblue) Camera2D>> {
+class N14 as "Camera" <<(C,#87CEFA) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position
@@ -80,9 +80,9 @@ class N14 as "Camera" <<(C,lightskyblue) Camera2D>> {
   + shake()
   + shaking()
 }
-class N15 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N15 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
-class N16 as "AnimationTree" <<(A,yellow) AnimationTree>> {
+class N16 as "AnimationTree" <<(A,#FFFF00) AnimationTree>> {
 }
 R --o N1
 R --o N9
@@ -259,11 +259,11 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1
-participant "$Sprites" as T2
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 
 
 loop
@@ -287,11 +287,11 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1
-participant "$Sprites" as T2
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 
 
 loop
@@ -315,11 +315,11 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1
-participant "$Sprites" as T4
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1 #87CEFA
+participant "$Sprites" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6 #87CEFA
 
 
 loop
@@ -391,10 +391,10 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1
-participant "$Sprites" as T4
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1 #87CEFA
+participant "$Sprites" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5 #87CEFA
 
 
 loop
@@ -465,11 +465,11 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1
-participant "$Sprites" as T2
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 
 
 loop
@@ -493,11 +493,11 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1
-participant "$Sprites" as T2
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 
 
 loop
@@ -521,11 +521,11 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1
-participant "$Sprites" as T4
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T6
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T6 #87CEFA
 
 
 loop
@@ -559,11 +559,11 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0
-participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1
-participant "$Sprites" as T4
-participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5
-participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6 #87CEFA
 
 
 loop
@@ -597,8 +597,8 @@ end
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteEffects\n/BurstSprite2D" as T0
-participant "$Sprites\n/SpriteStates" as T2
+participant "$Sprites\n/SpriteEffects\n/BurstSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates" as T2 #87CEFA
 
 
 
@@ -807,8 +807,8 @@ R  ->o  T0 : frame\n = 43
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprites\n/SpriteEffects\n/BurstSprite2D" as T0
-participant "$Sprites\n/SpriteStates" as T2
+participant "$Sprites\n/SpriteEffects\n/BurstSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates" as T2 #87CEFA
 
 
 

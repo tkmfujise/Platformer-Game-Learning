@@ -8,7 +8,7 @@ title: src/beginning/chapters/chapters.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Chapters" <<(C,lightgreen) Control>> {
+class R as "Chapters" <<(C,#90EE90) Control>> {
   ~ focused
   ~ selected
   ~ ui_backed
@@ -40,11 +40,11 @@ class R as "Chapters" <<(C,lightgreen) Control>> {
   + _on_selected()
   + _on_menu_ui_backed()
 }
-class N1 as "Banner" <<(T,lightgreen) TextureRect>> {
+class N1 as "Banner" <<(T,#90EE90) TextureRect>> {
 }
-class N2 as "ChaptersContainer" <<(H,lightgreen) HBoxContainer>> {
+class N2 as "ChaptersContainer" <<(H,#90EE90) HBoxContainer>> {
 }
-class N3 as "Chapter_0" <<(M,lightgreen) MarginContainer>> {
+class N3 as "Chapter_0" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -55,7 +55,7 @@ class N3 as "Chapter_0" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N4 as "Chapter_1" <<(M,lightgreen) MarginContainer>> {
+class N4 as "Chapter_1" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -66,9 +66,9 @@ class N4 as "Chapter_1" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N5 as "Sprite2D" <<(N,darkgray) Node>> {
+class N5 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N6 as "Chapter_2" <<(M,lightgreen) MarginContainer>> {
+class N6 as "Chapter_2" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -79,9 +79,9 @@ class N6 as "Chapter_2" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N7 as "Sprite2D" <<(N,darkgray) Node>> {
+class N7 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N8 as "Chapter_3" <<(M,lightgreen) MarginContainer>> {
+class N8 as "Chapter_3" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -92,9 +92,9 @@ class N8 as "Chapter_3" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N9 as "Sprite2D" <<(N,darkgray) Node>> {
+class N9 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N10 as "Chapter_4" <<(M,lightgreen) MarginContainer>> {
+class N10 as "Chapter_4" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -105,9 +105,9 @@ class N10 as "Chapter_4" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N11 as "Sprite2D" <<(N,darkgray) Node>> {
+class N11 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N12 as "Chapter_5" <<(M,lightgreen) MarginContainer>> {
+class N12 as "Chapter_5" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -118,9 +118,9 @@ class N12 as "Chapter_5" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N13 as "Sprite2D" <<(N,darkgray) Node>> {
+class N13 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N14 as "Chapter_6" <<(M,lightgreen) MarginContainer>> {
+class N14 as "Chapter_6" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -131,9 +131,9 @@ class N14 as "Chapter_6" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N15 as "Sprite2D" <<(N,darkgray) Node>> {
+class N15 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N16 as "Chapter_7" <<(M,lightgreen) MarginContainer>> {
+class N16 as "Chapter_7" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -144,9 +144,9 @@ class N16 as "Chapter_7" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N17 as "Sprite2D" <<(N,darkgray) Node>> {
+class N17 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N18 as "Chapter_8" <<(M,lightgreen) MarginContainer>> {
+class N18 as "Chapter_8" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -157,13 +157,13 @@ class N18 as "Chapter_8" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N19 as "Sprite2D" <<(N,darkgray) Node>> {
+class N19 as "Sprite2D" <<(N,#A9A9A9) Node>> {
 }
-class N20 as "Grid1920x1080" <<(S,lightskyblue) Sprite2D>> {
+class N20 as "Grid1920x1080" <<(S,#87CEFA) Sprite2D>> {
 }
-class N21 as "Pin" <<(N,lightskyblue) Node2D>> {
+class N21 as "Pin" <<(N,#87CEFA) Node2D>> {
 }
-class N22 as "Menu" <<(C,lightgreen) Control>> {
+class N22 as "Menu" <<(C,#90EE90) Control>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -197,9 +197,9 @@ class N22 as "Menu" <<(C,lightgreen) Control>> {
   + _on_ui_backed()
   + _on_get_started()
 }
-class N23 as "ChaptersAnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N23 as "ChaptersAnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
-class N24 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N24 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
@@ -395,7 +395,7 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 [plantuml]
 ....
 control "Root" as R
-participant "$%ChaptersContainer\n/..\n/Banner" as T0
+participant "$%ChaptersContainer\n/..\n/Banner" as T0 
 
 
 
@@ -412,7 +412,7 @@ R  ->  R : position\n = Vector2(815, -250)
 [plantuml]
 ....
 control "Root" as R
-participant "$%ChaptersContainer\n/..\n/Banner" as T0
+participant "$%ChaptersContainer\n/..\n/Banner" as T0 
 
 
 
@@ -432,7 +432,7 @@ R  ->  R : position\n = Vector2(815, -250)
 [plantuml]
 ....
 control "Root" as R
-participant "$%ChaptersContainer\n/..\n/Banner" as T0
+participant "$%ChaptersContainer\n/..\n/Banner" as T0 
 
 
 
@@ -452,19 +452,19 @@ R  ->  R : position\n = Vector2(815, 8)
 [plantuml]
 ....
 control "Root" as R
-participant "$Banner" as T0
-participant "$ChaptersContainer" as T1
-participant "$ChaptersContainer\n/Chapter_0" as T2
-participant "$ChaptersContainer\n/Chapter_1" as T3
-participant "$ChaptersContainer\n/Chapter_2" as T4
-participant "$ChaptersContainer\n/Chapter_3" as T5
-participant "$ChaptersContainer\n/Chapter_4" as T6
-participant "$ChaptersContainer\n/Chapter_5" as T7
-participant "$ChaptersContainer\n/Chapter_6" as T8
-participant "$ChaptersContainer\n/Chapter_7" as T9
-participant "$ChaptersContainer\n/Chapter_8" as T10
-participant "$Pin" as T20
-participant "$Menu" as T25
+participant "$Banner" as T0 #90EE90
+participant "$ChaptersContainer" as T1 #90EE90
+participant "$ChaptersContainer\n/Chapter_0" as T2 #90EE90
+participant "$ChaptersContainer\n/Chapter_1" as T3 #90EE90
+participant "$ChaptersContainer\n/Chapter_2" as T4 #90EE90
+participant "$ChaptersContainer\n/Chapter_3" as T5 #90EE90
+participant "$ChaptersContainer\n/Chapter_4" as T6 #90EE90
+participant "$ChaptersContainer\n/Chapter_5" as T7 #90EE90
+participant "$ChaptersContainer\n/Chapter_6" as T8 #90EE90
+participant "$ChaptersContainer\n/Chapter_7" as T9 #90EE90
+participant "$ChaptersContainer\n/Chapter_8" as T10 #90EE90
+participant "$Pin" as T20 #87CEFA
+participant "$Menu" as T25 #90EE90
 
 
 
@@ -505,7 +505,7 @@ R  ->  T25 : position\n = Vector2(960, 0)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -525,7 +525,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -545,7 +545,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -565,7 +565,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -585,7 +585,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -605,7 +605,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -625,7 +625,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -645,7 +645,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -667,7 +667,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -689,18 +689,18 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Banner" as T0
-participant "$ChaptersContainer" as T1
-participant "$ChaptersContainer\n/Chapter_0" as T2
-participant "$ChaptersContainer\n/Chapter_1" as T3
-participant "$ChaptersContainer\n/Chapter_2" as T4
-participant "$ChaptersContainer\n/Chapter_3" as T5
-participant "$ChaptersContainer\n/Chapter_4" as T6
-participant "$ChaptersContainer\n/Chapter_5" as T7
-participant "$ChaptersContainer\n/Chapter_6" as T8
-participant "$ChaptersContainer\n/Chapter_7" as T9
-participant "$ChaptersContainer\n/Chapter_8" as T10
-participant "$Pin" as T20
+participant "$Banner" as T0 #90EE90
+participant "$ChaptersContainer" as T1 #90EE90
+participant "$ChaptersContainer\n/Chapter_0" as T2 #90EE90
+participant "$ChaptersContainer\n/Chapter_1" as T3 #90EE90
+participant "$ChaptersContainer\n/Chapter_2" as T4 #90EE90
+participant "$ChaptersContainer\n/Chapter_3" as T5 #90EE90
+participant "$ChaptersContainer\n/Chapter_4" as T6 #90EE90
+participant "$ChaptersContainer\n/Chapter_5" as T7 #90EE90
+participant "$ChaptersContainer\n/Chapter_6" as T8 #90EE90
+participant "$ChaptersContainer\n/Chapter_7" as T9 #90EE90
+participant "$ChaptersContainer\n/Chapter_8" as T10 #90EE90
+participant "$Pin" as T20 #87CEFA
 
 
 
@@ -771,7 +771,7 @@ R  ->o  R : shown\n = true
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -791,7 +791,7 @@ R  ->  T0 : position\n = Vector2(868, 600)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -811,7 +811,7 @@ R  ->  T0 : position\n = Vector2(847, 597)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -831,7 +831,7 @@ R  ->  T0 : position\n = Vector2(977, 374)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -851,7 +851,7 @@ R  ->  T0 : position\n = Vector2(962, 462)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -871,7 +871,7 @@ R  ->  T0 : position\n = Vector2(887, 757)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -891,7 +891,7 @@ R  ->  T0 : position\n = Vector2(949, 348)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -911,7 +911,7 @@ R  ->  T0 : position\n = Vector2(704, 680)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 
@@ -931,7 +931,7 @@ R  ->  T0 : position\n = Vector2(1040, 355)
 [plantuml]
 ....
 control "Root" as R
-participant "$Pin" as T0
+participant "$Pin" as T0 #87CEFA
 
 
 

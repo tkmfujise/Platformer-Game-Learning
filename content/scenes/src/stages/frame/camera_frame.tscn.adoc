@@ -8,12 +8,12 @@ title: src/stages/frame/camera_frame.tscn
 === Diagram
 [plantuml]
 ....
-class R as "CameraFrame" <<(A,lightskyblue) Area2D>> {
+class R as "CameraFrame" <<(A,#87CEFA) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class N1 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N1 as "CollisionShape2D" <<(C,#87CEFA) CollisionShape2D>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

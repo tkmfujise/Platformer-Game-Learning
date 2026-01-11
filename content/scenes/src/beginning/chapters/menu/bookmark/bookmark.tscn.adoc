@@ -8,7 +8,7 @@ title: src/beginning/chapters/menu/bookmark/bookmark.tscn
 === Diagram
 [plantuml]
 ....
-class R as "BagBookmark" <<(M,lightgreen) MarginContainer>> {
+class R as "BagBookmark" <<(M,#90EE90) MarginContainer>> {
   ~ pressed
 ---
   * focused
@@ -18,11 +18,11 @@ class R as "BagBookmark" <<(M,lightgreen) MarginContainer>> {
   + _on_focus_entered()
   + _on_focus_exited()
 }
-class N1 as "Bookmark" <<(S,lightskyblue) Sprite2D>> {
+class N1 as "Bookmark" <<(S,#87CEFA) Sprite2D>> {
 }
-class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N2 as "Sprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N3 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N3 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N3
@@ -89,7 +89,7 @@ func _on_focus_exited() -> void:
 [plantuml]
 ....
 control "Root" as R
-participant "$Bookmark" as T2
+participant "$Bookmark" as T2 #87CEFA
 
 
 
@@ -108,7 +108,7 @@ R  ->  T2 : scale\n = Vector2(1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Bookmark" as T2
+participant "$Bookmark" as T2 #87CEFA
 
 
 
@@ -133,7 +133,7 @@ R  ->  T2 : scale\n = Vector2(1, 1)
 [plantuml]
 ....
 control "Root" as R
-participant "$Bookmark" as T2
+participant "$Bookmark" as T2 #87CEFA
 
 
 

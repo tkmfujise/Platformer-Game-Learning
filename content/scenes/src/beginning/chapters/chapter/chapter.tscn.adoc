@@ -8,7 +8,7 @@ title: src/beginning/chapters/chapter/chapter.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Chapter" <<(M,lightgreen) MarginContainer>> {
+class R as "Chapter" <<(M,#90EE90) MarginContainer>> {
   * play_opening
   * resource
   * focus_animation_skip
@@ -19,11 +19,11 @@ class R as "Chapter" <<(M,lightgreen) MarginContainer>> {
   + unselected()
   + _on_focus_entered()
 }
-class N1 as "Placeholder" <<(T,lightgreen) TextureRect>> {
+class N1 as "Placeholder" <<(T,#90EE90) TextureRect>> {
 }
-class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N2 as "Sprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
-class N3 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N3 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
@@ -72,7 +72,7 @@ func _on_focus_entered() -> void:
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprite2D" as T0
+participant "$Sprite2D" as T0 #87CEFA
 
 
 
@@ -92,7 +92,7 @@ R  ->  T0 : skew\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprite2D" as T0
+participant "$Sprite2D" as T0 #87CEFA
 
 
 
@@ -115,7 +115,7 @@ R  ->  T0 : rotation\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprite2D" as T0
+participant "$Sprite2D" as T0 #87CEFA
 
 
 
@@ -137,7 +137,7 @@ R  ->o  R : focus_mode\n = 2
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprite2D" as T0
+participant "$Sprite2D" as T0 #87CEFA
 
 
 
@@ -164,7 +164,7 @@ R  ->  T0 : skew\n = 0.0
 [plantuml]
 ....
 control "Root" as R
-participant "$Sprite2D" as T0
+participant "$Sprite2D" as T0 #87CEFA
 
 
 

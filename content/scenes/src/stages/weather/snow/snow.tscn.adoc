@@ -8,9 +8,9 @@ title: src/stages/weather/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Snow" <<(N,lightskyblue) Node2D>> {
+class R as "Snow" <<(N,#87CEFA) Node2D>> {
 }
-class N1 as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
+class N1 as "CPUParticles2D" <<(C,#87CEFA) CPUParticles2D>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

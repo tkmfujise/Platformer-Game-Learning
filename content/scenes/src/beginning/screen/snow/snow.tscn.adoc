@@ -8,13 +8,13 @@ title: src/beginning/screen/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Show" <<(N,hotpink) Node3D>> {
+class R as "Show" <<(N,#FF69B4) Node3D>> {
 }
-class N1 as "GPUParticles3D" <<(G,hotpink) GPUParticles3D>> {
+class N1 as "GPUParticles3D" <<(G,#FF69B4) GPUParticles3D>> {
 }
-class N2 as "Camera3D" <<(C,hotpink) Camera3D>> {
+class N2 as "Camera3D" <<(C,#FF69B4) Camera3D>> {
 }
-class N3 as "DirectionalLight3D" <<(D,hotpink) DirectionalLight3D>> {
+class N3 as "DirectionalLight3D" <<(D,#FF69B4) DirectionalLight3D>> {
 }
 R --o N1
 R --o N2

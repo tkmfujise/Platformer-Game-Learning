@@ -8,14 +8,14 @@ title: src/player/ghost_effect/ghost_effect.tscn
 === Diagram
 [plantuml]
 ....
-class R as "GhostEffect" <<(N,lightskyblue) Node2D>> {
+class R as "GhostEffect" <<(N,#87CEFA) Node2D>> {
   - ALIVE_TIME
   * rest_time
 ---
   + spawn()
   + _process()
 }
-class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N1 as "Sprite2D" <<(S,#87CEFA) Sprite2D>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

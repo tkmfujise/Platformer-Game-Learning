@@ -8,7 +8,7 @@ title: src/beginning/accounts/accounts.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Accounts" <<(M,lightgreen) MarginContainer>> {
+class R as "Accounts" <<(M,#90EE90) MarginContainer>> {
   ~ ui_backed
   ~ get_started
 ---
@@ -30,9 +30,9 @@ class R as "Accounts" <<(M,lightgreen) MarginContainer>> {
   + _on_account_get_started()
   + _on_account_focus_entered()
 }
-class N1 as "AccountsContainer" <<(N,lightskyblue) Node2D>> {
+class N1 as "AccountsContainer" <<(N,#87CEFA) Node2D>> {
 }
-class N2 as "Account1" <<(B,lightgreen) BoxContainer>> {
+class N2 as "Account1" <<(B,#90EE90) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -61,7 +61,7 @@ class N2 as "Account1" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N3 as "Account2" <<(B,lightgreen) BoxContainer>> {
+class N3 as "Account2" <<(B,#90EE90) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -90,7 +90,7 @@ class N3 as "Account2" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N4 as "Account3" <<(B,lightgreen) BoxContainer>> {
+class N4 as "Account3" <<(B,#90EE90) BoxContainer>> {
   ~ ui_backed
   ~ selected
   ~ unselected
@@ -119,7 +119,7 @@ class N4 as "Account3" <<(B,lightgreen) BoxContainer>> {
   + _on_unselected()
   + _on_get_started_button_pressed()
 }
-class N5 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N5 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N5
@@ -256,9 +256,9 @@ func _on_account_3_unselected() -> void:
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -280,9 +280,9 @@ R  ->  T2 : position\n = Vector2(0, 1200)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -304,9 +304,9 @@ R  ->  T2 : position\n = Vector2(0, 656)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -328,9 +328,9 @@ R  ->  T2 : position\n = Vector2(0, 1200)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -352,9 +352,9 @@ R  ->  T2 : position\n = Vector2(0, 656)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -376,9 +376,9 @@ R  ->  T2 : position\n = Vector2(0, 300)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -400,9 +400,9 @@ R  ->  T2 : position\n = Vector2(0, 656)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 
@@ -420,9 +420,9 @@ R  ->  T2 : position\n = Vector2(0, 656)
 [plantuml]
 ....
 control "Root" as R
-participant "$AccountsContainer\n/Account1" as T0
-participant "$AccountsContainer\n/Account2" as T1
-participant "$AccountsContainer\n/Account3" as T2
+participant "$AccountsContainer\n/Account1" as T0 #90EE90
+participant "$AccountsContainer\n/Account2" as T1 #90EE90
+participant "$AccountsContainer\n/Account3" as T2 #90EE90
 
 
 

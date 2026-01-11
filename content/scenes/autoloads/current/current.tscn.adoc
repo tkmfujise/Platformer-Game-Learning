@@ -8,7 +8,7 @@ title: autoloads/current/current.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Current" <<(N,darkgray) Node>> {
+class R as "Current" <<(N,#A9A9A9) Node>> {
   * account
 ---
   + load_account()

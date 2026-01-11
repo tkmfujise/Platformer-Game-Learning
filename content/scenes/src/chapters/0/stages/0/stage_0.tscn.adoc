@@ -8,48 +8,48 @@ title: src/chapters/0/stages/0/stage_0.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Stage0" <<(C,lightgreen) Control>> {
+class R as "Stage0" <<(C,#90EE90) Control>> {
 ---
 }
-class N1 as "OpeningCurtain" <<(C,lightgreen) Control>> {
+class N1 as "OpeningCurtain" <<(C,#90EE90) Control>> {
   * pattern
   * center
 ---
   + set_center()
   + play()
 }
-class N2 as "ColorRect" <<(C,lightgreen) ColorRect>> {
+class N2 as "ColorRect" <<(C,#90EE90) ColorRect>> {
 }
-class N3 as "Forest" <<(N,lightskyblue) Node2D>> {
+class N3 as "Forest" <<(N,#87CEFA) Node2D>> {
 }
-class N4 as "Frames" <<(N,lightskyblue) Node2D>> {
+class N4 as "Frames" <<(N,#87CEFA) Node2D>> {
 }
-class N5 as "CameralFrame" <<(A,lightskyblue) Area2D>> {
+class N5 as "CameralFrame" <<(A,#87CEFA) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class N6 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
+class N6 as "CameraFrame2" <<(A,#87CEFA) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class N7 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
+class N7 as "CameraFrame3" <<(A,#87CEFA) Area2D>> {
   - HALF_SIZE
 ---
   + corner()
 }
-class N8 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+class N8 as "StageGround0" <<(T,#FFFF00) TileMapLayer>> {
 }
-class N9 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+class N9 as "Gimmicks" <<(N,#87CEFA) Node2D>> {
 }
-class N10 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+class N10 as "FallingIceBlock" <<(R,#87CEFA) RigidBody2D>> {
 ---
   + _ready()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
-class N11 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N11 as "Player" <<(C,#87CEFA) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -82,12 +82,12 @@ class N11 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N12 as "Weather" <<(N,lightskyblue) Node2D>> {
+class N12 as "Weather" <<(N,#87CEFA) Node2D>> {
 ---
   + _process()
   + current_camera()
 }
-class N13 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N13 as "AnimationPlayer" <<(A,#FFFF00) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
@@ -199,7 +199,7 @@ NOTE: No signal connections.
 [plantuml]
 ....
 control "Root" as R
-participant "$OpeningCurtain" as T0
+participant "$OpeningCurtain" as T0 #90EE90
 
 
 
