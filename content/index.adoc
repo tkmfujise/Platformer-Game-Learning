@@ -26,7 +26,6 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |Name |Path
 |_Preference_ |link:/scripts/autoloads/preference/preference.gd[res://autoloads/preference/preference.gd]
 |_BGM_ |link:/scenes/autoloads/bgm/bgm.tscn[res://autoloads/bgm/bgm.tscn]
-|_Panku_ |link:/scenes/addons/panku_console/console.tscn[res://addons/panku_console/console.tscn]
 |_KeyboardHandler_ |link:/scenes/autoloads/keyboard_handler/keyboard_handler.tscn[res://autoloads/keyboard_handler/keyboard_handler.tscn]
 |_Current_ |link:/scenes/autoloads/current/current.tscn[res://autoloads/current/current.tscn]
 |===
@@ -42,14 +41,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |_application_ |*config/icon* |`res://icon.svg`
 |_autoload_ |*Preference* |`*res://autoloads/preference/preference.gd`
 |_autoload_ |*BGM* |`*res://autoloads/bgm/bgm.tscn`
-|_autoload_ |*Panku* |`*res://addons/panku_console/console.tscn`
 |_autoload_ |*KeyboardHandler* |`*res://autoloads/keyboard_handler/keyboard_handler.tscn`
 |_autoload_ |*Current* |`*res://autoloads/current/current.tscn`
 |_debug_ |*gdscript/warnings/integer_division* |`0`
 |_display_ |*window/size/viewport_width* |`1920`
 |_display_ |*window/size/viewport_height* |`1080`
 |_display_ |*window/stretch/mode* |`viewport`
-|_editor_plugins_ |*enabled* |`PackedStringArray("res://addons/gdscript_input_field/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg")`
+|_editor_plugins_ |*enabled* |`PackedStringArray("res://addons/gdscript_input_field/plugin.cfg", "res://addons/gut/plugin.cfg")`
 |_input_ |*ui_accept* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
@@ -109,7 +107,6 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |_layer_names_ |*2d_physics/layer_2* |`Player`
 |_layer_names_ |*2d_physics/layer_3* |`Camera`
 |_layer_names_ |*2d_physics/layer_4* |`Failure`
-|_panku_ |*disable_on_release* |`true`
 |_rendering_ |*textures/canvas_textures/default_texture_filter* |`0`
 |===
 

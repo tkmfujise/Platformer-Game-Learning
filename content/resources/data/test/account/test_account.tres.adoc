@@ -13,49 +13,33 @@ title: res://data/test/account/test_account.tres
 |===
 |Section |Name |Value
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
-|_sub_resource_ |*number* |`1`
 |_sub_resource_ |*obtained_blue_heart* |`true`
 |_sub_resource_ |*obtained_cassette* |`true`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`2`
 |_sub_resource_ |*obtained_blue_heart* |`true`
 |_sub_resource_ |*obtained_cassette* |`true`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`3`
 |_sub_resource_ |*obtained_blue_heart* |`true`
 |_sub_resource_ |*obtained_cassette* |`true`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`4`
 |_sub_resource_ |*obtained_blue_heart* |`true`
 |_sub_resource_ |*obtained_cassette* |`true`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`5`
 |_sub_resource_ |*obtained_blue_heart* |`true`
 |_sub_resource_ |*obtained_cassette* |`true`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`6`
 |_sub_resource_ |*obtained_blue_heart* |`true`
 |_sub_resource_ |*obtained_cassette* |`true`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`7`
-|_sub_resource_ |*obtained_blue_heart* |`false`
-|_sub_resource_ |*obtained_cassette* |`false`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_sub_resource_ |*script* |`ExtResource("1_y7ksp")`
 |_sub_resource_ |*number* |`8`
-|_sub_resource_ |*obtained_blue_heart* |`false`
-|_sub_resource_ |*obtained_cassette* |`false`
-|_sub_resource_ |*stages* |`Array("[]")`
 |_resource_ |*script* |`ExtResource("3_sjtgr")`
-|_resource_ |*number* |`1`
-|_resource_ |*player_name* |`Player`
-|_resource_ |*latest_chapter_name* |`Opening`
 |_resource_ |*chapters* |`Array("[SubResource("Resource_f4afq"), SubResource("Resource_duq8b"), SubResource("Resource_cq0mu"), SubResource("Resource_jm6iq"), SubResource("Resource_0hdxd"), SubResource("Resource_b3gqm"), SubResource("Resource_1t8ef"), SubResource("Resource_u6l3m")]")`
 |===
 
