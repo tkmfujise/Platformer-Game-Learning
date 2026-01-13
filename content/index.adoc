@@ -41,9 +41,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | link:/scripts/src/beginning/chapters/menu/menu.gd[20 _funcs_]
 | 209 _funcs_
 | *Lines / Func*
-| link:/scripts/resources/account_stage_resource.gd[0 _lines_]
+| link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 23.7 _lines_
-| link:/scripts/src/beginning/chapters/menu/menu.gd[107 _lines_]
+| link:/scripts/src/player/player.gd[39 _lines_]
 | 874 _lines_
 
 
