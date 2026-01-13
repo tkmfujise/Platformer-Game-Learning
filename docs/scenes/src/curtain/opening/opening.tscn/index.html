@@ -60,6 +60,10 @@
             <a class="" href="../../../../debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../../../scripts/debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../../../scripts/debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -804,7 +812,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdkTFPwzAQhXf_iqMsCcRDk7ZTqFSFEYUoK0KVk1xTq8aObFcoQvx3HIdWIWJAbM9nf_ee72rBjIESmIHFc4eSyzY7a8u4XECaBlkkeHu0rUaUIWRKWq3EdgsfBOAOOmYtaul1jdJpQil1x3swaPdjKQh9oROsd_KT1N4xX3rLYuyw9Gb5aGZOfSXOGEKuGowfvdsViz32hAc7jVnMyEKJvlVyDiceLoen_6BX08Txr-MRSpdY25_cesolf-c2nttJ_sYsV7JwA0Tt8V3UoxDqPYTZ7XeDEihVbsQXsbqI9UVsiFuAV_FVJeSmwQOXCPuARVUIDFL6cjvMJLJHXp8kGvMQv1KoiHALAKtAD9-AhmuX3qUgXyVVt-s=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdkk1PwzAMhu_5FWZcWmgO676kakyaxhGNqleEqqz1umghmZJMqELw20mzdZSNw8Ttle3HeW2nEMwYyIAZ6D3vUHJZLfbaMi57MJ0Gi0jwamMrjShDWChptRKzGXwQgC9gkr8xy5XM11xys8GSUEpd6g52zFrU0usCpdPH1D0YtPkhFIQ-sBOsPsrc9frp2iRQ55fPuOpPUnjry773nh7e63vXy4Nrs61XYo8hLFWJ8aO3fcJijz3h2nbnTc_IVIm6UvIcHng4a0r_QQ-7juM_9yyUzrCwv7lRlxtcz4273PB6buK5ebv91F_D4_OoRiHUewhn2WODDChV7jStGLZi1IpxKybEXdCr-KQG5KZEd2uEPGDRKgQGU_py2yw1shtebCUa8xC_UlgR4S4IVoFu5oGSazeGs0PyIEuSK79T5GwkyWU8_AZjZP_a" alt="Diagram">
 </div>
 </div>
 </div>
@@ -813,7 +821,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="ulist">
 <ul>
 <li>
+<p><a href="../../../../debug/curtain/curtain.tscn">res://debug/curtain/curtain.tscn</a></p>
+</li>
+<li>
 <p><a href="../../../chapters/0/stages/0/stage_0.tscn">res://src/chapters/0/stages/0/stage_0.tscn</a></p>
+</li>
+<li>
+<p><a href="../../../player/player.tscn">res://src/player/player.tscn</a></p>
 </li>
 </ul>
 </div>
@@ -846,6 +860,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <p><span class="node-name type-control">Pattern3</span> <span class="node-type type-control">ColorRect</span></p>
 </li>
 <li>
+<p><span class="node-name type-control">Pattern4</span> <span class="node-type type-control">ColorRect</span></p>
+</li>
+<li>
 <p><span class="node-name type-other">AnimationPlayer</span> <span class="node-type type-other">AnimationPlayer</span></p>
 </li>
 </ul>
@@ -856,17 +873,12 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="sect2">
 <h3 id="_signal_connections">Signal Connections</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-No signal connections.
-</td>
-</tr>
-</table>
+<div class="listingblock signal-connection">
+<div class="title">$AnimationPlayer:[<mark><em>animation_finished</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">_anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">animation_finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -875,7 +887,7 @@ No signal connections.
 <h4 id="_animation_bwqwf">Animation_bwqwf</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqFkFFrwjAUhd_7Ky51DxvMLYlmtkIGIt3THqTInny5q9GFxaSk2cB_v7TRytjUEJJLzjnfJbeyxjurIS2t9SlgA2VSo_OqUjUaD-nNAr2XztCVeSzV9sPPv5xHZTrvksAgm8yLl9n50Kvc_M7QK5noYpddLLpGMMhJUeTkf9counjvCksIWKqdnAJ5ICBEUgIMn6H9yhRqq_dba1YGBCyw-pTrN1l569jMOdzf0pyRe6Aka8-uDjt_ind84OPjEyWT8V1Pp9fpEdM3OEC6suVmx1YnKAvQb9Wody076AZ1I6NqoR3OWfmg7jBMSaHu5DCPU5ZfzPK_WZ4kP-q2pDA=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqFkF9rwyAUxd_zKS7pHjbYH03jTAoOSsme9lBC2VNfXGY7mdVg3KDffia2CWVtKqIXz--ci7cy2lmjIC6NcTHwBsqo5tbJStZcO4hvltw5YTVe66dSbr_c4sc6LnXHrhBMMrooXueXTW9ic-rBVzyBSsapJFBTmOSoKHJ0npoGioxTaaBoT_nFGKzkTswAPSJgLCoBHl6g_fAMaqP2W6PXGhgsefUtPt9F5YxN5tby_S3OE3QPGGXt2dV-58_hDg8kPT5hRNO7Ph1fTw8xfYNDSFe2udmx1RCa-NBf2cgPJbrQDVeNCKqBdoQX5YO6435KkqtO9vMYvGTUS_57yeClo156rm_0BwH_wBw=" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -884,7 +896,7 @@ No signal connections.
 <h4 id="_pattern1">pattern1</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNq1kctqwzAQRff-isHpooU-JMVp7YAKIbirLoIJXWWjuEoq6kpGnhTy97UtojiPNosmRliD5swV9yo3Gq0pIMyMwRBEBVlQCosqV6XQCOHVRCBKq-lMP2Rq-YHjlUWhdMtOCfTip3H6Mvp96FUudmfoiRlHsb8p5qg-9BKSpgk5TvUdFXmq_jiHqfqSQyD3BDgPMoC7Z2isDKE0xXpp9EwDh4nIP-X7m8zRWDayVqyvacLILVASN_-2rlfy2NkH0aZqqBsvTk-LOxWv70W8cry5ayvLatlvVal5IVtZtCvpmgaacHa7C1FUnXZ0tN2JZ3DOeNzBRfLZT8dboOd54b2i9bAF_2PiwIIzEPwA7s_zOA==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNq1kl9rgzAUxd_9FBe7hw32J7G6aSGDUtzTHoqUPfUldWkX5hKJt4N--6mhqe06-7BWxFw8v3vkHMy1QqML8DOt0QdeQeaV3KDMZckVgn815YjCKDpXD5lcfeBkbZBL1bIzAoP4aZK-jP9eehXL_R16YsdSQT8VWGoIg4SkaUKOU0NLhf1UaKnIUfXFGMzklxgBuSfAmJcB3D1DE3gEpS42K63mChhMef4p3t9EjtoEY2P45pomAbkFSuLm2c71nTx2zijcTg1148zpaXPr4vydiXOOt9_a2Qa17bes5KIQrS2atbCihqbCfXXJi6ojh_1ydFTutBedsz374iL1HZbnItDz_AAHQ5thB_4nxK8INoD3Az8QB78=" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -893,7 +905,7 @@ No signal connections.
 <h4 id="_pattern2">pattern2</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqFjl0LgjAYhe_3Kw7arbIpUQoLIuw6xMtuliwYzE3m6vfnB2jBoPf2ec55T2uNd1Yjqq31EcSAmvTCedWqXhiPaHcT3ktnshk2FHFBq6qgYYstFkN8PFyq6zls5YuVr13jcY5GdbIETSk4JzWQnCymjyXealAPLe8GHN695EIxPfqFT6GHjU7RTowfldAzTmjKtuY8GP4asl-HhMpomm0y-7P6z7AxTsgHgd9t2w==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqFj9EKgjAUhu_3FAftVtnUKIUFEXYd4mU3KxYM5iZz9fw5B1qw8tx-33_Of-5aWaMlRI3WNgI2QIN6Zqy4i54pC9HmwqzlRmUTbDHEJa7rEoct4i0C8X53qs_HsJV7K_-_q_BWMVvjUAqt6HgFOMVAKWoAkoMG16uClxjETfKrAgrWPLmn4Op8wweTw0JdtGPjRcHkhBOckmVz_jvscBHEHz23c8_QLZxmi0xWnlrpPcYRegMR14JR" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -902,7 +914,16 @@ No signal connections.
 <h4 id="_pattern3">pattern3</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNp9jr0KwjAURvc8xUfraknqoC2kIFJnKR1dYokQSJOSXn1--wMVtXjXc7jfabyj4C2iynuKoHpUrFOBTGM65QjR5qKIdHBigjVHfNifyvNx3UpnSyDOeFlmfN3azVa6WMNJidq0OgdPOKRkFbAtMA7meJre3Ky-Okjcle31TD3Gpb84_cIUHnp5PcJWDUFG2YmKhL87xGfHjzx0MvYCnHNZlg==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNp9j0ELgjAYhu_7FS_aNdlMKIUFEXYO8dhlyYLB3GSufn_qwKjEXZ_ne3nWWOOd1Ygqa30E0aMinXBeNaoTxiPaXIX30hk2wZoiPuzP5eW0bKXBYohzWpY5XbZ2wUrXrSxY2WwNj3PUqpUFaELBOamA7RFjVoGX6tVdy5sBx0PoXgZqMfas4vQHe_eU8_QIWzEEKaEnyhL6Oc0Wl-dM9p35tzV8g5A3B_JuDA==" alt="Diagram">
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_pattern4">pattern4</h4>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNp9j1ELgjAUhd_9FRfttdhsUQoLIuw5xMdeliwYzE3m6vc3XaiJel-_73DOLbWyRksIc61tCKyBPKiZsaIUNVMWws2dWcuNwh0sEESn4zW7Xeat2FsYogRlWYLmrb234nWLeIv0ljtKoRAVTwHtEFAa5ADbM7SzUviIRjwlfyig8GKy4Z5qaPes4ngZ_2jF3CLBZIdd95Alk6w17yFKplHsoqMfDuMfyFxPL-P_h5dHLdUGX7TniA4=" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1210,8 +1231,71 @@ No signal connections.
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch node-property node-control">
+<caption class="title">Table 7. <mark>$Pattern4</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>visible</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>false</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>material</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>SubResource("ShaderMaterial_2igm1")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>layout_mode</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>1</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>anchors_preset</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>15</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>anchor_right</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>1.0</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>anchor_bottom</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>1.0</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>grow_horizontal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>2</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>grow_vertical</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>2</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <table class="tableblock frame-all grid-all stretch node-property node-other">
-<caption class="title">Table 7. <mark>$AnimationPlayer</mark> properties</caption>
+<caption class="title">Table 8. <mark>$AnimationPlayer</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1246,7 +1330,9 @@ No signal connections.
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Control</span>
 
-<span class="k">enum</span> <span class="n">Pattern</span> <span class="p">{</span> <span class="n">PATTERN_1</span><span class="p">,</span> <span class="n">PATTERN_2</span><span class="p">,</span> <span class="n">PATTERN_3</span> <span class="p">}</span>
+<span class="k">signal</span> <span class="n">animation_finished</span>
+
+<span class="k">enum</span> <span class="n">Pattern</span> <span class="p">{</span> <span class="n">PATTERN_1</span><span class="p">,</span> <span class="n">PATTERN_2</span><span class="p">,</span> <span class="n">PATTERN_3</span><span class="p">,</span> <span class="n">PATTERN_4</span> <span class="p">}</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">pattern</span> <span class="p">:</span> <span class="n">Pattern</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">center</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">:</span> <span class="n">set</span> <span class="o">=</span> <span class="n">set_center</span>
 
@@ -1258,7 +1344,11 @@ No signal connections.
 
 <span class="k">func</span> <span class="nf">play</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">var</span> <span class="n">number</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="n">pattern</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">'</span><span class="s1">_'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"pattern</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span></code></pre>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"pattern</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">_anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">animation_finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
 </div>
 </div>
 </div>

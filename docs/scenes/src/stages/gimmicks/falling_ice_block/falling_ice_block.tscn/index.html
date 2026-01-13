@@ -60,6 +60,10 @@
             <a class="" href="../../../../../debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../../debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../../account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../../../../scripts/debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../../../../scripts/debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -805,7 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqtkj1rwzAQhnf9imu62NQa6nyBSQP5oNClFGcMRcjWJRFRrWApFFP636soVmi8tEO219bpuefOLhU3BnLgBnrPXClZbV9KnCtd7nswmUR5ouR2Z82-KdQRY8jlVoq5Fk26nE7hi1BKCcADsBq5aKLYP2wcqI1MV0ygxdJKl7irYqlghQMwrCzWKFzhNym9xuuj91gdamkxXXqBVUcgHPrul4upv7jQbgDjGq12_BAAiw6gW3QN6rebkOpY46XUg2Yd0MwN070-uJXH0IOWYXPnXv_WGN1KY-xBs0p-8JPGm-IN1q1Gg0rpTydwfdoCcqBUuy8aQhpCP4RhCGPi1u7TgLjBfRqRO4EbWSGwiCdFDBwmdH1_ck7sTpb7Co15St8pFEThxoLVUJ8GAyHr884Ii_Is-_sHTJxKlv1-E_8Ax1v9UA==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqtkk1rwzAMhu_-FVp3SVh8WPoFoSv0g8EuY6THMoITq62pFxfbZYSx_z7Xjcuay3bo7bUlvXoku5LMGMiBGeg9MylFvX2pcC5Vte_BZBLliRTbnTX7ppRHjCEXW8HnijfpcjqFL0IpJQAPUGhkvIni8-GgVYXGtMeN8w0RVRccLVZWOMVcUZHyonR-BdYWNXKX-E0qT_X66LFWBy0spkvPs-rwhKCHuRSmvnCh3DzGNVrt2CEYLDoG3aRro367GCGPGi-p3mjWMZq5Ybrlg1txDL3RMmzu3OvfGKNbYYy90awWH-yE8SZZg7rFaFBK9ekArqOtQQ6UKveiQaRB9IMYBjEmbu1eDYgb3KsRueO4ETVCEbGkjIHBhK7vT8yJ3YlqX7vv9pS-UyiJxI0Fq0CfBgMu9HlnpIjyLPv7AyYOJct-38Q_M-oBow==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -825,6 +833,15 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">Player</span><span class="o">.</span><span class="n">is_failed</span><span class="p">:</span> <span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
 </div>
 </div>
 </div>
@@ -961,7 +978,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Vector2(-1.5, 2)</code></p>
+<p><code>Vector2(-3, -3.1875)</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1015,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Vector2(4, 78)</code></p>
+<p><code>Vector2(-2, 15)</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1090,6 +1107,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
+
+
+<span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">Player</span><span class="o">.</span><span class="n">is_failed</span><span class="p">:</span> <span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
 
 
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

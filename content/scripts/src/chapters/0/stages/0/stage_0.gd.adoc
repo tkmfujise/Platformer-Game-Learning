@@ -14,4 +14,17 @@ title: res://src/chapters/0/stages/0/stage_0.gd
 ```gdscript
 extends Control
 
+
+func restart() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_player_failed() -> void:
+	await get_tree().create_timer(2).timeout
+	%RestartCurtain.play()
+
+
+func _on_restart_curtain_animation_finished() -> void:
+	restart()
+
 ```

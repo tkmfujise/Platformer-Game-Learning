@@ -60,6 +60,10 @@
             <a class="" href="../../../../scenes/debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../../scenes/src/account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -813,7 +821,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="c1">#class_name Current</span>
 
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">account</span> <span class="p">:</span> <span class="n">AccountResource</span>
-
+<span class="k">var</span> <span class="n">failed</span> <span class="p">:</span><span class="o">=</span> <span class="bp">false</span>
 
 <span class="k">func</span> <span class="nf">load_account</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">account</span> <span class="o">=</span> <span class="n">AccountResource</span><span class="o">.</span><span class="n">find_or_initialize</span><span class="p">(</span><span class="n">number</span><span class="p">)</span></code></pre>

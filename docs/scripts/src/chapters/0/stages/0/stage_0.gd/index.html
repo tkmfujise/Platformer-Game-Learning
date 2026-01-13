@@ -60,6 +60,10 @@
             <a class="" href="../../../../../../../scenes/debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../../../../scenes/debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../../../../../scenes/src/account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../../../../debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../../../../debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -809,7 +817,20 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_code">Code</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Control</span></code></pre>
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Control</span>
+
+
+<span class="k">func</span> <span class="nf">restart</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">reload_current_scene</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">_on_player_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+	<span class="o">%</span><span class="n">RestartCurtain</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">_on_restart_curtain_animation_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">restart</span><span class="p">()</span></code></pre>
 </div>
 </div>
 </div>

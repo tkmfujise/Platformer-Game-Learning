@@ -1,0 +1,92 @@
+---
+title: debug/curtain/curtain.tscn
+---
+:toc:
+
+== debug / curtain / curtain.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Curtain" <<(N,lightskyblue) Node2D>> {
+---
+  + _ready()
+}
+class N1 as "OpeningCurtain" <<(C,lightgreen) Control>> {
+  ~ animation_finished
+---
+  * pattern
+  * center
+---
+  + set_center()
+  + play()
+  + _on_animation_player_animation_finished()
+}
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	%OpeningCurtain.play()
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Curtain# [.node-type.type-2d]#Node2D#
+** [.node-name.type-control]#OpeningCurtain# [.node-type.type-control]#link:/scenes/src/curtain/opening/opening.tscn[res://src/curtain/opening/opening.tscn]#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/debug/curtain/curtain.gd[res://debug/curtain/curtain.gd]
+|===
+[.node-property.node-control]
+.#$OpeningCurtain# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*anchors_preset* a|`0`
+|*anchor_right* a|`0.0`
+|*anchor_bottom* a|`0.0`
+|*grow_horizontal* a|`1`
+|*grow_vertical* a|`1`
+|*size_flags_horizontal* a|`3`
+|*size_flags_vertical* a|`3`
+|*pattern* a|`3`
+|===
+
+
+=== link:/scripts/debug/curtain/curtain.gd[curtain.gd]
+
+```gdscript
+extends Node2D
+
+
+func _ready() -> void:
+	%OpeningCurtain.play()
+
+```
+
+

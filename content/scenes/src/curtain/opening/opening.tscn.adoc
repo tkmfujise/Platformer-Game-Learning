@@ -9,11 +9,14 @@ title: src/curtain/opening/opening.tscn
 [plantuml]
 ....
 class R as "OpeningCurtain" <<(C,lightgreen) Control>> {
+  ~ animation_finished
+---
   * pattern
   * center
 ---
   + set_center()
   + play()
+  + _on_animation_player_animation_finished()
 }
 class N1 as "Pattern1" <<(N,lightskyblue) Node2D>> {
 }
@@ -25,17 +28,20 @@ class N4 as "Pattern2" <<(C,lightgreen) ColorRect>> {
 }
 class N5 as "Pattern3" <<(C,lightgreen) ColorRect>> {
 }
-class N6 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N6 as "Pattern4" <<(C,lightgreen) ColorRect>> {
+}
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4
 R --o N5
 R --o N6
+R --o N7
 N1 --o N2
 N1 --o N3
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-
+_(R::_on_animation_player_animation_finished, N7::animation_finished)
 ....
 
 
@@ -44,7 +50,9 @@ left to right direction
 
 
 === Instantiators
+* link:/scenes/debug/curtain/curtain.tscn[res://debug/curtain/curtain.tscn]
 * link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
 
 
 === Scene Tree
@@ -55,11 +63,18 @@ left to right direction
 *** [.node-name.type-2d]#RightCurtain# [.node-type.type-2d]#Polygon2D#
 ** [.node-name.type-control]#Pattern2# [.node-type.type-control]#ColorRect#
 ** [.node-name.type-control]#Pattern3# [.node-type.type-control]#ColorRect#
+** [.node-name.type-control]#Pattern4# [.node-type.type-control]#ColorRect#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
 === Signal Connections
-NOTE: No signal connections.
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	animation_finished.emit()
+```
+
 
 === Animations
 ==== Animation_bwqwf
@@ -72,6 +87,7 @@ participant "$Pattern1\n/LeftCurtain" as T1 #87CEFA
 participant "$Pattern1" as T2 #87CEFA
 participant "$Pattern2" as T3 #90EE90
 participant "$Pattern3" as T5 #90EE90
+participant "$Pattern4" as T7 #90EE90
 
 
 
@@ -83,6 +99,8 @@ R  ->o  T3 : visible\n = false
 R  ->  T3 : material\n = 0.0
 R  ->o  T5 : visible\n = false
 R  ->  T5 : material\n = 0.5
+R  ->o  T7 : visible\n = false
+R  ->  T7 : material\n = 0.0
 
 
 ....
@@ -98,6 +116,7 @@ participant "$Pattern1\n/LeftCurtain" as T1 #87CEFA
 participant "$Pattern1" as T2 #87CEFA
 participant "$Pattern2" as T3 #90EE90
 participant "$Pattern3" as T4 #90EE90
+participant "$Pattern4" as T5 #90EE90
 
 
 
@@ -107,6 +126,7 @@ R  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 960, 1080, 960, 548, 9
 R  ->  T2 : visible\n = true
 R  ->o  T3 : visible\n = false
 R  ->o  T4 : visible\n = false
+R  ->o  T5 : visible\n = false
 == Time: 0.5 ==
 R  ->  T0 : polygon\n = PackedVector2Array(1920, 1080, 1920, 0, 960, 0, 1920, 540, 960, 1080)
 R  ->  T1 : polygon\n = PackedVector2Array(0, 0, 0, 1080, 960, 1080, 0, 548, 960, 0)
@@ -126,6 +146,7 @@ control "Root" as R
 participant "$Pattern2" as T0 #90EE90
 participant "$Pattern1" as T1 #87CEFA
 participant "$Pattern3" as T3 #90EE90
+participant "$Pattern4" as T4 #90EE90
 
 
 
@@ -134,6 +155,7 @@ R  ->o  T0 : visible\n = true
 R  ->  T1 : visible\n = false
 R  ->  T0 : material\n = -0.1
 R  ->o  T3 : visible\n = false
+R  ->o  T4 : visible\n = false
 == Time: 0.5 ==
 R  ->  T0 : material\n = 0.2
 == Time: 1.0 ==
@@ -152,6 +174,7 @@ control "Root" as R
 participant "$Pattern1" as T0 #87CEFA
 participant "$Pattern2" as T1 #90EE90
 participant "$Pattern3" as T2 #90EE90
+participant "$Pattern4" as T4 #90EE90
 
 
 
@@ -160,8 +183,38 @@ R  ->  T0 : visible\n = false
 R  ->o  T1 : visible\n = false
 R  ->o  T2 : visible\n = true
 R  ->  T2 : material\n = 1.0
+R  ->o  T4 : visible\n = false
 == Time: 1.0 ==
 R  ->  T2 : material\n = 0.0
+
+
+....
+---
+
+==== pattern4
+
+[plantuml]
+....
+control "Root" as R
+participant "$Pattern1" as T0 #87CEFA
+participant "$Pattern2" as T1 #90EE90
+participant "$Pattern3" as T2 #90EE90
+participant "$Pattern4" as T4 #90EE90
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : visible\n = false
+R  ->o  T1 : visible\n = false
+R  ->o  T2 : visible\n = false
+R  ->  T2 : material\n = 0.0
+R  ->o  T4 : visible\n = true
+R  ->  T4 : material\n = 1.0
+== Time: 0.5 ==
+R  ->  T4 : material\n = 0.0
+== Time: 1.0 ==
+R  ->  T2 : material\n = 0.0
+R  ->  T4 : material\n = 1.0
 
 
 ....
@@ -241,6 +294,20 @@ R  ->  T2 : material\n = 0.0
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
 |===
+[.node-property.node-control]
+.#$Pattern4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*visible* a|`false`
+|*material* a|`SubResource("ShaderMaterial_2igm1")`
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
@@ -258,7 +325,9 @@ R  ->  T2 : material\n = 0.0
 ```gdscript
 extends Control
 
-enum Pattern { PATTERN_1, PATTERN_2, PATTERN_3 }
+signal animation_finished
+
+enum Pattern { PATTERN_1, PATTERN_2, PATTERN_3, PATTERN_4 }
 @export var pattern : Pattern
 @export var center := Vector2(0.5, 0.5) : set = set_center
 
@@ -271,6 +340,10 @@ func set_center(val: Vector2) -> void:
 func play() -> void:
 	var number = Pattern.keys()[pattern].split('_')[1]
 	%AnimationPlayer.play("pattern%s" % number)
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	animation_finished.emit()
 
 ```
 

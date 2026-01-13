@@ -60,6 +60,10 @@
             <a class="" href="../../debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../scripts/debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../scripts/debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -803,12 +811,29 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdVE2P0zAQvedXmOXSQnOg-3UpK2XTUIratGrSXRBClpNMEtPUjmwHiBD8dhw3_UiphMQpb2b83njGM4kLIiVaISLR1ZxQdoVGo547KGiWq0wAsD5yOVOCFw8P6Kf1y4oNwX9jGC4vuFhBrC7S2liXODTEZy6KxJD8HUlu6qiooI98nsBw3OVcG06giKLxI0_q4dhQgzPq6YGuwM3_3vZ2TyyopJwFOSmhze6eZT8_1BW6M0LLgtQgLtNzIkisQJzcH6HfKCEyh8TAlNBCQ9u2tWmjYOl5Y4PGTvAeH80P6_kSP3mzhTsNPxnPZOU87bEzmy2evTEOp3MPhwvcnD6qNN6j5YSh56-dcLrwjXPufMQm4C7Wfqhdr9Ak51J5aapbZ-yU6DawDCu6BeNoCsACpLrkinnFdrxMaJhoprGoxJ1qXyNc5rWkscSl4DFI2esbN2F0SxS01jcaiaOVgcJSHe2qTLSBZSlo82kiEsucJCBwqbu_Bd3-vbAsyXeGs6Y6DKa8NhBXQgBTHZk2pG-9e67Wxpz97djVdepoMmNZRV91EkwEEKz1Qfzz0A-d_1y5EqCb2k7iudhhGu_NNL6jQqpAQSkfJ_NmNElUQLuUCRGbTJB6t5BmGg8voUWT2sitkG1z_TPYg-Ee3Ft60Q26PqA7Sy-yQTcHdGu9SCClDBDukUHURwSN7M8vm5UYqJzGG6af-u3wi40iq4BUIcWRaPYGJVToTugirT9OtXk5" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdVE2PmzAQvfMr3O0lacOh2a9LuhJLaLpVQqJAdltVlWVgADcEI9u0RdX2t9cYSEI2UqWeeG9m3ozH4yHMiBBojYhAFwtC8ws0mQzsUUaTVCYcIB8im-WSs-zuDv02no1QC9x3WmGzjPE1hPKsrPX1hWMtfGI8i7TIbURiWwVZCUPksgjG077mUms8SSQN71lUjada6p1IjwP6Ca7-97TXnTCjgrLcS0kBbXX7pPppUD_RjU60ykgF_Lw8JZyEEvjR-RH6gyIiUog0jAnNFDRNU1ETeSvHmWo0tbyP-EA_bRYr_OjMl_aD_0VbZmvrscPWfL58cqbYf1g42F_iOvqQpbYemOX7jrux_Ielq40L6zPWDnu5cX1leoNmKRPSiWN1dZrHRF1DnmBJd6ANdQOYg5DnTCEr80aXcAUjpdSMCtzr9i1S8SSqBsOGFGklaChwwVkIQrRmktMdkdCyHzTgB5aAxEIeeFlEimBRcFp_ao_AIiURcFyoUexAzaJLLAryM8dJ3SoG3WvrCEvOIZe9NK1LtdDMrjszy18amiaPDXVlLMrguyqCiWoaq_zA_xn0S9U_zVxyUDfcPsvTZPuneauf5gfKhfQkFOJ-tqjfKQkyaDc0InybcFI126mf5ouxPBtrZJpM_Rk6MO7AraG2XqPLPbox1FZrdLVH18arCGKaA8IDMgqGiKCJ-fV1vR8jmdJwm6tRvx9_M1FgZBBLJBni9RKhiHJ1E6pJ4y8Gj3yT" alt="Diagram">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="title">$World/Player</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">is_failed</span> <span class="o">=</span> <span class="bp">false</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">$FirstStepsBGMPlayable</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">BGM</span><span class="o">.</span><span class="n">first_steps</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_physics_process">_physics_process</h4>
 <div class="listingblock">
@@ -853,16 +878,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				<span class="n">dash_rest_count</span> <span class="o">-=</span> <span class="mi">1</span>
 	<span class="n">animate</span><span class="p">()</span>
 	<span class="n">move_and_slide</span><span class="p">()</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_ready">_ready</h4>
-<div class="listingblock">
-<div class="title">$FirstStepsBGMPlayable</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">BGM</span><span class="o">.</span><span class="n">first_steps</span><span class="p">()</span></code></pre>
 </div>
 </div>
 </div>

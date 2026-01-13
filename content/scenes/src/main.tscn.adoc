@@ -39,6 +39,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * grounding
   * is_failed
 ---
+  + _ready()
   + _physics_process()
   + animate()
   + vibrate()
@@ -73,6 +74,17 @@ left to right direction
 
 
 === Overridden virtual functions
+==== _ready
+.$World/Player
+```gdscript
+func _ready() -> void:
+	is_failed = false
+```
+.$FirstStepsBGMPlayable
+```gdscript
+func _ready() -> void:
+	BGM.first_steps()
+```
 ==== _physics_process
 .$World/Player
 ```gdscript
@@ -115,12 +127,6 @@ func _physics_process(delta: float) -> void:
 				dash_rest_count -= 1
 	animate()
 	move_and_slide()
-```
-==== _ready
-.$FirstStepsBGMPlayable
-```gdscript
-func _ready() -> void:
-	BGM.first_steps()
 ```
 
 

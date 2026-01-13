@@ -60,6 +60,10 @@
             <a class="" href="../../../../../scenes/debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../../scenes/debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../../../scenes/src/account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../../debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../../debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -811,7 +819,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Control</span>
 
-<span class="k">enum</span> <span class="n">Pattern</span> <span class="p">{</span> <span class="n">PATTERN_1</span><span class="p">,</span> <span class="n">PATTERN_2</span><span class="p">,</span> <span class="n">PATTERN_3</span> <span class="p">}</span>
+<span class="k">signal</span> <span class="n">animation_finished</span>
+
+<span class="k">enum</span> <span class="n">Pattern</span> <span class="p">{</span> <span class="n">PATTERN_1</span><span class="p">,</span> <span class="n">PATTERN_2</span><span class="p">,</span> <span class="n">PATTERN_3</span><span class="p">,</span> <span class="n">PATTERN_4</span> <span class="p">}</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">pattern</span> <span class="p">:</span> <span class="n">Pattern</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">center</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">:</span> <span class="n">set</span> <span class="o">=</span> <span class="n">set_center</span>
 
@@ -823,7 +833,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">play</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">var</span> <span class="n">number</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="n">pattern</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">'</span><span class="s1">_'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"pattern</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span></code></pre>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"pattern</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">_anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">animation_finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
 </div>
 </div>
 </div>

@@ -19,6 +19,10 @@ func _ready() -> void:
 	freeze = true
 
 
+func _process(_delta: float) -> void:
+	if Player.is_failed: freeze = true
+
+
 func fall() -> void:
 	freeze = false
 

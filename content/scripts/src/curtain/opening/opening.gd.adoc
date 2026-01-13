@@ -14,7 +14,9 @@ title: res://src/curtain/opening/opening.gd
 ```gdscript
 extends Control
 
-enum Pattern { PATTERN_1, PATTERN_2, PATTERN_3 }
+signal animation_finished
+
+enum Pattern { PATTERN_1, PATTERN_2, PATTERN_3, PATTERN_4 }
 @export var pattern : Pattern
 @export var center := Vector2(0.5, 0.5) : set = set_center
 
@@ -27,5 +29,9 @@ func set_center(val: Vector2) -> void:
 func play() -> void:
 	var number = Pattern.keys()[pattern].split('_')[1]
 	%AnimationPlayer.play("pattern%s" % number)
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	animation_finished.emit()
 
 ```

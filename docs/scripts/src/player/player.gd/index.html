@@ -60,6 +60,10 @@
             <a class="" href="../../../../scenes/debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../../scenes/src/account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -829,7 +837,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">var</span> <span class="n">dash_rest_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">dash_rest_count</span> <span class="p">:</span><span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 <span class="k">var</span> <span class="n">grounding</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">true</span>
-<span class="k">var</span> <span class="n">is_failed</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="k">static</span> <span class="k">var</span> <span class="n">is_failed</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+
+
+<span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">is_failed</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -926,8 +938,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_on_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">is_failed</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="n">Current</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="bp">true</span>
 	<span class="o">%</span><span class="n">AnimationTree</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="bp">false</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"burst"</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">RestartCurtain</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_on_frame_subject_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

@@ -1,0 +1,21 @@
+---
+title: res://debug/curtain/curtain.gd
+---
+:toc:
+
+== debug / curtain / curtain.gd
+
+=== Attached Scenes
+* link:/scenes/debug/curtain/curtain.tscn[res://debug/curtain/curtain.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+
+func _ready() -> void:
+	%OpeningCurtain.play()
+
+```

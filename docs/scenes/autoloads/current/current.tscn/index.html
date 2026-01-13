@@ -60,6 +60,10 @@
             <a class="" href="../../../debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
           </li>
         
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
             <a class="" href="../../../src/account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -205,6 +209,10 @@
         
           <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
             <a class="" href="../../../../scripts/debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../../scripts/debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
           </li>
         
           <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
@@ -803,7 +811,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNotyLEOwiAUBdCdr7jWhWpZnGsX9w6uxjQPeG1JCSTwOhjjv-vgeI6LVCvuoIrmtpfCSRr0vR47T2VbCr1ajNnzMOCtgBPIubwnUcaYn8-Imfz0T92qjzp4nkNiTJo624LQm8fRxp07WYPbEtd6vTwNrIo8CySjhGUV-FDYSchJfQE7fS59" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNotybEOgjAURuG9T_GLCyhdnJGFncHVGHJpL9DQtEl7Oxjju2uM2_lyjKeccQNlVENJiYNU6Lp6bC2lfU30bDBGy32PlwJOIGNiCfLrhZxnq7TWX57hI9np_-tGvdXB8uICY6qpnRsQOn0_zr5wK5sze-Ccr5eHxqw8LwKJSG7dBNYlNuJiUB8dcjF2" alt="Diagram">
 </div>
 </div>
 </div>
@@ -879,7 +887,7 @@ No signal connections.
 <span class="c1">#class_name Current</span>
 
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">account</span> <span class="p">:</span> <span class="n">AccountResource</span>
-
+<span class="k">var</span> <span class="n">failed</span> <span class="p">:</span><span class="o">=</span> <span class="bp">false</span>
 
 <span class="k">func</span> <span class="nf">load_account</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">account</span> <span class="o">=</span> <span class="n">AccountResource</span><span class="o">.</span><span class="n">find_or_initialize</span><span class="p">(</span><span class="n">number</span><span class="p">)</span></code></pre>
