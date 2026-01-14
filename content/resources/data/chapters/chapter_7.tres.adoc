@@ -13,23 +13,16 @@ title: res://data/chapters/chapter_7.tres
 |===
 |Section |Name |Value
 |_sub_resource_ |*script* |`ExtResource("2_c1f34")`
-|_sub_resource_ |*name* |`Get Started`
 |_sub_resource_ |*number* |`1`
 |_sub_resource_ |*photo* |`ExtResource("3_8oahi")`
-|_sub_resource_ |*strawberry_count* |`1`
-|_sub_resource_ |*scene* |``
 |_sub_resource_ |*script* |`ExtResource("2_c1f34")`
 |_sub_resource_ |*name* |`Stage 2`
 |_sub_resource_ |*number* |`2`
 |_sub_resource_ |*photo* |`ExtResource("4_yvdsn")`
-|_sub_resource_ |*strawberry_count* |`1`
-|_sub_resource_ |*scene* |``
 |_sub_resource_ |*script* |`ExtResource("2_c1f34")`
 |_sub_resource_ |*name* |`Stage 3`
 |_sub_resource_ |*number* |`3`
 |_sub_resource_ |*photo* |`ExtResource("5_llnax")`
-|_sub_resource_ |*strawberry_count* |`1`
-|_sub_resource_ |*scene* |``
 |_resource_ |*script* |`ExtResource("1_dsjui")`
 |_resource_ |*number* |`7`
 |_resource_ |*name* |`Summit`

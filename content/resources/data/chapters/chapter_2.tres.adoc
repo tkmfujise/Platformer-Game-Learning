@@ -13,23 +13,16 @@ title: res://data/chapters/chapter_2.tres
 |===
 |Section |Name |Value
 |_sub_resource_ |*script* |`ExtResource("2_02nmm")`
-|_sub_resource_ |*name* |`Get Started`
 |_sub_resource_ |*number* |`1`
 |_sub_resource_ |*photo* |`ExtResource("3_olud8")`
-|_sub_resource_ |*strawberry_count* |`1`
-|_sub_resource_ |*scene* |``
 |_sub_resource_ |*script* |`ExtResource("2_02nmm")`
 |_sub_resource_ |*name* |`Stage 2`
 |_sub_resource_ |*number* |`2`
 |_sub_resource_ |*photo* |`ExtResource("4_mjxu5")`
-|_sub_resource_ |*strawberry_count* |`1`
-|_sub_resource_ |*scene* |``
 |_sub_resource_ |*script* |`ExtResource("2_02nmm")`
 |_sub_resource_ |*name* |`Stage 3`
 |_sub_resource_ |*number* |`3`
 |_sub_resource_ |*photo* |`ExtResource("5_65m6e")`
-|_sub_resource_ |*strawberry_count* |`1`
-|_sub_resource_ |*scene* |``
 |_resource_ |*script* |`ExtResource("1_tc255")`
 |_resource_ |*number* |`2`
 |_resource_ |*name* |`Ruins`

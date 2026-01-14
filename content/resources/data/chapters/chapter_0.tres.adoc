@@ -13,9 +13,7 @@ title: res://data/chapters/chapter_0.tres
 |===
 |Section |Name |Value
 |_sub_resource_ |*script* |`ExtResource("2_fxptl")`
-|_sub_resource_ |*name* |`Get Started`
 |_sub_resource_ |*number* |`1`
-|_sub_resource_ |*strawberry_count* |`1`
 |_sub_resource_ |*scene* |`uid://bl7hgriri5p7r`
 |_sub_resource_ |*metadata/_custom_type_script* |`uid://bvxsfo3kls72o`
 |_resource_ |*script* |`ExtResource("1_s1jim")`

@@ -19,8 +19,8 @@ left to right direction
 [.scene-assets]
 === Assets
 [.asset-image]
-[link=/assets/assets/images/stages/Chapter0.png]
-image::/assets/raw/assets/images/stages/Chapter0.png[200, 100] 
+[link=/assets/assets/images/stages/chapter0/Tilemap.png]
+image::/assets/raw/assets/images/stages/chapter0/Tilemap.png[200, 100] 
 
 
 

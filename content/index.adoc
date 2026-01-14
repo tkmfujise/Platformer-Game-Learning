@@ -26,9 +26,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 8.8 _nodes_
+| 8.9 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 308 _nodes_
+| 311 _nodes_
 
 
 
@@ -53,18 +53,18 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Properties*
 | link:/resources/data/test/account/empty_account.tres[6 _props_]
-| 31.0 _props_
-| link:/resources/data/test/account/full_account.tres[165 _props_]
-| 402 _props_
+| 20.2 _props_
+| link:/resources/data/test/account/full_account.tres[84 _props_]
+| 262 _props_
 
 
 
 .1+| *Asset Images* +
-75 _files_
+76 _files_
 
 | *Content Length*
 | link:/assets/assets/images/particles/circle_blur.png[296.0 B ]
-| 22.55 KB 
+| 22.27 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 1.65 MB 
 

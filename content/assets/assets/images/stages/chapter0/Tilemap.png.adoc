@@ -1,9 +1,9 @@
 ---
-title: assets/images/stages/Chapter0.png
+title: assets/images/stages/chapter0/Tilemap.png
 ---
 :toc:
 
-== assets / images / stages / Chapter0.png
+== assets / images / stages / chapter0 / Tilemap.png
 
 === Attached Scenes
 * link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]
@@ -23,5 +23,5 @@ title: assets/images/stages/Chapter0.png
 
 === Image
 [.asset-image]
-image::/assets/raw/assets/images/stages/Chapter0.png[]
+image::/assets/raw/assets/images/stages/chapter0/Tilemap.png[]
 
