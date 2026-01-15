@@ -21,7 +21,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |===
 | | | Min | Mean | Max | All
 
-.1+| *Scenes* +
+.1+| *🎬 Scenes* +
 35 _files_
 
 | *Child Nodes*
@@ -32,7 +32,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 
-.2+| *Scripts* +
+.2+| *📝 Scripts* +
 37 _files_
 
 | *Functions*
@@ -48,7 +48,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 
-.1+| *Resources* +
+.1+| *📊 Resources* +
 13 _files_
 
 | *Properties*
@@ -59,7 +59,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 
-.1+| *Asset Images* +
+.1+| *💠 Asset Images* +
 76 _files_
 
 | *Content Length*
@@ -68,6 +68,97 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 1.65 MB 
 
+
+|===
+
+
+[.file-tree.grid]
+[cols="5,1,1,1,1" options="header"]
+|===
+|File Tree |🎬 |📝 |📊 |💠
+|.  |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| ├ assets |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ guide |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# 
+| │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# 
+| │  │  │ └ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# 
+| │  │  │ ├ Chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# 
+| │  │  │  │ └ menu |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# 
+| │  │ ├ world |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ pin |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# 
+| │ └ world |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# 
+| ├ autoloads |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ bgm |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ current |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ keyboard_handler |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ └ preference |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| ├ data |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ chapters |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# 
+| │  │ ├ photos |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │  │ ├ 1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# 
+| │  │  │ ├ 2 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# 
+| │  │  │ ├ 3 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# 
+| │  │  │ ├ 4 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# 
+| │  │  │ ├ 5 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# 
+| │  │  │ ├ 6 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# 
+| │  │  │ ├ 7 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# 
+| │  │  │ └ 8 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# 
+| │ ├ test |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ account |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+| ├ debug |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ └ curtain |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| ├ dev |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| ├ resources |[.zero]#0# |[.more]#5# |[.zero]#0# |[.zero]#0# 
+| ├ src |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ account |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ accounts |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ banner |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ chapter |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ menu |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │  │ ├ bookmark |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │  │ └ photo |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ menu |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ screen |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │  │ └ 0 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ curtain |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ closing |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ └ opening |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ helpers |[.zero]#0# |[.more]#4# |[.zero]#0# |[.zero]#0# 
+| │ ├ mixins |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ first_steps_bgm_playable |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ player |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ camera |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ └ ghost_effect |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ 0 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ forest |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ frame |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ weather |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ button |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ world |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ mist |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ pin |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| └ themes |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 
 |===
 
