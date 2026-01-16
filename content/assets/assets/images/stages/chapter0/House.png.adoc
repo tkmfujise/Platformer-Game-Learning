@@ -17,7 +17,7 @@ title: assets/images/stages/chapter0/House.png
 |Name |Value
 |Size |80×40 px
 |Type |png
-|Content Length |1.55 KB
+|Content Length |1.56 KB
 |===
 
 

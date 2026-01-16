@@ -26,9 +26,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 8.9 _nodes_
+| 9.0 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 311 _nodes_
+| 313 _nodes_
 
 
 
@@ -60,11 +60,11 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-76 _files_
+77 _files_
 
 | *Content Length*
 | link:/assets/assets/images/particles/circle_blur.png[296.0 B ]
-| 22.27 KB 
+| 22.0 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 1.65 MB 
 
@@ -80,6 +80,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | ├ assets |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │ ├ guide |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 | │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 | │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 | │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# 
 | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 

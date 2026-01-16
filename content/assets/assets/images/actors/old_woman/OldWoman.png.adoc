@@ -1,0 +1,27 @@
+---
+title: assets/images/actors/old_woman/OldWoman.png
+---
+:toc:
+
+== assets / images / actors / old_woman / OldWoman.png
+
+=== Attached Scenes
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |144×24 px
+|Type |png
+|Content Length |1.11 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/actors/old_woman/OldWoman.png[]
+
