@@ -124,6 +124,10 @@
             <a class="" href="../../../../scenes/src/curtain/opening/opening.tscn/">src/curtain/opening/opening.tscn</a>
           </li>
         
+          <li data-path="/scenes/src/dialogue/chapters/0/stage0.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/dialogue/chapters/0/stage0.tscn/">src/dialogue/chapters/0/stage0.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/dialogue/dialogue.tscn/" data-category="scenes">
             <a class="" href="../../../../scenes/src/dialogue/dialogue.tscn/">src/dialogue/dialogue.tscn</a>
           </li>
@@ -245,6 +249,10 @@
         
           <li data-path="/scripts/resources/chapter_resource.gd/" data-category="scripts">
             <a class="" href="../../../resources/chapter_resource.gd/">resources/chapter_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/dialogue_speaker.gd/" data-category="scripts">
+            <a class="" href="../../../resources/dialogue_speaker.gd/">resources/dialogue_speaker.gd</a>
           </li>
         
           <li data-path="/scripts/resources/stage_resource.gd/" data-category="scripts">
@@ -931,7 +939,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">CanvasLayer</span>
 
+<span class="k">signal</span> <span class="n">finished</span>
+<span class="k">signal</span> <span class="n">event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span> <span class="n">ReDScribe</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -942,25 +955,56 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">controller</span><span class="o">.</span><span class="n">perform</span><span class="p">(</span><span class="s2">'</span><span class="s1">continue'</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">update_content</span><span class="p">(</span><span class="n">txt</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
-	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">txt</span>
+<span class="k">func</span> <span class="nf">says</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_speaker</span> <span class="o">!=</span> <span class="n">speaker_name</span><span class="p">:</span>
+		<span class="n">current_speaker</span> <span class="o">=</span> <span class="n">speaker_name</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">left'</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
+		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
+		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="n">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">content</span>
+
+
+<span class="k">func</span> <span class="nf">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">speaker_idx</span> <span class="o">=</span> <span class="n">speakers</span><span class="o">.</span><span class="n">find_custom</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">speaker_name</span> <span class="o">==</span> <span class="n">speaker_name</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">speaker_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">var</span> <span class="n">speaker</span> <span class="o">=</span> <span class="n">speakers</span><span class="p">[</span><span class="n">speaker_idx</span><span class="p">]</span>
+	<span class="k">var</span> <span class="n">target</span> <span class="o">=</span> <span class="o">%</span><span class="n">LeftSpeakerImage</span> <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">left'</span> \
+		<span class="k">else</span> <span class="o">%</span><span class="n">RightSpeakerImage</span>
+	<span class="n">target</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">texture</span>
 
 
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventKey</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
-		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_handle</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">StringName</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="n">Variant</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">match</span> <span class="n">key</span><span class="p">:</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">says'</span><span class="p">:</span>
-			<span class="k">var</span> <span class="n">txt</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">content'</span><span class="p">]</span>
-			<span class="k">if</span> <span class="n">txt</span> <span class="k">is</span> <span class="kt">Array</span><span class="p">:</span> <span class="n">txt</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
-			<span class="n">update_content</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
-	<span class="n">print_debug</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">payload</span><span class="p">])</span></code></pre>
+			<span class="k">var</span> <span class="n">content</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">content'</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">content</span> <span class="k">is</span> <span class="kt">Array</span><span class="p">:</span> <span class="n">content</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+			<span class="n">says</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">name'</span><span class="p">],</span> <span class="n">content</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">position'</span><span class="p">])</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">event'</span><span class="p">:</span>
+			<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finished'</span><span class="p">:</span>
+			<span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+		<span class="n">_</span><span class="p">:</span> <span class="n">print_debug</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">payload</span><span class="p">])</span>
+
+
+<span class="k">func</span> <span class="nf">_on_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current_speaker</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

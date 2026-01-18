@@ -1,0 +1,92 @@
+---
+title: src/dialogue/chapters/0/stage0.tscn
+---
+:toc:
+
+== src / dialogue / chapters / 0 / stage0.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Stage0" <<(N,darkgray) Node>> {
+}
+class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
+  ~ finished
+  ~ event
+---
+  * controller
+  * speakers
+  * current_speaker
+---
+  + _ready()
+  + continue_dialogue()
+  + says()
+  + set_speaker_image()
+  + _input()
+  + _handle()
+  + _on_event()
+  + _on_finished()
+}
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/faces/Player_face.png]
+image::/assets/raw/assets/images/faces/Player_face.png[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/faces/actors/OldWoman_face.png]
+image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+.$Dialogue
+```gdscript
+func _ready() -> void:
+	controller.channel.connect(_handle)
+```
+==== _input
+.$Dialogue
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not event is InputEventKey: return
+	if event.is_action_pressed('ui_accept'):
+		continue_dialogue()
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-plain]#Stage0# [.node-type.type-plain]#Node#
+** [.node-name.type-other]#Dialogue# [.node-type.type-other]#link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-other]
+.#$Dialogue# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*controller* a|`SubResource("ReDScribe_2vwqn")`
+|*speakers* a|`Array("[SubResource("Resource_ffs01"), SubResource("Resource_gkg18")]")`
+|===
+
+
+
+

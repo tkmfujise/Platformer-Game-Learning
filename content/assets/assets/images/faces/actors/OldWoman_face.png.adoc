@@ -6,6 +6,7 @@ title: assets/images/faces/actors/OldWoman_face.png
 == assets / images / faces / actors / OldWoman_face.png
 
 === Attached Scenes
+* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
 * link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]
 
 

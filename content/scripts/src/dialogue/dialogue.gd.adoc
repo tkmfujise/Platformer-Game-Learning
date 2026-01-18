@@ -14,7 +14,12 @@ title: res://src/dialogue/dialogue.gd
 ```gdscript
 extends CanvasLayer
 
+signal finished
+signal event(event_name: String)
+
 @export var controller : ReDScribe
+@export var speakers : Array[DialogueSpeaker] = []
+var current_speaker : String = ''
 
 
 func _ready() -> void:
@@ -25,24 +30,55 @@ func continue_dialogue() -> void:
 	controller.perform('continue')
 
 
-func update_content(txt: String) -> void:
-	%AnimationPlayer.play("show")
-	%Content.text = txt
+func says(speaker_name: String, content: String, position: StringName) -> void:
+	if current_speaker != speaker_name:
+		current_speaker = speaker_name
+		%AnimationPlayer.play("show")
+	if position == &'left':
+		%LeftSpeakerImage.visible = true
+		%RightSpeakerImage.visible = false
+	else:
+		%LeftSpeakerImage.visible = false
+		%RightSpeakerImage.visible = true
+	set_speaker_image(speaker_name, position)
+	%Content.text = content
+
+
+func set_speaker_image(speaker_name: String, position: StringName) -> void:
+	var speaker_idx = speakers.find_custom(func(s):
+		return s.speaker_name == speaker_name)
+	if speaker_idx < 0: return
+	var speaker = speakers[speaker_idx]
+	var target = %LeftSpeakerImage if position == &'left' \
+		else %RightSpeakerImage
+	target.texture = speaker.texture		
 
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventKey: return
 	if event.is_action_pressed('ui_accept'):
-		%AnimationPlayer.play("hide")
 		continue_dialogue()
 
 
 func _handle(key: StringName, payload: Variant) -> void:
 	match key:
 		&'says':
-			var txt = payload['content']
-			if txt is Array: txt = "\n".join(txt)
-			update_content(txt)
-	print_debug("[%s]: %s" % [key, payload])
+			var content = payload['content']
+			if content is Array: content = "\n".join(content)
+			says(payload['name'], content, payload['position'])
+		&'event':
+			event.emit(payload)
+		&'finished':
+			finished.emit()
+		_: print_debug("[%s]: %s" % [key, payload])
+
+
+func _on_event(event_name: String) -> void:
+	current_speaker = ''
+	%AnimationPlayer.play("hide")
+
+
+func _on_finished() -> void:
+	%AnimationPlayer.play("hide")
 
 ```

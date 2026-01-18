@@ -22,29 +22,29 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-38 _files_
+39 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 8.5 _nodes_
+| 8.3 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 321 _nodes_
+| 322 _nodes_
 
 
 
 .2+| *📝 Scripts* +
-58 _files_
+59 _files_
 
 | *Functions*
 | link:/scripts/resources/account_stage_resource.gd[0 _funcs_]
 | 5.6 _funcs_
 | link:/scripts/src/beginning/chapters/menu/menu.gd[20 _funcs_]
-| 322 _funcs_
+| 325 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
-| 4.2 _lines_
+| 4.3 _lines_
 | link:/scripts/src/player/player.gd[39 _lines_]
-| 1,349 _lines_
+| 1,374 _lines_
 
 
 
@@ -64,7 +64,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Content Length*
 | link:/assets/assets/images/particles/circle_blur.png[296.0 B ]
-| 23.26 KB 
+| 23.25 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 1.79 MB 
 
@@ -120,7 +120,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | │ └ curtain |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | ├ dev |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
-| ├ resources |[.zero]#0# |[.more]#5# |[.zero]#0# |[.zero]#0# 
+| ├ resources |[.zero]#0# |[.more]#6# |[.zero]#0# |[.zero]#0# 
 | ├ src |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │ ├ account |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -144,6 +144,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | │  │ ├ closing |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | │  │ └ opening |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | │ ├ dialogue |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ └ 0 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ └ speaker |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │ ├ helpers |[.zero]#0# |[.more]#4# |[.zero]#0# |[.zero]#0# 
 | │ ├ mixins |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 

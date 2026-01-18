@@ -124,6 +124,10 @@
             <a class="" href="../../curtain/opening/opening.tscn/">src/curtain/opening/opening.tscn</a>
           </li>
         
+          <li data-path="/scenes/src/dialogue/chapters/0/stage0.tscn/" data-category="scenes">
+            <a class="" href="../chapters/0/stage0.tscn/">src/dialogue/chapters/0/stage0.tscn</a>
+          </li>
+        
           <li data-path="/scenes/src/dialogue/dialogue.tscn/" data-category="scenes">
             <a class="selected" href="./">src/dialogue/dialogue.tscn</a>
           </li>
@@ -245,6 +249,10 @@
         
           <li data-path="/scripts/resources/chapter_resource.gd/" data-category="scripts">
             <a class="" href="../../../../scripts/resources/chapter_resource.gd/">resources/chapter_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/dialogue_speaker.gd/" data-category="scripts">
+            <a class="" href="../../../../scripts/resources/dialogue_speaker.gd/">resources/dialogue_speaker.gd</a>
           </li>
         
           <li data-path="/scripts/resources/stage_resource.gd/" data-category="scripts">
@@ -926,7 +934,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdkk1PwzAMhu_5FWZcNlgPdF-XMWl0xwmhjhtCldt6bdSQVGkKVIj_Tpq1FUOcdnsT57Ff20kEVhWEgBWMdhyFymoawXo9DqYNCaE-JhCgfMdqjw3pzQa-GMANJEoarYQgzTzPs1e3EGnCtBlP3KGNc1lTlHY5u_u6TNFQ1IZJmu4y4rKsh0OOMhXt-2-WOHOPd87dAyZFplUt086f4FluMk0krUcllA4pMc7hQPqO3NPRHErCgvR_qDVCOrCOkMuuxSHBzCX4DR9OcFU0sahpAodSc0P-7pybOy5sX15YeXFh5aXjgtOAHReeFQ15kj_Tp9ljTOIcXTl0K_kbGq7kk2hX7lJsh8_wJ9olCMHzlF1UL_xezHux7MWK2a04NWN2TE4t2FVKRzsDiMY4jSeAsPZerts2pybnSSGpqu79Vw9iJuwywSjQbU-Qcm2Xbu2wH-tT300=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdUstOwzAQvOcrlnJpoDnQB5WqggTtBalCKOWGUOQmS2LV2JXtFCIE346zjQMtXOA2490dzz5SwYyBGJiBzpwzofISOzCddme9CoVQLyHMmNwys2AV6stLeAsAPuCJS24KzIjgFqUNoihy7ARSJa1WQqAmajbI1qjNLlZq7XKT5rGpOYVEI8uqbkikFuCyxCRr_DTvhlXGQ2w1Ev7Mcp-ScLkprScFk5loQ0omZPQb9124p_cgpUncntEorlm6zrUqZdYMQ_C8sLlGlG4gSigdY2ppHG1lnyoX-GSXO2u_lToDqGeuQ8ZlM89WYHAocFO3RirLnYpZVytRYgjLjeYW-_N9gSEJxHXmPy2Mfij81cM5KdTy7h-qi_e-j3la3OOrXbAViv3SMZVeSbdRy5W8E_XJkcRVe4wH0UYghihSbnce9D0YenDuwThwiyI0CNzACI2CowzdMSAkXdZbhcBgGj0c1232bMHTtURjLvqPEawC4dYDVoGue4KMa3cHzk6QdOPJpD2yHjhGKPyK-HOjoCfhJ_1aGqI=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -956,7 +964,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventKey</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
-		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span></code></pre>
 </div>
 </div>
@@ -964,17 +971,12 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="sect2">
 <h3 id="_instantiators">Instantiators</h3>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Caution</div>
-</td>
-<td class="content">
-No other scene instantiate this scene.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../chapters/0/stage0.tscn">res://src/dialogue/chapters/0/stage0.tscn</a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -993,7 +995,7 @@ No other scene instantiate this scene.
 <div class="ulist">
 <ul>
 <li>
-<p><span class="node-name type-2d">Speaker</span> <span class="node-type type-2d"><a href="../speaker/speaker.tscn">res://src/dialogue/speaker/speaker.tscn</a></span></p>
+<p><span class="node-name type-2d">LeftSpeakerImage</span> <span class="node-type type-2d"><a href="../speaker/speaker.tscn">res://src/dialogue/speaker/speaker.tscn</a></span></p>
 </li>
 </ul>
 </div>
@@ -1003,7 +1005,7 @@ No other scene instantiate this scene.
 <div class="ulist">
 <ul>
 <li>
-<p><span class="node-name type-2d">Speaker</span> <span class="node-type type-2d"><a href="../speaker/speaker.tscn">res://src/dialogue/speaker/speaker.tscn</a></span></p>
+<p><span class="node-name type-2d">RightSpeakerImage</span> <span class="node-type type-2d"><a href="../speaker/speaker.tscn">res://src/dialogue/speaker/speaker.tscn</a></span></p>
 </li>
 </ul>
 </div>
@@ -1022,17 +1024,20 @@ No other scene instantiate this scene.
 </div>
 <div class="sect2">
 <h3 id="_signal_connections">Signal Connections</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-No signal connections.
-</td>
-</tr>
-</table>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>event</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current_speaker</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$.:[<mark><em>finished</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1041,7 +1046,7 @@ No signal connections.
 <h4 id="_show">show</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqNkLFugzAQhnee4hfp0EhJa0NREiQqtRGdOlGUKYtLnMQKtZFxOvTpC0ECgoJbLzf8352_u0xJo1UON1HKuGAlEqdg2ohMFEwauHfvfG8-Cs5OXF_ylGCyInG8IgMwEYfjNUlHyFeWnQ5aneWu4bwRbl3Jcdlopf4I1PPbyser_58wWS7W8duLxXTYE7Q91YsipOKLhyAPBFHkJMD8WaG-QYhvUYrPnG8lIuxZXvIupuMx6nVDlOKniTY8M0p793S5IDOQaTfEvzmkp-QFViejzxalLkV9qMooY_lAic9JMMOlTFs2uMk27q0c7d3LvrFPqWXn_1hWhn_ZNYzzC5M21JU=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdkUFrgzAYhu_-ig-7wwrtluikVnCwFQeDnazs1Euapi7UJhLTHfbrFxvQtFQH8yLhfd58D1-oFFrJCvxcSu0DaSD3aqI0p7wmQoN_98H2el0zcmDqnBcIJkuUZUt0Bea8_Lok8QD5SuihVPIkdpYLBriVkWPCahXhAOT4bcSjc3o_kpLZ7hNM4sUqe3sZUTZl9-i0o65tvjSFgh9ZAugBQZp6OcD8WUK7lgS-ecO3FdsISGFPqob1MR6Ood1AAg3_sdEno1qq4B7HCzQDNO0vCW9e4igF0aiTVqcRpT6FdmXGiJLqSonNUTSD82_asdFN1ro7cvGFW_iP6WbyX1Mt003FziuN7znEpuf9Akb336E=" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1050,7 +1055,7 @@ No signal connections.
 <h4 id="_animation_4gkn1">Animation_4gkn1</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNp9kLFuwjAURfd8xVXoUCRobUIFRHKlEqUTU4iYWFzjUovUjhzD0K8vIWpDIjle73nH9z1htLOmQJgZ40LwCllQcuuUUCXXDuHDRn66bSn5SdpbnhOMViRNV6QHZur41SWph1xzcTpac9aHhpt5uORaTuqmVh55oLt-e_3c-X-O0XKRpO9vA037My__M9fHGHL1LWOQJwLGggyYvhrUN4hxUZX6KOReg8HZs2xT6k1RLxujUj9NspPCGTt7pMsFmSCidNxaoiHLvLYIXvQ0E_wZUK_iZ4JflnWUIw==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNp9kEFLw0AQhe_5FY-0B4Vqd5tK28AWaokgeIrBUy_rOsal6W7YbD34600M2ljYzm1433u8GWWNd7ZCnFvrY8gGeVRL57XStTQe8fiJ3v1zTXJP7kcvGEYrlmUrdgbmuvz4T_IAeS_VvnT2aN56bhbgtm05Mn2tIglAg347Mx1sjwdZUu-dY7RcbLOHzYXKrXm4Dtx3f-52hEChD5SC3TIIEeXAzdqie0uKT93o14p2BgLeHemk8qCK7v4Ujf7qlRdS3rrZFV8u2AQJ59enlORSyrxLUbI6i5ngNwHdKWEm-gYrM5ty" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1059,7 +1064,7 @@ No signal connections.
 <h4 id="_hide">hide</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqNkTFPwzAUhPf8iqeUAaQW7KRR20hGgipMTCFi6mKMW6wGO3JcBn49NhHEieqAFw937_zdM1PSaFVDXCplYqAtlFFDtRFMNFQaiC8e-d48NZweuf7WKwSzDSqKDRoZS3F4GzpxwHlP2fGg1Um-dr4k4NtaOC47rCoNmDy-nbwZvL-E2Xq1LR7uJkjHM9nvjD2EQCXeeQ7oGgEhUQmwuFXgdpDDh2jFS813EggYfeK9ioMquLI5tOKzU545M0onl3i9QnNIMb7qU9JRyp7WbR-zdDGM1qOcOfxEgOsS9njV8KAaPvusZ0-yyVX8C5MvUGYx3PUXrt0L8nCx9xPT27RT0Rcj3s-f" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqNUU1LwzAYvvdXvHQeFDZN2pVthQo6KgieuuJplyzLaliXlDTz4K83sWizYqq5hJfnI8_7hEqhlawhLKTUIZAWiqAhSnPKGyI0hFcv7KA3DSNHpr7wEsFkhfJ8hQbEgldvl0zsYT4SeqyUPIt9x4s8vLUJx0QXq4w9JCffVtw50_OJVKzTzmGyXKzzp4eRyEbsjo46-VGbk2VQ8hNLAd0iyLKgAJjdS7C1pPDOW76r2VZABlqdWY9iLwp2_xRa_tEhr4xqqaJrvFygKcQY3_Qu8cDlQOq2t5lbG0rqgc8Uvi3A7uLnOKvhi9Xwr8869CgZreJfMdkMJSaGvf6Ka3pBTlzs_MR4m0YVfAJJ8Nbu" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1068,7 +1073,7 @@ No signal connections.
 <h4 id="_ready_autoplay">ready (autoplay)</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNp9kEsPgjAQhO_8igl60MRH8RGVpCZq8OQJiScvtVZtxJaU6sFfr0iiQgJ7nW9mZ5drZY2O4YZaWxcsRegkzFjJZcKUhdvciJPdJoJdhfnoEUFjRoJgRkpgKM-XIulVkEvGr2ej7-qYc4MKbvUuJ1ReKxpWQH_99qpf2D9CYzpZBetFTdOyZ_z1vIdSRPImfJAeAaVOCHTnGtkPfDxkKg-x2CtQnFicip_sVcvIzvWRymcu7QS32gxa3nRCOiDtX8iwNmSUhXAWl1I68NpfZlzDOC9EX5Sf" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNp9kE9rwkAUxO_5FEPsoYJtN_5BDWyhSgTBUww9edlun-li3A2btQc_vYkBjULybo_5zTCMNNpZk8GPjXE-RIHYy4V1SqpcaAf_ZUN7t81JHMhe9YShN2dRNGdPYKzSv0cyaCEXQh5Sa076t-aGLdyyLEe6rpWMWqBGv53-aHzro0ip9o7Rm02X0eqro3Jpbr4N9-TmLo9zJOpIIdg7A-deDLx9GlSzhPhXhfrJaKfBsRdZQXc5aJdRLRCiUOda-ibpjB2-BrMpG4D17yGjzpBxFSJF9pQyQNC_MZMOxrsA4F2b7g==" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1187,8 +1192,35 @@ No signal connections.
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 4. <mark>$LeftSpeaker/LeftSpeakerImage</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unique_name_in_owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>flip_h</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <table class="tableblock frame-all grid-all stretch node-property node-control">
-<caption class="title">Table 4. <mark>$RightSpeaker</mark> properties</caption>
+<caption class="title">Table 5. <mark>$RightSpeaker</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1245,7 +1277,7 @@ No signal connections.
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch node-property node-2d">
-<caption class="title">Table 5. <mark>$RightSpeaker/Speaker</mark> properties</caption>
+<caption class="title">Table 6. <mark>$RightSpeaker/RightSpeakerImage</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1257,6 +1289,12 @@ No signal connections.
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unique_name_in_owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1275,7 +1313,7 @@ No signal connections.
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch node-property node-control">
-<caption class="title">Table 6. <mark>$Content</mark> properties</caption>
+<caption class="title">Table 7. <mark>$Content</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1374,7 +1412,7 @@ No signal connections.
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch node-property node-other">
-<caption class="title">Table 7. <mark>$AnimationPlayer</mark> properties</caption>
+<caption class="title">Table 8. <mark>$AnimationPlayer</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1415,7 +1453,12 @@ No signal connections.
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">CanvasLayer</span>
 
+<span class="k">signal</span> <span class="n">finished</span>
+<span class="k">signal</span> <span class="n">event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span> <span class="n">ReDScribe</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1426,25 +1469,56 @@ No signal connections.
 	<span class="n">controller</span><span class="o">.</span><span class="n">perform</span><span class="p">(</span><span class="s2">'</span><span class="s1">continue'</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">update_content</span><span class="p">(</span><span class="n">txt</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
-	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">txt</span>
+<span class="k">func</span> <span class="nf">says</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">current_speaker</span> <span class="o">!=</span> <span class="n">speaker_name</span><span class="p">:</span>
+		<span class="n">current_speaker</span> <span class="o">=</span> <span class="n">speaker_name</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">left'</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
+		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
+		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="n">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">content</span>
+
+
+<span class="k">func</span> <span class="nf">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">speaker_idx</span> <span class="o">=</span> <span class="n">speakers</span><span class="o">.</span><span class="n">find_custom</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">speaker_name</span> <span class="o">==</span> <span class="n">speaker_name</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">speaker_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">var</span> <span class="n">speaker</span> <span class="o">=</span> <span class="n">speakers</span><span class="p">[</span><span class="n">speaker_idx</span><span class="p">]</span>
+	<span class="k">var</span> <span class="n">target</span> <span class="o">=</span> <span class="o">%</span><span class="n">LeftSpeakerImage</span> <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">left'</span> \
+		<span class="k">else</span> <span class="o">%</span><span class="n">RightSpeakerImage</span>
+	<span class="n">target</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">texture</span>
 
 
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventKey</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
-		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_handle</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">StringName</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="n">Variant</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">match</span> <span class="n">key</span><span class="p">:</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">says'</span><span class="p">:</span>
-			<span class="k">var</span> <span class="n">txt</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">content'</span><span class="p">]</span>
-			<span class="k">if</span> <span class="n">txt</span> <span class="k">is</span> <span class="kt">Array</span><span class="p">:</span> <span class="n">txt</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
-			<span class="n">update_content</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
-	<span class="n">print_debug</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">payload</span><span class="p">])</span></code></pre>
+			<span class="k">var</span> <span class="n">content</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">content'</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">content</span> <span class="k">is</span> <span class="kt">Array</span><span class="p">:</span> <span class="n">content</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+			<span class="n">says</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">name'</span><span class="p">],</span> <span class="n">content</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">position'</span><span class="p">])</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">event'</span><span class="p">:</span>
+			<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finished'</span><span class="p">:</span>
+			<span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+		<span class="n">_</span><span class="p">:</span> <span class="n">print_debug</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">payload</span><span class="p">])</span>
+
+
+<span class="k">func</span> <span class="nf">_on_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current_speaker</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1454,7 +1528,7 @@ No signal connections.
   <div class="grid">
     
     
-      <a class="outline" role="button" href="../../curtain/opening/opening.tscn/"><small>&lt;&lt; Previous</small><br>src/curtain/opening/opening.tscn</a>
+      <a class="outline" role="button" href="../chapters/0/stage0.tscn/"><small>&lt;&lt; Previous</small><br>src/dialogue/chapters/0/stage0.tscn</a>
     
 
     

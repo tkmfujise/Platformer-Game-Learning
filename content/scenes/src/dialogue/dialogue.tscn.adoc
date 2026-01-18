@@ -9,23 +9,31 @@ title: src/dialogue/dialogue.tscn
 [plantuml]
 ....
 class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
+  ~ finished
+  ~ event
+---
   * controller
+  * speakers
+  * current_speaker
 ---
   + _ready()
   + continue_dialogue()
-  + update_content()
+  + says()
+  + set_speaker_image()
   + _input()
   + _handle()
+  + _on_event()
+  + _on_finished()
 }
 class N1 as "Background" <<(C,lightgreen) ColorRect>> {
 }
 class N2 as "LeftSpeaker" <<(C,lightgreen) CenterContainer>> {
 }
-class N3 as "Speaker" <<(S,lightskyblue) Sprite2D>> {
+class N3 as "LeftSpeakerImage" <<(S,lightskyblue) Sprite2D>> {
 }
 class N4 as "RightSpeaker" <<(C,lightgreen) CenterContainer>> {
 }
-class N5 as "Speaker" <<(S,lightskyblue) Sprite2D>> {
+class N5 as "RightSpeakerImage" <<(S,lightskyblue) Sprite2D>> {
 }
 class N6 as "Content" <<(R,lightgreen) RichTextLabel>> {
 }
@@ -40,7 +48,8 @@ N2 --o N3
 N4 --o N5
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-
+_(R::_on_event, R::event)
+_(R::_on_finished, R::finished)
 ....
 
 
@@ -63,28 +72,41 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not event is InputEventKey: return
 	if event.is_action_pressed('ui_accept'):
-		%AnimationPlayer.play("hide")
 		continue_dialogue()
 ```
 
 
 === Instantiators
-CAUTION: No other scene instantiate this scene.
+* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
+
 
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-other]#Dialogue# [.node-type.type-other]#CanvasLayer#
 ** [.node-name.type-control]#Background# [.node-type.type-control]#ColorRect#
 ** [.node-name.type-control]#LeftSpeaker# [.node-type.type-control]#CenterContainer#
-*** [.node-name.type-2d]#Speaker# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
+*** [.node-name.type-2d]#LeftSpeakerImage# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
 ** [.node-name.type-control]#RightSpeaker# [.node-type.type-control]#CenterContainer#
-*** [.node-name.type-2d]#Speaker# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
+*** [.node-name.type-2d]#RightSpeakerImage# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
 ** [.node-name.type-control]#Content# [.node-type.type-control]#RichTextLabel#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
 === Signal Connections
-NOTE: No signal connections.
+[.signal-connection]
+.$.:[#_event_#]=>$.
+```gdscript
+func _on_event(event_name: String) -> void:
+	current_speaker = ''
+	%AnimationPlayer.play("hide")
+```
+[.signal-connection]
+.$.:[#_finished_#]=>$.
+```gdscript
+func _on_finished() -> void:
+	%AnimationPlayer.play("hide")
+```
+
 
 === Animations
 ==== show
@@ -96,8 +118,8 @@ participant "$LeftSpeaker" as T0 #90EE90
 participant "$RightSpeaker" as T1 #90EE90
 participant "$Background" as T2 #90EE90
 participant "$Content" as T3 #90EE90
-participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
-participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+participant "$LeftSpeaker\n/LeftSpeakerImage" as T4 #87CEFA
+participant "$RightSpeaker\n/RightSpeakerImage" as T5 #87CEFA
 
 
 
@@ -111,11 +133,12 @@ R  ->o  T0 : visible\n = true
 R  ->o  T1 : visible\n = true
 R  ->  T4 : scale\n = Vector2(1e-05, 1e-05)
 R  ->  T5 : scale\n = Vector2(0, 0)
-== Time: 1.0 ==
-R  ->  T2 : size\n = Vector2(1870, 311)
+== Time: 0.8 ==
 R  ->o  T3 : visible\n = true
 R  ->  T4 : scale\n = Vector2(1, 1)
 R  ->  T5 : scale\n = Vector2(1, 1)
+== Time: 1.0 ==
+R  ->  T2 : size\n = Vector2(1870, 311)
 
 
 ....
@@ -130,8 +153,8 @@ participant "$LeftSpeaker" as T0 #90EE90
 participant "$RightSpeaker" as T1 #90EE90
 participant "$Background" as T2 #90EE90
 participant "$Content" as T3 #90EE90
-participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
-participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+participant "$LeftSpeaker\n/LeftSpeakerImage" as T4 #87CEFA
+participant "$RightSpeaker\n/RightSpeakerImage" as T5 #87CEFA
 
 
 
@@ -156,8 +179,8 @@ participant "$LeftSpeaker" as T0 #90EE90
 participant "$RightSpeaker" as T1 #90EE90
 participant "$Background" as T2 #90EE90
 participant "$Content" as T3 #90EE90
-participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
-participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+participant "$LeftSpeaker\n/LeftSpeakerImage" as T4 #87CEFA
+participant "$RightSpeaker\n/RightSpeakerImage" as T5 #87CEFA
 
 
 
@@ -190,8 +213,8 @@ participant "$LeftSpeaker" as T0 #90EE90
 participant "$RightSpeaker" as T1 #90EE90
 participant "$Background" as T2 #90EE90
 participant "$Content" as T3 #90EE90
-participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
-participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+participant "$LeftSpeaker\n/LeftSpeakerImage" as T4 #87CEFA
+participant "$RightSpeaker\n/RightSpeakerImage" as T5 #87CEFA
 
 
 
@@ -239,6 +262,14 @@ R  ->  T5 : scale\n = Vector2(1, 1)
 |*offset_right* a|`329.0`
 |*offset_bottom* a|`234.0`
 |===
+[.node-property.node-2d]
+.#$LeftSpeaker/LeftSpeakerImage# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*flip_h* a|`true`
+|===
 [.node-property.node-control]
 .#$RightSpeaker# properties
 [cols="1,3" options="header"]
@@ -253,10 +284,11 @@ R  ->  T5 : scale\n = Vector2(1, 1)
 |*size_flags_horizontal* a|`8`
 |===
 [.node-property.node-2d]
-.#$RightSpeaker/Speaker# properties
+.#$RightSpeaker/RightSpeakerImage# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
+|*unique_name_in_owner* a|`true`
 |*position* a|`Vector2(-60, 53)`
 |*texture* a|[link=/assets/assets/images/faces/actors/OldWoman_face.png]
 [.asset-image]
@@ -302,7 +334,12 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
 ```gdscript
 extends CanvasLayer
 
+signal finished
+signal event(event_name: String)
+
 @export var controller : ReDScribe
+@export var speakers : Array[DialogueSpeaker] = []
+var current_speaker : String = ''
 
 
 func _ready() -> void:
@@ -313,25 +350,56 @@ func continue_dialogue() -> void:
 	controller.perform('continue')
 
 
-func update_content(txt: String) -> void:
-	%AnimationPlayer.play("show")
-	%Content.text = txt
+func says(speaker_name: String, content: String, position: StringName) -> void:
+	if current_speaker != speaker_name:
+		current_speaker = speaker_name
+		%AnimationPlayer.play("show")
+	if position == &'left':
+		%LeftSpeakerImage.visible = true
+		%RightSpeakerImage.visible = false
+	else:
+		%LeftSpeakerImage.visible = false
+		%RightSpeakerImage.visible = true
+	set_speaker_image(speaker_name, position)
+	%Content.text = content
+
+
+func set_speaker_image(speaker_name: String, position: StringName) -> void:
+	var speaker_idx = speakers.find_custom(func(s):
+		return s.speaker_name == speaker_name)
+	if speaker_idx < 0: return
+	var speaker = speakers[speaker_idx]
+	var target = %LeftSpeakerImage if position == &'left' \
+		else %RightSpeakerImage
+	target.texture = speaker.texture		
 
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventKey: return
 	if event.is_action_pressed('ui_accept'):
-		%AnimationPlayer.play("hide")
 		continue_dialogue()
 
 
 func _handle(key: StringName, payload: Variant) -> void:
 	match key:
 		&'says':
-			var txt = payload['content']
-			if txt is Array: txt = "\n".join(txt)
-			update_content(txt)
-	print_debug("[%s]: %s" % [key, payload])
+			var content = payload['content']
+			if content is Array: content = "\n".join(content)
+			says(payload['name'], content, payload['position'])
+		&'event':
+			event.emit(payload)
+		&'finished':
+			finished.emit()
+		_: print_debug("[%s]: %s" % [key, payload])
+
+
+func _on_event(event_name: String) -> void:
+	current_speaker = ''
+	%AnimationPlayer.play("hide")
+
+
+func _on_finished() -> void:
+	%AnimationPlayer.play("hide")
 
 ```
 

@@ -7,6 +7,7 @@ title: assets/images/faces/Player_face.png
 
 === Attached Scenes
 * link:/scenes/src/account/account.tscn[res://src/account/account.tscn]
+* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
 * link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]
 
 
@@ -18,7 +19,7 @@ title: assets/images/faces/Player_face.png
 |Name |Value
 |Size |256×256 px
 |Type |png
-|Content Length |54.77 KB
+|Content Length |54.54 KB
 |===
 
 

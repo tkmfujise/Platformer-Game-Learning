@@ -1,0 +1,20 @@
+---
+title: res://resources/dialogue_speaker.gd
+---
+:toc:
+
+== resources / dialogue_speaker.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends Resource
+class_name DialogueSpeaker
+
+@export var speaker_name : String
+@export var texture : CompressedTexture2D
+
+```
