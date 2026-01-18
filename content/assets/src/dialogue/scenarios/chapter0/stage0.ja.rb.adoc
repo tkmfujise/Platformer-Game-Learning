@@ -1,0 +1,60 @@
+---
+title: src/dialogue/scenarios/chapter0/stage0.ja.rb
+---
+:toc:
+
+== src / dialogue / scenarios / chapter0 / stage0.ja.rb
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```rb
+require 'src/dialogue/helper'
+
+Dialogue.new do
+  speakers %w(Player OldWoman)
+
+  Player;
+  - "すみませーん。"
+  ~ :"01.get_closer"
+  - ["セレステ山の登山道って、この道で合ってますか？",
+     "看板が壊れてて、読めなくて⋯"]
+
+  OldWoman;
+  - ["それなら、もうちょい先だよ。",
+     "橋を渡ってすぐさ。"]
+  ~ :"02.pass_by"
+
+  speaker_position_swap!
+
+  Player;
+  - ["それと⋯お家の前の道、直したほうがいいんじゃ⋯",
+     "足場が崩れて、危うく死ぬとこでしたよ。"]
+
+  OldWoman;
+  ~ :"03.laughing"
+  - ["うちの前の道で死にかけたんなら、",
+     "セレステ山の登山は、やめたほうがいいんじゃないかい？"]
+
+  Player; with :angry
+  - "⋯"
+  - ["あなたみたいなご老人が平気で暮らしてるなら、",
+     "ぜんぜん心配ないと思いますけど。"]
+
+  OldWoman;
+  - "そうかい。"
+  ~ :"04.zoom_in"
+  - ["ま、一応忠告しとくけども、",
+     "セレステ山てのは、摩訶不思議な場所でね⋯"]
+  - "⋯なんか、“視る”かもしれないよ。"
+  - "アンタが見たくないもんをね。"
+  ~ :"05.zoom_out"
+
+  Player; with :pout
+  - "⋯ちょっと、何を言っているのか、よくわからないです。"
+end
+
+```
+
