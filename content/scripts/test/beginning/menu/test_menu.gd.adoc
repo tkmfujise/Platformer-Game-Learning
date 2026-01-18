@@ -1,0 +1,64 @@
+---
+title: res://test/beginning/menu/test_menu.gd
+---
+:toc:
+
+== test / beginning / menu / test_menu.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var BeginningMenuScene = load("res://src/beginning/menu/menu.tscn")
+var scene = null
+
+
+func before_each():
+	scene = BeginningMenuScene.instantiate()
+	add_child(scene)
+
+
+func animation_play(key: String) -> void:
+	scene.get_node('%AnimationPlayer').play(key)
+
+
+func animation_signal() -> Signal:
+	return scene.get_node('%AnimationPlayer').animation_finished
+
+
+func test_ready():
+	assert_not_null(scene)
+
+
+func test_animation_opening():
+	assert_eq(scene.current_plate, scene.Plate.OPENING)
+	animation_play('opening')
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.current_plate, scene.Plate.ROOT)
+
+
+func test_animation_climb_selected():
+	scene.current_plate = scene.Plate.ROOT
+	animation_play('climb_selected')
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.current_plate, scene.Plate.ACCOUNTS)
+
+
+func test_animation_chapters_show():
+	scene.current_plate = scene.Plate.ACCOUNTS
+	animation_play('chapters_show')
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.current_plate, scene.Plate.CHAPTERS)
+
+
+func test_animation_chapters_hide():
+	scene.current_plate = scene.Plate.CHAPTERS
+	animation_play('chapters_hide')
+	await wait_for_signal(animation_signal(), 2)
+	assert_eq(scene.current_plate, scene.Plate.ACCOUNTS)
+
+```

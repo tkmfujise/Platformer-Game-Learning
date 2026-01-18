@@ -1,0 +1,47 @@
+---
+title: res://test/ui/button/test_button.gd
+---
+:toc:
+
+== test / ui / button / test_button.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var ButtonScene := load("res://src/ui/button/button.tscn")
+var scene = null
+
+
+func before_each():
+	scene = ButtonScene.instantiate()
+	add_child(scene)
+
+
+func test_focus_entered_as_right():
+	scene._on_focus_entered()
+	assert_eq(scene.get_node('%AnimationPlayer').current_animation, 'focused_right')
+
+
+func test_focus_exited_as_right():
+	scene._on_focus_exited()
+	assert_eq(scene.get_node('%AnimationPlayer').current_animation, 'unfocused_right')
+
+
+
+func test_focus_entered_as_up():
+	scene.focus_move_direction = scene.FocusMoveDirection.UP
+	scene._on_focus_entered()
+	assert_eq(scene.get_node('%AnimationPlayer').current_animation, 'focused_up')
+
+
+func test_focus_exited_as_up():
+	scene.focus_move_direction = scene.FocusMoveDirection.UP
+	scene._on_focus_exited()
+	assert_eq(scene.get_node('%AnimationPlayer').current_animation, 'unfocused_up')
+
+```

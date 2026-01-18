@@ -22,29 +22,29 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-35 _files_
+38 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 9.0 _nodes_
+| 8.5 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 313 _nodes_
+| 321 _nodes_
 
 
 
 .2+| *📝 Scripts* +
-37 _files_
+58 _files_
 
 | *Functions*
 | link:/scripts/resources/account_stage_resource.gd[0 _funcs_]
-| 5.7 _funcs_
+| 5.6 _funcs_
 | link:/scripts/src/beginning/chapters/menu/menu.gd[20 _funcs_]
-| 209 _funcs_
+| 322 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.2 _lines_
 | link:/scripts/src/player/player.gd[39 _lines_]
-| 874 _lines_
+| 1,349 _lines_
 
 
 
@@ -53,20 +53,20 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Properties*
 | link:/resources/data/test/account/empty_account.tres[6 _props_]
-| 20.2 _props_
+| 20.3 _props_
 | link:/resources/data/test/account/full_account.tres[84 _props_]
-| 262 _props_
+| 263 _props_
 
 
 
 .1+| *💠 Asset Images* +
-77 _files_
+79 _files_
 
 | *Content Length*
 | link:/assets/assets/images/particles/circle_blur.png[296.0 B ]
-| 22.0 KB 
+| 23.26 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
-| 1.65 MB 
+| 1.79 MB 
 
 
 |===
@@ -82,6 +82,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │ ├ faces |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+| │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 | │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 | │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# 
 | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
@@ -121,6 +123,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | ├ resources |[.zero]#0# |[.more]#5# |[.zero]#0# |[.zero]#0# 
 | ├ src |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │ ├ account |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ old_woman |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ ├ accounts |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | │  │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
@@ -139,6 +143,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | │ ├ curtain |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ ├ closing |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | │  │ └ opening |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ dialogue |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ └ speaker |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │ ├ helpers |[.zero]#0# |[.more]#4# |[.zero]#0# |[.zero]#0# 
 | │ ├ mixins |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ └ first_steps_bgm_playable |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# 
@@ -160,6 +166,33 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | │  │ ├ mist |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ ├ pin |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 | │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| ├ test |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │ ├ account |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ autoloads |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ preference |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ accounts |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ chapters |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ banner |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ chapter |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ menu |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │  │  │ └ photo |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ menu |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ └ screen |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │  │  │ └ 0 |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ helpers |[.zero]#0# |[.more]#2# |[.zero]#0# |[.zero]#0# 
+| │ ├ player |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ └ ghost_effect |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ resources |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ frame |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+| │  │ └ button |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │ ├ world |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| │  │ └ pin |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 | └ themes |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 
 |===
@@ -223,7 +256,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*enabled* |`PackedStringArray("res://addons/gdscript_input_field/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg")`
+|*enabled* |`PackedStringArray("res://addons/gdscript_input_field/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/redscribe/plugin.cfg")`
 
 |===
 

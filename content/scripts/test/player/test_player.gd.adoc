@@ -1,0 +1,66 @@
+---
+title: res://test/player/test_player.gd
+---
+:toc:
+
+== test / player / test_player.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var PlayerScene = load("res://src/player/player.tscn")
+var scene = null
+
+
+func before_each():
+	scene = PlayerScene.instantiate()
+	add_child(scene)
+
+
+func test_load():
+	assert_not_null(scene)
+
+
+func test_animate_if_idle():
+	scene.animate()
+	assert_not_null(scene)
+
+
+func test_animate_if_move():
+	scene.velocity = Vector2(100, -100)
+	scene.animate()
+	assert_not_null(scene)
+
+
+func test_get_state_if_right_ground():
+	scene.velocity = Vector2(1, 0)
+	assert_eq(scene.get_state(), 'Run')
+
+
+func test_get_state_if_left_ground():
+	scene.velocity = Vector2(-1, 0)
+	assert_eq(scene.get_state(), 'Run')
+
+
+func test_get_state_if_up():
+	scene.velocity = Vector2(0, -1)
+	assert_eq(scene.get_state(), 'Jump')
+
+
+func test_get_state_if_down():
+	scene.velocity = Vector2(0, 1)
+	assert_eq(scene.get_state(), 'Fall')
+
+
+func test_spawn_ghost_effect():
+	scene.spawn_ghost_effect()
+	var ghost = scene.get_parent().get_children().filter(
+		func(c): return c.name == 'GhostEffect')
+	assert_not_null(ghost)
+
+```

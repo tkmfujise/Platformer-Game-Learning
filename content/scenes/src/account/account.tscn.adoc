@@ -333,6 +333,10 @@ image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100]
 image::/assets/raw/assets/images/ui/TikectCover.svg[200, 100] 
 
 [.asset-image]
+[link=/assets/assets/images/faces/Player_face.png]
+image::/assets/raw/assets/images/faces/Player_face.png[200, 100] 
+
+[.asset-image]
 [link=/assets/assets/images/ui/sellotape.svg]
 image::/assets/raw/assets/images/ui/sellotape.svg[200, 100] 
 
@@ -1288,7 +1292,11 @@ image::/assets/raw/assets/images/ui/TikectCover.svg[]
 |*material* a|`SubResource("CanvasItemMaterial_pgbv1")`
 |*position* a|`Vector2(-1539.67, 102.401)`
 |*scale* a|`Vector2(0.677092, 0.691006)`
-|*texture* a|`res://assets/images/faces/Player_face.png`
+|*texture* a|[link=/assets/assets/images/faces/Player_face.png]
+[.asset-image]
+.res://assets/images/faces/Player_face.png
+image::/assets/raw/assets/images/faces/Player_face.png[]
+
 |===
 [.node-property.node-2d]
 .#$VBoxContainer/MainContainer/CoverContainer/CoverRoot/CoverSummary/SellotapeLeftTop# properties

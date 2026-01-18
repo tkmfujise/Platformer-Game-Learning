@@ -73,16 +73,18 @@ class N13 as "Scenery" <<(N,lightskyblue) Node2D>> {
 }
 class N14 as "House" <<(S,lightskyblue) Sprite2D>> {
 }
-class N15 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+class N15 as "OldWoman" <<(S,lightskyblue) Sprite2D>> {
 }
-class N16 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+class N16 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+}
+class N17 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 ---
   + _ready()
   + _process()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
-class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N18 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ failed
 ---
@@ -116,14 +118,12 @@ class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N18 as "Weather" <<(N,lightskyblue) Node2D>> {
+class N19 as "Weather" <<(N,lightskyblue) Node2D>> {
 ---
   + _process()
   + current_camera()
 }
-class N19 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
-}
-class N20 as "OldWoman" <<(S,lightskyblue) Sprite2D>> {
+class N20 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4
@@ -131,8 +131,7 @@ R --o N5
 R --o N6
 R --o N12
 R --o N13
-R --o N15
-R --o N17
+R --o N16
 R --o N18
 R --o N19
 R --o N20
@@ -144,11 +143,12 @@ N6 --o N9
 N6 --o N10
 N6 --o N11
 N13 --o N14
-N15 --o N16
+N13 --o N15
+N16 --o N17
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_restart_curtain_animation_finished, N3::animation_finished)
-_(R::_on_player_failed, N17::failed)
+_(R::_on_player_failed, N18::failed)
 ....
 
 
@@ -157,10 +157,6 @@ _(R::_on_player_failed, N17::failed)
 [.asset-image]
 [link=/assets/assets/images/stages/chapter0/House.png]
 image::/assets/raw/assets/images/stages/chapter0/House.png[200, 100] 
-
-[.asset-image]
-[link=/assets/assets/images/actors/old_woman/OldWoman.png]
-image::/assets/raw/assets/images/actors/old_woman/OldWoman.png[200, 100] 
 
 
 
@@ -253,12 +249,12 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]#
 ** [.node-name.type-2d]#Scenery# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#House# [.node-type.type-2d]#Sprite2D#
+*** [.node-name.type-2d]#OldWoman# [.node-type.type-2d]#link:/scenes/src/actors/old_woman/old_woman.tscn[res://src/actors/old_woman/old_woman.tscn]#
 ** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn]#
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
 ** [.node-name.type-2d]#Weather# [.node-type.type-2d]#link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
-** [.node-name.type-2d]#OldWoman# [.node-type.type-2d]#Sprite2D#
 
 
 === Signal Connections
@@ -309,6 +305,7 @@ R  ->o  T0 : &"play"()
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
 |*script* a|link:/scripts/src/chapters/0/stages/0/stage_0.gd[res://src/chapters/0/stages/0/stage_0.gd]
+|*metadata/_edit_vertical_guides_* a|`[5389.0]`
 |===
 [.node-property.node-control]
 .#$CanvasLayer/OpeningCurtain# properties
@@ -398,6 +395,13 @@ image::/assets/raw/assets/images/stages/chapter0/House.png[]
 
 |===
 [.node-property.node-2d]
+.#$Scenery/OldWoman# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(6879, 240)`
+|===
+[.node-property.node-2d]
 .#$Gimmicks/FallingIceBlock# properties
 [cols="1,3" options="header"]
 |===
@@ -422,21 +426,6 @@ image::/assets/raw/assets/images/stages/chapter0/House.png[]
 &"": SubResource("AnimationLibrary_arpf2")
 }`
 |*autoplay* a|`opening`
-|===
-[.node-property.node-2d]
-.#$OldWoman# properties
-[cols="1,3" options="header"]
-|===
-|Name |Value
-|*position* a|`Vector2(6892, 179)`
-|*scale* a|`Vector2(5, 5)`
-|*texture* a|[link=/assets/assets/images/actors/old_woman/OldWoman.png]
-[.asset-image]
-.res://assets/images/actors/old_woman/OldWoman.png
-image::/assets/raw/assets/images/actors/old_woman/OldWoman.png[]
-
-|*flip_h* a|`true`
-|*hframes* a|`6`
 |===
 
 

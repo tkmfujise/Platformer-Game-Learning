@@ -1,0 +1,28 @@
+---
+title: res://test/beginning/chapters/banner/test_banner.gd
+---
+:toc:
+
+== test / beginning / chapters / banner / test_banner.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var BannerScene = load("res://src/beginning/chapters/banner/banner.tscn")
+var scene = null
+
+
+func before_each():
+	scene = BannerScene.instantiate()
+	add_child(scene)
+
+
+func test_ready():
+	assert_not_null(scene)
+
+```

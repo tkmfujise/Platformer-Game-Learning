@@ -1,0 +1,40 @@
+---
+title: res://test/player/ghost_effect/test_ghost_effect.gd
+---
+:toc:
+
+== test / player / ghost_effect / test_ghost_effect.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var EffectScene = load("res://src/player/ghost_effect/ghost_effect.tscn")
+var PlayerScene = load("res://src/player/player.tscn")
+var scene = null
+
+
+func before_each():
+	scene = EffectScene.instantiate()
+
+
+func get_player() -> Player:
+	var player = PlayerScene.instantiate()
+	add_child(player)
+	return player
+
+
+func test_load():
+	assert_not_null(scene)
+
+
+func test_spawn():
+	var player = get_player()
+	scene.spawn(player)
+	assert_eq(player.get_parent(), scene.get_parent())
+
+```

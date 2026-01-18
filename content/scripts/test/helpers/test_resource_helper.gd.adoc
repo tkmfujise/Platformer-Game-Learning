@@ -1,0 +1,94 @@
+---
+title: res://test/helpers/test_resource_helper.gd
+---
+:toc:
+
+== test / helpers / test_resource_helper.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+class TestResource:
+	extends Resource
+	var flag : bool = true
+	var name : String = 'test'
+	var items : Array = [1.0, '2', null]
+	var children : Array[ChildResource] = [
+		ChildResource.new()
+	]
+	static func parse_mapping() -> Dictionary:
+		return { 'children': ChildResource }
+
+class ChildResource:
+	extends Resource
+	var foo : float = 1.234
+	var bar = null
+	var children : Array[GrandChildResource] = [
+		GrandChildResource.new()
+	]
+	static func parse_mapping() -> Dictionary:
+		return { 'children': GrandChildResource }
+
+class GrandChildResource:
+	extends Resource
+	var piyo : String = 'bar'
+
+
+func test_init():
+	var res = TestResource.new()
+	assert_eq(res.flag, true)
+	assert_eq(res.children[0].foo, 1.234)
+
+
+func test_properties_of():
+	var res = TestResource.new()
+	assert_eq(ResourceHelper.properties_of(res),
+		['flag', 'name', 'items', 'children'])
+	assert_eq(ResourceHelper.properties_of(res.children[0]),
+		['foo', 'bar', 'children'])
+	assert_eq(ResourceHelper.properties_of(res.children[0].children[0]),
+		['piyo'])
+
+
+func test_json():
+	var res  = TestResource.new()
+	var dict = ResourceHelper.dict(res)
+	var json = ResourceHelper.json(res)
+	var parsed = JSON.parse_string(json)
+	assert_eq(res.name, dict.name)
+	assert_eq(res.name, parsed.name)
+	assert_eq(res.items[0], dict.items[0])
+	assert_eq(res.items[0], parsed.items[0])
+	assert_eq(res.children[0].foo, dict.children[0].foo)
+	assert_eq(res.children[0].foo, parsed.children[0].foo)
+	assert_eq(
+		res.children[0].children[0].piyo,
+		dict.children[0].children[0].piyo)
+	assert_eq(
+		res.children[0].children[0].piyo,
+		parsed.children[0].children[0].piyo)
+	assert_eq(dict.items, parsed.items)
+	assert_eq(dict.children, parsed.children)
+	assert_eq(dict.children[0].children, parsed.children[0].children)
+	assert_eq(dict, parsed)
+
+
+func test_parse():
+	var res  = TestResource.new()
+	var json = ResourceHelper.json(res)
+	var parsed = ResourceHelper.parse(TestResource, json)
+	for key in ResourceHelper.properties_of(res):
+		if key == 'children':
+			var child = res.children[0]
+			assert_eq(child.foo, parsed.children[0].foo)
+			var grand_child = child.children[0]
+			assert_eq(grand_child.piyo, parsed.children[0].children[0].piyo)
+		else:
+			assert_eq(res.get(key), parsed.get(key))
+
+```

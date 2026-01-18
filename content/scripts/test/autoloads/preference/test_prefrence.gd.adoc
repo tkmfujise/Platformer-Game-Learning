@@ -1,0 +1,48 @@
+---
+title: res://test/autoloads/preference/test_prefrence.gd
+---
+:toc:
+
+== test / autoloads / preference / test_prefrence.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+const FILE_PATH = Preference._FILE_PATH + '.test'
+
+func before_each():
+	restore()
+
+
+func after_each():
+	DirAccess.remove_absolute(FILE_PATH)
+
+
+func restore():
+	Preference.restore(FILE_PATH)
+
+
+func test_bgm_volume_new():
+	assert_eq(Preference.bgm_volume(), 70)
+
+
+func test_bgm_volume_unsaved():
+	Preference.bgm_volume(60)
+	assert_eq(Preference.bgm_volume(), 60)
+	restore()
+	assert_eq(Preference.bgm_volume(), 70)
+
+
+func test_bgm_volume_saved():
+	Preference.bgm_volume(60)
+	assert_eq(Preference.bgm_volume(), 60)
+	Preference.save()
+	restore()
+	assert_eq(Preference.bgm_volume(), 60)
+
+```

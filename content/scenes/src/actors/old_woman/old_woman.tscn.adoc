@@ -1,0 +1,115 @@
+---
+title: src/actors/old_woman/old_woman.tscn
+---
+:toc:
+
+== src / actors / old_woman / old_woman.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "OldWoman" <<(S,lightskyblue) Sprite2D>> {
+}
+class N1 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/actors/old_woman/OldWoman.png]
+image::/assets/raw/assets/images/actors/old_woman/OldWoman.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#OldWoman# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Animations
+==== idle (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+
+
+loop
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+== Time: 0.2 ==
+R  ->o  R : frame\n = 1
+== Time: 0.4 ==
+R  ->o  R : frame\n = 2
+== Time: 0.6 ==
+R  ->o  R : frame\n = 4
+== Time: 0.8 ==
+R  ->o  R : frame\n = 5
+
+end
+....
+---
+
+==== Animation_jke80
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scale* a|`Vector2(4.5, 4.5)`
+|*texture* a|[link=/assets/assets/images/actors/old_woman/OldWoman.png]
+[.asset-image]
+.res://assets/images/actors/old_woman/OldWoman.png
+image::/assets/raw/assets/images/actors/old_woman/OldWoman.png[]
+
+|*offset* a|`Vector2(0, -12)`
+|*flip_h* a|`true`
+|*hframes* a|`6`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_w3vh0")
+}`
+|*autoplay* a|`idle`
+|===
+
+
+
+

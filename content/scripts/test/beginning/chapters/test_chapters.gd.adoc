@@ -1,0 +1,99 @@
+---
+title: res://test/beginning/chapters/test_chapters.gd
+---
+:toc:
+
+== test / beginning / chapters / test_chapters.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var ChaptersScene = load("res://src/beginning/chapters/chapters.tscn")
+var scene = null
+var account_resource = load("res://data/test/account/test_account.tres")
+
+
+func before_each():
+	scene = ChaptersScene.instantiate()
+	Current.account = account_resource
+	add_child(scene)
+
+
+func animation_play(key: String) -> void:
+	scene.get_node('%AnimationPlayer').play(key)
+
+
+func animation_signal() -> Signal:
+	return scene.get_node('%AnimationPlayer').animation_finished
+
+
+func chapters() -> Array[Node]:
+	return scene.get_node('%ChaptersContainer').get_children()
+
+
+func test_ready():
+	assert_not_null(scene)
+
+
+func test_chapters_container():
+	for i in chapters().size():
+		var child = scene.get_node('%ChaptersContainer').get_child(i)
+		assert_eq(child.name, "Chapter_%s" % i)
+
+
+func test_menu_position():
+	var menu = scene.get_node('%Menu')
+	assert_eq(menu.position, Vector2(960.0, 0.0))
+
+
+func test_plate_root():
+	assert_eq(scene.current_plate, scene.Plate.ROOT)
+
+
+func test_plate_menu():
+	scene.go_foward()
+	assert_eq(scene.current_plate, scene.Plate.MENU)
+
+
+func test_animation_opening():
+	assert_eq(scene.shown, false)
+	animation_play('opening')
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.shown, true)
+	for chapter in chapters():
+		assert_eq(chapter.visible, true)
+
+
+func test_chapters_resource():
+	for chapter in chapters():
+		var resource = chapter.resource
+		assert_not_null(resource)
+		assert_not_null(resource.number)
+		assert_not_null(resource.name)
+		assert_not_null(resource.color)
+
+
+func test_setup_from_account_resource_if_blank():
+	Current.account = null
+	scene.setup_from_account_resource()
+	assert_eq(scene.get_node('%ChaptersContainer/Chapter_0').visible, true)
+	assert_eq(scene.get_node('%ChaptersContainer/Chapter_1').visible, true)
+
+
+func test_setup_from_account_resource():
+	Current.account = load("res://data/test/account/empty_account.tres")
+	scene.setup_from_account_resource()
+	assert_eq(scene.get_node('%ChaptersContainer/Chapter_0').visible, true)
+	assert_eq(scene.get_node('%ChaptersContainer/Chapter_1').visible, false)
+
+
+func test_set_chapters_animation_offset():
+	scene.set_chapters_animation_offset()
+	assert_ne(scene, null)
+
+```

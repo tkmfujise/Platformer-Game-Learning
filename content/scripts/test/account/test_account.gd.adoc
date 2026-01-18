@@ -1,0 +1,51 @@
+---
+title: res://test/account/test_account.gd
+---
+:toc:
+
+== test / account / test_account.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var AccountScene = load("res://src/account/account.tscn")
+var scene = null
+var resource = null
+
+
+func before_each():
+	scene = AccountScene.instantiate()
+
+
+func start():
+	scene.resource = resource
+	add_child(scene)
+
+
+func test_ready():
+	start()
+	assert_eq(scene.size.x, 1920)
+	assert_eq(scene.size.y, 300)
+
+
+func test_resource_none():
+	resource = null
+	start()
+	assert_eq(scene.get_node('%TicketSummaryPlaceholder').visible, true)
+	assert_eq(scene.get_node('%TicketSummary').visible, false)
+	assert_eq(scene.get_node('%CoverSummary').visible, false)
+
+
+func test_resource_exists():
+	resource = AccountResource.new()
+	start()
+	assert_eq(scene.get_node('%TicketSummaryPlaceholder').visible, false)
+	assert_eq(scene.get_node('%TicketSummary').visible, true)
+	assert_eq(scene.get_node('%CoverSummary').visible, true)
+
+```

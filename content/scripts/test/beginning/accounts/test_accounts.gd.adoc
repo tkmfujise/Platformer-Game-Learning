@@ -1,0 +1,39 @@
+---
+title: res://test/beginning/accounts/test_accounts.gd
+---
+:toc:
+
+== test / beginning / accounts / test_accounts.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var AccountsScene = load("res://src/beginning/accounts/accounts.tscn")
+var scene = null
+
+
+func before_each():
+	scene = AccountsScene.instantiate()
+	add_child(scene)
+
+
+func test_ready():
+	assert_eq(scene.size.x, 1920)
+	assert_eq(scene.size.y, 1080)
+
+
+func test_grab_focus_first_true():
+	scene.grab_focus_first = true
+	assert_eq(scene.get_node('%Account1').has_focus(), true)
+
+
+func test_grab_focus_first_false():
+	scene.grab_focus_first = false
+	assert_eq(scene.get_node('%Account1').has_focus(), false)
+
+```

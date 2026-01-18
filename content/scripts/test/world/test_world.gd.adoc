@@ -1,0 +1,53 @@
+---
+title: res://test/world/test_world.gd
+---
+:toc:
+
+== test / world / test_world.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var WorldScene = load("res://src/world/world.tscn")
+var scene = null
+
+
+func before_each():
+	scene = WorldScene.instantiate()
+	add_child(scene)
+
+
+func test_ready():
+	var anim = scene.get_node('%AnimationPlayer').current_animation
+	assert_eq(anim, 'opening')
+
+
+func test_smooth_rotation_case1():
+	var val  = Vector3(1.0, PI, 3.0)
+	var goal = Vector3(2.0, PI, 4.0)
+	assert_eq(scene.smooth_rotation(val, goal), Vector3(1.0, PI, 3.0))
+
+
+func test_smooth_rotation_case2():
+	var val  = Vector3(1.0, 4.0, 3.0)
+	var goal = Vector3(2.0, 0.1, 4.0)
+	assert_eq(scene.smooth_rotation(val, goal), Vector3(1.0, (4.0 - 2*PI), 3.0))
+
+
+func test_smooth_rotation_case3():
+	var val  = Vector3(1.0, 0.1, 3.0)
+	var goal = Vector3(2.0, 4.0, 4.0)
+	assert_eq(scene.smooth_rotation(val, goal), Vector3(1.0, (0.1 + 2*PI), 3.0))
+
+
+func test_smooth_rotation_case4():
+	var val  = Vector3(1.0, 2.0, 3.0)
+	var goal = Vector3(4.0, 5.0, 6.0)
+	assert_eq(scene.smooth_rotation(val, goal), Vector3(1.0, 2.0, 3.0))
+
+```

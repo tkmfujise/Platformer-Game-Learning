@@ -1,0 +1,48 @@
+---
+title: res://test/beginning/chapters/menu/photo/test_photo.gd
+---
+:toc:
+
+== test / beginning / chapters / menu / photo / test_photo.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var PhotoScene = load("res://src/beginning/chapters/menu/photo/photo.tscn")
+var scene = null
+
+
+func before_each():
+	scene = PhotoScene.instantiate()
+	add_child(scene)
+
+
+func animation_play(key: String) -> void:
+	scene.get_node('%AnimationPlayer').play(key)
+
+
+func animation_signal() -> Signal:
+	return scene.get_node('%AnimationPlayer').animation_finished
+
+
+func test_ready():
+	assert_eq(scene.flicked, false)
+
+
+func test_flick():
+	scene.flick()
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.flicked, true)
+
+
+func test_pull():
+	scene.pull()
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.flicked, false)
+
+```

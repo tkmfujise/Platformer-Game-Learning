@@ -1,0 +1,27 @@
+---
+title: assets/images/faces/actors/OldWoman_face.png
+---
+:toc:
+
+== assets / images / faces / actors / OldWoman_face.png
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |256×256 px
+|Type |png
+|Content Length |88.49 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
+

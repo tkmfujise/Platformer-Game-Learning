@@ -1,0 +1,1045 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>res://test/helpers/test_resource_helper.gd - Platformer Game Learning</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../../../css/pico.min.css">
+    <link rel="stylesheet" href="../../../../css/style.css">
+    <link rel="stylesheet" href="../../../../css/syntax.gessetti.css">
+    <link rel="stylesheet" href="../../../../css/admonitionblock.css">
+    <script src="../../../../js/vendor/fuse.js@7.1.0"></script>
+    <script src="../../../../js/main.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="Nanoc 4.14.6">
+  </head>
+  <body>
+    <header>
+  <nav>
+    <ul>
+      <li><strong><a href="../../../../">Platformer Game Learning</a></strong></li>
+    </ul>
+    <ul>
+      <li class="visible-if-portrait">
+        <button class="toggle-contents-menu secondary">Menu</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+    <main>
+      <aside class="contents-menu">
+        <nav>
+  <ul>
+    <li class="search-form">
+      <input type="search" placeholder="Search" aria-label="Search">
+    </li>
+  </ul>
+
+  
+    <details>
+      <summary><b>Scenes</b></summary>
+      <ul>
+        
+          <li data-path="/scenes/autoloads/bgm/bgm.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/autoloads/bgm/bgm.tscn/">autoloads/bgm/bgm.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/autoloads/current/current.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/autoloads/current/current.tscn/">autoloads/current/current.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/autoloads/keyboard_handler/keyboard_handler.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/autoloads/keyboard_handler/keyboard_handler.tscn/">autoloads/keyboard_handler/keyboard_handler.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/debug/chapters/chapters.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/debug/chapters/chapters.tscn/">debug/chapters/chapters.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/debug/curtain/curtain.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/debug/curtain/curtain.tscn/">debug/curtain/curtain.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/account/account.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/account/account.tscn/">src/account/account.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/actors/old_woman/old_woman.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/actors/old_woman/old_woman.tscn/">src/actors/old_woman/old_woman.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/accounts/accounts.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/accounts/accounts.tscn/">src/beginning/accounts/accounts.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/chapters/banner/banner.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/chapters/banner/banner.tscn/">src/beginning/chapters/banner/banner.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/chapters/chapter/chapter.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/chapters/chapter/chapter.tscn/">src/beginning/chapters/chapter/chapter.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/chapters/chapters.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/chapters/chapters.tscn/">src/beginning/chapters/chapters.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/chapters/menu/bookmark/bookmark.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/chapters/menu/bookmark/bookmark.tscn/">src/beginning/chapters/menu/bookmark/bookmark.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/chapters/menu/menu.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/chapters/menu/menu.tscn/">src/beginning/chapters/menu/menu.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/chapters/menu/photo/photo.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/chapters/menu/photo/photo.tscn/">src/beginning/chapters/menu/photo/photo.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/menu/menu.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/menu/menu.tscn/">src/beginning/menu/menu.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/screen/screen.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/screen/screen.tscn/">src/beginning/screen/screen.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/beginning/screen/snow/snow.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/beginning/screen/snow/snow.tscn/">src/beginning/screen/snow/snow.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/chapters/0/stages/0/stage_0.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/chapters/0/stages/0/stage_0.tscn/">src/chapters/0/stages/0/stage_0.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/curtain/closing/closing.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/curtain/closing/closing.tscn/">src/curtain/closing/closing.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/curtain/opening/opening.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/curtain/opening/opening.tscn/">src/curtain/opening/opening.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/dialogue/dialogue.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/dialogue/dialogue.tscn/">src/dialogue/dialogue.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/dialogue/speaker/speaker.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/dialogue/speaker/speaker.tscn/">src/dialogue/speaker/speaker.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/main.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/main.tscn/">src/main.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn/">src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/player/camera/camera.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/player/camera/camera.tscn/">src/player/camera/camera.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/player/ghost_effect/ghost_effect.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/player/ghost_effect/ghost_effect.tscn/">src/player/ghost_effect/ghost_effect.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/player/player.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/player/player.tscn/">src/player/player.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/stages/0/staege_ground_0.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/0/staege_ground_0.tscn/">src/stages/0/staege_ground_0.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/stages/background/forest/forest.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/background/forest/forest.tscn/">src/stages/background/forest/forest.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/stages/frame/camera_frame.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/frame/camera_frame.tscn/">src/stages/frame/camera_frame.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn/">src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/stages/weather/snow/snow.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/weather/snow/snow.tscn/">src/stages/weather/snow/snow.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/stages/weather/weather.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/weather/weather.tscn/">src/stages/weather/weather.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/ui/button/button.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/ui/button/button.tscn/">src/ui/button/button.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/world/mist/mist.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/world/mist/mist.tscn/">src/world/mist/mist.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/world/pin/pin.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/world/pin/pin.tscn/">src/world/pin/pin.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/world/snow/snow.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/world/snow/snow.tscn/">src/world/snow/snow.tscn</a>
+          </li>
+        
+          <li data-path="/scenes/src/world/world.tscn/" data-category="scenes">
+            <a class="" href="../../../../scenes/src/world/world.tscn/">src/world/world.tscn</a>
+          </li>
+        
+      </ul>
+    </details>
+  
+    <details open>
+      <summary><b>Scripts</b></summary>
+      <ul>
+        
+          <li data-path="/scripts/autoloads/bgm/bgm.gd/" data-category="scripts">
+            <a class="" href="../../../autoloads/bgm/bgm.gd/">autoloads/bgm/bgm.gd</a>
+          </li>
+        
+          <li data-path="/scripts/autoloads/current/current.gd/" data-category="scripts">
+            <a class="" href="../../../autoloads/current/current.gd/">autoloads/current/current.gd</a>
+          </li>
+        
+          <li data-path="/scripts/autoloads/keyboard_handler/keyboard_handler.gd/" data-category="scripts">
+            <a class="" href="../../../autoloads/keyboard_handler/keyboard_handler.gd/">autoloads/keyboard_handler/keyboard_handler.gd</a>
+          </li>
+        
+          <li data-path="/scripts/autoloads/preference/preference.gd/" data-category="scripts">
+            <a class="" href="../../../autoloads/preference/preference.gd/">autoloads/preference/preference.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/chapters/chapters.gd/" data-category="scripts">
+            <a class="" href="../../../debug/chapters/chapters.gd/">debug/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/debug/curtain/curtain.gd/" data-category="scripts">
+            <a class="" href="../../../debug/curtain/curtain.gd/">debug/curtain/curtain.gd</a>
+          </li>
+        
+          <li data-path="/scripts/dev/helper.gd/" data-category="scripts">
+            <a class="" href="../../../dev/helper.gd/">dev/helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/account_chapter_resource.gd/" data-category="scripts">
+            <a class="" href="../../../resources/account_chapter_resource.gd/">resources/account_chapter_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/account_resource.gd/" data-category="scripts">
+            <a class="" href="../../../resources/account_resource.gd/">resources/account_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/account_stage_resource.gd/" data-category="scripts">
+            <a class="" href="../../../resources/account_stage_resource.gd/">resources/account_stage_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/chapter_resource.gd/" data-category="scripts">
+            <a class="" href="../../../resources/chapter_resource.gd/">resources/chapter_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/resources/stage_resource.gd/" data-category="scripts">
+            <a class="" href="../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/account/account.gd/" data-category="scripts">
+            <a class="" href="../../../src/account/account.gd/">src/account/account.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/accounts/accounts.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/accounts/accounts.gd/">src/beginning/accounts/accounts.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/chapters/chapter/chapter.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/chapters/chapter/chapter.gd/">src/beginning/chapters/chapter/chapter.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/chapters/chapters.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/chapters/chapters.gd/">src/beginning/chapters/chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/chapters/menu/bookmark/bookmark.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/chapters/menu/bookmark/bookmark.gd/">src/beginning/chapters/menu/bookmark/bookmark.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/chapters/menu/menu.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/chapters/menu/menu.gd/">src/beginning/chapters/menu/menu.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/chapters/menu/photo/photo.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/chapters/menu/photo/photo.gd/">src/beginning/chapters/menu/photo/photo.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/menu/menu.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/menu/menu.gd/">src/beginning/menu/menu.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/beginning/screen/screen.gd/" data-category="scripts">
+            <a class="" href="../../../src/beginning/screen/screen.gd/">src/beginning/screen/screen.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/chapters/0/stages/0/stage_0.gd/" data-category="scripts">
+            <a class="" href="../../../src/chapters/0/stages/0/stage_0.gd/">src/chapters/0/stages/0/stage_0.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/curtain/closing/closing.gd/" data-category="scripts">
+            <a class="" href="../../../src/curtain/closing/closing.gd/">src/curtain/closing/closing.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/curtain/opening/opening.gd/" data-category="scripts">
+            <a class="" href="../../../src/curtain/opening/opening.gd/">src/curtain/opening/opening.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/dialogue/dialogue.gd/" data-category="scripts">
+            <a class="" href="../../../src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/helpers/array_helper.gd/" data-category="scripts">
+            <a class="" href="../../../src/helpers/array_helper.gd/">src/helpers/array_helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/helpers/focus_helper.gd/" data-category="scripts">
+            <a class="" href="../../../src/helpers/focus_helper.gd/">src/helpers/focus_helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/helpers/resource_helper.gd/" data-category="scripts">
+            <a class="" href="../../../src/helpers/resource_helper.gd/">src/helpers/resource_helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/helpers/scene_helper.gd/" data-category="scripts">
+            <a class="" href="../../../src/helpers/scene_helper.gd/">src/helpers/scene_helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd/" data-category="scripts">
+            <a class="" href="../../../src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd/">src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/player/camera/camera.gd/" data-category="scripts">
+            <a class="" href="../../../src/player/camera/camera.gd/">src/player/camera/camera.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/player/ghost_effect/ghost_effect.gd/" data-category="scripts">
+            <a class="" href="../../../src/player/ghost_effect/ghost_effect.gd/">src/player/ghost_effect/ghost_effect.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/player/player.gd/" data-category="scripts">
+            <a class="" href="../../../src/player/player.gd/">src/player/player.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/stages/frame/camera_frame.gd/" data-category="scripts">
+            <a class="" href="../../../src/stages/frame/camera_frame.gd/">src/stages/frame/camera_frame.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/stages/gimmicks/falling_ice_block/falling_ice_block.gd/" data-category="scripts">
+            <a class="" href="../../../src/stages/gimmicks/falling_ice_block/falling_ice_block.gd/">src/stages/gimmicks/falling_ice_block/falling_ice_block.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/stages/weather/weather.gd/" data-category="scripts">
+            <a class="" href="../../../src/stages/weather/weather.gd/">src/stages/weather/weather.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/ui/button/button.gd/" data-category="scripts">
+            <a class="" href="../../../src/ui/button/button.gd/">src/ui/button/button.gd</a>
+          </li>
+        
+          <li data-path="/scripts/src/world/world.gd/" data-category="scripts">
+            <a class="" href="../../../src/world/world.gd/">src/world/world.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/account/test_account.gd/" data-category="scripts">
+            <a class="" href="../../account/test_account.gd/">test/account/test_account.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/autoloads/preference/test_prefrence.gd/" data-category="scripts">
+            <a class="" href="../../autoloads/preference/test_prefrence.gd/">test/autoloads/preference/test_prefrence.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/accounts/test_accounts.gd/" data-category="scripts">
+            <a class="" href="../../beginning/accounts/test_accounts.gd/">test/beginning/accounts/test_accounts.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/chapters/banner/test_banner.gd/" data-category="scripts">
+            <a class="" href="../../beginning/chapters/banner/test_banner.gd/">test/beginning/chapters/banner/test_banner.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/chapters/chapter/test_chapter.gd/" data-category="scripts">
+            <a class="" href="../../beginning/chapters/chapter/test_chapter.gd/">test/beginning/chapters/chapter/test_chapter.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/chapters/menu/photo/test_photo.gd/" data-category="scripts">
+            <a class="" href="../../beginning/chapters/menu/photo/test_photo.gd/">test/beginning/chapters/menu/photo/test_photo.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/chapters/menu/test_menu.gd/" data-category="scripts">
+            <a class="" href="../../beginning/chapters/menu/test_menu.gd/">test/beginning/chapters/menu/test_menu.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/chapters/test_chapters.gd/" data-category="scripts">
+            <a class="" href="../../beginning/chapters/test_chapters.gd/">test/beginning/chapters/test_chapters.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/menu/test_menu.gd/" data-category="scripts">
+            <a class="" href="../../beginning/menu/test_menu.gd/">test/beginning/menu/test_menu.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/beginning/screen/test_screen.gd/" data-category="scripts">
+            <a class="" href="../../beginning/screen/test_screen.gd/">test/beginning/screen/test_screen.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/chapters/0/stages/0/test_stage0.gd/" data-category="scripts">
+            <a class="" href="../../chapters/0/stages/0/test_stage0.gd/">test/chapters/0/stages/0/test_stage0.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/helpers/test_array_helper.gd/" data-category="scripts">
+            <a class="" href="../test_array_helper.gd/">test/helpers/test_array_helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/helpers/test_resource_helper.gd/" data-category="scripts">
+            <a class="selected" href="./">test/helpers/test_resource_helper.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/player/ghost_effect/test_ghost_effect.gd/" data-category="scripts">
+            <a class="" href="../../player/ghost_effect/test_ghost_effect.gd/">test/player/ghost_effect/test_ghost_effect.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/player/test_player.gd/" data-category="scripts">
+            <a class="" href="../../player/test_player.gd/">test/player/test_player.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/resources/test_account_resource.gd/" data-category="scripts">
+            <a class="" href="../../resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/stages/frame/test_camera_frame.gd/" data-category="scripts">
+            <a class="" href="../../stages/frame/test_camera_frame.gd/">test/stages/frame/test_camera_frame.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/ui/button/test_button.gd/" data-category="scripts">
+            <a class="" href="../../ui/button/test_button.gd/">test/ui/button/test_button.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/world/pin/test_pin.gd/" data-category="scripts">
+            <a class="" href="../../world/pin/test_pin.gd/">test/world/pin/test_pin.gd</a>
+          </li>
+        
+          <li data-path="/scripts/test/world/test_world.gd/" data-category="scripts">
+            <a class="" href="../../world/test_world.gd/">test/world/test_world.gd</a>
+          </li>
+        
+      </ul>
+    </details>
+  
+    <details>
+      <summary><b>Resources</b></summary>
+      <ul>
+        
+          <li data-path="/resources/data/chapters/chapter_0.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_0.tres/">data/chapters/chapter_0.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_1.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_1.tres/">data/chapters/chapter_1.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_2.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_2.tres/">data/chapters/chapter_2.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_3.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_3.tres/">data/chapters/chapter_3.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_4.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_4.tres/">data/chapters/chapter_4.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_5.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_5.tres/">data/chapters/chapter_5.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_6.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_6.tres/">data/chapters/chapter_6.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_7.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_7.tres/">data/chapters/chapter_7.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/chapters/chapter_8.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/chapters/chapter_8.tres/">data/chapters/chapter_8.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/test/account/empty_account.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/test/account/empty_account.tres/">data/test/account/empty_account.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/test/account/full_account.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/test/account/full_account.tres/">data/test/account/full_account.tres</a>
+          </li>
+        
+          <li data-path="/resources/data/test/account/test_account.tres/" data-category="resources">
+            <a class="" href="../../../../resources/data/test/account/test_account.tres/">data/test/account/test_account.tres</a>
+          </li>
+        
+          <li data-path="/resources/themes/default_theme.tres/" data-category="resources">
+            <a class="" href="../../../../resources/themes/default_theme.tres/">themes/default_theme.tres</a>
+          </li>
+        
+      </ul>
+    </details>
+  
+    <details>
+      <summary><b>Assets</b></summary>
+      <ul>
+        
+          <li data-path="/assets/assets/guide/grid_1920x1080.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/guide/grid_1920x1080.png/">assets/guide/grid_1920x1080.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/actors/old_woman/OldWoman.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/actors/old_woman/OldWoman.png/">assets/images/actors/old_woman/OldWoman.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/faces/Player_face.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/faces/Player_face.png/">assets/images/faces/Player_face.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/faces/actors/OldWoman_face.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/particles/circle_blur.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/particles/circle_blur.png/">assets/images/particles/circle_blur.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/player/Player_fall.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/Player_fall.png/">assets/images/player/Player_fall.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/player/Player_idle.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/Player_idle.png/">assets/images/player/Player_idle.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/player/Player_jump.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/Player_jump.png/">assets/images/player/Player_jump.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/player/Player_run.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/Player_run.png/">assets/images/player/Player_run.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/player/effects/Burst.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/effects/Burst.png/">assets/images/player/effects/Burst.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/stages/background/Forest.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/background/Forest.png/">assets/images/stages/background/Forest.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/stages/chapter0/House.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/chapter0/House.png/">assets/images/stages/chapter0/House.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/stages/chapter0/Tilemap.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/chapter0/Tilemap.png/">assets/images/stages/chapter0/Tilemap.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/stages/gimmicks/FallingIceBlock.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/gimmicks/FallingIceBlock.png/">assets/images/stages/gimmicks/FallingIceBlock.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/BlueHeart.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/BlueHeart.svg/">assets/images/ui/BlueHeart.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Cassette.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Cassette.svg/">assets/images/ui/Cassette.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Casstte-BlueHear_placeholder.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Casstte-BlueHear_placeholder.svg/">assets/images/ui/Casstte-BlueHear_placeholder.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_0.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_0.png/">assets/images/ui/Chapters/Chapter_0.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_1.png/">assets/images/ui/Chapters/Chapter_1.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_2.png/">assets/images/ui/Chapters/Chapter_2.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_3.png/">assets/images/ui/Chapters/Chapter_3.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_4.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_4.png/">assets/images/ui/Chapters/Chapter_4.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_5.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_5.png/">assets/images/ui/Chapters/Chapter_5.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_6.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_6.png/">assets/images/ui/Chapters/Chapter_6.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_7.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_7.png/">assets/images/ui/Chapters/Chapter_7.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_8.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_8.png/">assets/images/ui/Chapters/Chapter_8.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/Chapter_banner.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/Chapter_banner.png/">assets/images/ui/Chapters/Chapter_banner.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Bag.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Bag.png/">assets/images/ui/Chapters/menu/Bag.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Banner.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Banner.png/">assets/images/ui/Chapters/menu/Banner.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Box.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Box.svg/">assets/images/ui/Chapters/menu/Box.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Cassette.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Cassette.svg/">assets/images/ui/Chapters/menu/Cassette.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Mountain.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Mountain.svg/">assets/images/ui/Chapters/menu/Mountain.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Photo.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Photo.svg/">assets/images/ui/Chapters/menu/Photo.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/Star.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/Star.svg/">assets/images/ui/Chapters/menu/Star.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/bookmark_blue.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/bookmark_blue.png/">assets/images/ui/Chapters/menu/bookmark_blue.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/bookmark_navy.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/bookmark_navy.png/">assets/images/ui/Chapters/menu/bookmark_navy.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Chapters/menu/bookmark_yellow.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Chapters/menu/bookmark_yellow.png/">assets/images/ui/Chapters/menu/bookmark_yellow.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Credits.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Credits.svg/">assets/images/ui/Credits.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Joy_A_button.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Joy_A_button.svg/">assets/images/ui/Joy_A_button.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Multiplication.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Multiplication.svg/">assets/images/ui/Multiplication.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Options.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Options.svg/">assets/images/ui/Options.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Quit.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Quit.svg/">assets/images/ui/Quit.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Skull.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Skull.svg/">assets/images/ui/Skull.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Strawberry.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Strawberry.png/">assets/images/ui/Strawberry.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Strawberry_blank.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Strawberry_blank.png/">assets/images/ui/Strawberry_blank.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/Tikect.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/Tikect.svg/">assets/images/ui/Tikect.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/TikectCover.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/TikectCover.svg/">assets/images/ui/TikectCover.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/VintagePhotoMask.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/VintagePhotoMask.svg/">assets/images/ui/VintagePhotoMask.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/ui/sellotape.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/ui/sellotape.svg/">assets/images/ui/sellotape.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/world/pin/Pin.svg/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/world/pin/Pin.svg/">assets/images/world/pin/Pin.svg</a>
+          </li>
+        
+          <li data-path="/assets/assets/images/world/pin/running_in_pin.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/world/pin/running_in_pin.png/">assets/images/world/pin/running_in_pin.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/world/Mist.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/world/Mist.png/">assets/world/Mist.png</a>
+          </li>
+        
+          <li data-path="/assets/assets/world/Panorama.png/" data-category="assets">
+            <a class="" href="../../../../assets/assets/world/Panorama.png/">assets/world/Panorama.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/0/Dummy.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/0/Dummy.png/">data/chapters/photos/0/Dummy.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/1/Chapter1_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/1/Chapter1_1.png/">data/chapters/photos/1/Chapter1_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/1/Chapter1_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/1/Chapter1_2.png/">data/chapters/photos/1/Chapter1_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/1/Chapter1_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/1/Chapter1_3.png/">data/chapters/photos/1/Chapter1_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/1/Chapter1_4.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/1/Chapter1_4.png/">data/chapters/photos/1/Chapter1_4.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/2/Chapter2_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/2/Chapter2_1.png/">data/chapters/photos/2/Chapter2_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/2/Chapter2_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/2/Chapter2_2.png/">data/chapters/photos/2/Chapter2_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/2/Chapter2_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/2/Chapter2_3.png/">data/chapters/photos/2/Chapter2_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/3/Chapter3_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/3/Chapter3_1.png/">data/chapters/photos/3/Chapter3_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/3/Chapter3_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/3/Chapter3_2.png/">data/chapters/photos/3/Chapter3_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/3/Chapter3_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/3/Chapter3_3.png/">data/chapters/photos/3/Chapter3_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/4/Chapter4_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/4/Chapter4_1.png/">data/chapters/photos/4/Chapter4_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/4/Chapter4_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/4/Chapter4_2.png/">data/chapters/photos/4/Chapter4_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/4/Chapter4_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/4/Chapter4_3.png/">data/chapters/photos/4/Chapter4_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/5/Chapter5_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/5/Chapter5_1.png/">data/chapters/photos/5/Chapter5_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/5/Chapter5_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/5/Chapter5_2.png/">data/chapters/photos/5/Chapter5_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/5/Chapter5_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/5/Chapter5_3.png/">data/chapters/photos/5/Chapter5_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/6/Chapter6_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/6/Chapter6_1.png/">data/chapters/photos/6/Chapter6_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/6/Chapter6_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/6/Chapter6_2.png/">data/chapters/photos/6/Chapter6_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/6/Chapter6_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/6/Chapter6_3.png/">data/chapters/photos/6/Chapter6_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/7/Chapter7_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/7/Chapter7_1.png/">data/chapters/photos/7/Chapter7_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/7/Chapter7_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/7/Chapter7_2.png/">data/chapters/photos/7/Chapter7_2.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/7/Chapter7_3.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/7/Chapter7_3.png/">data/chapters/photos/7/Chapter7_3.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/8/Chapter8_1.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/8/Chapter8_1.png/">data/chapters/photos/8/Chapter8_1.png</a>
+          </li>
+        
+          <li data-path="/assets/data/chapters/photos/8/Chapter8_2.png/" data-category="assets">
+            <a class="" href="../../../../assets/data/chapters/photos/8/Chapter8_2.png/">data/chapters/photos/8/Chapter8_2.png</a>
+          </li>
+        
+          <li data-path="/assets/icon.svg/" data-category="assets">
+            <a class="" href="../../../../assets/icon.svg/">icon.svg</a>
+          </li>
+        
+      </ul>
+    </details>
+  
+</nav>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const selectorName = {
+    contents: 'aside.contents-menu nav li[data-path]',
+    category: 'aside.contents-menu nav details',
+    search:   'aside.contents-menu nav input[type="search"]',
+  }
+
+  function debounce(fn, delay) {
+    let timer
+    return (...args) => {
+      clearTimeout(timer)
+      timer = setTimeout(() => fn(...args), delay)
+    }
+  }
+
+
+  const contentsMenuList = Array.from(document.querySelectorAll(selectorName.contents))
+  const generateFuseItems = (elements) => {
+      return elements.map(e => {
+        return {
+          path:     e.dataset.path,
+          category: e.dataset.category,
+          target:   e,
+        }   
+      })
+    }
+
+  const newFuse = (elements) => {
+      return new Fuse(generateFuseItems(elements), {
+        keys: ['path'],
+        threshold: 0.3,
+        ignoreLocation: true,
+      })
+    }
+
+  const categoryElements = Array.from(document.querySelectorAll(selectorName.category))
+  const openCategoriesAll = () => categoryElements.map(e => e.open = true)
+
+
+  const hideAll = (elements) => {
+      elements.forEach(l => l.style.display = 'none')
+    }
+
+  const showAll = (elements) => {
+      elements.forEach(l => l.style.display = '')
+    }
+
+  const search = debounce((query) => {
+      openCategoriesAll()
+      if (query) {
+        hideAll(contentsMenuList)
+
+        terms = query.trim().split(/\s+/)
+        results = contentsMenuList
+        for (const term of terms) {
+          results = newFuse(results).search(term).map(i => i.item.target)
+        }
+        showAll(results)
+      }
+      else {
+        showAll(contentsMenuList)
+      }
+    }, 300)
+
+
+  const inputField = document.querySelector(selectorName.search)
+  if (inputField) {
+    inputField.addEventListener('input', (e) => search(e.target.value))
+  }
+
+})
+</script>
+
+      </aside>
+      <article class="content">
+        <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li>
+<a href="#_test_helpers_test_resource_helper_gd">test / helpers / test_resource_helper.gd</a>
+<ul class="sectlevel2">
+<li><a href="#_attached_scenes">Attached Scenes</a></li>
+<li><a href="#_code">Code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_test_helpers_test_resource_helper_gd">test / helpers / test_resource_helper.gd</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_attached_scenes">Attached Scenes</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+No attached scenes.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code">Code</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">GutTest</span>
+
+<span class="k">class</span> <span class="nc">TestResource</span><span class="p">:</span>
+	<span class="k">extends</span> <span class="n">Resource</span>
+	<span class="k">var</span> <span class="n">flag</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">var</span> <span class="n">name</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">test'</span>
+	<span class="k">var</span> <span class="n">items</span> <span class="p">:</span> <span class="kt">Array</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">'</span><span class="s1">2'</span><span class="p">,</span> <span class="kt">null</span><span class="p">]</span>
+	<span class="k">var</span> <span class="n">children</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">ChildResource</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+		<span class="n">ChildResource</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+	<span class="p">]</span>
+	<span class="k">static</span> <span class="k">func</span> <span class="nf">parse_mapping</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">{</span> <span class="s2">'</span><span class="s1">children'</span><span class="p">:</span> <span class="n">ChildResource</span> <span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">ChildResource</span><span class="p">:</span>
+	<span class="k">extends</span> <span class="n">Resource</span>
+	<span class="k">var</span> <span class="n">foo</span> <span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">1.234</span>
+	<span class="k">var</span> <span class="n">bar</span> <span class="o">=</span> <span class="kt">null</span>
+	<span class="k">var</span> <span class="n">children</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">GrandChildResource</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+		<span class="n">GrandChildResource</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+	<span class="p">]</span>
+	<span class="k">static</span> <span class="k">func</span> <span class="nf">parse_mapping</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">{</span> <span class="s2">'</span><span class="s1">children'</span><span class="p">:</span> <span class="n">GrandChildResource</span> <span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">GrandChildResource</span><span class="p">:</span>
+	<span class="k">extends</span> <span class="n">Resource</span>
+	<span class="k">var</span> <span class="n">piyo</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">bar'</span>
+
+
+<span class="k">func</span> <span class="nf">test_init</span><span class="p">():</span>
+	<span class="k">var</span> <span class="n">res</span> <span class="o">=</span> <span class="n">TestResource</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foo</span><span class="p">,</span> <span class="mf">1.234</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">test_properties_of</span><span class="p">():</span>
+	<span class="k">var</span> <span class="n">res</span> <span class="o">=</span> <span class="n">TestResource</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">ResourceHelper</span><span class="o">.</span><span class="n">properties_of</span><span class="p">(</span><span class="n">res</span><span class="p">),</span>
+		<span class="p">[</span><span class="s2">'</span><span class="s1">flag'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">name'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">items'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">children'</span><span class="p">])</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">ResourceHelper</span><span class="o">.</span><span class="n">properties_of</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+		<span class="p">[</span><span class="s2">'</span><span class="s1">foo'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">bar'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">children'</span><span class="p">])</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">ResourceHelper</span><span class="o">.</span><span class="n">properties_of</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+		<span class="p">[</span><span class="s2">'</span><span class="s1">piyo'</span><span class="p">])</span>
+
+
+<span class="k">func</span> <span class="nf">test_json</span><span class="p">():</span>
+	<span class="k">var</span> <span class="n">res</span>  <span class="o">=</span> <span class="n">TestResource</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+	<span class="k">var</span> <span class="n">dict</span> <span class="o">=</span> <span class="n">ResourceHelper</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+	<span class="k">var</span> <span class="n">json</span> <span class="o">=</span> <span class="n">ResourceHelper</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+	<span class="k">var</span> <span class="n">parsed</span> <span class="o">=</span> <span class="n">JSON</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dict</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dict</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">parsed</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foo</span><span class="p">,</span> <span class="n">dict</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foo</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foo</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foo</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span>
+		<span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">piyo</span><span class="p">,</span>
+		<span class="n">dict</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">piyo</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span>
+		<span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">piyo</span><span class="p">,</span>
+		<span class="n">parsed</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">piyo</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">dict</span><span class="o">.</span><span class="n">items</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">dict</span><span class="o">.</span><span class="n">children</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">dict</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">dict</span><span class="p">,</span> <span class="n">parsed</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">test_parse</span><span class="p">():</span>
+	<span class="k">var</span> <span class="n">res</span>  <span class="o">=</span> <span class="n">TestResource</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+	<span class="k">var</span> <span class="n">json</span> <span class="o">=</span> <span class="n">ResourceHelper</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+	<span class="k">var</span> <span class="n">parsed</span> <span class="o">=</span> <span class="n">ResourceHelper</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">TestResource</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ResourceHelper</span><span class="o">.</span><span class="n">properties_of</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">'</span><span class="s1">children'</span><span class="p">:</span>
+			<span class="k">var</span> <span class="n">child</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">assert_eq</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">foo</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foo</span><span class="p">)</span>
+			<span class="k">var</span> <span class="n">grand_child</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">assert_eq</span><span class="p">(</span><span class="n">grand_child</span><span class="o">.</span><span class="n">piyo</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">piyo</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">assert_eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">parsed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+        <footer>
+  <div class="grid">
+    
+    
+      <a class="outline" role="button" href="../test_array_helper.gd/"><small>&lt;&lt; Previous</small><br>test/helpers/test_array_helper.gd</a>
+    
+
+    
+      <a class="outline" role="button" href="../../player/ghost_effect/test_ghost_effect.gd/"><small>Next &gt;&gt;</small><br>test/player/ghost_effect/test_ghost_effect.gd</a>
+    
+  </div>
+</footer>
+
+      </article>
+    </main>
+    <footer>
+  <nav>
+    <ul>
+      <li>This site was built by <a href="https://github.com/tkmfujise/gd-doc">gd-doc</a> using <a href="https://nanoc.app/">Nanoc</a>.</li>
+    </ul>
+  </nav>
+</footer>
+
+  </body>
+</html>

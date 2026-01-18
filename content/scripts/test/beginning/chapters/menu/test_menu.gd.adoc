@@ -1,0 +1,38 @@
+---
+title: res://test/beginning/chapters/menu/test_menu.gd
+---
+:toc:
+
+== test / beginning / chapters / menu / test_menu.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var MenuScene = load("res://src/beginning/chapters/menu/menu.tscn")
+var scene = null
+var chapter_resource = ChapterResource.new()
+
+
+func before_each():
+	scene = MenuScene.instantiate()
+	scene.chapter_resource = chapter_resource
+	add_child(scene)
+
+
+func test_ready():
+	assert_not_null(scene)
+
+
+func test_clear_photos():
+	var resource = StageResource.new()
+	scene.add_photo(resource, 0)
+	assert_ne(scene.get_node('%PhotoInstances').get_child_count(), 0)
+	scene.clear_photos()
+	assert_true(scene.get_node('%PhotoInstances').get_child(0).is_queued_for_deletion())
+
+```

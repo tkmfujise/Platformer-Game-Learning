@@ -19,5 +19,6 @@ title: res://themes/default_theme.tres
 |_resource_ |*Button/styles/focus* |`SubResource("StyleBoxEmpty_fsdh0")`
 |_resource_ |*Label/constants/outline_size* |`8`
 |_resource_ |*Label/font_sizes/font_size* |`48`
+|_resource_ |*RichTextLabel/font_sizes/normal_font_size* |`64`
 |===
 

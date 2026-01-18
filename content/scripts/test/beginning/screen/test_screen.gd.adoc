@@ -1,0 +1,52 @@
+---
+title: res://test/beginning/screen/test_screen.gd
+---
+:toc:
+
+== test / beginning / screen / test_screen.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var BeginningScreenScene = load("res://src/beginning/screen/screen.tscn")
+var scene = null
+
+
+func before_each():
+	scene = BeginningScreenScene.instantiate()
+	add_child(scene)
+
+
+func animation_signal() -> Signal:
+	return scene.get_node('%AnimationTree').animation_started
+
+
+func test_ready():
+	assert_not_null(scene)
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.get_node('%Author').visible, true)
+	assert_eq(scene.get_node('%Title').visible, false)
+	assert_eq(scene.current_animation, 'opening')
+
+
+func test_transit_show_title():
+	scene.transit('show_title')
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.get_node('%Author').visible, true)
+	assert_eq(scene.get_node('%Title').visible, true)
+	assert_eq(scene.current_animation, 'show_title')
+
+
+func test_traisit_hide_title():
+	scene.transit('hide_title')
+	await wait_for_signal(animation_signal(), 1)
+	assert_eq(scene.get_node('%Author').visible, false)
+	assert_eq(scene.get_node('%Title').visible, true)
+	assert_eq(scene.current_animation, 'hide_title')
+
+```

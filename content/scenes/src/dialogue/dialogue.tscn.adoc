@@ -1,0 +1,338 @@
+---
+title: src/dialogue/dialogue.tscn
+---
+:toc:
+
+== src / dialogue / dialogue.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
+  * controller
+---
+  + _ready()
+  + continue_dialogue()
+  + update_content()
+  + _input()
+  + _handle()
+}
+class N1 as "Background" <<(C,lightgreen) ColorRect>> {
+}
+class N2 as "LeftSpeaker" <<(C,lightgreen) CenterContainer>> {
+}
+class N3 as "Speaker" <<(S,lightskyblue) Sprite2D>> {
+}
+class N4 as "RightSpeaker" <<(C,lightgreen) CenterContainer>> {
+}
+class N5 as "Speaker" <<(S,lightskyblue) Sprite2D>> {
+}
+class N6 as "Content" <<(R,lightgreen) RichTextLabel>> {
+}
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N2
+R --o N4
+R --o N6
+R --o N7
+N2 --o N3
+N4 --o N5
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/faces/actors/OldWoman_face.png]
+image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	controller.channel.connect(_handle)
+```
+==== _input
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not event is InputEventKey: return
+	if event.is_action_pressed('ui_accept'):
+		%AnimationPlayer.play("hide")
+		continue_dialogue()
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-other]#Dialogue# [.node-type.type-other]#CanvasLayer#
+** [.node-name.type-control]#Background# [.node-type.type-control]#ColorRect#
+** [.node-name.type-control]#LeftSpeaker# [.node-type.type-control]#CenterContainer#
+*** [.node-name.type-2d]#Speaker# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
+** [.node-name.type-control]#RightSpeaker# [.node-type.type-control]#CenterContainer#
+*** [.node-name.type-2d]#Speaker# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
+** [.node-name.type-control]#Content# [.node-type.type-control]#RichTextLabel#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Animations
+==== show
+
+[plantuml]
+....
+control "Root" as R
+participant "$LeftSpeaker" as T0 #90EE90
+participant "$RightSpeaker" as T1 #90EE90
+participant "$Background" as T2 #90EE90
+participant "$Content" as T3 #90EE90
+participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
+participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = false
+R  ->  T2 : size\n = Vector2(1870, 0)
+R  ->o  T3 : visible\n = false
+== Time: 0.25 ==
+R  ->o  T0 : visible\n = true
+R  ->o  T1 : visible\n = true
+R  ->  T4 : scale\n = Vector2(1e-05, 1e-05)
+R  ->  T5 : scale\n = Vector2(0, 0)
+== Time: 1.0 ==
+R  ->  T2 : size\n = Vector2(1870, 311)
+R  ->o  T3 : visible\n = true
+R  ->  T4 : scale\n = Vector2(1, 1)
+R  ->  T5 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+==== Animation_4gkn1
+
+[plantuml]
+....
+control "Root" as R
+participant "$LeftSpeaker" as T0 #90EE90
+participant "$RightSpeaker" as T1 #90EE90
+participant "$Background" as T2 #90EE90
+participant "$Content" as T3 #90EE90
+participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
+participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = true
+R  ->o  T1 : visible\n = true
+R  ->  T2 : size\n = Vector2(1870, 311)
+R  ->o  T3 : visible\n = true
+R  ->  T4 : scale\n = Vector2(1, 1)
+R  ->  T5 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+==== hide
+
+[plantuml]
+....
+control "Root" as R
+participant "$LeftSpeaker" as T0 #90EE90
+participant "$RightSpeaker" as T1 #90EE90
+participant "$Background" as T2 #90EE90
+participant "$Content" as T3 #90EE90
+participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
+participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = true
+R  ->o  T1 : visible\n = true
+R  ->  T2 : size\n = Vector2(1870, 311)
+R  ->o  T3 : visible\n = false
+R  ->  T4 : scale\n = Vector2(1, 1)
+R  ->  T5 : scale\n = Vector2(1, 1)
+== Time: 0.1 ==
+R  ->o  T1 : visible\n = false
+== Time: 0.25 ==
+R  ->o  T0 : visible\n = false
+R  ->  T4 : scale\n = Vector2(1e-05, 1e-05)
+R  ->  T5 : scale\n = Vector2(0, 0)
+== Time: 1.0 ==
+R  ->  T2 : size\n = Vector2(1870, 0)
+
+
+....
+---
+
+==== ready (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$LeftSpeaker" as T0 #90EE90
+participant "$RightSpeaker" as T1 #90EE90
+participant "$Background" as T2 #90EE90
+participant "$Content" as T3 #90EE90
+participant "$LeftSpeaker\n/Speaker" as T4 #87CEFA
+participant "$RightSpeaker\n/Speaker" as T5 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = false
+R  ->  T2 : size\n = Vector2(1870, 0)
+R  ->o  T3 : visible\n = false
+R  ->  T4 : scale\n = Vector2(1, 1)
+R  ->  T5 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-other]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/dialogue/dialogue.gd[res://src/dialogue/dialogue.gd]
+|*controller* a|`SubResource("ReDScribe_02nw3")`
+|===
+[.node-property.node-control]
+.#$Background# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_left* a|`25.0`
+|*offset_top* a|`25.0`
+|*offset_right* a|`1895.0`
+|*offset_bottom* a|`336.0`
+|*color* a|`Color(0.16482493, 0.11166973, 0.19798216, 1)`
+|===
+[.node-property.node-control]
+.#$LeftSpeaker# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_left* a|`66.0`
+|*offset_top* a|`51.0`
+|*offset_right* a|`329.0`
+|*offset_bottom* a|`234.0`
+|===
+[.node-property.node-control]
+.#$RightSpeaker# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*anchors_preset* a|`1`
+|*anchor_left* a|`1.0`
+|*anchor_right* a|`1.0`
+|*offset_left* a|`-263.0`
+|*offset_bottom* a|`183.0`
+|*grow_horizontal* a|`0`
+|*size_flags_horizontal* a|`8`
+|===
+[.node-property.node-2d]
+.#$RightSpeaker/Speaker# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-60, 53)`
+|*texture* a|[link=/assets/assets/images/faces/actors/OldWoman_face.png]
+[.asset-image]
+.res://assets/images/faces/actors/OldWoman_face.png
+image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
+
+|===
+[.node-property.node-control]
+.#$Content# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*anchors_preset* a|`5`
+|*anchor_left* a|`0.5`
+|*anchor_right* a|`0.5`
+|*offset_left* a|`-580.5`
+|*offset_top* a|`48.0`
+|*offset_right* a|`580.5`
+|*offset_bottom* a|`310.0`
+|*grow_horizontal* a|`2`
+|*size_flags_horizontal* a|`4`
+|*size_flags_vertical* a|`4`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
+|*text* a|`This is test.`
+|*vertical_alignment* a|`1`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_5m8cj")
+}`
+|*autoplay* a|`ready`
+|===
+
+
+=== link:/scripts/src/dialogue/dialogue.gd[dialogue.gd]
+
+```gdscript
+extends CanvasLayer
+
+@export var controller : ReDScribe
+
+
+func _ready() -> void:
+	controller.channel.connect(_handle)
+
+
+func continue_dialogue() -> void:
+	controller.perform('continue')
+
+
+func update_content(txt: String) -> void:
+	%AnimationPlayer.play("show")
+	%Content.text = txt
+
+
+func _input(event: InputEvent) -> void:
+	if not event is InputEventKey: return
+	if event.is_action_pressed('ui_accept'):
+		%AnimationPlayer.play("hide")
+		continue_dialogue()
+
+
+func _handle(key: StringName, payload: Variant) -> void:
+	match key:
+		&'says':
+			var txt = payload['content']
+			if txt is Array: txt = "\n".join(txt)
+			update_content(txt)
+	print_debug("[%s]: %s" % [key, payload])
+
+```
+
+

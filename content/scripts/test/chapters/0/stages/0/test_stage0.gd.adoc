@@ -1,0 +1,31 @@
+---
+title: res://test/chapters/0/stages/0/test_stage0.gd
+---
+:toc:
+
+== test / chapters / 0 / stages / 0 / test_stage0.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var Stage0 = load("res://src/chapters/0/stages/0/stage_0.tscn")
+var scene = null
+
+
+func before_each():
+	scene = Stage0.instantiate()
+	add_child(scene)
+
+
+func test_ready():
+	assert_not_null(scene)
+	assert_eq(scene.get_node('%OpeningCurtain').visible, true)
+	assert_eq(scene.get_node('%RestartCurtain').visible, true)
+	assert_eq(scene.get_node('%Player').visible, true)
+
+```

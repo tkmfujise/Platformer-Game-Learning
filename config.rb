@@ -12,9 +12,9 @@ GdDoc.configure do |config|
   # config.ignoring_paths = ['addons', 'test', 'tmp']
   config.ignoring_paths = [
     'assets/images/beginning',
-    'assets/images/faces',
+    # 'assets/images/faces',
     'addons',
-    'test',
+    # 'test',
     'tmp',
   ]
 end

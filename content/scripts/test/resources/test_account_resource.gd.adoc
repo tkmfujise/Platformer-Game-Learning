@@ -1,0 +1,126 @@
+---
+title: res://test/resources/test_account_resource.gd
+---
+:toc:
+
+== test / resources / test_account_resource.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var resource = null
+var chapter_resource = null
+var stage_resource = null
+
+func before_each():
+	resource         = AccountResource.new()
+	resource.number  = 0
+	chapter_resource = AccountChapterResource.new()
+	stage_resource   = AccountStageResource.new()
+	chapter_resource.stages.push_back(stage_resource)
+	resource.chapters.push_back(chapter_resource)
+
+
+func after_each():
+	if resource.number < 1: resource.delete()
+
+
+func test_find_or_initialize():
+	resource = AccountResource.find_or_initialize(0)
+	assert_eq(resource.number, 0)
+	assert_eq(resource.chapters, [])
+
+
+func test_save():
+	resource         = AccountResource.find_or_initialize(0)
+	chapter_resource = AccountChapterResource.new()
+	stage_resource   = AccountStageResource.new()
+	chapter_resource.stages.push_back(stage_resource)
+	resource.chapters.push_back(chapter_resource)
+	resource.save()
+	resource = AccountResource.find(0)
+	assert_eq(resource.number, 0)
+	assert_eq(resource.chapters[0].number, chapter_resource.number)
+	assert_eq(resource.chapters[0].stages[0].number, stage_resource.number)
+
+
+func test_total_play_time_dict_if_zero():
+	stage_resource.total_play_msec = 0
+	var dict = resource.total_play_time_dict()
+	assert_eq(dict['hour'],   0)
+	assert_eq(dict['minute'], 0)
+	assert_eq(dict['second'], 0)
+	assert_eq(dict['msec'],   0)
+
+
+func test_total_play_time_dict_if_1sec():
+	stage_resource.total_play_msec = 1234
+	var dict = resource.total_play_time_dict()
+	assert_eq(dict['hour'],   0)
+	assert_eq(dict['minute'], 0)
+	assert_eq(dict['second'], 1)
+	assert_eq(dict['msec'],   234)
+
+
+func test_total_play_time_dict_if_1min():
+	stage_resource.total_play_msec = 60_123
+	var dict = resource.total_play_time_dict()
+	assert_eq(dict['hour'],   0)
+	assert_eq(dict['minute'], 1)
+	assert_eq(dict['second'], 0)
+	assert_eq(dict['msec'],   123)
+
+
+func test_total_play_time_dict_if_1hour():
+	stage_resource.total_play_msec = 3600_123
+	var dict = resource.total_play_time_dict()
+	assert_eq(dict['hour'],   1)
+	assert_eq(dict['minute'], 0)
+	assert_eq(dict['second'], 0)
+	assert_eq(dict['msec'],   123)
+
+
+func test_total_play_time_dict_if_max():
+	stage_resource.total_play_msec = 9_223_372_036_854_775_807
+	var dict = resource.total_play_time_dict()
+	assert_eq(dict['hour'],   2_562_047_788_015)
+	assert_eq(dict['minute'], 12)
+	assert_eq(dict['second'], 55)
+	assert_eq(dict['msec'],   807)
+
+
+func test_latest_chapter():
+	var chapter1 = AccountChapterResource.new()
+	var chapter2 = AccountChapterResource.new()
+	var chapter3 = AccountChapterResource.new()
+	chapter1.number = 1; chapter2.number = 2; chapter3.number = 3;
+	resource.chapters = [chapter1, chapter3, chapter2] as Array[AccountChapterResource]
+	assert_eq(resource.chapters, [chapter1, chapter3, chapter2])
+	assert_eq(resource.latest_chapter(), chapter3)
+	resource.set('chapters', [] as Array[AccountChapterResource])
+	assert_eq(resource.latest_chapter(), null)
+
+
+func test_obtained_strawberry_count():
+	assert_eq(resource.obtained_strawberry_count(), 0)
+	stage_resource.obtained_strawberry_count = 1
+	assert_eq(resource.obtained_strawberry_count(), 1)
+
+
+func test_total_failure_count():
+	assert_eq(resource.total_failure_count(), 0)
+	stage_resource.total_failure_count = 1
+	assert_eq(resource.total_failure_count(), 1)
+
+
+func test_obtained_blue_hearts():
+	assert_eq(resource.obtained_blue_hearts(), [false, false, false, false, false, false, false, false])
+	chapter_resource.obtained_blue_heart = true
+	assert_eq(resource.obtained_blue_hearts(), [true, false, false, false, false, false, false, false])
+
+```

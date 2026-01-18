@@ -1,0 +1,40 @@
+---
+title: res://test/stages/frame/test_camera_frame.gd
+---
+:toc:
+
+== test / stages / frame / test_camera_frame.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+const Scene = preload("res://src/stages/frame/camera_frame.tscn")
+var scene = null
+
+
+func before_each():
+	scene = Scene.instantiate()
+	add_child(scene)
+
+
+func test_corner():
+	scene.global_position = Vector2(0, 0)
+	var window_rect = Vector2(1920, 1080)
+	assert_eq(scene.corner(), {
+		"left":   -(window_rect/2).x,
+		"right":  (window_rect/2).x,
+		"top":    -(window_rect/2).y,
+		"bottom": (window_rect/2).y, })
+	scene.global_position = Vector2(1920, 1080) / 2
+	assert_eq(scene.corner(), {
+		"left":   0.0,
+		"right":  1920.0,
+		"top":    0.0,
+		"bottom": 1080.0, })
+
+```

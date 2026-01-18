@@ -1,0 +1,48 @@
+---
+title: res://src/dialogue/dialogue.gd
+---
+:toc:
+
+== src / dialogue / dialogue.gd
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]
+
+
+
+=== Code
+```gdscript
+extends CanvasLayer
+
+@export var controller : ReDScribe
+
+
+func _ready() -> void:
+	controller.channel.connect(_handle)
+
+
+func continue_dialogue() -> void:
+	controller.perform('continue')
+
+
+func update_content(txt: String) -> void:
+	%AnimationPlayer.play("show")
+	%Content.text = txt
+
+
+func _input(event: InputEvent) -> void:
+	if not event is InputEventKey: return
+	if event.is_action_pressed('ui_accept'):
+		%AnimationPlayer.play("hide")
+		continue_dialogue()
+
+
+func _handle(key: StringName, payload: Variant) -> void:
+	match key:
+		&'says':
+			var txt = payload['content']
+			if txt is Array: txt = "\n".join(txt)
+			update_content(txt)
+	print_debug("[%s]: %s" % [key, payload])
+
+```
