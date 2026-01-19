@@ -84,131 +84,131 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 [.file-tree.grid]
-[cols="5,1,1,1,1,1" options="header"]
+[cols="0,6,1,1,1,1,1" options="header"]
 |===
-|File Tree |🎬 |📝 |📊 |💠 |💬
-|.  |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| ├ assets |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ guide |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │ ├ faces |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
-| │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
-| │  │  │ └ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# |[.zero]#0# 
-| │  │  │ ├ Chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
-| │  │  │  │ └ menu |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
-| │  │ ├ world |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ pin |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
-| │ └ world |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
-| ├ autoloads |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ bgm |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ current |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ keyboard_handler |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ └ preference |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| ├ data |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ chapters |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ photos |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-| │  │  │ ├ 1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
-| │  │  │ ├ 2 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
-| │  │  │ ├ 3 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
-| │  │  │ ├ 4 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
-| │  │  │ ├ 5 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
-| │  │  │ ├ 6 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
-| │  │  │ ├ 7 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
-| │  │  │ └ 8 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
-| │ ├ test |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ account |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# |[.zero]#0# 
-| ├ debug |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ └ curtain |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| ├ dev |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| ├ resources |[.zero]#0# |[.more]#6# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| ├ src |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ account |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ old_woman |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ accounts |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ banner |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ chapter |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ menu |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │  │ ├ bookmark |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │  │ └ photo |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ menu |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ screen |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │  │ └ 0 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ curtain |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ closing |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ opening |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ dialogue |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.one]#1# 
-| │  │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ 0 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ scenarios |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
-| │  │ └ speaker |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ helpers |[.zero]#0# |[.more]#4# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ mixins |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ first_steps_bgm_playable |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ player |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ camera |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ ghost_effect |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ 0 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ forest |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ frame |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ weather |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ button |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ world |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ mist |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ pin |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| ├ test |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ account |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ autoloads |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ preference |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ accounts |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ chapters |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ banner |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ chapter |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ menu |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │  │ └ photo |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ menu |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ screen |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │  │  │ └ 0 |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ helpers |[.zero]#0# |[.more]#2# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ player |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ ghost_effect |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ resources |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ frame |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ button |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │ ├ world |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| │  │ └ pin |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-| └ themes |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
+| |File Tree |🎬 |📝 |📊 |💠 |💬
+|[.path.Lg==]#_# |.  |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRz]#_# | ├ assets |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXNzZXRzL2d1aWRl]#_# | │ ├ guide |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcw==]#_# | │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9hY3RvcnM=]#_# | │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9hY3RvcnMvb2xkX3dvbWFu]#_# | │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9mYWNlcw==]#_# | │  │ ├ faces |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9mYWNlcy9hY3RvcnM=]#_# | │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9wYXJ0aWNsZXM=]#_# | │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9wbGF5ZXI=]#_# | │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9wbGF5ZXIvZWZmZWN0cw==]#_# | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9zdGFnZXM=]#_# | │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ └ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy91aQ==]#_# | │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy91aS9DaGFwdGVycw==]#_# | │  │  │ ├ Chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy91aS9DaGFwdGVycy9tZW51]#_# | │  │  │  │ └ menu |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy93b3JsZA==]#_# | │  │ ├ world |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXNzZXRzL2ltYWdlcy93b3JsZC9waW4=]#_# | │  │  │ └ pin |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
+|[.path.YXNzZXRzL3dvcmxk]#_# | │ └ world |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
+|[.path.YXV0b2xvYWRz]#_# | ├ autoloads |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXV0b2xvYWRzL2JnbQ==]#_# | │ ├ bgm |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXV0b2xvYWRzL2N1cnJlbnQ=]#_# | │ ├ current |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXV0b2xvYWRzL2tleWJvYXJkX2hhbmRsZXI=]#_# | │ ├ keyboard_handler |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.YXV0b2xvYWRzL3ByZWZlcmVuY2U=]#_# | │ └ preference |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGF0YQ==]#_# | ├ data |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycw==]#_# | │ ├ chapters |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3M=]#_# | │  │ ├ photos |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvMA==]#_# | │  │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvMQ==]#_# | │  │  │ ├ 1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvMg==]#_# | │  │  │ ├ 2 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvMw==]#_# | │  │  │ ├ 3 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvNA==]#_# | │  │  │ ├ 4 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvNQ==]#_# | │  │  │ ├ 5 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvNg==]#_# | │  │  │ ├ 6 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvNw==]#_# | │  │  │ ├ 7 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.ZGF0YS9jaGFwdGVycy9waG90b3MvOA==]#_# | │  │  │ └ 8 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
+|[.path.ZGF0YS90ZXN0]#_# | │ ├ test |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGF0YS90ZXN0L2FjY291bnQ=]#_# | │  │ └ account |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGVidWc=]#_# | ├ debug |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGVidWcvY2hhcHRlcnM=]#_# | │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGVidWcvY3VydGFpbg==]#_# | │ └ curtain |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.ZGV2]#_# | ├ dev |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.cmVzb3VyY2Vz]#_# | ├ resources |[.zero]#0# |[.more]#6# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3Jj]#_# | ├ src |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2FjY291bnQ=]#_# | │ ├ account |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2FjdG9ycw==]#_# | │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2FjdG9ycy9vbGRfd29tYW4=]#_# | │  │ └ old_woman |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZw==]#_# | │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9hY2NvdW50cw==]#_# | │  │ ├ accounts |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9jaGFwdGVycw==]#_# | │  │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9jaGFwdGVycy9iYW5uZXI=]#_# | │  │  │ ├ banner |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9jaGFwdGVycy9jaGFwdGVy]#_# | │  │  │ ├ chapter |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9jaGFwdGVycy9tZW51]#_# | │  │  │ ├ menu |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9jaGFwdGVycy9tZW51L2Jvb2ttYXJr]#_# | │  │  │  │ ├ bookmark |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9jaGFwdGVycy9tZW51L3Bob3Rv]#_# | │  │  │  │ └ photo |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9tZW51]#_# | │  │ ├ menu |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9zY3JlZW4=]#_# | │  │ ├ screen |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2JlZ2lubmluZy9zY3JlZW4vc25vdw==]#_# | │  │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2NoYXB0ZXJz]#_# | │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2NoYXB0ZXJzLzA=]#_# | │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2NoYXB0ZXJzLzAvc3RhZ2Vz]#_# | │  │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2NoYXB0ZXJzLzAvc3RhZ2VzLzA=]#_# | │  │  │  │ └ 0 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2N1cnRhaW4=]#_# | │ ├ curtain |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2N1cnRhaW4vY2xvc2luZw==]#_# | │  │ ├ closing |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2N1cnRhaW4vb3BlbmluZw==]#_# | │  │ └ opening |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2RpYWxvZ3Vl]#_# | │ ├ dialogue |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+|[.path.c3JjL2RpYWxvZ3VlL2NoYXB0ZXJz]#_# | │  │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzA=]#_# | │  │  │ └ 0 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2RpYWxvZ3VlL3NjZW5hcmlvcw==]#_# | │  │ ├ scenarios |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2RpYWxvZ3VlL3NjZW5hcmlvcy9jaGFwdGVyMA==]#_# | │  │  │ └ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+|[.path.c3JjL2RpYWxvZ3VlL3NwZWFrZXI=]#_# | │  │ └ speaker |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL2hlbHBlcnM=]#_# | │ ├ helpers |[.zero]#0# |[.more]#4# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL21peGlucw==]#_# | │ ├ mixins |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL21peGlucy9maXJzdF9zdGVwc19iZ21fcGxheWFibGU=]#_# | │  │ └ first_steps_bgm_playable |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3BsYXllcg==]#_# | │ ├ player |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3BsYXllci9jYW1lcmE=]#_# | │  │ ├ camera |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3BsYXllci9naG9zdF9lZmZlY3Q=]#_# | │  │ └ ghost_effect |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcw==]#_# | │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy8w]#_# | │  │ ├ 0 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy9iYWNrZ3JvdW5k]#_# | │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy9iYWNrZ3JvdW5kL2ZvcmVzdA==]#_# | │  │  │ └ forest |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy9mcmFtZQ==]#_# | │  │ ├ frame |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy9naW1taWNrcw==]#_# | │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy9naW1taWNrcy9mYWxsaW5nX2ljZV9ibG9jaw==]#_# | │  │  │ └ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy93ZWF0aGVy]#_# | │  │ ├ weather |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3N0YWdlcy93ZWF0aGVyL3Nub3c=]#_# | │  │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3Vp]#_# | │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3VpL2J1dHRvbg==]#_# | │  │ └ button |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3dvcmxk]#_# | │ ├ world |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3dvcmxkL21pc3Q=]#_# | │  │ ├ mist |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3dvcmxkL3Bpbg==]#_# | │  │ ├ pin |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.c3JjL3dvcmxkL3Nub3c=]#_# | │  │ └ snow |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdA==]#_# | ├ test |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9hY2NvdW50]#_# | │ ├ account |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9hdXRvbG9hZHM=]#_# | │ ├ autoloads |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9hdXRvbG9hZHMvcHJlZmVyZW5jZQ==]#_# | │  │ └ preference |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmc=]#_# | │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvYWNjb3VudHM=]#_# | │  │ ├ accounts |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvY2hhcHRlcnM=]#_# | │  │ ├ chapters |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvY2hhcHRlcnMvYmFubmVy]#_# | │  │  │ ├ banner |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvY2hhcHRlcnMvY2hhcHRlcg==]#_# | │  │  │ ├ chapter |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvY2hhcHRlcnMvbWVudQ==]#_# | │  │  │ ├ menu |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvY2hhcHRlcnMvbWVudS9waG90bw==]#_# | │  │  │  │ └ photo |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvbWVudQ==]#_# | │  │ ├ menu |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9iZWdpbm5pbmcvc2NyZWVu]#_# | │  │ └ screen |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9jaGFwdGVycw==]#_# | │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9jaGFwdGVycy8w]#_# | │  │ ├ 0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9jaGFwdGVycy8wL3N0YWdlcw==]#_# | │  │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9jaGFwdGVycy8wL3N0YWdlcy8w]#_# | │  │  │  │ └ 0 |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9oZWxwZXJz]#_# | │ ├ helpers |[.zero]#0# |[.more]#2# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9wbGF5ZXI=]#_# | │ ├ player |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9wbGF5ZXIvZ2hvc3RfZWZmZWN0]#_# | │  │ └ ghost_effect |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9yZXNvdXJjZXM=]#_# | │ ├ resources |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9zdGFnZXM=]#_# | │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC9zdGFnZXMvZnJhbWU=]#_# | │  │ └ frame |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC91aQ==]#_# | │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC91aS9idXR0b24=]#_# | │  │ └ button |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC93b3JsZA==]#_# | │ ├ world |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGVzdC93b3JsZC9waW4=]#_# | │  │ └ pin |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.dGhlbWVz]#_# | └ themes |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# |[.zero]#0# 
 
 |===
 

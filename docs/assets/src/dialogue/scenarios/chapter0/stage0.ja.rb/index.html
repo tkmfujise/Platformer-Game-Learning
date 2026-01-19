@@ -872,6 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return new Fuse(generateFuseItems(elements), {
         keys: ['path'],
         threshold: 0.3,
+        distance: 0,
         ignoreLocation: true,
       })
     }
@@ -923,7 +924,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="#_src_dialogue_scenarios_chapter0_stage0_ja_rb">src / dialogue / scenarios / chapter0 / stage0.ja.rb</a>
 <ul class="sectlevel2">
 <li><a href="#_attached_scenes">Attached Scenes</a></li>
-<li><a href="#_code">Code</a></li>
+<li><a href="#_content">Content</a></li>
 </ul>
 </li>
 </ul>
@@ -947,7 +948,7 @@ No attached scenes.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_code">Code</h3>
+<h3 id="_content">Content</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="rb"><span class="nb">require</span> <span class="s1">'src/dialogue/helper'</span>

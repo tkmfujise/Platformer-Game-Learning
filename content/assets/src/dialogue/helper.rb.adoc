@@ -9,7 +9,7 @@ title: src/dialogue/helper.rb
 NOTE: No attached scenes.
 
 
-=== Code
+=== Content
 ```rb
 # = Redirects method calls to Xxx.current
 #

@@ -9,7 +9,7 @@ title: src/dialogue/scenarios/chapter0/stage0.ja.rb
 NOTE: No attached scenes.
 
 
-=== Code
+=== Content
 ```rb
 require 'src/dialogue/helper'
 
