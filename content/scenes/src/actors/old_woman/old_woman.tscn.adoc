@@ -30,7 +30,7 @@ image::/assets/raw/assets/images/actors/old_woman/OldWoman.png[200, 100]
 
 
 === Instantiators
-* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
 
 
 === Scene Tree

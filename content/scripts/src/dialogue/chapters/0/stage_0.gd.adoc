@@ -1,0 +1,21 @@
+---
+title: res://src/dialogue/chapters/0/stage_0.gd
+---
+:toc:
+
+== src / dialogue / chapters / 0 / stage_0.gd
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+
+func _on_event_area_2d_area_entered(area: Area2D) -> void:
+	%Dialogue.start()
+
+```

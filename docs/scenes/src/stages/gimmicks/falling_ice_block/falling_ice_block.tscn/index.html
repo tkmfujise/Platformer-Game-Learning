@@ -307,6 +307,10 @@
             <a class="" href="../../../../../../scripts/src/curtain/opening/opening.gd/">src/curtain/opening/opening.gd</a>
           </li>
         
+          <li data-path="/scripts/src/dialogue/chapters/0/stage_0.gd/" data-category="scripts">
+            <a class="" href="../../../../../../scripts/src/dialogue/chapters/0/stage_0.gd/">src/dialogue/chapters/0/stage_0.gd</a>
+          </li>
+        
           <li data-path="/scripts/src/dialogue/dialogue.gd/" data-category="scripts">
             <a class="" href="../../../../../../scripts/src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
           </li>
@@ -970,7 +974,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">Player</span><span class="o">.</span><span class="n">is_failed</span><span class="p">:</span> <span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">Player</span><span class="o">.</span><span class="n">playable</span><span class="p">:</span> <span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
 </div>
 </div>
 </div>
@@ -1239,7 +1243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">Player</span><span class="o">.</span><span class="n">is_failed</span><span class="p">:</span> <span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">Player</span><span class="o">.</span><span class="n">playable</span><span class="p">:</span> <span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
 
 
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

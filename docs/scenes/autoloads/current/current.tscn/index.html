@@ -307,6 +307,10 @@
             <a class="" href="../../../../scripts/src/curtain/opening/opening.gd/">src/curtain/opening/opening.gd</a>
           </li>
         
+          <li data-path="/scripts/src/dialogue/chapters/0/stage_0.gd/" data-category="scripts">
+            <a class="" href="../../../../scripts/src/dialogue/chapters/0/stage_0.gd/">src/dialogue/chapters/0/stage_0.gd</a>
+          </li>
+        
           <li data-path="/scripts/src/dialogue/dialogue.gd/" data-category="scripts">
             <a class="" href="../../../../scripts/src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
           </li>
@@ -940,7 +944,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNotybEOgjAURuG9T_GLCyhdnJGFncHVGHJpL9DQtEl7Oxjju2uM2_lyjKeccQNlVENJiYNU6Lp6bC2lfU30bDBGy32PlwJOIGNiCfLrhZxnq7TWX57hI9np_-tGvdXB8uICY6qpnRsQOn0_zr5wK5sze-Ccr5eHxqw8LwKJSG7dBNYlNuJiUB8dcjF2" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNotyrEOgjAURuG9T_GLCyhdnNHFncHVGHLbXqChaU17GYjx3TXG7eTLsYFKwQ1UUF3XnDlKha6r-9ZRXqZMW4M-Ob5c8FLAAWRtWqP8-hloIxNYaa2_cERI5Ib_UTfqrXaORx8ZQ02taUDo9H1vwsqtzN4ukUs5nx4aRgUeBZKQ_TQLnM9sxaeoPpr5Mls=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1016,7 +1020,9 @@ No signal connections.
 <span class="c1">#class_name Current</span>
 
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">account</span> <span class="p">:</span> <span class="n">AccountResource</span>
-<span class="k">var</span> <span class="n">failed</span> <span class="p">:</span><span class="o">=</span> <span class="bp">false</span>
+
+<span class="k">var</span> <span class="n">playable</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+
 
 <span class="k">func</span> <span class="nf">load_account</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">account</span> <span class="o">=</span> <span class="n">AccountResource</span><span class="o">.</span><span class="n">find_or_initialize</span><span class="p">(</span><span class="n">number</span><span class="p">)</span></code></pre>

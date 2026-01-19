@@ -307,6 +307,10 @@
             <a class="" href="../../../../../../scripts/src/curtain/opening/opening.gd/">src/curtain/opening/opening.gd</a>
           </li>
         
+          <li data-path="/scripts/src/dialogue/chapters/0/stage_0.gd/" data-category="scripts">
+            <a class="" href="../../../../../../scripts/src/dialogue/chapters/0/stage_0.gd/">src/dialogue/chapters/0/stage_0.gd</a>
+          </li>
+        
           <li data-path="/scripts/src/dialogue/dialogue.gd/" data-category="scripts">
             <a class="" href="../../../../../../scripts/src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
           </li>
@@ -930,6 +934,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
 <li><a href="#_properties">Properties</a></li>
+<li><a href="#_stage_0_gd">stage_0.gd</a></li>
 </ul>
 </li>
 </ul>
@@ -941,7 +946,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNpNkD1PwzAQhnf_iqMsCcQSMKddyogylBEh6xJfEyvGrs5OUYTKb8eYpGLz836c7txZDAEOgAE2rxF7ethAXRdNpZHHnnEuofGadjv4EhfR5XTzmOPPBq3vJ8qFfTWTtf6zhD26M4YXnIlzC-AbjsaZMJDOQGdyUUgpE91B511kby1xxnAiHInDnzcxp6xaxKVzD4oJ9VyUGX4HGDeR0ss-ix5wDuuTrjOU-UhHLroy7jTFFQZ02l4t71Re9B-vVyTpIg4gpU9fIW40JYNAFVi1JSDU8u22tRNVcTDd6CiE7dO7hFZYOkaIHtj0QwRtmLpovBM_BwR2eQ==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqVUrFu2zAQ3fUV13SxEglo5MSD4QQw7AIdArewhw5FQJzFi0WYJg2SciAE7beXokTB9lCgk97d8b17fFQp0VpYA1q42Tjc0ZcbmM1Gq0yKXeXsvtnKmlJYaU7F8vkZPpI8zxOAO2BaMTqRcgwNISt49_UNMsRHafI7KYP46j6oLwVKvasp6C-yhqTU7yksUJ3QvmBDJsgD_IE3oYStiIci7Oi33kKplTNaSjKhtEfCPRnbzWpjWj99szvg0DivNLj2Hnnj3bVFGPa4FRaqJsZ7n_EMNjZCGrSZOPis-j4T6lhHHVah4nIYxZDO6ni784iKENE3Xdsun81V_pujES6-wMAaB9Z3yX_qA6r_ID4E4lz5Wzih1Q_Zxh_48-FhrqaXAo9B4Gt7s7lPtFj25Mvl3eiSOQnMhX9CYb34psIj9fTFFf36UC-0hjzX_q-KoIhgHMFDBI-JdxrQJPnEySdPwEaYbVNAmOW_PreLMleJcq_I2qfiNYdtIunNgdNgWjfAhaGyzSFho_V0-u_fPvM7p9PzTvoXyRMOFQ==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -955,6 +960,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock asset-image">
 <div class="content">
 <a class="image" href="../../../../../../assets/assets/images/faces/actors/OldWoman_face.png"><img src="../../../../../../assets/raw/assets/images/faces/actors/OldWoman_face.png" alt="200" width="100"></a>
+</div>
+</div>
+<div class="imageblock asset-image">
+<div class="content">
+<a class="image" href="../../../../../../assets/assets/images/stages/chapter0/House.png"><img src="../../../../../../assets/raw/assets/images/stages/chapter0/House.png" alt="200" width="100"></a>
 </div>
 </div>
 </div>
@@ -976,7 +986,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="title">$Dialogue</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="ow">not</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventKey</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span></code></pre>
 </div>
@@ -985,17 +995,12 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="sect2">
 <h3 id="_instantiators">Instantiators</h3>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Caution</div>
-</td>
-<td class="content">
-No other scene instantiate this scene.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../../../chapters/0/stages/0/stage_0.tscn">res://src/chapters/0/stages/0/stage_0.tscn</a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -1003,11 +1008,30 @@ No other scene instantiate this scene.
 <div class="ulist scene-tree">
 <ul>
 <li>
-<p><span class="node-name type-plain">Stage0</span> <span class="node-type type-plain">Node</span></p>
+<p><span class="node-name type-2d">Stage0</span> <span class="node-type type-2d">Node2D</span></p>
 <div class="ulist">
 <ul>
 <li>
 <p><span class="node-name type-other">Dialogue</span> <span class="node-type type-other"><a href="../../../dialogue.tscn">res://src/dialogue/dialogue.tscn</a></span></p>
+</li>
+<li>
+<p><span class="node-name type-2d">House</span> <span class="node-type type-2d">Sprite2D</span></p>
+</li>
+<li>
+<p><span class="node-name type-2d">OldWoman</span> <span class="node-type type-2d"><a href="../../../../actors/old_woman/old_woman.tscn">res://src/actors/old_woman/old_woman.tscn</a></span></p>
+</li>
+<li>
+<p><span class="node-name type-other">AnimationPlayer</span> <span class="node-type type-other">AnimationPlayer</span></p>
+</li>
+<li>
+<p><span class="node-name type-2d">EventArea2D</span> <span class="node-type type-2d">Area2D</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="node-name type-2d">CollisionShape2D</span> <span class="node-type type-2d">CollisionShape2D</span></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1017,23 +1041,18 @@ No other scene instantiate this scene.
 </div>
 <div class="sect2">
 <h3 id="_signal_connections">Signal Connections</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-No signal connections.
-</td>
-</tr>
-</table>
+<div class="listingblock signal-connection">
+<div class="title">$EventArea2D:[<mark><em>area_entered</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_event_area_2d_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_properties">Properties</h3>
-<table class="tableblock frame-all grid-all stretch node-property node-other">
-<caption class="title">Table 1. <mark>$Dialogue</mark> properties</caption>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 1. <mark>Root</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1045,6 +1064,39 @@ No signal connections.
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>script</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../../../../../scripts/src/dialogue/chapters/0/stage_0.gd">res://src/dialogue/chapters/0/stage_0.gd</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch node-property node-other">
+<caption class="title">Table 2. <mark>$Dialogue</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unique_name_in_owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>visible</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>false</code></p>
+</div></div></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>controller</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1059,6 +1111,129 @@ No signal connections.
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 3. <mark>$House</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Vector2(920.00006, 671.00006)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>scale</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Vector2(10, 10)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>texture</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock asset-image">
+<div class="content">
+<a class="image" href="../../../../../../assets/assets/images/stages/chapter0/House.png"><img src="../../../../../../assets/raw/assets/images/stages/chapter0/House.png" alt="House"></a>
+</div>
+<div class="title">Figure 1. res://assets/images/stages/chapter0/House.png</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 4. <mark>$OldWoman</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Vector2(1042, 872)</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 5. <mark>$EventArea2D</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>collision_layer</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>16</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>collision_mask</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>16</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 6. <mark>$EventArea2D/CollisionShape2D</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Vector2(498.25, 543)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>shape</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>SubResource("RectangleShape2D_6qvxh")</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_stage_0_gd"><a href="../../../../../../scripts/src/dialogue/chapters/0/stage_0.gd">stage_0.gd</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node2D</span>
+
+
+<span class="k">func</span> <span class="nf">_on_event_area_2d_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

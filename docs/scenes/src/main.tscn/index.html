@@ -307,6 +307,10 @@
             <a class="" href="../../../scripts/src/curtain/opening/opening.gd/">src/curtain/opening/opening.gd</a>
           </li>
         
+          <li data-path="/scripts/src/dialogue/chapters/0/stage_0.gd/" data-category="scripts">
+            <a class="" href="../../../scripts/src/dialogue/chapters/0/stage_0.gd/">src/dialogue/chapters/0/stage_0.gd</a>
+          </li>
+        
           <li data-path="/scripts/src/dialogue/dialogue.gd/" data-category="scripts">
             <a class="" href="../../../scripts/src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
           </li>
@@ -940,7 +944,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdVE2PmzAQvfMr3O0lacOh2a9LuhJLaLpVQqJAdltVlWVgADcEI9u0RdX2t9cYSEI2UqWeeG9m3ozH4yHMiBBojYhAFwtC8ws0mQzsUUaTVCYcIB8im-WSs-zuDv02no1QC9x3WmGzjPE1hPKsrPX1hWMtfGI8i7TIbURiWwVZCUPksgjG077mUms8SSQN71lUjada6p1IjwP6Ca7-97TXnTCjgrLcS0kBbXX7pPppUD_RjU60ykgF_Lw8JZyEEvjR-RH6gyIiUog0jAnNFDRNU1ETeSvHmWo0tbyP-EA_bRYr_OjMl_aD_0VbZmvrscPWfL58cqbYf1g42F_iOvqQpbYemOX7jrux_Ielq40L6zPWDnu5cX1leoNmKRPSiWN1dZrHRF1DnmBJd6ANdQOYg5DnTCEr80aXcAUjpdSMCtzr9i1S8SSqBsOGFGklaChwwVkIQrRmktMdkdCyHzTgB5aAxEIeeFlEimBRcFp_ao_AIiURcFyoUexAzaJLLAryM8dJ3SoG3WvrCEvOIZe9NK1LtdDMrjszy18amiaPDXVlLMrguyqCiWoaq_zA_xn0S9U_zVxyUDfcPsvTZPuneauf5gfKhfQkFOJ-tqjfKQkyaDc0InybcFI126mf5ouxPBtrZJpM_Rk6MO7AraG2XqPLPbox1FZrdLVH18arCGKaA8IDMgqGiKCJ-fV1vR8jmdJwm6tRvx9_M1FgZBBLJBni9RKhiHJ1E6pJ4y8Gj3yT" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdVE2PmzAQvfMr3O0lacOh2a9LuhJLaLpVQqJAdltVlWVgADfERrbTFlXb315jIF8bqVJPvDfjN-OZ8RAXREq0RESiixmh7AKNRj13UNAsV5kAYH3kcqYEL-7u0G_r2YqNwH9nFC4vuFhCrM7KWt-xcGiET1wUiRH5jUiuq6jYQh_5PIHh-FhzaTSBIorG9zyphmMjDU6khweOA1z9722vO2FBJeUsyEkJbXb3JPvpoeNANybQoiAViPPynAgSKxAH90foD0qIzCExMCW00NC2bU1tFCw8b2zQ2Ak-4j39tJot8KM3nbsP4RdjmSydxw470-n8yRvj8GHm4XCO69P7KLV1z5ww9PyVEz7MfWOcOZ-xcbjzlR9q0xs0yblUXprq1hmeEt0GlmFFN2AMdQFYgFTnTDHfskaXCQ0TrTSs1I0iUQFtsW-RPk6SqtdvSJlXksYSl4LHIGVrJoxuiIKW_aCR2LMMFJZqz7dlogmWpaD1p_ZILHOSgMClnsQG9Ci6wLIkPxnO6koxmFJbR7wVApg6CtO6qMTN6Lo7c_bS0Ez00FBnxnIbfddJMNFFYx0fxD8P_dL5TyNvBegGt6_yNNjuZd6al_mBCqkCBaW8n8wWbffbBU2IWGeCVM1ympf5YizP1hLZNtc_hg4MO3Br6aU36HKHbiy91AZd7dC19SqBlDJAuEcGUR8RNLK_vq7XY6ByGq-ZHvX74TcbRVYBqUKKI1HvEEqo0J3QRVp_AXvyfD0=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -952,7 +956,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="title">$World/Player</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">is_failed</span> <span class="o">=</span> <span class="bp">false</span></code></pre>
+	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -969,8 +973,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="title">$World/Player</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">is_failed</span><span class="p">:</span>
-		<span class="k">return</span>
 	<span class="k">if</span> <span class="n">dash_rest_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="n">dash_rest_time</span> <span class="o">-=</span> <span class="n">delta</span>
 		<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
@@ -987,17 +989,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 
 		<span class="c1"># Handle jump.</span>
-		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 
 		<span class="k">var</span> <span class="n">direction_x</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_left"</span><span class="p">,</span> <span class="s2">"move_right"</span><span class="p">)</span>
-		<span class="k">if</span> <span class="n">direction_x</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">direction_x</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">direction_x</span> <span class="o">*</span> <span class="n">SPEED</span>
 		<span class="k">else</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
 
 		<span class="c1"># Handle dash.</span>
-		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 			<span class="k">var</span> <span class="n">direction_y</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_up"</span><span class="p">,</span> <span class="s2">"move_down"</span><span class="p">)</span>
 			<span class="k">var</span> <span class="n">direction</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="n">direction_x</span><span class="p">,</span> <span class="n">direction_y</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
 			<span class="k">if</span> <span class="n">direction</span><span class="p">:</span>

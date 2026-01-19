@@ -45,7 +45,7 @@ function base64UrlDecode(str) {
 
 
 function searchPath(path) {
-  const elem = document.querySelector('.contents-menu .search-form input[type="search"]') 
+  const elem = document.querySelector('.contents-menu .search-form input[type="search"]')
   if (elem) {
     openContentsMenu()
     elem.value = `res://${path}`
@@ -57,7 +57,7 @@ function searchFromFileTree(event) {
   event.stopPropagation()
   const head = event.target.closest('tr').querySelector('.path')
   if (head) {
-    const pathClass = Array.from(head.classList).find(e => e != 'path')     
+    const pathClass = Array.from(head.classList).find(e => e != 'path')
     if (pathClass) {
       const path = base64UrlDecode(pathClass)
       searchPath(path)

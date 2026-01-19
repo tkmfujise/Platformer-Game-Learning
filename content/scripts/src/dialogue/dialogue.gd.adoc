@@ -20,10 +20,18 @@ signal event(event_name: String)
 @export var controller : ReDScribe
 @export var speakers : Array[DialogueSpeaker] = []
 var current_speaker : String = ''
+var started : bool = false
 
 
 func _ready() -> void:
 	controller.channel.connect(_handle)
+
+
+func start() -> void:
+	show()
+	continue_dialogue()
+	started = true
+	Player.playable = false
 
 
 func continue_dialogue() -> void:
@@ -55,7 +63,7 @@ func set_speaker_image(speaker_name: String, position: StringName) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not event is InputEventKey: return
+	if not started: return
 	if event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 
@@ -80,5 +88,6 @@ func _on_event(event_name: String) -> void:
 
 func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
+	Player.playable = true
 
 ```

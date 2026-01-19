@@ -15,8 +15,10 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   * controller
   * speakers
   * current_speaker
+  * started
 ---
   + _ready()
+  + start()
   + continue_dialogue()
   + says()
   + set_speaker_image()
@@ -70,7 +72,7 @@ func _ready() -> void:
 ==== _input
 ```gdscript
 func _input(event: InputEvent) -> void:
-	if not event is InputEventKey: return
+	if not started: return
 	if event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 ```
@@ -105,45 +107,11 @@ func _on_event(event_name: String) -> void:
 ```gdscript
 func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
+	Player.playable = true
 ```
 
 
 === Animations
-==== show
-
-[plantuml]
-....
-control "Root" as R
-participant "$LeftSpeaker" as T0 #90EE90
-participant "$RightSpeaker" as T1 #90EE90
-participant "$Background" as T2 #90EE90
-participant "$Content" as T3 #90EE90
-participant "$LeftSpeaker\n/LeftSpeakerImage" as T4 #87CEFA
-participant "$RightSpeaker\n/RightSpeakerImage" as T5 #87CEFA
-
-
-
-== Time: 0.0 ==
-R  ->o  T0 : visible\n = false
-R  ->o  T1 : visible\n = false
-R  ->  T2 : size\n = Vector2(1870, 0)
-R  ->o  T3 : visible\n = false
-== Time: 0.25 ==
-R  ->o  T0 : visible\n = true
-R  ->o  T1 : visible\n = true
-R  ->  T4 : scale\n = Vector2(1e-05, 1e-05)
-R  ->  T5 : scale\n = Vector2(0, 0)
-== Time: 0.8 ==
-R  ->o  T3 : visible\n = true
-R  ->  T4 : scale\n = Vector2(1, 1)
-R  ->  T5 : scale\n = Vector2(1, 1)
-== Time: 1.0 ==
-R  ->  T2 : size\n = Vector2(1870, 311)
-
-
-....
----
-
 ==== Animation_4gkn1
 
 [plantuml]
@@ -225,6 +193,41 @@ R  ->  T2 : size\n = Vector2(1870, 0)
 R  ->o  T3 : visible\n = false
 R  ->  T4 : scale\n = Vector2(1, 1)
 R  ->  T5 : scale\n = Vector2(1, 1)
+
+
+....
+---
+
+==== show
+
+[plantuml]
+....
+control "Root" as R
+participant "$LeftSpeaker" as T0 #90EE90
+participant "$RightSpeaker" as T1 #90EE90
+participant "$Background" as T2 #90EE90
+participant "$Content" as T3 #90EE90
+participant "$LeftSpeaker\n/LeftSpeakerImage" as T4 #87CEFA
+participant "$RightSpeaker\n/RightSpeakerImage" as T5 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = false
+R  ->  T2 : size\n = Vector2(1870, 0)
+R  ->o  T3 : visible\n = false
+== Time: 0.25 ==
+R  ->o  T0 : visible\n = true
+R  ->o  T1 : visible\n = true
+R  ->  T4 : scale\n = Vector2(1e-05, 1e-05)
+R  ->  T5 : scale\n = Vector2(0, 0)
+== Time: 0.8 ==
+R  ->o  T3 : visible\n = true
+R  ->  T4 : scale\n = Vector2(1, 1)
+R  ->  T5 : scale\n = Vector2(1, 1)
+== Time: 1.0 ==
+R  ->  T2 : size\n = Vector2(1870, 311)
 
 
 ....
@@ -340,10 +343,18 @@ signal event(event_name: String)
 @export var controller : ReDScribe
 @export var speakers : Array[DialogueSpeaker] = []
 var current_speaker : String = ''
+var started : bool = false
 
 
 func _ready() -> void:
 	controller.channel.connect(_handle)
+
+
+func start() -> void:
+	show()
+	continue_dialogue()
+	started = true
+	Player.playable = false
 
 
 func continue_dialogue() -> void:
@@ -375,7 +386,7 @@ func set_speaker_image(speaker_name: String, position: StringName) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not event is InputEventKey: return
+	if not started: return
 	if event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 
@@ -400,6 +411,7 @@ func _on_event(event_name: String) -> void:
 
 func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
+	Player.playable = true
 
 ```
 

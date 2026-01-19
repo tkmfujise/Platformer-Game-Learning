@@ -37,7 +37,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * dash_rest_time
   * dash_rest_count
   * grounding
-  * is_failed
+  * playable
 ---
   + _ready()
   + _physics_process()
@@ -78,7 +78,7 @@ left to right direction
 .$World/Player
 ```gdscript
 func _ready() -> void:
-	is_failed = false
+	playable = true
 ```
 .$FirstStepsBGMPlayable
 ```gdscript
@@ -89,8 +89,6 @@ func _ready() -> void:
 .$World/Player
 ```gdscript
 func _physics_process(delta: float) -> void:
-	if is_failed:
-		return
 	if dash_rest_time > 0:
 		dash_rest_time -= delta
 		velocity *= DASH_ATTENUATION * delta
@@ -107,17 +105,17 @@ func _physics_process(delta: float) -> void:
 			dash_rest_count = MAX_DASH_COUNT
 
 		# Handle jump.
-		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+		if playable and Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
 			velocity.y = JUMP_VELOCITY
 
 		var direction_x := Input.get_axis("move_left", "move_right")
-		if direction_x:
+		if playable and direction_x:
 			velocity.x = direction_x * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		# Handle dash.
-		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
+		if playable and Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
 			var direction_y := Input.get_axis("move_up", "move_down")
 			var direction = Vector2(direction_x, direction_y).normalized()
 			if direction:

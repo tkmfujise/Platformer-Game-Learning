@@ -307,6 +307,10 @@
             <a class="" href="../../curtain/opening/opening.gd/">src/curtain/opening/opening.gd</a>
           </li>
         
+          <li data-path="/scripts/src/dialogue/chapters/0/stage_0.gd/" data-category="scripts">
+            <a class="" href="../../dialogue/chapters/0/stage_0.gd/">src/dialogue/chapters/0/stage_0.gd</a>
+          </li>
+        
           <li data-path="/scripts/src/dialogue/dialogue.gd/" data-category="scripts">
             <a class="" href="../../dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
           </li>
@@ -966,16 +970,14 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">var</span> <span class="n">dash_rest_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">dash_rest_count</span> <span class="p">:</span><span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 <span class="k">var</span> <span class="n">grounding</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">true</span>
-<span class="k">static</span> <span class="k">var</span> <span class="n">is_failed</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="k">static</span> <span class="k">var</span> <span class="n">playable</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">is_failed</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
 
 
 <span class="k">func</span> <span class="nf">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">is_failed</span><span class="p">:</span>
-		<span class="k">return</span>
 	<span class="k">if</span> <span class="n">dash_rest_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="n">dash_rest_time</span> <span class="o">-=</span> <span class="n">delta</span>
 		<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
@@ -992,17 +994,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 
 		<span class="c1"># Handle jump.</span>
-		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 
 		<span class="k">var</span> <span class="n">direction_x</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_left"</span><span class="p">,</span> <span class="s2">"move_right"</span><span class="p">)</span>
-		<span class="k">if</span> <span class="n">direction_x</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">direction_x</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">direction_x</span> <span class="o">*</span> <span class="n">SPEED</span>
 		<span class="k">else</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
 
 		<span class="c1"># Handle dash.</span>
-		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 			<span class="k">var</span> <span class="n">direction_y</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_up"</span><span class="p">,</span> <span class="s2">"move_down"</span><span class="p">)</span>
 			<span class="k">var</span> <span class="n">direction</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="n">direction_x</span><span class="p">,</span> <span class="n">direction_y</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
 			<span class="k">if</span> <span class="n">direction</span><span class="p">:</span>
@@ -1015,7 +1017,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">animate</span><span class="p">():</span>
-	<span class="k">if</span> <span class="n">is_failed</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
 		<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">'</span><span class="s1">Idle'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Run'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Jump'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Fall'</span><span class="p">]:</span>
 			<span class="o">%</span><span class="n">AnimationTree</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">'</span><span class="s1">parameters/</span><span class="si">%s</span><span class="s1">/blend_position'</span> <span class="o">%</span> <span class="p">[</span><span class="n">state</span><span class="p">],</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
@@ -1066,8 +1067,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">_on_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">is_failed</span> <span class="o">=</span> <span class="bp">true</span>
-	<span class="n">Current</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="bp">true</span>
 	<span class="o">%</span><span class="n">AnimationTree</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="bp">false</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"burst"</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">RestartCurtain</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>

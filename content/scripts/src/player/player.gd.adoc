@@ -32,16 +32,14 @@ var falling_time := 0.0
 var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var grounding : bool = true
-static var is_failed : bool = false
+static var playable : bool = false
 
 
 func _ready() -> void:
-	is_failed = false
+	playable = true
 
 
 func _physics_process(delta: float) -> void:
-	if is_failed:
-		return
 	if dash_rest_time > 0:
 		dash_rest_time -= delta
 		velocity *= DASH_ATTENUATION * delta
@@ -58,17 +56,17 @@ func _physics_process(delta: float) -> void:
 			dash_rest_count = MAX_DASH_COUNT
 
 		# Handle jump.
-		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+		if playable and Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
 			velocity.y = JUMP_VELOCITY
 
 		var direction_x := Input.get_axis("move_left", "move_right")
-		if direction_x:
+		if playable and direction_x:
 			velocity.x = direction_x * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		# Handle dash.
-		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
+		if playable and Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
 			var direction_y := Input.get_axis("move_up", "move_down")
 			var direction = Vector2(direction_x, direction_y).normalized()
 			if direction:
@@ -81,7 +79,6 @@ func _physics_process(delta: float) -> void:
 
 
 func animate():
-	if is_failed: return
 	if velocity.x:
 		for state in ['Idle', 'Run', 'Jump', 'Fall']:
 			%AnimationTree.set('parameters/%s/blend_position' % [state], velocity.x)
@@ -132,8 +129,6 @@ func _on_dashed() -> void:
 
 
 func _on_failed() -> void:
-	is_failed = true
-	Current.failed = true
 	%AnimationTree.active = false
 	%AnimationPlayer.play("burst")
 	%RestartCurtain.play()
