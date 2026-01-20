@@ -27,4 +27,10 @@ func _on_player_failed() -> void:
 func _on_restart_curtain_animation_finished() -> void:
 	restart()
 
+
+func _on_stage_0_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+
 ```

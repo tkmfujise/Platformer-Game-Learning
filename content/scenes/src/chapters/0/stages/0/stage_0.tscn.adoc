@@ -13,6 +13,7 @@ class R as "Stage0" <<(C,lightgreen) Control>> {
   + restart()
   + _on_player_failed()
   + _on_restart_curtain_animation_finished()
+  + _on_stage_0_event()
 }
 class N1 as "CanvasLayer" <<(C,yellow) CanvasLayer>> {
 }
@@ -72,8 +73,14 @@ class N12 as "StageGround0" <<(T,yellow) TileMapLayer>> {
 class N13 as "Scenery" <<(N,lightskyblue) Node2D>> {
 }
 class N14 as "Stage0" <<(N,lightskyblue) Node2D>> {
+  ~ event
 ---
+  * started
+---
+  + _ready()
+  + start()
   + _on_event_area_2d_area_entered()
+  + _on_dialogue_event()
 }
 class N15 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
 }
@@ -106,8 +113,14 @@ class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _ready()
   + _physics_process()
   + animate()
+  + animate_with()
+  + idle()
+  + walk_right()
+  + walk_left()
+  + turn_right()
+  + turn_left()
   + vibrate()
-  + get_state()
+  + get_state_by()
   + update_sprite_states_shader_parameters()
   + spawn_ghost_effect()
   + current_sprite_state()
@@ -147,6 +160,7 @@ N15 --o N16
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_restart_curtain_animation_finished, N3::animation_finished)
+_(R::_on_stage_0_event, N14::event)
 _(R::_on_player_failed, N17::failed)
 ....
 
@@ -155,6 +169,11 @@ _(R::_on_player_failed, N17::failed)
 
 === Overridden virtual functions
 ==== _ready
+.$Scenery/Stage0
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
 .$Gimmicks/FallingIceBlock
 ```gdscript
 func _ready() -> void:
@@ -191,23 +210,31 @@ func _physics_process(delta: float) -> void:
 			falling_time += delta
 			grounding = false
 		else:
-			if not grounding: vibrate('Landed')
+			if not grounding:
+				idle()
+				vibrate('Landed')
 			grounding = true
 			falling_time = 0
 			dash_rest_count = MAX_DASH_COUNT
+		
+		if not playable:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			update_sprite_states_shader_parameters()
+			move_and_slide()
+			return
 
 		# Handle jump.
-		if playable and Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
 			velocity.y = JUMP_VELOCITY
 
 		var direction_x := Input.get_axis("move_left", "move_right")
-		if playable and direction_x:
+		if direction_x:
 			velocity.x = direction_x * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		# Handle dash.
-		if playable and Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
+		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
 			var direction_y := Input.get_axis("move_up", "move_down")
 			var direction = Vector2(direction_x, direction_y).normalized()
 			if direction:
@@ -215,6 +242,7 @@ func _physics_process(delta: float) -> void:
 				velocity = direction * DASH_SPEED
 				dash_rest_time = DASH_TIME
 				dash_rest_count -= 1
+	
 	animate()
 	move_and_slide()
 ```
@@ -255,6 +283,14 @@ func _on_restart_curtain_animation_finished() -> void:
 	restart()
 ```
 [.signal-connection]
+.$Scenery/Stage0:[#_event_#]=>$.
+```gdscript
+func _on_stage_0_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+```
+[.signal-connection]
 .$Player:[#_failed_#]=>$.
 ```gdscript
 func _on_player_failed() -> void:
@@ -264,6 +300,103 @@ func _on_player_failed() -> void:
 
 
 === Animations
+==== Animation_xb7cu
+
+[plantuml]
+....
+control "Root" as R
+participant "$Player" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(498, 119)
+== Time: 0.0009999999 ==
+R  ->  T0 : position\n = Vector2(592, -141)
+
+
+....
+---
+
+==== 01.get_closer
+
+[plantuml]
+....
+control "Root" as R
+participant "$Player" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(6269, 242)
+R  ->o  T0 : &"idle"()
+== Time: 1.0 ==
+R  ->  T0 : position\n = Vector2(6643, 242)
+R  ->o  T0 : &"idle"()
+
+
+....
+---
+
+==== 02.pass_by
+
+[plantuml]
+....
+control "Root" as R
+participant "$Player" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(6643, 242)
+R  ->o  T0 : &"turn_left"()
+== Time: 1.0 ==
+R  ->  T0 : position\n = Vector2(7013, 242)
+R  ->o  T0 : &"turn_left"()
+
+
+....
+---
+
+==== 03.laughing
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+
+
+....
+---
+
+==== event_04.zoom_in
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+
+
+....
+---
+
+==== event_05.zoom_out
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+
+
+....
+---
+
 ==== opening (autoplay)
 
 [plantuml]
@@ -391,7 +524,7 @@ R  ->o  T0 : &"play"()
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(328, 284)`
+|*position* a|`Vector2(498, 119)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
@@ -423,6 +556,12 @@ func _on_player_failed() -> void:
 
 func _on_restart_curtain_animation_finished() -> void:
 	restart()
+
+
+func _on_stage_0_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
 
 ```
 

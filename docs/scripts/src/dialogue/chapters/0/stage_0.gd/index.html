@@ -1338,9 +1338,30 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node2D</span>
 
+<span class="k">signal</span> <span class="n">event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+
+<span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+
+
+<span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="n">start</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">start</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
+	<span class="n">started</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
 
 <span class="k">func</span> <span class="nf">_on_event_area_2d_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre>
+	<span class="n">start</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">_on_dialogue_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">"event_</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">event_name</span>
+	<span class="k">if</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">has_animation</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+	<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

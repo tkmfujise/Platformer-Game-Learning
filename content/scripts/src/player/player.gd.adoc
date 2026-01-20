@@ -50,23 +50,31 @@ func _physics_process(delta: float) -> void:
 			falling_time += delta
 			grounding = false
 		else:
-			if not grounding: vibrate('Landed')
+			if not grounding:
+				idle()
+				vibrate('Landed')
 			grounding = true
 			falling_time = 0
 			dash_rest_count = MAX_DASH_COUNT
+		
+		if not playable:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			update_sprite_states_shader_parameters()
+			move_and_slide()
+			return
 
 		# Handle jump.
-		if playable and Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
 			velocity.y = JUMP_VELOCITY
 
 		var direction_x := Input.get_axis("move_left", "move_right")
-		if playable and direction_x:
+		if direction_x:
 			velocity.x = direction_x * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		# Handle dash.
-		if playable and Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
+		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
 			var direction_y := Input.get_axis("move_up", "move_down")
 			var direction = Vector2(direction_x, direction_y).normalized()
 			if direction:
@@ -74,18 +82,43 @@ func _physics_process(delta: float) -> void:
 				velocity = direction * DASH_SPEED
 				dash_rest_time = DASH_TIME
 				dash_rest_count -= 1
+	
 	animate()
 	move_and_slide()
 
 
 func animate():
-	if velocity.x:
-		for state in ['Idle', 'Run', 'Jump', 'Fall']:
-			%AnimationTree.set('parameters/%s/blend_position' % [state], velocity.x)
-	%AnimationTree.get('parameters/playback').travel(get_state())
+	animate_with(velocity)
 	update_sprite_states_shader_parameters()
 	if dash_rest_time > 0 && int(dash_rest_time*100)%3 > 0:
 		spawn_ghost_effect()
+
+
+func animate_with(_velocity: Vector2) -> void:
+	if _velocity.x:
+		for state in ['Idle', 'Run', 'Jump', 'Fall']:
+			%AnimationTree.set('parameters/%s/blend_position' % [state], _velocity.x)
+	%AnimationTree.get('parameters/playback').travel(get_state_by(_velocity))
+
+
+func idle() -> void:
+	animate_with(Vector2(0, 0))
+
+
+func walk_right() -> void:
+	animate_with(Vector2(1, 0))
+
+
+func walk_left() -> void:
+	animate_with(Vector2(-1, 0))
+
+
+func turn_right() -> void:
+	walk_right(); idle()
+
+
+func turn_left() -> void:
+	walk_left(); idle()
 
 
 func vibrate(key: String):
@@ -96,10 +129,10 @@ func vibrate(key: String):
 	Input.start_joy_vibration(0, values[0], values[1], values[2])
 
 
-func get_state() -> String:
-	if velocity:
-		if velocity.y < 0: return 'Jump'
-		if velocity.y > 0: return 'Fall'
+func get_state_by(_velocity) -> String:
+	if _velocity:
+		if _velocity.y < 0: return 'Jump'
+		if _velocity.y > 0: return 'Fall'
 		else: return 'Run'
 	else: return 'Idle'
 

@@ -14,8 +14,29 @@ title: res://src/dialogue/chapters/0/stage_0.gd
 ```gdscript
 extends Node2D
 
+signal event(event_name: String)
+
+var started : bool = false
+
+
+func _ready() -> void:
+	if not owner: start()
+
+
+func start() -> void:
+	if started: return
+	started = true
+	%Dialogue.start()
+
 
 func _on_event_area_2d_area_entered(area: Area2D) -> void:
-	%Dialogue.start()
+	start()
+
+
+func _on_dialogue_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+	event.emit(event_name)
 
 ```

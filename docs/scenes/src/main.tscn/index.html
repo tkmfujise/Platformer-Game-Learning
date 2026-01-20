@@ -1330,7 +1330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdVE2PmzAQvfMr3O0lacOh2a9LuhJLaLpVQqJAdltVlWVgADfERrbTFlXb315jIF8bqVJPvDfjN-OZ8RAXREq0RESiixmh7AKNRj13UNAsV5kAYH3kcqYEL-7u0G_r2YqNwH9nFC4vuFhCrM7KWt-xcGiET1wUiRH5jUiuq6jYQh_5PIHh-FhzaTSBIorG9zyphmMjDU6khweOA1z9722vO2FBJeUsyEkJbXb3JPvpoeNANybQoiAViPPynAgSKxAH90foD0qIzCExMCW00NC2bU1tFCw8b2zQ2Ak-4j39tJot8KM3nbsP4RdjmSydxw470-n8yRvj8GHm4XCO69P7KLV1z5ww9PyVEz7MfWOcOZ-xcbjzlR9q0xs0yblUXprq1hmeEt0GlmFFN2AMdQFYgFTnTDHfskaXCQ0TrTSs1I0iUQFtsW-RPk6SqtdvSJlXksYSl4LHIGVrJoxuiIKW_aCR2LMMFJZqz7dlogmWpaD1p_ZILHOSgMClnsQG9Ci6wLIkPxnO6koxmFJbR7wVApg6CtO6qMTN6Lo7c_bS0Ez00FBnxnIbfddJMNFFYx0fxD8P_dL5TyNvBegGt6_yNNjuZd6al_mBCqkCBaW8n8wWbffbBU2IWGeCVM1ympf5YizP1hLZNtc_hg4MO3Br6aU36HKHbiy91AZd7dC19SqBlDJAuEcGUR8RNLK_vq7XY6ByGq-ZHvX74TcbRVYBqUKKI1HvEEqo0J3QRVp_AXvyfD0=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdVE2P2jAQvedXuNsLtORQ9utCV2IhpVvxJQi7rarKcuIhcTF2ZDtLUbX97XVMAoRFqtRT3ryZN2PPTBxzojWaIaLRxYgwcYE6nUavxVmSmkQBiCbqSWGU5Hd36Lf34sVOMP7gFD3JpZpBbM7KSl9d2HbCJ6k4daLxTqRX24jn0ERjSaHdr2sunWZuiGHxvaTbdt9J5yfS44B6gqv_Pe11JeRMMynmKcmgrN47qX4aVE904xJNOdmCOi9PiSKxAXV0foT-IEp0CtTBJWHcQt_3remj-TQI-g71u_PP-GB-WYym-DEYTnoP4TfHDGbdxwp3h8PJU9DH4cMowOEEF9GHLAV7sLphGIwX3fBhMnbkqPsVO0dvshiHlnqHBqnUJlgubeucvSS2DSLBhq3BEcUFsAJtzlGxzMVOlygLqVU6K7ONIhGH8rLvkQ0ndNto7ows3WoWa5wpGYPWJU0EWxMDdQtvmElLilFeeTeEr7AqJnBMcFhWtsmVqAU44ijgmUXqUC0Bg7Up6kXVKfOMFrbOFCs-hVNjnRIKCmd22Guw067OrjOyETgpmonBdbN0xLlSIEwtTXUdjXfbUbVFitfEbmmOiaIy1nn00xbBxPYV2_yg_hn0y9Y_zZwrsDMsF_802X75b93yf2JKm7mBTN8PRtNywOUbQIlaJYpsd_-_W_5Xk3_xZsj3pX17KtCuwK1n3xWHLvfoxrPvhkNXe3TtvaGwZAIQbpBW1EQEdfzvb4s_sGVSFq-E3aaP7R8-irxi1MhI5HYAUaZsJ-wlvb9wIJlx" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1369,23 +1369,31 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">falling_time</span> <span class="o">+=</span> <span class="n">delta</span>
 			<span class="n">grounding</span> <span class="o">=</span> <span class="bp">false</span>
 		<span class="k">else</span><span class="p">:</span>
-			<span class="k">if</span> <span class="ow">not</span> <span class="n">grounding</span><span class="p">:</span> <span class="n">vibrate</span><span class="p">(</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">)</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">grounding</span><span class="p">:</span>
+				<span class="n">idle</span><span class="p">()</span>
+				<span class="n">vibrate</span><span class="p">(</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">)</span>
 			<span class="n">grounding</span> <span class="o">=</span> <span class="bp">true</span>
 			<span class="n">falling_time</span> <span class="o">=</span> <span class="mi">0</span>
 			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+			<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
+			<span class="n">move_and_slide</span><span class="p">()</span>
+			<span class="k">return</span>
+
 		<span class="c1"># Handle jump.</span>
-		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 
 		<span class="k">var</span> <span class="n">direction_x</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_left"</span><span class="p">,</span> <span class="s2">"move_right"</span><span class="p">)</span>
-		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">direction_x</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">direction_x</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">direction_x</span> <span class="o">*</span> <span class="n">SPEED</span>
 		<span class="k">else</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
 
 		<span class="c1"># Handle dash.</span>
-		<span class="k">if</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 			<span class="k">var</span> <span class="n">direction_y</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_up"</span><span class="p">,</span> <span class="s2">"move_down"</span><span class="p">)</span>
 			<span class="k">var</span> <span class="n">direction</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="n">direction_x</span><span class="p">,</span> <span class="n">direction_y</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
 			<span class="k">if</span> <span class="n">direction</span><span class="p">:</span>
@@ -1393,6 +1401,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
 				<span class="n">dash_rest_time</span> <span class="o">=</span> <span class="n">DASH_TIME</span>
 				<span class="n">dash_rest_count</span> <span class="o">-=</span> <span class="mi">1</span>
+
 	<span class="n">animate</span><span class="p">()</span>
 	<span class="n">move_and_slide</span><span class="p">()</span></code></pre>
 </div>

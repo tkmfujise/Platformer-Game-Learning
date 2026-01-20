@@ -9,8 +9,14 @@ title: src/dialogue/chapters/0/stage0.tscn
 [plantuml]
 ....
 class R as "Stage0" <<(N,lightskyblue) Node2D>> {
+  ~ event
 ---
+  * started
+---
+  + _ready()
+  + start()
   + _on_event_area_2d_area_entered()
+  + _on_dialogue_event()
 }
 class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ finished
@@ -35,21 +41,22 @@ class N2 as "House" <<(S,lightskyblue) Sprite2D>> {
 }
 class N3 as "OldWoman" <<(S,lightskyblue) Sprite2D>> {
 }
-class N4 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N4 as "EventArea2D" <<(A,lightskyblue) Area2D>> {
 }
-class N5 as "EventArea2D" <<(A,lightskyblue) Area2D>> {
+class N5 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N6 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
 R --o N3
 R --o N4
-R --o N5
-N5 --o N6
+R --o N6
+N4 --o N5
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-_(R::_on_event_area_2d_area_entered, N5::area_entered)
+_(R::_on_dialogue_event, N1::event)
+_(R::_on_event_area_2d_area_entered, N4::area_entered)
 ....
 
 
@@ -71,6 +78,10 @@ image::/assets/raw/assets/images/stages/chapter0/House.png[200, 100]
 
 === Overridden virtual functions
 ==== _ready
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
 .$Dialogue
 ```gdscript
 func _ready() -> void:
@@ -96,19 +107,63 @@ func _input(event: InputEvent) -> void:
 ** [.node-name.type-other]#Dialogue# [.node-type.type-other]#link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]#
 ** [.node-name.type-2d]#House# [.node-type.type-2d]#Sprite2D#
 ** [.node-name.type-2d]#OldWoman# [.node-type.type-2d]#link:/scenes/src/actors/old_woman/old_woman.tscn[res://src/actors/old_woman/old_woman.tscn]#
-** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 ** [.node-name.type-2d]#EventArea2D# [.node-type.type-2d]#Area2D#
 *** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
 === Signal Connections
 [.signal-connection]
+.$Dialogue:[#_event_#]=>$.
+```gdscript
+func _on_dialogue_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+	event.emit(event_name)
+```
+[.signal-connection]
 .$EventArea2D:[#_area_entered_#]=>$.
 ```gdscript
 func _on_event_area_2d_area_entered(area: Area2D) -> void:
-	%Dialogue.start()
+	start()
 ```
 
+
+=== Animations
+==== Animation_oyqfx
+
+[plantuml]
+....
+control "Root" as R
+participant "$OldWoman" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : flip_h\n = true
+
+
+....
+---
+
+==== event_02.pass_by
+
+[plantuml]
+....
+control "Root" as R
+participant "$OldWoman" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : flip_h\n = true
+== Time: 0.5 ==
+R  ->o  T0 : flip_h\n = false
+
+
+....
+---
 
 
 
@@ -166,6 +221,16 @@ image::/assets/raw/assets/images/stages/chapter0/House.png[]
 |*position* a|`Vector2(498.25, 543)`
 |*shape* a|`SubResource("RectangleShape2D_6qvxh")`
 |===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_7eiyn")
+}`
+|===
 
 
 === link:/scripts/src/dialogue/chapters/0/stage_0.gd[stage_0.gd]
@@ -173,9 +238,30 @@ image::/assets/raw/assets/images/stages/chapter0/House.png[]
 ```gdscript
 extends Node2D
 
+signal event(event_name: String)
+
+var started : bool = false
+
+
+func _ready() -> void:
+	if not owner: start()
+
+
+func start() -> void:
+	if started: return
+	started = true
+	%Dialogue.start()
+
 
 func _on_event_area_2d_area_entered(area: Area2D) -> void:
-	%Dialogue.start()
+	start()
+
+
+func _on_dialogue_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+	event.emit(event_name)
 
 ```
 

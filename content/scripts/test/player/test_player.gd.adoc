@@ -29,6 +29,7 @@ func test_load():
 func test_animate_if_idle():
 	scene.animate()
 	assert_not_null(scene)
+	assert_eq(scene.get_state_by(Vector2(0, 0)), 'Idle')
 
 
 func test_animate_if_move():
@@ -38,23 +39,19 @@ func test_animate_if_move():
 
 
 func test_get_state_if_right_ground():
-	scene.velocity = Vector2(1, 0)
-	assert_eq(scene.get_state(), 'Run')
+	assert_eq(scene.get_state_by(Vector2(1, 0)), 'Run')
 
 
 func test_get_state_if_left_ground():
-	scene.velocity = Vector2(-1, 0)
-	assert_eq(scene.get_state(), 'Run')
+	assert_eq(scene.get_state_by(Vector2(-1, 0)), 'Run')
 
 
 func test_get_state_if_up():
-	scene.velocity = Vector2(0, -1)
-	assert_eq(scene.get_state(), 'Jump')
+	assert_eq(scene.get_state_by(Vector2(0, -1)), 'Jump')
 
 
 func test_get_state_if_down():
-	scene.velocity = Vector2(0, 1)
-	assert_eq(scene.get_state(), 'Fall')
+	assert_eq(scene.get_state_by(Vector2(0, 1)), 'Fall')
 
 
 func test_spawn_ghost_effect():

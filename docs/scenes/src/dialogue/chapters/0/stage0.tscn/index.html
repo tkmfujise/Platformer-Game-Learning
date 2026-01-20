@@ -1319,6 +1319,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <li><a href="#_instantiators">Instantiators</a></li>
 <li><a href="#_scene_tree">Scene Tree</a></li>
 <li><a href="#_signal_connections">Signal Connections</a></li>
+<li><a href="#_animations">Animations</a></li>
 <li><a href="#_properties">Properties</a></li>
 <li><a href="#_stage_0_gd">stage_0.gd</a></li>
 </ul>
@@ -1332,7 +1333,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqVUrFu2zAQ3fUV13SxEglo5MSD4QQw7AIdArewhw5FQJzFi0WYJg2SciAE7beXokTB9lCgk97d8b17fFQp0VpYA1q42Tjc0ZcbmM1Gq0yKXeXsvtnKmlJYaU7F8vkZPpI8zxOAO2BaMTqRcgwNISt49_UNMsRHafI7KYP46j6oLwVKvasp6C-yhqTU7yksUJ3QvmBDJsgD_IE3oYStiIci7Oi33kKplTNaSjKhtEfCPRnbzWpjWj99szvg0DivNLj2Hnnj3bVFGPa4FRaqJsZ7n_EMNjZCGrSZOPis-j4T6lhHHVah4nIYxZDO6ni784iKENE3Xdsun81V_pujES6-wMAaB9Z3yX_qA6r_ID4E4lz5Wzih1Q_Zxh_48-FhrqaXAo9B4Gt7s7lPtFj25Mvl3eiSOQnMhX9CYb34psIj9fTFFf36UC-0hjzX_q-KoIhgHMFDBI-JdxrQJPnEySdPwEaYbVNAmOW_PreLMleJcq_I2qfiNYdtIunNgdNgWjfAhaGyzSFho_V0-u_fPvM7p9PzTvoXyRMOFQ==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqVU8FO4zAQvecrBvbSLIm0G0oPUUGqWiQOq4LaA4cViqbx0Fg1dmU7rKIVfDuOE5cSxIFTnj3vjd48T0qBxsAK0MDp2uKWfp3CdDpaJoJvK2t2zUbUFMNSMcoWV1fwPwJ4BXomaaM0Td3pJxiL2hLrz2dQaELWjGJ_8MUeF0oWXlqgoxQZ677ugjSxIxLjKNS2po7tCi9R6Y0uf3uni77uvc6ThoRQ_2KYo3xG8wcb0gerj1xyUzl3n32XSlqthCDdjbEn3JE2Xa3WujXaX35vzrYxl85-mCNwsDEB0qF3wZ9c7mF6Lvf1Ia8KJRM0TO_oHKY7jijzEd2o2nT5rAdvud5rbsNrHlTnXnUr2L16QvkN4dgLr1tjMxdItvDa2UDblT4qL7xy7l6AG67kusI99fL5QD4kfWw08Y1m0gVpHedOtBvQ2wi7Maj2DVaQpsptVQBZAOcBjAOYRG5Ujy6iE0YueYJihMkmBoRp-vdH6zSxFS93koy5zB5S2ESCHi1YBbodBxjXVLYmomK0yvPPq544L3nuYfzO-fqfcfxxnh_fxG-toDA6" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1358,6 +1359,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
 <div class="sect3">
 <h4 id="_ready">_ready</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="n">start</span><span class="p">()</span></code></pre>
+</div>
+</div>
 <div class="listingblock">
 <div class="title">$Dialogue</div>
 <div class="content">
@@ -1407,9 +1414,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <p><span class="node-name type-2d">OldWoman</span> <span class="node-type type-2d"><a href="../../../../actors/old_woman/old_woman.tscn">res://src/actors/old_woman/old_woman.tscn</a></span></p>
 </li>
 <li>
-<p><span class="node-name type-other">AnimationPlayer</span> <span class="node-type type-other">AnimationPlayer</span></p>
-</li>
-<li>
 <p><span class="node-name type-2d">EventArea2D</span> <span class="node-type type-2d">Area2D</span></p>
 <div class="ulist">
 <ul>
@@ -1418,6 +1422,9 @@ document.addEventListener("DOMContentLoaded", () => {
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p><span class="node-name type-other">AnimationPlayer</span> <span class="node-type type-other">AnimationPlayer</span></p>
 </li>
 </ul>
 </div>
@@ -1428,11 +1435,42 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="sect2">
 <h3 id="_signal_connections">Signal Connections</h3>
 <div class="listingblock signal-connection">
+<div class="title">$Dialogue:[<mark><em>event</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_dialogue_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">"event_</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">event_name</span>
+	<span class="k">if</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">has_animation</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+	<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
 <div class="title">$EventArea2D:[<mark><em>area_entered</em></mark>]⇒$.</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_event_area_2d_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre>
+	<span class="n">start</span><span class="p">()</span></code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_animations">Animations</h3>
+<div class="sect3">
+<h4 id="_animation_oyqfx">Animation_oyqfx</h4>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNpLzs8rKcrPUVAKys8vUVJILFYI4ipILCrJTM4sSMwrUVBS8c9JCc_PTcwDS4YYKChbmDu7ujlyAYGtrUJIZm6qlYKBnoGCrS1XkIKCrl2-AkiVlUJaTmZBfEZMnoKtQklRaSoXFwDNWx4v" alt="Diagram">
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_event_02_pass_by">event_02.pass_by</h4>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNpLzs8rKcrPUVAKys8vUVJILFYI4ipILCrJTM4sSMwrUVBS8c9JCc_PTcwDS4YYKChbmDu7ujlyAYGtrUJIZm6qlYKBnoGCrS1XkIKCrl2-AkiVlUJaTmZBfEZMnoKtQklRaSqyYlN8itMSc4pTubgAUBAqYQ==" alt="Diagram">
+</div>
+</div>
+<hr>
 </div>
 </div>
 <div class="sect2">
@@ -1608,6 +1646,35 @@ document.addEventListener("DOMContentLoaded", () => {
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch node-property node-other">
+<caption class="title">Table 7. <mark>$AnimationPlayer</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unique_name_in_owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>libraries</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>{
+&amp;"": SubResource("AnimationLibrary_7eiyn")
+}</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_stage_0_gd"><a href="../../../../../../scripts/src/dialogue/chapters/0/stage_0.gd">stage_0.gd</a></h3>
@@ -1615,9 +1682,30 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node2D</span>
 
+<span class="k">signal</span> <span class="n">event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+
+<span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+
+
+<span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="n">start</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">start</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
+	<span class="n">started</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
 
 <span class="k">func</span> <span class="nf">_on_event_area_2d_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></code></pre>
+	<span class="n">start</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">_on_dialogue_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">"event_</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">event_name</span>
+	<span class="k">if</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">has_animation</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+	<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

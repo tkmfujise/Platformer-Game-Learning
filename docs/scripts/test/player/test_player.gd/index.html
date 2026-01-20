@@ -1359,6 +1359,7 @@ No attached scenes.
 <span class="k">func</span> <span class="nf">test_animate_if_idle</span><span class="p">():</span>
 	<span class="n">scene</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span>
 	<span class="n">assert_not_null</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state_by</span><span class="p">(</span><span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="s2">'</span><span class="s1">Idle'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">test_animate_if_move</span><span class="p">():</span>
@@ -1368,23 +1369,19 @@ No attached scenes.
 
 
 <span class="k">func</span> <span class="nf">test_get_state_if_right_ground</span><span class="p">():</span>
-	<span class="n">scene</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state</span><span class="p">(),</span> <span class="s2">'</span><span class="s1">Run'</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state_by</span><span class="p">(</span><span class="kt">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="s2">'</span><span class="s1">Run'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">test_get_state_if_left_ground</span><span class="p">():</span>
-	<span class="n">scene</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state</span><span class="p">(),</span> <span class="s2">'</span><span class="s1">Run'</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state_by</span><span class="p">(</span><span class="kt">Vector2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="s2">'</span><span class="s1">Run'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">test_get_state_if_up</span><span class="p">():</span>
-	<span class="n">scene</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state</span><span class="p">(),</span> <span class="s2">'</span><span class="s1">Jump'</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state_by</span><span class="p">(</span><span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="s2">'</span><span class="s1">Jump'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">test_get_state_if_down</span><span class="p">():</span>
-	<span class="n">scene</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state</span><span class="p">(),</span> <span class="s2">'</span><span class="s1">Fall'</span><span class="p">)</span>
+	<span class="n">assert_eq</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">get_state_by</span><span class="p">(</span><span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="s2">'</span><span class="s1">Fall'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">test_spawn_ghost_effect</span><span class="p">():</span>
