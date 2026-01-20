@@ -106,7 +106,7 @@ R  ->  T7 : material\n = 0.0
 ....
 ---
 
-==== pattern1
+==== pattern1 (autoplay)
 
 [plantuml]
 ....
@@ -317,6 +317,7 @@ R  ->  T4 : material\n = 1.0
 |*libraries* a|`{
 &"": SubResource("AnimationLibrary_kivlp")
 }`
+|*autoplay* a|`pattern1`
 |===
 
 
