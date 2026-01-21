@@ -1,0 +1,35 @@
+---
+title: res://test/dialogue/chapters/0/test_stage_0.gd
+---
+:toc:
+
+== test / dialogue / chapters / 0 / test_stage_0.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var Stage0 = load("res://src/dialogue/chapters/0/stage0.tscn")
+var scene = null
+
+
+func before_each():
+	scene = Stage0.instantiate()
+	add_child(scene)
+
+
+func test_ready():
+	assert_not_null(scene)
+	assert_eq(scene.get_node('%LaughingParticles2D').visible, false)
+
+
+func test_start():
+	scene.start()
+	assert_not_null(scene)
+	assert_eq(scene.get_node('%LaughingParticles2D').visible, false)
+
+```

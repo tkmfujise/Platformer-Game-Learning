@@ -1,0 +1,27 @@
+---
+title: assets/images/particles/HA.png
+---
+:toc:
+
+== assets / images / particles / HA.png
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |25×16 px
+|Type |png
+|Content Length |188.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/particles/HA.png[]
+

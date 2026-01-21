@@ -21,6 +21,7 @@ signal event(event_name: String)
 @export var speakers : Array[DialogueSpeaker] = []
 var current_speaker : String = ''
 var started : bool = false
+var waiting : bool = false
 
 
 func _ready() -> void:
@@ -64,6 +65,7 @@ func set_speaker_image(speaker_name: String, position: StringName) -> void:
 
 func _input(event: InputEvent) -> void:
 	if not started: return
+	if waiting: return
 	if event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 
@@ -76,6 +78,9 @@ func _handle(key: StringName, payload: Variant) -> void:
 			says(payload['name'], content, payload['position'])
 		&'event':
 			event.emit(payload)
+		&'wait':
+			waiting = true
+			%EventTimer.start(payload)
 		&'finished':
 			finished.emit()
 		_: print_debug("[%s]: %s" % [key, payload])
@@ -86,8 +91,14 @@ func _on_event(event_name: String) -> void:
 	%AnimationPlayer.play("hide")
 
 
+func _on_event_timer_timeout() -> void:
+	waiting = false
+	continue_dialogue()
+
+
 func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
+	await get_tree().create_timer(1.0).timeout
 	Player.playable = true
 
 ```

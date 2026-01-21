@@ -27,6 +27,7 @@ Dialogue.new do
      "橋を渡ってすぐさ。"]
   ~ :"02.pass_by"
 
+  2.0.later
   speaker_position_swap!
 
   Player;
@@ -35,6 +36,7 @@ Dialogue.new do
 
   OldWoman;
   ~ :"03.laughing"
+  3.0.later
   - ["うちの前の道で死にかけたんなら、",
      "セレステ山の登山は、やめたほうがいいんじゃないかい？"]
 

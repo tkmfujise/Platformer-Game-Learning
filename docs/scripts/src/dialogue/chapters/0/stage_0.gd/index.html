@@ -587,8 +587,14 @@
         
           
           
-          <li data-path="5:/test/chapters/0/stages/0/test_stage0.gd" data-category="scripts">
-            <a class="" href="../../../../../test/chapters/0/stages/0/test_stage0.gd/">test/chapters/0/stages/0/test_stage0.gd</a>
+          <li data-path="5:/test/chapters/0/stages/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../../test/chapters/0/stages/0/test_stage_0.gd/">test/chapters/0/stages/0/test_stage_0.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/test/dialogue/chapters/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../../test/dialogue/chapters/0/test_stage_0.gd/">test/dialogue/chapters/0/test_stage_0.gd</a>
           </li>
         
           
@@ -759,6 +765,12 @@
           
           <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
             <a class="" href="../../../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/assets/images/particles/HA.png" data-category="assets">
+            <a class="" href="../../../../../../assets/assets/images/particles/HA.png/">assets/images/particles/HA.png</a>
           </li>
         
           
@@ -1350,6 +1362,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">func</span> <span class="nf">start</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
 	<span class="n">started</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">Camera2D</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">Camera2D</span><span class="o">.</span><span class="n">make_current</span><span class="p">()</span>
 	<span class="o">%</span><span class="n">Dialogue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
 
@@ -1361,7 +1375,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">var</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">"event_</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">event_name</span>
 	<span class="k">if</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">has_animation</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
 		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-	<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span></code></pre>
+	<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_dialogue_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">finished'</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

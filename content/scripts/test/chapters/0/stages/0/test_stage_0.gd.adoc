@@ -1,9 +1,9 @@
 ---
-title: res://test/chapters/0/stages/0/test_stage0.gd
+title: res://test/chapters/0/stages/0/test_stage_0.gd
 ---
 :toc:
 
-== test / chapters / 0 / stages / 0 / test_stage0.gd
+== test / chapters / 0 / stages / 0 / test_stage_0.gd
 
 === Attached Scenes
 NOTE: No attached scenes.

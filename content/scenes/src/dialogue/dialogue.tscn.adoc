@@ -16,6 +16,7 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   * speakers
   * current_speaker
   * started
+  * waiting
 ---
   + _ready()
   + start()
@@ -25,6 +26,7 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   + _input()
   + _handle()
   + _on_event()
+  + _on_event_timer_timeout()
   + _on_finished()
 }
 class N1 as "Background" <<(C,lightgreen) ColorRect>> {
@@ -39,19 +41,23 @@ class N5 as "RightSpeakerImage" <<(S,lightskyblue) Sprite2D>> {
 }
 class N6 as "Content" <<(R,lightgreen) RichTextLabel>> {
 }
-class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N7 as "EventTimer" <<(T,yellow) Timer>> {
+}
+class N8 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N2
 R --o N4
 R --o N6
 R --o N7
+R --o N8
 N2 --o N3
 N4 --o N5
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_event, R::event)
 _(R::_on_finished, R::finished)
+_(R::_on_event_timer_timeout, N7::timeout)
 ....
 
 
@@ -73,6 +79,7 @@ func _ready() -> void:
 ```gdscript
 func _input(event: InputEvent) -> void:
 	if not started: return
+	if waiting: return
 	if event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 ```
@@ -91,6 +98,7 @@ func _input(event: InputEvent) -> void:
 ** [.node-name.type-control]#RightSpeaker# [.node-type.type-control]#CenterContainer#
 *** [.node-name.type-2d]#RightSpeakerImage# [.node-type.type-2d]#link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]#
 ** [.node-name.type-control]#Content# [.node-type.type-control]#RichTextLabel#
+** [.node-name.type-other]#EventTimer# [.node-type.type-other]#Timer#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
@@ -107,7 +115,15 @@ func _on_event(event_name: String) -> void:
 ```gdscript
 func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
+	await get_tree().create_timer(1.0).timeout
 	Player.playable = true
+```
+[.signal-connection]
+.$EventTimer:[#_timeout_#]=>$.
+```gdscript
+func _on_event_timer_timeout() -> void:
+	waiting = false
+	continue_dialogue()
 ```
 
 
@@ -320,6 +336,14 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
 |*vertical_alignment* a|`1`
 |===
 [.node-property.node-other]
+.#$EventTimer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*one_shot* a|`true`
+|===
+[.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
 |===
@@ -344,6 +368,7 @@ signal event(event_name: String)
 @export var speakers : Array[DialogueSpeaker] = []
 var current_speaker : String = ''
 var started : bool = false
+var waiting : bool = false
 
 
 func _ready() -> void:
@@ -387,6 +412,7 @@ func set_speaker_image(speaker_name: String, position: StringName) -> void:
 
 func _input(event: InputEvent) -> void:
 	if not started: return
+	if waiting: return
 	if event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 
@@ -399,6 +425,9 @@ func _handle(key: StringName, payload: Variant) -> void:
 			says(payload['name'], content, payload['position'])
 		&'event':
 			event.emit(payload)
+		&'wait':
+			waiting = true
+			%EventTimer.start(payload)
 		&'finished':
 			finished.emit()
 		_: print_debug("[%s]: %s" % [key, payload])
@@ -409,8 +438,14 @@ func _on_event(event_name: String) -> void:
 	%AnimationPlayer.play("hide")
 
 
+func _on_event_timer_timeout() -> void:
+	waiting = false
+	continue_dialogue()
+
+
 func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
+	await get_tree().create_timer(1.0).timeout
 	Player.playable = true
 
 ```

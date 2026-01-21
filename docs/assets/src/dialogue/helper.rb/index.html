@@ -587,8 +587,14 @@
         
           
           
-          <li data-path="5:/test/chapters/0/stages/0/test_stage0.gd" data-category="scripts">
-            <a class="" href="../../../../scripts/test/chapters/0/stages/0/test_stage0.gd/">test/chapters/0/stages/0/test_stage0.gd</a>
+          <li data-path="5:/test/chapters/0/stages/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/test/chapters/0/stages/0/test_stage_0.gd/">test/chapters/0/stages/0/test_stage_0.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/test/dialogue/chapters/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/test/dialogue/chapters/0/test_stage_0.gd/">test/dialogue/chapters/0/test_stage_0.gd</a>
           </li>
         
           
@@ -759,6 +765,12 @@
           
           <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
             <a class="" href="../../../assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/assets/images/particles/HA.png" data-category="assets">
+            <a class="" href="../../../assets/images/particles/HA.png/">assets/images/particles/HA.png</a>
           </li>
         
           
@@ -1384,8 +1396,13 @@ No attached scenes.
   <span class="k">def</span> <span class="nf">event</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
     <span class="no">Godot</span><span class="p">.</span><span class="nf">emit_signal</span> <span class="ss">:event</span><span class="p">,</span> <span class="n">sym</span>
   <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="no">Godot</span><span class="p">.</span><span class="nf">emit_signal</span> <span class="ss">:wait</span><span class="p">,</span> <span class="n">seconds</span>
+    <span class="no">Dialogue</span><span class="p">.</span><span class="nf">current</span><span class="p">.</span><span class="nf">listen!</span>
+  <span class="k">end</span>
 <span class="k">end</span>
-<span class="n">delegate</span> <span class="no">Dialogue</span><span class="p">,</span> <span class="ss">:continue</span><span class="p">,</span> <span class="ss">:___?</span><span class="p">,</span> <span class="ss">:event</span> <span class="c1">#</span>
+<span class="n">delegate</span> <span class="no">Dialogue</span><span class="p">,</span> <span class="ss">:continue</span><span class="p">,</span> <span class="ss">:___?</span><span class="p">,</span> <span class="ss">:event</span><span class="p">,</span> <span class="ss">:wait</span> <span class="c1">#</span>
 
 
 <span class="k">class</span> <span class="nc">Speaker</span>
@@ -1495,6 +1512,14 @@ No attached scenes.
   <span class="k">end</span>
 <span class="k">end</span>
 <span class="no">Array</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">ArrayExt</span>
+
+
+<span class="k">module</span> <span class="nn">NumericExt</span>
+  <span class="k">def</span> <span class="nf">later</span>
+    <span class="n">wait</span> <span class="nb">self</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="no">Numeric</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">NumericExt</span>
 
 
 <span class="k">def</span> <span class="nf">speaker_position_swap!</span>

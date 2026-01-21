@@ -179,7 +179,9 @@ func _physics_process(delta: float) -> void:
 			dash_rest_count = MAX_DASH_COUNT
 		
 		if not playable:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			if velocity:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				if not velocity: idle()
 			update_sprite_states_shader_parameters()
 			move_and_slide()
 			return
@@ -889,6 +891,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
+|*frame* a|`20`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1092,7 +1095,9 @@ func _physics_process(delta: float) -> void:
 			dash_rest_count = MAX_DASH_COUNT
 		
 		if not playable:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			if velocity:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				if not velocity: idle()
 			update_sprite_states_shader_parameters()
 			move_and_slide()
 			return

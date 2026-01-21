@@ -587,8 +587,14 @@
         
           
           
-          <li data-path="5:/test/chapters/0/stages/0/test_stage0.gd" data-category="scripts">
-            <a class="" href="../../../../scripts/test/chapters/0/stages/0/test_stage0.gd/">test/chapters/0/stages/0/test_stage0.gd</a>
+          <li data-path="5:/test/chapters/0/stages/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/test/chapters/0/stages/0/test_stage_0.gd/">test/chapters/0/stages/0/test_stage_0.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/test/dialogue/chapters/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/test/dialogue/chapters/0/test_stage_0.gd/">test/dialogue/chapters/0/test_stage_0.gd</a>
           </li>
         
           
@@ -759,6 +765,12 @@
           
           <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/assets/images/particles/HA.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/particles/HA.png/">assets/images/particles/HA.png</a>
           </li>
         
           
@@ -1399,7 +1411,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 
 		<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span>
-			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">velocity</span><span class="p">:</span>
+				<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">velocity</span><span class="p">:</span> <span class="n">idle</span><span class="p">()</span>
 			<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
 			<span class="n">move_and_slide</span><span class="p">()</span>
 			<span class="k">return</span>
@@ -1801,6 +1815,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>hframes</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>27</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>frame</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>20</code></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2374,7 +2394,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 
 		<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span>
-			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">velocity</span><span class="p">:</span>
+				<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">velocity</span><span class="p">:</span> <span class="n">idle</span><span class="p">()</span>
 			<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
 			<span class="n">move_and_slide</span><span class="p">()</span>
 			<span class="k">return</span>

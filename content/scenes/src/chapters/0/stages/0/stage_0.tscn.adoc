@@ -81,6 +81,7 @@ class N14 as "Stage0" <<(N,lightskyblue) Node2D>> {
   + start()
   + _on_event_area_2d_area_entered()
   + _on_dialogue_event()
+  + _on_dialogue_finished()
 }
 class N15 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
 }
@@ -218,7 +219,9 @@ func _physics_process(delta: float) -> void:
 			dash_rest_count = MAX_DASH_COUNT
 		
 		if not playable:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			if velocity:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				if not velocity: idle()
 			update_sprite_states_shader_parameters()
 			move_and_slide()
 			return
@@ -310,9 +313,7 @@ participant "$Player" as T0 #87CEFA
 
 
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(498, 119)
-== Time: 0.0009999999 ==
-R  ->  T0 : position\n = Vector2(592, -141)
+R  ->  T0 : position\n = Vector2(6111, 200)
 
 
 ....
@@ -328,7 +329,7 @@ participant "$Player" as T0 #87CEFA
 
 
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(6269, 242)
+R  ->  T0 : position\n = Vector2(6260, 242)
 R  ->o  T0 : &"idle"()
 == Time: 1.0 ==
 R  ->  T0 : position\n = Vector2(6643, 242)
@@ -352,6 +353,8 @@ R  ->  T0 : position\n = Vector2(6643, 242)
 R  ->o  T0 : &"turn_left"()
 == Time: 1.0 ==
 R  ->  T0 : position\n = Vector2(7013, 242)
+R  ->o  T0 : &"turn_left"()
+== Time: 2.0 ==
 R  ->o  T0 : &"turn_left"()
 
 
@@ -456,8 +459,10 @@ R  ->o  T0 : &"play"()
 |*anchors_preset* a|`15`
 |*anchor_right* a|`1.0`
 |*anchor_bottom* a|`1.0`
-|*offset_top* a|`-2073.0`
-|*offset_right* a|`11437.0`
+|*offset_left* a|`-199.0`
+|*offset_top* a|`-2046.0`
+|*offset_right* a|`11238.0`
+|*offset_bottom* a|`27.0`
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
 |*color* a|`Color(0.066755, 0.066755, 0.066755, 1)`
@@ -495,7 +500,7 @@ R  ->o  T0 : &"play"()
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(6723, 97)`
+|*position* a|`Vector2(6729, 106)`
 |===
 [.node-property.node-other]
 .#$StageGround0# properties
@@ -509,7 +514,7 @@ R  ->o  T0 : &"play"()
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(5724, -629)`
+|*position* a|`Vector2(5768, -433)`
 |===
 [.node-property.node-2d]
 .#$Gimmicks/FallingIceBlock# properties
@@ -524,7 +529,7 @@ R  ->o  T0 : &"play"()
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(498, 119)`
+|*position* a|`Vector2(6111, 200)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties

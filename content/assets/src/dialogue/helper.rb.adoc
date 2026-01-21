@@ -54,8 +54,13 @@ class Dialogue
   def event(sym)
     Godot.emit_signal :event, sym
   end
+
+  def wait(seconds)
+    Godot.emit_signal :wait, seconds
+    Dialogue.current.listen!
+  end
 end
-delegate Dialogue, :continue, :___?, :event #
+delegate Dialogue, :continue, :___?, :event, :wait #
 
 
 class Speaker
@@ -165,6 +170,14 @@ module ArrayExt
   end
 end
 Array.prepend ArrayExt
+
+
+module NumericExt
+  def later
+    wait self
+  end
+end
+Numeric.prepend NumericExt
 
 
 def speaker_position_swap!

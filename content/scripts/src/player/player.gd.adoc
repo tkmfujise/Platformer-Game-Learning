@@ -58,7 +58,9 @@ func _physics_process(delta: float) -> void:
 			dash_rest_count = MAX_DASH_COUNT
 		
 		if not playable:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			if velocity:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				if not velocity: idle()
 			update_sprite_states_shader_parameters()
 			move_and_slide()
 			return

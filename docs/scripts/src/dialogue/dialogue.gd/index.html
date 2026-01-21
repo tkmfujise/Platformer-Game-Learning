@@ -587,8 +587,14 @@
         
           
           
-          <li data-path="5:/test/chapters/0/stages/0/test_stage0.gd" data-category="scripts">
-            <a class="" href="../../../test/chapters/0/stages/0/test_stage0.gd/">test/chapters/0/stages/0/test_stage0.gd</a>
+          <li data-path="5:/test/chapters/0/stages/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../test/chapters/0/stages/0/test_stage_0.gd/">test/chapters/0/stages/0/test_stage_0.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/test/dialogue/chapters/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../test/dialogue/chapters/0/test_stage_0.gd/">test/dialogue/chapters/0/test_stage_0.gd</a>
           </li>
         
           
@@ -759,6 +765,12 @@
           
           <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/assets/images/particles/HA.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/particles/HA.png/">assets/images/particles/HA.png</a>
           </li>
         
           
@@ -1345,6 +1357,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 <span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="k">var</span> <span class="n">waiting</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1388,6 +1401,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">waiting</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span>
 
@@ -1400,6 +1414,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">says</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">name'</span><span class="p">],</span> <span class="n">content</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">position'</span><span class="p">])</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">event'</span><span class="p">:</span>
 			<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">wait'</span><span class="p">:</span>
+			<span class="n">waiting</span> <span class="o">=</span> <span class="bp">true</span>
+			<span class="o">%</span><span class="n">EventTimer</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finished'</span><span class="p">:</span>
 			<span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
 		<span class="n">_</span><span class="p">:</span> <span class="n">print_debug</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">payload</span><span class="p">])</span>
@@ -1410,8 +1427,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
 
 
+<span class="k">func</span> <span class="nf">_on_event_timer_timeout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">waiting</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="n">continue_dialogue</span><span class="p">()</span>
+
+
 <span class="k">func</span> <span class="nf">_on_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
 	<span class="n">Player</span><span class="o">.</span><span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
 </div>
 </div>

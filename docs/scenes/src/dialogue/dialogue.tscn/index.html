@@ -587,8 +587,14 @@
         
           
           
-          <li data-path="5:/test/chapters/0/stages/0/test_stage0.gd" data-category="scripts">
-            <a class="" href="../../../../scripts/test/chapters/0/stages/0/test_stage0.gd/">test/chapters/0/stages/0/test_stage0.gd</a>
+          <li data-path="5:/test/chapters/0/stages/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/test/chapters/0/stages/0/test_stage_0.gd/">test/chapters/0/stages/0/test_stage_0.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/test/dialogue/chapters/0/test_stage_0.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/test/dialogue/chapters/0/test_stage_0.gd/">test/dialogue/chapters/0/test_stage_0.gd</a>
           </li>
         
           
@@ -759,6 +765,12 @@
           
           <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/assets/images/particles/HA.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/particles/HA.png/">assets/images/particles/HA.png</a>
           </li>
         
           
@@ -1333,7 +1345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdkk2P0zAQhu_5FcNyaaA50P2SVmWlpXtBqhBKuSFkTZPZxKqxK9tZiBD8diaTONCFC9ze8cw8nq_KYAhQAgY4u9doXNPRGazXi82yJ2Pclxw2aB8xbLEnf3sL3zKAH_CgrQ4t1WLQI9mYFUXB1guonI3eGUNezHAkPJAPo6_znmPV9DgGRPSRSWP-S1CesO4XuRjinPQA1rYjVU91phjsQ5I0s5X-jE0KUdoeu8RRLdrazC5nlTTwm52646fvWSUTevdKRvQGq0PjXWfraUhGN21sPJHlQTnjfElVlDHNmSvJ3NJD3I2l_S2VCyC_4Q5R22nOM-D8KeDt0JpQdiMlHPq96SiH3dHrSKv7U8CFAMoh8j9LuPyD8K81XAlhwPM_kleefF_qqv1AX-MW92ROU68l9c7yRqN29r0ZTlEQd_ORPvFOgBKKwvHuklglcZHEVRLXGS9K1HnGAxN1mT2riY-BQC1wuc8BYV18fD60uYytrg6WQni9-lTAPjO8HogO_NAT1NrzHXA5mVqUNzfzkS2BLVH5L086N3EmI_8JBWghQQ==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdUk1v2zAMvftXcO0l7uzD0k8EaYE23WFAMAxObsUgKDZrC1GlQJLbGcP62ycxljtnu6wX4VHke6IeWUpuLRTALRzdCy513eIRzOeTRdahlPolhQVXz9wueYfm5gZ-JgCv8CiUsA1WFOAzKpfkee6jEyi1ckZLiYZCu0O-RWP3udYYX8v6y32B48aR0gm8cOGEqnutj8AM8qqbpBRQYY_DI0K1yKq-51jDOxshDu8w8cTrWMKE2rVRhzVcVXJIacXoM4cxc-LJy4RTt39mow_-6ldSkpdfP5GZd7zc1ka3qurtlKJuXG0QlbdUS20KLB0ZOjCnxFzio1vtG_8X1beDZuH_z4XqJzIInB4KfAkfJ5XVXsVuu41sMYXVzgiH0_uxwBkJFKHynS2c_6Xwvz1ckEKQ9-8Qrxg9X4iyWeMPt-QblGPqJVE_h5Gtw8SIvR42me7GjCti3Cq_IU5o9U2GNSfa7UA7yPYCBeS59tOOYBrBWQQXEVxGcJX4GRM6TbzXhM6TDxX6PUJgE55tUuAwzx-Og0OZa0S5VWjt9fR7DptE-smC02CCHVAJ41fI95WwSTGbDduagY8IpW-ZuKmUjEF6wBzveeY7n836IP0N9T9QkA==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1362,6 +1374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">waiting</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span></code></pre>
 </div>
@@ -1413,6 +1426,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <p><span class="node-name type-control">Content</span> <span class="node-type type-control">RichTextLabel</span></p>
 </li>
 <li>
+<p><span class="node-name type-other">EventTimer</span> <span class="node-type type-other">Timer</span></p>
+</li>
+<li>
 <p><span class="node-name type-other">AnimationPlayer</span> <span class="node-type type-other">AnimationPlayer</span></p>
 </li>
 </ul>
@@ -1436,7 +1452,16 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
 	<span class="n">Player</span><span class="o">.</span><span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
+</div>
+</div>
+<div class="listingblock signal-connection">
+<div class="title">$EventTimer:[<mark><em>timeout</em></mark>]⇒$.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_event_timer_timeout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">waiting</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="n">continue_dialogue</span><span class="p">()</span></code></pre>
 </div>
 </div>
 </div>
@@ -1812,7 +1837,34 @@ document.addEventListener("DOMContentLoaded", () => {
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch node-property node-other">
-<caption class="title">Table 8. <mark>$AnimationPlayer</mark> properties</caption>
+<caption class="title">Table 8. <mark>$EventTimer</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unique_name_in_owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>one_shot</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch node-property node-other">
+<caption class="title">Table 9. <mark>$AnimationPlayer</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1860,6 +1912,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 <span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="k">var</span> <span class="n">waiting</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1903,6 +1956,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">started</span><span class="p">:</span> <span class="k">return</span>
+	<span class="k">if</span> <span class="n">waiting</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">'</span><span class="s1">ui_accept'</span><span class="p">):</span>
 		<span class="n">continue_dialogue</span><span class="p">()</span>
 
@@ -1915,6 +1969,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">says</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">name'</span><span class="p">],</span> <span class="n">content</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">position'</span><span class="p">])</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">event'</span><span class="p">:</span>
 			<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">wait'</span><span class="p">:</span>
+			<span class="n">waiting</span> <span class="o">=</span> <span class="bp">true</span>
+			<span class="o">%</span><span class="n">EventTimer</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finished'</span><span class="p">:</span>
 			<span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
 		<span class="n">_</span><span class="p">:</span> <span class="n">print_debug</span><span class="p">(</span><span class="s2">"[</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">payload</span><span class="p">])</span>
@@ -1925,8 +1982,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
 
 
+<span class="k">func</span> <span class="nf">_on_event_timer_timeout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">waiting</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="n">continue_dialogue</span><span class="p">()</span>
+
+
 <span class="k">func</span> <span class="nf">_on_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
 	<span class="n">Player</span><span class="o">.</span><span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
 </div>
 </div>
