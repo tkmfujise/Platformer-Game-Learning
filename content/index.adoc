@@ -60,13 +60,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-80 _files_
+81 _files_
 
 | *Content Length*
 | link:/assets/assets/images/particles/HA.png[188.0 B ]
-| 22.96 KB 
+| 25.41 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
-| 1.79 MB 
+| 2.01 MB 
 
 
 
@@ -94,7 +94,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MzovYXNzZXRzL2ltYWdlcy9hY3RvcnM=]#_# | │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9hY3RvcnMvb2xkX3dvbWFu]#_# | │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9mYWNlcw==]#_# | │  │ ├ faces |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
-|[.path.NDovYXNzZXRzL2ltYWdlcy9mYWNlcy9hY3RvcnM=]#_# | │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9mYWNlcy9hY3RvcnM=]#_# | │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9wYXJ0aWNsZXM=]#_# | │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9wbGF5ZXI=]#_# | │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9wbGF5ZXIvZWZmZWN0cw==]#_# | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 

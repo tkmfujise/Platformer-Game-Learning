@@ -1,0 +1,25 @@
+---
+title: assets/images/faces/actors/OldWoman_face_new.png
+---
+:toc:
+
+== assets / images / faces / actors / OldWoman_face_new.png
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |768×256 px
+|Type |png
+|Content Length |221.28 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/faces/actors/OldWoman_face_new.png[]
+
