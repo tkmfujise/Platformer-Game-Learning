@@ -1,0 +1,28 @@
+---
+title: assets/images/faces/Player_face_default.png
+---
+:toc:
+
+== assets / images / faces / Player_face_default.png
+
+=== Attached Scenes
+* link:/scenes/src/account/account.tscn[res://src/account/account.tscn]
+* link:/scenes/src/dialogue/speaker/speaker.tscn[res://src/dialogue/speaker/speaker.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |256×256 px
+|Type |png
+|Content Length |54.54 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/faces/Player_face_default.png[]
+

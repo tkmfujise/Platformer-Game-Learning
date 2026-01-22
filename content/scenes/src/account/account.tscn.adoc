@@ -333,8 +333,8 @@ image::/assets/raw/assets/images/ui/BlueHeart.svg[200, 100]
 image::/assets/raw/assets/images/ui/TikectCover.svg[200, 100] 
 
 [.asset-image]
-[link=/assets/assets/images/faces/Player_face.png]
-image::/assets/raw/assets/images/faces/Player_face.png[200, 100] 
+[link=/assets/assets/images/faces/Player_face_default.png]
+image::/assets/raw/assets/images/faces/Player_face_default.png[200, 100] 
 
 [.asset-image]
 [link=/assets/assets/images/ui/sellotape.svg]
@@ -1292,10 +1292,10 @@ image::/assets/raw/assets/images/ui/TikectCover.svg[]
 |*material* a|`SubResource("CanvasItemMaterial_pgbv1")`
 |*position* a|`Vector2(-1539.67, 102.401)`
 |*scale* a|`Vector2(0.677092, 0.691006)`
-|*texture* a|[link=/assets/assets/images/faces/Player_face.png]
+|*texture* a|[link=/assets/assets/images/faces/Player_face_default.png]
 [.asset-image]
-.res://assets/images/faces/Player_face.png
-image::/assets/raw/assets/images/faces/Player_face.png[]
+.res://assets/images/faces/Player_face_default.png
+image::/assets/raw/assets/images/faces/Player_face_default.png[]
 
 |*flip_h* a|`true`
 |===

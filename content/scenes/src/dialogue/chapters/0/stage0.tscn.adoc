@@ -197,6 +197,22 @@ R  ->  T1 : zoom\n = Vector2(1.5, 1.5)
 ....
 ---
 
+==== event_03.laughing
+
+[plantuml]
+....
+control "Root" as R
+participant "$OldWoman\n/LaughingParticles2D" as T0 #87CEFA
+
+
+
+== Time: 1.0 ==
+R  ->o  T0 : visible\n = true
+
+
+....
+---
+
 ==== event_04.zoom_in
 
 [plantuml]
@@ -212,6 +228,19 @@ R  ->  T0 : zoom\n = Vector2(1.5, 1.5)
 R  ->o  T1 : visible\n = false
 == Time: 0.96666664 ==
 R  ->  T0 : zoom\n = Vector2(2, 2)
+
+
+....
+---
+
+==== event_05.zoom_out
+
+[plantuml]
+....
+control "Root" as R
+
+
+
 
 
 ....
@@ -233,35 +262,6 @@ R  ->  T0 : zoom\n = Vector2(2, 2)
 R  ->  T0 : zoom\n = Vector2(1, 1)
 R  ->o  T0 : enabled\n = false
 R  ->o  T2 : visible\n = true
-
-
-....
----
-
-==== event_03.laughing
-
-[plantuml]
-....
-control "Root" as R
-participant "$OldWoman\n/LaughingParticles2D" as T0 #87CEFA
-
-
-
-== Time: 1.0 ==
-R  ->o  T0 : visible\n = true
-
-
-....
----
-
-==== event_05.zoom_out
-
-[plantuml]
-....
-control "Root" as R
-
-
-
 
 
 ....

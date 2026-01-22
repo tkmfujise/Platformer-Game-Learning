@@ -16,9 +16,9 @@ title: assets/images/faces/actors/OldWoman_face.png
 [cols="1,1" options="header"]
 |===
 |Name |Value
-|Size |256×256 px
+|Size |768×256 px
 |Type |png
-|Content Length |88.49 KB
+|Content Length |221.28 KB
 |===
 
 

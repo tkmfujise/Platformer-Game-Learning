@@ -763,14 +763,14 @@
         
           
           
-          <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
-            <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
+          <li data-path="3:/assets/images/faces/Player_face_default.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/faces/Player_face_default.png/">assets/images/faces/Player_face_default.png</a>
           </li>
         
           
           
-          <li data-path="4:/assets/images/faces/actors/OldWoman_face_new.png" data-category="assets">
-            <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face_new.png/">assets/images/faces/actors/OldWoman_face_new.png</a>
+          <li data-path="4:/assets/images/faces/actors/OldWoman_face.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/faces/actors/OldWoman_face.png/">assets/images/faces/actors/OldWoman_face.png</a>
           </li>
         
           
@@ -1741,6 +1741,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="title">Figure 1. res://assets/images/faces/actors/OldWoman_face.png</div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>hframes</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>3</code></p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch node-property node-control">
@@ -1936,7 +1942,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">controller</span><span class="o">.</span><span class="n">perform</span><span class="p">(</span><span class="s2">'</span><span class="s1">continue'</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">says</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">says</span><span class="p">(</span>
+	<span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">,</span>
+	<span class="n">face</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">current_speaker</span> <span class="o">!=</span> <span class="n">speaker_name</span><span class="p">:</span>
 		<span class="n">current_speaker</span> <span class="o">=</span> <span class="n">speaker_name</span>
 		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
@@ -1946,11 +1955,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">else</span><span class="p">:</span>
 		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
 		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
-	<span class="n">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+	<span class="n">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">content</span>
 
 
-<span class="k">func</span> <span class="nf">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">,</span> <span class="n">face</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">var</span> <span class="n">speaker_idx</span> <span class="o">=</span> <span class="n">speakers</span><span class="o">.</span><span class="n">find_custom</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
 		<span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">speaker_name</span> <span class="o">==</span> <span class="n">speaker_name</span><span class="p">)</span>
 	<span class="k">if</span> <span class="n">speaker_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span>
@@ -1958,6 +1967,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">var</span> <span class="n">target</span> <span class="o">=</span> <span class="o">%</span><span class="n">LeftSpeakerImage</span> <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">left'</span> \
 		<span class="k">else</span> <span class="o">%</span><span class="n">RightSpeakerImage</span>
 	<span class="n">target</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">texture</span>
+	<span class="n">target</span><span class="o">.</span><span class="n">hframes</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="k">var</span> <span class="n">face_idx</span> <span class="o">=</span> <span class="n">speaker</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">face_idx</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="n">target</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">face_idx</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">target</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="mi">0</span>
 
 
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1972,7 +1987,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">says'</span><span class="p">:</span>
 			<span class="k">var</span> <span class="n">content</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">content'</span><span class="p">]</span>
 			<span class="k">if</span> <span class="n">content</span> <span class="k">is</span> <span class="kt">Array</span><span class="p">:</span> <span class="n">content</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-			<span class="n">says</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">name'</span><span class="p">],</span> <span class="n">content</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">position'</span><span class="p">])</span>
+			<span class="n">says</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">name'</span><span class="p">],</span> <span class="n">content</span><span class="p">,</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">position'</span><span class="p">],</span> <span class="n">payload</span><span class="p">[</span><span class="s2">'</span><span class="s1">face'</span><span class="p">])</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">event'</span><span class="p">:</span>
 			<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">wait'</span><span class="p">:</span>

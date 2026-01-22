@@ -16,5 +16,6 @@ class_name DialogueSpeaker
 
 @export var speaker_name : String
 @export var texture : CompressedTexture2D
+@export var faces : Array[String] = []
 
 ```

@@ -19,8 +19,8 @@ left to right direction
 [.scene-assets]
 === Assets
 [.asset-image]
-[link=/assets/assets/images/faces/Player_face.png]
-image::/assets/raw/assets/images/faces/Player_face.png[200, 100] 
+[link=/assets/assets/images/faces/Player_face_default.png]
+image::/assets/raw/assets/images/faces/Player_face_default.png[200, 100] 
 
 
 
@@ -46,10 +46,10 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* a|[link=/assets/assets/images/faces/Player_face.png]
+|*texture* a|[link=/assets/assets/images/faces/Player_face_default.png]
 [.asset-image]
-.res://assets/images/faces/Player_face.png
-image::/assets/raw/assets/images/faces/Player_face.png[]
+.res://assets/images/faces/Player_face_default.png
+image::/assets/raw/assets/images/faces/Player_face_default.png[]
 
 |*offset* a|`Vector2(128, 128)`
 |===

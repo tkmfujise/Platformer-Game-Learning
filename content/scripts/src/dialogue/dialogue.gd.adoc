@@ -39,7 +39,10 @@ func continue_dialogue() -> void:
 	controller.perform('continue')
 
 
-func says(speaker_name: String, content: String, position: StringName) -> void:
+func says(
+	speaker_name: String, content: String, position: StringName,
+	face: String,
+) -> void:
 	if current_speaker != speaker_name:
 		current_speaker = speaker_name
 		%AnimationPlayer.play("show")
@@ -49,18 +52,24 @@ func says(speaker_name: String, content: String, position: StringName) -> void:
 	else:
 		%LeftSpeakerImage.visible = false
 		%RightSpeakerImage.visible = true
-	set_speaker_image(speaker_name, position)
+	set_speaker_image(speaker_name, position, face)
 	%Content.text = content
 
 
-func set_speaker_image(speaker_name: String, position: StringName) -> void:
+func set_speaker_image(speaker_name: String, position: StringName, face: String) -> void:
 	var speaker_idx = speakers.find_custom(func(s):
 		return s.speaker_name == speaker_name)
 	if speaker_idx < 0: return
 	var speaker = speakers[speaker_idx]
 	var target = %LeftSpeakerImage if position == &'left' \
 		else %RightSpeakerImage
-	target.texture = speaker.texture		
+	target.texture = speaker.texture
+	target.hframes = speaker.faces.size() + 1
+	var face_idx = speaker.faces.find(face)
+	if face_idx >= 0:
+		target.frame = face_idx + 1
+	else:
+		target.frame = 0
 
 
 func _input(event: InputEvent) -> void:
@@ -75,7 +84,7 @@ func _handle(key: StringName, payload: Variant) -> void:
 		&'says':
 			var content = payload['content']
 			if content is Array: content = "\n".join(content)
-			says(payload['name'], content, payload['position'])
+			says(payload['name'], content, payload['position'], payload['face'])
 		&'event':
 			event.emit(payload)
 		&'wait':
