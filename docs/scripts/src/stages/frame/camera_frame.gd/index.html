@@ -1359,13 +1359,17 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">const</span> <span class="n">HALF_SIZE</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
 
-<span class="k">func</span> <span class="nf">corner</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="p">:</span>
+<span class="k">static</span> <span class="k">func</span> <span class="nf">corner_of</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="p">:</span>
 	<span class="k">return</span> <span class="p">{</span>
-		<span class="s2">"left"</span><span class="p">:</span>   <span class="n">global_position</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
-		<span class="s2">"right"</span><span class="p">:</span>  <span class="n">global_position</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
-		<span class="s2">"top"</span><span class="p">:</span>    <span class="n">global_position</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
-		<span class="s2">"bottom"</span><span class="p">:</span> <span class="n">global_position</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
-	<span class="p">}</span></code></pre>
+		<span class="s2">"left"</span><span class="p">:</span>   <span class="n">area</span><span class="o">.</span><span class="n">global_position</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+		<span class="s2">"right"</span><span class="p">:</span>  <span class="n">area</span><span class="o">.</span><span class="n">global_position</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+		<span class="s2">"top"</span><span class="p">:</span>    <span class="n">area</span><span class="o">.</span><span class="n">global_position</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+		<span class="s2">"bottom"</span><span class="p">:</span> <span class="n">area</span><span class="o">.</span><span class="n">global_position</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">HALF_SIZE</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+	<span class="p">}</span>
+
+
+<span class="k">func</span> <span class="nf">corner</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Dictionary</span><span class="p">:</span>
+	<span class="k">return</span> <span class="n">corner_of</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

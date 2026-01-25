@@ -46,26 +46,31 @@ class N6 as "Frames" <<(N,lightskyblue) Node2D>> {
 class N7 as "CameralFrame" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
+  + corner_of()
   + corner()
 }
 class N8 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
+  + corner_of()
   + corner()
 }
 class N9 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
+  + corner_of()
   + corner()
 }
 class N10 as "CameraFrame4" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
+  + corner_of()
   + corner()
 }
 class N11 as "CameraFrame5" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
+  + corner_of()
   + corner()
 }
 class N12 as "StageGround0" <<(T,yellow) TileMapLayer>> {
@@ -104,11 +109,13 @@ class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   - DASH_TIME
   - DASH_ATTENUATION
   - MAX_DASH_COUNT
+  - DEFAULT_SCALE
   * GhostEffect
   * falling_time
   * dash_rest_time
   * dash_rest_count
   * grounding
+  * sprite_tween
   * playable
 ---
   + _ready()
@@ -122,6 +129,7 @@ class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + turn_left()
   + vibrate()
   + get_state_by()
+  + tween_sprite()
   + update_sprite_states_shader_parameters()
   + spawn_ghost_effect()
   + current_sprite_state()
@@ -207,12 +215,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Add the gravity.
 		if not is_on_floor():
+			# FIXME: ignore gravity if failed
 			velocity.y += GRAVITY * delta
 			falling_time += delta
 			grounding = false
 		else:
 			if not grounding:
 				idle()
+				tween_sprite(&'grounding')
 				vibrate('Landed')
 			grounding = true
 			falling_time = 0
@@ -229,6 +239,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
 			velocity.y = JUMP_VELOCITY
+			tween_sprite(&'jumping')
 
 		var direction_x := Input.get_axis("move_left", "move_right")
 		if direction_x:
@@ -313,7 +324,7 @@ participant "$Player" as T0 #87CEFA
 
 
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(6111, 200)
+R  ->  T0 : position\n = Vector2(490, 350)
 
 
 ....
@@ -529,7 +540,7 @@ R  ->o  T0 : &"play"()
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(6111, 200)`
+|*position* a|`Vector2(490, 350)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties

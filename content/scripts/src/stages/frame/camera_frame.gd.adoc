@@ -17,12 +17,16 @@ extends Area2D
 const HALF_SIZE = Vector2(1920, 1080) / 2
 
 
-func corner() -> Dictionary:
+static func corner_of(area: Area2D) -> Dictionary:
 	return {
-		"left":   global_position.x - HALF_SIZE.x,
-		"right":  global_position.x + HALF_SIZE.x,
-		"top":    global_position.y - HALF_SIZE.y,
-		"bottom": global_position.y + HALF_SIZE.y,
+		"left":   area.global_position.x - HALF_SIZE.x,
+		"right":  area.global_position.x + HALF_SIZE.x,
+		"top":    area.global_position.y - HALF_SIZE.y,
+		"bottom": area.global_position.y + HALF_SIZE.y,
 	}
+
+
+func corner() -> Dictionary:
+	return corner_of(self)
 
 ```
