@@ -1,0 +1,24 @@
+---
+title: res://dev/test.gd
+---
+:toc:
+
+== dev / test.gd
+
+=== Attached Scenes
+* link:/scenes/dev/test.tscn[res://dev/test.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+
+func _ready() -> void:
+	var voices := DisplayServer.tts_get_voices_for_language("ja")
+	var voice_id := voices[0]
+	var speach_text := "ゲームを開始します。"
+	DisplayServer.tts_speak(speach_text, voice_id)
+
+```

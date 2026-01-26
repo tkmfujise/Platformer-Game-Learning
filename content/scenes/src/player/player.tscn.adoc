@@ -10,6 +10,8 @@ title: src/player/player.tscn
 ....
 class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
+  ~ jumped
+  ~ landed
   ~ failed
 ---
   - SPEED
@@ -20,17 +22,21 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   - DASH_TIME
   - DASH_ATTENUATION
   - MAX_DASH_COUNT
+  - MAX_CLIMBING_TIME
   - DEFAULT_SCALE
   * GhostEffect
+  * state
   * falling_time
   * dash_rest_time
   * dash_rest_count
-  * grounding
+  * climb_rest_time
   * sprite_tween
   * playable
 ---
   + _ready()
   + _physics_process()
+  + compute_state()
+  + is_just_input_action()
   + animate()
   + animate_with()
   + idle()
@@ -46,6 +52,8 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + current_sprite_state()
   + is_dashed()
   + _on_dashed()
+  + _on_jumped()
+  + _on_landed()
   + _on_failed()
   + _on_frame_subject_area_entered()
   + _on_frame_subject_area_exited()
@@ -63,21 +71,23 @@ class N5 as "JumpSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
 class N6 as "FallSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N7 as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
+class N7 as "ClimbSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N8 as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N8 as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
 }
-class N9 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N9 as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N10 as "AreaCollision" <<(A,lightskyblue) Area2D>> {
+class N10 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N11 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N11 as "AreaCollision" <<(A,lightskyblue) Area2D>> {
 }
-class N12 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
+class N12 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N13 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N13 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
 }
-class N14 as "RestartCurtain" <<(C,lightgreen) Control>> {
+class N14 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N15 as "RestartCurtain" <<(C,lightgreen) Control>> {
   ~ animation_finished
 ---
   * pattern
@@ -87,7 +97,7 @@ class N14 as "RestartCurtain" <<(C,lightgreen) Control>> {
   + play()
   + _on_animation_player_animation_finished()
 }
-class N15 as "Camera" <<(C,lightskyblue) Camera2D>> {
+class N16 as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
   * shaking_time
   * fixed_position
@@ -100,34 +110,37 @@ class N15 as "Camera" <<(C,lightskyblue) Camera2D>> {
   + shake()
   + shaking()
 }
-class N16 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N17 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N17 as "AnimationTree" <<(A,yellow) AnimationTree>> {
+class N18 as "AnimationTree" <<(A,yellow) AnimationTree>> {
 }
 R --o N1
-R --o N9
 R --o N10
-R --o N12
-R --o N14
+R --o N11
+R --o N13
 R --o N15
 R --o N16
 R --o N17
+R --o N18
 N1 --o N2
-N1 --o N7
+N1 --o N8
 N2 --o N3
 N2 --o N4
 N2 --o N5
 N2 --o N6
-N7 --o N8
-N10 --o N11
-N12 --o N13
+N2 --o N7
+N8 --o N9
+N11 --o N12
+N13 --o N14
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_dashed, R::dashed)
 _(R::_on_failed, R::failed)
-_(R::_on_failure_collision_area_entered, N10::area_entered)
-_(R::_on_frame_subject_area_entered, N12::area_entered)
-_(R::_on_frame_subject_area_exited, N12::area_exited)
+_(R::_on_jumped, R::jumped)
+_(R::_on_landed, R::landed)
+_(R::_on_failure_collision_area_entered, N11::area_entered)
+_(R::_on_frame_subject_area_entered, N13::area_entered)
+_(R::_on_frame_subject_area_exited, N13::area_exited)
 ....
 
 
@@ -150,6 +163,10 @@ image::/assets/raw/assets/images/player/Player_jump.png[200, 100]
 image::/assets/raw/assets/images/player/Player_fall.png[200, 100] 
 
 [.asset-image]
+[link=/assets/assets/images/player/Player_climb.png]
+image::/assets/raw/assets/images/player/Player_climb.png[200, 100] 
+
+[.asset-image]
 [link=/assets/assets/images/player/effects/Burst.png]
 image::/assets/raw/assets/images/player/effects/Burst.png[200, 100] 
 
@@ -164,53 +181,32 @@ func _ready() -> void:
 ==== _physics_process
 ```gdscript
 func _physics_process(delta: float) -> void:
-	if dash_rest_time > 0:
-		dash_rest_time -= delta
-		velocity *= DASH_ATTENUATION * delta
-	else:
-		# Add the gravity.
-		if not is_on_floor():
-			# FIXME: ignore gravity if failed
+	var dx := Input.get_axis(&'move_left', &'move_right')
+	var dy := Input.get_axis(&'move_up', &'move_down')
+	var direction := Vector2(dx, dy)
+	state = compute_state(delta, direction)
+	match state:
+		State.CLIMBING:
+			velocity = Vector2(0, 0) # TODO
+		State.DASHED:
+			velocity = direction.normalized() * DASH_SPEED
+		State.DASHING:
+			velocity *= DASH_ATTENUATION * delta
+		State.FALLING:
 			velocity.y += GRAVITY * delta
-			falling_time += delta
-			grounding = false
-		else:
-			if not grounding:
-				idle()
-				tween_sprite(&'grounding')
-				vibrate('Landed')
-			grounding = true
-			falling_time = 0
-			dash_rest_count = MAX_DASH_COUNT
-		
-		if not playable:
-			if velocity:
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-				if not velocity: idle()
-			update_sprite_states_shader_parameters()
-			move_and_slide()
-			return
-
-		# Handle jump.
-		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
-			tween_sprite(&'jumping')
-
-		var direction_x := Input.get_axis("move_left", "move_right")
-		if direction_x:
-			velocity.x = direction_x * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-
-		# Handle dash.
-		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
-			var direction_y := Input.get_axis("move_up", "move_down")
-			var direction = Vector2(direction_x, direction_y).normalized()
-			if direction:
-				dashed.emit()
-				velocity = direction * DASH_SPEED
-				dash_rest_time = DASH_TIME
-				dash_rest_count -= 1
+		_: pass
+	
+	if not playable:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		update_sprite_states_shader_parameters()
+		move_and_slide()
+		return
+	
+	if not (state == State.DASHED or state == State.DASHING):
+		if dx: velocity.x = dx * SPEED
+		else: velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	animate()
 	move_and_slide()
@@ -239,6 +235,7 @@ func _process(delta: float) -> void:
 **** [.node-name.type-2d]#RunSprite2D# [.node-type.type-2d]#Sprite2D#
 **** [.node-name.type-2d]#JumpSprite2D# [.node-type.type-2d]#Sprite2D#
 **** [.node-name.type-2d]#FallSprite2D# [.node-type.type-2d]#Sprite2D#
+**** [.node-name.type-2d]#ClimbSprite2D# [.node-type.type-2d]#Sprite2D#
 *** [.node-name.type-2d]#SpriteEffects# [.node-type.type-2d]#Node2D#
 **** [.node-name.type-2d]#BurstSprite2D# [.node-type.type-2d]#Sprite2D#
 ** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
@@ -271,6 +268,20 @@ func _on_failed() -> void:
 	%RestartCurtain.play()
 ```
 [.signal-connection]
+.$.:[#_jumped_#]=>$.
+```gdscript
+func _on_jumped() -> void:
+	tween_sprite(&'jumped')
+```
+[.signal-connection]
+.$.:[#_landed_#]=>$.
+```gdscript
+func _on_landed() -> void:
+	vibrate('Landed')
+	tween_sprite(&'landed')
+	idle()
+```
+[.signal-connection]
 .$AreaCollision:[#_area_entered_#]=>$.
 ```gdscript
 func _on_failure_collision_area_entered(area: Area2D) -> void:
@@ -298,6 +309,7 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 control "Root" as R
 participant "$Sprites\n/SpriteEffects\n/BurstSprite2D" as T0 #87CEFA
 participant "$Sprites\n/SpriteStates" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T3 #87CEFA
 
 
 
@@ -305,6 +317,10 @@ participant "$Sprites\n/SpriteStates" as T2 #87CEFA
 R  ->o  T0 : visible\n = false
 R  ->o  T0 : frame\n = 11
 R  ->  T2 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T3 : visible\n = false
+R  ->o  T3 : flip_h\n = false
+R  ->o  T3 : frame\n = 0
+R  ->  T3 : offset\n = Vector2(2, 4)
 
 
 ....
@@ -520,6 +536,80 @@ R  ->o  T0 : frame\n = 43
 ....
 ---
 
+==== climb_left
+
+[plantuml]
+....
+control "Root" as R
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T5 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = false
+R  ->  T2 : position\n = Vector2(12, -72)
+R  ->o  T3 : visible\n = false
+R  ->o  T4 : visible\n = false
+R  ->o  T5 : visible\n = true
+R  ->o  T5 : flip_h\n = false
+R  ->o  T5 : frame\n = 0
+R  ->  T5 : offset\n = Vector2(-6, 4)
+== Time: 0.125 ==
+R  ->o  T5 : frame\n = 1
+== Time: 0.25 ==
+R  ->o  T5 : frame\n = 2
+== Time: 0.375 ==
+R  ->o  T5 : frame\n = 3
+== Time: 0.5 ==
+R  ->o  T5 : frame\n = 4
+
+end
+....
+---
+
+==== climb_right
+
+[plantuml]
+....
+control "Root" as R
+participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T0 #87CEFA
+participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
+participant "$Sprites" as T2 #87CEFA
+participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T5 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->o  T0 : visible\n = false
+R  ->o  T1 : visible\n = false
+R  ->  T2 : position\n = Vector2(12, -72)
+R  ->o  T3 : visible\n = false
+R  ->o  T4 : visible\n = false
+R  ->o  T5 : visible\n = true
+R  ->o  T5 : flip_h\n = true
+R  ->o  T5 : frame\n = 0
+R  ->  T5 : offset\n = Vector2(2, 4)
+== Time: 0.125 ==
+R  ->o  T5 : frame\n = 1
+== Time: 0.25 ==
+R  ->o  T5 : frame\n = 2
+== Time: 0.375 ==
+R  ->o  T5 : frame\n = 3
+== Time: 0.5 ==
+R  ->o  T5 : frame\n = 4
+
+end
+....
+---
+
 ==== fall_left
 
 [plantuml]
@@ -530,6 +620,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
 participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -541,6 +632,7 @@ R  ->o  T3 : visible\n = false
 R  ->o  T4 : visible\n = true
 R  ->o  T4 : flip_h\n = false
 R  ->o  T4 : frame\n = 0
+R  ->o  T7 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T4 : frame\n = 1
 
@@ -558,6 +650,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
 participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -569,6 +662,7 @@ R  ->o  T3 : visible\n = false
 R  ->o  T4 : visible\n = true
 R  ->o  T4 : flip_h\n = true
 R  ->o  T4 : frame\n = 0
+R  ->o  T7 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T4 : frame\n = 1
 
@@ -586,6 +680,7 @@ participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1 #87CEFA
 participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -597,6 +692,7 @@ R  ->o  T1 : frame\n = 0
 R  ->  T4 : position\n = Vector2(-12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
+R  ->o  T7 : visible\n = false
 == Time: 0.2222 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.4444 ==
@@ -661,6 +757,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T0 #87CEFA
 participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1 #87CEFA
 participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T6 #87CEFA
 
 
 loop
@@ -671,6 +768,7 @@ R  ->o  T1 : flip_h\n = true
 R  ->o  T1 : frame\n = 0
 R  ->  T4 : position\n = Vector2(12, -72)
 R  ->o  T5 : visible\n = false
+R  ->o  T6 : visible\n = false
 == Time: 0.2222 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.4444 ==
@@ -736,6 +834,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
 participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -747,6 +846,7 @@ R  ->o  T3 : visible\n = true
 R  ->o  T4 : visible\n = false
 R  ->o  T3 : flip_h\n = false
 R  ->o  T3 : frame\n = 0
+R  ->o  T7 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T3 : frame\n = 1
 
@@ -764,6 +864,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
 participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -775,6 +876,7 @@ R  ->o  T3 : visible\n = true
 R  ->o  T4 : visible\n = false
 R  ->o  T3 : frame\n = 0
 R  ->o  T3 : flip_h\n = true
+R  ->o  T7 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T3 : frame\n = 1
 
@@ -792,6 +894,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
 participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T6 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -803,6 +906,7 @@ R  ->o  T1 : frame\n = 0
 R  ->  T4 : position\n = Vector2(-12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
+R  ->o  T7 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.25 ==
@@ -830,6 +934,7 @@ participant "$Sprites\n/SpriteStates\n/RunSprite2D" as T1 #87CEFA
 participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6 #87CEFA
+participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
 
 
 loop
@@ -841,6 +946,7 @@ R  ->o  T1 : frame\n = 0
 R  ->  T4 : position\n = Vector2(12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
+R  ->o  T7 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.25 ==
@@ -899,7 +1005,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`9`
+|*frame* a|`2`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -942,6 +1048,22 @@ image::/assets/raw/assets/images/player/Player_jump.png[]
 image::/assets/raw/assets/images/player/Player_fall.png[]
 
 |*hframes* a|`2`
+|===
+[.node-property.node-2d]
+.#$Sprites/SpriteStates/ClimbSprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*visible* a|`false`
+|*material* a|`SubResource("ShaderMaterial_jpi3j")`
+|*scale* a|`Vector2(0.8, 0.8)`
+|*texture* a|[link=/assets/assets/images/player/Player_climb.png]
+[.asset-image]
+.res://assets/images/player/Player_climb.png
+image::/assets/raw/assets/images/player/Player_climb.png[]
+
+|*offset* a|`Vector2(2, 4)`
+|*hframes* a|`6`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteEffects# properties
@@ -1047,10 +1169,11 @@ image::/assets/raw/assets/images/player/effects/Burst.png[]
 |*root_node* a|`NodePath("%AnimationTree/..")`
 |*tree_root* a|`SubResource("AnimationNodeStateMachine_mwkb6")`
 |*anim_player* a|`NodePath("../AnimationPlayer")`
-|*parameters/Fall/blend_position* a|`0.195104`
+|*parameters/Climb/blend_position* a|`-0.16339356`
+|*parameters/Fall/blend_position* a|`-0.21995288`
 |*parameters/Idle/blend_position* a|`-0.27003`
-|*parameters/Jump/blend_position* a|`0.414688`
-|*parameters/Run/blend_position* a|`-0.997033`
+|*parameters/Jump/blend_position* a|`0.2168107`
+|*parameters/Run/blend_position* a|`-0.7195601`
 |===
 
 
@@ -1063,21 +1186,34 @@ class_name Player
 @export var GhostEffect : PackedScene
 
 signal dashed
+signal jumped
+signal landed
 signal failed
+
+enum State {
+	CLIMBING,
+	DASHED,
+	DASHING,
+	FALLING,
+	GROUNDING,
+	JUMPED
+}
 
 const SPEED = 800.0
 const DASH_SPEED = SPEED * 4
-const JUMP_VELOCITY = -1100.0
+const JUMP_VELOCITY = -1140.0
 const GRAVITY = 4000
 const ALLOWED_TIME_TO_JUMP = 0.13
 const DASH_TIME = 0.1
 const DASH_ATTENUATION = Vector2(55, 50)
 const MAX_DASH_COUNT = 1
+const MAX_CLIMBING_TIME = 2.0
 const DEFAULT_SCALE = Vector2(6.0, 6.0)
+var state : State = State.GROUNDING
 var falling_time := 0.0
 var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
-var grounding : bool = true
+var climb_rest_time := 0.0
 var sprite_tween : Tween
 static var playable : bool = false
 
@@ -1087,56 +1223,71 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if dash_rest_time > 0:
-		dash_rest_time -= delta
-		velocity *= DASH_ATTENUATION * delta
-	else:
-		# Add the gravity.
-		if not is_on_floor():
-			# FIXME: ignore gravity if failed
+	var dx := Input.get_axis(&'move_left', &'move_right')
+	var dy := Input.get_axis(&'move_up', &'move_down')
+	var direction := Vector2(dx, dy)
+	state = compute_state(delta, direction)
+	match state:
+		State.CLIMBING:
+			velocity = Vector2(0, 0) # TODO
+		State.DASHED:
+			velocity = direction.normalized() * DASH_SPEED
+		State.DASHING:
+			velocity *= DASH_ATTENUATION * delta
+		State.FALLING:
 			velocity.y += GRAVITY * delta
-			falling_time += delta
-			grounding = false
-		else:
-			if not grounding:
-				idle()
-				tween_sprite(&'grounding')
-				vibrate('Landed')
-			grounding = true
-			falling_time = 0
-			dash_rest_count = MAX_DASH_COUNT
-		
-		if not playable:
-			if velocity:
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-				if not velocity: idle()
-			update_sprite_states_shader_parameters()
-			move_and_slide()
-			return
-
-		# Handle jump.
-		if Input.is_action_just_pressed("move_jump") and falling_time < ALLOWED_TIME_TO_JUMP:
+		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
-			tween_sprite(&'jumping')
-
-		var direction_x := Input.get_axis("move_left", "move_right")
-		if direction_x:
-			velocity.x = direction_x * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-
-		# Handle dash.
-		if Input.is_action_just_pressed("move_dash") && dash_rest_count > 0:
-			var direction_y := Input.get_axis("move_up", "move_down")
-			var direction = Vector2(direction_x, direction_y).normalized()
-			if direction:
-				dashed.emit()
-				velocity = direction * DASH_SPEED
-				dash_rest_time = DASH_TIME
-				dash_rest_count -= 1
+		_: pass
+	
+	if not playable:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		update_sprite_states_shader_parameters()
+		move_and_slide()
+		return
+	
+	if not (state == State.DASHED or state == State.DASHING):
+		if dx: velocity.x = dx * SPEED
+		else: velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	animate()
 	move_and_slide()
+
+
+func compute_state(delta: float, direction: Vector2) -> State:
+	if is_just_input_action(&'move_dash') \
+	and dash_rest_count > 0 \
+	and direction:
+		dashed.emit()
+		dash_rest_time = DASH_TIME
+		dash_rest_count -= 1
+		return State.DASHED
+	elif dash_rest_time > 0:
+		dash_rest_time -= delta
+		return State.DASHING
+	else:
+		var on_wall = true # TODO
+		if on_wall and is_just_input_action(&'move_climb'):
+			return State.CLIMBING
+		elif not is_on_floor():
+			falling_time += delta
+		else:
+			if not state == State.GROUNDING: landed.emit()
+			falling_time = 0
+			dash_rest_count = MAX_DASH_COUNT
+			
+		if is_just_input_action(&'move_jump') \
+		and falling_time < ALLOWED_TIME_TO_JUMP:
+			jumped.emit()
+			return State.JUMPED
+		elif not is_on_floor():
+			return State.FALLING
+		else:
+			return State.GROUNDING
+
+
+func is_just_input_action(key: StringName) -> bool:
+	return playable and Input.is_action_just_pressed(key)
 
 
 func animate() -> void:
@@ -1182,6 +1333,7 @@ func vibrate(key: String):
 
 
 func get_state_by(_velocity) -> String:
+	if state == State.CLIMBING: return 'Climb'
 	if _velocity:
 		if _velocity.y < 0: return 'Jump'
 		if _velocity.y > 0: return 'Fall'
@@ -1197,8 +1349,8 @@ func tween_sprite(key: StringName) -> void:
 		&'dashed':
 			var dir := velocity.normalized()
 			coef = dir.abs().clamp(Vector2(0.75, 0.75), Vector2(1.0, 1.0))
-		&'grounding': coef = Vector2(1.05, 0.95)
-		&'jumping':   coef = Vector2(0.70, 1.30)
+		&'landed': coef = Vector2(1.05, 0.95)
+		&'jumped': coef = Vector2(0.70, 1.30)
 
 	sprite_tween.tween_property(%Sprites, 'scale', coef * DEFAULT_SCALE, 0.10) \
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
@@ -1229,6 +1381,16 @@ func _on_dashed() -> void:
 	vibrate('Dashed')
 	tween_sprite(&'dashed')
 	%Camera.shake(&'dash')
+
+
+func _on_jumped() -> void:
+	tween_sprite(&'jumped')
+
+
+func _on_landed() -> void:
+	vibrate('Landed')
+	tween_sprite(&'landed')
+	idle()
 
 
 func _on_failed() -> void:

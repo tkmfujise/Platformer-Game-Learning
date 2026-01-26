@@ -1,0 +1,71 @@
+---
+title: dev/test.tscn
+---
+:toc:
+
+== dev / test.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Test" <<(N,lightskyblue) Node2D>> {
+---
+  + _ready()
+}
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	var voices := DisplayServer.tts_get_voices_for_language("ja")
+	var voice_id := voices[0]
+	var speach_text := "ゲームを開始します。"
+	DisplayServer.tts_speak(speach_text, voice_id)
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Test# [.node-type.type-2d]#Node2D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/dev/test.gd[res://dev/test.gd]
+|===
+
+
+=== link:/scripts/dev/test.gd[test.gd]
+
+```gdscript
+extends Node2D
+
+
+func _ready() -> void:
+	var voices := DisplayServer.tts_get_voices_for_language("ja")
+	var voice_id := voices[0]
+	var speach_text := "ゲームを開始します。"
+	DisplayServer.tts_speak(speach_text, voice_id)
+
+```
+
+

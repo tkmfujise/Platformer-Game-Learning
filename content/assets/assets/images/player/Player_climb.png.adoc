@@ -1,0 +1,27 @@
+---
+title: assets/images/player/Player_climb.png
+---
+:toc:
+
+== assets / images / player / Player_climb.png
+
+=== Attached Scenes
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |144×24 px
+|Type |png
+|Content Length |855.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/Player_climb.png[]
+

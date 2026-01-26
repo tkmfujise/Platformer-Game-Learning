@@ -76,6 +76,12 @@
         
           
           
+          <li data-path="1:/dev/test.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/dev/test.tscn/">dev/test.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="2:/src/account/account.tscn" data-category="scenes">
             <a class="" href="../../../../scenes/src/account/account.tscn/">src/account/account.tscn</a>
           </li>
@@ -325,6 +331,12 @@
           
           <li data-path="1:/dev/helper.gd" data-category="scripts">
             <a class="" href="../../../dev/helper.gd/">dev/helper.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="1:/dev/test.gd" data-category="scripts">
+            <a class="" href="../../../dev/test.gd/">dev/test.gd</a>
           </li>
         
           
@@ -783,6 +795,12 @@
           
           <li data-path="3:/assets/images/particles/circle_blur.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/particles/circle_blur.png/">assets/images/particles/circle_blur.png</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/assets/images/player/Player_climb.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/Player_climb.png/">assets/images/player/Player_climb.png</a>
           </li>
         
           
@@ -1360,21 +1378,34 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">GhostEffect</span> <span class="p">:</span> <span class="n">PackedScene</span>
 
 <span class="k">signal</span> <span class="n">dashed</span>
+<span class="k">signal</span> <span class="n">jumped</span>
+<span class="k">signal</span> <span class="n">landed</span>
 <span class="k">signal</span> <span class="n">failed</span>
+
+<span class="k">enum</span> <span class="n">State</span> <span class="p">{</span>
+	<span class="n">CLIMBING</span><span class="p">,</span>
+	<span class="n">DASHED</span><span class="p">,</span>
+	<span class="n">DASHING</span><span class="p">,</span>
+	<span class="n">FALLING</span><span class="p">,</span>
+	<span class="n">GROUNDING</span><span class="p">,</span>
+	<span class="n">JUMPED</span>
+<span class="p">}</span>
 
 <span class="k">const</span> <span class="n">SPEED</span> <span class="o">=</span> <span class="mf">800.0</span>
 <span class="k">const</span> <span class="n">DASH_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="k">const</span> <span class="n">JUMP_VELOCITY</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1100.0</span>
+<span class="k">const</span> <span class="n">JUMP_VELOCITY</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1140.0</span>
 <span class="k">const</span> <span class="n">GRAVITY</span> <span class="o">=</span> <span class="mi">4000</span>
 <span class="k">const</span> <span class="n">ALLOWED_TIME_TO_JUMP</span> <span class="o">=</span> <span class="mf">0.13</span>
 <span class="k">const</span> <span class="n">DASH_TIME</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="k">const</span> <span class="n">DASH_ATTENUATION</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="k">const</span> <span class="n">MAX_DASH_COUNT</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">const</span> <span class="n">MAX_CLIMBING_TIME</span> <span class="o">=</span> <span class="mf">2.0</span>
 <span class="k">const</span> <span class="n">DEFAULT_SCALE</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">state</span> <span class="p">:</span> <span class="n">State</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">GROUNDING</span>
 <span class="k">var</span> <span class="n">falling_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">dash_rest_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">dash_rest_count</span> <span class="p">:</span><span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
-<span class="k">var</span> <span class="n">grounding</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">true</span>
+<span class="k">var</span> <span class="n">climb_rest_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">sprite_tween</span> <span class="p">:</span> <span class="n">Tween</span>
 <span class="k">static</span> <span class="k">var</span> <span class="n">playable</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
@@ -1384,56 +1415,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">dash_rest_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-		<span class="n">dash_rest_time</span> <span class="o">-=</span> <span class="n">delta</span>
-		<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
-	<span class="k">else</span><span class="p">:</span>
-		<span class="c1"># Add the gravity.</span>
-		<span class="k">if</span> <span class="ow">not</span> <span class="n">is_on_floor</span><span class="p">():</span>
-			<span class="c1"># FIXME: ignore gravity if failed</span>
+	<span class="k">var</span> <span class="n">dx</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_left'</span><span class="p">,</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_right'</span><span class="p">)</span>
+	<span class="k">var</span> <span class="n">dy</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_up'</span><span class="p">,</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_down'</span><span class="p">)</span>
+	<span class="k">var</span> <span class="n">direction</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+	<span class="n">state</span> <span class="o">=</span> <span class="n">compute_state</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+	<span class="k">match</span> <span class="n">state</span><span class="p">:</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span>
+			<span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># TODO</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">DASHED</span><span class="p">:</span>
+			<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">:</span>
+			<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">FALLING</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
-			<span class="n">falling_time</span> <span class="o">+=</span> <span class="n">delta</span>
-			<span class="n">grounding</span> <span class="o">=</span> <span class="bp">false</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="k">if</span> <span class="ow">not</span> <span class="n">grounding</span><span class="p">:</span>
-				<span class="n">idle</span><span class="p">()</span>
-				<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">grounding'</span><span class="p">)</span>
-				<span class="n">vibrate</span><span class="p">(</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">)</span>
-			<span class="n">grounding</span> <span class="o">=</span> <span class="bp">true</span>
-			<span class="n">falling_time</span> <span class="o">=</span> <span class="mi">0</span>
-			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
-
-		<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span>
-			<span class="k">if</span> <span class="n">velocity</span><span class="p">:</span>
-				<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
-				<span class="k">if</span> <span class="ow">not</span> <span class="n">velocity</span><span class="p">:</span> <span class="n">idle</span><span class="p">()</span>
-			<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
-			<span class="n">move_and_slide</span><span class="p">()</span>
-			<span class="k">return</span>
-
-		<span class="c1"># Handle jump.</span>
-		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_jump"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
-			<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">jumping'</span><span class="p">)</span>
+		<span class="n">_</span><span class="p">:</span> <span class="k">pass</span>
 
-		<span class="k">var</span> <span class="n">direction_x</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_left"</span><span class="p">,</span> <span class="s2">"move_right"</span><span class="p">)</span>
-		<span class="k">if</span> <span class="n">direction_x</span><span class="p">:</span>
-			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">direction_x</span> <span class="o">*</span> <span class="n">SPEED</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span>
+		<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+		<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
+		<span class="n">move_and_slide</span><span class="p">()</span>
+		<span class="k">return</span>
 
-		<span class="c1"># Handle dash.</span>
-		<span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">"move_dash"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-			<span class="k">var</span> <span class="n">direction_y</span> <span class="p">:</span><span class="o">=</span> <span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">"move_up"</span><span class="p">,</span> <span class="s2">"move_down"</span><span class="p">)</span>
-			<span class="k">var</span> <span class="n">direction</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="n">direction_x</span><span class="p">,</span> <span class="n">direction_y</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
-			<span class="k">if</span> <span class="n">direction</span><span class="p">:</span>
-				<span class="n">dashed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
-				<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
-				<span class="n">dash_rest_time</span> <span class="o">=</span> <span class="n">DASH_TIME</span>
-				<span class="n">dash_rest_count</span> <span class="o">-=</span> <span class="mi">1</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHED</span> <span class="ow">or</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">dx</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">SPEED</span>
+		<span class="k">else</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
 
 	<span class="n">animate</span><span class="p">()</span>
 	<span class="n">move_and_slide</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">compute_state</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="kt">Vector2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">State</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">is_just_input_action</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_dash'</span><span class="p">)</span> \
+	<span class="ow">and</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span> \
+	<span class="ow">and</span> <span class="n">direction</span><span class="p">:</span>
+		<span class="n">dashed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+		<span class="n">dash_rest_time</span> <span class="o">=</span> <span class="n">DASH_TIME</span>
+		<span class="n">dash_rest_count</span> <span class="o">-=</span> <span class="mi">1</span>
+		<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHED</span>
+	<span class="k">elif</span> <span class="n">dash_rest_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="n">dash_rest_time</span> <span class="o">-=</span> <span class="n">delta</span>
+		<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHING</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">var</span> <span class="n">on_wall</span> <span class="o">=</span> <span class="bp">true</span> <span class="c1"># TODO</span>
+		<span class="k">if</span> <span class="n">on_wall</span> <span class="ow">and</span> <span class="n">is_just_input_action</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_climb'</span><span class="p">):</span>
+			<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="n">is_on_floor</span><span class="p">():</span>
+			<span class="n">falling_time</span> <span class="o">+=</span> <span class="n">delta</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">GROUNDING</span><span class="p">:</span> <span class="n">landed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+			<span class="n">falling_time</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
+
+		<span class="k">if</span> <span class="n">is_just_input_action</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_jump'</span><span class="p">)</span> \
+		<span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>
+			<span class="n">jumped</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+			<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="n">is_on_floor</span><span class="p">():</span>
+			<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">FALLING</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">GROUNDING</span>
+
+
+<span class="k">func</span> <span class="nf">is_just_input_action</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">bool</span><span class="p">:</span>
+	<span class="k">return</span> <span class="n">playable</span> <span class="ow">and</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">animate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1479,6 +1525,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">get_state_by</span><span class="p">(</span><span class="n">_velocity</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span> <span class="k">return</span> <span class="s2">'</span><span class="s1">Climb'</span>
 	<span class="k">if</span> <span class="n">_velocity</span><span class="p">:</span>
 		<span class="k">if</span> <span class="n">_velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="s2">'</span><span class="s1">Jump'</span>
 		<span class="k">if</span> <span class="n">_velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="s2">'</span><span class="s1">Fall'</span>
@@ -1494,8 +1541,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">dashed'</span><span class="p">:</span>
 			<span class="k">var</span> <span class="n">dir</span> <span class="p">:</span><span class="o">=</span> <span class="n">velocity</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
 			<span class="n">coef</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="nb">abs</span><span class="p">()</span><span class="o">.</span><span class="nb">clamp</span><span class="p">(</span><span class="kt">Vector2</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">),</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
-		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">grounding'</span><span class="p">:</span> <span class="n">coef</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">jumping'</span><span class="p">:</span>   <span class="n">coef</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">0.70</span><span class="p">,</span> <span class="mf">1.30</span><span class="p">)</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">landed'</span><span class="p">:</span> <span class="n">coef</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">jumped'</span><span class="p">:</span> <span class="n">coef</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">0.70</span><span class="p">,</span> <span class="mf">1.30</span><span class="p">)</span>
 
 	<span class="n">sprite_tween</span><span class="o">.</span><span class="n">tween_property</span><span class="p">(</span><span class="o">%</span><span class="n">Sprites</span><span class="p">,</span> <span class="s2">'</span><span class="s1">scale'</span><span class="p">,</span> <span class="n">coef</span> <span class="o">*</span> <span class="n">DEFAULT_SCALE</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span> \
 		<span class="o">.</span><span class="n">set_ease</span><span class="p">(</span><span class="n">Tween</span><span class="o">.</span><span class="n">EASE_IN_OUT</span><span class="p">)</span><span class="o">.</span><span class="n">set_trans</span><span class="p">(</span><span class="n">Tween</span><span class="o">.</span><span class="n">TRANS_CUBIC</span><span class="p">)</span>
@@ -1526,6 +1573,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">vibrate</span><span class="p">(</span><span class="s2">'</span><span class="s1">Dashed'</span><span class="p">)</span>
 	<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dashed'</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">Camera</span><span class="o">.</span><span class="n">shake</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dash'</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_jumped</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">jumped'</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_landed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">vibrate</span><span class="p">(</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">)</span>
+	<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">landed'</span><span class="p">)</span>
+	<span class="n">idle</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_on_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
