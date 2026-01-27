@@ -115,7 +115,7 @@ image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[]
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(-3, -3.1875)`
+|*position* a|`Vector2(-0.5, -4.3085938)`
 |*shape* a|`SubResource("RectangleShape2D_snubb")`
 |===
 [.node-property.node-2d]
@@ -131,8 +131,8 @@ image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[]
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(2, 15)`
-|*shape* a|`SubResource("RectangleShape2D_snubb")`
+|*position* a|`Vector2(-1, 9.5)`
+|*shape* a|`SubResource("RectangleShape2D_uwxa6")`
 |===
 [.node-property.node-2d]
 .#$DetectionArea2D# properties

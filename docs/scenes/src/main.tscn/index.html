@@ -1366,7 +1366,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdVN9v2jAQfs9f4XUvZSMPo79eukohpIwJAiKh3TRNlpMY4mLsyHbK0NT97XMcBwKtNGlvd5_vO5_vPl9KkZRgDpAEZxNE2Bm4vT33u5SscrUSGLMO8DlTgtO7O_DbeXFSQwg_GYbPKRdznKo3afbsmNgzxEcuaGZIYU2S611CS9wBIc9wb3DMuTCcSCFF0j7Pdr2BoUYn1HbAcYLL_632qiFSIglnUY4KbG_3T24_DTpOdG0SzSjaYfE2PUcCpQqLVv0A_AEZkjnOjPlUbgprUsQyay4Rodp0XVe7LohmQTAw1sCLvsCD-3UxmcGHYDz1R_F3gwzn3kNje-Px9DEYwHg0CWA8hVX0IUuFHjwvjoNw4cWjaWjAifcNmgN_ugjjPeSPR5P-KBy22MG9txjHMPK9cYV8AMOcSxUsl7rxxpd6hNhYS6TbyVZQkU0NVI2AAkv1FpTyktUZUko2yUmcLARRGKqtHrUBCj0HlFBsu_YRaALKdued2inynSSphIXgKZbSwinfFKVOY2q0GJHwqdRXEaaPoJ6fnr89QoxsDoHWg1ui8oab0eZ0i-gaikoPbYDiZeOrUrCjAAO0Ap5JIg63rbCqy4RJ8yjzeFh3wkJlkVUhtjsmXkKZowwLWGg1brCWY_N6WaAtg6tqXhCbgTVtKYXATB2lOXSnlm_TWM5eA7WqW0Ct7RZQK7wNVLVBWSZPugyI9OygrgCLfwb90hWeZi4F1vKxf_c02f7_3pj_e0-EVJHChewPJzMrIrvGMiTWK4F29Qoz__eVul6cOXBdrtdnY_Qa48bRq9FYF3vr2tGrz1iXe-vKeZfhJWEYwHPUTToAgVv3x_tqiXRVTtI104r93PvpgsSp9AEUB0Y4ICMCG4E6fwGXlNSr" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdVF1vmzAUfedXeN1Ls5WHpV8vWSVKaJYpIVEg7aZpsgyY4MaxkW2aRVP322cMBJJGmrS3cw_33Hu5H44pkhIsAJLgbIoIOwODwbl7QckqUyuBMesBlzMlOL27A7-tVys2Av-TUbiccrHAsTopq78dCvtG-MQFTYzIr0RyvYtogXvA5wnuDw81l0YTKKRIfM-TXX9opMGRtOtwGODqf6u9boSUSMJZkKEc19ndo-zHToeBbkygOUU7LE7LMyRQrLDo1A_AH5AgmeHEwOdik9eQIpbUMEWEamjbtjZtEMw9b2jQ0Am-wNZ0J-Pp_dgfdaivy-kcPnqTmTsOvxtmtHAeG-xMJrMnbwjD8dSD4QyW3m3gkm0tJww9f-mE45lvyKnzDZoP7mzph3tqX0Or9h6c5SSEgetMSuYDGGVcKi9N9SyMLfVUsUEp0h1mK6jIpiLK3kCBpTpFxbxgVYSYkk105JeiuAyVEKHz6KFVqXJBFIZqq1fCELmeF4oorrv7EegoKNmd9yojz3aSxBLmgsdYypqO-SYvdBhTeM0RCZ8LnZ8w_Qkik7L9dIJFjGxaeW3BLVFZI0to83WL6BqKcpu6BMVpY6tCsAMHQ3QcXkgk2mwrrKriYdT8qmkJrPpTU0WelC51z4y_hDJDCRYw17u8wXqZm57IHG0ZXJWjhdjMtmlWIQRm6iBM25hq-Zt2c_aWqG6iQ1SX0SGq--gSZW1QFtGzLgMiPVGoK8Din06_dIXHkQuB9abVl38cbH_9t-b6H4iQKlA4l_ej6bxerfoRTJBYrwTaVQ-guf43O_dqLYBtc_34NqDfgFtLP6wGXe7RjaUfToOu9ujaepfglDAM4Dm6iHoAgYH94335BF2ojMRrpvf4c_-nDSKr3A-gODCLA9pL-Qu3t-eh" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1401,7 +1401,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">state</span> <span class="o">=</span> <span class="n">compute_state</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
 	<span class="k">match</span> <span class="n">state</span><span class="p">:</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span>
-			<span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># TODO</span>
+			<span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">CLIMBING_SPEED</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">DASHED</span><span class="p">:</span>
 			<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">:</span>
@@ -1410,19 +1411,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">EXHAUSTED</span><span class="p">:</span>
+			<span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
 		<span class="n">_</span><span class="p">:</span> <span class="k">pass</span>
 
-	<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span>
-		<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
-		<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
-		<span class="n">move_and_slide</span><span class="p">()</span>
-		<span class="k">return</span>
-
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHED</span> <span class="ow">or</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">):</span>
 		<span class="k">if</span> <span class="n">dx</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">SPEED</span>
 		<span class="k">else</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
 
-	<span class="n">animate</span><span class="p">()</span>
+	<span class="n">animate</span><span class="p">(</span><span class="n">playable</span><span class="p">)</span>
 	<span class="n">move_and_slide</span><span class="p">()</span></code></pre>
 </div>
 </div>

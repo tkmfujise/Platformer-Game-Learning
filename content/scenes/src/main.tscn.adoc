@@ -28,6 +28,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
 ---
   - SPEED
   - DASH_SPEED
+  - CLIMBING_SPEED
   - JUMP_VELOCITY
   - GRAVITY
   - ALLOWED_TIME_TO_JUMP
@@ -42,6 +43,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * dash_rest_time
   * dash_rest_count
   * climb_rest_time
+  * facing_direction
   * sprite_tween
   * playable
 ---
@@ -49,6 +51,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _physics_process()
   + compute_state()
   + is_just_input_action()
+  + is_input_action()
   + animate()
   + animate_with()
   + idle()
@@ -112,7 +115,8 @@ func _physics_process(delta: float) -> void:
 	state = compute_state(delta, direction)
 	match state:
 		State.CLIMBING:
-			velocity = Vector2(0, 0) # TODO
+			dx = 0
+			velocity.y = dy * CLIMBING_SPEED
 		State.DASHED:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
@@ -121,19 +125,16 @@ func _physics_process(delta: float) -> void:
 			velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
+		State.EXHAUSTED:
+			dx = 0
 		_: pass
 	
-	if not playable:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		update_sprite_states_shader_parameters()
-		move_and_slide()
-		return
-	
+	if not playable: dx = 0
 	if not (state == State.DASHED or state == State.DASHING):
 		if dx: velocity.x = dx * SPEED
 		else: velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	animate()
+
+	animate(playable)
 	move_and_slide()
 ```
 
