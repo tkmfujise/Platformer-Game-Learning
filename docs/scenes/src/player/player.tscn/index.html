@@ -2593,7 +2593,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span>
 				<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 
-		<span class="c1"># FIXME: 壁のてっぺん ┌ の形のあたりでがたがたする。RayCast を使う？</span>
 		<span class="k">var</span> <span class="n">on_wall</span> <span class="o">=</span> <span class="o">%</span><span class="n">FrontRayCast</span><span class="o">.</span><span class="n">is_colliding</span><span class="p">()</span>
 		<span class="k">if</span> <span class="n">is_just_input_action</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_jump'</span><span class="p">)</span> \
 		<span class="ow">and</span> <span class="n">falling_time</span> <span class="o">&lt;</span> <span class="n">ALLOWED_TIME_TO_JUMP</span><span class="p">:</span>

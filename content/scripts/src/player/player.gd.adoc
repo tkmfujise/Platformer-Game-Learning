@@ -107,7 +107,6 @@ func compute_state(delta: float, direction: Vector2) -> State:
 			if not state == State.CLIMBING:
 				dash_rest_count = MAX_DASH_COUNT
 		
-		# FIXME: 壁のてっぺん ┌ の形のあたりでがたがたする。RayCast を使う？
 		var on_wall = %FrontRayCast.is_colliding()
 		if is_just_input_action(&'move_jump') \
 		and falling_time < ALLOWED_TIME_TO_JUMP:

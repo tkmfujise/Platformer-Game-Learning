@@ -43,8 +43,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.4 _lines_
-| link:/scripts/src/player/player.gd[41 _lines_]
-| 1,508 _lines_
+| link:/scripts/src/player/player.gd[40 _lines_]
+| 1,507 _lines_
 
 
 
