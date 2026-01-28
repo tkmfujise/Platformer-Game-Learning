@@ -28,7 +28,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
 | 8.3 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 330 _nodes_
+| 331 _nodes_
 
 
 
@@ -42,9 +42,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | 350 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
-| 4.3 _lines_
-| link:/scripts/src/player/player.gd[39 _lines_]
-| 1,504 _lines_
+| 4.4 _lines_
+| link:/scripts/src/player/player.gd[41 _lines_]
+| 1,508 _lines_
 
 
 
