@@ -1,0 +1,54 @@
+---
+title: src/player/player.gdshader
+---
+:toc:
+
+== src / player / player.gdshader
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```glsl
+shader_type canvas_item;
+
+uniform bool dashed = false;
+uniform float fatigue = 0.0;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	if (dashed) {
+		// hair: ffa33f (255, 163, 63)
+		// leg:  c77f30 (199, 127, 48)
+		if (COLOR.r > 0.7 && COLOR.b < 0.5 && COLOR.g > 0.4) {
+			// only hair
+			if (UV.y < 0.5) {
+				COLOR = vec4(0.1, 0.8, 1.0, COLOR.a);
+			}
+		}
+	}
+	if (fatigue > 0.0) {
+		if (COLOR.r > 0.8 && COLOR.b > 0.7 && COLOR.g > 0.7) {
+			// only face
+			if (UV.y < 0.5) {
+				COLOR = vec4(COLOR.r,
+					COLOR.g - (1.0 - fatigue),
+					COLOR.b - (1.0 - fatigue),
+					COLOR.a);
+			}
+		}
+	}
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+
+```
+

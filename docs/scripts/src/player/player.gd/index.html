@@ -214,6 +214,12 @@
         
           
           
+          <li data-path="3:/src/player/landed_effect/landed_effect.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/src/player/landed_effect/landed_effect.tscn/">src/player/landed_effect/landed_effect.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="2:/src/player/player.tscn" data-category="scenes">
             <a class="" href="../../../../scenes/src/player/player.tscn/">src/player/player.tscn</a>
           </li>
@@ -499,6 +505,12 @@
           
           <li data-path="3:/src/player/ghost_effect/ghost_effect.gd" data-category="scripts">
             <a class="" href="../ghost_effect/ghost_effect.gd/">src/player/ghost_effect/ghost_effect.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/player/landed_effect/landed_effect.gd" data-category="scripts">
+            <a class="" href="../landed_effect/landed_effect.gd/">src/player/landed_effect/landed_effect.gd</a>
           </li>
         
           
@@ -831,6 +843,12 @@
           
           <li data-path="4:/assets/images/player/effects/Burst.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/player/effects/Burst.png/">assets/images/player/effects/Burst.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/player/effects/Landed.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/effects/Landed.png/">assets/images/player/effects/Landed.png</a>
           </li>
         
           
@@ -1249,6 +1267,36 @@
         
           
           
+          <li data-path="3:/src/curtain/closing/pattern2.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/curtain/closing/pattern2.gdshader/">src/curtain/closing/pattern2.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/curtain/closing/pattern3.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/curtain/closing/pattern3.gdshader/">src/curtain/closing/pattern3.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/curtain/opening/pattern2.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/curtain/opening/pattern2.gdshader/">src/curtain/opening/pattern2.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/curtain/opening/pattern3.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/curtain/opening/pattern3.gdshader/">src/curtain/opening/pattern3.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/curtain/opening/pattern4.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/curtain/opening/pattern4.gdshader/">src/curtain/opening/pattern4.gdshader</a>
+          </li>
+        
+          
+          
           <li data-path="2:/src/dialogue/helper.rb" data-category="assets">
             <a class="" href="../../../../assets/src/dialogue/helper.rb/">src/dialogue/helper.rb</a>
           </li>
@@ -1257,6 +1305,30 @@
           
           <li data-path="4:/src/dialogue/scenarios/chapter0/stage0.ja.rb" data-category="assets">
             <a class="" href="../../../../assets/src/dialogue/scenarios/chapter0/stage0.ja.rb/">src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/player/ghost_effect/ghost_effect.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/player/ghost_effect/ghost_effect.gdshader/">src/player/ghost_effect/ghost_effect.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/src/player/player.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/player/player.gdshader/">src/player/player.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/world/mist/mist.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/world/mist/mist.gdshader/">src/world/mist/mist.gdshader</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/src/world/world.gdshader" data-category="assets">
+            <a class="" href="../../../../assets/src/world/world.gdshader/">src/world/world.gdshader</a>
           </li>
         
       </ul>
@@ -1376,6 +1448,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">class_name</span> <span class="n">Player</span>
 
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">GhostEffect</span> <span class="p">:</span> <span class="n">PackedScene</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">LandedEffect</span> <span class="p">:</span> <span class="n">PackedScene</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">fatigue_curve</span><span class="p">:</span> <span class="n">Curve</span>
 
 <span class="k">signal</span> <span class="n">dashed</span>
 <span class="k">signal</span> <span class="n">jumped</span>
@@ -1401,14 +1475,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">const</span> <span class="n">DASH_TIME</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="k">const</span> <span class="n">DASH_ATTENUATION</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="k">const</span> <span class="n">MAX_DASH_COUNT</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">const</span> <span class="n">MAX_CLIMBING_TIME</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="k">const</span> <span class="n">MAX_CLIMBING_TIME</span> <span class="o">=</span> <span class="mf">7.0</span>
 <span class="k">const</span> <span class="n">DEFAULT_SCALE</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
 <span class="k">var</span> <span class="n">state</span> <span class="p">:</span> <span class="n">State</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">GROUNDING</span>
 <span class="k">var</span> <span class="n">falling_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">dash_rest_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">dash_rest_count</span> <span class="p">:</span><span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
 <span class="k">var</span> <span class="n">climb_rest_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">var</span> <span class="n">facing_direction</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">sprite_tween</span> <span class="p">:</span> <span class="n">Tween</span>
 <span class="k">static</span> <span class="k">var</span> <span class="n">playable</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
@@ -1508,7 +1581,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">animate_with</span><span class="p">(</span><span class="n">_velocity</span><span class="p">:</span> <span class="kt">Vector2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">_velocity</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
-		<span class="n">facing_direction</span> <span class="o">=</span> <span class="nb">sign</span><span class="p">(</span><span class="n">_velocity</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 		<span class="o">%</span><span class="n">FrontRayCast</span><span class="o">.</span><span class="n">target_position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">sign</span><span class="p">(</span><span class="n">_velocity</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> \
 			<span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="o">%</span><span class="n">FrontRayCast</span><span class="o">.</span><span class="n">target_position</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 		<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">'</span><span class="s1">Idle'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Run'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Jump'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Fall'</span><span class="p">,</span> <span class="s2">'</span><span class="s1">Climb'</span><span class="p">]:</span>
@@ -1574,7 +1646,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">for</span> <span class="n">sprite</span> <span class="ow">in</span> <span class="o">%</span><span class="n">SpriteStates</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
 		<span class="n">sprite</span><span class="o">.</span><span class="n">material</span><span class="o">.</span><span class="n">set_shader_parameter</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dashed'</span><span class="p">,</span> <span class="n">is_dashed</span><span class="p">())</span>
 		<span class="k">var</span> <span class="n">fatigue</span> <span class="o">=</span> <span class="mf">0.0</span>
-		<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span> <span class="n">fatigue</span> <span class="o">=</span> <span class="n">climb_rest_time</span> <span class="o">/</span> <span class="n">MAX_CLIMBING_TIME</span>
+		<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span>
+			<span class="n">fatigue</span> <span class="o">=</span> <span class="n">fatigue_curve</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">climb_rest_time</span> <span class="o">/</span> <span class="n">MAX_CLIMBING_TIME</span><span class="p">)</span>
 		<span class="n">sprite</span><span class="o">.</span><span class="n">material</span><span class="o">.</span><span class="n">set_shader_parameter</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">fatigue'</span><span class="p">,</span> <span class="n">fatigue</span><span class="p">)</span>
 
 
@@ -1592,6 +1665,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">return</span> <span class="bp">true</span> <span class="k">if</span> <span class="n">dash_rest_count</span> <span class="o">&lt;</span> <span class="n">MAX_DASH_COUNT</span> <span class="k">else</span> <span class="bp">false</span>
 
 
+<span class="k">func</span> <span class="nf">landed_animate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">sprite</span> <span class="o">=</span> <span class="o">%</span><span class="n">LandedSprite2D</span>
+	<span class="n">sprite</span><span class="o">.</span><span class="n">global_position</span> <span class="o">=</span> <span class="n">global_position</span>
+	<span class="n">sprite</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+	<span class="n">sprite</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+
+
 <span class="k">func</span> <span class="nf">_on_dashed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">vibrate</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">Dashed'</span><span class="p">)</span>
 	<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dashed'</span><span class="p">)</span>
@@ -1605,6 +1685,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">func</span> <span class="nf">_on_landed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">vibrate</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">)</span>
 	<span class="n">tween_sprite</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">landed'</span><span class="p">)</span>
+	<span class="k">var</span> <span class="n">effect</span> <span class="o">=</span> <span class="n">LandedEffect</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
+	<span class="n">effect</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 	<span class="n">idle</span><span class="p">()</span>
 
 
@@ -1634,7 +1716,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="grid">
     
     
-      <a class="outline" role="button" href="../ghost_effect/ghost_effect.gd/"><small>&lt;&lt; Previous</small><br>src/player/ghost_effect/ghost_effect.gd</a>
+      <a class="outline" role="button" href="../landed_effect/landed_effect.gd/"><small>&lt;&lt; Previous</small><br>src/player/landed_effect/landed_effect.gd</a>
     
 
     

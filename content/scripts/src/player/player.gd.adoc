@@ -16,6 +16,8 @@ extends CharacterBody2D
 class_name Player
 
 @export var GhostEffect : PackedScene
+@export var LandedEffect : PackedScene
+@export var fatigue_curve: Curve
 
 signal dashed
 signal jumped
@@ -41,14 +43,13 @@ const ALLOWED_TIME_TO_JUMP = 0.13
 const DASH_TIME = 0.1
 const DASH_ATTENUATION = Vector2(55, 50)
 const MAX_DASH_COUNT = 1
-const MAX_CLIMBING_TIME = 5.0
+const MAX_CLIMBING_TIME = 7.0
 const DEFAULT_SCALE = Vector2(6.0, 6.0)
 var state : State = State.GROUNDING
 var falling_time := 0.0
 var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var climb_rest_time := 0.0
-var facing_direction := 0.0
 var sprite_tween : Tween
 static var playable : bool = false
 
@@ -148,7 +149,6 @@ func animate(force: bool = true) -> void:
 
 func animate_with(_velocity: Vector2) -> void:
 	if _velocity.x:
-		facing_direction = sign(_velocity.x)
 		%FrontRayCast.target_position.x = sign(_velocity.x) \
 			* abs(%FrontRayCast.target_position.x)
 		for state in ['Idle', 'Run', 'Jump', 'Fall', 'Climb']:
@@ -214,7 +214,8 @@ func update_sprite_states_shader_parameters() -> void:
 	for sprite in %SpriteStates.get_children():
 		sprite.material.set_shader_parameter(&'dashed', is_dashed())
 		var fatigue = 0.0
-		if state == State.CLIMBING: fatigue = climb_rest_time / MAX_CLIMBING_TIME
+		if state == State.CLIMBING:
+			fatigue = fatigue_curve.sample(climb_rest_time / MAX_CLIMBING_TIME)
 		sprite.material.set_shader_parameter(&'fatigue', fatigue)
 
 
@@ -232,6 +233,13 @@ func is_dashed() -> bool:
 	return true if dash_rest_count < MAX_DASH_COUNT else false
 
 
+func landed_animate() -> void:
+	var sprite = %LandedSprite2D
+	sprite.global_position = global_position
+	sprite.show()
+	sprite.play("default")
+
+
 func _on_dashed() -> void:
 	vibrate(&'Dashed')
 	tween_sprite(&'dashed')
@@ -245,6 +253,8 @@ func _on_jumped() -> void:
 func _on_landed() -> void:
 	vibrate(&'Landed')
 	tween_sprite(&'landed')
+	var effect = LandedEffect.instantiate()
+	effect.spawn(self)
 	idle()
 
 

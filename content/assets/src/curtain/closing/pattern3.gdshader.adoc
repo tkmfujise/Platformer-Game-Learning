@@ -1,0 +1,28 @@
+---
+title: src/curtain/closing/pattern3.gdshader
+---
+:toc:
+
+== src / curtain / closing / pattern3.gdshader
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```glsl
+shader_type canvas_item;
+
+uniform float ratio = 0.2;
+
+float box(vec2 position) {
+	float pos = floor(position.y * 5.0) / 5.0 + ratio;
+	return step(position.x, ratio * pos);
+}
+
+void fragment() {
+	COLOR = vec4(0, 0, 0, box(UV));
+}
+
+```
+

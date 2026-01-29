@@ -1,0 +1,87 @@
+---
+title: src/player/landed_effect/landed_effect.tscn
+---
+:toc:
+
+== src / player / landed_effect / landed_effect.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "LandedSprite2D" <<(A,lightskyblue) AnimatedSprite2D>> {
+  - DEFAULT_SCALE
+---
+  + spawn()
+  + _on_animation_finished()
+}
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_animation_finished, R::animation_finished)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/player/effects/Landed.png]
+image::/assets/raw/assets/images/player/effects/Landed.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#LandedSprite2D# [.node-type.type-2d]#AnimatedSprite2D#
+
+
+=== Signal Connections
+[.signal-connection]
+.$.:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_finished() -> void:
+	queue_free()
+```
+
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scale* a|`Vector2(4.5, 4.5)`
+|*sprite_frames* a|`SubResource("SpriteFrames_4uy46")`
+|*autoplay* a|`default`
+|*frame* a|`9`
+|*frame_progress* a|`1.0`
+|*offset* a|`Vector2(0, -5)`
+|*script* a|link:/scripts/src/player/landed_effect/landed_effect.gd[res://src/player/landed_effect/landed_effect.gd]
+|===
+
+
+=== link:/scripts/src/player/landed_effect/landed_effect.gd[landed_effect.gd]
+
+```gdscript
+extends AnimatedSprite2D
+
+const DEFAULT_SCALE = 4
+
+
+func spawn(player: Player) -> void:
+	position = player.position
+	scale = Vector2(1, 1) * DEFAULT_SCALE * player.falling_time
+	player.get_parent().add_child(self)
+
+
+func _on_animation_finished() -> void:
+	queue_free()
+
+```
+
+

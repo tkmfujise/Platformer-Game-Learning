@@ -1,0 +1,44 @@
+---
+title: src/curtain/opening/pattern4.gdshader
+---
+:toc:
+
+== src / curtain / opening / pattern4.gdshader
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```glsl
+shader_type canvas_item;
+
+uniform float ratio : hint_range(0.0, 1.0) = 0.0;
+uniform float columns = 16.0;
+
+float hash(float x) {
+    return fract(sin(x * 12.9898) * 43758.5453);
+}
+
+void fragment() {
+    float col = floor(UV.x * columns);
+    float dir = hash(col) < 0.5 ? 0.0 : 1.0;
+
+    // ★短冊ごとの開始タイミング（0〜1）
+    float delay = hash(col + 10.0);
+
+    // ratio が delay を超えたら動き始める
+    float local_ratio = clamp((ratio - delay) * (1.0 / (1.0 - delay)), 0.0, 1.0);
+
+    float show;
+    if (dir == 0.0) {
+        show = step(local_ratio, UV.y);
+    } else {
+        show = step(local_ratio, 1.0 - UV.y);
+    }
+    COLOR = vec4(0.0, 0.0, 0.0, show);
+}
+
+
+```
+

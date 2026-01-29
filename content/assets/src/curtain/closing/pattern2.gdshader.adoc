@@ -1,0 +1,29 @@
+---
+title: src/curtain/closing/pattern2.gdshader
+---
+:toc:
+
+== src / curtain / closing / pattern2.gdshader
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```glsl
+shader_type canvas_item;
+
+uniform float radius = 0.2;
+uniform vec2 center = vec2(0.5, 0.5);
+const float feather = 0.01;
+
+float circle(vec2 position) {
+	return smoothstep(radius, radius + feather, length(position - center));
+}
+
+void fragment() {
+	COLOR = vec4(0, 0, 0, circle(UV));
+}
+
+```
+

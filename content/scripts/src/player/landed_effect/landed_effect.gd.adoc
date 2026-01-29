@@ -1,0 +1,29 @@
+---
+title: res://src/player/landed_effect/landed_effect.gd
+---
+:toc:
+
+== src / player / landed_effect / landed_effect.gd
+
+=== Attached Scenes
+* link:/scenes/src/player/landed_effect/landed_effect.tscn[res://src/player/landed_effect/landed_effect.tscn]
+
+
+
+=== Code
+```gdscript
+extends AnimatedSprite2D
+
+const DEFAULT_SCALE = 4
+
+
+func spawn(player: Player) -> void:
+	position = player.position
+	scale = Vector2(1, 1) * DEFAULT_SCALE * player.falling_time
+	player.get_parent().add_child(self)
+
+
+func _on_animation_finished() -> void:
+	queue_free()
+
+```

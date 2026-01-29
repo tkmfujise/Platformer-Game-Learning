@@ -38,12 +38,13 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   - MAX_CLIMBING_TIME
   - DEFAULT_SCALE
   * GhostEffect
+  * LandedEffect
+  * fatigue_curve
   * state
   * falling_time
   * dash_rest_time
   * dash_rest_count
   * climb_rest_time
-  * facing_direction
   * sprite_tween
   * playable
 ---
@@ -66,6 +67,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + spawn_ghost_effect()
   + current_sprite_state()
   + is_dashed()
+  + landed_animate()
   + _on_dashed()
   + _on_jumped()
   + _on_landed()

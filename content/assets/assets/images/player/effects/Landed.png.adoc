@@ -1,0 +1,27 @@
+---
+title: assets/images/player/effects/Landed.png
+---
+:toc:
+
+== assets / images / player / effects / Landed.png
+
+=== Attached Scenes
+* link:/scenes/src/player/landed_effect/landed_effect.tscn[res://src/player/landed_effect/landed_effect.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |200×10 px
+|Type |png
+|Content Length |441.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/effects/Landed.png[]
+
