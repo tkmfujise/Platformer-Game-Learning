@@ -55,7 +55,6 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + spawn_ghost_effect()
   + current_sprite_state()
   + is_dashed()
-  + landed_animate()
   + _on_dashed()
   + _on_jumped()
   + _on_landed()
@@ -1020,6 +1019,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
+|*frame* a|`1`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1423,13 +1423,6 @@ func current_sprite_state() -> Sprite2D:
 
 func is_dashed() -> bool:
 	return true if dash_rest_count < MAX_DASH_COUNT else false
-
-
-func landed_animate() -> void:
-	var sprite = %LandedSprite2D
-	sprite.global_position = global_position
-	sprite.show()
-	sprite.play("default")
 
 
 func _on_dashed() -> void:

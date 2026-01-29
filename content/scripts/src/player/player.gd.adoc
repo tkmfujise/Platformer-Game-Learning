@@ -233,13 +233,6 @@ func is_dashed() -> bool:
 	return true if dash_rest_count < MAX_DASH_COUNT else false
 
 
-func landed_animate() -> void:
-	var sprite = %LandedSprite2D
-	sprite.global_position = global_position
-	sprite.show()
-	sprite.play("default")
-
-
 func _on_dashed() -> void:
 	vibrate(&'Dashed')
 	tween_sprite(&'dashed')

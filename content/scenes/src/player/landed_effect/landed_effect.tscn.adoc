@@ -8,7 +8,7 @@ title: src/player/landed_effect/landed_effect.tscn
 === Diagram
 [plantuml]
 ....
-class R as "LandedSprite2D" <<(A,lightskyblue) AnimatedSprite2D>> {
+class R as "LandedEffect" <<(A,lightskyblue) AnimatedSprite2D>> {
   - DEFAULT_SCALE
 ---
   + spawn()
@@ -35,7 +35,7 @@ CAUTION: No other scene instantiate this scene.
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-2d]#LandedSprite2D# [.node-type.type-2d]#AnimatedSprite2D#
+* [.node-name.type-2d]#LandedEffect# [.node-type.type-2d]#AnimatedSprite2D#
 
 
 === Signal Connections
