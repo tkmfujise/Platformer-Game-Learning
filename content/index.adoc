@@ -26,9 +26,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 8.1 _nodes_
+| 8.2 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 331 _nodes_
+| 335 _nodes_
 
 
 
@@ -43,8 +43,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.4 _lines_
-| link:/scripts/src/player/player.gd[40 _lines_]
-| 1,515 _lines_
+| link:/scripts/src/player/player.gd[41 _lines_]
+| 1,528 _lines_
 
 
 
@@ -60,11 +60,11 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-83 _files_
+84 _files_
 
 | *Content Length*
-| link:/assets/assets/images/particles/HA.png[188.0 B ]
-| 25.03 KB 
+| link:/assets/assets/images/player/effects/Sweat.png[186.0 B ]
+| 24.73 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 2.03 MB 
 
@@ -97,7 +97,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.NDovYXNzZXRzL2ltYWdlcy9mYWNlcy9hY3RvcnM=]#_# | │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9wYXJ0aWNsZXM=]#_# | │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9wbGF5ZXI=]#_# | │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#5# |[.zero]#0# 
-|[.path.NDovYXNzZXRzL2ltYWdlcy9wbGF5ZXIvZWZmZWN0cw==]#_# | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9wbGF5ZXIvZWZmZWN0cw==]#_# | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9zdGFnZXM=]#_# | │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 

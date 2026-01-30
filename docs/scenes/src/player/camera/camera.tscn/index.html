@@ -853,6 +853,12 @@
         
           
           
+          <li data-path="4:/assets/images/player/effects/Sweat.png" data-category="assets">
+            <a class="" href="../../../../../assets/assets/images/player/effects/Sweat.png/">assets/images/player/effects/Sweat.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/background/Forest.png" data-category="assets">
             <a class="" href="../../../../../assets/assets/images/stages/background/Forest.png/">assets/images/stages/background/Forest.png</a>
           </li>
@@ -1439,7 +1445,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNpVkEFPwzAMhe_9FWZc2tFcdi6Tpg1t0wQHxg2hyE3c1WqaVEmGmBD_nbTbAW5-n63nZyuDIcArYIDZGnvyOIOqytel4VMbQ3epzZkKuLYWm-USvjMAAZvVcSePu9Vh_7KVb_vnp0TnEFrs2J5k5J4m0PAXaTm4wJGdnZA6e082ysYnz5AJIRJ-ADl4pyiEvJgkan2duGlPvfukfwiHwVyk4Z4jju43PGagP3XKk9RPdqepYUsgcyzrAhAq8X4_XlfGllVn0-7HxYeAOjPURIgO_PgC0OxJTel_AfuhXJk=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNplkE9PwkAQxe_9FCNeWuheOFeSBlAa0QMIF2M203ZKJ93-ye5CJMbv7rZgIvE27_cy82YmU2gMbAANjOZYk8YRRJE_DxUfSmuqc6qOFMDFmi5mM_jyAAQs4u1Kblfxc_L6JN-Sl-VAH-Nkvdss_xu_YB-vdz0Zgymx4uYgLdc0gII_KZdda9hy2wwoO2pNjZWFdvHmpu2Ebi9PCOHoBGSn24yM8YNBYp5feq5aU92e6AZh16mzVFyzxT7vivvx9Kd2UU59e3c5FdwQSB_DNACESLzf968JbclZ1bjsh-mHgNRTVFiwLej-f5Czpmy45wc5YG2X" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1547,9 +1553,15 @@ No signal connections.
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Camera2D</span>
 
 <span class="k">const</span> <span class="n">DASH_SHAKING_TIME</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">const</span> <span class="n">FAILURE_SHAKING_TIME</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">const</span> <span class="n">SHAKING_VALUE</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="o">&amp;</span><span class="s2">'</span><span class="s1">dash'</span><span class="p">:</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+	<span class="o">&amp;</span><span class="s2">'</span><span class="s1">failure'</span><span class="p">:</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+<span class="p">}</span>
 <span class="k">var</span> <span class="n">shaking_time</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">var</span> <span class="n">fixed_position</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="k">var</span> <span class="n">current_frames</span> <span class="p">:</span> <span class="kt">Array</span>
+<span class="k">var</span> <span class="n">shaking_value</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1587,11 +1599,15 @@ No signal connections.
 	<span class="k">match</span> <span class="n">type</span><span class="p">:</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">dash'</span><span class="p">:</span>
 			<span class="n">shaking_time</span> <span class="o">=</span> <span class="n">DASH_SHAKING_TIME</span>
+			<span class="n">shaking_value</span> <span class="o">=</span> <span class="n">SHAKING_VALUE</span><span class="p">[</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dash'</span><span class="p">]</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">failure'</span><span class="p">:</span>
+			<span class="n">shaking_time</span> <span class="o">=</span> <span class="n">FAILURE_SHAKING_TIME</span>
+			<span class="n">shaking_value</span> <span class="o">=</span> <span class="n">SHAKING_VALUE</span><span class="p">[</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">failure'</span><span class="p">]</span>
 
 
 <span class="k">func</span> <span class="nf">shaking</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">offset</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">randf_range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">shaking_time</span>
-	<span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">randf_range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">shaking_time</span></code></pre>
+	<span class="n">offset</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">shaking_value</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">randf_range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">shaking_time</span>
+	<span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">shaking_value</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">randf_range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">shaking_time</span></code></pre>
 </div>
 </div>
 </div>

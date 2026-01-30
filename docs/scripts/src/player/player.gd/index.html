@@ -853,6 +853,12 @@
         
           
           
+          <li data-path="4:/assets/images/player/effects/Sweat.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/player/effects/Sweat.png/">assets/images/player/effects/Sweat.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/background/Forest.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/stages/background/Forest.png/">assets/images/stages/background/Forest.png</a>
           </li>
@@ -1460,10 +1466,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">CLIMBING</span><span class="p">,</span>
 	<span class="n">DASHED</span><span class="p">,</span>
 	<span class="n">DASHING</span><span class="p">,</span>
+	<span class="n">FAILED</span><span class="p">,</span>
 	<span class="n">FALLING</span><span class="p">,</span>
 	<span class="n">EXHAUSTED</span><span class="p">,</span>
 	<span class="n">GROUNDING</span><span class="p">,</span>
-	<span class="n">JUMPED</span>
+	<span class="n">JUMPED</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="k">const</span> <span class="n">SPEED</span> <span class="o">=</span> <span class="mf">800.0</span>
@@ -1503,6 +1510,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">:</span>
 			<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">FAILED</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">FALLING</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
@@ -1521,6 +1531,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">compute_state</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="kt">Vector2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">State</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span><span class="p">:</span> <span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
 	<span class="k">if</span> <span class="n">is_just_input_action</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_dash'</span><span class="p">)</span> \
 	<span class="ow">and</span> <span class="n">dash_rest_count</span> <span class="o">&gt;</span> <span class="mi">0</span> \
 	<span class="ow">and</span> <span class="n">direction</span><span class="p">:</span>
@@ -1685,6 +1696,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_on_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">playable</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
+	<span class="n">velocity</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+	<span class="o">%</span><span class="n">Camera</span><span class="o">.</span><span class="n">shake</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">failure'</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">AnimationTree</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="bp">false</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">burst'</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">RestartCurtain</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>

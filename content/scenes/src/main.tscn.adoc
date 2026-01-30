@@ -122,6 +122,9 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
 			velocity.y += GRAVITY * delta
 		State.JUMPED:

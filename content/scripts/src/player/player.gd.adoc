@@ -28,10 +28,11 @@ enum State {
 	CLIMBING,
 	DASHED,
 	DASHING,
+	FAILED,
 	FALLING,
 	EXHAUSTED,
 	GROUNDING,
-	JUMPED
+	JUMPED,
 }
 
 const SPEED = 800.0
@@ -71,6 +72,9 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
 			velocity.y += GRAVITY * delta
 		State.JUMPED:
@@ -89,6 +93,7 @@ func _physics_process(delta: float) -> void:
 
 
 func compute_state(delta: float, direction: Vector2) -> State:
+	if state == State.FAILED: return State.FAILED
 	if is_just_input_action(&'move_dash') \
 	and dash_rest_count > 0 \
 	and direction:
@@ -253,6 +258,9 @@ func _on_landed() -> void:
 
 func _on_failed() -> void:
 	playable = false
+	state = State.FAILED
+	velocity *= -1
+	%Camera.shake(&'failure')
 	%AnimationTree.active = false
 	%AnimationPlayer.play(&'burst')
 	%RestartCurtain.play()

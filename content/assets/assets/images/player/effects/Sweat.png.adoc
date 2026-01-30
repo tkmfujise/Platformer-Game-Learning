@@ -1,0 +1,27 @@
+---
+title: assets/images/player/effects/Sweat.png
+---
+:toc:
+
+== assets / images / player / effects / Sweat.png
+
+=== Attached Scenes
+* link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |70×10 px
+|Type |png
+|Content Length |186.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/player/effects/Sweat.png[]
+

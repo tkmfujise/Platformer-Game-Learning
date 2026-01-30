@@ -853,6 +853,12 @@
         
           
           
+          <li data-path="4:/assets/images/player/effects/Sweat.png" data-category="assets">
+            <a class="" href="../../../assets/assets/images/player/effects/Sweat.png/">assets/images/player/effects/Sweat.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/background/Forest.png" data-category="assets">
             <a class="" href="../../../assets/assets/images/stages/background/Forest.png/">assets/images/stages/background/Forest.png</a>
           </li>
@@ -1479,6 +1485,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">velocity</span> <span class="o">=</span> <span class="n">direction</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="n">DASH_SPEED</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">:</span>
 			<span class="n">velocity</span> <span class="o">*=</span> <span class="n">DASH_ATTENUATION</span> <span class="o">*</span> <span class="n">delta</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">FAILED</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">FALLING</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>

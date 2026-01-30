@@ -81,19 +81,21 @@ class N8 as "SpriteEffects" <<(N,lightskyblue) Node2D>> {
 }
 class N9 as "BurstSprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N10 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N10 as "SweatSprite2D" <<(A,lightskyblue) AnimatedSprite2D>> {
 }
-class N11 as "AreaCollision" <<(A,lightskyblue) Area2D>> {
+class N11 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N12 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N12 as "AreaCollision" <<(A,lightskyblue) Area2D>> {
 }
-class N13 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
+class N13 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N14 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N14 as "FrameSubject" <<(A,lightskyblue) Area2D>> {
 }
-class N15 as "FrontRayCast" <<(R,lightskyblue) RayCast2D>> {
+class N15 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N16 as "RestartCurtain" <<(C,lightgreen) Control>> {
+class N16 as "FrontRayCast" <<(R,lightskyblue) RayCast2D>> {
+}
+class N17 as "RestartCurtain" <<(C,lightgreen) Control>> {
   ~ animation_finished
 ---
   * pattern
@@ -103,11 +105,14 @@ class N16 as "RestartCurtain" <<(C,lightgreen) Control>> {
   + play()
   + _on_animation_player_animation_finished()
 }
-class N17 as "Camera" <<(C,lightskyblue) Camera2D>> {
+class N18 as "Camera" <<(C,lightskyblue) Camera2D>> {
   - DASH_SHAKING_TIME
+  - FAILURE_SHAKING_TIME
+  - SHAKING_VALUE
   * shaking_time
   * fixed_position
   * current_frames
+  * shaking_value
 ---
   + _process()
   + add_frame()
@@ -116,19 +121,19 @@ class N17 as "Camera" <<(C,lightskyblue) Camera2D>> {
   + shake()
   + shaking()
 }
-class N18 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N19 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
-class N19 as "AnimationTree" <<(A,yellow) AnimationTree>> {
+class N20 as "AnimationTree" <<(A,yellow) AnimationTree>> {
 }
 R --o N1
-R --o N10
 R --o N11
-R --o N13
-R --o N15
+R --o N12
+R --o N14
 R --o N16
 R --o N17
 R --o N18
 R --o N19
+R --o N20
 N1 --o N2
 N1 --o N8
 N2 --o N3
@@ -137,22 +142,27 @@ N2 --o N5
 N2 --o N6
 N2 --o N7
 N8 --o N9
-N11 --o N12
-N13 --o N14
+N8 --o N10
+N12 --o N13
+N14 --o N15
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_dashed, R::dashed)
 _(R::_on_failed, R::failed)
 _(R::_on_jumped, R::jumped)
 _(R::_on_landed, R::landed)
-_(R::_on_failure_collision_area_entered, N11::area_entered)
-_(R::_on_frame_subject_area_entered, N13::area_entered)
-_(R::_on_frame_subject_area_exited, N13::area_exited)
+_(R::_on_failure_collision_area_entered, N12::area_entered)
+_(R::_on_frame_subject_area_entered, N14::area_entered)
+_(R::_on_frame_subject_area_exited, N14::area_exited)
 ....
 
 
 [.scene-assets]
 === Assets
+[.asset-image]
+[link=/assets/assets/images/player/effects/Sweat.png]
+image::/assets/raw/assets/images/player/effects/Sweat.png[200, 100] 
+
 [.asset-image]
 [link=/assets/assets/images/player/Player_idle.png]
 image::/assets/raw/assets/images/player/Player_idle.png[200, 100] 
@@ -200,6 +210,9 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
 			velocity.y += GRAVITY * delta
 		State.JUMPED:
@@ -243,6 +256,7 @@ func _process(delta: float) -> void:
 **** [.node-name.type-2d]#ClimbSprite2D# [.node-type.type-2d]#Sprite2D#
 *** [.node-name.type-2d]#SpriteEffects# [.node-type.type-2d]#Node2D#
 **** [.node-name.type-2d]#BurstSprite2D# [.node-type.type-2d]#Sprite2D#
+**** [.node-name.type-2d]#SweatSprite2D# [.node-type.type-2d]#AnimatedSprite2D#
 ** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#AreaCollision# [.node-type.type-2d]#Area2D#
 *** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
@@ -269,6 +283,9 @@ func _on_dashed() -> void:
 ```gdscript
 func _on_failed() -> void:
 	playable = false
+	state = State.FAILED
+	velocity *= -1
+	%Camera.shake(&'failure')
 	%AnimationTree.active = false
 	%AnimationPlayer.play(&'burst')
 	%RestartCurtain.play()
@@ -318,6 +335,7 @@ control "Root" as R
 participant "$Sprites\n/SpriteEffects\n/BurstSprite2D" as T0 #87CEFA
 participant "$Sprites\n/SpriteStates" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T3 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T7 #87CEFA
 
 
 
@@ -329,6 +347,9 @@ R  ->o  T3 : visible\n = false
 R  ->o  T3 : flip_h\n = false
 R  ->o  T3 : frame\n = 0
 R  ->  T3 : offset\n = Vector2(2, 4)
+R  ->o  T7 : visible\n = false
+R  ->  T7 : position\n = Vector2(7.1666665, -8.166667)
+R  ->o  T7 : flip_h\n = false
 
 
 ....
@@ -555,6 +576,7 @@ participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T5 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T9 #87CEFA
 
 
 loop
@@ -568,10 +590,14 @@ R  ->o  T5 : visible\n = true
 R  ->o  T5 : flip_h\n = false
 R  ->o  T5 : frame\n = 0
 R  ->  T5 : offset\n = Vector2(-6, 4)
+R  ->o  T9 : visible\n = false
+R  ->  T9 : position\n = Vector2(7, -12)
+R  ->o  T9 : flip_h\n = false
 == Time: 0.125 ==
 R  ->o  T5 : frame\n = 1
 == Time: 0.25 ==
 R  ->o  T5 : frame\n = 2
+R  ->o  T9 : visible\n = true
 == Time: 0.375 ==
 R  ->o  T5 : frame\n = 3
 == Time: 0.5 ==
@@ -594,6 +620,7 @@ participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T5 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T9 #87CEFA
 
 
 loop
@@ -607,10 +634,14 @@ R  ->o  T5 : visible\n = true
 R  ->o  T5 : flip_h\n = true
 R  ->o  T5 : frame\n = 0
 R  ->  T5 : offset\n = Vector2(2, 4)
+R  ->o  T9 : visible\n = false
+R  ->  T9 : position\n = Vector2(-14, -12)
+R  ->o  T9 : flip_h\n = true
 == Time: 0.125 ==
 R  ->o  T5 : frame\n = 1
 == Time: 0.25 ==
 R  ->o  T5 : frame\n = 2
+R  ->o  T9 : visible\n = true
 == Time: 0.375 ==
 R  ->o  T5 : frame\n = 3
 == Time: 0.5 ==
@@ -633,6 +664,7 @@ participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -645,6 +677,7 @@ R  ->o  T4 : visible\n = true
 R  ->o  T4 : flip_h\n = false
 R  ->o  T4 : frame\n = 0
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T4 : frame\n = 1
 
@@ -663,6 +696,7 @@ participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -675,6 +709,7 @@ R  ->o  T4 : visible\n = true
 R  ->o  T4 : flip_h\n = true
 R  ->o  T4 : frame\n = 0
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T4 : frame\n = 1
 
@@ -693,6 +728,7 @@ participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -705,6 +741,7 @@ R  ->  T4 : position\n = Vector2(-12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.2222 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.4444 ==
@@ -770,6 +807,7 @@ participant "$Sprites\n/SpriteStates\n/IdleSprite2D" as T1 #87CEFA
 participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T6 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T7 #87CEFA
 
 
 loop
@@ -781,6 +819,7 @@ R  ->o  T1 : frame\n = 0
 R  ->  T4 : position\n = Vector2(12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
+R  ->o  T7 : visible\n = false
 == Time: 0.2222 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.4444 ==
@@ -847,6 +886,7 @@ participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -859,6 +899,7 @@ R  ->o  T4 : visible\n = false
 R  ->o  T3 : flip_h\n = false
 R  ->o  T3 : frame\n = 0
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T3 : frame\n = 1
 
@@ -877,6 +918,7 @@ participant "$Sprites" as T2 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T3 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -889,6 +931,7 @@ R  ->o  T4 : visible\n = false
 R  ->o  T3 : frame\n = 0
 R  ->o  T3 : flip_h\n = true
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T3 : frame\n = 1
 
@@ -907,6 +950,7 @@ participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T6 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -919,6 +963,7 @@ R  ->  T4 : position\n = Vector2(-12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.25 ==
@@ -947,6 +992,7 @@ participant "$Sprites" as T4 #87CEFA
 participant "$Sprites\n/SpriteStates\n/FallSprite2D" as T5 #87CEFA
 participant "$Sprites\n/SpriteStates\n/JumpSprite2D" as T6 #87CEFA
 participant "$Sprites\n/SpriteStates\n/ClimbSprite2D" as T7 #87CEFA
+participant "$Sprites\n/SpriteEffects\n/SweatSprite2D" as T8 #87CEFA
 
 
 loop
@@ -959,6 +1005,7 @@ R  ->  T4 : position\n = Vector2(12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
 R  ->o  T7 : visible\n = false
+R  ->o  T8 : visible\n = false
 == Time: 0.125 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.25 ==
@@ -997,7 +1044,7 @@ end
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(-12, -72)`
+|*position* a|`Vector2(12, -72)`
 |*scale* a|`Vector2(6, 6)`
 |===
 [.node-property.node-2d]
@@ -1012,6 +1059,7 @@ end
 [cols="1,3" options="header"]
 |===
 |Name |Value
+|*visible* a|`false`
 |*material* a|`SubResource("ShaderMaterial_jm5te")`
 |*texture* a|[link=/assets/assets/images/player/Player_idle.png]
 [.asset-image]
@@ -1019,7 +1067,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`1`
+|*frame* a|`25`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1101,6 +1149,17 @@ image::/assets/raw/assets/images/player/effects/Burst.png[]
 
 |*hframes* a|`53`
 |*frame* a|`11`
+|===
+[.node-property.node-2d]
+.#$Sprites/SpriteEffects/SweatSprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*visible* a|`false`
+|*position* a|`Vector2(7.1666665, -8.166667)`
+|*sprite_frames* a|`SubResource("SpriteFrames_jcdrv")`
+|*autoplay* a|`default`
+|*frame_progress* a|`0.50734836`
 |===
 [.node-property.node-2d]
 .#$CollisionShape2D# properties
@@ -1220,10 +1279,11 @@ enum State {
 	CLIMBING,
 	DASHED,
 	DASHING,
+	FAILED,
 	FALLING,
 	EXHAUSTED,
 	GROUNDING,
-	JUMPED
+	JUMPED,
 }
 
 const SPEED = 800.0
@@ -1263,6 +1323,9 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
 			velocity.y += GRAVITY * delta
 		State.JUMPED:
@@ -1281,6 +1344,7 @@ func _physics_process(delta: float) -> void:
 
 
 func compute_state(delta: float, direction: Vector2) -> State:
+	if state == State.FAILED: return State.FAILED
 	if is_just_input_action(&'move_dash') \
 	and dash_rest_count > 0 \
 	and direction:
@@ -1445,6 +1509,9 @@ func _on_landed() -> void:
 
 func _on_failed() -> void:
 	playable = false
+	state = State.FAILED
+	velocity *= -1
+	%Camera.shake(&'failure')
 	%AnimationTree.active = false
 	%AnimationPlayer.play(&'burst')
 	%RestartCurtain.play()

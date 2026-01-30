@@ -853,6 +853,12 @@
         
           
           
+          <li data-path="4:/assets/images/player/effects/Sweat.png" data-category="assets">
+            <a class="" href="../../../../../../assets/assets/images/player/effects/Sweat.png/">assets/images/player/effects/Sweat.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/background/Forest.png" data-category="assets">
             <a class="" href="../../../../../../assets/assets/images/stages/background/Forest.png/">assets/images/stages/background/Forest.png</a>
           </li>
@@ -1449,6 +1455,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">FailureCollisionShape2D</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">true</span>
 
 
 <span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1458,6 +1465,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="o">%</span><span class="n">FailureCollisionShape2D</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_on_detection_area_2d_body_entered</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">Node2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

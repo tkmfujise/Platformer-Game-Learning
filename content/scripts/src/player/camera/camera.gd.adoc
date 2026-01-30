@@ -15,9 +15,15 @@ title: res://src/player/camera/camera.gd
 extends Camera2D
 
 const DASH_SHAKING_TIME = 0.5
+const FAILURE_SHAKING_TIME = 0.5
+const SHAKING_VALUE = {
+	&'dash': Vector2(15, 12),
+	&'failure': Vector2(40, 32),
+}
 var shaking_time := 0.0
 var fixed_position := Vector2(0, 0)
 var current_frames : Array
+var shaking_value := Vector2(1, 1)
 
 
 func _process(delta: float) -> void:
@@ -55,10 +61,14 @@ func shake(type: StringName) -> void:
 	match type:
 		&'dash':
 			shaking_time = DASH_SHAKING_TIME
+			shaking_value = SHAKING_VALUE[&'dash']
+		&'failure':
+			shaking_time = FAILURE_SHAKING_TIME
+			shaking_value = SHAKING_VALUE[&'failure']
 
 
 func shaking() -> void:
-	offset.x = 10 * randf_range(-1, 1) * shaking_time
-	offset.y = 8 * randf_range(-1, 1) * shaking_time
+	offset.x = shaking_value.x * randf_range(-1, 1) * shaking_time
+	offset.y = shaking_value.y * randf_range(-1, 1) * shaking_time
 
 ```

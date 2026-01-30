@@ -853,6 +853,12 @@
         
           
           
+          <li data-path="4:/assets/images/player/effects/Sweat.png" data-category="assets">
+            <a class="" href="../../../../../../assets/assets/images/player/effects/Sweat.png/">assets/images/player/effects/Sweat.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/background/Forest.png" data-category="assets">
             <a class="" href="../../../../../../assets/assets/images/stages/background/Forest.png/">assets/images/stages/background/Forest.png</a>
           </li>
@@ -1440,7 +1446,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqtkk1rwzAMhu_-FVp3SVh8WPoFoSv0g8EuY6THMoITq62pFxfbZYSx_z7Xjcuay3bo7bUlvXoku5LMGMiBGeg9MylFvX2pcC5Vte_BZBLliRTbnTX7ppRHjCEXW8HnijfpcjqFL0IpJQAPUGhkvIni8-GgVYXGtMeN8w0RVRccLVZWOMVcUZHyonR-BdYWNXKX-E0qT_X66LFWBy0spkvPs-rwhKCHuRSmvnCh3DzGNVrt2CEYLDoG3aRro367GCGPGi-p3mjWMZq5Ybrlg1txDL3RMmzu3OvfGKNbYYy90awWH-yE8SZZg7rFaFBK9ekArqOtQQ6UKveiQaRB9IMYBjEmbu1eDYgb3KsRueO4ETVCEbGkjIHBhK7vT8yJ3YlqX7vv9pS-UyiJxI0Fq0CfBgMu9HlnpIjyLPv7AyYOJct-38Q_M-oBow==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqtkl1LwzAUhu_zK47zpsX2wu4LyhzsA8Ebke5SJKTN2RYWm5FkSBH_u1nWDFcERbx703PeN885TSWZMVAAM9C7Z1KKevNQ4VyqateDySQqEik2W2t2TSkPGEMhNoLPFW-y5XQK7yRNUwJwA1Qj400Unw57rSo0pj2uXW6oqJpytFhZ4RRzJppxWro8irVFjdw1fpDKUz3eeqzVXguL2dLzrDo8oehhzsbMGxfKzWPcRast24eARSeg23QZ1G8XI-RB47nVB806QTM3TNc--Nb-d5yhz1uGBZ6u_DXN6L-2MvZBs1q8siPGk2QN6hajQSnVmwO4rLYBBaSpcj82iCyIfhDDIMbEbd-rAXGDezUiVxzXokagEUvKGBhM0ufrI3Nit6La1e7V3WUvKZRE4tqCVaCPgwEX-rQzQqMiz39-h4lDyfOvX-JPPzIEaw==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1459,7 +1465,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
+	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">FailureCollisionShape2D</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
 </div>
 </div>
 </div>
@@ -1502,7 +1509,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="ulist">
 <ul>
 <li>
-<p><span class="node-name type-2d">CollisionShape2D</span> <span class="node-type type-2d">CollisionShape2D</span></p>
+<p><span class="node-name type-2d">FailureCollisionShape2D</span> <span class="node-type type-2d">CollisionShape2D</span></p>
 </li>
 </ul>
 </div>
@@ -1644,7 +1651,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch node-property node-2d">
-<caption class="title">Table 5. <mark>$FailureCollision/CollisionShape2D</mark> properties</caption>
+<caption class="title">Table 5. <mark>$FailureCollision/FailureCollisionShape2D</mark> properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1656,6 +1663,12 @@ document.addEventListener("DOMContentLoaded", () => {
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unique_name_in_owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1734,6 +1747,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="o">%</span><span class="n">FailureCollisionShape2D</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">true</span>
 
 
 <span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1743,6 +1757,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
 	<span class="n">freeze</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="o">%</span><span class="n">FailureCollisionShape2D</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_on_detection_area_2d_body_entered</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="n">Node2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

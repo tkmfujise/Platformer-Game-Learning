@@ -88,16 +88,22 @@ class N14 as "Stage0" <<(N,lightskyblue) Node2D>> {
   + _on_dialogue_event()
   + _on_dialogue_finished()
 }
-class N15 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+class N15 as "Voids" <<(N,lightskyblue) Node2D>> {
 }
-class N16 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+class N16 as "Area2D" <<(A,lightskyblue) Area2D>> {
+}
+class N17 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N18 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+}
+class N19 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 ---
   + _ready()
   + _process()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
-class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N20 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ jumped
   ~ landed
@@ -152,12 +158,12 @@ class N17 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N18 as "Weather" <<(N,lightskyblue) Node2D>> {
+class N21 as "Weather" <<(N,lightskyblue) Node2D>> {
 ---
   + _process()
   + current_camera()
 }
-class N19 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N22 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4
@@ -166,9 +172,10 @@ R --o N6
 R --o N12
 R --o N13
 R --o N15
-R --o N17
 R --o N18
-R --o N19
+R --o N20
+R --o N21
+R --o N22
 N1 --o N2
 N1 --o N3
 N6 --o N7
@@ -178,11 +185,13 @@ N6 --o N10
 N6 --o N11
 N13 --o N14
 N15 --o N16
+N16 --o N17
+N18 --o N19
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_restart_curtain_animation_finished, N3::animation_finished)
 _(R::_on_stage_0_event, N14::event)
-_(R::_on_player_failed, N17::failed)
+_(R::_on_player_failed, N20::failed)
 ....
 
 
@@ -199,6 +208,7 @@ func _ready() -> void:
 ```gdscript
 func _ready() -> void:
 	freeze = true
+	%FailureCollisionShape2D.disabled = true
 ```
 .$Player
 ```gdscript
@@ -233,6 +243,9 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
 			velocity.y += GRAVITY * delta
 		State.JUMPED:
@@ -271,6 +284,9 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]#
 ** [.node-name.type-2d]#Scenery# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Stage0# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]#
+** [.node-name.type-2d]#Voids# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn]#
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
@@ -515,6 +531,22 @@ R  ->o  T0 : &"play"()
 |===
 |Name |Value
 |*position* a|`Vector2(5768, -433)`
+|===
+[.node-property.node-2d]
+.#$Voids/Area2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
+|===
+[.node-property.node-2d]
+.#$Voids/Area2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(5740, 1208.5)`
+|*shape* a|`SubResource("RectangleShape2D_xqlgn")`
 |===
 [.node-property.node-2d]
 .#$Gimmicks/FallingIceBlock# properties
