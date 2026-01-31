@@ -25,8 +25,8 @@ class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
 ---
   * controller
   * speakers
-  * current_speaker
   * started
+  * current_speaker
   * waiting
 ---
   + _ready()

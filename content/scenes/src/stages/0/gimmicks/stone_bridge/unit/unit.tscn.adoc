@@ -1,0 +1,538 @@
+---
+title: src/stages/0/gimmicks/stone_bridge/unit/unit.tscn
+---
+:toc:
+
+== src / stages / 0 / gimmicks / stone_bridge / unit / unit.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Unit" <<(S,lightskyblue) StaticBody2D>> {
+  ~ entered
+---
+  * disable_pieces
+---
+  + _ready()
+  + fall()
+  + _on_enter_area_2d_area_entered()
+}
+class N1 as "Pieces" <<(N,lightskyblue) Node2D>> {
+}
+class N2 as "Piece1" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N3 as "Piece2" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N4 as "Piece3" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N5 as "Piece4" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N6 as "Piece5" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N7 as "Piece6" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N8 as "Piece7" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N9 as "Piece8" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N10 as "Piece9" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N11 as "Piece10" <<(S,lightskyblue) Sprite2D>> {
+---
+  + fall()
+}
+class N12 as "CollisionShape1" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N13 as "CollisionShape2" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N14 as "CollisionShape3" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N15 as "CollisionShape4" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N16 as "CollisionShape5" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N17 as "CollisionShape6" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N18 as "CollisionShape7" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N19 as "CollisionShape8" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N20 as "CollisionShape9" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N21 as "CollisionShape10" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N22 as "EnterArea2D" <<(A,lightskyblue) Area2D>> {
+}
+class N23 as "EnterCollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N24 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N12
+R --o N13
+R --o N14
+R --o N15
+R --o N16
+R --o N17
+R --o N18
+R --o N19
+R --o N20
+R --o N21
+R --o N22
+R --o N24
+N1 --o N2
+N1 --o N3
+N1 --o N4
+N1 --o N5
+N1 --o N6
+N1 --o N7
+N1 --o N8
+N1 --o N9
+N1 --o N10
+N1 --o N11
+N22 --o N23
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_enter_area_2d_area_entered, N22::area_entered)
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	for n in disable_pieces:
+		var sprite = get_node(str('%Piece', n))
+		var collision = get_node(str('%CollisionShape', n))
+		if collision: collision.queue_free()
+		if sprite: sprite.queue_free()
+```
+
+
+=== Instantiators
+* link:/scenes/src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn[res://src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Unit# [.node-type.type-2d]#StaticBody2D#
+** [.node-name.type-2d]#Pieces# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Piece1# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece2# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece3# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece4# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece5# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece6# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece7# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece8# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece9# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+*** [.node-name.type-2d]#Piece10# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]#
+** [.node-name.type-2d]#CollisionShape1# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape2# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape3# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape4# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape5# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape6# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape7# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape8# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape9# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#CollisionShape10# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#EnterArea2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#EnterCollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[.signal-connection]
+.$EnterArea2D:[#_area_entered_#]=>$.
+```gdscript
+func _on_enter_area_2d_area_entered(area: Area2D) -> void:
+	fall()
+```
+
+
+=== Animations
+==== fall
+
+[plantuml]
+....
+control "Root" as R
+participant "$Pieces\n/Piece1" as T0 #87CEFA
+participant "$Pieces\n/Piece2" as T1 #87CEFA
+participant "$Pieces\n/Piece3" as T2 #87CEFA
+participant "$Pieces\n/Piece4" as T3 #87CEFA
+participant "$Pieces\n/Piece5" as T4 #87CEFA
+participant "$Pieces\n/Piece6" as T5 #87CEFA
+participant "$Pieces\n/Piece7" as T6 #87CEFA
+participant "$Pieces\n/Piece8" as T7 #87CEFA
+participant "$Pieces\n/Piece9" as T8 #87CEFA
+participant "$Pieces\n/Piece10" as T9 #87CEFA
+participant "$CollisionShape1" as T10 #87CEFA
+participant "$CollisionShape2" as T11 #87CEFA
+participant "$CollisionShape3" as T12 #87CEFA
+participant "$CollisionShape4" as T13 #87CEFA
+participant "$CollisionShape5" as T14 #87CEFA
+participant "$CollisionShape6" as T15 #87CEFA
+participant "$CollisionShape7" as T16 #87CEFA
+participant "$CollisionShape8" as T17 #87CEFA
+participant "$CollisionShape9" as T18 #87CEFA
+participant "$CollisionShape10" as T19 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : &"fall"()
+R  ->o  T10 : position\n = Vector2(-39, -30)
+R  ->o  T11 : position\n = Vector2(-24, -30)
+R  ->o  T12 : position\n = Vector2(-15, -30)
+R  ->o  T13 : position\n = Vector2(-7.5, -30)
+R  ->o  T14 : position\n = Vector2(0, -30)
+R  ->o  T15 : position\n = Vector2(9, -30)
+R  ->o  T16 : position\n = Vector2(17, -30)
+R  ->o  T17 : position\n = Vector2(24.5, -30)
+R  ->o  T18 : position\n = Vector2(35.75, -30)
+R  ->o  T19 : position\n = Vector2(46.9375, -30)
+== Time: 0.1 ==
+R  ->o  T1 : &"fall"()
+R  ->o  T11 : position\n = Vector2(-24, -30)
+== Time: 0.1333 ==
+R  ->o  T19 : position\n = Vector2(46.9375, -30)
+== Time: 0.13333334 ==
+R  ->o  T2 : &"fall"()
+R  ->o  T9 : &"fall"()
+R  ->o  T12 : position\n = Vector2(-15, -30)
+== Time: 0.16666667 ==
+R  ->o  T3 : &"fall"()
+== Time: 0.1667 ==
+R  ->o  T13 : position\n = Vector2(-7.5, -30)
+== Time: 0.2 ==
+R  ->o  T4 : &"fall"()
+R  ->o  T14 : position\n = Vector2(0, -30)
+== Time: 0.2333 ==
+R  ->o  T15 : position\n = Vector2(9, -30)
+== Time: 0.23333333 ==
+R  ->o  T5 : &"fall"()
+== Time: 0.3 ==
+R  ->o  T6 : &"fall"()
+R  ->o  T16 : position\n = Vector2(17, -30)
+== Time: 0.3333 ==
+R  ->o  T17 : position\n = Vector2(24.5, -30)
+== Time: 0.33333334 ==
+R  ->o  T7 : &"fall"()
+== Time: 0.36666667 ==
+R  ->o  T8 : &"fall"()
+== Time: 0.3667 ==
+R  ->o  T18 : position\n = Vector2(35.75, -30)
+== Time: 0.7 ==
+R  ->o  T10 : position\n = Vector2(-39, 300)
+== Time: 0.8 ==
+R  ->o  T11 : position\n = Vector2(-24, 300)
+== Time: 0.8333 ==
+R  ->o  T12 : position\n = Vector2(-15, 300)
+R  ->o  T19 : position\n = Vector2(46.938, 300)
+== Time: 0.8667 ==
+R  ->o  T13 : position\n = Vector2(-7.5, 300)
+== Time: 0.9 ==
+R  ->o  T14 : position\n = Vector2(0, 300)
+== Time: 0.9333 ==
+R  ->o  T15 : position\n = Vector2(9, 300)
+== Time: 1.0 ==
+R  ->o  T16 : position\n = Vector2(17, 300)
+== Time: 1.0333 ==
+R  ->o  T17 : position\n = Vector2(24.5, 300)
+== Time: 1.0667 ==
+R  ->o  T18 : position\n = Vector2(35.75, 300)
+
+
+....
+---
+
+==== Animation_0jlk1
+
+[plantuml]
+....
+control "Root" as R
+participant "$CollisionShape1" as T0 #87CEFA
+participant "$CollisionShape2" as T1 #87CEFA
+participant "$CollisionShape3" as T2 #87CEFA
+participant "$CollisionShape4" as T3 #87CEFA
+participant "$CollisionShape5" as T4 #87CEFA
+participant "$CollisionShape6" as T5 #87CEFA
+participant "$CollisionShape7" as T6 #87CEFA
+participant "$CollisionShape8" as T7 #87CEFA
+participant "$CollisionShape9" as T8 #87CEFA
+participant "$CollisionShape10" as T9 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(-39, -30)
+R  ->  T1 : position\n = Vector2(-24, -30)
+R  ->  T2 : position\n = Vector2(-15, -30)
+R  ->  T3 : position\n = Vector2(-7.5, -30)
+R  ->  T4 : position\n = Vector2(0, -30)
+R  ->  T5 : position\n = Vector2(9, -30)
+R  ->  T6 : position\n = Vector2(17, -30)
+R  ->  T7 : position\n = Vector2(24.5, -30)
+R  ->  T8 : position\n = Vector2(35.75, -30)
+R  ->  T9 : position\n = Vector2(46.9375, -30)
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/stages/0/gimmicks/stone_bridge/unit/unit.gd[res://src/stages/0/gimmicks/stone_bridge/unit/unit.gd]
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece1# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`1`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`2`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`3`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece5# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`4`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece6# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`5`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece7# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`6`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece8# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`7`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece9# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`8`
+|===
+[.node-property.node-2d]
+.#$Pieces/Piece10# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*frame* a|`9`
+|===
+[.node-property.node-2d]
+.#$CollisionShape1# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-39, -30)`
+|*shape* a|`SubResource("RectangleShape2D_es12y")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-24, -30)`
+|*shape* a|`SubResource("RectangleShape2D_0jlk1")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-15, -30)`
+|*shape* a|`SubResource("RectangleShape2D_pr0wu")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-7.5, -30)`
+|*shape* a|`SubResource("RectangleShape2D_38yvt")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape5# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(0, -30)`
+|*shape* a|`SubResource("RectangleShape2D_bg5mc")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape6# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(9, -30)`
+|*shape* a|`SubResource("RectangleShape2D_585op")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape7# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(17, -30)`
+|*shape* a|`SubResource("RectangleShape2D_1k4rt")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape8# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(24.5, -30)`
+|*shape* a|`SubResource("RectangleShape2D_xi371")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape9# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(35.75, -30)`
+|*shape* a|`SubResource("RectangleShape2D_lvldc")`
+|===
+[.node-property.node-2d]
+.#$CollisionShape10# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(46.9375, -30)`
+|*shape* a|`SubResource("RectangleShape2D_oyl03")`
+|===
+[.node-property.node-2d]
+.#$EnterArea2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`16`
+|*collision_mask* a|`16`
+|===
+[.node-property.node-2d]
+.#$EnterArea2D/EnterCollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-40, -70.5)`
+|*shape* a|`SubResource("RectangleShape2D_mejwj")`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_0jlk1")
+}`
+|===
+
+
+=== link:/scripts/src/stages/0/gimmicks/stone_bridge/unit/unit.gd[unit.gd]
+
+```gdscript
+extends StaticBody2D
+
+signal entered
+
+@export var disable_pieces : Array[int]
+
+
+func _ready() -> void:
+	for n in disable_pieces:
+		var sprite = get_node(str('%Piece', n))
+		var collision = get_node(str('%CollisionShape', n))
+		if collision: collision.queue_free()
+		if sprite: sprite.queue_free()
+
+
+func fall() -> void:
+	%AnimationPlayer.play(&'fall')
+
+
+func _on_enter_area_2d_area_entered(area: Area2D) -> void:
+	fall()
+
+```
+
+

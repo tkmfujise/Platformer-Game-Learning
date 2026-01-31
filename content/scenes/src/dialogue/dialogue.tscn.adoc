@@ -14,8 +14,8 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
 ---
   * controller
   * speakers
-  * current_speaker
   * started
+  * current_speaker
   * waiting
 ---
   + _ready()
@@ -117,6 +117,7 @@ func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
 	await get_tree().create_timer(1.0).timeout
 	Player.playable = true
+	queue_free()
 ```
 [.signal-connection]
 .$EventTimer:[#_timeout_#]=>$.
@@ -367,8 +368,8 @@ signal event(event_name: String)
 
 @export var controller : ReDScribe
 @export var speakers : Array[DialogueSpeaker] = []
+@onready var started : bool = false
 var current_speaker : String = ''
-var started : bool = false
 var waiting : bool = false
 
 
@@ -457,6 +458,7 @@ func _on_finished() -> void:
 	%AnimationPlayer.play("hide")
 	await get_tree().create_timer(1.0).timeout
 	Player.playable = true
+	queue_free()
 
 ```
 

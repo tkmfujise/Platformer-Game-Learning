@@ -1,0 +1,21 @@
+---
+title: res://src/stages/0/gimmicks/stone_bridge/piece/piece.gd
+---
+:toc:
+
+== src / stages / 0 / gimmicks / stone_bridge / piece / piece.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]
+
+
+
+=== Code
+```gdscript
+extends Sprite2D
+
+
+func fall() -> void:
+	%AnimationPlayer.play(&'fall')
+
+```

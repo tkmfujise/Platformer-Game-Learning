@@ -1,0 +1,17 @@
+---
+title: res://src/stages/0/gimmicks/stone_bridge/stone_bridge.gd
+---
+:toc:
+
+== src / stages / 0 / gimmicks / stone_bridge / stone_bridge.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn[res://src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+```

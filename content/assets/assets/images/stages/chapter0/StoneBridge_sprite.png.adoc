@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/chapter0/StoneBridge_sprite.png
+---
+:toc:
+
+== assets / images / stages / chapter0 / StoneBridge_sprite.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/stone_bridge/piece/piece.tscn[res://src/stages/0/gimmicks/stone_bridge/piece/piece.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |1000×80 px
+|Type |png
+|Content Length |2.09 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/chapter0/StoneBridge_sprite.png[]
+

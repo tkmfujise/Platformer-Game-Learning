@@ -1067,7 +1067,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`25`
+|*frame* a|`13`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1159,7 +1159,7 @@ image::/assets/raw/assets/images/player/effects/Burst.png[]
 |*position* a|`Vector2(7.1666665, -8.166667)`
 |*sprite_frames* a|`SubResource("SpriteFrames_jcdrv")`
 |*autoplay* a|`default`
-|*frame_progress* a|`0.50734836`
+|*frame_progress* a|`0.8250497`
 |===
 [.node-property.node-2d]
 .#$CollisionShape2D# properties
