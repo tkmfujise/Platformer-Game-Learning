@@ -1,0 +1,28 @@
+---
+title: res://src/stages/0/gimmicks/crow/crow.gd
+---
+:toc:
+
+== src / stages / 0 / gimmicks / crow / crow.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/crow/crow.tscn[res://src/stages/0/gimmicks/crow/crow.tscn]
+
+
+
+=== Code
+```gdscript
+extends Sprite2D
+
+
+func idle() -> void: play(&'idle')
+func caw() -> void: play(&'caw')
+func peck() -> void: play(&'peck')
+func take_off() -> void: play(&'take_off')
+func fly() -> void: play(&'fly')
+
+
+func play(anim_name: StringName) -> void:
+	%AnimationPlayer.play(anim_name)
+
+```

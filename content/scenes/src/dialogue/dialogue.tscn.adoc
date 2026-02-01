@@ -77,10 +77,10 @@ func _ready() -> void:
 ```
 ==== _input
 ```gdscript
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if not started: return
 	if waiting: return
-	if event.is_action_pressed('ui_accept'):
+	if _event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 ```
 
@@ -106,7 +106,7 @@ func _input(event: InputEvent) -> void:
 [.signal-connection]
 .$.:[#_event_#]=>$.
 ```gdscript
-func _on_event(event_name: String) -> void:
+func _on_event(_event_name: String) -> void:
 	current_speaker = ''
 	%AnimationPlayer.play("hide")
 ```
@@ -421,10 +421,10 @@ func set_speaker_image(speaker_name: String, position: StringName, face: String)
 		target.frame = 0
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if not started: return
 	if waiting: return
-	if event.is_action_pressed('ui_accept'):
+	if _event.is_action_pressed('ui_accept'):
 		continue_dialogue()
 
 
@@ -444,7 +444,7 @@ func _handle(key: StringName, payload: Variant) -> void:
 		_: print_debug("[%s]: %s" % [key, payload])
 
 
-func _on_event(event_name: String) -> void:
+func _on_event(_event_name: String) -> void:
 	current_speaker = ''
 	%AnimationPlayer.play("hide")
 

@@ -24,8 +24,8 @@ static func parse(klass, json_or_props) -> Resource:
 		if klass.has_method('parse_mapping') else {}
 	for key in props:
 		if mapper.has(key):
-			for hash in props[key]:
-				var child = parse(mapper[key], hash)
+			for prop in props[key]:
+				var child = parse(mapper[key], prop)
 				resource.get(key).push_back(child)
 		else: resource.set(key, props[key])
 	return resource

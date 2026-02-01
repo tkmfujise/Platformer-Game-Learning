@@ -156,8 +156,8 @@ func animate_with(_velocity: Vector2) -> void:
 	if _velocity.x:
 		%FrontRayCast.target_position.x = sign(_velocity.x) \
 			* abs(%FrontRayCast.target_position.x)
-		for state in ['Idle', 'Run', 'Jump', 'Fall', 'Climb']:
-			%AnimationTree.set('parameters/%s/blend_position' % [state], _velocity.x)
+		for st in ['Idle', 'Run', 'Jump', 'Fall', 'Climb']:
+			%AnimationTree.set('parameters/%s/blend_position' % [st], _velocity.x)
 	%AnimationTree.get('parameters/playback').travel(get_state_by(_velocity))
 
 
@@ -274,7 +274,7 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 	%Camera.remove_frame(area)
 
 
-func _on_failure_collision_area_entered(area: Area2D) -> void:
+func _on_failure_collision_area_entered(_area: Area2D) -> void:
 	failed.emit()
 
 ```

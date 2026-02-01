@@ -1,0 +1,41 @@
+---
+title: res://src/stages/0/gimmicks/climb_lecture/climb_lecture.gd
+---
+:toc:
+
+== src / stages / 0 / gimmicks / climb_lecture / climb_lecture.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+@onready var finished : bool = false
+
+
+func show_hint() -> void:
+	%AnimationPlayer.play(&'show_hint')
+
+
+func finish() -> void:
+	finished = true
+	%AnimationPlayer.play(&'finish')
+
+
+func _on_start_area_2d_area_entered(_area: Area2D) -> void:
+	if not finished: show_hint()
+
+
+func _on_finish_area_2d_area_entered(_area: Area2D) -> void:
+	finish()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'finish': queue_free()
+
+```

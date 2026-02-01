@@ -25,16 +25,16 @@ static func parse_mapping() -> Dictionary:
 	return { 'chapters': AccountChapterResource }
 
 
-static func find_or_initialize(number: int) -> AccountResource:
-	var resource = find(number)
+static func find_or_initialize(value: int) -> AccountResource:
+	var resource = find(value)
 	if not resource:
 		resource = AccountResource.new()
-		resource.setup(number)
+		resource.setup(value)
 	return resource
 
 
-static func find(number: int) -> AccountResource:
-	var path = PATH % number
+static func find(value: int) -> AccountResource:
+	var path = PATH % value
 	if FileAccess.file_exists(path):
 		var f = FileAccess.open(path, FileAccess.READ)
 		var json = f.get_as_text()
@@ -84,8 +84,8 @@ func latest_chapter() -> AccountChapterResource:
 	return arr[-1] if arr else null
 
 
-func get_chapter(number: int) -> AccountChapterResource:
-	var arr = chapters.filter(func(c): return c.number == number)
+func get_chapter(value: int) -> AccountChapterResource:
+	var arr = chapters.filter(func(c): return c.number == value)
 	return arr[0] if arr else null
 
 

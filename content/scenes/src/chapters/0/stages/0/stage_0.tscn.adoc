@@ -116,7 +116,16 @@ class N22 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
 class N23 as "StoneBirdge" <<(N,lightskyblue) Node2D>> {
 ---
 }
-class N24 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N24 as "ClimbLecture" <<(N,lightskyblue) Node2D>> {
+  * finished
+---
+  + show_hint()
+  + finish()
+  + _on_start_area_2d_area_entered()
+  + _on_finish_area_2d_area_entered()
+  + _on_animation_player_animation_finished()
+}
+class N25 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ jumped
   ~ landed
@@ -171,14 +180,12 @@ class N24 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
 }
-class N25 as "Weather" <<(N,lightskyblue) Node2D>> {
+class N26 as "Weather" <<(N,lightskyblue) Node2D>> {
 ---
   + _process()
   + current_camera()
 }
-class N26 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
-}
-class N27 as "StoneBridge3" <<(S,lightskyblue) Sprite2D>> {
+class N27 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4
@@ -188,7 +195,6 @@ R --o N13
 R --o N14
 R --o N16
 R --o N21
-R --o N24
 R --o N25
 R --o N26
 R --o N27
@@ -207,11 +213,12 @@ N17 --o N18
 N19 --o N20
 N21 --o N22
 N21 --o N23
+N21 --o N24
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_restart_curtain_animation_finished, N3::animation_finished)
 _(R::_on_stage_0_event, N15::event)
-_(R::_on_player_failed, N24::failed)
+_(R::_on_player_failed, N25::failed)
 ....
 
 
@@ -313,10 +320,10 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn]#
 *** [.node-name.type-2d]#StoneBirdge# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn[res://src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn]#
+*** [.node-name.type-2d]#ClimbLecture# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]#
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
 ** [.node-name.type-2d]#Weather# [.node-type.type-2d]#link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
-** [.node-name.type-2d]#StoneBridge3# [.node-type.type-2d]#Sprite2D#
 
 
 === Signal Connections
@@ -354,7 +361,7 @@ participant "$Player" as T0 #87CEFA
 
 
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(7512, 67)
+R  ->  T0 : position\n = Vector2(470, 358)
 
 
 ....
@@ -611,12 +618,19 @@ R  ->o  T0 : &"play"()
 |*position* a|`Vector2(8081.0005, 322)`
 |===
 [.node-property.node-2d]
+.#$Gimmicks/ClimbLecture# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(3490, 145)`
+|===
+[.node-property.node-2d]
 .#$Player# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(7512, 67)`
+|*position* a|`Vector2(470, 358)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
@@ -628,14 +642,6 @@ R  ->o  T0 : &"play"()
 &"": SubResource("AnimationLibrary_arpf2")
 }`
 |*autoplay* a|`opening`
-|===
-[.node-property.node-2d]
-.#$StoneBridge3# properties
-[cols="1,3" options="header"]
-|===
-|Name |Value
-|*position* a|`Vector2(251, 39.833336)`
-|*texture* a|`res://assets/images/stages/chapter0/StoneBridge.png`
 |===
 
 

@@ -35,7 +35,7 @@ func total_play_msec() -> int:
 	return ArrayHelper.sum(stages, 'total_play_msec')
 
 
-func has_stage(number: int) -> bool:
-	return stages.any(func(s): return s.number == number)
+func has_stage(value: int) -> bool:
+	return stages.any(func(s): return s.number == value)
 
 ```

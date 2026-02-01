@@ -31,7 +31,7 @@ func start() -> void:
 	%Dialogue.start()
 
 
-func _on_event_area_2d_area_entered(area: Area2D) -> void:
+func _on_event_area_2d_area_entered(_area: Area2D) -> void:
 	start()
 
 

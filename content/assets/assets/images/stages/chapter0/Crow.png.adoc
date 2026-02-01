@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/chapter0/Crow.png
+---
+:toc:
+
+== assets / images / stages / chapter0 / Crow.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/crow/crow.tscn[res://src/stages/0/gimmicks/crow/crow.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |240×24 px
+|Type |png
+|Content Length |1.58 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/chapter0/Crow.png[]
+

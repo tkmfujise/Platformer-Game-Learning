@@ -1,0 +1,262 @@
+---
+title: src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn
+---
+:toc:
+
+== src / stages / 0 / gimmicks / climb_lecture / climb_lecture.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "ClimbLecture" <<(N,lightskyblue) Node2D>> {
+  * finished
+---
+  + show_hint()
+  + finish()
+  + _on_start_area_2d_area_entered()
+  + _on_finish_area_2d_area_entered()
+  + _on_animation_player_animation_finished()
+}
+class N1 as "StartArea2D" <<(A,lightskyblue) Area2D>> {
+}
+class N2 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N3 as "FinishArea2D" <<(A,lightskyblue) Area2D>> {
+}
+class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N5 as "Crow" <<(S,lightskyblue) Sprite2D>> {
+---
+  + idle()
+  + caw()
+  + peck()
+  + take_off()
+  + fly()
+  + play()
+}
+class N6 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N3
+R --o N5
+R --o N6
+N1 --o N2
+N3 --o N4
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_start_area_2d_area_entered, N1::area_entered)
+_(R::_on_finish_area_2d_area_entered, N3::area_entered)
+_(R::_on_animation_player_animation_finished, N6::animation_finished)
+....
+
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#ClimbLecture# [.node-type.type-2d]#Node2D#
+** [.node-name.type-2d]#StartArea2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#FinishArea2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#Crow# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/crow/crow.tscn[res://src/stages/0/gimmicks/crow/crow.tscn]#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[.signal-connection]
+.$StartArea2D:[#_area_entered_#]=>$.
+```gdscript
+func _on_start_area_2d_area_entered(_area: Area2D) -> void:
+	if not finished: show_hint()
+```
+[.signal-connection]
+.$FinishArea2D:[#_area_entered_#]=>$.
+```gdscript
+func _on_finish_area_2d_area_entered(_area: Area2D) -> void:
+	finish()
+```
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'finish': queue_free()
+```
+
+
+=== Animations
+==== idle (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T0 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->o  T0 : &"idle"()
+
+end
+....
+---
+
+==== show_hint
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : &"peck"()
+== Time: 0.8 ==
+R  ->o  T0 : &"peck"()
+
+
+....
+---
+
+==== finish
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(208, 278)
+R  ->o  T0 : &"fly"()
+== Time: 2.0 ==
+R  ->  T0 : position\n = Vector2(200, 200)
+R  ->o  T0 : &"fly"()
+== Time: 2.1333334 ==
+R  ->  T0 : position\n = Vector2(250, 100)
+== Time: 3.0 ==
+R  ->  T0 : position\n = Vector2(1963.9999, -395.99994)
+
+
+....
+---
+
+==== Animation_5lenc
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(208, 278)
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/stages/0/gimmicks/climb_lecture/climb_lecture.gd[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.gd]
+|===
+[.node-property.node-2d]
+.#$StartArea2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`16`
+|*collision_mask* a|`16`
+|===
+[.node-property.node-2d]
+.#$StartArea2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(64, 421.5)`
+|*shape* a|`SubResource("RectangleShape2D_iheth")`
+|===
+[.node-property.node-2d]
+.#$FinishArea2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`16`
+|*collision_mask* a|`16`
+|===
+[.node-property.node-2d]
+.#$FinishArea2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(188.5, 170.5)`
+|*shape* a|`SubResource("RectangleShape2D_23h0x")`
+|===
+[.node-property.node-2d]
+.#$Crow# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(208, 278)`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_23h0x")
+}`
+|*autoplay* a|`idle`
+|===
+
+
+=== link:/scripts/src/stages/0/gimmicks/climb_lecture/climb_lecture.gd[climb_lecture.gd]
+
+```gdscript
+extends Node2D
+
+@onready var finished : bool = false
+
+
+func show_hint() -> void:
+	%AnimationPlayer.play(&'show_hint')
+
+
+func finish() -> void:
+	finished = true
+	%AnimationPlayer.play(&'finish')
+
+
+func _on_start_area_2d_area_entered(_area: Area2D) -> void:
+	if not finished: show_hint()
+
+
+func _on_finish_area_2d_area_entered(_area: Area2D) -> void:
+	finish()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'finish': queue_free()
+
+```
+
+

@@ -1,0 +1,228 @@
+---
+title: src/stages/0/gimmicks/crow/crow.tscn
+---
+:toc:
+
+== src / stages / 0 / gimmicks / crow / crow.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Crow" <<(S,lightskyblue) Sprite2D>> {
+---
+  + idle()
+  + caw()
+  + peck()
+  + take_off()
+  + fly()
+  + play()
+}
+class N1 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/chapter0/Crow.png]
+image::/assets/raw/assets/images/stages/chapter0/Crow.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Crow# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Animations
+==== idle
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
+==== Animation_r4igv
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+R  ->  R : offset\n = Vector2(0, 0)
+
+
+....
+---
+
+==== peck
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+== Time: 0.2 ==
+R  ->o  R : frame\n = 3
+== Time: 0.5 ==
+R  ->o  R : frame\n = 4
+== Time: 0.7 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
+==== caw
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+== Time: 0.1 ==
+R  ->o  R : frame\n = 1
+== Time: 0.2 ==
+R  ->o  R : frame\n = 2
+== Time: 0.4 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
+==== take_off
+
+[plantuml]
+....
+control "Root" as R
+
+
+loop
+== Time: 0.0 ==
+R  ->o  R : frame\n = 1
+R  ->  R : offset\n = Vector2(0, 0)
+== Time: 0.09 ==
+R  ->  R : offset\n = Vector2(0, 0)
+== Time: 0.17000002 ==
+R  ->o  R : frame\n = 6
+== Time: 0.3 ==
+R  ->  R : offset\n = Vector2(0, 5)
+== Time: 0.36 ==
+R  ->o  R : frame\n = 5
+== Time: 0.41 ==
+R  ->  R : offset\n = Vector2(9, -9)
+== Time: 0.79 ==
+R  ->o  R : frame\n = 6
+== Time: 0.8 ==
+R  ->  R : offset\n = Vector2(8, -12)
+== Time: 1.07 ==
+R  ->o  R : frame\n = 7
+== Time: 1.1 ==
+R  ->  R : offset\n = Vector2(7, -25)
+== Time: 1.3 ==
+R  ->o  R : frame\n = 6
+== Time: 1.37 ==
+R  ->  R : offset\n = Vector2(0, -30)
+
+end
+....
+---
+
+==== fly
+
+[plantuml]
+....
+control "Root" as R
+
+
+loop
+== Time: 0.0 ==
+R  ->o  R : frame\n = 9
+== Time: 0.2 ==
+R  ->o  R : frame\n = 8
+
+end
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scale* a|`Vector2(5, 5)`
+|*texture* a|[link=/assets/assets/images/stages/chapter0/Crow.png]
+[.asset-image]
+.res://assets/images/stages/chapter0/Crow.png
+image::/assets/raw/assets/images/stages/chapter0/Crow.png[]
+
+|*hframes* a|`10`
+|*script* a|link:/scripts/src/stages/0/gimmicks/crow/crow.gd[res://src/stages/0/gimmicks/crow/crow.gd]
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_2i6v5")
+}`
+|===
+
+
+=== link:/scripts/src/stages/0/gimmicks/crow/crow.gd[crow.gd]
+
+```gdscript
+extends Sprite2D
+
+
+func idle() -> void: play(&'idle')
+func caw() -> void: play(&'caw')
+func peck() -> void: play(&'peck')
+func take_off() -> void: play(&'take_off')
+func fly() -> void: play(&'fly')
+
+
+func play(anim_name: StringName) -> void:
+	%AnimationPlayer.play(anim_name)
+
+```
+
+

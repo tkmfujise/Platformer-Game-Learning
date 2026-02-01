@@ -166,7 +166,8 @@ func _ready() -> void:
 [.signal-connection]
 .$EnterArea2D:[#_area_entered_#]=>$.
 ```gdscript
-func _on_enter_area_2d_area_entered(area: Area2D) -> void:
+func _on_enter_area_2d_area_entered(_area: Area2D) -> void:
+	entered.emit()
 	fall()
 ```
 
@@ -530,7 +531,8 @@ func fall() -> void:
 	%AnimationPlayer.play(&'fall')
 
 
-func _on_enter_area_2d_area_entered(area: Area2D) -> void:
+func _on_enter_area_2d_area_entered(_area: Area2D) -> void:
+	entered.emit()
 	fall()
 
 ```

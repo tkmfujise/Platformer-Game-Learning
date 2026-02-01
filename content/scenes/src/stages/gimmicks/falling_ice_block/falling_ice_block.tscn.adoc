@@ -84,7 +84,7 @@ func _process(_delta: float) -> void:
 [.signal-connection]
 .$DetectionArea2D:[#_body_entered_#]=>$.
 ```gdscript
-func _on_detection_area_2d_body_entered(body: Node2D) -> void:
+func _on_detection_area_2d_body_entered(_body: Node2D) -> void:
 	fall.call_deferred()
 ```
 
@@ -175,7 +175,7 @@ func fall() -> void:
 	%FailureCollisionShape2D.disabled = false
 
 
-func _on_detection_area_2d_body_entered(body: Node2D) -> void:
+func _on_detection_area_2d_body_entered(_body: Node2D) -> void:
 	fall.call_deferred()
 
 ```
