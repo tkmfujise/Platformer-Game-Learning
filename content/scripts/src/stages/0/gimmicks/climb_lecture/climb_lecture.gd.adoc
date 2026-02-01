@@ -17,6 +17,10 @@ extends Node2D
 @onready var finished : bool = false
 
 
+func idle() -> void:
+	%AnimationPlayer.play(&'idle')
+
+
 func show_hint() -> void:
 	%AnimationPlayer.play(&'show_hint')
 
@@ -28,6 +32,10 @@ func finish() -> void:
 
 func _on_start_area_2d_area_entered(_area: Area2D) -> void:
 	if not finished: show_hint()
+
+
+func _on_start_area_2d_area_exited(area: Area2D) -> void:
+	if not finished: idle()
 
 
 func _on_finish_area_2d_area_entered(_area: Area2D) -> void:

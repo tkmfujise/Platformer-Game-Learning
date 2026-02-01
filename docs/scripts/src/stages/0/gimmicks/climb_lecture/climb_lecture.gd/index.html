@@ -973,6 +973,12 @@
         
           
           
+          <li data-path="5:/assets/images/ui/Chapters/0/Tooltip.svg" data-category="assets">
+            <a class="" href="../../../../../../../assets/assets/images/ui/Chapters/0/Tooltip.svg/">assets/images/ui/Chapters/0/Tooltip.svg</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/ui/Chapters/Chapter_0.png" data-category="assets">
             <a class="" href="../../../../../../../assets/assets/images/ui/Chapters/Chapter_0.png/">assets/images/ui/Chapters/Chapter_0.png</a>
           </li>
@@ -1527,6 +1533,10 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">finished</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
 
+<span class="k">func</span> <span class="nf">idle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">idle'</span><span class="p">)</span>
+
+
 <span class="k">func</span> <span class="nf">show_hint</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">show_hint'</span><span class="p">)</span>
 
@@ -1538,6 +1548,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_on_start_area_2d_area_entered</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span> <span class="n">show_hint</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">_on_start_area_2d_area_exited</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span> <span class="n">idle</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_on_finish_area_2d_area_entered</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

@@ -1,0 +1,27 @@
+---
+title: assets/images/ui/Chapters/0/Tooltip.svg
+---
+:toc:
+
+== assets / images / ui / Chapters / 0 / Tooltip.svg
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |50×50 px
+|Type |svg
+|Content Length |1.46 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/ui/Chapters/0/Tooltip.svg[]
+
