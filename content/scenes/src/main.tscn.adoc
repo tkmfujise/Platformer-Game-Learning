@@ -55,11 +55,15 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + is_input_action()
   + animate()
   + animate_with()
+  + compute_dashed()
   + idle()
   + walk_right()
   + walk_left()
   + turn_right()
   + turn_left()
+  + dash()
+  + lock()
+  + unlock()
   + vibrate()
   + get_state_by()
   + tween_sprite()
@@ -113,6 +117,7 @@ func _physics_process(delta: float) -> void:
 	var dx := Input.get_axis(&'move_left', &'move_right')
 	var dy := Input.get_axis(&'move_up', &'move_down')
 	var direction := Vector2(dx, dy)
+	var last_state := state
 	state = compute_state(delta, direction)
 	match state:
 		State.CLIMBING:
@@ -122,15 +127,22 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.EXHAUSTED:
+			dx = 0
 		State.FAILED:
 			velocity.x = lerp(velocity.x, 0.0, 0.2)
 			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
-			velocity.y += GRAVITY * delta
+			if last_state == State.CLIMBING \
+			and dy < 0:
+				velocity.y = JUMP_VELOCITY
+			else:
+				velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
-		State.EXHAUSTED:
+		State.LOCKED:
 			dx = 0
+			velocity = Vector2(0, 0)
 		_: pass
 	
 	if not playable: dx = 0

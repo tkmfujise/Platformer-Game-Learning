@@ -38,6 +38,7 @@ image::/assets/raw/assets/images/stages/chapter0/Crow.png[200, 100]
 
 === Instantiators
 * link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]
+* link:/scenes/src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn[res://src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn]
 
 
 === Scene Tree

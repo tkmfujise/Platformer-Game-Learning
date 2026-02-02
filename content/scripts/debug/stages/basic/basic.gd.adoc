@@ -1,0 +1,29 @@
+---
+title: res://debug/stages/basic/basic.gd
+---
+:toc:
+
+== debug / stages / basic / basic.gd
+
+=== Attached Scenes
+* link:/scenes/debug/stages/basic/basic.tscn[res://debug/stages/basic/basic.tscn]
+
+
+
+=== Code
+```gdscript
+extends Control
+
+@onready var player : Player = %Player
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		var key : InputEventKey = event
+		if key.is_pressed() and key.keycode == KEY_SPACE:
+			if player.state == Player.State.LOCKED:
+				player.unlock()
+			else:
+				player.lock()
+
+```

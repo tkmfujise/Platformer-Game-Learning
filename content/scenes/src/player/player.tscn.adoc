@@ -43,11 +43,15 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + is_input_action()
   + animate()
   + animate_with()
+  + compute_dashed()
   + idle()
   + walk_right()
   + walk_left()
   + turn_right()
   + turn_left()
+  + dash()
+  + lock()
+  + unlock()
   + vibrate()
   + get_state_by()
   + tween_sprite()
@@ -201,6 +205,7 @@ func _physics_process(delta: float) -> void:
 	var dx := Input.get_axis(&'move_left', &'move_right')
 	var dy := Input.get_axis(&'move_up', &'move_down')
 	var direction := Vector2(dx, dy)
+	var last_state := state
 	state = compute_state(delta, direction)
 	match state:
 		State.CLIMBING:
@@ -210,15 +215,22 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.EXHAUSTED:
+			dx = 0
 		State.FAILED:
 			velocity.x = lerp(velocity.x, 0.0, 0.2)
 			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
-			velocity.y += GRAVITY * delta
+			if last_state == State.CLIMBING \
+			and dy < 0:
+				velocity.y = JUMP_VELOCITY
+			else:
+				velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
-		State.EXHAUSTED:
+		State.LOCKED:
 			dx = 0
+			velocity = Vector2(0, 0)
 		_: pass
 	
 	if not playable: dx = 0
@@ -240,6 +252,7 @@ func _process(delta: float) -> void:
 
 
 === Instantiators
+* link:/scenes/debug/stages/basic/basic.tscn[res://debug/stages/basic/basic.tscn]
 * link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
 * link:/scenes/src/main.tscn[res://src/main.tscn]
 
@@ -1066,7 +1079,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`2`
+|*frame* a|`10`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1278,11 +1291,12 @@ enum State {
 	CLIMBING,
 	DASHED,
 	DASHING,
+	EXHAUSTED,
 	FAILED,
 	FALLING,
-	EXHAUSTED,
 	GROUNDING,
 	JUMPED,
+	LOCKED,
 }
 
 const SPEED = 800.0
@@ -1313,6 +1327,7 @@ func _physics_process(delta: float) -> void:
 	var dx := Input.get_axis(&'move_left', &'move_right')
 	var dy := Input.get_axis(&'move_up', &'move_down')
 	var direction := Vector2(dx, dy)
+	var last_state := state
 	state = compute_state(delta, direction)
 	match state:
 		State.CLIMBING:
@@ -1322,15 +1337,22 @@ func _physics_process(delta: float) -> void:
 			velocity = direction.normalized() * DASH_SPEED
 		State.DASHING:
 			velocity *= DASH_ATTENUATION * delta
+		State.EXHAUSTED:
+			dx = 0
 		State.FAILED:
 			velocity.x = lerp(velocity.x, 0.0, 0.2)
 			velocity.y = lerp(velocity.y, 0.0, 0.2)
 		State.FALLING:
-			velocity.y += GRAVITY * delta
+			if last_state == State.CLIMBING \
+			and dy < 0:
+				velocity.y = JUMP_VELOCITY
+			else:
+				velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
-		State.EXHAUSTED:
+		State.LOCKED:
 			dx = 0
+			velocity = Vector2(0, 0)
 		_: pass
 	
 	if not playable: dx = 0
@@ -1344,12 +1366,11 @@ func _physics_process(delta: float) -> void:
 
 func compute_state(delta: float, direction: Vector2) -> State:
 	if state == State.FAILED: return State.FAILED
+	if state == State.LOCKED: return State.LOCKED
 	if is_just_input_action(&'move_dash') \
 	and dash_rest_count > 0 \
 	and direction:
-		dashed.emit()
-		dash_rest_time = DASH_TIME
-		dash_rest_count -= 1
+		compute_dashed()
 		return State.DASHED
 	elif dash_rest_time > 0:
 		dash_rest_time -= delta
@@ -1396,6 +1417,7 @@ func is_input_action(key: StringName) -> bool:
 
 
 func animate(force: bool = true) -> void:
+	if state == State.LOCKED: return
 	if force: animate_with(velocity)
 	update_sprite_states_shader_parameters()
 	if dash_rest_time > 0 && int(dash_rest_time*100)%3 > 0:
@@ -1409,6 +1431,12 @@ func animate_with(_velocity: Vector2) -> void:
 		for st in ['Idle', 'Run', 'Jump', 'Fall', 'Climb']:
 			%AnimationTree.set('parameters/%s/blend_position' % [st], _velocity.x)
 	%AnimationTree.get('parameters/playback').travel(get_state_by(_velocity))
+
+
+func compute_dashed() -> void:
+	dashed.emit()
+	dash_rest_time = DASH_TIME
+	dash_rest_count -= 1
 
 
 func idle() -> void:
@@ -1429,6 +1457,22 @@ func turn_right() -> void:
 
 func turn_left() -> void:
 	walk_left(); idle()
+
+
+func dash(direction: Vector2) -> void:
+	compute_dashed()
+	state = State.DASHED
+	velocity = direction.normalized() * DASH_SPEED
+	
+
+func lock() -> void:
+	state = State.LOCKED
+	%AnimationTree.active = false
+
+
+func unlock() -> void:
+	state = State.EXHAUSTED
+	%AnimationTree.active = true
 
 
 func vibrate(key: String):

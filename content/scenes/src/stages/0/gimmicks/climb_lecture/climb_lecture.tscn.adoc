@@ -29,9 +29,7 @@ class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
 class N5 as "Tooltip" <<(N,lightgreen) NinePatchRect>> {
 }
-class N6 as "RichTextLabel" <<(R,lightgreen) RichTextLabel>> {
-}
-class N7 as "Crow" <<(S,lightskyblue) Sprite2D>> {
+class N6 as "Crow" <<(S,lightskyblue) Sprite2D>> {
 ---
   + idle()
   + caw()
@@ -40,30 +38,23 @@ class N7 as "Crow" <<(S,lightskyblue) Sprite2D>> {
   + fly()
   + play()
 }
-class N8 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N3
 R --o N5
+R --o N6
 R --o N7
-R --o N8
 N1 --o N2
 N3 --o N4
-N5 --o N6
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_start_area_2d_area_entered, N1::area_entered)
 _(R::_on_start_area_2d_area_exited, N1::area_exited)
 _(R::_on_finish_area_2d_area_entered, N3::area_entered)
-_(R::_on_animation_player_animation_finished, N8::animation_finished)
+_(R::_on_animation_player_animation_finished, N7::animation_finished)
 ....
 
-
-[.scene-assets]
-=== Assets
-[.asset-image]
-[link=/assets/assets/images/ui/Chapters/0/Tooltip.svg]
-image::/assets/raw/assets/images/ui/Chapters/0/Tooltip.svg[200, 100] 
 
 
 
@@ -80,8 +71,7 @@ image::/assets/raw/assets/images/ui/Chapters/0/Tooltip.svg[200, 100]
 *** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#FinishArea2D# [.node-type.type-2d]#Area2D#
 *** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
-** [.node-name.type-control]#Tooltip# [.node-type.type-control]#NinePatchRect#
-*** [.node-name.type-control]#RichTextLabel# [.node-type.type-control]#RichTextLabel#
+** [.node-name.type-control]#Tooltip# [.node-type.type-control]#link:/scenes/src/stages/0/gimmicks/tooltip/tooltip.tscn[res://src/stages/0/gimmicks/tooltip/tooltip.tscn]#
 ** [.node-name.type-2d]#Crow# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/crow/crow.tscn[res://src/stages/0/gimmicks/crow/crow.tscn]#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
@@ -246,38 +236,6 @@ R  ->o  T1 : visible\n = false
 |===
 |Name |Value
 |*visible* a|`false`
-|*offset_left* a|`78.0`
-|*offset_top* a|`83.0`
-|*offset_right* a|`317.0`
-|*offset_bottom* a|`234.0`
-|*texture* a|[link=/assets/assets/images/ui/Chapters/0/Tooltip.svg]
-[.asset-image]
-.res://assets/images/ui/Chapters/0/Tooltip.svg
-image::/assets/raw/assets/images/ui/Chapters/0/Tooltip.svg[]
-
-|===
-[.node-property.node-control]
-.#$Tooltip/RichTextLabel# properties
-[cols="1,3" options="header"]
-|===
-|Name |Value
-|*layout_mode* a|`1`
-|*anchors_preset* a|`15`
-|*anchor_right* a|`1.0`
-|*anchor_bottom* a|`1.0`
-|*offset_left* a|`19.0`
-|*offset_top* a|`13.0`
-|*offset_right* a|`-22.0`
-|*offset_bottom* a|`-27.0`
-|*grow_horizontal* a|`2`
-|*grow_vertical* a|`2`
-|*theme_override_font_sizes/normal_font_size* a|`32`
-|*theme_override_font_sizes/bold_font_size* a|`28`
-|*bbcode_enabled* a|`true`
-|*text* a|`[color=skyblue]のぼる[/color]
-[b]長押し[/b] (LT)`
-|*horizontal_alignment* a|`1`
-|*vertical_alignment* a|`1`
 |===
 [.node-property.node-2d]
 .#$Crow# properties

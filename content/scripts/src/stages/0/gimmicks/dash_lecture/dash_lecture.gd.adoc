@@ -1,0 +1,46 @@
+---
+title: res://src/stages/0/gimmicks/dash_lecture/dash_lecture.gd
+---
+:toc:
+
+== src / stages / 0 / gimmicks / dash_lecture / dash_lecture.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn[res://src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+enum State { READY, STARTED, AWAIT_INPUT, FINISHED }
+
+@export var state : State = State.READY
+var player : Player = null
+
+
+func start() -> void:
+	if player: player.lock()
+	%AnimationPlayer.play(&'start')
+
+
+func _input(event: InputEvent) -> void:
+	if not state == State.AWAIT_INPUT: return
+	if event.is_action_pressed(&'move_dash'):
+		player.unlock()
+		player.dash(Vector2(1, -1))
+		%AnimationPlayer.play(&'finish')
+
+
+func _on_start_area_2d_area_entered(area: Area2D) -> void:
+	if not state == State.READY: return
+	player = area.owner
+	start()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'finish': queue_free()
+
+```

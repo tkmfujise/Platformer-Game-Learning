@@ -6,7 +6,7 @@ title: assets/images/ui/Chapters/0/Tooltip.svg
 == assets / images / ui / Chapters / 0 / Tooltip.svg
 
 === Attached Scenes
-* link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]
+* link:/scenes/src/stages/0/gimmicks/tooltip/tooltip.tscn[res://src/stages/0/gimmicks/tooltip/tooltip.tscn]
 
 
 

@@ -20,5 +20,7 @@ title: res://themes/default_theme.tres
 |_resource_ |*Label/constants/outline_size* |`8`
 |_resource_ |*Label/font_sizes/font_size* |`48`
 |_resource_ |*RichTextLabel/font_sizes/normal_font_size* |`50`
+|_resource_ |*RichTextLabel/fonts/bold_font* |`ExtResource("1_mlkpy")`
+|_resource_ |*RichTextLabel/fonts/normal_font* |`ExtResource("1_mlkpy")`
 |===
 

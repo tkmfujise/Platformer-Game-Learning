@@ -1,0 +1,91 @@
+---
+title: src/stages/0/gimmicks/tooltip/tooltip.tscn
+---
+:toc:
+
+== src / stages / 0 / gimmicks / tooltip / tooltip.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Tooltip" <<(N,lightgreen) NinePatchRect>> {
+}
+class N1 as "RichTextLabel" <<(R,lightgreen) RichTextLabel>> {
+}
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/ui/Chapters/0/Tooltip.svg]
+image::/assets/raw/assets/images/ui/Chapters/0/Tooltip.svg[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]
+* link:/scenes/src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn[res://src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Tooltip# [.node-type.type-control]#NinePatchRect#
+** [.node-name.type-control]#RichTextLabel# [.node-type.type-control]#RichTextLabel#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-control]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_left* a|`78.0`
+|*offset_top* a|`83.0`
+|*offset_right* a|`317.0`
+|*offset_bottom* a|`234.0`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
+|*texture* a|[link=/assets/assets/images/ui/Chapters/0/Tooltip.svg]
+[.asset-image]
+.res://assets/images/ui/Chapters/0/Tooltip.svg
+image::/assets/raw/assets/images/ui/Chapters/0/Tooltip.svg[]
+
+|===
+[.node-property.node-control]
+.#$RichTextLabel# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`19.0`
+|*offset_top* a|`13.0`
+|*offset_right* a|`-22.0`
+|*offset_bottom* a|`-27.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*theme_override_font_sizes/normal_font_size* a|`32`
+|*theme_override_font_sizes/bold_font_size* a|`28`
+|*bbcode_enabled* a|`true`
+|*text* a|`[color=skyblue]のぼる[/color]
+[b]長押し[/b] (LT)`
+|*horizontal_alignment* a|`1`
+|*vertical_alignment* a|`1`
+|===
+
+
+
+
