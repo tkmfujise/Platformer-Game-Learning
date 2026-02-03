@@ -223,9 +223,17 @@ func _physics_process(delta: float) -> void:
 		State.FALLING:
 			if last_state == State.CLIMBING \
 			and dy < 0:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = JUMP_VELOCITY * 0.8
 			else:
-				velocity.y += GRAVITY * delta
+				# TODO: ぬるっと動くようにする
+				match 1:
+					1:
+						velocity.y += GRAVITY * delta
+					2:
+						if velocity.y < JUMP_VELOCITY * 0.85:
+							velocity.y += GRAVITY * 1.15 * delta
+						else:
+							velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.LOCKED:
@@ -1079,7 +1087,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`10`
+|*frame* a|`20`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1345,9 +1353,17 @@ func _physics_process(delta: float) -> void:
 		State.FALLING:
 			if last_state == State.CLIMBING \
 			and dy < 0:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = JUMP_VELOCITY * 0.8
 			else:
-				velocity.y += GRAVITY * delta
+				# TODO: ぬるっと動くようにする
+				match 1:
+					1:
+						velocity.y += GRAVITY * delta
+					2:
+						if velocity.y < JUMP_VELOCITY * 0.85:
+							velocity.y += GRAVITY * 1.15 * delta
+						else:
+							velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.LOCKED:
@@ -1500,8 +1516,8 @@ func tween_sprite(key: StringName) -> void:
 		&'dashed':
 			var dir := velocity.normalized()
 			coef = dir.abs().clamp(Vector2(0.75, 0.75), Vector2(1.0, 1.0))
-		&'landed': coef = Vector2(1.05, 0.95)
-		&'jumped': coef = Vector2(0.70, 1.30)
+		&'landed': coef = Vector2(1.08, 0.92)
+		&'jumped': coef = Vector2(0.72, 1.38)
 
 	sprite_tween.tween_property(%Sprites, 'scale', coef * DEFAULT_SCALE, 0.10) \
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)

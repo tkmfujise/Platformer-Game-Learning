@@ -1563,6 +1563,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">player</span> <span class="p">:</span> <span class="n">Player</span> <span class="o">=</span> <span class="o">%</span><span class="n">Player</span>
 
 
+<span class="c1"># TODO: 自動でプレイヤーを操作するテストを追加</span>
+<span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">pass</span>
+
+
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventKey</span><span class="p">:</span>
 		<span class="k">var</span> <span class="n">key</span> <span class="p">:</span> <span class="n">InputEventKey</span> <span class="o">=</span> <span class="n">event</span>

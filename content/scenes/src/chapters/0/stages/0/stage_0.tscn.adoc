@@ -305,9 +305,17 @@ func _physics_process(delta: float) -> void:
 		State.FALLING:
 			if last_state == State.CLIMBING \
 			and dy < 0:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = JUMP_VELOCITY * 0.8
 			else:
-				velocity.y += GRAVITY * delta
+				# TODO: ぬるっと動くようにする
+				match 1:
+					1:
+						velocity.y += GRAVITY * delta
+					2:
+						if velocity.y < JUMP_VELOCITY * 0.85:
+							velocity.y += GRAVITY * 1.15 * delta
+						else:
+							velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.LOCKED:

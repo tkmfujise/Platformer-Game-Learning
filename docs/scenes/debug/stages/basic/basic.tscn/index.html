@@ -1553,12 +1553,21 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqFVFFv0zAQfs-vMONlhUaCPo9JWRtKUdpOazpACJ2c5Np4de3IdtZVaPx2HCdpsjKJt7vP58-f7z475VRrckeoJhc3VLP0glxdXY6HnG1zs1WIYkDGUhgl-fU1-e0R8o4UnB5Reb7v2_Q9ASaK0lwOvGcvdWyLj45uZegWp0qWIvvgWOPhETmXhwGJGcc5LaKKx9Geto7c1lt3Ql-K3h0TXqIVk1NFU4PqRmbH0aQR9YdkVOeYufCh3BdNyKnImnBD7aFZo9onq9swnLhoEqy-QJeOo9n8ZraY9qCv6_kt3IfRcjyLfzhkehfct3EQRctv4QTi2TyEeAlVdUdcoV0WxHG4WAfxbLlw4Dz4Dm5hvFwv4hN00tDtDj8H6yiG1TiIQjeFaS61CTcbTI3LI3fVHrChhm1LhLRUj-gQbajBZo1zJrZg2L4GqvaBQm1eg1I7w5oz5WyfnNXpQjGDYA7WLCd_0IRj5xCFNDtah7ikyI_WZxoKJVPUuoFTubcuQnAaG4xpeCjtUc5gYKfOpOiWXkGpYPtue5PBgZn87JTaLS1XxtstB8p3oCrD9QGOmzY3pRIvChzQK6iYm5DLdNeEpegljyxRncotmvrSkLQtcq2Euq8tQZFVJU2vXb0GndMMFRT2RezRPom2l7qgBwHbyiCAzhDt9UulUJgXNF1DXzQFpPgXqF9WD6jfVw-oX1kfqLSBLpMHKwOodQJYBaj-W_RkFZ4zl8raWVrrajvzc7Jn7474vrTfTxuMvDcZbphAApd0mAwIJVf-z7fVRzI0OUt3wvrv0-iXTxKvGiExkrjZkowpdMby_gJAkJBD" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqFVNtu2zAMfc9XaN1Ls9XAlr12BdzETTM4SdE43Q0DIdtMrEaRDEluFgzbt0-Wr80K7I08Ig8p6ogJp1qTe0I1ObummiVn5PLyfHzB2TYzW4UohmQshVGSX12RXwNC3pCc0yOqged51n1LIFcyQa3Ph5XLRF4Y6_weJI588d6xrwzd4lTJQqTvXJHo4oicy8OQRIzjnOZhSeuqtKkjl3rnCvY707tjzAu0vWVU0cSgupbpcTSpe_xDUqozTJ35WOzz2uRUpLW5obZoWl_CI6u7IJg4a-KvbqFzx-Fsfj1bTHvQp_X8Dh6CcDmeRV8dMr33HxrbD8Pl52AC0WweQLSEMrojLtHO86MoWKz9aLZcOHDufwF3MF6uF1ELtT102cGNvw4jWI39MHCPMs2kNsFmg4lxfuiu2gM21LBtgZAU6gkdog01WJ9xzsQWDNtXQDk-UKjNS1Bi37DiTDjbxydxOlfMIJiD1U4rFxpz7ASjkKbHRi55drSy0ycqSuTeqgjB9VhjTMNjYUs5gYF9dSZFd_QCSgXbd-m1BwdmspMqlVoarpQ3KQfKd6BKwfUBjpvGN4USzwIc0AsomWuTy2RXm4XoOU8sVl2XWzTVpSFuRuRGCdVcG4I8LUPqWbt4DTqjKSrI7Y_Yo_0SzSx1Tg8CtqVAAJ0gmusXSqEwz2i6gT4bCkjxL1D9rB5Q_a8eUP2yPlD2BrqIH20bQK0SwHaA6r9BP22Hp8yFsnKWVrravvkpWbtDPrgdMraUit6UzG6R-CeLxLfZ7f7wyK0f3sBq9i1oVZtIJex05abVTum7QvfE86Tdc40xaowPg1cpbphAAuf0Ih4SSi6976_LihcmY8lOWMV_HP3wSDwoRUOMJE5NJGUKnZQHfwFjeLTD" alt="Diagram">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_overridden_virtual_functions">Overridden virtual functions</h3>
+<div class="sect3">
+<h4 id="_process">_process</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">pass</span></code></pre>
+</div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_input">_input</h4>
 <div class="listingblock">
@@ -1611,9 +1620,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">State</span><span class="o">.</span><span class="n">FALLING</span><span class="p">:</span>
 			<span class="k">if</span> <span class="n">last_state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span> \
 			<span class="ow">and</span> <span class="n">dy</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
+				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.8</span>
 			<span class="k">else</span><span class="p">:</span>
-				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+				<span class="c1"># TODO: ぬるっと動くようにする</span>
+				<span class="k">match</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="mi">1</span><span class="p">:</span>
+						<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+					<span class="mi">2</span><span class="p">:</span>
+						<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
+							<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
+						<span class="k">else</span><span class="p">:</span>
+							<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">LOCKED</span><span class="p">:</span>
@@ -1660,6 +1677,9 @@ No other scene instantiate this scene.
 </li>
 <li>
 <p><span class="node-name type-2d">Player</span> <span class="node-type type-2d"><a href="../../../../src/player/player.tscn">res://src/player/player.tscn</a></span></p>
+</li>
+<li>
+<p><span class="node-name type-2d">CameraFrame</span> <span class="node-type type-2d"><a href="../../../../src/stages/frame/camera_frame.tscn">res://src/stages/frame/camera_frame.tscn</a></span></p>
 </li>
 </ul>
 </div>
@@ -1757,7 +1777,7 @@ No signal connections.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tile_map_data</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>PackedByteArray("AAAAAAoAAAAEAAAAAAAAAAsAAAAEAAEAAAABAAoAAAAEAAAAAAABAAsAAAAEAAEAAAACAAoAAAAEAAAAAAACAAsAAAAEAAEAAAADAAoAAAAEAAAAAAADAAsAAAAEAAEAAAAEAAoAAAAEAAAAAAAEAAsAAAAEAAEAAAAFAAoAAAAEAAAAAAAFAAsAAAAEAAEAAAAGAAoAAAAEAAAAAAAGAAsAAAAEAAEAAAAHAAoAAAABAAAAAAAHAAsAAAAEAAEAAAAIAAkAAAADAAAAAAAIAAoAAAABAAAAAAAIAAsAAAAEAAEAAAAJAAkAAAABAAAAAAAJAAoAAAAEAAEAAAAJAAsAAAAEAAEAAAAKAAkAAAACAAAAAAAOAAsAAAADAAAAAAAPAAsAAAAEAAAAAAAQAAkAAAADAAAAAAAQAAoAAAADAAEAAAAQAAsAAAAEAAAAAAARAAkAAAAFAAAAAAARAAoAAAAFAAEAAAARAAsAAAAEAAEAAAASAAsAAAAFAAAAAAAAAAwAAAAEAAEAAAAAAA0AAAAEAAEAAAABAAwAAAAEAAEAAAABAA0AAAAEAAEAAAACAAwAAAAEAAEAAAACAA0AAAAEAAEAAAADAAwAAAAEAAEAAAADAA0AAAAEAAEAAAAEAAwAAAAEAAEAAAAEAA0AAAAEAAEAAAAFAAwAAAAEAAEAAAAFAA0AAAAEAAEAAAAGAAwAAAAEAAEAAAAGAA0AAAAEAAEAAAAHAAwAAAAEAAEAAAAHAA0AAAAEAAEAAAAIAAwAAAAEAAEAAAAIAA0AAAAEAAEAAAAJAAwAAAACAAEAAAAJAA0AAAACAAEAAAAKAAoAAAACAAEAAAAKAAsAAAACAAIAAAANAAMAAAADAAAAAAANAAQAAAADAAIAAAAOAAMAAAAFAAAAAAAOAAQAAAAFAAIAAAAOAAwAAAADAAEAAAAOAA0AAAADAAEAAAAPAAwAAAAEAAEAAAAPAA0AAAAEAAEAAAAQAAwAAAAEAAEAAAAQAA0AAAAEAAEAAAARAAwAAAAEAAEAAAARAA0AAAAEAAEAAAASAAwAAAAFAAEAAAASAA0AAAAFAAEAAAA=")</code></p>
+<p><code>PackedByteArray("AAAKAAkAAAACAAAAAAAJAAoAAAAEAAEAAAAJAAsAAAAEAAEAAAAJAAkAAAABAAAAAAAIAAkAAAADAAAAAAAAAAoAAAAEAAAAAAABAAoAAAAEAAAAAAACAAoAAAAEAAAAAAADAAoAAAAEAAAAAAAEAAoAAAAEAAAAAAAFAAoAAAAEAAAAAAAGAAoAAAAEAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAIAAsAAAAEAAEAAAAHAAsAAAAEAAEAAAAGAAsAAAAEAAEAAAAFAAsAAAAEAAEAAAAEAAsAAAAEAAEAAAADAAsAAAAEAAEAAAACAAsAAAAEAAEAAAABAAsAAAAEAAEAAAAAAAsAAAAEAAEAAAAOAAsAAAADAAAAAAASAAsAAAAFAAAAAAARAAkAAAAFAAAAAAAQAAoAAAADAAEAAAAQAAkAAAADAAAAAAAPAAsAAAAEAAAAAAAQAAsAAAAEAAAAAAARAAsAAAAEAAEAAAARAAoAAAAFAAEAAAAAAAwAAAAEAAEAAAAAAA0AAAAEAAEAAAABAAwAAAAEAAEAAAABAA0AAAAEAAEAAAACAAwAAAAEAAEAAAACAA0AAAAEAAEAAAADAAwAAAAEAAEAAAADAA0AAAAEAAEAAAAEAAwAAAAEAAEAAAAEAA0AAAAEAAEAAAAFAAwAAAAEAAEAAAAFAA0AAAAEAAEAAAAGAAwAAAAEAAEAAAAGAA0AAAAEAAEAAAAHAAwAAAAEAAEAAAAHAA0AAAAEAAEAAAAIAAwAAAAEAAEAAAAIAA0AAAAEAAEAAAAJAAwAAAACAAEAAAAJAA0AAAACAAEAAAAKAAoAAAACAAEAAAAKAAsAAAACAAIAAAANAAMAAAADAAAAAAANAAQAAAADAAIAAAAOAAMAAAAFAAAAAAAOAAQAAAAFAAIAAAAOAAwAAAADAAEAAAAOAA0AAAADAAEAAAAPAAwAAAAEAAEAAAAPAA0AAAAEAAEAAAAQAAwAAAAEAAEAAAAQAA0AAAAEAAEAAAARAAwAAAAEAAEAAAARAA0AAAAEAAEAAAASAAwAAAAFAAEAAAASAA0AAAAFAAEAAAA=")</code></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1789,6 +1809,27 @@ No signal connections.
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch node-property node-2d">
+<caption class="title">Table 4. <mark>$CameraFrame</mark> properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Vector2(960, 542)</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_basic_gd"><a href="../../../../../scripts/debug/stages/basic/basic.gd">basic.gd</a></h3>
@@ -1797,6 +1838,11 @@ No signal connections.
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Control</span>
 
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">player</span> <span class="p">:</span> <span class="n">Player</span> <span class="o">=</span> <span class="o">%</span><span class="n">Player</span>
+
+
+<span class="c1"># TODO: 自動でプレイヤーを操作するテストを追加</span>
+<span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">pass</span>
 
 
 <span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

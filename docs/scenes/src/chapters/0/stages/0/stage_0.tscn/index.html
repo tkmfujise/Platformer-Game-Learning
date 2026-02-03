@@ -1644,9 +1644,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">State</span><span class="o">.</span><span class="n">FALLING</span><span class="p">:</span>
 			<span class="k">if</span> <span class="n">last_state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span> \
 			<span class="ow">and</span> <span class="n">dy</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
+				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.8</span>
 			<span class="k">else</span><span class="p">:</span>
-				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+				<span class="c1"># TODO: ぬるっと動くようにする</span>
+				<span class="k">match</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="mi">1</span><span class="p">:</span>
+						<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+					<span class="mi">2</span><span class="p">:</span>
+						<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
+							<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
+						<span class="k">else</span><span class="p">:</span>
+							<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">LOCKED</span><span class="p">:</span>
