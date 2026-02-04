@@ -1417,6 +1417,12 @@
         
           
           
+          <li data-path="3:/src/dialogue/scenarios/basic.rb" data-category="assets">
+            <a class="" href="../../../../assets/src/dialogue/scenarios/basic.rb/">src/dialogue/scenarios/basic.rb</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/dialogue/scenarios/chapter0/stage0.ja.rb" data-category="assets">
             <a class="" href="../../../../assets/src/dialogue/scenarios/chapter0/stage0.ja.rb/">src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
           </li>
@@ -1563,14 +1569,16 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">signal</span> <span class="n">finished</span>
 <span class="k">signal</span> <span class="n">event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
 
-<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span> <span class="n">ReDScribe</span>
+<span class="err">@</span><span class="n">export_file_path</span><span class="p">(</span><span class="s2">"*.rb"</span><span class="p">)</span> <span class="k">var</span> <span class="n">boot_file</span> <span class="p">:</span> <span class="kt">String</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span><span class="o">=</span> <span class="n">ReDScribe</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
 <span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 <span class="k">var</span> <span class="n">waiting</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">controller</span><span class="o">.</span><span class="n">boot_file</span> <span class="o">=</span> <span class="n">boot_file</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_handle</span><span class="p">)</span>
 
 

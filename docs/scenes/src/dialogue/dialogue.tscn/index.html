@@ -1417,6 +1417,12 @@
         
           
           
+          <li data-path="3:/src/dialogue/scenarios/basic.rb" data-category="assets">
+            <a class="" href="../../../../assets/src/dialogue/scenarios/basic.rb/">src/dialogue/scenarios/basic.rb</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/dialogue/scenarios/chapter0/stage0.ja.rb" data-category="assets">
             <a class="" href="../../../../assets/src/dialogue/scenarios/chapter0/stage0.ja.rb/">src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
           </li>
@@ -1555,7 +1561,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdUk2P0zAQvedXDMulgeRA91NVWWnpckCqEEp7Qyhyk9nEqteubGeXCMFvZzyNAylc4GK955n3PJ6ZSgnnoADh4OxeCmWaDs9guZytsh6VMs8prIR-Em4terS3t_AtAfgBD1JL12LNBJ9Q-yTPc2KvoDLaW6MUWqbugGKP1h2JF9azivI6a0lXDgl89yykl7oZvF5DaVHU_SxlwuIBh0ek7rCsh5pjjuhdhDh6l_JRNDGllPrQRZ-yFbpWY8jokj9zyksvH8kmnKb7PRr7QFffk4p7-fENN_OdqPaNNZ2uh3Yq2bS-sYiaWmqUsQVWnhs6KuesXOOD3xwL_5uUykG7ov8LqYeJjAbnpwYfwsfZZXN0cft-pzpMYXOw0uP8fmpwwQZFyPzPEi7_cPjXGq7YIdjTO6wrJs8Xsmq3-NWvxQ7VVHrN0vdhZNswMVZvx03mu6nihhV3mjbES6M_qbDmLLsbZSfRwaCAPDc07QjmEVxEcBXBdQQ3Cc2Y0XlCvWZ0mbyokfYIoZyJbJeCgGX--WXoUOZbWe01Ovd2_iWHXaJosuAN2NAOqKWlFaK6knJWLBbjtmZAjFH6KxI3lYORpCfK6Z5nVPliMZD0J-mPUJA=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdUk2P0zAQvedXDMulWZID3U9VZaWlywGpQijtDSHLSaaJVa9d2c4uEWJ_O_Y0DqRwgUv0nsfvZfxmKsmthQK4hbMHwaVuOjyD5XK2ynqUUj-nsOLqids179Hc3cH3BOAFdkIJ22JNBJ9QuSTPc8_OodTasZ2QSMwekO_R2CNx3DgSnUOllTNaSjRH2hnjXdhwn86euXBCNYPzG2AGed3PUiLkNeDgJVSHrB5eEO_w3kaIozcTj7yJV5hQhy76sJarWo4lrRg97ZQzJx69Tfjq7vdqTMUf_UgqSvbTW4r2Pa_2jdGdqodwpWha1xhE5QPWUpsCK0fxjso5Kde4c5tj43-T-nbQrPz7uVDDfEaDi1ODj-Hh5LI5uth9X8oOU9gcjHA4f5gaXJJBEW7-ZwtXfzj8aw_X5BDs_X9IV0x-X4iq3eI3t-Ylyqn0hqQfwsi2YWKk3o57TWdTxS0p7pXfECe0-izD0pPsfpSdVAeDAvJc-2lHMI_gMoLrCG4iuE38jAldJD5rQlfJqxr9HiGwGc_KFDgs8y-vQ0KZa0W1V2jtu_nXHMpE-smC02BCHFAL41fI95WwWbFYjNuagWeE0l-VuKlUjCQ9UU73PPOdLxYDSX8C1ntU1w==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1574,6 +1580,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">controller</span><span class="o">.</span><span class="n">boot_file</span> <span class="o">=</span> <span class="n">boot_file</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_handle</span><span class="p">)</span></code></pre>
 </div>
 </div>
@@ -1737,9 +1744,9 @@ document.addEventListener("DOMContentLoaded", () => {
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>controller</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>boot_file</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>SubResource("ReDScribe_02nw3")</code></p>
+<p><a href="../../../../assets/src/dialogue/scenarios/basic.rb">res://src/dialogue/scenarios/basic.rb</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2125,14 +2132,16 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">signal</span> <span class="n">finished</span>
 <span class="k">signal</span> <span class="n">event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
 
-<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span> <span class="n">ReDScribe</span>
+<span class="err">@</span><span class="n">export_file_path</span><span class="p">(</span><span class="s2">"*.rb"</span><span class="p">)</span> <span class="k">var</span> <span class="n">boot_file</span> <span class="p">:</span> <span class="kt">String</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span><span class="o">=</span> <span class="n">ReDScribe</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
 <span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 <span class="k">var</span> <span class="n">waiting</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">controller</span><span class="o">.</span><span class="n">boot_file</span> <span class="o">=</span> <span class="n">boot_file</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_handle</span><span class="p">)</span>
 
 

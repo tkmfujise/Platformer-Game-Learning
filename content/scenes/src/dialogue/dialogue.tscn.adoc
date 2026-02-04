@@ -12,9 +12,10 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ finished
   ~ event
 ---
-  * controller
+  * boot_file
   * speakers
   * started
+  * controller
   * current_speaker
   * waiting
 ---
@@ -73,6 +74,7 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[200, 100]
 ==== _ready
 ```gdscript
 func _ready() -> void:
+	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 ```
 ==== _input
@@ -259,7 +261,7 @@ R  ->  T2 : size\n = Vector2(1870, 311)
 |===
 |Name |Value
 |*script* a|link:/scripts/src/dialogue/dialogue.gd[res://src/dialogue/dialogue.gd]
-|*controller* a|`SubResource("ReDScribe_02nw3")`
+|*boot_file* a|link:/assets/src/dialogue/scenarios/basic.rb[res://src/dialogue/scenarios/basic.rb]
 |===
 [.node-property.node-control]
 .#$Background# properties
@@ -366,14 +368,16 @@ extends CanvasLayer
 signal finished
 signal event(event_name: String)
 
-@export var controller : ReDScribe
+@export_file_path("*.rb") var boot_file : String
 @export var speakers : Array[DialogueSpeaker] = []
 @onready var started : bool = false
+@onready var controller := ReDScribe.new()
 var current_speaker : String = ''
 var waiting : bool = false
 
 
 func _ready() -> void:
+	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 
 

@@ -307,15 +307,10 @@ func _physics_process(delta: float) -> void:
 			and dy < 0:
 				velocity.y = JUMP_VELOCITY * 0.8
 			else:
-				# TODO: ぬるっと動くようにする
-				match 1:
-					1:
-						velocity.y += GRAVITY * delta
-					2:
-						if velocity.y < JUMP_VELOCITY * 0.85:
-							velocity.y += GRAVITY * 1.15 * delta
-						else:
-							velocity.y += GRAVITY * delta
+				if velocity.y < JUMP_VELOCITY * 0.85:
+					velocity.y += GRAVITY * 1.15 * delta
+				else:
+					velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.LOCKED:
@@ -404,7 +399,7 @@ participant "$Player" as T0 #87CEFA
 
 
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(475, 434)
+R  ->  T0 : position\n = Vector2(495, 501)
 
 
 ....
@@ -680,7 +675,7 @@ R  ->o  T0 : &"play"()
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(475, 434)`
+|*position* a|`Vector2(495, 501)`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties

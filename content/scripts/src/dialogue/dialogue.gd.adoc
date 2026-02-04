@@ -17,14 +17,16 @@ extends CanvasLayer
 signal finished
 signal event(event_name: String)
 
-@export var controller : ReDScribe
+@export_file_path("*.rb") var boot_file : String
 @export var speakers : Array[DialogueSpeaker] = []
 @onready var started : bool = false
+@onready var controller := ReDScribe.new()
 var current_speaker : String = ''
 var waiting : bool = false
 
 
 func _ready() -> void:
+	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 
 

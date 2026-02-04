@@ -23,9 +23,10 @@ class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ finished
   ~ event
 ---
-  * controller
+  * boot_file
   * speakers
   * started
+  * controller
   * current_speaker
   * waiting
 ---
@@ -99,6 +100,7 @@ func _ready() -> void:
 .$Dialogue
 ```gdscript
 func _ready() -> void:
+	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 ```
 ==== _input
@@ -284,7 +286,7 @@ R  ->o  T2 : visible\n = true
 |Name |Value
 |*unique_name_in_owner* a|`true`
 |*visible* a|`false`
-|*controller* a|`SubResource("ReDScribe_2vwqn")`
+|*boot_file* a|link:/assets/src/dialogue/scenarios/chapter0/stage0.ja.rb[res://src/dialogue/scenarios/chapter0/stage0.ja.rb]
 |*speakers* a|`Array("[SubResource("Resource_ffs01"), SubResource("Resource_gkg18")]")`
 |===
 [.node-property.node-2d]

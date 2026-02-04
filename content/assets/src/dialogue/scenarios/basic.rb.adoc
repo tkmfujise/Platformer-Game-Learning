@@ -1,0 +1,27 @@
+---
+title: src/dialogue/scenarios/basic.rb
+---
+:toc:
+
+== src / dialogue / scenarios / basic.rb
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```rb
+require 'src/dialogue/helper'
+
+Dialogue.new do
+  speakers %w(Player OldWoman)
+
+  Player;
+  - "Hi"
+
+  OldWoman;
+  - "Yeh"
+end
+
+```
+

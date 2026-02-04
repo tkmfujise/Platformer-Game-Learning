@@ -17,11 +17,6 @@ extends Control
 @onready var player : Player = %Player
 
 
-# TODO: 自動でプレイヤーを操作するテストを追加
-func _process(delta: float) -> void:
-	pass
-
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		var key : InputEventKey = event

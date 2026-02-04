@@ -1417,6 +1417,12 @@
         
           
           
+          <li data-path="3:/src/dialogue/scenarios/basic.rb" data-category="assets">
+            <a class="" href="../../../../../../../assets/src/dialogue/scenarios/basic.rb/">src/dialogue/scenarios/basic.rb</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/dialogue/scenarios/chapter0/stage0.ja.rb" data-category="assets">
             <a class="" href="../../../../../../../assets/src/dialogue/scenarios/chapter0/stage0.ja.rb/">src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
           </li>
@@ -1646,15 +1652,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="ow">and</span> <span class="n">dy</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
 				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.8</span>
 			<span class="k">else</span><span class="p">:</span>
-				<span class="c1"># TODO: ぬるっと動くようにする</span>
-				<span class="k">match</span> <span class="mi">1</span><span class="p">:</span>
-					<span class="mi">1</span><span class="p">:</span>
-						<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
-					<span class="mi">2</span><span class="p">:</span>
-						<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
-							<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
-						<span class="k">else</span><span class="p">:</span>
-							<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+				<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
+					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">LOCKED</span><span class="p">:</span>
@@ -1847,7 +1848,7 @@ No other scene instantiate this scene.
 <h4 id="_animation_xb7cu">Animation_xb7cu</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNodyrsKAjEQRuF-nuInWiioBI2sLEQQ0VrCYmUTQoqB3UzITuPbezntd5IUbTLCBBE1iDMC1diUE9dYFGb5GOM7tz8NFotTd73dL_TNeww85R52Z-E9BWB7xm_qUWVmZSmvAo9nTiptv3LdcQN3cGuiD0LRIMw=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNpLzs8rKcrPUVAKys8vUVJILFYI4ipILCrJTM4sSMwrUVBSCchJrEwtAkuFGCgoW5g7u7o5cgGBra1CSGZuqpWCgZ6Bgq0tV5CCgq6dAkiRlUJBfnFmSWZ-Xkyegq1CWGpySX6RkYaJpamOgqmBoSYXFwBC0CDJ" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -2495,7 +2496,7 @@ No other scene instantiate this scene.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Vector2(475, 434)</code></p>
+<p><code>Vector2(495, 501)</code></p>
 </div></div></td>
 </tr>
 </tbody>

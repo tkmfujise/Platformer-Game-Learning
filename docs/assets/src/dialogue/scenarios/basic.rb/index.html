@@ -3,7 +3,7 @@
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>src/curtain/opening/pattern2.gdshader - Platformer Game Learning</title>
+    <title>src/dialogue/scenarios/basic.rb - Platformer Game Learning</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../../../../../css/pico.min.css">
     <link rel="stylesheet" href="../../../../../css/style.css">
@@ -1382,49 +1382,49 @@
           
           
           <li data-path="3:/src/curtain/closing/pattern2.gdshader" data-category="assets">
-            <a class="" href="../../closing/pattern2.gdshader/">src/curtain/closing/pattern2.gdshader</a>
+            <a class="" href="../../../curtain/closing/pattern2.gdshader/">src/curtain/closing/pattern2.gdshader</a>
           </li>
         
           
           
           <li data-path="3:/src/curtain/closing/pattern3.gdshader" data-category="assets">
-            <a class="" href="../../closing/pattern3.gdshader/">src/curtain/closing/pattern3.gdshader</a>
+            <a class="" href="../../../curtain/closing/pattern3.gdshader/">src/curtain/closing/pattern3.gdshader</a>
           </li>
         
           
           
           <li data-path="3:/src/curtain/opening/pattern2.gdshader" data-category="assets">
-            <a class="selected" href="./">src/curtain/opening/pattern2.gdshader</a>
+            <a class="" href="../../../curtain/opening/pattern2.gdshader/">src/curtain/opening/pattern2.gdshader</a>
           </li>
         
           
           
           <li data-path="3:/src/curtain/opening/pattern3.gdshader" data-category="assets">
-            <a class="" href="../pattern3.gdshader/">src/curtain/opening/pattern3.gdshader</a>
+            <a class="" href="../../../curtain/opening/pattern3.gdshader/">src/curtain/opening/pattern3.gdshader</a>
           </li>
         
           
           
           <li data-path="3:/src/curtain/opening/pattern4.gdshader" data-category="assets">
-            <a class="" href="../pattern4.gdshader/">src/curtain/opening/pattern4.gdshader</a>
+            <a class="" href="../../../curtain/opening/pattern4.gdshader/">src/curtain/opening/pattern4.gdshader</a>
           </li>
         
           
           
           <li data-path="2:/src/dialogue/helper.rb" data-category="assets">
-            <a class="" href="../../../dialogue/helper.rb/">src/dialogue/helper.rb</a>
+            <a class="" href="../../helper.rb/">src/dialogue/helper.rb</a>
           </li>
         
           
           
           <li data-path="3:/src/dialogue/scenarios/basic.rb" data-category="assets">
-            <a class="" href="../../../dialogue/scenarios/basic.rb/">src/dialogue/scenarios/basic.rb</a>
+            <a class="selected" href="./">src/dialogue/scenarios/basic.rb</a>
           </li>
         
           
           
           <li data-path="4:/src/dialogue/scenarios/chapter0/stage0.ja.rb" data-category="assets">
-            <a class="" href="../../../dialogue/scenarios/chapter0/stage0.ja.rb/">src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
+            <a class="" href="../chapter0/stage0.ja.rb/">src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
           </li>
         
           
@@ -1539,7 +1539,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li>
-<a href="#_src_curtain_opening_pattern2_gdshader">src / curtain / opening / pattern2.gdshader</a>
+<a href="#_src_dialogue_scenarios_basic_rb">src / dialogue / scenarios / basic.rb</a>
 <ul class="sectlevel2">
 <li><a href="#_attached_scenes">Attached Scenes</a></li>
 <li><a href="#_content">Content</a></li>
@@ -1548,7 +1548,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </ul>
 </div>
 <div class="sect1">
-<h2 id="_src_curtain_opening_pattern2_gdshader">src / curtain / opening / pattern2.gdshader</h2>
+<h2 id="_src_dialogue_scenarios_basic_rb">src / dialogue / scenarios / basic.rb</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_attached_scenes">Attached Scenes</h3>
@@ -1569,19 +1569,17 @@ No attached scenes.
 <h3 id="_content">Content</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="glsl"><span class="n">shader_type</span> <span class="n">canvas_item</span><span class="p">;</span>
+<pre class="rouge highlight"><code data-lang="rb"><span class="nb">require</span> <span class="s1">'src/dialogue/helper'</span>
 
-<span class="k">uniform</span> <span class="kt">float</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">;</span>
-<span class="k">uniform</span> <span class="kt">vec2</span> <span class="n">center</span> <span class="o">=</span> <span class="kt">vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
-<span class="k">const</span> <span class="kt">float</span> <span class="n">feather</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mo">01</span><span class="p">;</span>
+<span class="no">Dialogue</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">speakers</span> <span class="sx">%w(Player OldWoman)</span>
 
-<span class="kt">float</span> <span class="nf">circle</span><span class="p">(</span><span class="kt">vec2</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="n">smoothstep</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span> <span class="o">+</span> <span class="n">feather</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">position</span> <span class="o">-</span> <span class="n">center</span><span class="p">));</span>
-<span class="p">}</span>
+  <span class="no">Player</span><span class="p">;</span>
+  <span class="o">-</span> <span class="s2">"Hi"</span>
 
-<span class="kt">void</span> <span class="nf">fragment</span><span class="p">()</span> <span class="p">{</span>
-	<span class="n">COLOR</span> <span class="o">=</span> <span class="kt">vec4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">circle</span><span class="p">(</span><span class="n">UV</span><span class="p">));</span>
-<span class="p">}</span></code></pre>
+  <span class="no">OldWoman</span><span class="p">;</span>
+  <span class="o">-</span> <span class="s2">"Yeh"</span>
+<span class="k">end</span></code></pre>
 </div>
 </div>
 </div>
@@ -1591,11 +1589,11 @@ No attached scenes.
   <div class="grid">
     
     
-      <a class="outline" role="button" href="../../closing/pattern3.gdshader/"><small>&lt;&lt; Previous</small><br>src/curtain/closing/pattern3.gdshader</a>
+      <a class="outline" role="button" href="../../helper.rb/"><small>&lt;&lt; Previous</small><br>src/dialogue/helper.rb</a>
     
 
     
-      <a class="outline" role="button" href="../pattern3.gdshader/"><small>Next &gt;&gt;</small><br>src/curtain/opening/pattern3.gdshader</a>
+      <a class="outline" role="button" href="../chapter0/stage0.ja.rb/"><small>Next &gt;&gt;</small><br>src/dialogue/scenarios/chapter0/stage0.ja.rb</a>
     
   </div>
 </footer>
