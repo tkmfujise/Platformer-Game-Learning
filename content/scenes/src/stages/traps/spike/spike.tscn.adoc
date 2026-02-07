@@ -1,0 +1,144 @@
+---
+title: src/stages/traps/spike/spike.tscn
+---
+:toc:
+
+== src / stages / traps / spike / spike.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Spike" <<(A,lightskyblue) Area2D>> {
+}
+class N1 as "Sprites" <<(N,lightskyblue) Node2D>> {
+}
+class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+}
+class N3 as "Sprite2D2" <<(S,lightskyblue) Sprite2D>> {
+}
+class N4 as "Sprite2D3" <<(S,lightskyblue) Sprite2D>> {
+}
+class N5 as "Sprite2D4" <<(S,lightskyblue) Sprite2D>> {
+}
+class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+R --o N1
+R --o N6
+N1 --o N2
+N1 --o N3
+N1 --o N4
+N1 --o N5
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/traps/Needle.png]
+image::/assets/raw/assets/images/stages/traps/Needle.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Spike# [.node-type.type-2d]#Area2D#
+** [.node-name.type-2d]#Sprites# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
+*** [.node-name.type-2d]#Sprite2D2# [.node-type.type-2d]#Sprite2D#
+*** [.node-name.type-2d]#Sprite2D3# [.node-type.type-2d]#Sprite2D#
+*** [.node-name.type-2d]#Sprite2D4# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*texture_repeat* a|`2`
+|*collision_layer* a|`8`
+|*collision_mask* a|`0`
+|===
+[.node-property.node-2d]
+.#$Sprites# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(0, 20)`
+|*scale* a|`Vector2(8, 8)`
+|===
+[.node-property.node-2d]
+.#$Sprites/Sprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(2, 0)`
+|*texture* a|[link=/assets/assets/images/stages/traps/Needle.png]
+[.asset-image]
+.res://assets/images/stages/traps/Needle.png
+image::/assets/raw/assets/images/stages/traps/Needle.png[]
+
+|===
+[.node-property.node-2d]
+.#$Sprites/Sprite2D2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(5.75, 0)`
+|*texture* a|[link=/assets/assets/images/stages/traps/Needle.png]
+[.asset-image]
+.res://assets/images/stages/traps/Needle.png
+image::/assets/raw/assets/images/stages/traps/Needle.png[]
+
+|===
+[.node-property.node-2d]
+.#$Sprites/Sprite2D3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(9.375, 0)`
+|*texture* a|[link=/assets/assets/images/stages/traps/Needle.png]
+[.asset-image]
+.res://assets/images/stages/traps/Needle.png
+image::/assets/raw/assets/images/stages/traps/Needle.png[]
+
+|===
+[.node-property.node-2d]
+.#$Sprites/Sprite2D4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(13.125, 0)`
+|*texture* a|[link=/assets/assets/images/stages/traps/Needle.png]
+[.asset-image]
+.res://assets/images/stages/traps/Needle.png
+image::/assets/raw/assets/images/stages/traps/Needle.png[]
+
+|===
+[.node-property.node-2d]
+.#$CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(60, 23.75)`
+|*shape* a|`SubResource("RectangleShape2D_whf86")`
+|===
+
+
+
+

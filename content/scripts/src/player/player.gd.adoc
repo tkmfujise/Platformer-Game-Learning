@@ -308,7 +308,8 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 	%Camera.remove_frame(area)
 
 
-func _on_failure_collision_area_entered(_area: Area2D) -> void:
+func _on_failure_collision_area_entered(area: Area2D) -> void:
+	print_debug('area.collision_layer = %s' % area.collision_layer)
 	failed.emit()
 
 ```

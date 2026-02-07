@@ -1,0 +1,27 @@
+---
+title: res://src/chapters/1/chapter_1.gd
+---
+:toc:
+
+== src / chapters / 1 / chapter_1.gd
+
+=== Attached Scenes
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+
+=== Code
+```gdscript
+extends Control
+
+
+func restart() -> void:
+	if not is_inside_tree(): return
+	get_tree().reload_current_scene()
+
+
+func _on_player_failed() -> void:
+	await get_tree().create_timer(2).timeout
+	restart()
+
+```

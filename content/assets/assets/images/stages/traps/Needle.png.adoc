@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/traps/Needle.png
+---
+:toc:
+
+== assets / images / stages / traps / Needle.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |5×5 px
+|Type |png
+|Content Length |103.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/traps/Needle.png[]
+
