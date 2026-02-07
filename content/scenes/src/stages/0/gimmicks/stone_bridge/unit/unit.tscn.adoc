@@ -124,8 +124,8 @@ func _ready() -> void:
 	for n in disable_pieces:
 		var sprite = get_node(str('%Piece', n))
 		var collision = get_node(str('%CollisionShape', n))
-		if collision: collision.queue_free()
-		if sprite: sprite.queue_free()
+		if collision: collision.disabled = true
+		if sprite: sprite.visible = false
 ```
 
 
@@ -523,8 +523,8 @@ func _ready() -> void:
 	for n in disable_pieces:
 		var sprite = get_node(str('%Piece', n))
 		var collision = get_node(str('%CollisionShape', n))
-		if collision: collision.queue_free()
-		if sprite: sprite.queue_free()
+		if collision: collision.disabled = true
+		if sprite: sprite.visible = false
 
 
 func fall() -> void:

@@ -288,7 +288,7 @@ func _ready() -> void:
 ```gdscript
 func _ready() -> void:
 	if get_parent() == get_tree().root:
-		%AnimationPlayer.play('show')
+		%AnimationPlayer.play(&'show')
 	FocusHelper.set_neighbors_h(%SideButtonContainer.get_children())
 	FocusHelper.set_neighbors_h(%StageButtonContainer.get_children())
 ```
@@ -305,12 +305,12 @@ func _input(event: InputEvent) -> void:
 ```gdscript
 func _input(event: InputEvent) -> void:
 	if not shown: return
-	if event.is_action_pressed("ui_back"):
+	if event.is_action_pressed(&'ui_back'):
 		match state:
 			State.UNSELECTED: ui_backed.emit()
 			State.SELECTED:
 				state = State.UNSELECTED
-				%AnimationPlayer.play("climb_unselected")
+				%AnimationPlayer.play(&'climb_unselected')
 ```
 
 
@@ -963,10 +963,10 @@ R  ->  T0 : position\n = Vector2(1060, 719)
 |*anchors_preset* a|`-1`
 |*anchor_left* a|`0.469`
 |*anchor_right* a|`0.469`
-|*offset_left* a|`-100.48`
-|*offset_top* a|`-250.0`
-|*offset_right* a|`99.52`
-|*offset_bottom* a|`-50.0`
+|*offset_left* a|`-100.48004`
+|*offset_top* a|`-220.0`
+|*offset_right* a|`99.51996`
+|*offset_bottom* a|`-20.0`
 |===
 [.node-property.node-control]
 .#$ChaptersContainer# properties
@@ -978,9 +978,9 @@ R  ->  T0 : position\n = Vector2(1060, 719)
 |*anchors_preset* a|`10`
 |*anchor_right* a|`1.0`
 |*offset_left* a|`815.0`
-|*offset_top* a|`-250.0`
+|*offset_top* a|`-150.0`
 |*offset_right* a|`817.0`
-|*offset_bottom* a|`-82.0`
+|*offset_bottom* a|`18.0`
 |*grow_horizontal* a|`2`
 |===
 [.node-property.node-control]

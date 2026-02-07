@@ -9,6 +9,8 @@ title: src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn
 [plantuml]
 ....
 class R as "DashLecture" <<(N,lightskyblue) Node2D>> {
+  ~ finished
+---
   * state
   * player
 ---
@@ -92,44 +94,13 @@ func _on_start_area_2d_area_entered(area: Area2D) -> void:
 ```gdscript
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
-		&'finish': queue_free()
+		&'finish':
+			finished.emit()
+			call_deferred(&'queue_free')
 ```
 
 
 === Animations
-==== start
-
-[plantuml]
-....
-control "Root" as R
-participant "$Crow" as T0 #87CEFA
-participant "$Tooltip" as T4 #90EE90
-
-
-
-== Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(1893, -76.999985)
-R  ->o  R : state\n = 1
-R  ->o  T0 : &"caw"()
-R  ->o  T0 : flip_h\n = true
-R  ->o  T4 : visible\n = false
-== Time: 2.0 ==
-R  ->  T0 : position\n = Vector2(1113, 492)
-R  ->o  T0 : &"caw"()
-R  ->o  T0 : flip_h\n = false
-== Time: 3.0 ==
-R  ->o  T0 : &"caw"()
-== Time: 5.0 ==
-R  ->o  T0 : &"caw"()
-== Time: 5.2 ==
-R  ->o  T4 : visible\n = true
-== Time: 5.5 ==
-R  ->o  R : state\n = 2
-
-
-....
----
-
 ==== Animation_hidjn
 
 [plantuml]
@@ -175,6 +146,39 @@ R  ->  T2 : position\n = Vector2(1132, 408)
 == Time: 4.0 ==
 R  ->o  R : state\n = 3
 R  ->  T2 : position\n = Vector2(2513.0002, -214)
+
+
+....
+---
+
+==== start
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T0 #87CEFA
+participant "$Tooltip" as T4 #90EE90
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(1893, -76.999985)
+R  ->o  R : state\n = 1
+R  ->o  T0 : &"caw"()
+R  ->o  T0 : flip_h\n = true
+R  ->o  T4 : visible\n = false
+== Time: 2.0 ==
+R  ->  T0 : position\n = Vector2(1113, 492)
+R  ->o  T0 : &"caw"()
+R  ->o  T0 : flip_h\n = false
+== Time: 3.0 ==
+R  ->o  T0 : &"caw"()
+== Time: 5.0 ==
+R  ->o  T0 : &"caw"()
+== Time: 5.2 ==
+R  ->o  T4 : visible\n = true
+== Time: 5.5 ==
+R  ->o  R : state\n = 2
 
 
 ....
@@ -250,6 +254,8 @@ R  ->  T2 : position\n = Vector2(2513.0002, -214)
 ```gdscript
 extends Node2D
 
+signal finished
+
 enum State { READY, STARTED, AWAIT_INPUT, FINISHED }
 
 @export var state : State = State.READY
@@ -277,7 +283,9 @@ func _on_start_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
-		&'finish': queue_free()
+		&'finish':
+			finished.emit()
+			call_deferred(&'queue_free')
 
 ```
 

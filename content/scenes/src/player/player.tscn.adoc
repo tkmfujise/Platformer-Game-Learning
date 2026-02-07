@@ -257,6 +257,7 @@ func _process(delta: float) -> void:
 === Instantiators
 * link:/scenes/debug/stages/basic/basic.tscn[res://debug/stages/basic/basic.tscn]
 * link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
 * link:/scenes/src/main.tscn[res://src/main.tscn]
 
 
@@ -1302,7 +1303,7 @@ enum State {
 	LOCKED,
 }
 
-const SPEED = 800.0
+const SPEED = 700.0
 const DASH_SPEED = SPEED * 4
 const CLIMBING_SPEED = SPEED / 6
 const JUMP_VELOCITY = -1140.0

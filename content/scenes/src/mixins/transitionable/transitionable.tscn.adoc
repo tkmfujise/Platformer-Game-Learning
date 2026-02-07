@@ -1,0 +1,64 @@
+---
+title: src/mixins/transitionable/transitionable.tscn
+---
+:toc:
+
+== src / mixins / transitionable / transitionable.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Transitionable" <<(N,darkgray) Node>> {
+  * menu_scene
+---
+  + transit()
+}
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-plain]#Transitionable# [.node-type.type-plain]#Node#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-plain]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/mixins/transitionable/transitionable.gd[res://src/mixins/transitionable/transitionable.gd]
+|*menu_scene* a|`uid://437m0awajwnw`
+|===
+
+
+=== link:/scripts/src/mixins/transitionable/transitionable.gd[transitionable.gd]
+
+```gdscript
+extends Node
+
+@export_file('*.tscn') var menu_scene
+
+# TODO: チャプターの選択状態にする
+func transit(node: Node) -> void:
+	SceneHelper.transit(node, menu_scene)
+
+```
+
+

@@ -29,6 +29,7 @@ image::/assets/raw/assets/images/stages/chapter0/Tilemap.png[200, 100]
 === Instantiators
 * link:/scenes/debug/stages/basic/basic.tscn[res://debug/stages/basic/basic.tscn]
 * link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
 
 
 === Scene Tree

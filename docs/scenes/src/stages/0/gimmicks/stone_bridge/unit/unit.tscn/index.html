@@ -166,6 +166,12 @@
         
           
           
+          <li data-path="3:/src/chapters/1/chapter1.tscn" data-category="scenes">
+            <a class="" href="../../../../../../chapters/1/chapter1.tscn/">src/chapters/1/chapter1.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="3:/src/curtain/closing/closing.tscn" data-category="scenes">
             <a class="" href="../../../../../../curtain/closing/closing.tscn/">src/curtain/closing/closing.tscn</a>
           </li>
@@ -204,6 +210,12 @@
           
           <li data-path="3:/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn" data-category="scenes">
             <a class="" href="../../../../../../mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn/">src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/mixins/transitionable/transitionable.tscn" data-category="scenes">
+            <a class="" href="../../../../../../mixins/transitionable/transitionable.tscn/">src/mixins/transitionable/transitionable.tscn</a>
           </li>
         
           
@@ -547,6 +559,12 @@
           
           <li data-path="3:/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd" data-category="scripts">
             <a class="" href="../../../../../../../../scripts/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd/">src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/mixins/transitionable/transitionable.gd" data-category="scripts">
+            <a class="" href="../../../../../../../../scripts/src/mixins/transitionable/transitionable.gd/">src/mixins/transitionable/transitionable.gd</a>
           </li>
         
           
@@ -1574,8 +1592,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">disable_pieces</span><span class="p">:</span>
 		<span class="k">var</span> <span class="n">sprite</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">'</span><span class="s1">%Piece'</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
 		<span class="k">var</span> <span class="n">collision</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">'</span><span class="s1">%CollisionShape'</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-		<span class="k">if</span> <span class="n">collision</span><span class="p">:</span> <span class="n">collision</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
-		<span class="k">if</span> <span class="n">sprite</span><span class="p">:</span> <span class="n">sprite</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span></code></pre>
+		<span class="k">if</span> <span class="n">collision</span><span class="p">:</span> <span class="n">collision</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">true</span>
+		<span class="k">if</span> <span class="n">sprite</span><span class="p">:</span> <span class="n">sprite</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span></code></pre>
 </div>
 </div>
 </div>
@@ -2432,8 +2450,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">disable_pieces</span><span class="p">:</span>
 		<span class="k">var</span> <span class="n">sprite</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">'</span><span class="s1">%Piece'</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
 		<span class="k">var</span> <span class="n">collision</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">'</span><span class="s1">%CollisionShape'</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-		<span class="k">if</span> <span class="n">collision</span><span class="p">:</span> <span class="n">collision</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
-		<span class="k">if</span> <span class="n">sprite</span><span class="p">:</span> <span class="n">sprite</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">collision</span><span class="p">:</span> <span class="n">collision</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="bp">true</span>
+		<span class="k">if</span> <span class="n">sprite</span><span class="p">:</span> <span class="n">sprite</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
 
 
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

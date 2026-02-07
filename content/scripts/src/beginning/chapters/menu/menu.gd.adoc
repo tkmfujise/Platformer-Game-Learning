@@ -30,7 +30,7 @@ var stage_resources : Array[StageResource]
 
 func _ready() -> void:
 	if get_parent() == get_tree().root:
-		%AnimationPlayer.play('show')
+		%AnimationPlayer.play(&'show')
 	FocusHelper.set_neighbors_h(%SideButtonContainer.get_children())
 	FocusHelper.set_neighbors_h(%StageButtonContainer.get_children())
 
@@ -77,7 +77,7 @@ func setup_from_account_resource() -> void:
 
 
 func set_grab_focus_first(val) -> void:
-	if val: %AnimationPlayer.play("show")
+	if val: %AnimationPlayer.play(&'show')
 
 
 func set_grab_focus_side(val) -> void:
@@ -99,7 +99,7 @@ func add_photo(resource: StageResource, idx: int) -> void:
 	photo.rotation = abs(photo.rotation) * (idx%2 * 2 - 1)
 	photo.position += Vector2(8, -8) * idx
 	photo.image = resource.photo
-	photo.set_meta('number', idx + 1)
+	photo.set_meta(&'number', idx + 1)
 	%PhotoInstances.add_child(photo)
 	%PhotoInstances.move_child(photo, 0)
 
@@ -111,7 +111,7 @@ func clear_stage_buttons() -> void:
 
 func add_stage_button(resource: StageResource, idx: int) -> void:
 	var stage = get_stage_button(idx)
-	stage.set_meta('name', resource.name)
+	stage.set_meta(&'name', resource.name)
 	stage.show()
 
 
@@ -123,7 +123,7 @@ func hide_stage_button_and_photo(number: int) -> void:
 	var button = %StageButtonContainer.get_child(number)
 	if button: button.hide()
 	for photo in %PhotoInstances.get_children():
-		if photo.get_meta('number') == number:
+		if photo.get_meta(&'number') == number:
 			photo.hide()
 
 
@@ -134,18 +134,18 @@ func stages_count() -> int:
 
 func _input(event: InputEvent) -> void:
 	if not shown: return
-	if event.is_action_pressed("ui_back"):
+	if event.is_action_pressed(&'ui_back'):
 		match state:
 			State.UNSELECTED: ui_backed.emit()
 			State.SELECTED:
 				state = State.UNSELECTED
-				%AnimationPlayer.play("climb_unselected")
+				%AnimationPlayer.play(&'climb_unselected')
 
 
 func _on_climb_button_pressed() -> void:
 	if stages_count() > 1:
 		state = State.SELECTED
-		%AnimationPlayer.play("climb_selected")
+		%AnimationPlayer.play(&'climb_selected')
 	else:
 		get_started.emit(1)
 
@@ -153,7 +153,7 @@ func _on_climb_button_pressed() -> void:
 func _on_stage_button_focus_entered(number: int) -> void:
 	var photos = %PhotoInstances.get_children()
 	var button = get_stage_button(number - 1)
-	%StageLabel.text = str(button.get_meta('name'))
+	%StageLabel.text = str(button.get_meta(&'name'))
 	for i in photos.size():
 		var photo = photos.pop_back()
 		if i+1 < number: photo.flick()
@@ -165,7 +165,7 @@ func _on_stage_button_pressed(stage_number: int) -> void:
 
 
 func _on_ui_backed() -> void:
-	if shown: %AnimationPlayer.play("hide")
+	if shown: %AnimationPlayer.play(&'hide')
 
 
 func _on_get_started(stage_number: int) -> void:

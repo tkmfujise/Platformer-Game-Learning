@@ -1,0 +1,23 @@
+---
+title: res://src/mixins/transitionable/transitionable.gd
+---
+:toc:
+
+== src / mixins / transitionable / transitionable.gd
+
+=== Attached Scenes
+* link:/scenes/src/mixins/transitionable/transitionable.tscn[res://src/mixins/transitionable/transitionable.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node
+
+@export_file('*.tscn') var menu_scene
+
+# TODO: チャプターの選択状態にする
+func transit(node: Node) -> void:
+	SceneHelper.transit(node, menu_scene)
+
+```

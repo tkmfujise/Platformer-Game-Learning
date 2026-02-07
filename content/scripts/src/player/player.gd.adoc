@@ -36,7 +36,7 @@ enum State {
 	LOCKED,
 }
 
-const SPEED = 800.0
+const SPEED = 700.0
 const DASH_SPEED = SPEED * 4
 const CLIMBING_SPEED = SPEED / 6
 const JUMP_VELOCITY = -1140.0

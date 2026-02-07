@@ -33,4 +33,9 @@ func _on_stage_0_event(event_name: String) -> void:
 	if %AnimationPlayer.has_animation(key):
 		%AnimationPlayer.play(key)
 
+
+# TODO: 演出を入れる
+func _on_dash_lecture_finished() -> void:
+	%Transitionable.transit(self)
+
 ```

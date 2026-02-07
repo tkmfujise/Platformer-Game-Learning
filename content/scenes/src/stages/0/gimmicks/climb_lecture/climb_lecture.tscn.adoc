@@ -86,7 +86,7 @@ func _on_start_area_2d_area_entered(_area: Area2D) -> void:
 [.signal-connection]
 .$StartArea2D:[#_area_exited_#]=>$.
 ```gdscript
-func _on_start_area_2d_area_exited(area: Area2D) -> void:
+func _on_start_area_2d_area_exited(_area: Area2D) -> void:
 	if not finished: idle()
 ```
 [.signal-connection]
@@ -282,7 +282,7 @@ func _on_start_area_2d_area_entered(_area: Area2D) -> void:
 	if not finished: show_hint()
 
 
-func _on_start_area_2d_area_exited(area: Area2D) -> void:
+func _on_start_area_2d_area_exited(_area: Area2D) -> void:
 	if not finished: idle()
 
 

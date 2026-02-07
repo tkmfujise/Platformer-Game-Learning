@@ -166,6 +166,12 @@
         
           
           
+          <li data-path="3:/src/chapters/1/chapter1.tscn" data-category="scenes">
+            <a class="" href="../../../../../chapters/1/chapter1.tscn/">src/chapters/1/chapter1.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="3:/src/curtain/closing/closing.tscn" data-category="scenes">
             <a class="" href="../../../../../curtain/closing/closing.tscn/">src/curtain/closing/closing.tscn</a>
           </li>
@@ -204,6 +210,12 @@
           
           <li data-path="3:/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn" data-category="scenes">
             <a class="" href="../../../../../mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn/">src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.tscn</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/mixins/transitionable/transitionable.tscn" data-category="scenes">
+            <a class="" href="../../../../../mixins/transitionable/transitionable.tscn/">src/mixins/transitionable/transitionable.tscn</a>
           </li>
         
           
@@ -547,6 +559,12 @@
           
           <li data-path="3:/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd" data-category="scripts">
             <a class="" href="../../../../../../../scripts/src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd/">src/mixins/first_steps_bgm_playable/first_steps_bgm_playable.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/mixins/transitionable/transitionable.gd" data-category="scripts">
+            <a class="" href="../../../../../../../scripts/src/mixins/transitionable/transitionable.gd/">src/mixins/transitionable/transitionable.gd</a>
           </li>
         
           
@@ -1560,7 +1578,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqNUsFOwkAQvfcrRr1QpQeLciBoQuRICCncjGmGdko3XbvN7hJsjP_usG2xYGI87dudebPv7dtEojEQARq4nqPJF5TYvaZrmE4Hy6EUu9yaot7KPfmwVCmF8-dn-PQAbsFYtORQJbEm7QVBwNu7Y0Hbge9wLMpqf9qoMnbFGDVhHKbNSqUlTWmvCUvxjlYwakb3DjJRCpO77i8vceqX907-i1YHp3t9oXtdaWE75Z1IkUpqb0zw0KKKkqKFFguKVZa120zWXQ8r6l8eusvXR1szdhPOnYbZhYam5BScmKNGtpJSGLa2zrGilv5yQb9sOh_04AZtlJJWVP3odpqo5OBESSu0SR5xuufUR0eNRJJv6MMucEuyHZCiLnYa6yb3c9bYsWZdKCsXUuu7JinVgR2fV9sBEQSB4sQ6EHbgoQNjj5_UoZHHzhx69K5S4uQJ4gEOtz4gTIPXm-PbDG0ukqIkY57CtwC2nqTMglWgjw8AqdDsmVV48SCaTP7-gUPWM5n0T_wf2j_-JPPHzP917n8DkcMTIQ==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqNUsFOwzAMvfcrDFxWWA8U2GEaSBM7ogl13BCqvNZdo4amSjKNCsG346UpdENCnPpq-znv5SWTaAwkgAZOF2jKB8rsVtMpzGaj5ViKTWlN1a7llkJYqpzixd0dvAcAn1CIWpiS8iCKIi6cg7FoyaFGYkvaNy72DW1HocOpqJvt94-qU9dMUROmcd59qbakKR8MYS1e0QpG3epBoZfB0x9B5uwsL52fe612zsjqyMiq0cL2VnqRIpfkT8xw51FDWeWhxYpSVRT-t5BtP8OKhofH7vDV3tac3cQLp2F-pKFrOQXfzKtOtpJSGLa2KrEhT78_oh8PHS66douelJJWNMMsN5qo5iRFTY9oszLhuA-pN46aiKx8ojf7gGuSfkGOutpobLuHcMiaONa8D-XRheR9tySl2rHjw65fkEAUKU6sB3EPrnswCfhKHboK2JlDN8FJTpw8QTrC8ToEhFn0fLa_m7EtRVbVZMxt_BLBOpBUWLAK9P4CIBeaPbOKIB0l0-nfL3DMeqbTYSX8of3jTTJ_wvxf9fALGqIX5A==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1646,21 +1664,14 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">match</span> <span class="n">anim_name</span><span class="p">:</span>
-		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finish'</span><span class="p">:</span> <span class="n">queue_free</span><span class="p">()</span></code></pre>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finish'</span><span class="p">:</span>
+			<span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+			<span class="n">call_deferred</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">queue_free'</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_animations">Animations</h3>
-<div class="sect3">
-<h4 id="_start">start</h4>
-<div class="imageblock kroki">
-<div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqVkNFqwzAMRd_9FSIdo4G2OG6yxgUPRsk-IIQ9FYYXXGZwI-N46-_Pc6BNspdOj7pHV1dqsfMODSQ1ok9A9lATK53Xrbay85A8HBxeotBQWJS7Q_X6MiMaROO1HaAcFpxWFacklBDQ6LPaA91QEILUAOtn-HXag8Vee43dsQMBb6r16NgyK_l2Bevd04aHKot0GEGAOoz0XnoV-ezaj16PSSsvyTKddk9G2_fPyHv3pW5iHsRv3esPM7idpOnVLSy7N2yWhbA5Z-k_08z2bUf7_nhcqeJOik2o-anxESO6GNPTHzNCfgA3e4x5" alt="Diagram">
-</div>
-</div>
-<hr>
-</div>
 <div class="sect3">
 <h4 id="_animation_hidjn">Animation_hidjn</h4>
 <div class="imageblock kroki">
@@ -1675,6 +1686,15 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="imageblock kroki">
 <div class="content">
 <img src="https://kroki.io/plantuml/svg/eNqNkF1LwzAUhu_zKw6dyApbyUfn1kIEGfUHlOLVQGJpMZD1hCYo_nvbFDTbhfO9PU-eN-e0OPgRDSQ1ok9AOaiJVaPXrbZq8JDcNYjGaxtmDYNVQauqoFfQccTPheCwOuyP1fMTmSIlNPrclUAzClKSGmD7iDB7SvjQTr-Z7jSAhF4Z1y1jmB0lWHTaaxzC-KVrPY58zRgTG9hRmv6qZrg32r6-R6aoWFwUz_R90puvZJ3GVPEQkv_AN77BN5DTPKNTRCRiGRUh_yhlGbti_-4UofMQGfLLq9bTW-eVX04qbjv5jol5hUm85SxPCfkGN2CIHQ==" alt="Diagram">
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_start">start</h4>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/plantuml/svg/eNqVkNFqwzAMRd_9FSIdo4G2OG6yxgUPRsk-IIQ9FYYXXGZwI-N46-_Pc6BNspdOj7pHV1dqsfMODSQ1ok9A9lATK53Xrbay85A8HBxeotBQWJS7Q_X6MiMaROO1HaAcFpxWFacklBDQ6LPaA91QEILUAOtn-HXag8Vee43dsQMBb6r16NgyK_l2Bevd04aHKot0GEGAOoz0XnoV-ezaj16PSSsvyTKddk9G2_fPyHv3pW5iHsRv3esPM7idpOnVLSy7N2yWhbA5Z-k_08z2bUf7_nhcqeJOik2o-anxESO6GNPTHzNCfgA3e4x5" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1887,6 +1907,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node2D</span>
 
+<span class="k">signal</span> <span class="n">finished</span>
+
 <span class="k">enum</span> <span class="n">State</span> <span class="p">{</span> <span class="n">READY</span><span class="p">,</span> <span class="n">STARTED</span><span class="p">,</span> <span class="n">AWAIT_INPUT</span><span class="p">,</span> <span class="n">FINISHED</span> <span class="p">}</span>
 
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">state</span> <span class="p">:</span> <span class="n">State</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">READY</span>
@@ -1914,7 +1936,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">match</span> <span class="n">anim_name</span><span class="p">:</span>
-		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finish'</span><span class="p">:</span> <span class="n">queue_free</span><span class="p">()</span></code></pre>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">finish'</span><span class="p">:</span>
+			<span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+			<span class="n">call_deferred</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">queue_free'</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

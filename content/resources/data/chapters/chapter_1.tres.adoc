@@ -15,6 +15,7 @@ title: res://data/chapters/chapter_1.tres
 |_sub_resource_ |*script* |`ExtResource("2_tjkk5")`
 |_sub_resource_ |*number* |`1`
 |_sub_resource_ |*photo* |`ExtResource("3_ms81g")`
+|_sub_resource_ |*scene* |`uid://t5n7bh41ldyp`
 |_sub_resource_ |*script* |`ExtResource("2_tjkk5")`
 |_sub_resource_ |*name* |`Stage 2`
 |_sub_resource_ |*number* |`2`

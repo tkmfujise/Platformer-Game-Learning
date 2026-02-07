@@ -14,6 +14,7 @@ class R as "Stage0" <<(C,lightgreen) Control>> {
   + _on_player_failed()
   + _on_restart_curtain_animation_finished()
   + _on_stage_0_event()
+  + _on_dash_lecture_finished()
 }
 class N1 as "CanvasLayer" <<(C,yellow) CanvasLayer>> {
 }
@@ -128,6 +129,8 @@ class N24 as "ClimbLecture" <<(N,lightskyblue) Node2D>> {
   + _on_animation_player_animation_finished()
 }
 class N25 as "DashLecture" <<(N,lightskyblue) Node2D>> {
+  ~ finished
+---
   * state
   * player
 ---
@@ -200,7 +203,12 @@ class N27 as "Weather" <<(N,lightskyblue) Node2D>> {
   + _process()
   + current_camera()
 }
-class N28 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N28 as "Transitionable" <<(N,darkgray) Node>> {
+  * menu_scene
+---
+  + transit()
+}
+class N29 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
 R --o N4
@@ -213,6 +221,7 @@ R --o N21
 R --o N26
 R --o N27
 R --o N28
+R --o N29
 N1 --o N2
 N1 --o N3
 N6 --o N7
@@ -234,6 +243,7 @@ N21 --o N25
 left to right direction
 _(R::_on_restart_curtain_animation_finished, N3::animation_finished)
 _(R::_on_stage_0_event, N15::event)
+_(R::_on_dash_lecture_finished, N25::finished)
 _(R::_on_player_failed, N26::failed)
 ....
 
@@ -361,6 +371,7 @@ CAUTION: No other scene instantiate this scene.
 *** [.node-name.type-2d]#DashLecture# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn[res://src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn]#
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
 ** [.node-name.type-2d]#Weather# [.node-type.type-2d]#link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]#
+** [.node-name.type-plain]#Transitionable# [.node-type.type-plain]#link:/scenes/src/mixins/transitionable/transitionable.tscn[res://src/mixins/transitionable/transitionable.tscn]#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
@@ -378,6 +389,12 @@ func _on_stage_0_event(event_name: String) -> void:
 	var key = "event_%s" % event_name
 	if %AnimationPlayer.has_animation(key):
 		%AnimationPlayer.play(key)
+```
+[.signal-connection]
+.$Gimmicks/DashLecture:[#_finished_#]=>$.
+```gdscript
+func _on_dash_lecture_finished() -> void:
+	%Transitionable.transit(self)
 ```
 [.signal-connection]
 .$Player:[#_failed_#]=>$.
@@ -399,7 +416,7 @@ participant "$Player" as T0 #87CEFA
 
 
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(495, 501)
+R  ->  T0 : position\n = Vector2(410, 700)
 
 
 ....
@@ -675,7 +692,14 @@ R  ->o  T0 : &"play"()
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(495, 501)`
+|*position* a|`Vector2(410, 700)`
+|===
+[.node-property.node-plain]
+.#$Transitionable# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
@@ -713,6 +737,11 @@ func _on_stage_0_event(event_name: String) -> void:
 	var key = "event_%s" % event_name
 	if %AnimationPlayer.has_animation(key):
 		%AnimationPlayer.play(key)
+
+
+# TODO: 演出を入れる
+func _on_dash_lecture_finished() -> void:
+	%Transitionable.transit(self)
 
 ```
 
