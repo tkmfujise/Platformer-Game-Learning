@@ -66,6 +66,7 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_jumped()
   + _on_landed()
   + _on_failed()
+  + _on_reached()
   + _on_frame_subject_area_entered()
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
@@ -158,6 +159,7 @@ _(R::_on_dashed, R::dashed)
 _(R::_on_failed, R::failed)
 _(R::_on_jumped, R::jumped)
 _(R::_on_landed, R::landed)
+_(R::_on_reached, R::reached)
 _(R::_on_failure_collision_area_entered, N12::area_entered)
 _(R::_on_frame_subject_area_entered, N14::area_entered)
 _(R::_on_frame_subject_area_exited, N14::area_exited)
@@ -332,13 +334,19 @@ func _on_landed() -> void:
 	idle()
 ```
 [.signal-connection]
+.$.:[#_reached_#]=>$.
+```gdscript
+func _on_reached(area: Area2D) -> void:
+	restart_position = area.position
+```
+[.signal-connection]
 .$AreaCollision:[#_area_entered_#]=>$.
 ```gdscript
 func _on_failure_collision_area_entered(area: Area2D) -> void:
 	if area.get_collision_layer_value(4): # Failure
 		failed.emit()
 	elif area.get_collision_layer_value(6): # CheckPoint
-		restart_position = area.position
+		reached.emit(area)
 ```
 [.signal-connection]
 .$FrameSubject:[#_area_entered_#]=>$.
@@ -1094,7 +1102,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`8`
+|*frame* a|`24`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1586,6 +1594,10 @@ func _on_failed() -> void:
 	%RestartCurtain.play()
 
 
+func _on_reached(area: Area2D) -> void:
+	restart_position = area.position
+
+
 func _on_frame_subject_area_entered(area: Area2D) -> void:
 	%Camera.add_frame(area)
 
@@ -1598,7 +1610,7 @@ func _on_failure_collision_area_entered(area: Area2D) -> void:
 	if area.get_collision_layer_value(4): # Failure
 		failed.emit()
 	elif area.get_collision_layer_value(6): # CheckPoint
-		restart_position = area.position
+		reached.emit(area)
 
 ```
 

@@ -308,6 +308,10 @@ func _on_failed() -> void:
 	%RestartCurtain.play()
 
 
+func _on_reached(area: Area2D) -> void:
+	restart_position = area.position
+
+
 func _on_frame_subject_area_entered(area: Area2D) -> void:
 	%Camera.add_frame(area)
 
@@ -320,6 +324,6 @@ func _on_failure_collision_area_entered(area: Area2D) -> void:
 	if area.get_collision_layer_value(4): # Failure
 		failed.emit()
 	elif area.get_collision_layer_value(6): # CheckPoint
-		restart_position = area.position
+		reached.emit(area)
 
 ```

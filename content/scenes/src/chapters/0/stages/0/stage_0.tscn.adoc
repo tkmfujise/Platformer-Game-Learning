@@ -207,6 +207,7 @@ class N31 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_jumped()
   + _on_landed()
   + _on_failed()
+  + _on_reached()
   + _on_frame_subject_area_entered()
   + _on_frame_subject_area_exited()
   + _on_failure_collision_area_entered()
