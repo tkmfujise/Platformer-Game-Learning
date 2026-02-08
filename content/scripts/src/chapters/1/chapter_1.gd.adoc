@@ -14,6 +14,16 @@ title: res://src/chapters/1/chapter_1.gd
 ```gdscript
 extends Control
 
+static var started : bool = false
+
+
+func _ready() -> void:
+	if started:
+		%Player.position = Player.restart_position
+	else:
+		started = true
+		Player.restart_position = %Player.position
+
 
 func restart() -> void:
 	if not is_inside_tree(): return
@@ -23,5 +33,9 @@ func restart() -> void:
 func _on_player_failed() -> void:
 	await get_tree().create_timer(2).timeout
 	restart()
+
+
+func _on_player_reached(area: Area2D) -> void:
+	Player.restart_position = area.position
 
 ```

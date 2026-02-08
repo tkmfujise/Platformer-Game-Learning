@@ -23,6 +23,7 @@ signal dashed
 signal jumped
 signal landed
 signal failed
+signal reached(area: Area2D)
 
 enum State {
 	CLIMBING,
@@ -53,11 +54,18 @@ var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var climb_rest_time := 0.0
 var sprite_tween : Tween
+static var last_owner_name : String
 static var playable : bool = false
+static var restart_position : Vector2
 
 
 func _ready() -> void:
 	playable = true
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
 
 
 func _physics_process(delta: float) -> void:
@@ -309,7 +317,9 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 
 
 func _on_failure_collision_area_entered(area: Area2D) -> void:
-	print_debug('area.collision_layer = %s' % area.collision_layer)
-	failed.emit()
+	if area.get_collision_layer_value(4): # Failure
+		failed.emit()
+	elif area.get_collision_layer_value(6): # CheckPoint
+		restart_position = area.position
 
 ```

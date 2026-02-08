@@ -1594,7 +1594,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdVF1vmzAUfedXeN1Ls5WHpV8vWSVKaJaJfCgh7aZpsgw44MaxkW2aRVP322cMBEgjTdrbucf3XC7XxzeiSEqwAEiCswki7AwMBufuBSVJqhKBMesBlzMlOL27A7-tVysygukno3A55WKBI3VSVp11hX0jfOKCxkY0LUVysw9pjntgymPcH3Y1l0azVEiR6J7H-_7QSJdH0nZCt8DV_3Z7XQspkYSzZYoyXH3dPfr6cVK30I0pNKdoj8VpeYoEihQWrf4B-ANiJFMcG_icb7MKUsTiCq4RoRratq1DGyznnjc0aOgsv8AmdP3x5H48HbWor6vJHD56_swdB98NM1o4jzV2fH_25A1hMJ54MJjBIrspXLBN5ASBN105wXg2NeTE-QbNgTtbTYMDdeihUXsPzsoP4NJ1_IL5AEYpl8pbr_VdmNg3v9oi1vqWkxzDKBcv2DBSXzyuzvQlsAQqsi2JYnxQYKlOURHPWVkzomQbHuXJTBCFodppgxgi07eHQoqrWX8EWoDi_XmvDLJ0L0kkYSZ4hKWs6Ihvs1yXMT1WHJHwOdefIkwfQX3r2jXN0QkWMbJt5FUEd0SlR18p3VLXimkt2SG6gaIwXJugeF3HKhesk2CIVkJRuYKUR5sK5qwVvJBQNF0mWJU_DcN6RGaUsJxrXSCLi5Rq1iZfQpmiGAuY6RexxfpJ1LOUGdoxmBQGgdgYov79XAjMVKdMM9DOUCBnb4nyZbWI8n21iPKVtYmiNyjz8Fm3AZF2AtQdYPHPpF-6w-PKudB2rvfHcbHDDrk1O-SBCKmWCmfyfjSZV5asVmmMxCYRaF-uUbND3nj11VoA2-Z6hdegX4NbS69ngy4P6MbS69egqwO6tt7FeE0YBvAcXYQ9gMDA_vG-WGQXKiXRhmn_f-7_tEFoFRYCigPjLRATgY2xrb_L9_rd" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdVE1v2zAMvftXaN2l2erD0q9LVsB13CyD84HEaTcMgyDbSqxGkQxJbhYM3W-fLMuxkwYYsBv5xEdR5BMTiqQEM4AkOBshws5Ar3fuX1CyytRKYMw6wOdMCU7v7sBv59VJDGH8yTB8TrmY4USdpNmzQ2LXEJ-4oKkhjSuSXO9iWuAOGPMUd_uHnEvDmSukSHLP0123b6jzI2o74DDB1f9We10TKZGEs3mGcmxv949uPw46THRjEk0p2mFxmp4hgRKFRat-AP6AFMkMp8Z8Lja5NSliqTWXiFBrCoySMth1Xe27YD4Ngr6x-t78C2xcPxyO7ofjQQv6uhhN4WMQTvxh9N0gg5n3WNteGE6egj6MhqMARhNYRjeJS7TxvCgKxgsvGk7GBhx536A58CeLcbSH9jU07ODBW4QRnPteWCIfwCDjUgXLpZ6L8UPz7Baw1BNfFRgmhXjBBpFaBNie6YGwFVRkUwFlK6HAUp2CEl6wKmdCySY-ipO5IApDtdViMYCeqoJ8y7CADNmgXE8XxbRySj4SCuZcEqVVYYfyEejMKN2ddyonz3aSJBLmgidYSgsnfJMX-j7zGIsRCZ8LfSlh-ghqqeikzdEJFDGyaejWg1uisqNbKonVuVJaU7aIrqEoVdoGKF7WvioEOwgwQCugzGxNypO1NQvWcl5ILJoqV1hVj4Zx3SLTc1gNoE6Qp2WIHYqJl1BmKNXTyPU32mD9j-peyhxtGVyVSoLYKKd-fiEEZuogTdPQg6ZAzt4C1XdsAdWnbAHV12wDZW1QFvGzLgMirQSoK8Din0G_dIXHmQuhdV8vneNk-8VzaxbPAxFSzRXO5f1gNLU6tfs3RWK9EmhX7V6zeN5o9dWZAdfleu_XRrc2bh290411ubduHL2zjXW1t66ddyleEoYBPEcXcQcg0HN_vC-334XKSLJmWv-fuz9dEDulhIDiwGgLpERgI2znL3kkDN8=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1606,7 +1606,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="title">$World/Player</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span></code></pre>
+	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">if</span> <span class="n">last_owner_name</span> <span class="o">==</span> <span class="n">owner</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+		<span class="n">position</span> <span class="o">=</span> <span class="n">restart_position</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">restart_position</span> <span class="o">=</span> <span class="n">position</span>
+	<span class="n">last_owner_name</span> <span class="o">=</span> <span class="n">owner</span><span class="o">.</span><span class="n">name</span></code></pre>
 </div>
 </div>
 <div class="listingblock">

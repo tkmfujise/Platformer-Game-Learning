@@ -25,6 +25,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ jumped
   ~ landed
   ~ failed
+  ~ reached
 ---
   - SPEED
   - DASH_SPEED
@@ -46,7 +47,9 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * dash_rest_count
   * climb_rest_time
   * sprite_tween
+  * last_owner_name
   * playable
+  * restart_position
 ---
   + _ready()
   + _physics_process()
@@ -104,6 +107,11 @@ left to right direction
 ```gdscript
 func _ready() -> void:
 	playable = true
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
 ```
 .$FirstStepsBGMPlayable
 ```gdscript

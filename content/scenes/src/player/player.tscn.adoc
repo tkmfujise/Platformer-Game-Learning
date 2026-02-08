@@ -13,6 +13,7 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ jumped
   ~ landed
   ~ failed
+  ~ reached
 ---
   - SPEED
   - DASH_SPEED
@@ -34,7 +35,9 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * dash_rest_count
   * climb_rest_time
   * sprite_tween
+  * last_owner_name
   * playable
+  * restart_position
 ---
   + _ready()
   + _physics_process()
@@ -198,6 +201,11 @@ image::/assets/raw/assets/images/player/effects/Burst.png[200, 100]
 ```gdscript
 func _ready() -> void:
 	playable = true
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
 ```
 ==== _physics_process
 ```gdscript
@@ -327,8 +335,10 @@ func _on_landed() -> void:
 .$AreaCollision:[#_area_entered_#]=>$.
 ```gdscript
 func _on_failure_collision_area_entered(area: Area2D) -> void:
-	print_debug('area.collision_layer = %s' % area.collision_layer)
-	failed.emit()
+	if area.get_collision_layer_value(4): # Failure
+		failed.emit()
+	elif area.get_collision_layer_value(6): # CheckPoint
+		restart_position = area.position
 ```
 [.signal-connection]
 .$FrameSubject:[#_area_entered_#]=>$.
@@ -1084,7 +1094,7 @@ end
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
 |*hframes* a|`27`
-|*frame* a|`22`
+|*frame* a|`8`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1291,6 +1301,7 @@ signal dashed
 signal jumped
 signal landed
 signal failed
+signal reached(area: Area2D)
 
 enum State {
 	CLIMBING,
@@ -1321,11 +1332,18 @@ var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var climb_rest_time := 0.0
 var sprite_tween : Tween
+static var last_owner_name : String
 static var playable : bool = false
+static var restart_position : Vector2
 
 
 func _ready() -> void:
 	playable = true
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
 
 
 func _physics_process(delta: float) -> void:
@@ -1577,8 +1595,10 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 
 
 func _on_failure_collision_area_entered(area: Area2D) -> void:
-	print_debug('area.collision_layer = %s' % area.collision_layer)
-	failed.emit()
+	if area.get_collision_layer_value(4): # Failure
+		failed.emit()
+	elif area.get_collision_layer_value(6): # CheckPoint
+		restart_position = area.position
 
 ```
 

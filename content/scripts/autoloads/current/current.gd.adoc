@@ -17,8 +17,6 @@ extends Node
 
 @export var account : AccountResource
 
-var playable : bool = false
-
 
 func load_account(number: int) -> void:
 	account = AccountResource.find_or_initialize(number)

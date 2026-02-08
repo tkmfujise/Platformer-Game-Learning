@@ -10,7 +10,6 @@ title: autoloads/current/current.tscn
 ....
 class R as "Current" <<(N,darkgray) Node>> {
   * account
-  * playable
 ---
   + load_account()
 }
@@ -54,8 +53,6 @@ extends Node
 #class_name Current
 
 @export var account : AccountResource
-
-var playable : bool = false
 
 
 func load_account(number: int) -> void:
