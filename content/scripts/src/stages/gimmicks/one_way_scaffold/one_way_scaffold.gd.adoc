@@ -1,0 +1,23 @@
+---
+title: res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd
+---
+:toc:
+
+== src / stages / gimmicks / one_way_scaffold / one_way_scaffold.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]
+
+
+
+=== Code
+```gdscript
+extends StaticBody2D
+
+
+func drop() -> void:
+	%CollisionShape2D.disabled = true
+	await get_tree().create_timer(1).timeout
+	%CollisionShape2D.disabled = false
+
+```

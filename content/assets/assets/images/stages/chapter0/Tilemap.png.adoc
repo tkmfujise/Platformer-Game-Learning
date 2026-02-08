@@ -6,7 +6,7 @@ title: assets/images/stages/chapter0/Tilemap.png
 == assets / images / stages / chapter0 / Tilemap.png
 
 === Attached Scenes
-* link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]
+* link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]
 
 
 

@@ -49,6 +49,7 @@ class N2 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _ready()
   + _physics_process()
   + compute_state()
+  + may_drop_collisions()
   + is_just_input_action()
   + is_input_action()
   + animate()
@@ -76,7 +77,7 @@ class N2 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_reached()
   + _on_frame_subject_area_entered()
   + _on_frame_subject_area_exited()
-  + _on_failure_collision_area_entered()
+  + _on_area_collision_area_entered()
 }
 class N3 as "CameraFrame" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
@@ -112,6 +113,7 @@ func _input(event: InputEvent) -> void:
 ```gdscript
 func _ready() -> void:
 	playable = true
+	if not owner: return
 	if last_owner_name == owner.name:
 		position = restart_position
 	else:
@@ -160,7 +162,7 @@ func _physics_process(delta: float) -> void:
 	if not (state == State.DASHED or state == State.DASHING):
 		if dx: velocity.x = dx * SPEED
 		else: velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	animate(playable)
 	move_and_slide()
 ```
@@ -172,7 +174,7 @@ CAUTION: No other scene instantiate this scene.
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Basic# [.node-type.type-control]#Control#
-** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]#
+** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]#
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
 ** [.node-name.type-2d]#CameraFrame# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
 

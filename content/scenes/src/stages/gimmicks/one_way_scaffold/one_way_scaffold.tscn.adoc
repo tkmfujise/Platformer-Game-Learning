@@ -1,0 +1,99 @@
+---
+title: src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn
+---
+:toc:
+
+== src / stages / gimmicks / one_way_scaffold / one_way_scaffold.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+---
+  + drop()
+}
+class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+}
+class N2 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+R --o N1
+R --o N2
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/gimmicks/OneWayScaffold.png]
+image::/assets/raw/assets/images/stages/gimmicks/OneWayScaffold.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#OneWayScaffold# [.node-type.type-2d]#StaticBody2D#
+** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd]
+|===
+[.node-property.node-2d]
+.#$Sprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(129, 34)`
+|*scale* a|`Vector2(8, 8)`
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/OneWayScaffold.png]
+[.asset-image]
+.res://assets/images/stages/gimmicks/OneWayScaffold.png
+image::/assets/raw/assets/images/stages/gimmicks/OneWayScaffold.png[]
+
+|===
+[.node-property.node-2d]
+.#$CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(129, 18.5)`
+|*shape* a|`SubResource("RectangleShape2D_c064t")`
+|*one_way_collision* a|`true`
+|===
+
+
+=== link:/scripts/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd[one_way_scaffold.gd]
+
+```gdscript
+extends StaticBody2D
+
+
+func drop() -> void:
+	%CollisionShape2D.disabled = true
+	await get_tree().create_timer(1).timeout
+	%CollisionShape2D.disabled = false
+
+```
+
+

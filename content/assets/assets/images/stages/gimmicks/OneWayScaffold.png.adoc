@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/OneWayScaffold.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / OneWayScaffold.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |32×10 px
+|Type |png
+|Content Length |233.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/OneWayScaffold.png[]
+

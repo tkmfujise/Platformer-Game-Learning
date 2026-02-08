@@ -286,8 +286,8 @@
         
           
           
-          <li data-path="3:/src/stages/0/staege_ground_0.tscn" data-category="scenes">
-            <a class="" href="../../../../scenes/src/stages/0/staege_ground_0.tscn/">src/stages/0/staege_ground_0.tscn</a>
+          <li data-path="3:/src/stages/0/stage_ground_0.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/0/stage_ground_0.tscn/">src/stages/0/stage_ground_0.tscn</a>
           </li>
         
           
@@ -306,6 +306,12 @@
           
           <li data-path="4:/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn" data-category="scenes">
             <a class="" href="../../../../scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn/">src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn/">src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn</a>
           </li>
         
           
@@ -649,6 +655,12 @@
           
           <li data-path="4:/src/stages/gimmicks/falling_ice_block/falling_ice_block.gd" data-category="scripts">
             <a class="" href="../../stages/gimmicks/falling_ice_block/falling_ice_block.gd/">src/stages/gimmicks/falling_ice_block/falling_ice_block.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd" data-category="scripts">
+            <a class="" href="../../stages/gimmicks/one_way_scaffold/one_way_scaffold.gd/">src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd</a>
           </li>
         
           
@@ -1011,6 +1023,12 @@
           
           <li data-path="4:/assets/images/stages/gimmicks/FallingIceBlock.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/stages/gimmicks/FallingIceBlock.png/">assets/images/stages/gimmicks/FallingIceBlock.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/gimmicks/OneWayScaffold.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/gimmicks/OneWayScaffold.png/">assets/images/stages/gimmicks/OneWayScaffold.png</a>
           </li>
         
           
@@ -1649,6 +1667,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">last_owner_name</span> <span class="o">==</span> <span class="n">owner</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
 		<span class="n">position</span> <span class="o">=</span> <span class="n">restart_position</span>
 	<span class="k">else</span><span class="p">:</span>
@@ -1719,6 +1738,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="n">falling_time</span> <span class="o">=</span> <span class="mi">0</span>
 			<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">CLIMBING</span><span class="p">:</span>
 				<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="n">MAX_DASH_COUNT</span>
+				<span class="k">if</span> <span class="n">direction</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">may_drop_collisions</span><span class="p">()</span>
 
 		<span class="k">var</span> <span class="n">on_wall</span> <span class="o">=</span> <span class="o">%</span><span class="n">FrontRayCast</span><span class="o">.</span><span class="n">is_colliding</span><span class="p">()</span>
 		<span class="k">if</span> <span class="n">is_just_input_action</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">move_jump'</span><span class="p">)</span> \
@@ -1740,6 +1760,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="k">else</span><span class="p">:</span>
 			<span class="n">climb_rest_time</span> <span class="o">=</span> <span class="n">MAX_CLIMBING_TIME</span>
 			<span class="k">return</span> <span class="n">State</span><span class="o">.</span><span class="n">GROUNDING</span>
+
+
+<span class="k">func</span> <span class="nf">may_drop_collisions</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">get_slide_collision_count</span><span class="p">():</span>
+		<span class="k">var</span> <span class="n">collider</span> <span class="o">=</span> <span class="n">get_slide_collision</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">get_collider</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">collider</span><span class="o">.</span><span class="n">is_in_group</span><span class="p">(</span><span class="s2">'</span><span class="s1">droppable'</span><span class="p">):</span>
+			<span class="n">collider</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">is_just_input_action</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">bool</span><span class="p">:</span>
@@ -1908,7 +1935,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="o">%</span><span class="n">Camera</span><span class="o">.</span><span class="n">remove_frame</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">_on_failure_collision_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_on_area_collision_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">area</span><span class="o">.</span><span class="n">get_collision_layer_value</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="c1"># Failure</span>
 		<span class="n">failed</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
 	<span class="k">elif</span> <span class="n">area</span><span class="o">.</span><span class="n">get_collision_layer_value</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span> <span class="c1"># CheckPoint</span>

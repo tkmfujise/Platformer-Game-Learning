@@ -183,6 +183,7 @@ class N31 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _ready()
   + _physics_process()
   + compute_state()
+  + may_drop_collisions()
   + is_just_input_action()
   + is_input_action()
   + animate()
@@ -210,7 +211,7 @@ class N31 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_reached()
   + _on_frame_subject_area_entered()
   + _on_frame_subject_area_exited()
-  + _on_failure_collision_area_entered()
+  + _on_area_collision_area_entered()
 }
 class N32 as "Weather" <<(N,lightskyblue) Node2D>> {
 ---
@@ -286,6 +287,7 @@ func _ready() -> void:
 ```gdscript
 func _ready() -> void:
 	playable = true
+	if not owner: return
 	if last_owner_name == owner.name:
 		position = restart_position
 	else:
@@ -356,7 +358,7 @@ func _physics_process(delta: float) -> void:
 	if not (state == State.DASHED or state == State.DASHING):
 		if dx: velocity.x = dx * SPEED
 		else: velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	animate(playable)
 	move_and_slide()
 ```
@@ -380,7 +382,7 @@ CAUTION: No other scene instantiate this scene.
 *** [.node-name.type-2d]#CameraFrame4# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
 *** [.node-name.type-2d]#CameraFrame5# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
 *** [.node-name.type-2d]#CameraFrame6# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
-** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/staege_ground_0.tscn[res://src/stages/0/staege_ground_0.tscn]#
+** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]#
 ** [.node-name.type-2d]#Scenery# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Stage0# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]#
 ** [.node-name.type-2d]#Voids# [.node-type.type-2d]#Node2D#
@@ -736,7 +738,7 @@ R  ->o  T0 : &"play"()
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(7781, 124)`
+|*position* a|`Vector2(7753, -7)`
 |*collision_layer* a|`32`
 |===
 [.node-property.node-2d]
@@ -744,7 +746,7 @@ R  ->o  T0 : &"play"()
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(-23, 30)`
+|*position* a|`Vector2(6, 161)`
 |*shape* a|`SubResource("RectangleShape2D_338pp")`
 |===
 [.node-property.node-2d]

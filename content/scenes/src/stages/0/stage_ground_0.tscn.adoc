@@ -1,9 +1,9 @@
 ---
-title: src/stages/0/staege_ground_0.tscn
+title: src/stages/0/stage_ground_0.tscn
 ---
 :toc:
 
-== src / stages / 0 / staege_ground_0.tscn
+== src / stages / 0 / stage_ground_0.tscn
 
 === Diagram
 [plantuml]

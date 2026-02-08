@@ -61,6 +61,7 @@ static var restart_position : Vector2
 
 func _ready() -> void:
 	playable = true
+	if not owner: return
 	if last_owner_name == owner.name:
 		position = restart_position
 	else:
@@ -107,7 +108,7 @@ func _physics_process(delta: float) -> void:
 	if not (state == State.DASHED or state == State.DASHING):
 		if dx: velocity.x = dx * SPEED
 		else: velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	animate(playable)
 	move_and_slide()
 
@@ -131,6 +132,7 @@ func compute_state(delta: float, direction: Vector2) -> State:
 			falling_time = 0
 			if not state == State.CLIMBING:
 				dash_rest_count = MAX_DASH_COUNT
+				if direction.y > 0: may_drop_collisions()
 		
 		var on_wall = %FrontRayCast.is_colliding()
 		if is_just_input_action(&'move_jump') \
@@ -152,6 +154,13 @@ func compute_state(delta: float, direction: Vector2) -> State:
 		else:
 			climb_rest_time = MAX_CLIMBING_TIME
 			return State.GROUNDING
+
+
+func may_drop_collisions() -> void:
+	for i in get_slide_collision_count():
+		var collider = get_slide_collision(i).get_collider()
+		if collider.is_in_group('droppable'):
+			collider.drop()
 
 
 func is_just_input_action(key: StringName) -> bool:
@@ -320,7 +329,7 @@ func _on_frame_subject_area_exited(area: Area2D) -> void:
 	%Camera.remove_frame(area)
 
 
-func _on_failure_collision_area_entered(area: Area2D) -> void:
+func _on_area_collision_area_entered(area: Area2D) -> void:
 	if area.get_collision_layer_value(4): # Failure
 		failed.emit()
 	elif area.get_collision_layer_value(6): # CheckPoint
