@@ -1614,7 +1614,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNpdzkELgjAYh_H7PsU_uyhthzxbIHQO0WNEzPmawzeNbRESfvfSY-cHfjyGtfcooT2iwpKhCFkWV5LtvQu-n2p-UYLq6Wyg9HQ84iOUUgLYodXMcSJmYVbjvF-RfLAPHew4FKwnciuXy4mYx3eCv7p6syih1PgDxKah1g6EW6xlnUAjU5ftsiBDZ00_kPeH9KpQC6Y2IIxwyyca68gsrPgCY4pBpQ==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNpdzrEKwjAUheE9T3GsS4vNoHMtFJyl1FFE0vTWhl5TSSJSxHfXZnT74cDH0ay8RwPlkdSGNCUoivSUs7kNwY9zy0_KcHo4E2h3KEu8hZRSABs48hTSLHavmH_5ETp6x20EK2vuKpjJ1qxmcpGu8pmYp1eGvzXaH9FAyukHiFVHvbGEa6ryNoNCIc_r5U4eBqNHS97vdxeJVjD1AWGCWz6jM470woovE6RErg==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1671,19 +1671,19 @@ No signal connections.
 <div class="sect2">
 <h3 id="_animations">Animations</h3>
 <div class="sect3">
-<h4 id="_fall">fall</h4>
+<h4 id="_animation_ebbwj">Animation_ebbwj</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqlkz0Kg0AQhXtP8bBSUNn1P8KmyQ0kpEojRiGgDujm_hFNoSbBIRm22GK-fW9mdkrqdE8NzJxImygG5MYYSuF8b6sMwhNQysgB9wjkyEB1PVT62kHhUpWaet8SDoS9zGnp9mgKXU1ZJ2qot6SD17FXr8dTJAwRL9rCMpgi3IfdD7TPKszdQLPf9Ce_wV9-Q5bfDcNuryunIS7YaAPxhxrNdcb7qm-iMc_pWi9hdcbf-6LjgA6-jOI0cfDtvhSWzN2Qgr8dY6bxBKIp5NQ=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNpNysEKQEAUheH9PMXJikLDUl0bbzDJykaMUsOpcb0_ycLfv_xmHhoZkDhSE0wnnHkSQb_tvoEtLUSMA4oWcGjAdT29jgcEg5-VsU5tDpv9zc7lCpP6V3UMjGmV4zsz5gZgsR6H" alt="Diagram">
 </div>
 </div>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="_animation_ebbwj">Animation_ebbwj</h4>
+<h4 id="_fall">fall</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNpNysEKQEAUheH9PMXJikLDUl0bbzDJykaMUsOpcb0_ycLfv_xmHhoZkDhSE0wnnHkSQb_tvoEtLUSMA4oWcGjAdT29jgcEg5-VsU5tDpv9zc7lCpP6V3UMjGmV4zsz5gZgsR6H" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqlkz0Kg0AQhXtP8bBSUNn1P8KmyQ0kpEojRiGgDujm_hFNoSbBIRm22GK-fW9mdkrqdE8NzJxImygG5MYYSuF8b6sMwhNQysgB9wjkyEB1PVT62kHhUpWaet8SDoS9zGnp9mgKXU1ZJ2qot6SD17FXr8dTJAwRL9rCMpgi3IfdD7TPKszdQLPf9Ce_wV9-Q5bfDcNuryunIS7YaAPxhxrNdcb7qm-iMc_pWi9hdcbf-6LjgA6-jOI0cfDtvhSWzN2Qgr8dY6bxBKIp5NQ=" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -1762,6 +1762,10 @@ No signal connections.
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Sprite2D</span>
+
+
+<span class="k">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">RESET'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

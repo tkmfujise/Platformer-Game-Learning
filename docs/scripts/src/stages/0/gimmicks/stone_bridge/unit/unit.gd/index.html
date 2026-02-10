@@ -1633,6 +1633,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="k">if</span> <span class="n">sprite</span><span class="p">:</span> <span class="n">sprite</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
 
 
+<span class="k">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="o">%</span><span class="n">Pieces</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
+		<span class="n">piece</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">RESET'</span><span class="p">)</span>
+
+
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">fall'</span><span class="p">)</span>
 

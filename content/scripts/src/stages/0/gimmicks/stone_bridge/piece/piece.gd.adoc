@@ -15,6 +15,10 @@ title: res://src/stages/0/gimmicks/stone_bridge/piece/piece.gd
 extends Sprite2D
 
 
+func reset() -> void:
+	%AnimationPlayer.play(&'RESET')
+
+
 func fall() -> void:
 	%AnimationPlayer.play(&'fall')
 

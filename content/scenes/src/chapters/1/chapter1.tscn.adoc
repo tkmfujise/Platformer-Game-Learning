@@ -9,12 +9,7 @@ title: src/chapters/1/chapter1.tscn
 [plantuml]
 ....
 class R as "Chapter1" <<(C,lightgreen) Control>> {
-  * started
 ---
-  + _ready()
-  + restart()
-  + _on_player_failed()
-  + _on_player_reached()
 }
 class N1 as "Frames" <<(N,lightskyblue) Node2D>> {
 }
@@ -115,9 +110,9 @@ class N32 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * dash_rest_count
   * climb_rest_time
   * sprite_tween
+  * restart_position
   * last_owner_name
   * playable
-  * restart_position
 ---
   + _ready()
   + _physics_process()
@@ -133,6 +128,7 @@ class N32 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + walk_left()
   + turn_right()
   + turn_left()
+  + restart()
   + dash()
   + lock()
   + unlock()
@@ -186,7 +182,7 @@ N29 --o N30
 N30 --o N31
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-_(R::_on_player_failed, N32::failed)
+
 ....
 
 
@@ -194,18 +190,11 @@ _(R::_on_player_failed, N32::failed)
 
 === Overridden virtual functions
 ==== _ready
-```gdscript
-func _ready() -> void:
-	if started:
-		%Player.position = Player.restart_position
-	else:
-		started = true
-		Player.restart_position = %Player.position
-```
 .$Player
 ```gdscript
 func _ready() -> void:
 	playable = true
+	turn_right()
 	if not owner: return
 	if last_owner_name == owner.name:
 		position = restart_position
@@ -302,14 +291,7 @@ CAUTION: No other scene instantiate this scene.
 
 
 === Signal Connections
-[.signal-connection]
-.$Player:[#_failed_#]=>$.
-```gdscript
-func _on_player_failed() -> void:
-	await get_tree().create_timer(2).timeout
-	restart()
-```
-
+NOTE: No signal connections.
 
 
 
@@ -512,30 +494,6 @@ func _on_player_failed() -> void:
 
 ```gdscript
 extends Control
-
-static var started : bool = false
-
-
-func _ready() -> void:
-	if started:
-		%Player.position = Player.restart_position
-	else:
-		started = true
-		Player.restart_position = %Player.position
-
-
-func restart() -> void:
-	if not is_inside_tree(): return
-	get_tree().reload_current_scene()
-
-
-func _on_player_failed() -> void:
-	await get_tree().create_timer(2).timeout
-	restart()
-
-
-func _on_player_reached(area: Area2D) -> void:
-	Player.restart_position = area.position
 
 ```
 

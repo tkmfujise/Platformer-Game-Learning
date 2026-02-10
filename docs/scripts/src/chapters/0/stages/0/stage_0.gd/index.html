@@ -1622,22 +1622,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">restart</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">reload_current_scene</span><span class="p">()</span>
-
-
-<span class="k">func</span> <span class="nf">_on_player_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
-	<span class="o">%</span><span class="n">RestartCurtain</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
-
-
-<span class="k">func</span> <span class="nf">_on_restart_curtain_animation_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">restart</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">FallingIceBlock</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">StoneBirdge</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_on_stage_0_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">var</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">"event_</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">event_name</span>
 	<span class="k">if</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">has_animation</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
 		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_player_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+	<span class="n">restart</span><span class="p">()</span>
 
 
 <span class="c1"># TODO: 演出を入れる</span>

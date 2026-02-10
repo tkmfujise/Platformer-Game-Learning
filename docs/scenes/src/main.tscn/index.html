@@ -1612,7 +1612,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdVVtv2jAUfs-v8LqXsjUPo7cXVikNKWMKF0FoN02T5SSGuBg7sp0yNHW_fY7jkECRJu3tnM_fd3zic0lCkZRgBpAEZyNE2Bno9c79C0pWmVoJjFkH-JwpwendHfjtvDqJEYw_GYXPKRcznKiTMnt2KOwa4RMXNDWicSWS611MC9wBY57ibv9Qc2k0c4UUSe55uuv2jXR-JG0TDgNc_W-217WQEkk4m2cox_Z2_-j2Y9JhoBsTaErRDovT8gwJlCgsWvkD8AekSGY4NeZzscmtSRFLrblEhFpTYJSUZNd1te-C-TQI-sbqe_MvsHH9cDi6H44HLejrYjSFj0E48YfRd4MMZt5jbXthOHkK-jAajgIYTWDJbgKXaON5URSMF140nIwNOPK-QXPgTxbjaA_tc2jUwYO3CCM4972wRD6AQcalCpZLXRfjh-azW8BSV3xVYJgU4gUbROomwPZMF4StoCKbCiifEgos1Sko4QWrYiaUbOIjnswFURiqrW4WA-iqKsi3DAvIkCXlurooppVT6pFQMOeSKN0VtigfgY6M0t15p3LybCdJImEueIKltHDCN3mh7zMfY7EN2sFU8FxnahutZhMJnwudDmFaBHUT6bPm6ASKGNk0ga0Ht0RlR_dXzVfHSmkt2SK6hqLs3zZA8bL2VSHYAcEALUIZ2ZqUJ2trFqzlvJBYNFmusKqeA8b145lqwKo0dYA8LSm2XIYvocxQquuU6wHbYD1h9bvJHG0ZXJU9BrHpqfrzCyEwUwdhmgc9eBTI2VugGtQWUI1rC6iGtgXY0W1TymyhLOJnnRhEmgB1Tlj8k_RL59zmGHTfNMeR9hvq1myoByKkmiucy_vBaGob2i7qFIn1SqBdtaTNhnrT1K_ODLgu1z-I2ujWxq2jl7-xLvfWjaOXu7Gu9ta18y7FS8IwgOfoIu4ABHruj_flmrxQGUnWTA_K5-5PF8RO2VFAcWBaDaREYNPnzl-LUBm8" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdVVtv2jAUfs-v8LqXsjUPo7cXVikNKWMKF0FoN02T5SSGuBg7sp0yNHW_fY7jkECRJu3tO5_Pd3xyLk5CkZRgBpAEZyNE2Bno9c79C0pWmVoJjFkH-JwpwendHfjtvDqJEYw_GYXPKRcznKiTMnt2KOwa4RMXNDWicSWS611MC9wBY57ibv9Qc2k0c4UUSe55uuv2jXR-JG07HAa4-t9sr2shJZJwNs9Qju3t_tHtx06HgW5MoClFOyxOyzMkUKKwaOUPwB-QIpnh1MDnYpNbSBFLLVwiQi0UGCWls-u62nbBfBoEfYP63vwLbEw_HI7uh-NBi_q6GE3hYxBO_GH03TCDmfdYYy8MJ09BH0bDUQCjCSy9m8Al21heFAXjhRcNJ2NDjrxv0Bz4k8U42lP7HBp18OAtwgjOfS8smQ9gkHGpguVS98XYofnsFrHUHV8VGCaFeMGGkXoIsD3TDWErqMimIspSQoGlOkUlvGBVzISSTXzkJ3NBFIZqq4fFEOUxEgrmXBKlm25I3WoF-ZZhARmyyly3HMUU26Z8BDoySnfnncrIs50kiYS54AmW0tIJ3-SFvs98jOU2aAdTwXOdqR202ptI-FzomwnTIqiHSJ81RydYxMimCWwtuCUqO7q_Gr46VkpryRbRNRTl_LYJipe1rQrBDhwM0XKw9bNWeY-FlCdrCwvWMl5ILJqcV1hVxYFxXUrTG1g1qg6Qp6WLbZ7xl1BmKNUNyvW6bbDet7qKMkdbBlflxEFsJqwuRiEEZuogTFPegxJBzt4S1dq2iGp5W0S1wi3CLnLbpcwWyiJ-1olBpB2gzgmLfzr90jm3fQy7H6HjSPv36ta8Vw9ESDVXOJf3g9HUTrJ9tlMk1iuBdtWTbd6rNyP-6syA63L9u6hBtwa3jv4VGHS5RzeOfuoNutqja-ddipeEYQDP0UXcAQj03B_vy0fzQmUkWTO9Np-7P10QO-V8AcWBGTyQEoHN1Dt_ATWsHac=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1625,6 +1625,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="n">turn_right</span><span class="p">()</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">last_owner_name</span> <span class="o">==</span> <span class="n">owner</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
 		<span class="n">position</span> <span class="o">=</span> <span class="n">restart_position</span>

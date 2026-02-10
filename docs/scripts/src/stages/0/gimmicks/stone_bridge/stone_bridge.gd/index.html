@@ -1618,7 +1618,12 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_code">Code</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node2D</span></code></pre>
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node2D</span>
+
+
+<span class="k">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="o">%</span><span class="n">Units</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
+		<span class="n">unit</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span></code></pre>
 </div>
 </div>
 </div>

@@ -9,9 +9,11 @@ title: src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn
 [plantuml]
 ....
 class R as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+  * initial_position
 ---
   + _ready()
   + _process()
+  + reset()
   + fall()
   + _on_detection_area_2d_body_entered()
 }
@@ -27,13 +29,10 @@ class N5 as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
 }
 class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
-}
 R --o N1
 R --o N2
 R --o N3
 R --o N5
-R --o N7
 N3 --o N4
 N5 --o N6
 !define _(a,b) a <-[#blue,thickness=2]- b
@@ -54,6 +53,7 @@ image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[200, 100]
 ==== _ready
 ```gdscript
 func _ready() -> void:
+	initial_position = position
 	freeze = true
 	%FailureCollisionShape2D.disabled = true
 ```
@@ -77,7 +77,6 @@ func _process(_delta: float) -> void:
 *** [.node-name.type-2d]#FailureCollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#DetectionArea2D# [.node-type.type-2d]#Area2D#
 *** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
-** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
 === Signal Connections
@@ -159,14 +158,23 @@ image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[]
 ```gdscript
 extends RigidBody2D
 
+@onready var initial_position : Vector2
+
 
 func _ready() -> void:
+	initial_position = position
 	freeze = true
 	%FailureCollisionShape2D.disabled = true
 
 
 func _process(_delta: float) -> void:
 	if not Player.playable: freeze = true
+
+
+func reset() -> void:
+	position = initial_position
+	freeze = true
+	%FailureCollisionShape2D.disabled = true
 
 
 func fall() -> void:

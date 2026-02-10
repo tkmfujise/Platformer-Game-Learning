@@ -16,22 +16,19 @@ extends Control
 
 
 func restart() -> void:
-	get_tree().reload_current_scene()
-
-
-func _on_player_failed() -> void:
-	await get_tree().create_timer(2).timeout
-	%RestartCurtain.play()
-
-
-func _on_restart_curtain_animation_finished() -> void:
-	restart()
+	%FallingIceBlock.reset()
+	%StoneBirdge.reset()
 
 
 func _on_stage_0_event(event_name: String) -> void:
 	var key = "event_%s" % event_name
 	if %AnimationPlayer.has_animation(key):
 		%AnimationPlayer.play(key)
+
+
+func _on_player_failed() -> void:
+	await get_tree().create_timer(3).timeout
+	restart()
 
 
 # TODO: 演出を入れる

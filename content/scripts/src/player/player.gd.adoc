@@ -40,7 +40,7 @@ enum State {
 const SPEED = 700.0
 const DASH_SPEED = SPEED * 4
 const CLIMBING_SPEED = SPEED / 6
-const JUMP_VELOCITY = -1140.0
+const JUMP_VELOCITY = -1200.0
 const GRAVITY = 4000
 const ALLOWED_TIME_TO_JUMP = 0.13
 const DASH_TIME = 0.1
@@ -54,13 +54,14 @@ var dash_rest_time := 0.0
 var dash_rest_count := MAX_DASH_COUNT
 var climb_rest_time := 0.0
 var sprite_tween : Tween
+var restart_position : Vector2
 static var last_owner_name : String
 static var playable : bool = false
-static var restart_position : Vector2
 
 
 func _ready() -> void:
 	playable = true
+	turn_right()
 	if not owner: return
 	if last_owner_name == owner.name:
 		position = restart_position
@@ -197,6 +198,7 @@ func compute_dashed() -> void:
 
 
 func idle() -> void:
+	%AnimationPlayer.play(&'RESET')
 	animate_with(Vector2(0, 0))
 
 
@@ -214,6 +216,15 @@ func turn_right() -> void:
 
 func turn_left() -> void:
 	walk_left(); idle()
+
+
+func restart() -> void:
+	%RestartCurtain.play()
+	await get_tree().create_timer(1).timeout
+	position = restart_position
+	playable = true
+	unlock()
+	idle.call_deferred()
 
 
 func dash(direction: Vector2) -> void:
@@ -314,7 +325,6 @@ func _on_failed() -> void:
 	%Camera.shake(&'failure')
 	%AnimationTree.active = false
 	%AnimationPlayer.play(&'burst')
-	%RestartCurtain.play()
 
 
 func _on_reached(area: Area2D) -> void:

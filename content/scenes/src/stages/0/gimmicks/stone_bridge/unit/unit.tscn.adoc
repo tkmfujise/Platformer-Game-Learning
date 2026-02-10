@@ -14,6 +14,7 @@ class R as "Unit" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -21,42 +22,52 @@ class N1 as "Pieces" <<(N,lightskyblue) Node2D>> {
 }
 class N2 as "Piece1" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N3 as "Piece2" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N4 as "Piece3" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N5 as "Piece4" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N6 as "Piece5" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N7 as "Piece6" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N8 as "Piece7" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N9 as "Piece8" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N10 as "Piece9" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N11 as "Piece10" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N12 as "CollisionShape1" <<(C,lightskyblue) CollisionShape2D>> {
@@ -313,6 +324,13 @@ R  ->o  T18 : position\n = Vector2(35.75, 300)
 |*script* a|link:/scripts/src/stages/0/gimmicks/stone_bridge/unit/unit.gd[res://src/stages/0/gimmicks/stone_bridge/unit/unit.gd]
 |===
 [.node-property.node-2d]
+.#$Pieces# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|===
+[.node-property.node-2d]
 .#$Pieces/Piece1# properties
 [cols="1,3" options="header"]
 |===
@@ -525,6 +543,12 @@ func _ready() -> void:
 		var collision = get_node(str('%CollisionShape', n))
 		if collision: collision.disabled = true
 		if sprite: sprite.visible = false
+
+
+func reset() -> void:
+	for piece in %Pieces.get_children():
+		piece.reset()
+	%AnimationPlayer.play(&'RESET')
 
 
 func fall() -> void:

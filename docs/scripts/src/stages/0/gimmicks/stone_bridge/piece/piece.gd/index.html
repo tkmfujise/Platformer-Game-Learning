@@ -1621,6 +1621,10 @@ document.addEventListener("DOMContentLoaded", () => {
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Sprite2D</span>
 
 
+<span class="k">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">RESET'</span><span class="p">)</span>
+
+
 <span class="k">func</span> <span class="nf">fall</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">fall'</span><span class="p">)</span></code></pre>
 </div>

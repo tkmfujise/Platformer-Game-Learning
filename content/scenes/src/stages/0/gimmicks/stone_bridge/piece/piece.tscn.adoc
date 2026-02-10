@@ -10,6 +10,7 @@ title: src/stages/0/gimmicks/stone_bridge/piece/piece.tscn
 ....
 class R as "Piece" <<(S,lightskyblue) Sprite2D>> {
 ---
+  + reset()
   + fall()
 }
 class N1 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
@@ -45,6 +46,22 @@ image::/assets/raw/assets/images/stages/chapter0/StoneBridge_sprite.png[200, 100
 NOTE: No signal connections.
 
 === Animations
+==== Animation_ebbwj
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->  R : offset\n = Vector2(0, 0)
+R  ->  R : modulate\n = Color(1, 1, 1, 1)
+
+
+....
+---
+
 ==== fall
 
 [plantuml]
@@ -87,22 +104,6 @@ R  ->  R : modulate\n = Color(1, 1, 1, 0)
 ....
 ---
 
-==== Animation_ebbwj
-
-[plantuml]
-....
-control "Root" as R
-
-
-
-== Time: 0.0 ==
-R  ->  R : offset\n = Vector2(0, 0)
-R  ->  R : modulate\n = Color(1, 1, 1, 1)
-
-
-....
----
-
 
 
 === Properties
@@ -135,6 +136,10 @@ image::/assets/raw/assets/images/stages/chapter0/StoneBridge_sprite.png[]
 
 ```gdscript
 extends Sprite2D
+
+
+func reset() -> void:
+	%AnimationPlayer.play(&'RESET')
 
 
 func fall() -> void:

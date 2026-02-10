@@ -42,9 +42,9 @@ class N2 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * dash_rest_count
   * climb_rest_time
   * sprite_tween
+  * restart_position
   * last_owner_name
   * playable
-  * restart_position
 ---
   + _ready()
   + _physics_process()
@@ -60,6 +60,7 @@ class N2 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + walk_left()
   + turn_right()
   + turn_left()
+  + restart()
   + dash()
   + lock()
   + unlock()
@@ -113,6 +114,7 @@ func _input(event: InputEvent) -> void:
 ```gdscript
 func _ready() -> void:
 	playable = true
+	turn_right()
 	if not owner: return
 	if last_owner_name == owner.name:
 		position = restart_position

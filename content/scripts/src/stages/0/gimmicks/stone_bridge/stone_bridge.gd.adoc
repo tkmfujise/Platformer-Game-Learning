@@ -14,4 +14,9 @@ title: res://src/stages/0/gimmicks/stone_bridge/stone_bridge.gd
 ```gdscript
 extends Node2D
 
+
+func reset() -> void:
+	for unit in %Units.get_children():
+		unit.reset()
+
 ```

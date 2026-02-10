@@ -27,6 +27,12 @@ func _ready() -> void:
 		if sprite: sprite.visible = false
 
 
+func reset() -> void:
+	for piece in %Pieces.get_children():
+		piece.reset()
+	%AnimationPlayer.play(&'RESET')
+
+
 func fall() -> void:
 	%AnimationPlayer.play(&'fall')
 

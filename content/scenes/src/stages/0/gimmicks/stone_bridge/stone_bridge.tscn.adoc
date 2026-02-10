@@ -10,6 +10,7 @@ title: src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn
 ....
 class R as "StoneBirdge" <<(N,lightskyblue) Node2D>> {
 ---
+  + reset()
 }
 class N1 as "Units" <<(N,lightskyblue) Node2D>> {
 }
@@ -19,6 +20,7 @@ class N2 as "Unit1" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -28,6 +30,7 @@ class N3 as "Unit2" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -37,6 +40,7 @@ class N4 as "Unit3" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -46,6 +50,7 @@ class N5 as "Unit4" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -55,6 +60,7 @@ class N6 as "Unit5" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -64,6 +70,7 @@ class N7 as "Unit6" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -73,6 +80,7 @@ class N8 as "Unit7" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -82,6 +90,7 @@ class N9 as "Unit8" <<(S,lightskyblue) StaticBody2D>> {
   * disable_pieces
 ---
   + _ready()
+  + reset()
   + fall()
   + _on_enter_area_2d_area_entered()
 }
@@ -149,6 +158,13 @@ NOTE: No signal connections.
 |Name |Value
 |*scale* a|`Vector2(6, 6)`
 |*script* a|link:/scripts/src/stages/0/gimmicks/stone_bridge/stone_bridge.gd[res://src/stages/0/gimmicks/stone_bridge/stone_bridge.gd]
+|===
+[.node-property.node-2d]
+.#$Units# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
 |===
 [.node-property.node-2d]
 .#$Units/Unit1# properties
@@ -220,6 +236,11 @@ NOTE: No signal connections.
 
 ```gdscript
 extends Node2D
+
+
+func reset() -> void:
+	for unit in %Units.get_children():
+		unit.reset()
 
 ```
 
