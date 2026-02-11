@@ -19,7 +19,7 @@ const DEFAULT_SCALE = 4
 
 func spawn(player: Player) -> void:
 	position = player.position
-	scale = Vector2(1, 1) * DEFAULT_SCALE * player.falling_time
+	scale = Vector2(1, 1) * DEFAULT_SCALE * min(player.falling_time, 2)
 	player.get_parent().add_child(self)
 
 

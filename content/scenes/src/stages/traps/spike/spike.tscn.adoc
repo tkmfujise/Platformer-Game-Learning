@@ -135,7 +135,7 @@ image::/assets/raw/assets/images/stages/traps/Needle.png[]
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(60, 23.75)`
+|*position* a|`Vector2(60, 23)`
 |*shape* a|`SubResource("RectangleShape2D_whf86")`
 |===
 

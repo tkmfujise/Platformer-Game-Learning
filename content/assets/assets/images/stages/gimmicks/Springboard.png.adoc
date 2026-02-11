@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/Springboard.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / Springboard.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/springboard/spriingboard.tscn[res://src/stages/0/gimmicks/springboard/spriingboard.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |304×16 px
+|Type |png
+|Content Length |523.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[]
+
