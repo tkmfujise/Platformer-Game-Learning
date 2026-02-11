@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/Strawberry.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / Strawberry.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |480×22 px
+|Type |png
+|Content Length |2.3 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/Strawberry.png[]
+

@@ -1,12 +1,12 @@
 ---
-title: res://src/stages/0/gimmicks/springboard/spriingboard.gd
+title: res://src/stages/0/gimmicks/springboard/springboard.gd
 ---
 :toc:
 
-== src / stages / 0 / gimmicks / springboard / spriingboard.gd
+== src / stages / 0 / gimmicks / springboard / springboard.gd
 
 === Attached Scenes
-* link:/scenes/src/stages/0/gimmicks/springboard/spriingboard.tscn[res://src/stages/0/gimmicks/springboard/spriingboard.tscn]
+* link:/scenes/src/stages/0/gimmicks/springboard/springboard.tscn[res://src/stages/0/gimmicks/springboard/springboard.tscn]
 
 
 
@@ -15,17 +15,17 @@ title: res://src/stages/0/gimmicks/springboard/spriingboard.gd
 extends Sprite2D
 
 @onready var standby : bool = true
-
 const FORCE := -2000
 
+
 func hit(player: Player) -> void:
-	#standby = false
+	standby = false
 	player.velocity.y = FORCE
 	%AnimationPlayer.play(&'hit')
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if standby: hit(area.owner as Player)
+	if standby: hit.call_deferred(area.owner as Player)
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:

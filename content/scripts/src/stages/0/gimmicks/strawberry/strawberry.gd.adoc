@@ -1,0 +1,49 @@
+---
+title: res://src/stages/0/gimmicks/strawberry/strawberry.gd
+---
+:toc:
+
+== src / stages / 0 / gimmicks / strawberry / strawberry.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]
+
+
+
+=== Code
+```gdscript
+extends Area2D
+
+@onready var player : Player
+@export var obtained : bool = false
+
+
+func reset() -> void:
+	player = null
+	%Pivot.position = Vector2(0, 0)
+	play(&'RESET')
+	play.call_deferred(&'idle')
+
+
+func _physics_process(_delta: float) -> void:
+	if player:
+		var target := player.global_position + Vector2(-100, -100)
+		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
+
+
+func ascend() -> void:
+	play(&'ascend')
+
+
+func play(key: StringName) -> void:
+	%AnimationPlayer.play(key)
+
+
+func _on_hit_area_entered(area: Area2D) -> void:
+	player = area.owner as Player
+
+
+func _on_area_entered(_area: Area2D) -> void:
+	if not obtained: ascend()
+
+```

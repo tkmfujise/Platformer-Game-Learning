@@ -1,14 +1,14 @@
 ---
-title: src/stages/0/gimmicks/springboard/spriingboard.tscn
+title: src/stages/0/gimmicks/springboard/springboard.tscn
 ---
 :toc:
 
-== src / stages / 0 / gimmicks / springboard / spriingboard.tscn
+== src / stages / 0 / gimmicks / springboard / springboard.tscn
 
 === Diagram
 [plantuml]
 ....
-class R as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
+class R as "Springboard" <<(S,lightskyblue) Sprite2D>> {
   - FORCE
   * standby
 ---
@@ -48,7 +48,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[200, 100]
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-2d]#Spriingboard# [.node-type.type-2d]#Sprite2D#
+* [.node-name.type-2d]#Springboard# [.node-type.type-2d]#Sprite2D#
 ** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
 *** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
@@ -59,7 +59,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[200, 100]
 .$Area2D:[#_area_entered_#]=>$.
 ```gdscript
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if standby: hit(area.owner as Player)
+	if standby: hit.call_deferred(area.owner as Player)
 ```
 [.signal-connection]
 .$AnimationPlayer:[#_animation_finished_#]=>$.
@@ -155,7 +155,7 @@ R  ->o  R : frame\n = 18
 image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[]
 
 |*hframes* a|`19`
-|*script* a|link:/scripts/src/stages/0/gimmicks/springboard/spriingboard.gd[res://src/stages/0/gimmicks/springboard/spriingboard.gd]
+|*script* a|link:/scripts/src/stages/0/gimmicks/springboard/springboard.gd[res://src/stages/0/gimmicks/springboard/springboard.gd]
 |===
 [.node-property.node-2d]
 .#$Area2D# properties
@@ -184,23 +184,23 @@ image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[]
 |===
 
 
-=== link:/scripts/src/stages/0/gimmicks/springboard/spriingboard.gd[spriingboard.gd]
+=== link:/scripts/src/stages/0/gimmicks/springboard/springboard.gd[springboard.gd]
 
 ```gdscript
 extends Sprite2D
 
 @onready var standby : bool = true
-
 const FORCE := -2000
 
+
 func hit(player: Player) -> void:
-	#standby = false
+	standby = false
 	player.velocity.y = FORCE
 	%AnimationPlayer.play(&'hit')
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if standby: hit(area.owner as Player)
+	if standby: hit.call_deferred(area.owner as Player)
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:

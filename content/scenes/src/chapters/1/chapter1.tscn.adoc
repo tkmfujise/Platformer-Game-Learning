@@ -10,6 +10,8 @@ title: src/chapters/1/chapter1.tscn
 ....
 class R as "Chapter1" <<(C,lightgreen) Control>> {
 ---
+  + restart()
+  + _on_player_failed()
 }
 class N1 as "Frames" <<(N,lightskyblue) Node2D>> {
 }
@@ -75,11 +77,13 @@ class N27 as "Spike15" <<(A,lightskyblue) Area2D>> {
 }
 class N28 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
 }
-class N29 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N29 as "Stage2" <<(N,lightskyblue) Node2D>> {
+}
+class N30 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N30 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
+class N31 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
   - FORCE
   * standby
 ---
@@ -87,15 +91,28 @@ class N30 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
   + _on_area_2d_area_entered()
   + _on_animation_player_animation_finished()
 }
-class N31 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+class N32 as "Strawberry" <<(A,lightskyblue) Area2D>> {
+  * player
+  * obtained
+---
+  + reset()
+  + _physics_process()
+  + ascend()
+  + play()
+  + _on_hit_area_entered()
+  + _on_area_entered()
 }
-class N32 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
+class N33 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N33 as "Area2D" <<(A,lightskyblue) Area2D>> {
+class N34 as "StageGround0" <<(T,yellow) TileMapLayer>> {
 }
-class N34 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N35 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
 }
-class N35 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N36 as "Area2D" <<(A,lightskyblue) Area2D>> {
+}
+class N37 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N38 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ jumped
   ~ landed
@@ -164,9 +181,9 @@ R --o N1
 R --o N4
 R --o N9
 R --o N28
-R --o N31
-R --o N32
+R --o N34
 R --o N35
+R --o N38
 N1 --o N2
 N1 --o N3
 N4 --o N5
@@ -192,32 +209,29 @@ N22 --o N25
 N22 --o N26
 N22 --o N27
 N28 --o N29
-N28 --o N30
+N29 --o N30
+N29 --o N31
+N29 --o N32
 N32 --o N33
-N33 --o N34
+N35 --o N36
+N36 --o N37
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-
+_(R::_on_player_failed, N38::failed)
 ....
 
 
 
 
 === Overridden virtual functions
-==== _ready
-.$Player
-```gdscript
-func _ready() -> void:
-	playable = true
-	turn_right()
-	if not owner: return
-	if last_owner_name == owner.name:
-		position = restart_position
-	else:
-		restart_position = position
-	last_owner_name = owner.name
-```
 ==== _physics_process
+.$Gimmicks/Stage2/Strawberry
+```gdscript
+func _physics_process(_delta: float) -> void:
+	if player:
+		var target := player.global_position + Vector2(-100, -100)
+		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
+```
 .$Player
 ```gdscript
 func _physics_process(delta: float) -> void:
@@ -263,6 +277,19 @@ func _physics_process(delta: float) -> void:
 	animate(playable)
 	move_and_slide()
 ```
+==== _ready
+.$Player
+```gdscript
+func _ready() -> void:
+	playable = true
+	turn_right()
+	if not owner: return
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
+```
 
 
 === Instantiators
@@ -299,8 +326,11 @@ CAUTION: No other scene instantiate this scene.
 ***** [.node-name.type-2d]#Spike14# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
 ***** [.node-name.type-2d]#Spike15# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
 ** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
-*** [.node-name.type-2d]#OneWayScaffold# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]#
-*** [.node-name.type-2d]#Spriingboard# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/springboard/spriingboard.tscn[res://src/stages/0/gimmicks/springboard/spriingboard.tscn]#
+*** [.node-name.type-2d]#Stage2# [.node-type.type-2d]#Node2D#
+**** [.node-name.type-2d]#OneWayScaffold# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]#
+**** [.node-name.type-2d]#Spriingboard# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/springboard/springboard.tscn[res://src/stages/0/gimmicks/springboard/springboard.tscn]#
+**** [.node-name.type-2d]#Strawberry# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]#
+***** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]#
 ** [.node-name.type-2d]#CheckPoints# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
@@ -309,7 +339,13 @@ CAUTION: No other scene instantiate this scene.
 
 
 === Signal Connections
-NOTE: No signal connections.
+[.signal-connection]
+.$Player:[#_failed_#]=>$.
+```gdscript
+func _on_player_failed() -> void:
+	restart()
+```
+
 
 
 
@@ -481,18 +517,34 @@ NOTE: No signal connections.
 |*position* a|`Vector2(2755, -120)`
 |===
 [.node-property.node-2d]
-.#$Gimmicks/OneWayScaffold# properties
+.#$Gimmicks/Stage2/OneWayScaffold# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*position* a|`Vector2(1589, -90)`
 |===
 [.node-property.node-2d]
-.#$Gimmicks/Spriingboard# properties
+.#$Gimmicks/Stage2/Spriingboard# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*position* a|`Vector2(2241, -305)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/Stage2/Strawberry# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(1958, -929)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/Stage2/Strawberry/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(258.69565, 127.88044)`
+|*shape* a|`SubResource("RectangleShape2D_yx8mm")`
 |===
 [.node-property.node-other]
 .#$StageGround0# properties
@@ -533,6 +585,14 @@ NOTE: No signal connections.
 
 ```gdscript
 extends Control
+
+
+func restart() -> void:
+	%Strawberry.reset()
+
+
+func _on_player_failed() -> void:
+	restart()
 
 ```
 

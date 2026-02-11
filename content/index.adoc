@@ -22,29 +22,29 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-54 _files_
+55 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
 | 8.3 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 447 _nodes_
+| 455 _nodes_
 
 
 
 .2+| *📝 Scripts* +
-74 _files_
+75 _files_
 
 | *Functions*
 | link:/scripts/resources/account_stage_resource.gd[0 _funcs_]
-| 5.3 _funcs_
+| 5.4 _funcs_
 | link:/scripts/src/player/player.gd[33 _funcs_]
-| 390 _funcs_
+| 398 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.3 _lines_
 | link:/scripts/src/player/player.gd[42 _lines_]
-| 1,671 _lines_
+| 1,692 _lines_
 
 
 
@@ -60,13 +60,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-90 _files_
+91 _files_
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 23.15 KB 
+| 22.92 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
-| 2.03 MB 
+| 2.04 MB 
 
 
 
@@ -101,7 +101,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MzovYXNzZXRzL2ltYWdlcy9zdGFnZXM=]#_# | │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
-|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvdHJhcHM=]#_# | │  │  │ └ traps |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy91aQ==]#_# | │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy91aS9DaGFwdGVycw==]#_# | │  │  │ ├ Chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
@@ -183,6 +183,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZQ==]#_# | │  │  │  │ ├ stone_bridge |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Njovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZS9waWVjZQ==]#_# | │  │  │  │  │ ├ piece |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Njovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZS91bml0]#_# | │  │  │  │  │ └ unit |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0cmF3YmVycnk=]#_# | │  │  │  │ ├ strawberry |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3Rvb2x0aXA=]#_# | │  │  │  │ └ tooltip |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL3N0YWdlcy9iYWNrZ3JvdW5k]#_# | │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9iYWNrZ3JvdW5kL2ZvcmVzdA==]#_# | │  │  │ └ forest |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
