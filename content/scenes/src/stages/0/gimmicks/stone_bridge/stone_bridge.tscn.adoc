@@ -193,7 +193,7 @@ NOTE: No signal connections.
 |===
 |Name |Value
 |*position* a|`Vector2(350.33334, 38.333336)`
-|*disable_pieces* a|`Array("[3, 4, 5, 6, 7, 8, 9]")`
+|*disable_pieces* a|`Array("[4, 5, 6, 7, 8, 9]")`
 |===
 [.node-property.node-2d]
 .#$Units/Unit5# properties

@@ -9,9 +9,11 @@ title: src/stages/0/gimmicks/strawberry/strawberry.tscn
 [plantuml]
 ....
 class R as "Strawberry" <<(A,lightskyblue) Area2D>> {
+  - OFFSET
   * player
   * obtained
 ---
+  + _ready()
   + reset()
   + _physics_process()
   + ascend()
@@ -50,11 +52,16 @@ image::/assets/raw/assets/images/stages/gimmicks/Strawberry.png[200, 100]
 
 
 === Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if obtained: hide()
+```
 ==== _physics_process
 ```gdscript
 func _physics_process(_delta: float) -> void:
 	if player:
-		var target := player.global_position + Vector2(-100, -100)
+		var target := player.global_position + OFFSET
 		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
 ```
 
@@ -78,7 +85,7 @@ func _physics_process(_delta: float) -> void:
 .$.:[#_area_entered_#]=>$.
 ```gdscript
 func _on_area_entered(_area: Area2D) -> void:
-	if not obtained: ascend()
+	if not obtained and player: ascend()
 ```
 [.signal-connection]
 .$Pivot/HitArea:[#_area_entered_#]=>$.
@@ -267,23 +274,30 @@ extends Area2D
 
 @onready var player : Player
 @export var obtained : bool = false
+const OFFSET := Vector2(0, -200)
+
+
+func _ready() -> void:
+	if obtained: hide()
 
 
 func reset() -> void:
 	player = null
 	%Pivot.position = Vector2(0, 0)
+	if obtained: hide()
 	play(&'RESET')
 	play.call_deferred(&'idle')
 
 
 func _physics_process(_delta: float) -> void:
 	if player:
-		var target := player.global_position + Vector2(-100, -100)
+		var target := player.global_position + OFFSET
 		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
 
 
 func ascend() -> void:
 	play(&'ascend')
+	obtained = true
 
 
 func play(key: StringName) -> void:
@@ -295,7 +309,7 @@ func _on_hit_area_entered(area: Area2D) -> void:
 
 
 func _on_area_entered(_area: Area2D) -> void:
-	if not obtained: ascend()
+	if not obtained and player: ascend()
 
 ```
 

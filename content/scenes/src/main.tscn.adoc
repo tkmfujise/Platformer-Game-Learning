@@ -150,21 +150,32 @@ func _physics_process(delta: float) -> void:
 			and dy < 0:
 				velocity.y = JUMP_VELOCITY * 0.8
 			else:
+				var move_x := dx * SPEED * 0.8
+				if velocity.x * dx < 0: move_x *= 0.1
+				velocity.x = lerp(velocity.x, move_x, 0.2)
+				
 				if velocity.y < JUMP_VELOCITY * 0.85:
 					velocity.y += GRAVITY * 1.15 * delta
 				else:
 					velocity.y += GRAVITY * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
+		State.KICKED:
+			velocity.y = JUMP_VELOCITY * 0.9
+			velocity.x = get_wall_normal().x * DASH_SPEED * 0.8
 		State.LOCKED:
 			dx = 0
 			velocity = Vector2(0, 0)
 		_: pass
 	
 	if not playable: dx = 0
-	if not (state == State.DASHED or state == State.DASHING):
+	if not (state == State.DASHED \
+		or state == State.DASHING \
+		or state == State.FALLING \
+		or state == State.KICKED
+	):
 		if dx: velocity.x = dx * SPEED
-		else: velocity.x = move_toward(velocity.x, 0, SPEED)
+		else: velocity.x = move_toward(velocity.x, 0, SPEED*0.2)
 	
 	animate(playable)
 	move_and_slide()

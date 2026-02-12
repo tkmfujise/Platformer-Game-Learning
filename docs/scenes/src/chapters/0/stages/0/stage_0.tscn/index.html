@@ -1750,21 +1750,32 @@ document.addEventListener("DOMContentLoaded", () => {
 			<span class="ow">and</span> <span class="n">dy</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
 				<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.8</span>
 			<span class="k">else</span><span class="p">:</span>
+				<span class="k">var</span> <span class="n">move_x</span> <span class="p">:</span><span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">SPEED</span> <span class="o">*</span> <span class="mf">0.8</span>
+				<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">move_x</span> <span class="o">*=</span> <span class="mf">0.1</span>
+				<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">move_x</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
 				<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
 					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
 				<span class="k">else</span><span class="p">:</span>
 					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
+		<span class="n">State</span><span class="o">.</span><span class="n">KICKED</span><span class="p">:</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.9</span>
+			<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">get_wall_normal</span><span class="p">()</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">DASH_SPEED</span> <span class="o">*</span> <span class="mf">0.8</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">LOCKED</span><span class="p">:</span>
 			<span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
 			<span class="n">velocity</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 		<span class="n">_</span><span class="p">:</span> <span class="k">pass</span>
 
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">playable</span><span class="p">:</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHED</span> <span class="ow">or</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHING</span><span class="p">):</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHED</span> \
+		<span class="ow">or</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">DASHING</span> \
+		<span class="ow">or</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FALLING</span> \
+		<span class="ow">or</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">KICKED</span>
+	<span class="p">):</span>
 		<span class="k">if</span> <span class="n">dx</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">SPEED</span>
-		<span class="k">else</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span> <span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">move_toward</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SPEED</span><span class="o">*</span><span class="mf">0.2</span><span class="p">)</span>
 
 	<span class="n">animate</span><span class="p">(</span><span class="n">playable</span><span class="p">)</span>
 	<span class="n">move_and_slide</span><span class="p">()</span></code></pre>
@@ -1976,7 +1987,7 @@ No other scene instantiate this scene.
 <h4 id="_animation_xb7cu">Animation_xb7cu</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNodyrsKAjEQRuF-nuInWiiojCLsshBBRGsJi5VNCCkG1kzITuPbezntd5IWazrBBVVziDMC1dhMktRYDG55n-I7tz-NjEXfXa63M33zHqO88gDeMbynAGxP-E0Dqs5iouVZ4PHIybQdVsc9b9Axr4k-QlsgvQ==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNpLzs8rKcrPUVAKys8vUVJILFYI4ipILCrJTM4sSMwrUVBSCchJrEwtAkuFGCgoW5g7u7o5cgGBra1CSGZuqpWCgZ6Bgq0tV5CCgq6dAkiRlUJBfnFmSWZ-Xkyegq1CWGpySX6RkYaJhaWOgqmxkSYXFwBC_SDQ" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -2744,7 +2755,7 @@ No other scene instantiate this scene.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>position</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>Vector2(410, 700)</code></p>
+<p><code>Vector2(489, 532)</code></p>
 </div></div></td>
 </tr>
 </tbody>
