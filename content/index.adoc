@@ -26,9 +26,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 8.3 _nodes_
+| 8.9 _nodes_
 | link:/scenes/src/account/account.tscn[73 _nodes_]
-| 455 _nodes_
+| 488 _nodes_
 
 
 

@@ -16,7 +16,7 @@ extends Control
 
 
 func restart() -> void:
-	%Strawberry.reset()
+	for s in %Strawberries.get_children(): s.reset()
 
 
 func _on_player_failed() -> void:

@@ -1658,7 +1658,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">restart</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="o">%</span><span class="n">Strawberry</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="o">%</span><span class="n">Strawberries</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span> <span class="n">s</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_on_player_failed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

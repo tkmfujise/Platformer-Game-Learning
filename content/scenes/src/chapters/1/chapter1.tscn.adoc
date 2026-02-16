@@ -27,63 +27,113 @@ class N3 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
   + corner_of()
   + corner()
 }
-class N4 as "Voids" <<(N,lightskyblue) Node2D>> {
+class N4 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
 }
-class N5 as "Area2D" <<(A,lightskyblue) Area2D>> {
+class N5 as "CameraFrame4" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
 }
-class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N6 as "Voids" <<(N,lightskyblue) Node2D>> {
 }
-class N7 as "Area2D2" <<(A,lightskyblue) Area2D>> {
+class N7 as "Stage1" <<(A,lightskyblue) Area2D>> {
 }
 class N8 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N9 as "Traps" <<(N,lightskyblue) Node2D>> {
+class N9 as "Stage2" <<(A,lightskyblue) Area2D>> {
 }
-class N10 as "Spikes" <<(N,lightskyblue) Node2D>> {
+class N10 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N11 as "Stage1" <<(N,lightskyblue) Node2D>> {
+class N11 as "Stage3" <<(A,lightskyblue) Area2D>> {
 }
-class N12 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N12 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N13 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N13 as "Stage4" <<(A,lightskyblue) Area2D>> {
 }
-class N14 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N14 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N15 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N15 as "Traps" <<(N,lightskyblue) Node2D>> {
 }
-class N16 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N16 as "Spikes" <<(N,lightskyblue) Node2D>> {
 }
-class N17 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N17 as "Stage1" <<(N,lightskyblue) Node2D>> {
 }
-class N18 as "Spike7" <<(A,lightskyblue) Area2D>> {
+class N18 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N19 as "Spike8" <<(A,lightskyblue) Area2D>> {
+class N19 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N20 as "Spike9" <<(A,lightskyblue) Area2D>> {
+class N20 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N21 as "Spike10" <<(A,lightskyblue) Area2D>> {
+class N21 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N22 as "Stage2" <<(N,lightskyblue) Node2D>> {
+class N22 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N23 as "Spike11" <<(A,lightskyblue) Area2D>> {
+class N23 as "Spike6" <<(A,lightskyblue) Area2D>> {
 }
-class N24 as "Spike12" <<(A,lightskyblue) Area2D>> {
+class N24 as "Spike7" <<(A,lightskyblue) Area2D>> {
 }
-class N25 as "Spike13" <<(A,lightskyblue) Area2D>> {
+class N25 as "Spike8" <<(A,lightskyblue) Area2D>> {
 }
-class N26 as "Spike14" <<(A,lightskyblue) Area2D>> {
+class N26 as "Spike9" <<(A,lightskyblue) Area2D>> {
 }
-class N27 as "Spike15" <<(A,lightskyblue) Area2D>> {
+class N27 as "Spike10" <<(A,lightskyblue) Area2D>> {
 }
-class N28 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+class N28 as "Stage2" <<(N,lightskyblue) Node2D>> {
 }
-class N29 as "Stage2" <<(N,lightskyblue) Node2D>> {
+class N29 as "Spike11" <<(A,lightskyblue) Area2D>> {
 }
-class N30 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N30 as "Spike12" <<(A,lightskyblue) Area2D>> {
+}
+class N31 as "Spike13" <<(A,lightskyblue) Area2D>> {
+}
+class N32 as "Spike14" <<(A,lightskyblue) Area2D>> {
+}
+class N33 as "Spike15" <<(A,lightskyblue) Area2D>> {
+}
+class N34 as "Stage3" <<(N,lightskyblue) Node2D>> {
+}
+class N35 as "Spike" <<(A,lightskyblue) Area2D>> {
+}
+class N36 as "Spike2" <<(A,lightskyblue) Area2D>> {
+}
+class N37 as "Spike3" <<(A,lightskyblue) Area2D>> {
+}
+class N38 as "Spike4" <<(A,lightskyblue) Area2D>> {
+}
+class N39 as "Spike6" <<(A,lightskyblue) Area2D>> {
+}
+class N40 as "Spike5" <<(A,lightskyblue) Area2D>> {
+}
+class N41 as "Stage4" <<(N,lightskyblue) Node2D>> {
+}
+class N42 as "Spike" <<(A,lightskyblue) Area2D>> {
+}
+class N43 as "Spike2" <<(A,lightskyblue) Area2D>> {
+}
+class N44 as "Spike3" <<(A,lightskyblue) Area2D>> {
+}
+class N45 as "Spike4" <<(A,lightskyblue) Area2D>> {
+}
+class N46 as "Spike6" <<(A,lightskyblue) Area2D>> {
+}
+class N47 as "Spike7" <<(A,lightskyblue) Area2D>> {
+}
+class N48 as "Spike5" <<(A,lightskyblue) Area2D>> {
+}
+class N49 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+}
+class N50 as "Stage2" <<(N,lightskyblue) Node2D>> {
+}
+class N51 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N31 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
+class N52 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
   - FORCE
   * standby
 ---
@@ -91,7 +141,27 @@ class N31 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
   + _on_area_2d_area_entered()
   + _on_animation_player_animation_finished()
 }
-class N32 as "Strawberry" <<(A,lightskyblue) Area2D>> {
+class N53 as "Stage3" <<(N,lightskyblue) Node2D>> {
+}
+class N54 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+---
+  + drop()
+}
+class N55 as "Stage4" <<(N,lightskyblue) Node2D>> {
+}
+class N56 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+---
+  + drop()
+}
+class N57 as "OneWayScaffold2" <<(S,lightskyblue) StaticBody2D>> {
+---
+  + drop()
+}
+class N58 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+}
+class N59 as "Strawberries" <<(N,lightskyblue) Node2D>> {
+}
+class N60 as "Strawberry1" <<(A,lightskyblue) Area2D>> {
   - OFFSET
   * player
   * obtained
@@ -104,17 +174,38 @@ class N32 as "Strawberry" <<(A,lightskyblue) Area2D>> {
   + _on_hit_area_entered()
   + _on_area_entered()
 }
-class N33 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N61 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N34 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+class N62 as "Strawberry2" <<(A,lightskyblue) Area2D>> {
+  - OFFSET
+  * player
+  * obtained
+---
+  + _ready()
+  + reset()
+  + _physics_process()
+  + ascend()
+  + play()
+  + _on_hit_area_entered()
+  + _on_area_entered()
 }
-class N35 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
+class N63 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N36 as "Area2D" <<(A,lightskyblue) Area2D>> {
+class N64 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
 }
-class N37 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N65 as "Stage2" <<(A,lightskyblue) Area2D>> {
 }
-class N38 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N66 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N67 as "Stage3" <<(A,lightskyblue) Area2D>> {
+}
+class N68 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N69 as "Stage4" <<(A,lightskyblue) Area2D>> {
+}
+class N70 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N71 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ jumped
   ~ landed
@@ -180,46 +271,79 @@ class N38 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_area_collision_area_entered()
 }
 R --o N1
-R --o N4
-R --o N9
-R --o N28
-R --o N34
-R --o N35
-R --o N38
+R --o N6
+R --o N15
+R --o N49
+R --o N58
+R --o N59
+R --o N64
+R --o N71
 N1 --o N2
 N1 --o N3
-N4 --o N5
-N4 --o N7
-N5 --o N6
+N1 --o N4
+N1 --o N5
+N6 --o N7
+N6 --o N9
+N6 --o N11
+N6 --o N13
 N7 --o N8
 N9 --o N10
-N10 --o N11
-N10 --o N22
 N11 --o N12
-N11 --o N13
-N11 --o N14
-N11 --o N15
-N11 --o N16
-N11 --o N17
-N11 --o N18
-N11 --o N19
-N11 --o N20
-N11 --o N21
-N22 --o N23
-N22 --o N24
-N22 --o N25
-N22 --o N26
-N22 --o N27
+N13 --o N14
+N15 --o N16
+N16 --o N17
+N16 --o N28
+N16 --o N34
+N16 --o N41
+N17 --o N18
+N17 --o N19
+N17 --o N20
+N17 --o N21
+N17 --o N22
+N17 --o N23
+N17 --o N24
+N17 --o N25
+N17 --o N26
+N17 --o N27
 N28 --o N29
-N29 --o N30
-N29 --o N31
-N29 --o N32
-N32 --o N33
-N35 --o N36
-N36 --o N37
+N28 --o N30
+N28 --o N31
+N28 --o N32
+N28 --o N33
+N34 --o N35
+N34 --o N36
+N34 --o N37
+N34 --o N38
+N34 --o N39
+N34 --o N40
+N41 --o N42
+N41 --o N43
+N41 --o N44
+N41 --o N45
+N41 --o N46
+N41 --o N47
+N41 --o N48
+N49 --o N50
+N49 --o N53
+N49 --o N55
+N50 --o N51
+N50 --o N52
+N53 --o N54
+N55 --o N56
+N55 --o N57
+N59 --o N60
+N59 --o N62
+N60 --o N61
+N62 --o N63
+N64 --o N65
+N64 --o N67
+N64 --o N69
+N65 --o N66
+N67 --o N68
+N69 --o N70
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
-_(R::_on_player_failed, N38::failed)
+_(R::_on_player_failed, N71::failed)
 ....
 
 
@@ -227,7 +351,7 @@ _(R::_on_player_failed, N38::failed)
 
 === Overridden virtual functions
 ==== _ready
-.$Gimmicks/Stage2/Strawberry
+.$Strawberries/Strawberry1, $Strawberries/Strawberry2
 ```gdscript
 func _ready() -> void:
 	if obtained: hide()
@@ -245,7 +369,7 @@ func _ready() -> void:
 	last_owner_name = owner.name
 ```
 ==== _physics_process
-.$Gimmicks/Stage2/Strawberry
+.$Strawberries/Strawberry1, $Strawberries/Strawberry2
 ```gdscript
 func _physics_process(_delta: float) -> void:
 	if player:
@@ -290,7 +414,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 		State.KICKED:
 			velocity.y = JUMP_VELOCITY * 0.9
-			velocity.x = get_wall_normal().x * DASH_SPEED * 0.8
+			velocity.x = get_wall_normal().x * DASH_SPEED * 0.4
 		State.LOCKED:
 			dx = 0
 			velocity = Vector2(0, 0)
@@ -319,10 +443,16 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-2d]#Frames# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#CameraFrame# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
 *** [.node-name.type-2d]#CameraFrame2# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame3# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame4# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
 ** [.node-name.type-2d]#Voids# [.node-type.type-2d]#Node2D#
-*** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#Stage1# [.node-type.type-2d]#Area2D#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
-*** [.node-name.type-2d]#Area2D2# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#Stage2# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Stage3# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Stage4# [.node-type.type-2d]#Area2D#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#Traps# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Spikes# [.node-type.type-2d]#Node2D#
@@ -343,15 +473,42 @@ CAUTION: No other scene instantiate this scene.
 ***** [.node-name.type-2d]#Spike13# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
 ***** [.node-name.type-2d]#Spike14# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
 ***** [.node-name.type-2d]#Spike15# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+**** [.node-name.type-2d]#Stage3# [.node-type.type-2d]#Node2D#
+***** [.node-name.type-2d]#Spike# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike2# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike3# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike4# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike6# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike5# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+**** [.node-name.type-2d]#Stage4# [.node-type.type-2d]#Node2D#
+***** [.node-name.type-2d]#Spike# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike2# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike3# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike4# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike6# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike7# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+***** [.node-name.type-2d]#Spike5# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
 ** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Stage2# [.node-type.type-2d]#Node2D#
 **** [.node-name.type-2d]#OneWayScaffold# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]#
 **** [.node-name.type-2d]#Spriingboard# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/springboard/springboard.tscn[res://src/stages/0/gimmicks/springboard/springboard.tscn]#
-**** [.node-name.type-2d]#Strawberry# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]#
-***** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Stage3# [.node-type.type-2d]#Node2D#
+**** [.node-name.type-2d]#OneWayScaffold# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]#
+*** [.node-name.type-2d]#Stage4# [.node-type.type-2d]#Node2D#
+**** [.node-name.type-2d]#OneWayScaffold# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]#
+**** [.node-name.type-2d]#OneWayScaffold2# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn[res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn]#
 ** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]#
+** [.node-name.type-2d]#Strawberries# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Strawberry1# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Strawberry2# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#CheckPoints# [.node-type.type-2d]#Node2D#
-*** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#Stage2# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Stage3# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Stage4# [.node-type.type-2d]#Area2D#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
 
@@ -396,7 +553,21 @@ func _on_player_failed() -> void:
 |*position* a|`Vector2(2523, -546)`
 |===
 [.node-property.node-2d]
-.#$Voids/Area2D# properties
+.#$Frames/CameraFrame3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4094, -1630)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameraFrame4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(5492, -2761)`
+|===
+[.node-property.node-2d]
+.#$Voids/Stage1# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -404,7 +575,7 @@ func _on_player_failed() -> void:
 |*collision_mask* a|`8`
 |===
 [.node-property.node-2d]
-.#$Voids/Area2D/CollisionShape2D# properties
+.#$Voids/Stage1/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -412,7 +583,7 @@ func _on_player_failed() -> void:
 |*shape* a|`SubResource("RectangleShape2D_4r4cf")`
 |===
 [.node-property.node-2d]
-.#$Voids/Area2D2# properties
+.#$Voids/Stage2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -420,11 +591,44 @@ func _on_player_failed() -> void:
 |*collision_mask* a|`8`
 |===
 [.node-property.node-2d]
-.#$Voids/Area2D2/CollisionShape2D# properties
+.#$Voids/Stage2/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*position* a|`Vector2(2822, 52)`
+|*shape* a|`SubResource("RectangleShape2D_4r4cf")`
+|===
+[.node-property.node-2d]
+.#$Voids/Stage3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
+|===
+[.node-property.node-2d]
+.#$Voids/Stage3/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4377, -952)`
+|*shape* a|`SubResource("RectangleShape2D_4r4cf")`
+|===
+[.node-property.node-2d]
+.#$Voids/Stage4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(6003.804, -2153.5703)`
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
+|===
+[.node-property.node-2d]
+.#$Voids/Stage4/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-228.8042, 18.570313)`
 |*shape* a|`SubResource("RectangleShape2D_4r4cf")`
 |===
 [.node-property.node-2d]
@@ -535,6 +739,110 @@ func _on_player_failed() -> void:
 |*position* a|`Vector2(2755, -120)`
 |===
 [.node-property.node-2d]
+.#$Traps/Spikes/Stage3/Spike# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4262, -1158)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage3/Spike2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4414, -1319)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage3/Spike3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4573, -1239)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage3/Spike4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4719, -1158)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage3/Spike6# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4961, -1238)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage3/Spike5# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4838, -1160)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4426.119, -2536.9814)`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(169.88086, -22.018555)`
+|*rotation* a|`1.5707964`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(169.88086, 97.981445)`
+|*rotation* a|`1.5707964`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(573.88086, -65.018555)`
+|*rotation* a|`-1.5707964`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(573.88086, 54.981445)`
+|*rotation* a|`-1.5707964`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike6# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1454.8809, -456.01855)`
+|*rotation* a|`-1.5707964`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike7# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1454.8809, -336.01855)`
+|*rotation* a|`-1.5707964`
+|===
+[.node-property.node-2d]
+.#$Traps/Spikes/Stage4/Spike5# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(707.88086, -145.01855)`
+|===
+[.node-property.node-2d]
 .#$Gimmicks/Stage2/OneWayScaffold# properties
 [cols="1,3" options="header"]
 |===
@@ -549,20 +857,39 @@ func _on_player_failed() -> void:
 |*position* a|`Vector2(2241, -305)`
 |===
 [.node-property.node-2d]
-.#$Gimmicks/Stage2/Strawberry# properties
+.#$Gimmicks/Stage3# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(1958, -929)`
+|*position* a|`Vector2(3000, -1500)`
 |===
 [.node-property.node-2d]
-.#$Gimmicks/Stage2/Strawberry/CollisionShape2D# properties
+.#$Gimmicks/Stage3/OneWayScaffold# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(258.69565, 127.88044)`
-|*shape* a|`SubResource("RectangleShape2D_yx8mm")`
+|*position* a|`Vector2(278, 369)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/Stage4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4368.983, -2364.4683)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/Stage4/OneWayScaffold# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(259.0171, 113.46826)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/Stage4/OneWayScaffold2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(640.0171, -526.53174)`
 |===
 [.node-property.node-other]
 .#$StageGround0# properties
@@ -570,10 +897,47 @@ func _on_player_failed() -> void:
 |===
 |Name |Value
 |*position* a|`Vector2(0, -0.99999994)`
-|*tile_map_data* a|`PackedByteArray("AAAGAAoAAAADAAAAAAAHAAoAAAAFAAAAAAAHAAsAAAAFAAEAAAAGAAsAAAADAAEAAAACAAsAAAAFAAAAAAABAAsAAAABAAAAAAAAAAsAAAABAAAAAAAOAAsAAAABAAAAAAAPAAsAAAACAAAAAAAAAAwAAAAEAAEAAAABAAwAAAAEAAEAAAACAAwAAAAFAAEAAAAGAAwAAAADAAEAAAAHAAwAAAAFAAEAAAAIAAwAAAAEAAAAAAAJAAwAAAAEAAAAAAAKAAwAAAABAAAAAAALAAwAAAAAAAEAAAAMAAwAAAABAAEAAAANAAwAAAABAAEAAAAOAAwAAAABAAEAAAAPAAwAAAACAAEAAAAAAA0AAAAEAAEAAAABAA0AAAAEAAEAAAACAA0AAAAFAAEAAAADAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAGAA0AAAADAAEAAAAHAA0AAAAEAAEAAAAIAA0AAAAEAAEAAAAJAA0AAAAEAAEAAAAKAA0AAAAEAAEAAAALAA0AAAAEAAEAAAAMAA0AAAAEAAEAAAANAA0AAAAEAAEAAAAOAA0AAAAEAAEAAAAPAA0AAAAFAAEAAAAAAAQAAAAFAAIAAAAAAAMAAAAFAAEAAAAAAAIAAAAFAAEAAAAAAAEAAAAFAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAAIAAMAAAADAAIAAAAJAAMAAAAFAAIAAAAIAAIAAAADAAEAAAAIAAEAAAADAAEAAAAIAAAAAAADAAEAAAAJAAIAAAAFAAEAAAAJAAEAAAAEAAEAAAAJAAAAAAAEAAEAAAAKAAEAAAAFAAIAAAALAAAAAAAEAAIAAAAMAAAAAAAEAAIAAAANAAAAAAAEAAIAAAAOAAAAAAAEAAIAAAAPAAAAAAAEAAIAAAAQAAAAAAAEAAIAAAARAAAAAAAEAAIAAAASAAAAAAAEAAIAAAAUAAUAAAABAAAAAAAUAAYAAAABAAIAAAAVAAUAAAABAAAAAAAVAAYAAAABAAIAAAAWAAUAAAABAAAAAAAWAAYAAAABAAIAAAAWAAcAAAABAAEAAAAWAAgAAAABAAIAAAATAAUAAAABAAAAAAATAAYAAAABAAIAAAAVAAcAAAAAAAEAAAAVAAgAAAAAAAIAAAAXAAkAAAAAAAEAAAAXAAoAAAADAAIAAAAXAAgAAAABAAEAAAAXAAcAAAABAAEAAAAXAAYAAAABAAEAAAAXAAUAAAABAAEAAAAXAAQAAAABAAEAAAAKAAAAAAAEAAEAAAATAAAAAAAFAAIAAAATAP//AAAFAAEAAAATAP7/AAAFAAEAAAAZAP//AAABAAAAAAAaAP//AAABAAAAAAAbAP//AAABAAAAAAAcAP//AAACAAEAAAAgAP//AAAAAAEAAAAgAP7/AAAAAAEAAAAgAP3/AAAAAAEAAAAgAPz/AAAAAAEAAAAfAPz/AAAAAAIAAAAfAPv/AAAAAAAAAAAgAPv/AAABAAAAAAAhAPv/AAABAAAAAAAiAPv/AAACAAAAAAAiAPz/AAACAAIAAAAhAPz/AAACAAEAAAAhAP3/AAACAAEAAAAhAP7/AAACAAEAAAAhAP//AAACAAEAAAAiAP//AAABAAAAAAAjAP//AAACAAAAAAAmAP//AAAAAAEAAAAmAP7/AAAAAAAAAAAnAP7/AAABAAAAAAAoAP7/AAAAAAEAAAAoAP3/AAAAAAEAAAAoAPz/AAAAAAAAAAApAPz/AAABAAAAAAAqAPz/AAABAAAAAAArAPz/AAAAAAEAAAArAPv/AAAAAAEAAAArAPr/AAAAAAEAAAArAPn/AAAAAAEAAAArAPj/AAAAAAEAAAArAPf/AAAAAAEAAAArAPb/AAAAAAEAAAArAPX/AAAAAAEAAAArAPT/AAAAAAEAAAArAPP/AAAAAAEAAAArAPL/AAAAAAEAAAAoAPL/AAAFAAEAAAAoAPP/AAAFAAEAAAAoAPT/AAAFAAEAAAAoAPX/AAAFAAEAAAAoAPj/AAAFAAIAAAAoAPf/AAAFAAEAAAAoAPb/AAAFAAEAAAAnAPb/AAADAAIAAAAnAPX/AAADAAEAAAAnAPT/AAAEAAIAAAAmAPT/AAAEAAIAAAAlAPT/AAADAAIAAAAkAPP/AAAEAAIAAAAjAPP/AAADAAIAAAAlAPP/AAAEAAEAAAAmAPP/AAAEAAEAAAAnAPP/AAAEAAEAAAAnAPL/AAAEAAEAAAAmAPL/AAAEAAEAAAAlAPL/AAAEAAEAAAAkAPL/AAAEAAEAAAAjAPL/AAAEAAEAAAAiAPL/AAAEAAIAAAAhAPL/AAACAAEAAAAgAPf/AAAAAAIAAAAhAPf/AAACAAIAAAAgAPb/AAAAAAEAAAAhAPX/AAACAAEAAAAhAPb/AAACAAEAAAAhAPT/AAACAAEAAAAhAPP/AAACAAEAAAAgAPX/AAAAAAEAAAAgAPT/AAAAAAEAAAAfAPT/AAAAAAIAAAAfAPP/AAAAAAEAAAAcAPL/AAABAAIAAAAdAPL/AAABAAIAAAAeAPL/AAABAAIAAAAfAPL/AAABAAEAAAAgAPP/AAABAAEAAAAgAPL/AAABAAEAAAATAP3/AAAFAAEAAAATAPz/AAAFAAEAAAATAPv/AAAFAAEAAAATAPr/AAAFAAEAAAATAPn/AAAFAAEAAAATAPj/AAAFAAEAAAATAPf/AAAFAAEAAAATAPb/AAAFAAEAAAATAPX/AAAEAAIAAAATAPT/AAAEAAEAAAATAPP/AAAEAAEAAAAUAPL/AAAEAAEAAAAVAPL/AAAEAAEAAAAZAPL/AAAEAAIAAAAYAPL/AAAEAAIAAAAWAPL/AAAFAAEAAAAaAPL/AAADAAEAAAAbAPL/AAAFAAEAAAATAPL/AAAEAAEAAAAnAP//AAAEAAEAAAAoAP//AAAEAAEAAAApAP//AAAEAAEAAAAqAP//AAAEAAEAAAArAP//AAAEAAEAAAArAP7/AAAEAAEAAAArAP3/AAAEAAEAAAAqAP3/AAAEAAEAAAAqAP7/AAAEAAEAAAApAP7/AAAEAAEAAAApAP3/AAAEAAEAAAAQAA0AAAAEAAAAAAARAA0AAAAEAAAAAAASAA0AAAAFAAAAAAAYAAoAAAAEAAEAAAAYAAkAAAABAAEAAAAYAAgAAAABAAEAAAAYAAcAAAABAAEAAAAYAAYAAAABAAEAAAAYAAUAAAABAAEAAAAYAAQAAAABAAEAAAAZAAMAAAABAAEAAAAZAAIAAAABAAEAAAAZAAEAAAABAAEAAAAZAAAAAAABAAEAAAAaAAAAAAABAAEAAAAaAAEAAAABAAEAAAAaAAIAAAABAAEAAAAaAAMAAAABAAEAAAAaAAQAAAABAAEAAAAaAAUAAAABAAEAAAAaAAYAAAAEAAEAAAAaAAcAAAAEAAEAAAAZAAgAAAABAAEAAAAZAAkAAAABAAEAAAAZAAcAAAABAAEAAAAZAAYAAAABAAEAAAAZAAUAAAABAAEAAAAZAAQAAAABAAEAAAAaAAgAAAAEAAEAAAAaAAkAAAAEAAEAAAAaAAoAAAAEAAEAAAAZAAoAAAAEAAEAAAAYAAsAAAADAAEAAAAYAAwAAAADAAEAAAAYAA0AAAADAAEAAAAZAA0AAAAEAAEAAAAZAAwAAAAEAAEAAAAZAAsAAAAEAAEAAAAaAAwAAAAEAAEAAAAaAA0AAAAEAAEAAAAaAAsAAAAEAAEAAAAbAA0AAAAEAAEAAAAcAA0AAAAEAAEAAAAdAA0AAAAEAAEAAAAeAA0AAAAEAAEAAAAfAA0AAAAEAAEAAAAgAA0AAAAEAAEAAAAhAA0AAAAEAAEAAAAiAA0AAAAEAAEAAAAjAA0AAAAEAAEAAAAkAA0AAAAEAAEAAAAlAA0AAAAEAAEAAAAmAA0AAAAEAAEAAAAnAA0AAAAEAAEAAAAoAA0AAAAEAAEAAAApAA0AAAAEAAEAAAAqAA0AAAAEAAEAAAArAA0AAAAEAAEAAAArAAwAAAAEAAEAAAArAAsAAAAEAAEAAAArAAoAAAAEAAEAAAArAAkAAAAEAAEAAAArAAgAAAAEAAEAAAArAAcAAAAEAAEAAAArAAYAAAAEAAEAAAArAAUAAAAEAAEAAAArAAQAAAAEAAEAAAArAAMAAAAEAAEAAAArAAIAAAAEAAEAAAArAAEAAAAEAAEAAAArAAAAAAAEAAEAAAAqAAAAAAAEAAEAAAApAAAAAAAEAAEAAAAoAAAAAAAEAAEAAAAnAAAAAAAEAAEAAAAmAAAAAAAAAAEAAAAjAAEAAAABAAEAAAAjAAAAAAACAAEAAAAgAAAAAAAAAAEAAAAgAAEAAAAAAAEAAAAhAAAAAAABAAEAAAAhAAEAAAABAAEAAAAiAAAAAAABAAEAAAAiAAEAAAABAAEAAAAmAAEAAAABAAEAAAAmAAIAAAAEAAEAAAAmAAMAAAAEAAEAAAAmAAQAAAAEAAEAAAAmAAUAAAAEAAEAAAAmAAYAAAAEAAEAAAAjAAIAAAAEAAEAAAAjAAMAAAAEAAEAAAAjAAQAAAAEAAEAAAAjAAUAAAAEAAEAAAAjAAYAAAAEAAEAAAAcAAAAAAACAAEAAAAcAAEAAAACAAEAAAAcAAIAAAACAAEAAAAcAAMAAAACAAEAAAAcAAQAAAACAAEAAAAgAAIAAAAAAAEAAAAgAAMAAAAAAAEAAAAgAAQAAAAAAAEAAAAgAAUAAAAAAAEAAAAcAAUAAAACAAEAAAAbAAwAAAAEAAEAAAAbAAsAAAAEAAEAAAAbAAoAAAAEAAEAAAAbAAkAAAAEAAEAAAAbAAgAAAAEAAEAAAAbAAcAAAAEAAEAAAAbAAYAAAAEAAEAAAAbAAUAAAABAAEAAAAbAAQAAAABAAEAAAAbAAMAAAABAAEAAAAbAAIAAAABAAEAAAAbAAEAAAABAAEAAAAbAAAAAAABAAEAAAAcAAYAAAAEAAEAAAAcAAcAAAAEAAEAAAAcAAgAAAAEAAEAAAAcAAkAAAAEAAEAAAAcAAoAAAAEAAEAAAAcAAsAAAAEAAEAAAAcAAwAAAAEAAEAAAAdAAwAAAAEAAEAAAAeAAwAAAAEAAEAAAAfAAwAAAAEAAEAAAAgAAwAAAAEAAEAAAAhAAwAAAAEAAEAAAAiAAwAAAAEAAEAAAAjAAwAAAAEAAEAAAAkAAwAAAAEAAEAAAAlAAwAAAAEAAEAAAAmAAwAAAAEAAEAAAAnAAwAAAAEAAEAAAAoAAwAAAAEAAEAAAApAAwAAAAEAAEAAAAqAAwAAAAEAAEAAAAqAAsAAAAEAAEAAAAqAAoAAAAEAAEAAAAqAAkAAAAEAAEAAAAqAAgAAAAEAAEAAAAqAAcAAAAEAAEAAAAqAAYAAAAEAAEAAAAqAAUAAAAEAAEAAAAqAAQAAAAEAAEAAAAqAAMAAAAEAAEAAAAqAAIAAAAEAAEAAAAqAAEAAAAEAAEAAAApAAEAAAAEAAEAAAApAAIAAAAEAAEAAAApAAMAAAAEAAEAAAApAAQAAAAEAAEAAAApAAUAAAAEAAEAAAApAAYAAAAEAAEAAAApAAcAAAAEAAEAAAApAAgAAAAEAAEAAAApAAkAAAAEAAEAAAApAAoAAAAEAAEAAAApAAsAAAAEAAEAAAAoAAsAAAAEAAEAAAAnAAsAAAAEAAEAAAAmAAsAAAAEAAEAAAAlAAsAAAAEAAEAAAAkAAsAAAAEAAEAAAAjAAsAAAAEAAEAAAAiAAsAAAAEAAEAAAAhAAsAAAAEAAEAAAAgAAsAAAAEAAEAAAAfAAsAAAAEAAEAAAAeAAsAAAAEAAEAAAAdAAsAAAAEAAEAAAAdAAoAAAAEAAEAAAAdAAkAAAAEAAEAAAAdAAgAAAAEAAEAAAAdAAcAAAAEAAEAAAAdAAYAAAAEAAEAAAAeAAYAAAAEAAEAAAAfAAYAAAAEAAEAAAAgAAYAAAAEAAEAAAAgAAcAAAAEAAEAAAAhAAcAAAAEAAEAAAAhAAYAAAAEAAEAAAAiAAYAAAAEAAEAAAAiAAcAAAAEAAEAAAAiAAgAAAAEAAEAAAAhAAgAAAAEAAEAAAAhAAkAAAAEAAEAAAAgAAkAAAAEAAEAAAAgAAoAAAAEAAEAAAAfAAoAAAAEAAEAAAAeAAoAAAAEAAEAAAAeAAkAAAAEAAEAAAAeAAcAAAAEAAEAAAAfAAcAAAAEAAEAAAAfAAgAAAAEAAEAAAAgAAgAAAAEAAEAAAAfAAkAAAAEAAEAAAAeAAgAAAAEAAEAAAAiAAoAAAAEAAEAAAAjAAoAAAAEAAEAAAAhAAoAAAAEAAEAAAAiAAkAAAAEAAEAAAAjAAkAAAAEAAEAAAAkAAkAAAAEAAEAAAAlAAkAAAAEAAEAAAAmAAkAAAAEAAEAAAAnAAkAAAAEAAEAAAAnAAoAAAAEAAEAAAAmAAoAAAAEAAEAAAAlAAoAAAAEAAEAAAAoAAoAAAAEAAEAAAAkAAoAAAAEAAEAAAAoAAkAAAAEAAEAAAAoAAgAAAAEAAEAAAAoAAcAAAAEAAEAAAAoAAYAAAAEAAEAAAAoAAUAAAAEAAEAAAAoAAQAAAAEAAEAAAAoAAMAAAAEAAEAAAAoAAIAAAAEAAEAAAAoAAEAAAAEAAEAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAEAAAAnAAMAAAAEAAEAAAAnAAQAAAAEAAEAAAAnAAUAAAAEAAEAAAAnAAYAAAAEAAEAAAAnAAcAAAAEAAEAAAAnAAgAAAAEAAEAAAAmAAgAAAAEAAEAAAAlAAgAAAAEAAEAAAAkAAgAAAAEAAEAAAAjAAgAAAAEAAEAAAAjAAcAAAAEAAEAAAAkAAcAAAAEAAEAAAAlAAcAAAAEAAEAAAAmAAcAAAAEAAEAAAAiAAUAAAAEAAEAAAAiAAQAAAAEAAEAAAAiAAMAAAAEAAEAAAAiAAIAAAAEAAEAAAAhAAIAAAAEAAEAAAAhAAMAAAAEAAEAAAAhAAQAAAAEAAEAAAAhAAUAAAAEAAEAAAAfAAUAAAAEAAEAAAAeAAUAAAAEAAEAAAAdAAUAAAAEAAEAAAAkAAYAAAAEAAEAAAAlAAYAAAAEAAEAAAASAP//AAAEAAEAAAARAP//AAAEAAEAAAAQAP//AAAEAAEAAAAPAP//AAAEAAEAAAAOAP//AAAEAAEAAAANAP//AAAEAAEAAAAMAP//AAAEAAEAAAALAP//AAAEAAEAAAAKAP//AAAEAAEAAAAJAP//AAAEAAEAAAAIAP//AAAEAAEAAAARAP7/AAAEAAEAAAASAP7/AAAEAAEAAAASAP3/AAAEAAEAAAASAPz/AAAEAAEAAAASAPv/AAAEAAEAAAASAPr/AAAEAAEAAAASAPn/AAAEAAEAAAARAP3/AAAEAAEAAAARAPz/AAAEAAEAAAARAPv/AAAEAAEAAAARAPr/AAAEAAEAAAAQAP7/AAAEAAEAAAAPAP7/AAAEAAEAAAAOAP7/AAAEAAEAAAANAP7/AAAEAAEAAAALAP7/AAAEAAEAAAAMAP7/AAAEAAEAAAAQAP3/AAAEAAEAAAAPAP3/AAAEAAEAAAAOAP3/AAAEAAEAAAANAP3/AAAEAAEAAAAQAPz/AAAEAAEAAAAPAPz/AAAEAAEAAAAOAPz/AAAEAAEAAAANAPz/AAAEAAEAAAAOAPv/AAAEAAEAAAAPAPv/AAAEAAEAAAAQAPv/AAAEAAEAAAAQAPr/AAAEAAEAAAAPAPr/AAAEAAEAAAARAPn/AAAEAAEAAAASAPj/AAAEAAEAAAASAPf/AAAEAAEAAAASAPb/AAAEAAEAAAASAPL/AAAEAAEAAAASAPP/AAAEAAEAAAASAPT/AAAEAAEAAAASAPX/AAAEAAEAAAARAPL/AAAEAAEAAAARAPP/AAAEAAEAAAARAPT/AAAEAAEAAAARAPX/AAAEAAEAAAARAPb/AAAEAAEAAAARAPf/AAAEAAEAAAARAPj/AAAEAAEAAAAQAPP/AAAEAAEAAAAQAPT/AAAEAAEAAAAQAPX/AAAEAAEAAAAQAPb/AAAEAAEAAAAQAPf/AAAEAAEAAAAQAPj/AAAEAAEAAAAQAPn/AAAEAAEAAAAQAPL/AAAEAAEAAAAPAPL/AAAEAAEAAAAOAPL/AAAEAAEAAAANAPL/AAAEAAEAAAAMAPL/AAAEAAEAAAALAPL/AAAEAAEAAAALAPP/AAAEAAEAAAAKAPP/AAAEAAEAAAAJAPT/AAAEAAEAAAAJAPX/AAAEAAEAAAAJAPb/AAAEAAEAAAAJAPf/AAAEAAEAAAAJAPj/AAAEAAEAAAAJAPn/AAAEAAEAAAAJAPr/AAAEAAEAAAAJAPv/AAAEAAEAAAAJAPz/AAAEAAEAAAAJAP3/AAAEAAEAAAAJAP7/AAAEAAEAAAAIAP7/AAAEAAEAAAAIAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAPv/AAAEAAEAAAAIAPr/AAAEAAEAAAAIAPn/AAAEAAEAAAAIAPj/AAAEAAEAAAAIAPf/AAAEAAEAAAAIAPb/AAAEAAEAAAAIAPX/AAAEAAEAAAAIAPT/AAAEAAEAAAAIAPP/AAAEAAEAAAAJAPP/AAAEAAEAAAAKAPL/AAAEAAEAAAAJAPL/AAAEAAEAAAAIAPL/AAAEAAEAAAAMAPP/AAAEAAEAAAALAPT/AAAEAAEAAAAKAPT/AAAEAAEAAAAKAPX/AAAEAAEAAAAKAPb/AAAEAAEAAAAKAPf/AAAEAAEAAAAKAPj/AAAEAAEAAAAKAPn/AAAEAAEAAAAKAPr/AAAEAAEAAAAKAPv/AAAEAAEAAAAKAPz/AAAEAAEAAAAKAP3/AAAEAAEAAAALAP3/AAAEAAEAAAAMAP3/AAAEAAEAAAAKAP7/AAAEAAEAAAALAPz/AAAEAAEAAAAMAPz/AAAEAAEAAAAMAPv/AAAEAAEAAAAMAPr/AAAEAAEAAAAMAPn/AAAEAAEAAAAMAPj/AAAEAAEAAAAMAPf/AAAEAAEAAAAMAPb/AAAEAAEAAAAMAPX/AAAEAAEAAAAMAPT/AAAEAAEAAAALAPX/AAAEAAEAAAALAPb/AAAEAAEAAAALAPf/AAAEAAEAAAALAPj/AAAEAAEAAAALAPn/AAAEAAEAAAALAPr/AAAEAAEAAAALAPv/AAAEAAEAAAANAPv/AAAEAAEAAAANAPr/AAAEAAEAAAANAPn/AAAEAAEAAAANAPj/AAAEAAEAAAANAPf/AAAEAAEAAAANAPb/AAAEAAEAAAANAPX/AAAEAAEAAAANAPT/AAAEAAEAAAANAPP/AAAEAAEAAAAOAPP/AAAEAAEAAAAPAPP/AAAEAAEAAAAOAPT/AAAEAAEAAAAPAPX/AAAEAAEAAAAPAPb/AAAEAAEAAAAPAPf/AAAEAAEAAAAPAPj/AAAEAAEAAAAPAPn/AAAEAAEAAAAOAPn/AAAEAAEAAAAOAPr/AAAEAAEAAAAOAPj/AAAEAAEAAAAOAPf/AAAEAAEAAAAOAPb/AAAEAAEAAAAOAPX/AAAEAAEAAAAPAPT/AAAEAAEAAAALAAoAAAAAAAEAAAALAAsAAAAAAAEAAAAMAAoAAAACAAEAAAAMAAsAAAACAAEAAAANAAsAAAABAAAAAAALAAgAAAAAAAAAAAAMAAgAAAACAAAAAAALAAkAAAAAAAEAAAAMAAkAAAACAAEAAAASAAUAAAAAAAAAAAASAAYAAAAAAAIAAAAWAAMAAAABAAEAAAAXAAIAAAABAAEAAAAXAAMAAAABAAEAAAAVAAMAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAP//AAAAAAAAAAAXAAAAAAAAAAEAAAAXAAEAAAAAAAEAAAAVAAQAAAAAAAEAAAAYAP//AAABAAAAAAAWAAQAAAABAAEAAAAYAAMAAAABAAEAAAAYAAIAAAABAAEAAAAYAAEAAAABAAEAAAAYAAAAAAABAAEAAAAbAP7/AAAAAAEAAAAcAP7/AAACAAEAAAAbAP3/AAAAAAAAAAAcAP3/AAACAAAAAAAWAPX/AAAFAAIAAAAVAPX/AAAEAAIAAAAUAPX/AAAEAAIAAAAUAPT/AAAEAAEAAAAVAPT/AAAEAAEAAAAWAPT/AAAFAAEAAAAWAPP/AAAFAAEAAAAVAPP/AAAEAAEAAAAUAPP/AAAEAAEAAAAXAPL/AAAEAAIAAAAbAPP/AAAFAAEAAAAbAPT/AAAFAAEAAAAbAPX/AAAFAAIAAAAaAPX/AAADAAIAAAAaAPT/AAADAAEAAAAaAPP/AAADAAEAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAkAAEAAAABAAEAAAAlAAEAAAABAAEAAAAlAAMAAAAEAAEAAAAkAAMAAAAEAAEAAAAkAAIAAAAEAAEAAAAlAAIAAAAEAAEAAAAkAAQAAAAEAAEAAAAlAAQAAAAEAAEAAAAkAAUAAAAEAAEAAAAlAAUAAAAEAAEAAAA=")`
+|*tile_map_data* a|`PackedByteArray("AAAGAAoAAAADAAAAAAAHAAoAAAAFAAAAAAAHAAsAAAAFAAEAAAAGAAsAAAADAAEAAAACAAsAAAAFAAAAAAABAAsAAAABAAAAAAAAAAsAAAABAAAAAAAOAAsAAAABAAAAAAAPAAsAAAACAAAAAAAAAAwAAAAEAAEAAAABAAwAAAAEAAEAAAACAAwAAAAFAAEAAAAGAAwAAAADAAEAAAAHAAwAAAAFAAEAAAAIAAwAAAAEAAAAAAAJAAwAAAAEAAAAAAAKAAwAAAABAAAAAAALAAwAAAAAAAEAAAAMAAwAAAABAAEAAAANAAwAAAABAAEAAAAOAAwAAAABAAEAAAAPAAwAAAACAAEAAAAAAA0AAAAEAAEAAAABAA0AAAAEAAEAAAACAA0AAAAFAAEAAAADAA0AAAAEAAAAAAAEAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAGAA0AAAADAAEAAAAHAA0AAAAEAAEAAAAIAA0AAAAEAAEAAAAJAA0AAAAEAAEAAAAKAA0AAAAEAAEAAAALAA0AAAAEAAEAAAAMAA0AAAAEAAEAAAANAA0AAAAEAAEAAAAOAA0AAAAEAAEAAAAPAA0AAAAFAAEAAAAAAAQAAAAFAAIAAAAAAAMAAAAFAAEAAAAAAAIAAAAFAAEAAAAAAAEAAAAFAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAAIAAMAAAADAAIAAAAJAAMAAAAFAAIAAAAIAAIAAAADAAEAAAAIAAEAAAADAAEAAAAIAAAAAAADAAEAAAAJAAIAAAAFAAEAAAAJAAEAAAAEAAEAAAAJAAAAAAAEAAEAAAAKAAEAAAAFAAIAAAALAAAAAAAEAAIAAAAMAAAAAAAEAAIAAAANAAAAAAAEAAIAAAAOAAAAAAAEAAIAAAAPAAAAAAAEAAIAAAAQAAAAAAAEAAIAAAARAAAAAAAEAAIAAAASAAAAAAAEAAIAAAAUAAUAAAABAAAAAAAUAAYAAAABAAIAAAAVAAUAAAABAAAAAAAVAAYAAAABAAIAAAAWAAUAAAABAAAAAAAWAAYAAAABAAIAAAAWAAcAAAABAAEAAAAWAAgAAAABAAIAAAATAAUAAAABAAAAAAATAAYAAAABAAIAAAAVAAcAAAAAAAEAAAAVAAgAAAAAAAIAAAAXAAkAAAAAAAEAAAAXAAoAAAADAAIAAAAXAAgAAAABAAEAAAAXAAcAAAABAAEAAAAXAAYAAAABAAEAAAAXAAUAAAABAAEAAAAXAAQAAAABAAEAAAAKAAAAAAAEAAEAAAATAAAAAAAFAAIAAAATAP//AAAFAAEAAAATAP7/AAAFAAEAAAAZAP//AAABAAAAAAAaAP//AAABAAAAAAAbAP//AAABAAAAAAAcAP//AAACAAEAAAAgAP//AAAAAAEAAAAgAP7/AAAAAAEAAAAgAP3/AAAAAAEAAAAgAPz/AAAAAAEAAAAfAPz/AAAAAAIAAAAfAPv/AAAAAAAAAAAgAPv/AAABAAAAAAAhAPv/AAABAAAAAAAiAPv/AAACAAAAAAAiAPz/AAACAAIAAAAhAPz/AAACAAEAAAAhAP3/AAACAAEAAAAhAP7/AAACAAEAAAAhAP//AAACAAEAAAAiAP//AAABAAAAAAAjAP//AAACAAAAAAAmAP//AAAAAAEAAAAmAP7/AAAAAAAAAAAnAP7/AAABAAAAAAAoAP7/AAAAAAEAAAAoAP3/AAAAAAEAAAAoAPz/AAAAAAAAAAApAPz/AAABAAAAAAAqAPz/AAABAAAAAAArAPz/AAAAAAEAAAArAPv/AAAAAAEAAAArAPr/AAAAAAEAAAArAPn/AAAAAAEAAAArAPj/AAAAAAEAAAArAPf/AAAAAAEAAAArAPb/AAAAAAEAAAArAPX/AAAAAAEAAAArAPT/AAAAAAEAAAArAPP/AAAAAAEAAAArAPL/AAADAAAAAAAoAPL/AAAFAAEAAAAoAPP/AAAFAAEAAAAoAPT/AAAFAAEAAAAoAPX/AAAFAAEAAAAoAPj/AAAFAAIAAAAoAPf/AAAFAAEAAAAoAPb/AAAFAAEAAAAnAPb/AAADAAIAAAAnAPX/AAADAAEAAAAnAPT/AAAEAAIAAAAmAPT/AAAEAAIAAAAlAPT/AAADAAIAAAAkAPP/AAAEAAIAAAAjAPP/AAADAAIAAAAlAPP/AAAEAAEAAAAmAPP/AAAEAAEAAAAnAPP/AAAEAAEAAAAnAPL/AAAEAAEAAAAmAPL/AAAEAAEAAAAlAPL/AAAEAAEAAAAkAPL/AAAEAAEAAAAjAPL/AAAEAAEAAAAiAPL/AAAEAAIAAAAhAPL/AAACAAEAAAAgAPf/AAAAAAIAAAAhAPf/AAACAAIAAAAgAPb/AAAAAAEAAAAhAPX/AAACAAEAAAAhAPb/AAACAAEAAAAhAPT/AAACAAEAAAAhAPP/AAACAAEAAAAgAPX/AAAAAAEAAAAgAPT/AAAAAAEAAAAfAPT/AAAAAAIAAAAfAPP/AAAAAAEAAAAcAPL/AAABAAIAAAAdAPL/AAABAAIAAAAeAPL/AAABAAIAAAAfAPL/AAABAAEAAAAgAPP/AAABAAEAAAAgAPL/AAABAAEAAAATAP3/AAAFAAEAAAATAPz/AAAFAAEAAAATAPv/AAAFAAEAAAATAPr/AAAFAAEAAAATAPn/AAAFAAEAAAATAPj/AAAFAAEAAAATAPf/AAAFAAEAAAATAPb/AAAFAAEAAAATAPX/AAAEAAIAAAATAPT/AAAEAAEAAAATAPP/AAAEAAEAAAAUAPL/AAAEAAEAAAAVAPL/AAAEAAEAAAAZAPL/AAAEAAIAAAAYAPL/AAAEAAIAAAAWAPL/AAAFAAEAAAAaAPL/AAADAAEAAAAbAPL/AAAFAAEAAAATAPL/AAAEAAEAAAAnAP//AAAEAAEAAAAoAP//AAAEAAEAAAApAP//AAAEAAEAAAAqAP//AAAEAAEAAAArAP//AAAEAAEAAAArAP7/AAAEAAEAAAArAP3/AAAEAAEAAAAqAP3/AAAEAAEAAAAqAP7/AAAEAAEAAAApAP7/AAAEAAEAAAApAP3/AAAEAAEAAAAQAA0AAAAEAAAAAAARAA0AAAAEAAAAAAASAA0AAAAFAAAAAAAYAAoAAAAEAAEAAAAYAAkAAAABAAEAAAAYAAgAAAABAAEAAAAYAAcAAAABAAEAAAAYAAYAAAABAAEAAAAYAAUAAAABAAEAAAAYAAQAAAABAAEAAAAZAAMAAAABAAEAAAAZAAIAAAABAAEAAAAZAAEAAAABAAEAAAAZAAAAAAABAAEAAAAaAAAAAAABAAEAAAAaAAEAAAABAAEAAAAaAAIAAAABAAEAAAAaAAMAAAABAAEAAAAaAAQAAAABAAEAAAAaAAUAAAABAAEAAAAaAAYAAAAEAAEAAAAaAAcAAAAEAAEAAAAZAAgAAAABAAEAAAAZAAkAAAABAAEAAAAZAAcAAAABAAEAAAAZAAYAAAABAAEAAAAZAAUAAAABAAEAAAAZAAQAAAABAAEAAAAaAAgAAAAEAAEAAAAaAAkAAAAEAAEAAAAaAAoAAAAEAAEAAAAZAAoAAAAEAAEAAAAYAAsAAAADAAEAAAAYAAwAAAADAAEAAAAYAA0AAAADAAEAAAAZAA0AAAAEAAEAAAAZAAwAAAAEAAEAAAAZAAsAAAAEAAEAAAAaAAwAAAAEAAEAAAAaAA0AAAAEAAEAAAAaAAsAAAAEAAEAAAAbAA0AAAAEAAEAAAAcAA0AAAAEAAEAAAAdAA0AAAAEAAEAAAAeAA0AAAAEAAEAAAAfAA0AAAAEAAEAAAAgAA0AAAAEAAEAAAAhAA0AAAAEAAEAAAAiAA0AAAAEAAEAAAAjAA0AAAAEAAEAAAAkAA0AAAAEAAEAAAAlAA0AAAAEAAEAAAAmAA0AAAAEAAEAAAAnAA0AAAAEAAEAAAAoAA0AAAAEAAEAAAApAA0AAAAEAAEAAAAqAA0AAAAEAAEAAAArAA0AAAAEAAEAAAArAAwAAAAEAAEAAAArAAsAAAAEAAEAAAArAAoAAAAEAAEAAAArAAkAAAAEAAEAAAArAAgAAAAEAAEAAAArAAcAAAAEAAEAAAArAAYAAAAEAAEAAAArAAUAAAAEAAEAAAArAAQAAAAEAAEAAAArAAMAAAAEAAEAAAArAAIAAAAEAAEAAAArAAEAAAAEAAEAAAArAAAAAAAEAAEAAAAqAAAAAAAEAAEAAAApAAAAAAAEAAEAAAAoAAAAAAAEAAEAAAAnAAAAAAAEAAEAAAAmAAAAAAAAAAEAAAAjAAEAAAABAAEAAAAjAAAAAAACAAEAAAAgAAAAAAAAAAEAAAAgAAEAAAAAAAEAAAAhAAAAAAABAAEAAAAhAAEAAAABAAEAAAAiAAAAAAABAAEAAAAiAAEAAAABAAEAAAAmAAEAAAABAAEAAAAmAAIAAAAEAAEAAAAmAAMAAAAEAAEAAAAmAAQAAAAEAAEAAAAmAAUAAAAEAAEAAAAmAAYAAAAEAAEAAAAjAAIAAAAEAAEAAAAjAAMAAAAEAAEAAAAjAAQAAAAEAAEAAAAjAAUAAAAEAAEAAAAjAAYAAAAEAAEAAAAcAAAAAAACAAEAAAAcAAEAAAACAAEAAAAcAAIAAAACAAEAAAAcAAMAAAACAAEAAAAcAAQAAAACAAEAAAAgAAIAAAAAAAEAAAAgAAMAAAAAAAEAAAAgAAQAAAAAAAEAAAAgAAUAAAAAAAEAAAAcAAUAAAACAAEAAAAbAAwAAAAEAAEAAAAbAAsAAAAEAAEAAAAbAAoAAAAEAAEAAAAbAAkAAAAEAAEAAAAbAAgAAAAEAAEAAAAbAAcAAAAEAAEAAAAbAAYAAAAEAAEAAAAbAAUAAAABAAEAAAAbAAQAAAABAAEAAAAbAAMAAAABAAEAAAAbAAIAAAABAAEAAAAbAAEAAAABAAEAAAAbAAAAAAABAAEAAAAcAAYAAAAEAAEAAAAcAAcAAAAEAAEAAAAcAAgAAAAEAAEAAAAcAAkAAAAEAAEAAAAcAAoAAAAEAAEAAAAcAAsAAAAEAAEAAAAcAAwAAAAEAAEAAAAdAAwAAAAEAAEAAAAeAAwAAAAEAAEAAAAfAAwAAAAEAAEAAAAgAAwAAAAEAAEAAAAhAAwAAAAEAAEAAAAiAAwAAAAEAAEAAAAjAAwAAAAEAAEAAAAkAAwAAAAEAAEAAAAlAAwAAAAEAAEAAAAmAAwAAAAEAAEAAAAnAAwAAAAEAAEAAAAoAAwAAAAEAAEAAAApAAwAAAAEAAEAAAAqAAwAAAAEAAEAAAAqAAsAAAAEAAEAAAAqAAoAAAAEAAEAAAAqAAkAAAAEAAEAAAAqAAgAAAAEAAEAAAAqAAcAAAAEAAEAAAAqAAYAAAAEAAEAAAAqAAUAAAAEAAEAAAAqAAQAAAAEAAEAAAAqAAMAAAAEAAEAAAAqAAIAAAAEAAEAAAAqAAEAAAAEAAEAAAApAAEAAAAEAAEAAAApAAIAAAAEAAEAAAApAAMAAAAEAAEAAAApAAQAAAAEAAEAAAApAAUAAAAEAAEAAAApAAYAAAAEAAEAAAApAAcAAAAEAAEAAAApAAgAAAAEAAEAAAApAAkAAAAEAAEAAAApAAoAAAAEAAEAAAApAAsAAAAEAAEAAAAoAAsAAAAEAAEAAAAnAAsAAAAEAAEAAAAmAAsAAAAEAAEAAAAlAAsAAAAEAAEAAAAkAAsAAAAEAAEAAAAjAAsAAAAEAAEAAAAiAAsAAAAEAAEAAAAhAAsAAAAEAAEAAAAgAAsAAAAEAAEAAAAfAAsAAAAEAAEAAAAeAAsAAAAEAAEAAAAdAAsAAAAEAAEAAAAdAAoAAAAEAAEAAAAdAAkAAAAEAAEAAAAdAAgAAAAEAAEAAAAdAAcAAAAEAAEAAAAdAAYAAAAEAAEAAAAeAAYAAAAEAAEAAAAfAAYAAAAEAAEAAAAgAAYAAAAEAAEAAAAgAAcAAAAEAAEAAAAhAAcAAAAEAAEAAAAhAAYAAAAEAAEAAAAiAAYAAAAEAAEAAAAiAAcAAAAEAAEAAAAiAAgAAAAEAAEAAAAhAAgAAAAEAAEAAAAhAAkAAAAEAAEAAAAgAAkAAAAEAAEAAAAgAAoAAAAEAAEAAAAfAAoAAAAEAAEAAAAeAAoAAAAEAAEAAAAeAAkAAAAEAAEAAAAeAAcAAAAEAAEAAAAfAAcAAAAEAAEAAAAfAAgAAAAEAAEAAAAgAAgAAAAEAAEAAAAfAAkAAAAEAAEAAAAeAAgAAAAEAAEAAAAiAAoAAAAEAAEAAAAjAAoAAAAEAAEAAAAhAAoAAAAEAAEAAAAiAAkAAAAEAAEAAAAjAAkAAAAEAAEAAAAkAAkAAAAEAAEAAAAlAAkAAAAEAAEAAAAmAAkAAAAEAAEAAAAnAAkAAAAEAAEAAAAnAAoAAAAEAAEAAAAmAAoAAAAEAAEAAAAlAAoAAAAEAAEAAAAoAAoAAAAEAAEAAAAkAAoAAAAEAAEAAAAoAAkAAAAEAAEAAAAoAAgAAAAEAAEAAAAoAAcAAAAEAAEAAAAoAAYAAAAEAAEAAAAoAAUAAAAEAAEAAAAoAAQAAAAEAAEAAAAoAAMAAAAEAAEAAAAoAAIAAAAEAAEAAAAoAAEAAAAEAAEAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAEAAAAnAAMAAAAEAAEAAAAnAAQAAAAEAAEAAAAnAAUAAAAEAAEAAAAnAAYAAAAEAAEAAAAnAAcAAAAEAAEAAAAnAAgAAAAEAAEAAAAmAAgAAAAEAAEAAAAlAAgAAAAEAAEAAAAkAAgAAAAEAAEAAAAjAAgAAAAEAAEAAAAjAAcAAAAEAAEAAAAkAAcAAAAEAAEAAAAlAAcAAAAEAAEAAAAmAAcAAAAEAAEAAAAiAAUAAAAEAAEAAAAiAAQAAAAEAAEAAAAiAAMAAAAEAAEAAAAiAAIAAAAEAAEAAAAhAAIAAAAEAAEAAAAhAAMAAAAEAAEAAAAhAAQAAAAEAAEAAAAhAAUAAAAEAAEAAAAfAAUAAAAEAAEAAAAeAAUAAAAEAAEAAAAdAAUAAAAEAAEAAAAkAAYAAAAEAAEAAAAlAAYAAAAEAAEAAAASAP//AAAEAAEAAAARAP//AAAEAAEAAAAQAP//AAAEAAEAAAAPAP//AAAEAAEAAAAOAP//AAAEAAEAAAANAP//AAAEAAEAAAAMAP//AAAEAAEAAAALAP//AAAEAAEAAAAKAP//AAAEAAEAAAAJAP//AAAEAAEAAAAIAP//AAAEAAEAAAARAP7/AAAEAAEAAAASAP7/AAAEAAEAAAASAP3/AAAEAAEAAAASAPz/AAAEAAEAAAASAPv/AAAEAAEAAAASAPr/AAAEAAEAAAASAPn/AAAEAAEAAAARAP3/AAAEAAEAAAARAPz/AAAEAAEAAAARAPv/AAAEAAEAAAARAPr/AAAEAAEAAAAQAP7/AAAEAAEAAAAPAP7/AAAEAAEAAAAOAP7/AAAEAAEAAAANAP7/AAAEAAEAAAALAP7/AAAEAAEAAAAMAP7/AAAEAAEAAAAQAP3/AAAEAAEAAAAPAP3/AAAEAAEAAAAOAP3/AAAEAAEAAAANAP3/AAAEAAEAAAAQAPz/AAAEAAEAAAAPAPz/AAAEAAEAAAAOAPz/AAAEAAEAAAANAPz/AAAEAAEAAAAOAPv/AAAEAAEAAAAPAPv/AAAEAAEAAAAQAPv/AAAEAAEAAAAQAPr/AAAEAAEAAAAPAPr/AAAEAAEAAAARAPn/AAAEAAEAAAASAPj/AAAEAAEAAAASAPf/AAAEAAEAAAASAPb/AAAEAAEAAAASAPL/AAAEAAEAAAASAPP/AAAEAAEAAAASAPT/AAAEAAEAAAASAPX/AAAEAAEAAAARAPL/AAAEAAEAAAARAPP/AAAEAAEAAAARAPT/AAAEAAEAAAARAPX/AAAEAAEAAAARAPb/AAAEAAEAAAARAPf/AAAEAAEAAAARAPj/AAAEAAEAAAAQAPP/AAAEAAEAAAAQAPT/AAAEAAEAAAAQAPX/AAAEAAEAAAAQAPb/AAAEAAEAAAAQAPf/AAAEAAEAAAAQAPj/AAAEAAEAAAAQAPn/AAAEAAEAAAAQAPL/AAAEAAEAAAAPAPL/AAAEAAEAAAAOAPL/AAAEAAEAAAANAPL/AAAEAAEAAAAMAPL/AAAEAAEAAAALAPL/AAAEAAEAAAALAPP/AAAEAAEAAAAKAPP/AAAEAAEAAAAJAPT/AAAEAAEAAAAJAPX/AAAEAAEAAAAJAPb/AAAEAAEAAAAJAPf/AAAEAAEAAAAJAPj/AAAEAAEAAAAJAPn/AAAEAAEAAAAJAPr/AAAEAAEAAAAJAPv/AAAEAAEAAAAJAPz/AAAEAAEAAAAJAP3/AAAEAAEAAAAJAP7/AAAEAAEAAAAIAP7/AAAEAAEAAAAIAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAPv/AAAEAAEAAAAIAPr/AAAEAAEAAAAIAPn/AAAEAAEAAAAIAPj/AAAEAAEAAAAIAPf/AAAEAAEAAAAIAPb/AAAEAAEAAAAIAPX/AAAEAAEAAAAIAPT/AAAEAAEAAAAIAPP/AAAEAAEAAAAJAPP/AAAEAAEAAAAKAPL/AAAEAAEAAAAJAPL/AAAEAAEAAAAIAPL/AAAEAAEAAAAMAPP/AAAEAAEAAAALAPT/AAAEAAEAAAAKAPT/AAAEAAEAAAAKAPX/AAAEAAEAAAAKAPb/AAAEAAEAAAAKAPf/AAAEAAEAAAAKAPj/AAAEAAEAAAAKAPn/AAAEAAEAAAAKAPr/AAAEAAEAAAAKAPv/AAAEAAEAAAAKAPz/AAAEAAEAAAAKAP3/AAAEAAEAAAALAP3/AAAEAAEAAAAMAP3/AAAEAAEAAAAKAP7/AAAEAAEAAAALAPz/AAAEAAEAAAAMAPz/AAAEAAEAAAAMAPv/AAAEAAEAAAAMAPr/AAAEAAEAAAAMAPn/AAAEAAEAAAAMAPj/AAAEAAEAAAAMAPf/AAAEAAEAAAAMAPb/AAAEAAEAAAAMAPX/AAAEAAEAAAAMAPT/AAAEAAEAAAALAPX/AAAEAAEAAAALAPb/AAAEAAEAAAALAPf/AAAEAAEAAAALAPj/AAAEAAEAAAALAPn/AAAEAAEAAAALAPr/AAAEAAEAAAALAPv/AAAEAAEAAAANAPv/AAAEAAEAAAANAPr/AAAEAAEAAAANAPn/AAAEAAEAAAANAPj/AAAEAAEAAAANAPf/AAAEAAEAAAANAPb/AAAEAAEAAAANAPX/AAAEAAEAAAANAPT/AAAEAAEAAAANAPP/AAAEAAEAAAAOAPP/AAAEAAEAAAAPAPP/AAAEAAEAAAAOAPT/AAAEAAEAAAAPAPX/AAAEAAEAAAAPAPb/AAAEAAEAAAAPAPf/AAAEAAEAAAAPAPj/AAAEAAEAAAAPAPn/AAAEAAEAAAAOAPn/AAAEAAEAAAAOAPr/AAAEAAEAAAAOAPj/AAAEAAEAAAAOAPf/AAAEAAEAAAAOAPb/AAAEAAEAAAAOAPX/AAAEAAEAAAAPAPT/AAAEAAEAAAALAAoAAAAAAAEAAAALAAsAAAAAAAEAAAAMAAoAAAACAAEAAAAMAAsAAAACAAEAAAANAAsAAAABAAAAAAALAAgAAAAAAAAAAAAMAAgAAAACAAAAAAALAAkAAAAAAAEAAAAMAAkAAAACAAEAAAASAAUAAAAAAAAAAAASAAYAAAAAAAIAAAAWAAMAAAABAAEAAAAXAAIAAAABAAEAAAAXAAMAAAABAAEAAAAVAAMAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAP//AAAAAAAAAAAXAAAAAAAAAAEAAAAXAAEAAAAAAAEAAAAVAAQAAAAAAAEAAAAYAP//AAABAAAAAAAWAAQAAAABAAEAAAAYAAMAAAABAAEAAAAYAAIAAAABAAEAAAAYAAEAAAABAAEAAAAYAAAAAAABAAEAAAAbAP7/AAAAAAEAAAAcAP7/AAACAAEAAAAbAP3/AAAAAAAAAAAcAP3/AAACAAAAAAAWAPX/AAAFAAIAAAAVAPX/AAAEAAIAAAAUAPX/AAAEAAIAAAAUAPT/AAAEAAEAAAAVAPT/AAAEAAEAAAAWAPT/AAAFAAEAAAAWAPP/AAAFAAEAAAAVAPP/AAAEAAEAAAAUAPP/AAAEAAEAAAAXAPL/AAAEAAIAAAAbAPP/AAAFAAEAAAAbAPT/AAAFAAEAAAAbAPX/AAAFAAIAAAAaAPX/AAADAAIAAAAaAPT/AAADAAEAAAAaAPP/AAADAAEAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAkAAEAAAABAAEAAAAlAAEAAAABAAEAAAAlAAMAAAAEAAEAAAAkAAMAAAAEAAEAAAAkAAIAAAAEAAEAAAAlAAIAAAAEAAEAAAAkAAQAAAAEAAEAAAAlAAQAAAAEAAEAAAAkAAUAAAAEAAEAAAAlAAUAAAAEAAEAAAAoAPH/AAAFAAAAAAAnAOr/AAAFAAEAAAAnAOv/AAAFAAEAAAAnAOz/AAAFAAEAAAAnAO3/AAAFAAEAAAAnAO7/AAAFAAEAAAAnAO//AAAFAAEAAAAnAPD/AAAFAAEAAAAnAPH/AAAEAAAAAAAsAPL/AAAEAAAAAAAtAPL/AAAFAAAAAAAsAPP/AAAEAAEAAAAsAPT/AAAEAAEAAAAsAPX/AAAEAAEAAAAsAPb/AAAEAAEAAAAsAPf/AAAEAAEAAAAsAPj/AAAEAAEAAAAsAPn/AAAEAAEAAAAsAPr/AAAEAAEAAAAsAPv/AAAEAAEAAAAsAPz/AAAEAAEAAAAsAP3/AAAEAAEAAAAsAP7/AAAEAAEAAAAsAP//AAAEAAEAAAAsAAAAAAAEAAEAAAAsAAEAAAAEAAEAAAAtAPP/AAAFAAEAAAAtAPT/AAAFAAEAAAAtAPX/AAAFAAEAAAAtAPb/AAAFAAEAAAAtAPf/AAAFAAEAAAAtAPj/AAAFAAEAAAAtAPn/AAAFAAEAAAAtAPr/AAAFAAEAAAAtAPv/AAAFAAEAAAAtAPz/AAAFAAEAAAAtAP3/AAAFAAEAAAAtAP7/AAAFAAEAAAAtAP//AAAFAAEAAAAnAOn/AAAFAAEAAAAnAOj/AAAFAAEAAAAnAOf/AAAFAAEAAAAnAOb/AAAFAAEAAAAoAOX/AAAEAAIAAAApAOX/AAAEAAIAAAAqAOX/AAAEAAIAAAArAOX/AAAEAAIAAAAsAOX/AAAEAAIAAAAtAOX/AAAEAAIAAAAuAOX/AAAEAAIAAAAvAOX/AAAEAAIAAAAwAOX/AAAEAAIAAAAxAOX/AAAEAAIAAAAyAOX/AAAEAAIAAAAzAOX/AAAEAAIAAAA0AOX/AAAEAAIAAAA1AOX/AAAEAAIAAAA2AOX/AAAEAAIAAAA3AOX/AAAEAAIAAAA4AOX/AAAEAAIAAAA+AOX/AAABAAEAAAA+AOb/AAABAAEAAAA+AOf/AAAAAAEAAAA+AOj/AAAAAAEAAAA+AOn/AAAAAAEAAAA+APH/AAADAAAAAAA/AO//AAAAAAEAAAA/AO7/AAABAAEAAAA/AO3/AAABAAEAAAA/AOz/AAABAAEAAAA/AOv/AAABAAEAAAA/AOr/AAABAAEAAAA1APL/AAADAAAAAAA2APL/AAAEAAAAAAA3APH/AAADAAEAAAA3APL/AAADAAEAAAA4APH/AAADAAAAAAA4APL/AAAEAAEAAAA5APH/AAAEAAAAAAA5APL/AAAEAAEAAAA6APL/AAAFAAEAAAA7APL/AAAEAAAAAAA8APL/AAAEAAAAAAA9APL/AAAEAAAAAAA6APH/AAAFAAAAAAA+APL/AAADAAEAAAA/APD/AAAAAAEAAAA/APH/AAAAAAEAAAA/APL/AAAEAAEAAAA1APP/AAAEAAEAAAA2APP/AAAEAAEAAAA3APP/AAAEAAEAAAA4APP/AAAEAAEAAAA5APP/AAAEAAEAAAA6APP/AAAEAAEAAAA7APP/AAAEAAEAAAA8APP/AAAEAAEAAAA9APP/AAAEAAEAAAA+APP/AAAEAAEAAAA/APP/AAAEAAEAAAA+AOz/AAAAAAEAAAA+AOv/AAAAAAEAAAA+AOr/AAAAAAEAAAA9AOf/AAADAAIAAAA9AOb/AAADAAEAAAA9AOX/AAADAAEAAAA5AOn/AAAAAAAAAAA5AOr/AAAAAAEAAAA6AOn/AAACAAAAAAA6AOr/AAACAAIAAAA5AOv/AAAAAAEAAAA5AOz/AAAAAAEAAAA5AO3/AAAAAAIAAAA3APD/AAADAAAAAAA4APD/AAAFAAAAAAArAOn/AAAAAAAAAAAsAOn/AAABAAAAAAAtAOn/AAACAAAAAAAtAOr/AAAFAAEAAAAxAO//AAAAAAIAAAAwAO7/AAADAAIAAAAwAO3/AAADAAEAAAAxAO3/AAAEAAEAAAAxAOz/AAAEAAEAAAAyAOz/AAABAAAAAAAyAO3/AAAAAAEAAAAzAO3/AAACAAEAAAAzAO7/AAACAAEAAAAzAO//AAACAAEAAAAyAO7/AAABAAEAAAAyAO//AAABAAIAAAAxAO7/AAABAAEAAAAzAPD/AAACAAIAAAA+AO7/AAAAAAIAAAA+AO3/AAAAAAEAAAAtAOv/AAAFAAEAAAArAOr/AAADAAIAAAAsAOr/AAAEAAIAAAAtAOz/AAAFAAIAAAAxAOv/AAAFAAAAAAAwAOv/AAADAAAAAAAwAOz/AAADAAEAAAAzAOz/AAACAAAAAAAsAOz/AAADAAIAAAAsAOv/AAADAAEAAAAnAOX/AAAEAAIAAAA+AOT/AAABAAAAAAA/AOT/AAACAAAAAAA/AOX/AAACAAEAAAA/AOb/AAACAAEAAAA/AOf/AAACAAEAAAA/AOj/AAACAAEAAAA/AOn/AAACAAEAAAA9AOT/AAADAAAAAAA/AOD/AAADAAIAAAA5ANf/AAACAAEAAAA9ANf/AAABAAIAAAA+ANf/AAABAAIAAAA/ANf/AAABAAIAAABAANf/AAABAAIAAABBANf/AAABAAIAAAA6ANf/AAABAAIAAAA7ANf/AAABAAIAAAA8ANf/AAABAAIAAABCANf/AAABAAIAAABDANf/AAABAAIAAABEANf/AAAAAAEAAAA4AOP/AAABAAEAAAA4ANf/AAABAAEAAAA+ANz/AAADAAAAAAA/ANz/AAAEAAAAAAA/AN3/AAAFAAEAAAA/AN7/AAADAAEAAAA/AN//AAADAAEAAABAAN//AAAEAAAAAABAAOD/AAAFAAIAAABBAN//AAAFAAAAAAA+AN3/AAADAAIAAAA5ANj/AAACAAEAAAA5ANn/AAACAAEAAAA5ANr/AAACAAEAAAA5ANv/AAACAAEAAAA5ANz/AAACAAEAAAA5AN3/AAACAAEAAAA5AN7/AAACAAEAAAA5AN//AAACAAIAAAA5AOX/AAAFAAIAAAA5AOP/AAAFAAAAAAA5AOT/AAAFAAEAAAA4ANj/AAABAAEAAAA4ANn/AAABAAEAAAA4ANr/AAABAAEAAAA4ANv/AAABAAEAAAA4ANz/AAABAAEAAAA4AN3/AAABAAEAAAA4AN7/AAABAAEAAAA4AN//AAABAAEAAAA4AOD/AAACAAEAAAA4AOH/AAACAAEAAAA4AOL/AAACAAEAAABFANf/AAAFAAEAAABLANf/AAABAAIAAABLANj/AAACAAEAAABMANf/AAABAAIAAABNANf/AAABAAIAAABOANf/AAAAAAEAAABPANf/AAAEAAEAAABQANf/AAAEAAEAAABQANj/AAAEAAEAAABEANj/AAAAAAIAAABFANj/AAAFAAEAAABFANn/AAAFAAIAAABJANf/AAADAAEAAABJANj/AAADAAIAAABKANf/AAABAAIAAABKANj/AAADAAEAAABKANn/AAADAAEAAABKANr/AAADAAEAAABKANv/AAADAAEAAABKANz/AAADAAEAAABKAN3/AAADAAEAAABKAN7/AAADAAIAAABLANn/AAACAAIAAABOANj/AAAAAAIAAABPANj/AAAAAAEAAABPANn/AAAAAAEAAABPANr/AAAAAAIAAABQANn/AAABAAEAAABQANr/AAABAAIAAABQANv/AAAAAAEAAABQANz/AAAAAAEAAABQAN3/AAAAAAEAAABQAN7/AAAAAAEAAABQAN//AAAAAAEAAABQAOD/AAAAAAEAAABQAOH/AAAAAAEAAABQAOL/AAAAAAEAAABQAOP/AAAAAAEAAABQAOT/AAADAAEAAABQAOX/AAADAAEAAAA=")`
 |===
 [.node-property.node-2d]
-.#$CheckPoints/Area2D# properties
+.#$Strawberries# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|===
+[.node-property.node-2d]
+.#$Strawberries/Strawberry1# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1958, -929)`
+|===
+[.node-property.node-2d]
+.#$Strawberries/Strawberry1/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(258.69565, 127.88044)`
+|*shape* a|`SubResource("RectangleShape2D_yx8mm")`
+|===
+[.node-property.node-2d]
+.#$Strawberries/Strawberry2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4830, -1325)`
+|===
+[.node-property.node-2d]
+.#$Strawberries/Strawberry2/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-23.043457, -129.56522)`
+|*shape* a|`SubResource("RectangleShape2D_ka6kn")`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Stage2# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -581,7 +945,7 @@ func _on_player_failed() -> void:
 |*collision_layer* a|`32`
 |===
 [.node-property.node-2d]
-.#$CheckPoints/Area2D/CollisionShape2D# properties
+.#$CheckPoints/Stage2/CollisionShape2D# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
@@ -590,12 +954,46 @@ func _on_player_failed() -> void:
 |*debug_color* a|`Color(1, 0.6, 0.69803923, 0.41960785)`
 |===
 [.node-property.node-2d]
+.#$CheckPoints/Stage3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(3381, -1185)`
+|*collision_layer* a|`32`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Stage3/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-7, -1)`
+|*shape* a|`SubResource("RectangleShape2D_0oovv")`
+|*debug_color* a|`Color(1, 0.6, 0.69803923, 0.41960785)`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Stage4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4793, -2276)`
+|*collision_layer* a|`32`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Stage4/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-15, -6)`
+|*shape* a|`SubResource("RectangleShape2D_0oovv")`
+|*debug_color* a|`Color(1, 0.6, 0.69803923, 0.41960785)`
+|===
+[.node-property.node-2d]
 .#$Player# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(1994, -293)`
+|*position* a|`Vector2(3377.7607, -1368.127)`
 |===
 
 
@@ -606,7 +1004,7 @@ extends Control
 
 
 func restart() -> void:
-	%Strawberry.reset()
+	for s in %Strawberries.get_children(): s.reset()
 
 
 func _on_player_failed() -> void:
