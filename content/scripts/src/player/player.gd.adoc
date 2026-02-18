@@ -56,6 +56,7 @@ var dash_rest_count := MAX_DASH_COUNT
 var climb_rest_time := 0.0
 var sprite_tween : Tween
 var restart_position : Vector2
+var jump_boost : Vector2
 static var last_owner_name : String
 static var playable : bool = false
 
@@ -121,6 +122,9 @@ func _physics_process(delta: float) -> void:
 	):
 		if dx: velocity.x = dx * SPEED
 		else: velocity.x = move_toward(velocity.x, 0, SPEED*0.2)
+	if state == State.JUMPED:
+		velocity += jump_boost
+		jump_boost = Vector2(0, 0)
 	
 	animate(playable)
 	move_and_slide()
@@ -239,6 +243,7 @@ func restart() -> void:
 	await get_tree().create_timer(1).timeout
 	position = restart_position
 	playable = true
+	jump_boost = Vector2(0, 0)
 	unlock()
 	idle.call_deferred()
 

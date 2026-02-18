@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/Pulley.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / Pulley.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/pulley/pulley.tscn[res://src/stages/gimmicks/pulley/pulley.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |100×12 px
+|Type |png
+|Content Length |695.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/Pulley.png[]
+

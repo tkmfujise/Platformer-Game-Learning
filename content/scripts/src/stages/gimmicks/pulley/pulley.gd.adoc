@@ -1,0 +1,79 @@
+---
+title: res://src/stages/gimmicks/pulley/pulley.gd
+---
+:toc:
+
+== src / stages / gimmicks / pulley / pulley.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/pulley/pulley.tscn[res://src/stages/gimmicks/pulley/pulley.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+enum State { IDLE, MOVING, MOVED }
+@export var state : State = State.IDLE
+@export var force := Vector2(4000, 0)
+@onready var player : Player = null
+var prev_position : Vector2
+
+
+func _ready() -> void:
+	set_prev_position()
+
+
+func set_prev_position() -> void:
+	prev_position = %Platform.global_position
+
+
+func _physics_process(_delta: float) -> void:
+	if player and player.state != Player.State.FAILED:
+		var diff = %Platform.global_position - prev_position
+		player.global_position += diff
+	set_prev_position()
+
+
+func reset() -> void:
+	play(&'RESET')
+	unlaunchable()
+
+
+func move() -> void:
+	play(&'move')
+
+
+func rewind() -> void:
+	play(&'rewind')
+
+
+func launchable() -> void:
+	if player: player.jump_boost = force
+
+
+func unlaunchable() -> void:
+	if player: player.jump_boost = Vector2(0, 0)
+
+
+func play(key: StringName) -> void:
+	%AnimationPlayer.play(key)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	player = area.owner as Player
+	if state == State.IDLE: move()
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	player = null
+	if state == State.MOVED: rewind()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'move': rewind()
+		&'rewind': if player: move()
+
+```
