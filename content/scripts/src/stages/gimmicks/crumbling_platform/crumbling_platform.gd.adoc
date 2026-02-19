@@ -1,0 +1,31 @@
+---
+title: res://src/stages/gimmicks/crumbling_platform/crumbling_platform.gd
+---
+:toc:
+
+== src / stages / gimmicks / crumbling_platform / crumbling_platform.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/crumbling_platform/crumbling_platform.tscn[res://src/stages/gimmicks/crumbling_platform/crumbling_platform.tscn]
+
+
+
+=== Code
+```gdscript
+extends Area2D
+
+@export var falling : bool = false
+
+
+func fall() -> void:
+	play.call_deferred(&'fall')
+
+
+func play(key: StringName) -> void:
+	%AnimationPlayer.play(key)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if not falling: fall()
+
+```

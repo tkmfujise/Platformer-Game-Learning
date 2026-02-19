@@ -1,21 +1,24 @@
 ---
-title: src/stages/0/gimmicks/strawberry/strawberry.tscn
+title: src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn
 ---
 :toc:
 
-== src / stages / 0 / gimmicks / strawberry / strawberry.tscn
+== src / stages / gimmicks / flying_strawberry / flying_strawberry.tscn
 
 === Diagram
 [plantuml]
 ....
-class R as "Strawberry" <<(A,lightskyblue) Area2D>> {
+class R as "FlyingStrawberry" <<(A,lightskyblue) Area2D>> {
   - OFFSET
+  * player_path
   * player
+  * touched
   * obtained
 ---
   + _ready()
   + reset()
   + _physics_process()
+  + fly_away()
   + ascend()
   + play()
   + _on_hit_area_entered()
@@ -46,8 +49,8 @@ _(R::_on_hit_area_entered, N3::area_entered)
 [.scene-assets]
 === Assets
 [.asset-image]
-[link=/assets/assets/images/stages/gimmicks/Strawberry.png]
-image::/assets/raw/assets/images/stages/gimmicks/Strawberry.png[200, 100] 
+[link=/assets/assets/images/stages/gimmicks/FlyingStrawberry.png]
+image::/assets/raw/assets/images/stages/gimmicks/FlyingStrawberry.png[200, 100] 
 
 
 
@@ -55,12 +58,15 @@ image::/assets/raw/assets/images/stages/gimmicks/Strawberry.png[200, 100]
 ==== _ready
 ```gdscript
 func _ready() -> void:
+	if player_path:
+		player = get_node(player_path)
+		player.dashed.connect(fly_away)
 	if obtained: hide()
 ```
 ==== _physics_process
 ```gdscript
 func _physics_process(_delta: float) -> void:
-	if player:
+	if touched and player:
 		var target := player.global_position + OFFSET
 		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
 ```
@@ -72,7 +78,7 @@ func _physics_process(_delta: float) -> void:
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-2d]#Strawberry# [.node-type.type-2d]#Area2D#
+* [.node-name.type-2d]#FlyingStrawberry# [.node-type.type-2d]#Area2D#
 ** [.node-name.type-2d]#Pivot# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
 *** [.node-name.type-2d]#HitArea# [.node-type.type-2d]#Area2D#
@@ -85,50 +91,24 @@ func _physics_process(_delta: float) -> void:
 .$.:[#_area_entered_#]=>$.
 ```gdscript
 func _on_area_entered(_area: Area2D) -> void:
-	if not obtained and player: ascend()
+	if not obtained and touched and player: ascend()
 ```
 [.signal-connection]
 .$Pivot/HitArea:[#_area_entered_#]=>$.
 ```gdscript
-func _on_hit_area_entered(area: Area2D) -> void:
-	player = area.owner as Player
+func _on_hit_area_entered(_area: Area2D) -> void:
+	touched = true
 ```
 
 
 === Animations
-==== idle (autoplay)
-
-[plantuml]
-....
-control "Root" as R
-participant "$Pivot\n/Sprite2D" as T0 #87CEFA
-
-
-loop
-== Time: 0.0 ==
-R  ->o  T0 : frame\n = 0
-R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-== Time: 0.1667 ==
-R  ->o  T0 : frame\n = 1
-== Time: 0.3334 ==
-R  ->o  T0 : frame\n = 2
-== Time: 0.5001 ==
-R  ->o  T0 : frame\n = 3
-== Time: 0.6668 ==
-R  ->o  T0 : frame\n = 4
-== Time: 0.8335 ==
-R  ->o  T0 : frame\n = 5
-
-end
-....
----
-
 ==== Animation_rlj1e
 
 [plantuml]
 ....
 control "Root" as R
 participant "$Pivot\n/Sprite2D" as T0 #87CEFA
+participant "$Pivot" as T3 #87CEFA
 
 
 
@@ -136,6 +116,7 @@ participant "$Pivot\n/Sprite2D" as T0 #87CEFA
 R  ->o  T0 : frame\n = 0
 R  ->  T0 : position\n = Vector2(0, 0)
 R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T3 : position\n = Vector2(0, 0)
 
 
 ....
@@ -206,6 +187,68 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 ....
 ---
 
+==== idle (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$Pivot\n/Sprite2D" as T0 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->o  T0 : frame\n = 0
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+== Time: 0.1667 ==
+R  ->o  T0 : frame\n = 1
+== Time: 0.3334 ==
+R  ->o  T0 : frame\n = 2
+== Time: 0.5001 ==
+R  ->o  T0 : frame\n = 3
+== Time: 0.6668 ==
+R  ->o  T0 : frame\n = 4
+== Time: 0.8335 ==
+R  ->o  T0 : frame\n = 5
+
+end
+....
+---
+
+==== fly_away
+
+[plantuml]
+....
+control "Root" as R
+participant "$Pivot\n/Sprite2D" as T0 #87CEFA
+participant "$Pivot" as T2 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : frame\n = 0
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T2 : position\n = Vector2(0, 0)
+== Time: 0.1667 ==
+R  ->o  T0 : frame\n = 1
+== Time: 0.3334 ==
+R  ->o  T0 : frame\n = 2
+== Time: 0.5001 ==
+R  ->o  T0 : frame\n = 3
+== Time: 0.6668 ==
+R  ->o  T0 : frame\n = 4
+== Time: 0.8335 ==
+R  ->o  T0 : frame\n = 5
+== Time: 1.0 ==
+R  ->  T2 : position\n = Vector2(0, -300)
+== Time: 1.1666666 ==
+R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
+== Time: 2.0 ==
+R  ->  T2 : position\n = Vector2(0, 0)
+
+
+....
+---
+
 
 
 === Properties
@@ -217,7 +260,7 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 |*scale* a|`Vector2(4.6, 4.6)`
 |*collision_layer* a|`0`
 |*collision_mask* a|`2`
-|*script* a|link:/scripts/src/stages/0/gimmicks/strawberry/strawberry.gd[res://src/stages/0/gimmicks/strawberry/strawberry.gd]
+|*script* a|link:/scripts/src/stages/gimmicks/flying_strawberry/flying_strawberry.gd[res://src/stages/gimmicks/flying_strawberry/flying_strawberry.gd]
 |===
 [.node-property.node-2d]
 .#$Pivot# properties
@@ -231,10 +274,10 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*texture* a|[link=/assets/assets/images/stages/gimmicks/Strawberry.png]
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/FlyingStrawberry.png]
 [.asset-image]
-.res://assets/images/stages/gimmicks/Strawberry.png
-image::/assets/raw/assets/images/stages/gimmicks/Strawberry.png[]
+.res://assets/images/stages/gimmicks/FlyingStrawberry.png
+image::/assets/raw/assets/images/stages/gimmicks/FlyingStrawberry.png[]
 
 |*hframes* a|`24`
 |===
@@ -267,32 +310,41 @@ image::/assets/raw/assets/images/stages/gimmicks/Strawberry.png[]
 |===
 
 
-=== link:/scripts/src/stages/0/gimmicks/strawberry/strawberry.gd[strawberry.gd]
+=== link:/scripts/src/stages/gimmicks/flying_strawberry/flying_strawberry.gd[flying_strawberry.gd]
 
 ```gdscript
 extends Area2D
 
+@export_node_path(&'Player') var player_path
 @onready var player : Player
+@onready var touched : bool = false
 @export var obtained : bool = false
 const OFFSET := Vector2(0, -200)
 
 
 func _ready() -> void:
+	if player_path:
+		player = get_node(player_path)
+		player.dashed.connect(fly_away)
 	if obtained: hide()
 
 
 func reset() -> void:
-	player = null
 	%Pivot.position = Vector2(0, 0)
+	touched = false
 	if obtained: hide()
 	play(&'RESET')
 	play.call_deferred(&'idle')
 
 
 func _physics_process(_delta: float) -> void:
-	if player:
+	if touched and player:
 		var target := player.global_position + OFFSET
 		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
+
+
+func fly_away() -> void:
+	play(&'fly_away')
 
 
 func ascend() -> void:
@@ -304,12 +356,12 @@ func play(key: StringName) -> void:
 	%AnimationPlayer.play(key)
 
 
-func _on_hit_area_entered(area: Area2D) -> void:
-	player = area.owner as Player
+func _on_hit_area_entered(_area: Area2D) -> void:
+	touched = true
 
 
 func _on_area_entered(_area: Area2D) -> void:
-	if not obtained and player: ascend()
+	if not obtained and touched and player: ascend()
 
 ```
 

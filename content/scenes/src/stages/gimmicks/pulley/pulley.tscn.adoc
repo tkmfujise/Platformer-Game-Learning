@@ -111,7 +111,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 [.signal-connection]
 .$Sprites/Platform/Area2D:[#_area_exited_#]=>$.
 ```gdscript
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	player = null
 	if state == State.MOVED: rewind()
 ```
@@ -341,7 +341,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if state == State.IDLE: move()
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	player = null
 	if state == State.MOVED: rewind()
 

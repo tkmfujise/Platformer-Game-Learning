@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/FlyingStrawberry.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / FlyingStrawberry.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn[res://src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |1440×22 px
+|Type |png
+|Content Length |3.73 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/FlyingStrawberry.png[]
+

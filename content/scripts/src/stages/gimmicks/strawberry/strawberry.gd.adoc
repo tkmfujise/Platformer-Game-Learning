@@ -1,12 +1,12 @@
 ---
-title: res://src/stages/0/gimmicks/strawberry/strawberry.gd
+title: res://src/stages/gimmicks/strawberry/strawberry.gd
 ---
 :toc:
 
-== src / stages / 0 / gimmicks / strawberry / strawberry.gd
+== src / stages / gimmicks / strawberry / strawberry.gd
 
 === Attached Scenes
-* link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]
+* link:/scenes/src/stages/gimmicks/strawberry/strawberry.tscn[res://src/stages/gimmicks/strawberry/strawberry.tscn]
 
 
 

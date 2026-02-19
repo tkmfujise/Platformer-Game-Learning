@@ -6,7 +6,7 @@ title: assets/images/stages/gimmicks/Strawberry.png
 == assets / images / stages / gimmicks / Strawberry.png
 
 === Attached Scenes
-* link:/scenes/src/stages/0/gimmicks/strawberry/strawberry.tscn[res://src/stages/0/gimmicks/strawberry/strawberry.tscn]
+* link:/scenes/src/stages/gimmicks/strawberry/strawberry.tscn[res://src/stages/gimmicks/strawberry/strawberry.tscn]
 
 
 

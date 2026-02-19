@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/CrumblingPlatform.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / CrumblingPlatform.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/crumbling_platform/piece/piece.tscn[res://src/stages/gimmicks/crumbling_platform/piece/piece.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |48×7 px
+|Type |png
+|Content Length |289.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/CrumblingPlatform.png[]
+

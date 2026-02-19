@@ -1,0 +1,65 @@
+---
+title: res://src/stages/gimmicks/flying_strawberry/flying_strawberry.gd
+---
+:toc:
+
+== src / stages / gimmicks / flying_strawberry / flying_strawberry.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn[res://src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn]
+
+
+
+=== Code
+```gdscript
+extends Area2D
+
+@export_node_path(&'Player') var player_path
+@onready var player : Player
+@onready var touched : bool = false
+@export var obtained : bool = false
+const OFFSET := Vector2(0, -200)
+
+
+func _ready() -> void:
+	if player_path:
+		player = get_node(player_path)
+		player.dashed.connect(fly_away)
+	if obtained: hide()
+
+
+func reset() -> void:
+	%Pivot.position = Vector2(0, 0)
+	touched = false
+	if obtained: hide()
+	play(&'RESET')
+	play.call_deferred(&'idle')
+
+
+func _physics_process(_delta: float) -> void:
+	if touched and player:
+		var target := player.global_position + OFFSET
+		%Pivot.global_position = %Pivot.global_position.lerp(target, 0.1)
+
+
+func fly_away() -> void:
+	play(&'fly_away')
+
+
+func ascend() -> void:
+	play(&'ascend')
+	obtained = true
+
+
+func play(key: StringName) -> void:
+	%AnimationPlayer.play(key)
+
+
+func _on_hit_area_entered(_area: Area2D) -> void:
+	touched = true
+
+
+func _on_area_entered(_area: Area2D) -> void:
+	if not obtained and touched and player: ascend()
+
+```
