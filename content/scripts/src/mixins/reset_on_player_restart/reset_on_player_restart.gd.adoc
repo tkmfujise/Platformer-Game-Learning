@@ -1,0 +1,22 @@
+---
+title: res://src/mixins/reset_on_player_restart/reset_on_player_restart.gd
+---
+:toc:
+
+== src / mixins / reset_on_player_restart / reset_on_player_restart.gd
+
+=== Attached Scenes
+* link:/scenes/src/mixins/reset_on_player_restart/reset_on_player_restart.tscn[res://src/mixins/reset_on_player_restart/reset_on_player_restart.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node
+
+
+func _ready() -> void:
+	if owner and owner.has_method(&'reset'):
+		GameEvent.player_restarted.connect(owner.reset)
+
+```

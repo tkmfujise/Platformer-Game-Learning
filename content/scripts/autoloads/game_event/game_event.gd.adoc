@@ -1,0 +1,19 @@
+---
+title: res://autoloads/game_event/game_event.gd
+---
+:toc:
+
+== autoloads / game_event / game_event.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends Node
+#class_name GameEvent # defined in autoloads
+
+signal player_restarted
+
+```

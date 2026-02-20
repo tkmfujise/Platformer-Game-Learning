@@ -350,6 +350,7 @@ func _on_failed() -> void:
 	%Camera.shake(&'failure')
 	%AnimationTree.active = false
 	%AnimationPlayer.play(&'burst')
+	GameEvent.player_restarted.emit()
 ```
 [.signal-connection]
 .$.:[#_jumped_#]=>$.
@@ -1670,6 +1671,7 @@ func _on_failed() -> void:
 	%Camera.shake(&'failure')
 	%AnimationTree.active = false
 	%AnimationPlayer.play(&'burst')
+	GameEvent.player_restarted.emit()
 
 
 func _on_reached(area: Area2D) -> void:

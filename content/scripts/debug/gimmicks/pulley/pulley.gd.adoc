@@ -1,0 +1,29 @@
+---
+title: res://debug/gimmicks/pulley/pulley.gd
+---
+:toc:
+
+== debug / gimmicks / pulley / pulley.gd
+
+=== Attached Scenes
+* link:/scenes/debug/gimmicks/pulley/pulley.tscn[res://debug/gimmicks/pulley/pulley.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+
+func _on_reset_button_pressed() -> void:
+	%Pulley.reset()
+
+
+func _on_move_button_pressed() -> void:
+	%Pulley.move()
+
+
+func _on_rewind_button_pressed() -> void:
+	%Pulley.rewind()
+
+```

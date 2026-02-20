@@ -14,13 +14,4 @@ title: res://src/chapters/1/chapter_1.gd
 ```gdscript
 extends Control
 
-
-func restart() -> void:
-	for s in %Strawberries.get_children(): s.reset()
-	%Pulley1.reset()
-
-
-func _on_player_failed() -> void:
-	restart()
-
 ```

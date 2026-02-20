@@ -1,0 +1,70 @@
+---
+title: src/mixins/reset_on_player_restart/reset_on_player_restart.tscn
+---
+:toc:
+
+== src / mixins / reset_on_player_restart / reset_on_player_restart.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "ResetOnPlayerRestart" <<(N,darkgray) Node>> {
+---
+  + _ready()
+}
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if owner and owner.has_method(&'reset'):
+		GameEvent.player_restarted.connect(owner.reset)
+```
+
+
+=== Instantiators
+* link:/scenes/src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn[res://src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn]
+* link:/scenes/src/stages/gimmicks/pulley/pulley.tscn[res://src/stages/gimmicks/pulley/pulley.tscn]
+* link:/scenes/src/stages/gimmicks/strawberry/strawberry.tscn[res://src/stages/gimmicks/strawberry/strawberry.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-plain]#ResetOnPlayerRestart# [.node-type.type-plain]#Node#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-plain]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/mixins/reset_on_player_restart/reset_on_player_restart.gd[res://src/mixins/reset_on_player_restart/reset_on_player_restart.gd]
+|===
+
+
+=== link:/scripts/src/mixins/reset_on_player_restart/reset_on_player_restart.gd[reset_on_player_restart.gd]
+
+```gdscript
+extends Node
+
+
+func _ready() -> void:
+	if owner and owner.has_method(&'reset'):
+		GameEvent.player_restarted.connect(owner.reset)
+
+```
+
+

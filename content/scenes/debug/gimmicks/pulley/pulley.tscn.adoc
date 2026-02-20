@@ -1,0 +1,197 @@
+---
+title: debug/gimmicks/pulley/pulley.tscn
+---
+:toc:
+
+== debug / gimmicks / pulley / pulley.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Pulley" <<(N,lightskyblue) Node2D>> {
+---
+  + _on_reset_button_pressed()
+  + _on_move_button_pressed()
+  + _on_rewind_button_pressed()
+}
+class N1 as "Pulley" <<(N,lightskyblue) Node2D>> {
+  - DISTANCE
+  * state
+  * angle
+  * move_time
+  * force
+  * player
+  * direction
+  * initial_position
+  * prev_position
+  * target_position
+  * position_tween
+---
+  + _ready()
+  + set_target()
+  + set_initial_position()
+  + set_prev_position()
+  + _physics_process()
+  + reset()
+  + kill_position_tween()
+  + recreate_position_tween()
+  + move()
+  + rewind()
+  + launchable()
+  + unlaunchable()
+  + _on_area_2d_area_entered()
+  + _on_area_2d_area_exited()
+}
+class N2 as "MoveButton" <<(B,lightgreen) Button>> {
+}
+class N3 as "RewindButton" <<(B,lightgreen) Button>> {
+}
+class N4 as "ResetButton" <<(B,lightgreen) Button>> {
+}
+R --o N1
+R --o N2
+R --o N3
+R --o N4
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_move_button_pressed, N2::pressed)
+_(R::_on_move_button_pressed, N3::pressed)
+_(R::_on_rewind_button_pressed, N3::pressed)
+_(R::_on_reset_button_pressed, N4::pressed)
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+.$Pulley
+```gdscript
+func _ready() -> void:
+	set_initial_position()
+	set_target()
+```
+==== _physics_process
+.$Pulley
+```gdscript
+func _physics_process(_delta: float) -> void:
+	if player and player.state != Player.State.FAILED:
+		var diff = %Platform.global_position - prev_position
+		player.global_position += diff
+		var distance = %Platform.global_position.distance_to(target_position)
+		if state == State.MOVING && 10 < distance and distance < 70:
+			launchable()
+		else:
+			unlaunchable()
+	set_prev_position()
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Pulley# [.node-type.type-2d]#Node2D#
+** [.node-name.type-2d]#Pulley# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/pulley/pulley.tscn[res://src/stages/gimmicks/pulley/pulley.tscn]#
+** [.node-name.type-control]#MoveButton# [.node-type.type-control]#Button#
+** [.node-name.type-control]#RewindButton# [.node-type.type-control]#Button#
+** [.node-name.type-control]#ResetButton# [.node-type.type-control]#Button#
+
+
+=== Signal Connections
+[.signal-connection]
+.$MoveButton:[#_pressed_#]=>$., $RewindButton:[#_pressed_#]=>$.
+```gdscript
+func _on_move_button_pressed() -> void:
+	%Pulley.move()
+```
+[.signal-connection]
+.$RewindButton:[#_pressed_#]=>$.
+```gdscript
+func _on_rewind_button_pressed() -> void:
+	%Pulley.rewind()
+```
+[.signal-connection]
+.$ResetButton:[#_pressed_#]=>$.
+```gdscript
+func _on_reset_button_pressed() -> void:
+	%Pulley.reset()
+```
+
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/debug/gimmicks/pulley/pulley.gd[res://debug/gimmicks/pulley/pulley.gd]
+|===
+[.node-property.node-2d]
+.#$Pulley# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(769, 568)`
+|*angle* a|`45`
+|*move_time* a|`1.0`
+|===
+[.node-property.node-control]
+.#$MoveButton# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_left* a|`1594.0`
+|*offset_top* a|`213.0`
+|*offset_right* a|`1679.0`
+|*offset_bottom* a|`259.0`
+|*text* a|`Move`
+|===
+[.node-property.node-control]
+.#$RewindButton# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_left* a|`1595.0`
+|*offset_top* a|`317.0`
+|*offset_right* a|`1680.0`
+|*offset_bottom* a|`363.0`
+|*text* a|`Rewind`
+|===
+[.node-property.node-control]
+.#$ResetButton# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_left* a|`1596.0`
+|*offset_top* a|`412.0`
+|*offset_right* a|`1681.0`
+|*offset_bottom* a|`458.0`
+|*text* a|`Reset`
+|===
+
+
+=== link:/scripts/debug/gimmicks/pulley/pulley.gd[pulley.gd]
+
+```gdscript
+extends Node2D
+
+
+func _on_reset_button_pressed() -> void:
+	%Pulley.reset()
+
+
+func _on_move_button_pressed() -> void:
+	%Pulley.move()
+
+
+func _on_rewind_button_pressed() -> void:
+	%Pulley.rewind()
+
+```
+
+

@@ -24,25 +24,33 @@ class R as "FlyingStrawberry" <<(A,lightskyblue) Area2D>> {
   + _on_hit_area_entered()
   + _on_area_entered()
 }
-class N1 as "Pivot" <<(N,lightskyblue) Node2D>> {
+class N1 as "ResetOnPlayerRestart" <<(N,darkgray) Node>> {
+---
+  + _ready()
 }
-class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+class N2 as "Pivot" <<(N,lightskyblue) Node2D>> {
 }
-class N3 as "HitArea" <<(A,lightskyblue) Area2D>> {
+class N3 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
-class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N4 as "HitArea" <<(A,lightskyblue) Area2D>> {
 }
-class N5 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+class N5 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N6 as "VisibleOnScreenNotifier2D" <<(V,lightskyblue) VisibleOnScreenNotifier2D>> {
+}
+class N7 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
 R --o N1
-R --o N5
-N1 --o N2
-N1 --o N3
-N3 --o N4
+R --o N2
+R --o N6
+R --o N7
+N2 --o N3
+N2 --o N4
+N4 --o N5
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 _(R::_on_area_entered, R::area_entered)
-_(R::_on_hit_area_entered, N3::area_entered)
+_(R::_on_hit_area_entered, N4::area_entered)
 ....
 
 
@@ -63,6 +71,12 @@ func _ready() -> void:
 		player.dashed.connect(fly_away)
 	if obtained: hide()
 ```
+.$ResetOnPlayerRestart
+```gdscript
+func _ready() -> void:
+	if owner and owner.has_method(&'reset'):
+		GameEvent.player_restarted.connect(owner.reset)
+```
 ==== _physics_process
 ```gdscript
 func _physics_process(_delta: float) -> void:
@@ -79,10 +93,12 @@ func _physics_process(_delta: float) -> void:
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-2d]#FlyingStrawberry# [.node-type.type-2d]#Area2D#
+** [.node-name.type-plain]#ResetOnPlayerRestart# [.node-type.type-plain]#link:/scenes/src/mixins/reset_on_player_restart/reset_on_player_restart.tscn[res://src/mixins/reset_on_player_restart/reset_on_player_restart.tscn]#
 ** [.node-name.type-2d]#Pivot# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
 *** [.node-name.type-2d]#HitArea# [.node-type.type-2d]#Area2D#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#VisibleOnScreenNotifier2D# [.node-type.type-2d]#VisibleOnScreenNotifier2D#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
@@ -187,33 +203,6 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 ....
 ---
 
-==== idle (autoplay)
-
-[plantuml]
-....
-control "Root" as R
-participant "$Pivot\n/Sprite2D" as T0 #87CEFA
-
-
-loop
-== Time: 0.0 ==
-R  ->o  T0 : frame\n = 0
-R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
-== Time: 0.1667 ==
-R  ->o  T0 : frame\n = 1
-== Time: 0.3334 ==
-R  ->o  T0 : frame\n = 2
-== Time: 0.5001 ==
-R  ->o  T0 : frame\n = 3
-== Time: 0.6668 ==
-R  ->o  T0 : frame\n = 4
-== Time: 0.8335 ==
-R  ->o  T0 : frame\n = 5
-
-end
-....
----
-
 ==== fly_away
 
 [plantuml]
@@ -246,6 +235,33 @@ R  ->  T0 : modulate\n = Color(1, 1, 1, 0)
 R  ->  T2 : position\n = Vector2(0, 0)
 
 
+....
+---
+
+==== idle (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$Pivot\n/Sprite2D" as T0 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->o  T0 : frame\n = 0
+R  ->  T0 : modulate\n = Color(1, 1, 1, 1)
+== Time: 0.1667 ==
+R  ->o  T0 : frame\n = 1
+== Time: 0.3334 ==
+R  ->o  T0 : frame\n = 2
+== Time: 0.5001 ==
+R  ->o  T0 : frame\n = 3
+== Time: 0.6668 ==
+R  ->o  T0 : frame\n = 4
+== Time: 0.8335 ==
+R  ->o  T0 : frame\n = 5
+
+end
 ....
 ---
 
@@ -297,6 +313,13 @@ image::/assets/raw/assets/images/stages/gimmicks/FlyingStrawberry.png[]
 |*position* a|`Vector2(0.43478262, -0.43478262)`
 |*shape* a|`SubResource("CircleShape2D_6ayuk")`
 |===
+[.node-property.node-2d]
+.#$VisibleOnScreenNotifier2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
 [cols="1,3" options="header"]
@@ -344,7 +367,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func fly_away() -> void:
-	play(&'fly_away')
+	if %VisibleOnScreenNotifier2D.is_on_screen():
+		play(&'fly_away')
 
 
 func ascend() -> void:

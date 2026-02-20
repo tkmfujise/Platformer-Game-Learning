@@ -14,14 +14,34 @@ title: res://src/stages/gimmicks/pulley/pulley.gd
 ```gdscript
 extends Node2D
 
-enum State { IDLE, MOVING, MOVED }
+enum State { IDLE, MOVING, REWINDING }
+const DISTANCE := 480
 @export var state : State = State.IDLE
-@export var force := Vector2(4000, 0)
+@export_range(-180, 180) var angle : int = 0
+@export var move_time : float = 0.5
+@export var force : int = 4000
 @onready var player : Player = null
+var direction : Vector2
+var initial_position : Vector2
 var prev_position : Vector2
+var target_position : Vector2
+var position_tween : Tween
 
 
 func _ready() -> void:
+	set_initial_position()
+	set_target()
+
+
+func set_target() -> void:
+	var rad = deg_to_rad(angle)
+	%Wire.rotation = rad
+	direction = Vector2(cos(rad), sin(rad))
+	target_position = %Platform.global_position + direction * DISTANCE
+
+
+func set_initial_position() -> void:
+	initial_position = %Platform.global_position
 	set_prev_position()
 
 
@@ -33,32 +53,61 @@ func _physics_process(_delta: float) -> void:
 	if player and player.state != Player.State.FAILED:
 		var diff = %Platform.global_position - prev_position
 		player.global_position += diff
+		var distance = %Platform.global_position.distance_to(target_position)
+		if state == State.MOVING && 10 < distance and distance < 70:
+			launchable()
+		else:
+			unlaunchable()
 	set_prev_position()
 
 
 func reset() -> void:
-	play(&'RESET')
+	state = State.IDLE
+	player = null
+	%Platform.position = Vector2()
+	set_target()
+	kill_position_tween()
 	unlaunchable()
 
 
+func kill_position_tween() -> void:
+	if position_tween: position_tween.kill()
+
+
+func recreate_position_tween(pos: Vector2, time: float) -> PropertyTweener:
+	kill_position_tween()
+	position_tween = create_tween()
+	return position_tween.tween_property(%Platform,
+		"global_position", pos, time)
+
+
 func move() -> void:
-	play(&'move')
+	state = State.MOVING
+	recreate_position_tween(target_position, move_time) \
+		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	position_tween.finished.connect(func():
+		await get_tree().create_timer(1).timeout
+		rewind())
 
 
 func rewind() -> void:
-	play(&'rewind')
+	if not state == State.MOVING: return
+	state = State.REWINDING
+	recreate_position_tween(initial_position, move_time * 2) \
+		.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	position_tween.finished.connect(func():
+		await get_tree().create_timer(1).timeout
+		state = State.IDLE
+		if player: move())
 
 
 func launchable() -> void:
-	if player: player.jump_boost = force
+	if player:
+		player.jump_boost = force * direction
 
 
 func unlaunchable() -> void:
 	if player: player.jump_boost = Vector2(0, 0)
-
-
-func play(key: StringName) -> void:
-	%AnimationPlayer.play(key)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -66,14 +115,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if state == State.IDLE: move()
 
 
-func _on_area_2d_area_exited(_area: Area2D) -> void:
+func _on_area_2d_area_exited(area: Area2D) -> void:
 	player = null
-	if state == State.MOVED: rewind()
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	match anim_name:
-		&'move': rewind()
-		&'rewind': if player: move()
 
 ```
