@@ -1,0 +1,27 @@
+---
+title: assets/images/beginning/MenuLogo.svg
+---
+:toc:
+
+== assets / images / beginning / MenuLogo.svg
+
+=== Attached Scenes
+* link:/scenes/src/beginning/menu/menu.tscn[res://src/beginning/menu/menu.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |256×256 px
+|Type |svg
+|Content Length |6.29 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/beginning/MenuLogo.svg[]
+

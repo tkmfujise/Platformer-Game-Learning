@@ -215,6 +215,10 @@ _(R::_on_chapters_ui_backed, N21::ui_backed)
 [.scene-assets]
 === Assets
 [.asset-image]
+[link=/assets/assets/images/beginning/MenuLogo.svg]
+image::/assets/raw/assets/images/beginning/MenuLogo.svg[200, 100] 
+
+[.asset-image]
 [link=/assets/assets/images/ui/Credits.svg]
 image::/assets/raw/assets/images/ui/Credits.svg[200, 100] 
 
@@ -709,7 +713,11 @@ R  ->o  R : grab_focus_root\n = true
 |===
 |Name |Value
 |*texture_filter* a|`2`
-|*texture* a|`res://assets/images/beginning/MenuLogo.svg`
+|*texture* a|[link=/assets/assets/images/beginning/MenuLogo.svg]
+[.asset-image]
+.res://assets/images/beginning/MenuLogo.svg
+image::/assets/raw/assets/images/beginning/MenuLogo.svg[]
+
 |*offset* a|`Vector2(10, 140)`
 |===
 [.node-property.node-control]

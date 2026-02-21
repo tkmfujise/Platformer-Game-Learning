@@ -60,13 +60,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-94 _files_
+96 _files_
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 22.24 KB 
+| 22.26 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
-| 2.04 MB 
+| 2.09 MB 
 
 
 
@@ -93,6 +93,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MjovYXNzZXRzL2ltYWdlcw==]#_# | │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9hY3RvcnM=]#_# | │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9hY3RvcnMvb2xkX3dvbWFu]#_# | │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.MzovYXNzZXRzL2ltYWdlcy9iZWdpbm5pbmc=]#_# | │  │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9mYWNlcw==]#_# | │  │ ├ faces |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9mYWNlcy9hY3RvcnM=]#_# | │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9wYXJ0aWNsZXM=]#_# | │  │ ├ particles |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 

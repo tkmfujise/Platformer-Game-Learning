@@ -79,6 +79,10 @@ _(R::_on_animation_tree_animation_started, N17::animation_started)
 [.scene-assets]
 === Assets
 [.asset-image]
+[link=/assets/assets/images/beginning/Title.svg]
+image::/assets/raw/assets/images/beginning/Title.svg[200, 100] 
+
+[.asset-image]
 [link=/assets/assets/images/ui/Joy_A_button.svg]
 image::/assets/raw/assets/images/ui/Joy_A_button.svg[200, 100] 
 
@@ -380,7 +384,11 @@ R  ->  T1 : modulate\n = Color(1, 1, 1, 1)
 |===
 |Name |Value
 |*position* a|`Vector2(950, 522)`
-|*texture* a|`res://assets/images/beginning/Title.svg`
+|*texture* a|[link=/assets/assets/images/beginning/Title.svg]
+[.asset-image]
+.res://assets/images/beginning/Title.svg
+image::/assets/raw/assets/images/beginning/Title.svg[]
+
 |===
 [.node-property.node-control]
 .#$Title/ButtonContainer# properties

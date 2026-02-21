@@ -11,8 +11,6 @@ GdDoc.configure do |config|
   # = Configure the paths to ignore during compilation
   # config.ignoring_paths = ['addons', 'test', 'tmp']
   config.ignoring_paths = [
-    'assets/images/beginning',
-    # 'assets/images/faces',
     'addons',
     # 'test',
     'tmp',

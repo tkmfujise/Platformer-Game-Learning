@@ -1,0 +1,27 @@
+---
+title: assets/images/beginning/Title.svg
+---
+:toc:
+
+== assets / images / beginning / Title.svg
+
+=== Attached Scenes
+* link:/scenes/src/beginning/screen/screen.tscn[res://src/beginning/screen/screen.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |512×512 px
+|Type |svg
+|Content Length |40.68 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/beginning/Title.svg[]
+
