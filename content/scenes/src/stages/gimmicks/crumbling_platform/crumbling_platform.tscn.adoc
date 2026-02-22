@@ -66,7 +66,7 @@ _(R::_on_area_entered, R::area_entered)
 [.signal-connection]
 .$.:[#_area_entered_#]=>$.
 ```gdscript
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	if not falling: fall()
 ```
 
@@ -257,7 +257,7 @@ func play(key: StringName) -> void:
 	%AnimationPlayer.play(key)
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	if not falling: fall()
 
 ```

@@ -346,6 +346,12 @@
         
           
           
+          <li data-path="4:/src/stages/gimmicks/one_way_floor/one_way_floor.tscn" data-category="scenes">
+            <a class="" href="../../../../../scenes/src/stages/gimmicks/one_way_floor/one_way_floor.tscn/">src/stages/gimmicks/one_way_floor/one_way_floor.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn" data-category="scenes">
             <a class="" href="../../../../../scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn/">src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn</a>
           </li>
@@ -1135,6 +1141,12 @@
         
           
           
+          <li data-path="4:/assets/images/stages/gimmicks/Crystal.png" data-category="assets">
+            <a class="" href="../../../../../assets/assets/images/stages/gimmicks/Crystal.png/">assets/images/stages/gimmicks/Crystal.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/gimmicks/FallingIceBlock.png" data-category="assets">
             <a class="" href="../../../../../assets/assets/images/stages/gimmicks/FallingIceBlock.png/">assets/images/stages/gimmicks/FallingIceBlock.png</a>
           </li>
@@ -1143,6 +1155,12 @@
           
           <li data-path="4:/assets/images/stages/gimmicks/FlyingStrawberry.png" data-category="assets">
             <a class="" href="../../../../../assets/assets/images/stages/gimmicks/FlyingStrawberry.png/">assets/images/stages/gimmicks/FlyingStrawberry.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/gimmicks/OneWayFloor.png" data-category="assets">
+            <a class="" href="../../../../../assets/assets/images/stages/gimmicks/OneWayFloor.png/">assets/images/stages/gimmicks/OneWayFloor.png</a>
           </li>
         
           
@@ -1795,10 +1813,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">limit_bottom</span> <span class="o">=</span> <span class="n">corners</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="s2">"top"</span><span class="p">])</span><span class="o">.</span><span class="nb">min</span><span class="p">()</span>
 		<span class="n">limit_top</span>    <span class="o">=</span> <span class="n">corners</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="s2">"bottom"</span><span class="p">])</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span>
 	<span class="k">else</span><span class="p">:</span>
-		<span class="n">limit_left</span>   <span class="o">=</span> <span class="mi">0</span>
-		<span class="n">limit_right</span>  <span class="o">=</span> <span class="mi">100000</span>
-		<span class="n">limit_bottom</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10000</span>
-		<span class="n">limit_top</span>    <span class="o">=</span> <span class="mi">10000</span>
+		<span class="k">var</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">owner</span><span class="o">.</span><span class="n">global_position</span> <span class="k">if</span> <span class="n">owner</span> <span class="k">else</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="n">limit_left</span>   <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10000</span>
+		<span class="n">limit_right</span>  <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10000</span>
+		<span class="n">limit_bottom</span> <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10000</span>
+		<span class="n">limit_top</span>    <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">10000</span>
 
 
 <span class="k">func</span> <span class="nf">shake</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

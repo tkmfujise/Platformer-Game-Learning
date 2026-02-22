@@ -346,6 +346,12 @@
         
           
           
+          <li data-path="4:/src/stages/gimmicks/one_way_floor/one_way_floor.tscn" data-category="scenes">
+            <a class="" href="../stages/gimmicks/one_way_floor/one_way_floor.tscn/">src/stages/gimmicks/one_way_floor/one_way_floor.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn" data-category="scenes">
             <a class="" href="../stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn/">src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn</a>
           </li>
@@ -1135,6 +1141,12 @@
         
           
           
+          <li data-path="4:/assets/images/stages/gimmicks/Crystal.png" data-category="assets">
+            <a class="" href="../../../assets/assets/images/stages/gimmicks/Crystal.png/">assets/images/stages/gimmicks/Crystal.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/gimmicks/FallingIceBlock.png" data-category="assets">
             <a class="" href="../../../assets/assets/images/stages/gimmicks/FallingIceBlock.png/">assets/images/stages/gimmicks/FallingIceBlock.png</a>
           </li>
@@ -1143,6 +1155,12 @@
           
           <li data-path="4:/assets/images/stages/gimmicks/FlyingStrawberry.png" data-category="assets">
             <a class="" href="../../../assets/assets/images/stages/gimmicks/FlyingStrawberry.png/">assets/images/stages/gimmicks/FlyingStrawberry.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/gimmicks/OneWayFloor.png" data-category="assets">
+            <a class="" href="../../../assets/assets/images/stages/gimmicks/OneWayFloor.png/">assets/images/stages/gimmicks/OneWayFloor.png</a>
           </li>
         
           
@@ -1763,8 +1781,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
-	<span class="n">turn_right</span><span class="p">()</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="k">return</span>
+	<span class="n">turn_right</span><span class="p">()</span>
 	<span class="k">if</span> <span class="n">last_owner_name</span> <span class="o">==</span> <span class="n">owner</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
 		<span class="n">position</span> <span class="o">=</span> <span class="n">restart_position</span>
 	<span class="k">else</span><span class="p">:</span>
@@ -1814,9 +1832,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">move_x</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 
 				<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
-					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
+					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.45</span> <span class="o">*</span> <span class="n">delta</span>
 				<span class="k">else</span><span class="p">:</span>
-					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">0.85</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">KICKED</span><span class="p">:</span>

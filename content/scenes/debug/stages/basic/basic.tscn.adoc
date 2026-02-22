@@ -115,8 +115,8 @@ func _input(event: InputEvent) -> void:
 ```gdscript
 func _ready() -> void:
 	playable = true
-	turn_right()
 	if not owner: return
+	turn_right()
 	if last_owner_name == owner.name:
 		position = restart_position
 	else:
@@ -155,9 +155,9 @@ func _physics_process(delta: float) -> void:
 				velocity.x = lerp(velocity.x, move_x, 0.2)
 				
 				if velocity.y < JUMP_VELOCITY * 0.85:
-					velocity.y += GRAVITY * 1.15 * delta
+					velocity.y += GRAVITY * 1.45 * delta
 				else:
-					velocity.y += GRAVITY * delta
+					velocity.y += GRAVITY * 0.85 * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.KICKED:

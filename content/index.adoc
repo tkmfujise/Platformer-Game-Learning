@@ -22,13 +22,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-61 _files_
+62 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 9.0 _nodes_
-| link:/scenes/src/chapters/1/chapter1.tscn[100 _nodes_]
-| 544 _nodes_
+| 9.8 _nodes_
+| link:/scenes/src/chapters/1/chapter1.tscn[161 _nodes_]
+| 607 _nodes_
 
 
 
@@ -44,7 +44,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.3 _lines_
 | link:/scripts/src/player/player.gd[56 _lines_]
-| 1,817 _lines_
+| 1,818 _lines_
 
 
 
@@ -60,13 +60,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-96 _files_
+98 _files_
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 22.26 KB 
+| 22.13 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
-| 2.09 MB 
+| 2.12 MB 
 
 
 
@@ -102,7 +102,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MzovYXNzZXRzL2ltYWdlcy9zdGFnZXM=]#_# | │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
-|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#7# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvdHJhcHM=]#_# | │  │  │ └ traps |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy91aQ==]#_# | │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy91aS9DaGFwdGVycw==]#_# | │  │  │ ├ Chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
@@ -197,6 +197,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.NTovc3JjL3N0YWdlcy9naW1taWNrcy9jcnVtYmxpbmdfcGxhdGZvcm0vcGllY2U=]#_# | │  │  │  │ └ piece |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9mYWxsaW5nX2ljZV9ibG9jaw==]#_# | │  │  │ ├ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9mbHlpbmdfc3RyYXdiZXJyeQ==]#_# | │  │  │ ├ flying_strawberry |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9vbmVfd2F5X2Zsb29y]#_# | │  │  │ ├ one_way_floor |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9vbmVfd2F5X3NjYWZmb2xk]#_# | │  │  │ ├ one_way_scaffold |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9wdWxsZXk=]#_# | │  │  │ ├ pulley |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9zdHJhd2JlcnJ5]#_# | │  │  │ └ strawberry |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 

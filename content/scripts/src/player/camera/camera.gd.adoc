@@ -51,10 +51,11 @@ func apply_limitation() -> void:
 		limit_bottom = corners.map(func(c): return c["top"]).min()
 		limit_top    = corners.map(func(c): return c["bottom"]).max()
 	else:
-		limit_left   = 0
-		limit_right  = 100000
-		limit_bottom = -10000
-		limit_top    = 10000
+		var vec = owner.global_position if owner else Vector2(0, 0)
+		limit_left   = vec.x - 10000
+		limit_right  = vec.x + 10000
+		limit_bottom = vec.y + 10000
+		limit_top    = vec.y - 10000
 
 
 func shake(type: StringName) -> void:

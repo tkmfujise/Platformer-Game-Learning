@@ -14,7 +14,6 @@ title: res://src/stages/gimmicks/one_way_scaffold/one_way_scaffold.gd
 ```gdscript
 extends StaticBody2D
 
-
 func drop() -> void:
 	%CollisionShape2D.disabled = true
 	await get_tree().create_timer(1).timeout

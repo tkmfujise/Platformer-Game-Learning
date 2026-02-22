@@ -19,7 +19,7 @@ const DISTANCE := 480
 @export var state : State = State.IDLE
 @export_range(-180, 180) var angle : int = 0
 @export var move_time : float = 0.5
-@export var force : int = 4000
+@export var force : int = 3000
 @onready var player : Player = null
 var direction : Vector2
 var initial_position : Vector2
@@ -115,7 +115,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if state == State.IDLE: move()
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	player = null
 
 ```

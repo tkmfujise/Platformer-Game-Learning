@@ -208,7 +208,7 @@ R  ->  T5 : position\n = Vector2(1820, 1500)
 ....
 ---
 
-==== opening (autoplay)
+==== opening
 
 [plantuml]
 ....
@@ -463,7 +463,6 @@ image::/assets/raw/assets/images/ui/Joy_A_button.svg[]
 |*libraries* a|`{
 &"": SubResource("AnimationLibrary_5ydpp")
 }`
-|*autoplay* a|`opening`
 |===
 [.node-property.node-other]
 .#$AnimationTree# properties

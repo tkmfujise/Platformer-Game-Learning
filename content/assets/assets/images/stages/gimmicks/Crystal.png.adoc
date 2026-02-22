@@ -1,0 +1,25 @@
+---
+title: assets/images/stages/gimmicks/Crystal.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / Crystal.png
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |18×18 px
+|Type |png
+|Content Length |325.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/Crystal.png[]
+

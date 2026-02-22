@@ -346,6 +346,12 @@
         
           
           
+          <li data-path="4:/src/stages/gimmicks/one_way_floor/one_way_floor.tscn" data-category="scenes">
+            <a class="" href="../../../../../../scenes/src/stages/gimmicks/one_way_floor/one_way_floor.tscn/">src/stages/gimmicks/one_way_floor/one_way_floor.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn" data-category="scenes">
             <a class="" href="../../../../../../scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn/">src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn</a>
           </li>
@@ -1135,6 +1141,12 @@
         
           
           
+          <li data-path="4:/assets/images/stages/gimmicks/Crystal.png" data-category="assets">
+            <a class="" href="../../../../../../assets/assets/images/stages/gimmicks/Crystal.png/">assets/images/stages/gimmicks/Crystal.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/gimmicks/FallingIceBlock.png" data-category="assets">
             <a class="" href="../../../../../../assets/assets/images/stages/gimmicks/FallingIceBlock.png/">assets/images/stages/gimmicks/FallingIceBlock.png</a>
           </li>
@@ -1143,6 +1155,12 @@
           
           <li data-path="4:/assets/images/stages/gimmicks/FlyingStrawberry.png" data-category="assets">
             <a class="" href="../../../../../../assets/assets/images/stages/gimmicks/FlyingStrawberry.png/">assets/images/stages/gimmicks/FlyingStrawberry.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/gimmicks/OneWayFloor.png" data-category="assets">
+            <a class="" href="../../../../../../assets/assets/images/stages/gimmicks/OneWayFloor.png/">assets/images/stages/gimmicks/OneWayFloor.png</a>
           </li>
         
           
@@ -1763,7 +1781,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">state</span> <span class="p">:</span> <span class="n">State</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">IDLE</span>
 <span class="err">@</span><span class="n">export_range</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span> <span class="k">var</span> <span class="n">angle</span> <span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">move_time</span> <span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">force</span> <span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">4000</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">force</span> <span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">3000</span>
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">player</span> <span class="p">:</span> <span class="n">Player</span> <span class="o">=</span> <span class="kt">null</span>
 <span class="k">var</span> <span class="n">direction</span> <span class="p">:</span> <span class="kt">Vector2</span>
 <span class="k">var</span> <span class="n">initial_position</span> <span class="p">:</span> <span class="kt">Vector2</span>
@@ -1859,7 +1877,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">IDLE</span><span class="p">:</span> <span class="n">move</span><span class="p">()</span>
 
 
-<span class="k">func</span> <span class="nf">_on_area_2d_area_exited</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_on_area_2d_area_exited</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">player</span> <span class="o">=</span> <span class="kt">null</span></code></pre>
 </div>
 </div>

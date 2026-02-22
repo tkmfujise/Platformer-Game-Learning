@@ -346,6 +346,12 @@
         
           
           
+          <li data-path="4:/src/stages/gimmicks/one_way_floor/one_way_floor.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/src/stages/gimmicks/one_way_floor/one_way_floor.tscn/">src/stages/gimmicks/one_way_floor/one_way_floor.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="4:/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn" data-category="scenes">
             <a class="" href="../../../../scenes/src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn/">src/stages/gimmicks/one_way_scaffold/one_way_scaffold.tscn</a>
           </li>
@@ -1135,6 +1141,12 @@
         
           
           
+          <li data-path="4:/assets/images/stages/gimmicks/Crystal.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/gimmicks/Crystal.png/">assets/images/stages/gimmicks/Crystal.png</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/gimmicks/FallingIceBlock.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/stages/gimmicks/FallingIceBlock.png/">assets/images/stages/gimmicks/FallingIceBlock.png</a>
           </li>
@@ -1143,6 +1155,12 @@
           
           <li data-path="4:/assets/images/stages/gimmicks/FlyingStrawberry.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/stages/gimmicks/FlyingStrawberry.png/">assets/images/stages/gimmicks/FlyingStrawberry.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/gimmicks/OneWayFloor.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/gimmicks/OneWayFloor.png/">assets/images/stages/gimmicks/OneWayFloor.png</a>
           </li>
         
           
@@ -1785,8 +1803,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">const</span> <span class="n">SPEED</span> <span class="o">=</span> <span class="mf">700.0</span>
 <span class="k">const</span> <span class="n">DASH_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">*</span> <span class="mi">4</span>
 <span class="k">const</span> <span class="n">CLIMBING_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">/</span> <span class="mi">6</span>
-<span class="k">const</span> <span class="n">JUMP_VELOCITY</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1200.0</span>
-<span class="k">const</span> <span class="n">GRAVITY</span> <span class="o">=</span> <span class="mi">4000</span>
+<span class="k">const</span> <span class="n">JUMP_VELOCITY</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1100.0</span>
+<span class="k">const</span> <span class="n">GRAVITY</span> <span class="o">=</span> <span class="mi">3500</span>
 <span class="k">const</span> <span class="n">ALLOWED_TIME_TO_JUMP</span> <span class="o">=</span> <span class="mf">0.13</span>
 <span class="k">const</span> <span class="n">DASH_TIME</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="k">const</span> <span class="n">DASH_ATTENUATION</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -1807,8 +1825,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
-	<span class="n">turn_right</span><span class="p">()</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">owner</span><span class="p">:</span> <span class="k">return</span>
+	<span class="n">turn_right</span><span class="p">()</span>
 	<span class="k">if</span> <span class="n">last_owner_name</span> <span class="o">==</span> <span class="n">owner</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
 		<span class="n">position</span> <span class="o">=</span> <span class="n">restart_position</span>
 	<span class="k">else</span><span class="p">:</span>
@@ -1845,9 +1863,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				<span class="n">velocity</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">lerp</span><span class="p">(</span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">move_x</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 
 				<span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">JUMP_VELOCITY</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">:</span>
-					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">delta</span>
+					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">1.45</span> <span class="o">*</span> <span class="n">delta</span>
 				<span class="k">else</span><span class="p">:</span>
-					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="n">delta</span>
+					<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mf">0.85</span> <span class="o">*</span> <span class="n">delta</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">JUMPED</span><span class="p">:</span>
 			<span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">JUMP_VELOCITY</span>
 		<span class="n">State</span><span class="o">.</span><span class="n">KICKED</span><span class="p">:</span>

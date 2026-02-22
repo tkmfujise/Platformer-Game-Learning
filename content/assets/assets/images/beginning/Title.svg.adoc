@@ -17,7 +17,7 @@ title: assets/images/beginning/Title.svg
 |Name |Value
 |Size |512×512 px
 |Type |svg
-|Content Length |40.68 KB
+|Content Length |72.03 KB
 |===
 
 
