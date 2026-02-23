@@ -196,6 +196,12 @@
         
           
           
+          <li data-path="4:/src/dialogue/chapters/1/stage1.tscn" data-category="scenes">
+            <a class="" href="../../dialogue/chapters/1/stage1.tscn/">src/dialogue/chapters/1/stage1.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="2:/src/dialogue/dialogue.tscn" data-category="scenes">
             <a class="" href="../../dialogue/dialogue.tscn/">src/dialogue/dialogue.tscn</a>
           </li>
@@ -306,6 +312,18 @@
           
           <li data-path="3:/src/stages/0/stage_ground_0.tscn" data-category="scenes">
             <a class="" href="../../stages/0/stage_ground_0.tscn/">src/stages/0/stage_ground_0.tscn</a>
+          </li>
+        
+          
+          
+          <li data-path="5:/src/stages/1/gimmicks/bonfire/bonfire.tscn" data-category="scenes">
+            <a class="" href="../../stages/1/gimmicks/bonfire/bonfire.tscn/">src/stages/1/gimmicks/bonfire/bonfire.tscn</a>
+          </li>
+        
+          
+          
+          <li data-path="5:/src/stages/1/scenary/young_guy/young_guy.tscn" data-category="scenes">
+            <a class="" href="../../stages/1/scenary/young_guy/young_guy.tscn/">src/stages/1/scenary/young_guy/young_guy.tscn</a>
           </li>
         
           
@@ -1027,6 +1045,12 @@
         
           
           
+          <li data-path="4:/assets/images/actors/young_guy/YoungGuy.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/actors/young_guy/YoungGuy.png/">assets/images/actors/young_guy/YoungGuy.png</a>
+          </li>
+        
+          
+          
           <li data-path="3:/assets/images/beginning/MenuLogo.svg" data-category="assets">
             <a class="" href="../../../../assets/assets/images/beginning/MenuLogo.svg/">assets/images/beginning/MenuLogo.svg</a>
           </li>
@@ -1149,6 +1173,18 @@
           
           <li data-path="4:/assets/images/stages/chapter0/Tilemap.png" data-category="assets">
             <a class="" href="../../../../assets/assets/images/stages/chapter0/Tilemap.png/">assets/images/stages/chapter0/Tilemap.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/chapter1/Bonfire.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/chapter1/Bonfire.png/">assets/images/stages/chapter1/Bonfire.png</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/chapter1/Tent.png" data-category="assets">
+            <a class="" href="../../../../assets/assets/images/stages/chapter1/Tent.png/">assets/images/stages/chapter1/Tent.png</a>
           </li>
         
           
@@ -3271,6 +3307,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">regain_dash_charge</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">dash_rest_count</span> <span class="o">=</span> <span class="p">[</span><span class="n">MAX_DASH_COUNT</span><span class="p">,</span> <span class="n">dash_rest_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="nb">min</span><span class="p">()</span>
+	<span class="n">vibrate</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">Charge'</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">idle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -3320,11 +3357,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="o">%</span><span class="n">AnimationTree</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="bp">true</span>
 
 
-<span class="k">func</span> <span class="nf">vibrate</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">):</span>
+<span class="k">func</span> <span class="nf">vibrate</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">StringName</span><span class="p">):</span>
 	<span class="k">var</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 	<span class="k">match</span> <span class="n">key</span><span class="p">:</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">Dashed'</span><span class="p">:</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
 		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">Landed'</span><span class="p">:</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+		<span class="o">&amp;</span><span class="s2">'</span><span class="s1">Charge'</span><span class="p">:</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
 	<span class="n">Input</span><span class="o">.</span><span class="n">start_joy_vibration</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
 

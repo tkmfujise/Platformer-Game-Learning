@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/chapter1/Bonfire.png
+---
+:toc:
+
+== assets / images / stages / chapter1 / Bonfire.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/1/gimmicks/bonfire/bonfire.tscn[res://src/stages/1/gimmicks/bonfire/bonfire.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |96×16 px
+|Type |png
+|Content Length |778.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/chapter1/Bonfire.png[]
+

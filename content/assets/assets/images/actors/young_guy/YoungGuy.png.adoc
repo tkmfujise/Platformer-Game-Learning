@@ -1,0 +1,27 @@
+---
+title: assets/images/actors/young_guy/YoungGuy.png
+---
+:toc:
+
+== assets / images / actors / young_guy / YoungGuy.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/1/scenary/young_guy/young_guy.tscn[res://src/stages/1/scenary/young_guy/young_guy.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |144×24 px
+|Type |png
+|Content Length |1.09 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/actors/young_guy/YoungGuy.png[]
+

@@ -1,0 +1,114 @@
+---
+title: src/stages/1/scenary/young_guy/young_guy.tscn
+---
+:toc:
+
+== src / stages / 1 / scenary / young_guy / young_guy.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "YoungGuy" <<(S,lightskyblue) Sprite2D>> {
+}
+class N1 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/actors/young_guy/YoungGuy.png]
+image::/assets/raw/assets/images/actors/young_guy/YoungGuy.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/dialogue/chapters/1/stage1.tscn[res://src/dialogue/chapters/1/stage1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#YoungGuy# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+=== Animations
+==== idle (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+
+
+loop
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+== Time: 0.2 ==
+R  ->o  R : frame\n = 1
+== Time: 0.4 ==
+R  ->o  R : frame\n = 2
+== Time: 0.6 ==
+R  ->o  R : frame\n = 3
+== Time: 0.8 ==
+R  ->o  R : frame\n = 4
+
+end
+....
+---
+
+==== Animation_cph0o
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scale* a|`Vector2(5.5, 5.5)`
+|*texture* a|[link=/assets/assets/images/actors/young_guy/YoungGuy.png]
+[.asset-image]
+.res://assets/images/actors/young_guy/YoungGuy.png
+image::/assets/raw/assets/images/actors/young_guy/YoungGuy.png[]
+
+|*offset* a|`Vector2(0, -12)`
+|*hframes* a|`6`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_cph0o")
+}`
+|*autoplay* a|`idle`
+|===
+
+
+
+

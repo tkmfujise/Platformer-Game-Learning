@@ -218,6 +218,7 @@ func compute_dashed() -> void:
 
 func regain_dash_charge() -> void:
 	dash_rest_count = [MAX_DASH_COUNT, dash_rest_count + 1].min()
+	vibrate(&'Charge')
 
 
 func idle() -> void:
@@ -267,11 +268,12 @@ func unlock() -> void:
 	%AnimationTree.active = true
 
 
-func vibrate(key: String):
+func vibrate(key: StringName):
 	var values = [0, 0, 0]
 	match key:
 		&'Dashed': values = [0.4, 0.6, 0.2]
 		&'Landed': values = [0.1, 0.3, 0.1]
+		&'Charge': values = [0.2, 0.4, 0.2]
 	Input.start_joy_vibration(0, values[0], values[1], values[2])
 
 

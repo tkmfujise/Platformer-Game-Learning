@@ -22,13 +22,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-63 _files_
+66 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 9.9 _nodes_
-| link:/scenes/src/chapters/1/chapter1.tscn[171 _nodes_]
-| 620 _nodes_
+| 10.3 _nodes_
+| link:/scenes/src/chapters/1/chapter1.tscn[222 _nodes_]
+| 675 _nodes_
 
 
 
@@ -44,7 +44,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.3 _lines_
 | link:/scripts/src/player/player.gd[54 _lines_]
-| 1,832 _lines_
+| 1,834 _lines_
 
 
 
@@ -60,11 +60,11 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-99 _files_
+102 _files_
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 21.93 KB 
+| 21.31 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 2.12 MB 
 
@@ -92,7 +92,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MjovYXNzZXRzL2d1aWRl]#_# | │ ├ guide |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MjovYXNzZXRzL2ltYWdlcw==]#_# | │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9hY3RvcnM=]#_# | │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NDovYXNzZXRzL2ltYWdlcy9hY3RvcnMvb2xkX3dvbWFu]#_# | │  │  │ └ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9hY3RvcnMvb2xkX3dvbWFu]#_# | │  │  │ ├ old_woman |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9hY3RvcnMveW91bmdfZ3V5]#_# | │  │  │ └ young_guy |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9iZWdpbm5pbmc=]#_# | │  │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9mYWNlcw==]#_# | │  │ ├ faces |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9mYWNlcy9hY3RvcnM=]#_# | │  │  │ └ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
@@ -102,6 +103,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MzovYXNzZXRzL2ltYWdlcy9zdGFnZXM=]#_# | │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjE=]#_# | │  │  │ ├ chapter1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvdHJhcHM=]#_# | │  │  │ └ traps |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy91aQ==]#_# | │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# |[.zero]#0# 
@@ -165,7 +167,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.Mzovc3JjL2N1cnRhaW4vb3BlbmluZw==]#_# | │  │ └ opening |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.more]#3# 
 |[.path.Mjovc3JjL2RpYWxvZ3Vl]#_# | │ ├ dialogue |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 |[.path.Mzovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJz]#_# | │  │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NDovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzA=]#_# | │  │  │ └ 0 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzA=]#_# | │  │  │ ├ 0 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzE=]#_# | │  │  │ └ 1 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL2RpYWxvZ3VlL3NjZW5hcmlvcw==]#_# | │  │ ├ scenarios |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 |[.path.NDovc3JjL2RpYWxvZ3VlL3NjZW5hcmlvcy9jaGFwdGVyMA==]#_# | │  │  │ └ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 |[.path.Mzovc3JjL2RpYWxvZ3VlL3NwZWFrZXI=]#_# | │  │ └ speaker |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -189,6 +192,11 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.Njovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZS9waWVjZQ==]#_# | │  │  │  │  │ ├ piece |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Njovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZS91bml0]#_# | │  │  │  │  │ └ unit |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3Rvb2x0aXA=]#_# | │  │  │  │ └ tooltip |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.Mzovc3JjL3N0YWdlcy8x]#_# | │  │ ├ 1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL3N0YWdlcy8xL2dpbW1pY2tz]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovc3JjL3N0YWdlcy8xL2dpbW1pY2tzL2JvbmZpcmU=]#_# | │  │  │  │ └ bonfire |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL3N0YWdlcy8xL3NjZW5hcnk=]#_# | │  │  │ ├ scenary |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovc3JjL3N0YWdlcy8xL3NjZW5hcnkveW91bmdfZ3V5]#_# | │  │  │  │ └ young_guy |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL3N0YWdlcy9iYWNrZ3JvdW5k]#_# | │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9iYWNrZ3JvdW5kL2ZvcmVzdA==]#_# | │  │  │ └ forest |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL3N0YWdlcy9mcmFtZQ==]#_# | │  │ ├ frame |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
