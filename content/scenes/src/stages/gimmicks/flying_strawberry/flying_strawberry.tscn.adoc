@@ -368,7 +368,7 @@ func _physics_process(_delta: float) -> void:
 
 func fly_away() -> void:
 	if %VisibleOnScreenNotifier2D.is_on_screen():
-		play(&'fly_away')
+		if not touched: play(&'fly_away')
 
 
 func ascend() -> void:

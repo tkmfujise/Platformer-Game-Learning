@@ -1,0 +1,257 @@
+---
+title: src/stages/gimmicks/diamond/diamond.tscn
+---
+:toc:
+
+== src / stages / gimmicks / diamond / diamond.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Diamond" <<(A,lightskyblue) Area2D>> {
+  * available
+---
+  + reset()
+  + idle()
+  + burst()
+  + play()
+  + _on_area_entered()
+  + _on_animation_player_animation_finished()
+}
+class N1 as "ResetOnPlayerRestart" <<(N,darkgray) Node>> {
+---
+  + _ready()
+}
+class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+}
+class N3 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N4 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N2
+R --o N3
+R --o N4
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_area_entered, R::area_entered)
+_(R::_on_animation_player_animation_finished, N4::animation_finished)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/gimmicks/Diamond.png]
+image::/assets/raw/assets/images/stages/gimmicks/Diamond.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+.$ResetOnPlayerRestart
+```gdscript
+func _ready() -> void:
+	if owner and owner.has_method(&'reset'):
+		GameEvent.player_restarted.connect(owner.reset)
+```
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Diamond# [.node-type.type-2d]#Area2D#
+** [.node-name.type-plain]#ResetOnPlayerRestart# [.node-type.type-plain]#link:/scenes/src/mixins/reset_on_player_restart/reset_on_player_restart.tscn[res://src/mixins/reset_on_player_restart/reset_on_player_restart.tscn]#
+** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[.signal-connection]
+.$.:[#_area_entered_#]=>$.
+```gdscript
+func _on_area_entered(area: Area2D) -> void:
+	if available: burst(area.owner as Player)
+```
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'burst': idle()
+```
+
+
+=== Animations
+==== Animation_kqnml
+
+[plantuml]
+....
+control "Root" as R
+participant "$Sprite2D" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(37, 36)
+R  ->o  T0 : frame\n = 0
+R  ->o  T0 : visible\n = true
+R  ->o  R : available\n = true
+
+
+....
+---
+
+==== idle (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$Sprite2D" as T0 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(37, 36)
+R  ->o  T0 : frame\n = 0
+R  ->o  T0 : visible\n = true
+R  ->o  R : available\n = true
+== Time: 0.25 ==
+R  ->o  T0 : frame\n = 1
+== Time: 0.5 ==
+R  ->o  T0 : frame\n = 2
+== Time: 0.75 ==
+R  ->o  T0 : frame\n = 0
+== Time: 1.0 ==
+R  ->  T0 : position\n = Vector2(37, 50)
+R  ->o  T0 : frame\n = 1
+== Time: 1.25 ==
+R  ->o  T0 : frame\n = 2
+== Time: 1.5 ==
+R  ->o  T0 : frame\n = 0
+== Time: 1.75 ==
+R  ->o  T0 : frame\n = 1
+== Time: 2.0 ==
+R  ->  T0 : position\n = Vector2(37, 36)
+
+end
+....
+---
+
+==== burst
+
+[plantuml]
+....
+control "Root" as R
+participant "$Sprite2D" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : frame\n = 0
+R  ->  T0 : position\n = Vector2(37, 36)
+R  ->o  T0 : visible\n = true
+R  ->o  R : available\n = false
+== Time: 0.05 ==
+R  ->o  T0 : frame\n = 3
+== Time: 0.1 ==
+R  ->o  T0 : frame\n = 4
+== Time: 0.15 ==
+R  ->o  T0 : frame\n = 5
+== Time: 0.2 ==
+R  ->o  T0 : visible\n = false
+== Time: 0.5 ==
+R  ->o  T0 : frame\n = 6
+R  ->o  T0 : visible\n = true
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`0`
+|*collision_mask* a|`2`
+|*script* a|link:/scripts/src/stages/gimmicks/diamond/diamond.gd[res://src/stages/gimmicks/diamond/diamond.gd]
+|===
+[.node-property.node-2d]
+.#$Sprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(37, 36)`
+|*scale* a|`Vector2(4, 4)`
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/Diamond.png]
+[.asset-image]
+.res://assets/images/stages/gimmicks/Diamond.png
+image::/assets/raw/assets/images/stages/gimmicks/Diamond.png[]
+
+|*hframes* a|`7`
+|===
+[.node-property.node-2d]
+.#$CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(37, 42)`
+|*shape* a|`SubResource("CapsuleShape2D_34owy")`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_vvw17")
+}`
+|*autoplay* a|`idle`
+|===
+
+
+=== link:/scripts/src/stages/gimmicks/diamond/diamond.gd[diamond.gd]
+
+```gdscript
+extends Area2D
+
+@export var available : bool = true
+
+
+func reset() -> void:
+	idle()
+
+
+func idle() -> void:
+	play(&'idle')
+
+
+func burst(player: Player) -> void:
+	play(&'burst')
+	player.regain_dash_charge()
+
+
+func play(key: StringName) -> void:
+	%AnimationPlayer.play(key)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if available: burst(area.owner as Player)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'burst': idle()
+
+```
+
+

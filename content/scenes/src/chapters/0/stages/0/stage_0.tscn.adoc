@@ -163,6 +163,7 @@ class N31 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   - CLIMBING_SPEED
   - JUMP_VELOCITY
   - GRAVITY
+  - MAX_VELOCITY_Y
   - ALLOWED_TIME_TO_JUMP
   - DASH_TIME
   - DASH_ATTENUATION
@@ -192,6 +193,7 @@ class N31 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + animate()
   + animate_with()
   + compute_dashed()
+  + regain_dash_charge()
   + idle()
   + walk_right()
   + walk_left()
@@ -352,10 +354,8 @@ func _physics_process(delta: float) -> void:
 				if velocity.x * dx < 0: move_x *= 0.1
 				velocity.x = lerp(velocity.x, move_x, 0.2)
 				
-				if velocity.y < JUMP_VELOCITY * 0.85:
-					velocity.y += GRAVITY * 1.45 * delta
-				else:
-					velocity.y += GRAVITY * 0.85 * delta
+				velocity.y += GRAVITY * delta
+				velocity.y = [velocity.y, MAX_VELOCITY_Y].min()
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.KICKED:

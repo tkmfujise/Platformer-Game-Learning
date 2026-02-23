@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/Diamond.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / Diamond.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/diamond/diamond.tscn[res://src/stages/gimmicks/diamond/diamond.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |126×18 px
+|Type |png
+|Content Length |1.11 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/Diamond.png[]
+

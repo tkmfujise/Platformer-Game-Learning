@@ -22,29 +22,29 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-62 _files_
+63 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
 | 9.8 _nodes_
-| link:/scenes/src/chapters/1/chapter1.tscn[161 _nodes_]
-| 607 _nodes_
+| link:/scenes/src/chapters/1/chapter1.tscn[163 _nodes_]
+| 613 _nodes_
 
 
 
 .2+| *📝 Scripts* +
-81 _files_
+82 _files_
 
 | *Functions*
 | link:/scripts/autoloads/game_event/game_event.gd[0 _funcs_]
 | 5.3 _funcs_
-| link:/scripts/src/player/player.gd[33 _funcs_]
-| 426 _funcs_
+| link:/scripts/src/player/player.gd[34 _funcs_]
+| 433 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.3 _lines_
-| link:/scripts/src/player/player.gd[56 _lines_]
-| 1,818 _lines_
+| link:/scripts/src/player/player.gd[54 _lines_]
+| 1,832 _lines_
 
 
 
@@ -64,7 +64,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 22.13 KB 
+| 22.14 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 2.12 MB 
 
@@ -195,6 +195,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.Mzovc3JjL3N0YWdlcy9naW1taWNrcw==]#_# | │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9jcnVtYmxpbmdfcGxhdGZvcm0=]#_# | │  │  │ ├ crumbling_platform |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy9naW1taWNrcy9jcnVtYmxpbmdfcGxhdGZvcm0vcGllY2U=]#_# | │  │  │  │ └ piece |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9kaWFtb25k]#_# | │  │  │ ├ diamond |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9mYWxsaW5nX2ljZV9ibG9jaw==]#_# | │  │  │ ├ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9mbHlpbmdfc3RyYXdiZXJyeQ==]#_# | │  │  │ ├ flying_strawberry |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9vbmVfd2F5X2Zsb29y]#_# | │  │  │ ├ one_way_floor |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 

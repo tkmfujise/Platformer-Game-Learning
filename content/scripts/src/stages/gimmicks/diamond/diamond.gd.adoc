@@ -1,0 +1,45 @@
+---
+title: res://src/stages/gimmicks/diamond/diamond.gd
+---
+:toc:
+
+== src / stages / gimmicks / diamond / diamond.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/diamond/diamond.tscn[res://src/stages/gimmicks/diamond/diamond.tscn]
+
+
+
+=== Code
+```gdscript
+extends Area2D
+
+@export var available : bool = true
+
+
+func reset() -> void:
+	idle()
+
+
+func idle() -> void:
+	play(&'idle')
+
+
+func burst(player: Player) -> void:
+	play(&'burst')
+	player.regain_dash_charge()
+
+
+func play(key: StringName) -> void:
+	%AnimationPlayer.play(key)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if available: burst(area.owner as Player)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		&'burst': idle()
+
+```
