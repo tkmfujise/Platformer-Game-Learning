@@ -190,7 +190,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[]
 extends Sprite2D
 
 @onready var standby : bool = true
-const FORCE := -2000
+const FORCE := -1800
 
 
 func hit(player: Player) -> void:

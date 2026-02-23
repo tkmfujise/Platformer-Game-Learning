@@ -40,6 +40,7 @@ image::/assets/raw/assets/images/stages/background/Forest.png[200, 100]
 
 === Instantiators
 * link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
 
 
 === Scene Tree
@@ -63,7 +64,7 @@ NOTE: No signal connections.
 |===
 |Name |Value
 |*modulate* a|`Color(0.26293266, 0.2629324, 0.26293254, 1)`
-|*scroll_scale* a|`Vector2(1.1, 0.9)`
+|*scroll_scale* a|`Vector2(1.1, 0.2)`
 |*scroll_offset* a|`Vector2(1875, 115)`
 |*repeat_size* a|`Vector2(1000, 0)`
 |*repeat_times* a|`8`
@@ -87,6 +88,7 @@ image::/assets/raw/assets/images/stages/background/Forest.png[]
 |===
 |Name |Value
 |*modulate* a|`Color(0.4670229, 0.5335627, 0.5659914, 1)`
+|*scroll_scale* a|`Vector2(1, 0.3)`
 |*scroll_offset* a|`Vector2(1318, 779)`
 |*repeat_size* a|`Vector2(1000, 0)`
 |*repeat_times* a|`7`

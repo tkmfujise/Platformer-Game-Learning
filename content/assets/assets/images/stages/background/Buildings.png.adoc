@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/background/Buildings.png
+---
+:toc:
+
+== assets / images / stages / background / Buildings.png
+
+=== Attached Scenes
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |100×60 px
+|Type |png
+|Content Length |821.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/background/Buildings.png[]
+

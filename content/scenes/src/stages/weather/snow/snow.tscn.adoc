@@ -8,11 +8,8 @@ title: src/stages/weather/snow/snow.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Snow" <<(N,lightskyblue) Node2D>> {
+class R as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
 }
-class N1 as "CPUParticles2D" <<(C,lightskyblue) CPUParticles2D>> {
-}
-R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
@@ -30,13 +27,13 @@ image::/assets/raw/assets/images/particles/circle_blur.png[200, 100]
 
 
 === Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
 * link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]
 
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-2d]#Snow# [.node-type.type-2d]#Node2D#
-** [.node-name.type-2d]#CPUParticles2D# [.node-type.type-2d]#CPUParticles2D#
+* [.node-name.type-2d]#CPUParticles2D# [.node-type.type-2d]#CPUParticles2D#
 
 
 === Signal Connections
@@ -46,12 +43,11 @@ NOTE: No signal connections.
 
 === Properties
 [.node-property.node-2d]
-.#$CPUParticles2D# properties
+.#Root# properties
 [cols="1,3" options="header"]
 |===
 |Name |Value
 |*modulate* a|`Color(0.953868, 0.961558, 0.992311, 1)`
-|*position* a|`Vector2(1000, -1000)`
 |*amount* a|`300`
 |*texture* a|[link=/assets/assets/images/particles/circle_blur.png]
 [.asset-image]

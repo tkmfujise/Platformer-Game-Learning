@@ -772,13 +772,6 @@ R  ->o  T0 : &"play"()
 |*unique_name_in_owner* a|`true`
 |*position* a|`Vector2(423.2688, 508.0891)`
 |===
-[.node-property.node-2d]
-.#$Weather# properties
-[cols="1,3" options="header"]
-|===
-|Name |Value
-|*visible* a|`false`
-|===
 [.node-property.node-plain]
 .#$Transitionable# properties
 [cols="1,3" options="header"]

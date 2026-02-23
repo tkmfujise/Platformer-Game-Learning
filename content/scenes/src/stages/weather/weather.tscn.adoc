@@ -13,7 +13,7 @@ class R as "Weather" <<(N,lightskyblue) Node2D>> {
   + _process()
   + current_camera()
 }
-class N1 as "Snow" <<(N,lightskyblue) Node2D>> {
+class N1 as "Snow" <<(C,lightskyblue) CPUParticles2D>> {
 }
 R --o N1
 !define _(a,b) a <-[#blue,thickness=2]- b

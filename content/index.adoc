@@ -26,9 +26,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 9.8 _nodes_
-| link:/scenes/src/chapters/1/chapter1.tscn[163 _nodes_]
-| 613 _nodes_
+| 9.9 _nodes_
+| link:/scenes/src/chapters/1/chapter1.tscn[171 _nodes_]
+| 620 _nodes_
 
 
 
@@ -60,11 +60,11 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-98 _files_
+99 _files_
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 22.14 KB 
+| 21.93 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
 | 2.12 MB 
 
@@ -100,7 +100,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MzovYXNzZXRzL2ltYWdlcy9wbGF5ZXI=]#_# | │  │ ├ player |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#5# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9wbGF5ZXIvZWZmZWN0cw==]#_# | │  │  │ └ effects |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9zdGFnZXM=]#_# | │  │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvYmFja2dyb3VuZA==]#_# | │  │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvdHJhcHM=]#_# | │  │  │ └ traps |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 

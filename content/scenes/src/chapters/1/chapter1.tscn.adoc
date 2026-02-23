@@ -11,167 +11,167 @@ title: src/chapters/1/chapter1.tscn
 class R as "Chapter1" <<(C,lightgreen) Control>> {
 ---
 }
-class N1 as "Frames" <<(N,lightskyblue) Node2D>> {
+class N1 as "SnowLayer" <<(C,yellow) CanvasLayer>> {
 }
-class N2 as "CameraFrame" <<(A,lightskyblue) Area2D>> {
+class N2 as "Snow" <<(C,lightskyblue) CPUParticles2D>> {
+}
+class N3 as "BackgroundColor" <<(C,lightgreen) ColorRect>> {
+}
+class N4 as "Background" <<(N,lightskyblue) Node2D>> {
+}
+class N5 as "Node2D" <<(N,lightskyblue) Node2D>> {
+}
+class N6 as "BuildingParallax2D" <<(P,lightskyblue) Parallax2D>> {
+}
+class N7 as "Buildings" <<(S,lightskyblue) Sprite2D>> {
+}
+class N8 as "Forest" <<(N,lightskyblue) Node2D>> {
+}
+class N9 as "Frames" <<(N,lightskyblue) Node2D>> {
+}
+class N10 as "CameraFrame" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N3 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
+class N11 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N4 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
+class N12 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N5 as "CameraFrame4" <<(A,lightskyblue) Area2D>> {
+class N13 as "CameraFrame4" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N6 as "CameraFrame5" <<(A,lightskyblue) Area2D>> {
+class N14 as "CameraFrame5" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N7 as "CameraFrame6" <<(A,lightskyblue) Area2D>> {
+class N15 as "CameraFrame6" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N8 as "CameraFrame7" <<(A,lightskyblue) Area2D>> {
+class N16 as "CameraFrame7" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N9 as "CameraFrame8" <<(A,lightskyblue) Area2D>> {
+class N17 as "CameraFrame8" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N10 as "CameraFrame9" <<(A,lightskyblue) Area2D>> {
+class N18 as "CameraFrame9" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N11 as "CameraFrame10" <<(A,lightskyblue) Area2D>> {
+class N19 as "CameraFrame10" <<(A,lightskyblue) Area2D>> {
   - HALF_SIZE
 ---
   + corner_of()
   + corner()
 }
-class N12 as "Voids" <<(N,lightskyblue) Node2D>> {
+class N20 as "Voids" <<(N,lightskyblue) Node2D>> {
 }
-class N13 as "Stage1" <<(A,lightskyblue) Area2D>> {
-}
-class N14 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N15 as "Stage2" <<(A,lightskyblue) Area2D>> {
-}
-class N16 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N17 as "Stage3" <<(A,lightskyblue) Area2D>> {
-}
-class N18 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N19 as "Stage4" <<(A,lightskyblue) Area2D>> {
-}
-class N20 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N21 as "Stage5" <<(A,lightskyblue) Area2D>> {
+class N21 as "Stage1" <<(A,lightskyblue) Area2D>> {
 }
 class N22 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N23 as "Stage7_8_9" <<(A,lightskyblue) Area2D>> {
+class N23 as "Stage2" <<(A,lightskyblue) Area2D>> {
 }
 class N24 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N25 as "Stage10" <<(A,lightskyblue) Area2D>> {
+class N25 as "Stage3" <<(A,lightskyblue) Area2D>> {
 }
 class N26 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N27 as "Traps" <<(N,lightskyblue) Node2D>> {
+class N27 as "Stage4" <<(A,lightskyblue) Area2D>> {
 }
-class N28 as "Spikes" <<(N,lightskyblue) Node2D>> {
+class N28 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N29 as "Stage1" <<(N,lightskyblue) Node2D>> {
+class N29 as "Stage5" <<(A,lightskyblue) Area2D>> {
 }
-class N30 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N30 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N31 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N31 as "Stage7_8_9" <<(A,lightskyblue) Area2D>> {
 }
-class N32 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N32 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N33 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N33 as "Stage10" <<(A,lightskyblue) Area2D>> {
 }
-class N34 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N34 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N35 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N35 as "Traps" <<(N,lightskyblue) Node2D>> {
 }
-class N36 as "Spike7" <<(A,lightskyblue) Area2D>> {
+class N36 as "Spikes" <<(N,lightskyblue) Node2D>> {
 }
-class N37 as "Spike8" <<(A,lightskyblue) Area2D>> {
+class N37 as "Stage1" <<(N,lightskyblue) Node2D>> {
 }
-class N38 as "Spike9" <<(A,lightskyblue) Area2D>> {
+class N38 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N39 as "Spike10" <<(A,lightskyblue) Area2D>> {
+class N39 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N40 as "Stage2" <<(N,lightskyblue) Node2D>> {
+class N40 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N41 as "Spike11" <<(A,lightskyblue) Area2D>> {
+class N41 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N42 as "Spike12" <<(A,lightskyblue) Area2D>> {
+class N42 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N43 as "Spike13" <<(A,lightskyblue) Area2D>> {
+class N43 as "Spike6" <<(A,lightskyblue) Area2D>> {
 }
-class N44 as "Spike14" <<(A,lightskyblue) Area2D>> {
+class N44 as "Spike7" <<(A,lightskyblue) Area2D>> {
 }
-class N45 as "Spike15" <<(A,lightskyblue) Area2D>> {
+class N45 as "Spike8" <<(A,lightskyblue) Area2D>> {
 }
-class N46 as "Stage3" <<(N,lightskyblue) Node2D>> {
+class N46 as "Spike9" <<(A,lightskyblue) Area2D>> {
 }
-class N47 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N47 as "Spike10" <<(A,lightskyblue) Area2D>> {
 }
-class N48 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N48 as "Stage2" <<(N,lightskyblue) Node2D>> {
 }
-class N49 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N49 as "Spike11" <<(A,lightskyblue) Area2D>> {
 }
-class N50 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N50 as "Spike12" <<(A,lightskyblue) Area2D>> {
 }
-class N51 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N51 as "Spike13" <<(A,lightskyblue) Area2D>> {
 }
-class N52 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N52 as "Spike14" <<(A,lightskyblue) Area2D>> {
 }
-class N53 as "Stage4" <<(N,lightskyblue) Node2D>> {
+class N53 as "Spike15" <<(A,lightskyblue) Area2D>> {
 }
-class N54 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N54 as "Stage3" <<(N,lightskyblue) Node2D>> {
 }
-class N55 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N55 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N56 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N56 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N57 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N57 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N58 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N58 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N59 as "Spike7" <<(A,lightskyblue) Area2D>> {
+class N59 as "Spike6" <<(A,lightskyblue) Area2D>> {
 }
 class N60 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N61 as "Stage6" <<(N,lightskyblue) Node2D>> {
+class N61 as "Stage4" <<(N,lightskyblue) Node2D>> {
 }
 class N62 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
@@ -181,85 +181,101 @@ class N64 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
 class N65 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N66 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N66 as "Spike6" <<(A,lightskyblue) Area2D>> {
 }
-class N67 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N67 as "Spike7" <<(A,lightskyblue) Area2D>> {
 }
-class N68 as "Spike7" <<(A,lightskyblue) Area2D>> {
+class N68 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N69 as "Spike8" <<(A,lightskyblue) Area2D>> {
+class N69 as "Stage6" <<(N,lightskyblue) Node2D>> {
 }
-class N70 as "Spike9" <<(A,lightskyblue) Area2D>> {
+class N70 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N71 as "Spike10" <<(A,lightskyblue) Area2D>> {
+class N71 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N72 as "Stage7_8" <<(N,lightskyblue) Node2D>> {
+class N72 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N73 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N73 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N74 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N74 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N75 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N75 as "Spike6" <<(A,lightskyblue) Area2D>> {
 }
-class N76 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N76 as "Spike7" <<(A,lightskyblue) Area2D>> {
 }
-class N77 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N77 as "Spike8" <<(A,lightskyblue) Area2D>> {
 }
-class N78 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N78 as "Spike9" <<(A,lightskyblue) Area2D>> {
 }
-class N79 as "Spike7" <<(A,lightskyblue) Area2D>> {
+class N79 as "Spike10" <<(A,lightskyblue) Area2D>> {
 }
-class N80 as "Spike8" <<(A,lightskyblue) Area2D>> {
+class N80 as "Stage7_8" <<(N,lightskyblue) Node2D>> {
 }
-class N81 as "Spike9" <<(A,lightskyblue) Area2D>> {
+class N81 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N82 as "Spike10" <<(A,lightskyblue) Area2D>> {
+class N82 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N83 as "Stage9" <<(N,lightskyblue) Node2D>> {
+class N83 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N84 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N84 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N85 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N85 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N86 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N86 as "Spike6" <<(A,lightskyblue) Area2D>> {
 }
-class N87 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N87 as "Spike7" <<(A,lightskyblue) Area2D>> {
 }
-class N88 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N88 as "Spike8" <<(A,lightskyblue) Area2D>> {
 }
-class N89 as "Stage10" <<(N,lightskyblue) Node2D>> {
+class N89 as "Spike9" <<(A,lightskyblue) Area2D>> {
 }
-class N90 as "Spike" <<(A,lightskyblue) Area2D>> {
+class N90 as "Spike10" <<(A,lightskyblue) Area2D>> {
 }
-class N91 as "Spike2" <<(A,lightskyblue) Area2D>> {
+class N91 as "Stage9" <<(N,lightskyblue) Node2D>> {
 }
-class N92 as "Spike3" <<(A,lightskyblue) Area2D>> {
+class N92 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N93 as "Spike4" <<(A,lightskyblue) Area2D>> {
+class N93 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N94 as "Spike5" <<(A,lightskyblue) Area2D>> {
+class N94 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N95 as "Spike6" <<(A,lightskyblue) Area2D>> {
+class N95 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N96 as "Spike7" <<(A,lightskyblue) Area2D>> {
+class N96 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N97 as "Spike8" <<(A,lightskyblue) Area2D>> {
+class N97 as "Stage10" <<(N,lightskyblue) Node2D>> {
 }
-class N98 as "Spike9" <<(A,lightskyblue) Area2D>> {
+class N98 as "Spike" <<(A,lightskyblue) Area2D>> {
 }
-class N99 as "Spike10" <<(A,lightskyblue) Area2D>> {
+class N99 as "Spike2" <<(A,lightskyblue) Area2D>> {
 }
-class N100 as "Spike11" <<(A,lightskyblue) Area2D>> {
+class N100 as "Spike3" <<(A,lightskyblue) Area2D>> {
 }
-class N101 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+class N101 as "Spike4" <<(A,lightskyblue) Area2D>> {
 }
-class N102 as "Stage2" <<(N,lightskyblue) Node2D>> {
+class N102 as "Spike5" <<(A,lightskyblue) Area2D>> {
 }
-class N103 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N103 as "Spike6" <<(A,lightskyblue) Area2D>> {
+}
+class N104 as "Spike7" <<(A,lightskyblue) Area2D>> {
+}
+class N105 as "Spike8" <<(A,lightskyblue) Area2D>> {
+}
+class N106 as "Spike9" <<(A,lightskyblue) Area2D>> {
+}
+class N107 as "Spike10" <<(A,lightskyblue) Area2D>> {
+}
+class N108 as "Spike11" <<(A,lightskyblue) Area2D>> {
+}
+class N109 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+}
+class N110 as "Stage2" <<(N,lightskyblue) Node2D>> {
+}
+class N111 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N104 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
+class N112 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
   - FORCE
   * standby
 ---
@@ -267,23 +283,23 @@ class N104 as "Spriingboard" <<(S,lightskyblue) Sprite2D>> {
   + _on_area_2d_area_entered()
   + _on_animation_player_animation_finished()
 }
-class N105 as "Stage3" <<(N,lightskyblue) Node2D>> {
+class N113 as "Stage3" <<(N,lightskyblue) Node2D>> {
 }
-class N106 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N114 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N107 as "Stage4" <<(N,lightskyblue) Node2D>> {
+class N115 as "Stage4" <<(N,lightskyblue) Node2D>> {
 }
-class N108 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N116 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N109 as "OneWayScaffold2" <<(S,lightskyblue) StaticBody2D>> {
+class N117 as "OneWayScaffold2" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N110 as "Pulley1" <<(N,lightskyblue) Node2D>> {
+class N118 as "Pulley1" <<(N,lightskyblue) Node2D>> {
   - DISTANCE
   * state
   * angle
@@ -311,7 +327,7 @@ class N110 as "Pulley1" <<(N,lightskyblue) Node2D>> {
   + _on_area_2d_area_entered()
   + _on_area_2d_area_exited()
 }
-class N111 as "Pulley2" <<(N,lightskyblue) Node2D>> {
+class N119 as "Pulley2" <<(N,lightskyblue) Node2D>> {
   - DISTANCE
   * state
   * angle
@@ -339,53 +355,53 @@ class N111 as "Pulley2" <<(N,lightskyblue) Node2D>> {
   + _on_area_2d_area_entered()
   + _on_area_2d_area_exited()
 }
-class N112 as "Stage5" <<(N,lightskyblue) Node2D>> {
+class N120 as "Stage5" <<(N,lightskyblue) Node2D>> {
 }
-class N113 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N121 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N114 as "Platforms" <<(N,lightskyblue) Node2D>> {
+class N122 as "Platforms" <<(N,lightskyblue) Node2D>> {
 }
-class N115 as "CrumblingPlatform1" <<(A,lightskyblue) Area2D>> {
+class N123 as "CrumblingPlatform1" <<(A,lightskyblue) Area2D>> {
   * falling
 ---
   + fall()
   + play()
   + _on_area_entered()
 }
-class N116 as "CrumblingPlatform2" <<(A,lightskyblue) Area2D>> {
+class N124 as "CrumblingPlatform2" <<(A,lightskyblue) Area2D>> {
   * falling
 ---
   + fall()
   + play()
   + _on_area_entered()
 }
-class N117 as "CrumblingPlatform3" <<(A,lightskyblue) Area2D>> {
+class N125 as "CrumblingPlatform3" <<(A,lightskyblue) Area2D>> {
   * falling
 ---
   + fall()
   + play()
   + _on_area_entered()
 }
-class N118 as "CrumblingPlatform4" <<(A,lightskyblue) Area2D>> {
+class N126 as "CrumblingPlatform4" <<(A,lightskyblue) Area2D>> {
   * falling
 ---
   + fall()
   + play()
   + _on_area_entered()
 }
-class N119 as "Stage6" <<(N,lightskyblue) Node2D>> {
+class N127 as "Stage6" <<(N,lightskyblue) Node2D>> {
 }
-class N120 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N128 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N121 as "OneWayScaffold2" <<(S,lightskyblue) StaticBody2D>> {
+class N129 as "OneWayScaffold2" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N122 as "Pulley" <<(N,lightskyblue) Node2D>> {
+class N130 as "Pulley" <<(N,lightskyblue) Node2D>> {
   - DISTANCE
   * state
   * angle
@@ -413,13 +429,13 @@ class N122 as "Pulley" <<(N,lightskyblue) Node2D>> {
   + _on_area_2d_area_entered()
   + _on_area_2d_area_exited()
 }
-class N123 as "Stage7_8" <<(N,lightskyblue) Node2D>> {
+class N131 as "Stage7_8" <<(N,lightskyblue) Node2D>> {
 }
-class N124 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N132 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N125 as "Springboard" <<(S,lightskyblue) Sprite2D>> {
+class N133 as "Springboard" <<(S,lightskyblue) Sprite2D>> {
   - FORCE
   * standby
 ---
@@ -427,11 +443,11 @@ class N125 as "Springboard" <<(S,lightskyblue) Sprite2D>> {
   + _on_area_2d_area_entered()
   + _on_animation_player_animation_finished()
 }
-class N126 as "OneWayFloor" <<(S,lightskyblue) StaticBody2D>> {
+class N134 as "OneWayFloor" <<(S,lightskyblue) StaticBody2D>> {
 }
-class N127 as "Stage9" <<(N,lightskyblue) Node2D>> {
+class N135 as "Stage9" <<(N,lightskyblue) Node2D>> {
 }
-class N128 as "Springboard" <<(S,lightskyblue) Sprite2D>> {
+class N136 as "Springboard" <<(S,lightskyblue) Sprite2D>> {
   - FORCE
   * standby
 ---
@@ -439,17 +455,17 @@ class N128 as "Springboard" <<(S,lightskyblue) Sprite2D>> {
   + _on_area_2d_area_entered()
   + _on_animation_player_animation_finished()
 }
-class N129 as "Stage10" <<(N,lightskyblue) Node2D>> {
+class N137 as "Stage10" <<(N,lightskyblue) Node2D>> {
 }
-class N130 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
+class N138 as "OneWayScaffold" <<(S,lightskyblue) StaticBody2D>> {
 ---
   + drop()
 }
-class N131 as "OneWayFloor" <<(S,lightskyblue) StaticBody2D>> {
+class N139 as "OneWayFloor" <<(S,lightskyblue) StaticBody2D>> {
 }
-class N132 as "OneWayFloor2" <<(S,lightskyblue) StaticBody2D>> {
+class N140 as "OneWayFloor2" <<(S,lightskyblue) StaticBody2D>> {
 }
-class N133 as "Diamond" <<(A,lightskyblue) Area2D>> {
+class N141 as "Diamond" <<(A,lightskyblue) Area2D>> {
   * available
 ---
   + reset()
@@ -459,11 +475,11 @@ class N133 as "Diamond" <<(A,lightskyblue) Area2D>> {
   + _on_area_entered()
   + _on_animation_player_animation_finished()
 }
-class N134 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+class N142 as "StageGround0" <<(T,yellow) TileMapLayer>> {
 }
-class N135 as "Strawberries" <<(N,lightskyblue) Node2D>> {
+class N143 as "Strawberries" <<(N,lightskyblue) Node2D>> {
 }
-class N136 as "Strawberry1" <<(A,lightskyblue) Area2D>> {
+class N144 as "Strawberry1" <<(A,lightskyblue) Area2D>> {
   - OFFSET
   * player
   * obtained
@@ -476,9 +492,9 @@ class N136 as "Strawberry1" <<(A,lightskyblue) Area2D>> {
   + _on_hit_area_entered()
   + _on_area_entered()
 }
-class N137 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N145 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N138 as "Strawberry2" <<(A,lightskyblue) Area2D>> {
+class N146 as "Strawberry2" <<(A,lightskyblue) Area2D>> {
   - OFFSET
   * player
   * obtained
@@ -491,9 +507,9 @@ class N138 as "Strawberry2" <<(A,lightskyblue) Area2D>> {
   + _on_hit_area_entered()
   + _on_area_entered()
 }
-class N139 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N147 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N140 as "FlyingStrawberry3" <<(A,lightskyblue) Area2D>> {
+class N148 as "FlyingStrawberry3" <<(A,lightskyblue) Area2D>> {
   - OFFSET
   * player_path
   * player
@@ -509,11 +525,11 @@ class N140 as "FlyingStrawberry3" <<(A,lightskyblue) Area2D>> {
   + _on_hit_area_entered()
   + _on_area_entered()
 }
-class N141 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N149 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N142 as "CollisionShape2D2" <<(C,lightskyblue) CollisionShape2D>> {
+class N150 as "CollisionShape2D2" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N143 as "Strawberry4" <<(A,lightskyblue) Area2D>> {
+class N151 as "Strawberry4" <<(A,lightskyblue) Area2D>> {
   - OFFSET
   * player
   * obtained
@@ -525,57 +541,57 @@ class N143 as "Strawberry4" <<(A,lightskyblue) Area2D>> {
   + play()
   + _on_hit_area_entered()
   + _on_area_entered()
-}
-class N144 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N145 as "Strawberry5" <<(A,lightskyblue) Area2D>> {
-  - OFFSET
-  * player
-  * obtained
----
-  + _ready()
-  + reset()
-  + _physics_process()
-  + ascend()
-  + play()
-  + _on_hit_area_entered()
-  + _on_area_entered()
-}
-class N146 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N147 as "CollisionShape2D2" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N148 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
-}
-class N149 as "Stage2" <<(A,lightskyblue) Area2D>> {
-}
-class N150 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
-}
-class N151 as "Stage3" <<(A,lightskyblue) Area2D>> {
 }
 class N152 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N153 as "Stage4" <<(A,lightskyblue) Area2D>> {
+class N153 as "Strawberry5" <<(A,lightskyblue) Area2D>> {
+  - OFFSET
+  * player
+  * obtained
+---
+  + _ready()
+  + reset()
+  + _physics_process()
+  + ascend()
+  + play()
+  + _on_hit_area_entered()
+  + _on_area_entered()
 }
 class N154 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N155 as "Stage5" <<(A,lightskyblue) Area2D>> {
+class N155 as "CollisionShape2D2" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N156 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+class N156 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
 }
-class N157 as "Stage6" <<(A,lightskyblue) Area2D>> {
+class N157 as "Stage2" <<(A,lightskyblue) Area2D>> {
 }
 class N158 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N159 as "Stage7_8_9" <<(A,lightskyblue) Area2D>> {
+class N159 as "Stage3" <<(A,lightskyblue) Area2D>> {
 }
 class N160 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N161 as "Stage10" <<(A,lightskyblue) Area2D>> {
+class N161 as "Stage4" <<(A,lightskyblue) Area2D>> {
 }
 class N162 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
 }
-class N163 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+class N163 as "Stage5" <<(A,lightskyblue) Area2D>> {
+}
+class N164 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N165 as "Stage6" <<(A,lightskyblue) Area2D>> {
+}
+class N166 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N167 as "Stage7_8_9" <<(A,lightskyblue) Area2D>> {
+}
+class N168 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N169 as "Stage10" <<(A,lightskyblue) Area2D>> {
+}
+class N170 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N171 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   ~ dashed
   ~ jumped
   ~ landed
@@ -644,74 +660,75 @@ class N163 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + _on_area_collision_area_entered()
 }
 R --o N1
-R --o N12
-R --o N27
-R --o N101
-R --o N134
-R --o N135
-R --o N148
-R --o N163
+R --o N3
+R --o N4
+R --o N9
+R --o N20
+R --o N35
+R --o N109
+R --o N142
+R --o N143
+R --o N156
+R --o N171
 N1 --o N2
-N1 --o N3
-N1 --o N4
-N1 --o N5
-N1 --o N6
-N1 --o N7
-N1 --o N8
-N1 --o N9
-N1 --o N10
-N1 --o N11
-N12 --o N13
-N12 --o N15
-N12 --o N17
-N12 --o N19
-N12 --o N21
-N12 --o N23
-N12 --o N25
-N13 --o N14
-N15 --o N16
-N17 --o N18
-N19 --o N20
+N4 --o N5
+N4 --o N8
+N5 --o N6
+N6 --o N7
+N9 --o N10
+N9 --o N11
+N9 --o N12
+N9 --o N13
+N9 --o N14
+N9 --o N15
+N9 --o N16
+N9 --o N17
+N9 --o N18
+N9 --o N19
+N20 --o N21
+N20 --o N23
+N20 --o N25
+N20 --o N27
+N20 --o N29
+N20 --o N31
+N20 --o N33
 N21 --o N22
 N23 --o N24
 N25 --o N26
 N27 --o N28
-N28 --o N29
-N28 --o N40
-N28 --o N46
-N28 --o N53
-N28 --o N61
-N28 --o N72
-N28 --o N83
-N28 --o N89
 N29 --o N30
-N29 --o N31
-N29 --o N32
-N29 --o N33
-N29 --o N34
-N29 --o N35
-N29 --o N36
-N29 --o N37
-N29 --o N38
-N29 --o N39
-N40 --o N41
-N40 --o N42
-N40 --o N43
-N40 --o N44
-N40 --o N45
-N46 --o N47
-N46 --o N48
-N46 --o N49
-N46 --o N50
-N46 --o N51
-N46 --o N52
-N53 --o N54
-N53 --o N55
-N53 --o N56
-N53 --o N57
-N53 --o N58
-N53 --o N59
-N53 --o N60
+N31 --o N32
+N33 --o N34
+N35 --o N36
+N36 --o N37
+N36 --o N48
+N36 --o N54
+N36 --o N61
+N36 --o N69
+N36 --o N80
+N36 --o N91
+N36 --o N97
+N37 --o N38
+N37 --o N39
+N37 --o N40
+N37 --o N41
+N37 --o N42
+N37 --o N43
+N37 --o N44
+N37 --o N45
+N37 --o N46
+N37 --o N47
+N48 --o N49
+N48 --o N50
+N48 --o N51
+N48 --o N52
+N48 --o N53
+N54 --o N55
+N54 --o N56
+N54 --o N57
+N54 --o N58
+N54 --o N59
+N54 --o N60
 N61 --o N62
 N61 --o N63
 N61 --o N64
@@ -719,98 +736,111 @@ N61 --o N65
 N61 --o N66
 N61 --o N67
 N61 --o N68
-N61 --o N69
-N61 --o N70
-N61 --o N71
-N72 --o N73
-N72 --o N74
-N72 --o N75
-N72 --o N76
-N72 --o N77
-N72 --o N78
-N72 --o N79
-N72 --o N80
-N72 --o N81
-N72 --o N82
-N83 --o N84
-N83 --o N85
-N83 --o N86
-N83 --o N87
-N83 --o N88
-N89 --o N90
-N89 --o N91
-N89 --o N92
-N89 --o N93
-N89 --o N94
-N89 --o N95
-N89 --o N96
-N89 --o N97
-N89 --o N98
-N89 --o N99
-N89 --o N100
-N101 --o N102
-N101 --o N105
-N101 --o N107
-N101 --o N112
-N101 --o N119
-N101 --o N123
-N101 --o N127
-N101 --o N129
-N102 --o N103
-N102 --o N104
-N105 --o N106
-N107 --o N108
-N107 --o N109
-N107 --o N110
-N107 --o N111
-N112 --o N113
-N112 --o N114
-N114 --o N115
-N114 --o N116
-N114 --o N117
-N114 --o N118
-N119 --o N120
-N119 --o N121
-N119 --o N122
-N123 --o N124
-N123 --o N125
-N123 --o N126
+N69 --o N70
+N69 --o N71
+N69 --o N72
+N69 --o N73
+N69 --o N74
+N69 --o N75
+N69 --o N76
+N69 --o N77
+N69 --o N78
+N69 --o N79
+N80 --o N81
+N80 --o N82
+N80 --o N83
+N80 --o N84
+N80 --o N85
+N80 --o N86
+N80 --o N87
+N80 --o N88
+N80 --o N89
+N80 --o N90
+N91 --o N92
+N91 --o N93
+N91 --o N94
+N91 --o N95
+N91 --o N96
+N97 --o N98
+N97 --o N99
+N97 --o N100
+N97 --o N101
+N97 --o N102
+N97 --o N103
+N97 --o N104
+N97 --o N105
+N97 --o N106
+N97 --o N107
+N97 --o N108
+N109 --o N110
+N109 --o N113
+N109 --o N115
+N109 --o N120
+N109 --o N127
+N109 --o N131
+N109 --o N135
+N109 --o N137
+N110 --o N111
+N110 --o N112
+N113 --o N114
+N115 --o N116
+N115 --o N117
+N115 --o N118
+N115 --o N119
+N120 --o N121
+N120 --o N122
+N122 --o N123
+N122 --o N124
+N122 --o N125
+N122 --o N126
 N127 --o N128
-N129 --o N130
-N129 --o N131
-N129 --o N132
-N129 --o N133
+N127 --o N129
+N127 --o N130
+N131 --o N132
+N131 --o N133
+N131 --o N134
 N135 --o N136
-N135 --o N138
-N135 --o N140
-N135 --o N143
-N135 --o N145
-N136 --o N137
-N138 --o N139
-N140 --o N141
-N140 --o N142
+N137 --o N138
+N137 --o N139
+N137 --o N140
+N137 --o N141
 N143 --o N144
-N145 --o N146
-N145 --o N147
+N143 --o N146
+N143 --o N148
+N143 --o N151
+N143 --o N153
+N144 --o N145
+N146 --o N147
 N148 --o N149
-N148 --o N151
-N148 --o N153
-N148 --o N155
-N148 --o N157
-N148 --o N159
-N148 --o N161
-N149 --o N150
+N148 --o N150
 N151 --o N152
 N153 --o N154
-N155 --o N156
+N153 --o N155
+N156 --o N157
+N156 --o N159
+N156 --o N161
+N156 --o N163
+N156 --o N165
+N156 --o N167
+N156 --o N169
 N157 --o N158
 N159 --o N160
 N161 --o N162
+N163 --o N164
+N165 --o N166
+N167 --o N168
+N169 --o N170
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
 ....
 
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/background/Buildings.png]
+image::/assets/raw/assets/images/stages/background/Buildings.png[200, 100] 
 
 
 
@@ -940,6 +970,14 @@ CAUTION: No other scene instantiate this scene.
 === Scene Tree
 [.scene-tree]
 * [.node-name.type-control]#Chapter1# [.node-type.type-control]#Control#
+** [.node-name.type-other]#SnowLayer# [.node-type.type-other]#CanvasLayer#
+*** [.node-name.type-2d]#Snow# [.node-type.type-2d]#link:/scenes/src/stages/weather/snow/snow.tscn[res://src/stages/weather/snow/snow.tscn]#
+** [.node-name.type-control]#BackgroundColor# [.node-type.type-control]#ColorRect#
+** [.node-name.type-2d]#Background# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Node2D# [.node-type.type-2d]#Node2D#
+**** [.node-name.type-2d]#BuildingParallax2D# [.node-type.type-2d]#Parallax2D#
+***** [.node-name.type-2d]#Buildings# [.node-type.type-2d]#Sprite2D#
+*** [.node-name.type-2d]#Forest# [.node-type.type-2d]#link:/scenes/src/stages/background/forest/forest.tscn[res://src/stages/background/forest/forest.tscn]#
 ** [.node-name.type-2d]#Frames# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#CameraFrame# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
 *** [.node-name.type-2d]#CameraFrame2# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
@@ -1123,6 +1161,82 @@ NOTE: No signal connections.
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
 |*script* a|link:/scripts/src/chapters/1/chapter_1.gd[res://src/chapters/1/chapter_1.gd]
+|===
+[.node-property.node-other]
+.#$SnowLayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*layer* a|`0`
+|===
+[.node-property.node-2d]
+.#$SnowLayer/Snow# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1967.8812, -56.352356)`
+|*amount* a|`200`
+|*lifetime* a|`4.0`
+|*preprocess* a|`1.0`
+|*direction* a|`Vector2(-1, 0)`
+|*spread* a|`60.0`
+|*gravity* a|`Vector2(-400, 300)`
+|*scale_amount_min* a|`0.8`
+|*scale_amount_max* a|`2.5`
+|===
+[.node-property.node-control]
+.#$BackgroundColor# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`-202.0`
+|*offset_top* a|`-7815.0`
+|*offset_right* a|`8361.0`
+|*offset_bottom* a|`10.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*color* a|`Color(0.05654417, 0.054084107, 0.10285338, 1)`
+|===
+[.node-property.node-2d]
+.#$Background/Node2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(100, -1)`
+|===
+[.node-property.node-2d]
+.#$Background/Node2D/BuildingParallax2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scroll_scale* a|`Vector2(0.1, 0)`
+|*scroll_offset* a|`Vector2(0, 1000)`
+|*repeat_size* a|`Vector2(1000, 0)`
+|*repeat_times* a|`3`
+|===
+[.node-property.node-2d]
+.#$Background/Node2D/BuildingParallax2D/Buildings# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(417.99997, -140)`
+|*scale* a|`Vector2(10, 10)`
+|*texture* a|[link=/assets/assets/images/stages/background/Buildings.png]
+[.asset-image]
+.res://assets/images/stages/background/Buildings.png
+image::/assets/raw/assets/images/stages/background/Buildings.png[]
+
+|===
+[.node-property.node-2d]
+.#$Background/Forest# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*modulate* a|`Color(0.45668757, 0.595395, 0.51884604, 1)`
 |===
 [.node-property.node-2d]
 .#$Frames/CameraFrame# properties
@@ -2071,7 +2185,7 @@ NOTE: No signal connections.
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(5961.0005, -3975)`
+|*position* a|`Vector2(5962, -4027.0002)`
 |*player_path* a|`NodePath("../../Player")`
 |===
 [.node-property.node-2d]
@@ -2253,7 +2367,7 @@ NOTE: No signal connections.
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(8225.518, -6688.373)`
+|*position* a|`Vector2(138.53882, 631.12085)`
 |===
 
 

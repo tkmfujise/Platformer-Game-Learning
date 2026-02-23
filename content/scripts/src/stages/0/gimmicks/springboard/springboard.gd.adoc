@@ -15,7 +15,7 @@ title: res://src/stages/0/gimmicks/springboard/springboard.gd
 extends Sprite2D
 
 @onready var standby : bool = true
-const FORCE := -2000
+const FORCE := -1800
 
 
 func hit(player: Player) -> void:
