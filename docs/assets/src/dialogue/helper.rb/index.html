@@ -196,8 +196,8 @@
         
           
           
-          <li data-path="4:/src/dialogue/chapters/1/stage1.tscn" data-category="scenes">
-            <a class="" href="../../../../scenes/src/dialogue/chapters/1/stage1.tscn/">src/dialogue/chapters/1/stage1.tscn</a>
+          <li data-path="4:/src/dialogue/chapters/1/young_guy.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/src/dialogue/chapters/1/young_guy.tscn/">src/dialogue/chapters/1/young_guy.tscn</a>
           </li>
         
           
@@ -631,6 +631,12 @@
           
           <li data-path="4:/src/dialogue/chapters/0/stage_0.gd" data-category="scripts">
             <a class="" href="../../../../scripts/src/dialogue/chapters/0/stage_0.gd/">src/dialogue/chapters/0/stage_0.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/src/dialogue/chapters/1/young_guy.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/src/dialogue/chapters/1/young_guy.gd/">src/dialogue/chapters/1/young_guy.gd</a>
           </li>
         
           
@@ -1243,6 +1249,24 @@
         
           
           
+          <li data-path="4:/assets/images/stages/speech/ButtonB.svg" data-category="assets">
+            <a class="" href="../../../assets/images/stages/speech/ButtonB.svg/">assets/images/stages/speech/ButtonB.svg</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/speech/Silence.svg" data-category="assets">
+            <a class="" href="../../../assets/images/stages/speech/Silence.svg/">assets/images/stages/speech/Silence.svg</a>
+          </li>
+        
+          
+          
+          <li data-path="4:/assets/images/stages/speech/SpeechBubble.svg" data-category="assets">
+            <a class="" href="../../../assets/images/stages/speech/SpeechBubble.svg/">assets/images/stages/speech/SpeechBubble.svg</a>
+          </li>
+        
+          
+          
           <li data-path="4:/assets/images/stages/traps/Needle.png" data-category="assets">
             <a class="" href="../../../assets/images/stages/traps/Needle.png/">assets/images/stages/traps/Needle.png</a>
           </li>
@@ -1693,6 +1717,12 @@
         
           
           
+          <li data-path="4:/src/dialogue/scenarios/chapter1/young_guy.rb" data-category="assets">
+            <a class="" href="../scenarios/chapter1/young_guy.rb/">src/dialogue/scenarios/chapter1/young_guy.rb</a>
+          </li>
+        
+          
+          
           <li data-path="3:/src/player/ghost_effect/ghost_effect.gdshader" data-category="assets">
             <a class="" href="../../player/ghost_effect/ghost_effect.gdshader/">src/player/ghost_effect/ghost_effect.gdshader</a>
           </li>
@@ -1869,6 +1899,11 @@ No attached scenes.
     <span class="nb">self</span><span class="p">.</span><span class="nf">last_value</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span>
   <span class="k">end</span>
 
+  <span class="k">def</span> <span class="nf">pause</span>
+    <span class="no">Godot</span><span class="p">.</span><span class="nf">emit_signal</span> <span class="ss">:paused</span><span class="p">,</span> <span class="kp">true</span>
+    <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span>
+  <span class="k">end</span>
+
   <span class="k">def</span> <span class="nf">___?</span>
     <span class="n">last_value</span>
   <span class="k">end</span>
@@ -1882,7 +1917,7 @@ No attached scenes.
     <span class="no">Dialogue</span><span class="p">.</span><span class="nf">current</span><span class="p">.</span><span class="nf">listen!</span>
   <span class="k">end</span>
 <span class="k">end</span>
-<span class="n">delegate</span> <span class="no">Dialogue</span><span class="p">,</span> <span class="ss">:continue</span><span class="p">,</span> <span class="ss">:___?</span><span class="p">,</span> <span class="ss">:event</span><span class="p">,</span> <span class="ss">:wait</span> <span class="c1">#</span>
+<span class="n">delegate</span> <span class="no">Dialogue</span><span class="p">,</span> <span class="ss">:continue</span><span class="p">,</span> <span class="ss">:___?</span><span class="p">,</span> <span class="ss">:event</span><span class="p">,</span> <span class="ss">:wait</span><span class="p">,</span> <span class="ss">:pause</span> <span class="c1">#</span>
 
 
 <span class="k">class</span> <span class="nc">Speaker</span>

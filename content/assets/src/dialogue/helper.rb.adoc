@@ -47,6 +47,11 @@ class Dialogue
     self.last_value = Fiber.yield
   end
 
+  def pause
+    Godot.emit_signal :paused, true
+    Fiber.yield
+  end
+
   def ___?
     last_value
   end
@@ -60,7 +65,7 @@ class Dialogue
     Dialogue.current.listen!
   end
 end
-delegate Dialogue, :continue, :___?, :event, :wait #
+delegate Dialogue, :continue, :___?, :event, :wait, :pause #
 
 
 class Speaker

@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/speech/ButtonB.svg
+---
+:toc:
+
+== assets / images / stages / speech / ButtonB.svg
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |40×40 px
+|Type |svg
+|Content Length |2.96 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/speech/ButtonB.svg[]
+

@@ -26,25 +26,25 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 10.3 _nodes_
+| 10.4 _nodes_
 | link:/scenes/src/chapters/1/chapter1.tscn[222 _nodes_]
-| 675 _nodes_
+| 681 _nodes_
 
 
 
 .2+| *📝 Scripts* +
-82 _files_
+83 _files_
 
 | *Functions*
 | link:/scripts/autoloads/game_event/game_event.gd[0 _funcs_]
-| 5.3 _funcs_
+| 5.4 _funcs_
 | link:/scripts/src/player/player.gd[34 _funcs_]
-| 433 _funcs_
+| 446 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
-| 4.3 _lines_
+| 4.2 _lines_
 | link:/scripts/src/player/player.gd[54 _lines_]
-| 1,834 _lines_
+| 1,872 _lines_
 
 
 
@@ -60,24 +60,24 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💠 Asset Images* +
-102 _files_
+105 _files_
 
 | *Content Length*
 | link:/assets/assets/images/stages/traps/Needle.png[103.0 B ]
-| 21.31 KB 
+| 20.77 KB 
 | link:/assets/assets/world/Panorama.png[711.88 KB ]
-| 2.12 MB 
+| 2.13 MB 
 
 
 
 .1+| *💬 Asset Texts* +
-12 _files_
+13 _files_
 
 | *Lines*
 | link:/assets/src/dialogue/scenarios/basic.rb[11 _lines_]
-| 33.5 _lines_
-| link:/assets/src/dialogue/helper.rb[179 _lines_]
-| 402 _lines_
+| 40.7 _lines_
+| link:/assets/src/dialogue/helper.rb[184 _lines_]
+| 528 _lines_
 
 
 |===
@@ -105,6 +105,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjA=]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#4# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvY2hhcHRlcjE=]#_# | │  │  │ ├ chapter1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#2# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvZ2ltbWlja3M=]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#9# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvc3BlZWNo]#_# | │  │  │ ├ speech |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#3# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy9zdGFnZXMvdHJhcHM=]#_# | │  │  │ └ traps |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy91aQ==]#_# | │  │ ├ ui |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#15# |[.zero]#0# 
 |[.path.NDovYXNzZXRzL2ltYWdlcy91aS9DaGFwdGVycw==]#_# | │  │  │ ├ Chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.more]#10# |[.zero]#0# 
@@ -168,9 +169,10 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.Mjovc3JjL2RpYWxvZ3Vl]#_# | │ ├ dialogue |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 |[.path.Mzovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJz]#_# | │  │ ├ chapters |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzA=]#_# | │  │  │ ├ 0 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NDovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzE=]#_# | │  │  │ └ 1 |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL2RpYWxvZ3VlL2NoYXB0ZXJzLzE=]#_# | │  │  │ └ 1 |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL2RpYWxvZ3VlL3NjZW5hcmlvcw==]#_# | │  │ ├ scenarios |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
-|[.path.NDovc3JjL2RpYWxvZ3VlL3NjZW5hcmlvcy9jaGFwdGVyMA==]#_# | │  │  │ └ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+|[.path.NDovc3JjL2RpYWxvZ3VlL3NjZW5hcmlvcy9jaGFwdGVyMA==]#_# | │  │  │ ├ chapter0 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+|[.path.NDovc3JjL2RpYWxvZ3VlL3NjZW5hcmlvcy9jaGFwdGVyMQ==]#_# | │  │  │ └ chapter1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 |[.path.Mzovc3JjL2RpYWxvZ3VlL3NwZWFrZXI=]#_# | │  │ └ speaker |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mjovc3JjL2hlbHBlcnM=]#_# | │ ├ helpers |[.zero]#0# |[.more]#4# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mjovc3JjL21peGlucw==]#_# | │ ├ mixins |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -391,6 +393,12 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 "deadzone": 0.2,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
+]
+}`
+
+|*dialogue_start* |`{
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
 ]
 }`
 

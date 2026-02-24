@@ -21,6 +21,7 @@ class R as "Stage0" <<(N,lightskyblue) Node2D>> {
 }
 class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ finished
+  ~ paused
   ~ event
 ---
   * boot_file
@@ -33,12 +34,14 @@ class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
   + _ready()
   + start()
   + continue_dialogue()
+  + stop()
   + says()
   + set_speaker_image()
   + _input()
   + _handle()
   + _on_event()
   + _on_event_timer_timeout()
+  + _on_paused()
   + _on_finished()
 }
 class N2 as "House" <<(S,lightskyblue) Sprite2D>> {

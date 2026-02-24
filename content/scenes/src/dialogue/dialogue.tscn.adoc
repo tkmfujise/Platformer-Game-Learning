@@ -10,6 +10,7 @@ title: src/dialogue/dialogue.tscn
 ....
 class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ finished
+  ~ paused
   ~ event
 ---
   * boot_file
@@ -22,12 +23,14 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   + _ready()
   + start()
   + continue_dialogue()
+  + stop()
   + says()
   + set_speaker_image()
   + _input()
   + _handle()
   + _on_event()
   + _on_event_timer_timeout()
+  + _on_paused()
   + _on_finished()
 }
 class N1 as "Background" <<(C,lightgreen) ColorRect>> {
@@ -58,6 +61,7 @@ N4 --o N5
 left to right direction
 _(R::_on_event, R::event)
 _(R::_on_finished, R::finished)
+_(R::_on_paused, R::paused)
 _(R::_on_event_timer_timeout, N7::timeout)
 ....
 
@@ -89,6 +93,7 @@ func _input(_event: InputEvent) -> void:
 
 === Instantiators
 * link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
+* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
 
 
 === Scene Tree
@@ -116,10 +121,15 @@ func _on_event(_event_name: String) -> void:
 .$.:[#_finished_#]=>$.
 ```gdscript
 func _on_finished() -> void:
-	%AnimationPlayer.play("hide")
-	await get_tree().create_timer(1.0).timeout
-	Player.playable = true
+	await stop()
 	queue_free()
+```
+[.signal-connection]
+.$.:[#_paused_#]=>$.
+```gdscript
+func _on_paused() -> void:
+	waiting = true
+	stop()
 ```
 [.signal-connection]
 .$EventTimer:[#_timeout_#]=>$.
@@ -366,6 +376,7 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
 extends CanvasLayer
 
 signal finished
+signal paused
 signal event(event_name: String)
 
 @export_file_path("*.rb") var boot_file : String
@@ -385,11 +396,19 @@ func start() -> void:
 	show()
 	continue_dialogue()
 	started = true
+	waiting = false
 	Player.playable = false
 
 
 func continue_dialogue() -> void:
 	controller.perform('continue')
+
+
+func stop() -> void:
+	current_speaker = ''
+	%AnimationPlayer.play("hide")
+	await get_tree().create_timer(1.0).timeout
+	Player.playable = true
 
 
 func says(
@@ -443,6 +462,8 @@ func _handle(key: StringName, payload: Variant) -> void:
 		&'wait':
 			waiting = true
 			%EventTimer.start(payload)
+		&'paused':
+			paused.emit()
 		&'finished':
 			finished.emit()
 		_: print_debug("[%s]: %s" % [key, payload])
@@ -458,10 +479,13 @@ func _on_event_timer_timeout() -> void:
 	continue_dialogue()
 
 
+func _on_paused() -> void:
+	waiting = true
+	stop()
+
+
 func _on_finished() -> void:
-	%AnimationPlayer.play("hide")
-	await get_tree().create_timer(1.0).timeout
-	Player.playable = true
+	await stop()
 	queue_free()
 
 ```

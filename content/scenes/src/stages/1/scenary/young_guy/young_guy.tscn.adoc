@@ -30,7 +30,7 @@ image::/assets/raw/assets/images/actors/young_guy/YoungGuy.png[200, 100]
 
 
 === Instantiators
-* link:/scenes/src/dialogue/chapters/1/stage1.tscn[res://src/dialogue/chapters/1/stage1.tscn]
+* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
 
 
 === Scene Tree

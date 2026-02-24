@@ -715,7 +715,21 @@ class N198 as "Node2D" <<(N,lightskyblue) Node2D>> {
 }
 class N199 as "Scenary" <<(N,lightskyblue) Node2D>> {
 }
-class N200 as "Stage1" <<(N,lightskyblue) Node2D>> {
+class N200 as "Stage1" <<(A,lightskyblue) Area2D>> {
+  * state
+  * entered
+---
+  + _ready()
+  + start()
+  + stop()
+  + finish()
+  + _input()
+  + enter()
+  + exit()
+  + _on_area_entered()
+  + _on_area_exited()
+  + _on_dialogue_paused()
+  + _on_dialogue_finished()
 }
 class N201 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
 }
@@ -1084,6 +1098,11 @@ func _ready() -> void:
 		player.dashed.connect(fly_away)
 	if obtained: hide()
 ```
+.$Scenary/Stage1
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
 .$Player
 ```gdscript
 func _ready() -> void:
@@ -1180,6 +1199,14 @@ func _physics_process(delta: float) -> void:
 	
 	animate(playable)
 	move_and_slide()
+```
+==== _input
+.$Scenary/Stage1
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not state == State.ENTERED: return
+	if event.is_action_pressed(&'dialogue_start'):
+		start()
 ```
 
 
@@ -1388,7 +1415,7 @@ CAUTION: No other scene instantiate this scene.
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#Node2D# [.node-type.type-2d]#Node2D#
 ** [.node-name.type-2d]#Scenary# [.node-type.type-2d]#Node2D#
-*** [.node-name.type-2d]#Stage1# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/1/stage1.tscn[res://src/dialogue/chapters/1/stage1.tscn]#
+*** [.node-name.type-2d]#Stage1# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]#
 ** [.node-name.type-2d]#CheckPoints# [.node-type.type-2d]#Node2D#
 *** [.node-name.type-2d]#Stage2# [.node-type.type-2d]#Area2D#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
@@ -2997,7 +3024,7 @@ image::/assets/raw/assets/images/stages/background/Buildings.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(104.63379, 681.5508)`
+|*position* a|`Vector2(5417.7183, -7049.2495)`
 |===
 
 

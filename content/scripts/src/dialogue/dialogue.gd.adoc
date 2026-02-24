@@ -15,6 +15,7 @@ title: res://src/dialogue/dialogue.gd
 extends CanvasLayer
 
 signal finished
+signal paused
 signal event(event_name: String)
 
 @export_file_path("*.rb") var boot_file : String
@@ -34,11 +35,19 @@ func start() -> void:
 	show()
 	continue_dialogue()
 	started = true
+	waiting = false
 	Player.playable = false
 
 
 func continue_dialogue() -> void:
 	controller.perform('continue')
+
+
+func stop() -> void:
+	current_speaker = ''
+	%AnimationPlayer.play("hide")
+	await get_tree().create_timer(1.0).timeout
+	Player.playable = true
 
 
 func says(
@@ -92,6 +101,8 @@ func _handle(key: StringName, payload: Variant) -> void:
 		&'wait':
 			waiting = true
 			%EventTimer.start(payload)
+		&'paused':
+			paused.emit()
 		&'finished':
 			finished.emit()
 		_: print_debug("[%s]: %s" % [key, payload])
@@ -107,10 +118,13 @@ func _on_event_timer_timeout() -> void:
 	continue_dialogue()
 
 
+func _on_paused() -> void:
+	waiting = true
+	stop()
+
+
 func _on_finished() -> void:
-	%AnimationPlayer.play("hide")
-	await get_tree().create_timer(1.0).timeout
-	Player.playable = true
+	await stop()
 	queue_free()
 
 ```

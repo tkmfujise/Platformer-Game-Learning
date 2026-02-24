@@ -1,0 +1,370 @@
+---
+title: src/dialogue/chapters/1/young_guy.tscn
+---
+:toc:
+
+== src / dialogue / chapters / 1 / young_guy.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "YoungGuy" <<(A,lightskyblue) Area2D>> {
+  * state
+  * entered
+---
+  + _ready()
+  + start()
+  + stop()
+  + finish()
+  + _input()
+  + enter()
+  + exit()
+  + _on_area_entered()
+  + _on_area_exited()
+  + _on_dialogue_paused()
+  + _on_dialogue_finished()
+}
+class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
+  ~ finished
+  ~ paused
+  ~ event
+---
+  * boot_file
+  * speakers
+  * started
+  * controller
+  * current_speaker
+  * waiting
+---
+  + _ready()
+  + start()
+  + continue_dialogue()
+  + stop()
+  + says()
+  + set_speaker_image()
+  + _input()
+  + _handle()
+  + _on_event()
+  + _on_event_timer_timeout()
+  + _on_paused()
+  + _on_finished()
+}
+class N2 as "YoungGuy" <<(S,lightskyblue) Sprite2D>> {
+}
+class N3 as "Speech" <<(S,lightskyblue) Sprite2D>> {
+}
+class N4 as "ButtonB" <<(S,lightskyblue) Sprite2D>> {
+}
+class N5 as "Silence" <<(S,lightskyblue) Sprite2D>> {
+}
+class N6 as "Bonfire" <<(A,lightskyblue) AnimatedSprite2D>> {
+}
+class N7 as "PointLight2D" <<(P,lightskyblue) PointLight2D>> {
+}
+class N8 as "Tent" <<(S,lightskyblue) Sprite2D>> {
+}
+class N9 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+R --o N1
+R --o N2
+R --o N6
+R --o N8
+R --o N9
+N2 --o N3
+N3 --o N4
+N3 --o N5
+N6 --o N7
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_area_entered, R::area_entered)
+_(R::_on_area_exited, R::area_exited)
+_(R::_on_dialogue_finished, N1::finished)
+_(R::_on_dialogue_paused, N1::paused)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/faces/Player_face.png]
+image::/assets/raw/assets/images/faces/Player_face.png[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/faces/actors/OldWoman_face.png]
+image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/stages/speech/SpeechBubble.svg]
+image::/assets/raw/assets/images/stages/speech/SpeechBubble.svg[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/stages/speech/ButtonB.svg]
+image::/assets/raw/assets/images/stages/speech/ButtonB.svg[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/stages/speech/Silence.svg]
+image::/assets/raw/assets/images/stages/speech/Silence.svg[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/particles/circle_blur.png]
+image::/assets/raw/assets/images/particles/circle_blur.png[200, 100] 
+
+[.asset-image]
+[link=/assets/assets/images/stages/chapter1/Tent.png]
+image::/assets/raw/assets/images/stages/chapter1/Tent.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
+.$Dialogue
+```gdscript
+func _ready() -> void:
+	controller.boot_file = boot_file
+	controller.channel.connect(_handle)
+```
+==== _input
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not state == State.ENTERED: return
+	if event.is_action_pressed(&'dialogue_start'):
+		start()
+```
+.$Dialogue
+```gdscript
+func _input(_event: InputEvent) -> void:
+	if not started: return
+	if waiting: return
+	if _event.is_action_pressed('ui_accept'):
+		continue_dialogue()
+```
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#YoungGuy# [.node-type.type-2d]#Area2D#
+** [.node-name.type-other]#Dialogue# [.node-type.type-other]#link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]#
+** [.node-name.type-2d]#YoungGuy# [.node-type.type-2d]#link:/scenes/src/stages/1/scenary/young_guy/young_guy.tscn[res://src/stages/1/scenary/young_guy/young_guy.tscn]#
+*** [.node-name.type-2d]#Speech# [.node-type.type-2d]#Sprite2D#
+**** [.node-name.type-2d]#ButtonB# [.node-type.type-2d]#Sprite2D#
+**** [.node-name.type-2d]#Silence# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#Bonfire# [.node-type.type-2d]#link:/scenes/src/stages/1/gimmicks/bonfire/bonfire.tscn[res://src/stages/1/gimmicks/bonfire/bonfire.tscn]#
+*** [.node-name.type-2d]#PointLight2D# [.node-type.type-2d]#PointLight2D#
+** [.node-name.type-2d]#Tent# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+
+
+=== Signal Connections
+[.signal-connection]
+.$.:[#_area_entered_#]=>$.
+```gdscript
+func _on_area_entered(area: Area2D) -> void:
+	if not state == State.FINISHED: enter()
+```
+[.signal-connection]
+.$.:[#_area_exited_#]=>$.
+```gdscript
+func _on_area_exited(area: Area2D) -> void:
+	if not state == State.FINISHED: exit()
+```
+[.signal-connection]
+.$Dialogue:[#_finished_#]=>$.
+```gdscript
+func _on_dialogue_finished() -> void:
+	finish()
+```
+[.signal-connection]
+.$Dialogue:[#_paused_#]=>$.
+```gdscript
+func _on_dialogue_paused() -> void:
+	stop()
+```
+
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`0`
+|*collision_mask* a|`16`
+|*script* a|link:/scripts/src/dialogue/chapters/1/young_guy.gd[res://src/dialogue/chapters/1/young_guy.gd]
+|===
+[.node-property.node-other]
+.#$Dialogue# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*visible* a|`false`
+|*boot_file* a|link:/assets/src/dialogue/scenarios/chapter1/young_guy.rb[res://src/dialogue/scenarios/chapter1/young_guy.rb]
+|*speakers* a|`Array("[SubResource("Resource_htrph"), SubResource("Resource_lctda")]")`
+|===
+[.node-property.node-2d]
+.#$YoungGuy# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(233.99998, 228)`
+|===
+[.node-property.node-2d]
+.#$YoungGuy/Speech# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-0.18181577, -35.999996)`
+|*scale* a|`Vector2(0.3227273, 0.3227273)`
+|*texture* a|[link=/assets/assets/images/stages/speech/SpeechBubble.svg]
+[.asset-image]
+.res://assets/images/stages/speech/SpeechBubble.svg
+image::/assets/raw/assets/images/stages/speech/SpeechBubble.svg[]
+
+|===
+[.node-property.node-2d]
+.#$YoungGuy/Speech/ButtonB# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*visible* a|`false`
+|*position* a|`Vector2(-0.28169644, -4.3661833)`
+|*scale* a|`Vector2(0.83098614, 0.83098614)`
+|*texture* a|[link=/assets/assets/images/stages/speech/ButtonB.svg]
+[.asset-image]
+.res://assets/images/stages/speech/ButtonB.svg
+image::/assets/raw/assets/images/stages/speech/ButtonB.svg[]
+
+|===
+[.node-property.node-2d]
+.#$YoungGuy/Speech/Silence# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*texture* a|[link=/assets/assets/images/stages/speech/Silence.svg]
+[.asset-image]
+.res://assets/images/stages/speech/Silence.svg
+image::/assets/raw/assets/images/stages/speech/Silence.svg[]
+
+|===
+[.node-property.node-2d]
+.#$Bonfire# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*light_mask* a|`0`
+|*position* a|`Vector2(379.99988, 188.00024)`
+|===
+[.node-property.node-2d]
+.#$Bonfire/PointLight2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(8.700026, -11.60005)`
+|*scale* a|`Vector2(7.0124993, 2.9999998)`
+|*color* a|`Color(0.8917281, 0.32768914, 0, 1)`
+|*energy* a|`1.2`
+|*texture* a|[link=/assets/assets/images/particles/circle_blur.png]
+[.asset-image]
+.res://assets/images/particles/circle_blur.png
+image::/assets/raw/assets/images/particles/circle_blur.png[]
+
+|===
+[.node-property.node-2d]
+.#$Tent# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-89, 261)`
+|*scale* a|`Vector2(6, 6)`
+|*texture* a|[link=/assets/assets/images/stages/chapter1/Tent.png]
+[.asset-image]
+.res://assets/images/stages/chapter1/Tent.png
+image::/assets/raw/assets/images/stages/chapter1/Tent.png[]
+
+|===
+[.node-property.node-2d]
+.#$CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(563, 121)`
+|*shape* a|`SubResource("RectangleShape2D_jawxq")`
+|===
+
+
+=== link:/scripts/src/dialogue/chapters/1/young_guy.gd[young_guy.gd]
+
+```gdscript
+extends Area2D
+
+enum State { IDLE, ENTERED, PROGRESS, FINISHED }
+var state : State
+var entered : bool = false
+
+
+func _ready() -> void:
+	if not owner: start()
+
+
+func start() -> void:
+	state = State.PROGRESS
+	%Dialogue.start()
+
+
+func stop() -> void:
+	state = State.ENTERED
+
+
+func finish() -> void:
+	state = State.FINISHED
+	%Speech.visible = false
+
+
+func _input(event: InputEvent) -> void:
+	if not state == State.ENTERED: return
+	if event.is_action_pressed(&'dialogue_start'):
+		start()
+
+
+func enter(val: bool = true) -> void:
+	if val: state = State.ENTERED
+	else:   state = State.IDLE
+	%ButtonB.visible = val
+	%Silence.visible = !val
+
+
+func exit() -> void:
+	enter(false)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if not state == State.FINISHED: enter()
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if not state == State.FINISHED: exit()
+
+
+func _on_dialogue_paused() -> void:
+	stop()
+
+
+func _on_dialogue_finished() -> void:
+	finish()
+
+```
+
+
