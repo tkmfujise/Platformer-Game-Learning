@@ -1,0 +1,27 @@
+---
+title: assets/images/faces/actors/YoungGuy_face.png
+---
+:toc:
+
+== assets / images / faces / actors / YoungGuy_face.png
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |768×256 px
+|Type |png
+|Content Length |136.63 KB
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/faces/actors/YoungGuy_face.png[]
+

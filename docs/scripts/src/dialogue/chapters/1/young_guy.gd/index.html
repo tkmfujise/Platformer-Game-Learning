@@ -1087,6 +1087,12 @@
         
           
           
+          <li data-path="4:/assets/images/faces/actors/YoungGuy_face.png" data-category="assets">
+            <a class="" href="../../../../../../assets/assets/images/faces/actors/YoungGuy_face.png/">assets/images/faces/actors/YoungGuy_face.png</a>
+          </li>
+        
+          
+          
           <li data-path="3:/assets/images/particles/HA.png" data-category="assets">
             <a class="" href="../../../../../../assets/assets/images/particles/HA.png/">assets/images/particles/HA.png</a>
           </li>
@@ -1860,6 +1866,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Area2D</span>
 
+<span class="k">signal</span> <span class="n">event</span>
+
 <span class="k">enum</span> <span class="n">State</span> <span class="p">{</span> <span class="n">IDLE</span><span class="p">,</span> <span class="n">ENTERED</span><span class="p">,</span> <span class="n">PROGRESS</span><span class="p">,</span> <span class="n">FINISHED</span> <span class="p">}</span>
 <span class="k">var</span> <span class="n">state</span> <span class="p">:</span> <span class="n">State</span>
 <span class="k">var</span> <span class="n">entered</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
@@ -1880,6 +1888,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">finish</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">FINISHED</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">finish'</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">Speech</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
 
 
@@ -1910,6 +1919,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">_on_dialogue_paused</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">stop</span><span class="p">()</span>
+
+
+<span class="k">func</span> <span class="nf">_on_dialogue_event</span><span class="p">(</span><span class="n">event_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">has_animation</span><span class="p">(</span><span class="n">event_name</span><span class="p">):</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span>
+	<span class="n">event</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">_on_dialogue_finished</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

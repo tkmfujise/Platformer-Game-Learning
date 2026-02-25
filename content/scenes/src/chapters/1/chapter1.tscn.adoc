@@ -716,6 +716,8 @@ class N198 as "Node2D" <<(N,lightskyblue) Node2D>> {
 class N199 as "Scenary" <<(N,lightskyblue) Node2D>> {
 }
 class N200 as "Stage1" <<(A,lightskyblue) Area2D>> {
+  ~ event
+---
   * state
   * entered
 ---
@@ -729,6 +731,7 @@ class N200 as "Stage1" <<(A,lightskyblue) Area2D>> {
   + _on_area_entered()
   + _on_area_exited()
   + _on_dialogue_paused()
+  + _on_dialogue_event()
   + _on_dialogue_finished()
 }
 class N201 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
