@@ -641,8 +641,20 @@
         
           
           
+          <li data-path="2:/src/dialogue/content.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/src/dialogue/content.gd/">src/dialogue/content.gd</a>
+          </li>
+        
+          
+          
           <li data-path="2:/src/dialogue/dialogue.gd" data-category="scripts">
             <a class="" href="../../../../scripts/src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/dialogue/rich_text_effects/dialogue_effect.gd" data-category="scripts">
+            <a class="" href="../../../../scripts/src/dialogue/rich_text_effects/dialogue_effect.gd/">src/dialogue/rich_text_effects/dialogue_effect.gd</a>
           </li>
         
           
@@ -1861,7 +1873,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdU02P0zAQvedXDMulWZID3U9VZaWlywGpQijtbbWynGSaWPXake3sUiH47TiTODSFC1yi9zx-z_a8SSG5tZABt3D2ILjUVYtnsFzOVskBpdSvMay4euF2zQ9o7u7gewTwE3ZCCVtjSaThrR0gvqByUZqmnp1DrrVjOyGRmG2Q79HYnjhuHInOodDKGS0lmp62xngXNuyntVcunFDV4PwOmEFeHmYxEfIacOclVIusHB4z7tFNgPxgA8TxGCaeeRV2M6GaNliymqtSjiWtGL3ylDMnnr1N99XtcbVvz9FCaJ5f-hEVFMCX95TAR17sK6NbVQ4ZSFHVrjKIyuegpTYZFo5SGJVzUq5x5zb9S_4m9fdDs_K94UINMY4GF6cGn7tOkMumd7H7Qy5bjGHTGOFw_jA1uCSDrNv5n1e4-sPhX-9wTQ6dvT-HdNnk-EwU9Ra_uTXPUU6lNyT91GW47SIk9XYcf1qbKm5Jca_8yDih1VfZ_Rskux9lJ9XBIIM01T7tAOYBXAZwHcBNALeRz5jQReR7TegqelOinyMENuNJHgOHZfr4tutQ4mpR7BVa-2H-lEIeSZ8sOA2maweUwvgR8veK2CxbLMbxTcAzQvHvSphUKgZyVO9Hm6o9jE9cpz9F4l-1WAwk_gU64Wkh" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdU02L2zAQvftXTLeXeBsfmv0kpAtpstBAWBYnFEopQrYntogiGVne3bC0v73y2PImaS_tRbzRaJ5G855SyasKYuAVnM0Flzqv8Qwmk8FsuEcp9XMIM66eeLXkezR3d_AaAPyCjVCiKjCjoOR11UF8QmWDKIpcFMF8sXpcTr-x2ZdpzBYP6_v463TpMueQaG3ZRkikqCqRb9FUbWC5sUR3DqlW1mgp0bRhbYzjZ9152nvmwgqVH-a7-z8AM8iz_SCkgHg73PAKVSPLuif3Z3TpId9XHhb6mTUljttvYd8FEzueewImVFn7Q6zgKpN9SitG4zmNmRU7R9Osuj7MtnM92PBTd1s_g5SUe_hI0n3m6TY3ulZZJ54UeWFzg6icgFpqE2NqSb6-ckSVS9zYVfuSv5W6_tDM3Nu5UJ3-PcHFKcGimQSxrFqWartPZI0hrEojLI7mxwSXRBA3J_-zhas_GP61h2timLXqUl18dH0s0mKNL3bJE5Sd_51_k1Rn-Ga00ugUq4qltbPQjm1eDiW6oSvuG63XjdR0y7r_X7R33NQtVUyVs5YVWj3K5vNR2bQvO8l2BDFEkXau8GDkwaUH1x7ceHAbOC8QugicJoSugncZOr8hsAEfJiFwmETf3zeTHNpCpFvlnvtp9COCJJDOAWA1mGZskAnjrOb6CtggHo97mw_BRYTCt4x3NCV9cJBvvwBlWxiesB5_nqF71XjcBeFvi4CFpg==" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1880,6 +1892,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current</span> <span class="o">=</span> <span class="bp">self</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">boot_file</span> <span class="o">=</span> <span class="n">boot_file</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_handle</span><span class="p">)</span></code></pre>
 </div>
@@ -2356,6 +2369,12 @@ document.addEventListener("DOMContentLoaded", () => {
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bbcode_enabled</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>text</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>This is test.</code></p>
@@ -2365,6 +2384,18 @@ document.addEventListener("DOMContentLoaded", () => {
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>vertical_alignment</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>1</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>custom_effects</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>[SubResource("RichTextEffect_s5vpw")]</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>script</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../../../../scripts/src/dialogue/content.gd">res://src/dialogue/content.gd</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2437,6 +2468,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">CanvasLayer</span>
+<span class="k">class_name</span> <span class="n">Dialogue</span>
 
 <span class="k">signal</span> <span class="n">finished</span>
 <span class="k">signal</span> <span class="n">paused</span>
@@ -2446,11 +2478,14 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">speakers</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">DialogueSpeaker</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">started</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
 <span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">controller</span> <span class="p">:</span><span class="o">=</span> <span class="n">ReDScribe</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="k">const</span> <span class="n">DISPLAY_CHAR_INTERVAL</span> <span class="p">:</span><span class="o">=</span> <span class="mf">0.05</span>
 <span class="k">var</span> <span class="n">current_speaker</span> <span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 <span class="k">var</span> <span class="n">waiting</span> <span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span>
+<span class="k">static</span> <span class="k">var</span> <span class="n">current</span> <span class="p">:</span> <span class="n">Dialogue</span>
 
 
 <span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current</span> <span class="o">=</span> <span class="bp">self</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">boot_file</span> <span class="o">=</span> <span class="n">boot_file</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_handle</span><span class="p">)</span>
 
@@ -2478,9 +2513,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">,</span>
 	<span class="n">face</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">current_speaker</span> <span class="o">!=</span> <span class="n">speaker_name</span><span class="p">:</span>
-		<span class="n">current_speaker</span> <span class="o">=</span> <span class="n">speaker_name</span>
-		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
 	<span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="o">&amp;</span><span class="s2">'</span><span class="s1">left'</span><span class="p">:</span>
 		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
 		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
@@ -2488,7 +2520,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="o">%</span><span class="n">LeftSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
 		<span class="o">%</span><span class="n">RightSpeakerImage</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">true</span>
 	<span class="n">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">content</span>
+	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
+	<span class="k">if</span> <span class="n">current_speaker</span> <span class="o">!=</span> <span class="n">speaker_name</span><span class="p">:</span>
+		<span class="n">current_speaker</span> <span class="o">=</span> <span class="n">speaker_name</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
+		<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+	<span class="n">show_content</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">show_content</span><span class="p">(</span><span class="n">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">tween</span> <span class="o">=</span> <span class="n">create_tween</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">visible_ratio</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">"[dialogue]</span><span class="si">%s</span><span class="s2">[/dialogue]"</span> <span class="o">%</span> <span class="n">content</span>
+	<span class="k">var</span> <span class="n">duration</span> <span class="o">=</span> <span class="o">%</span><span class="n">Content</span><span class="o">.</span><span class="n">get_parsed_text</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">()</span> <span class="o">*</span> <span class="n">DISPLAY_CHAR_INTERVAL</span>
+	<span class="n">tween</span><span class="o">.</span><span class="n">tween_property</span><span class="p">(</span><span class="o">%</span><span class="n">Content</span><span class="p">,</span> <span class="s2">'</span><span class="s1">visible_ratio'</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">set_speaker_image</span><span class="p">(</span><span class="n">speaker_name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">StringName</span><span class="p">,</span> <span class="n">face</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

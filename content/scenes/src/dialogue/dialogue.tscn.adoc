@@ -13,18 +13,21 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ paused
   ~ event
 ---
+  - DISPLAY_CHAR_INTERVAL
   * boot_file
   * speakers
   * started
   * controller
   * current_speaker
   * waiting
+  * current
 ---
   + _ready()
   + start()
   + continue_dialogue()
   + stop()
   + says()
+  + show_content()
   + set_speaker_image()
   + _input()
   + _handle()
@@ -44,6 +47,9 @@ class N4 as "RightSpeaker" <<(C,lightgreen) CenterContainer>> {
 class N5 as "RightSpeakerImage" <<(S,lightskyblue) Sprite2D>> {
 }
 class N6 as "Content" <<(R,lightgreen) RichTextLabel>> {
+  * bbcode
+---
+  + _process_custom_fx()
 }
 class N7 as "EventTimer" <<(T,yellow) Timer>> {
 }
@@ -78,6 +84,7 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[200, 100]
 ==== _ready
 ```gdscript
 func _ready() -> void:
+	current = self
 	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 ```
@@ -346,8 +353,11 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
 |*size_flags_horizontal* a|`4`
 |*size_flags_vertical* a|`4`
 |*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
+|*bbcode_enabled* a|`true`
 |*text* a|`This is test.`
 |*vertical_alignment* a|`1`
+|*custom_effects* a|`[SubResource("RichTextEffect_s5vpw")]`
+|*script* a|link:/scripts/src/dialogue/content.gd[res://src/dialogue/content.gd]
 |===
 [.node-property.node-other]
 .#$EventTimer# properties
@@ -374,6 +384,7 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
 
 ```gdscript
 extends CanvasLayer
+class_name Dialogue
 
 signal finished
 signal paused
@@ -383,11 +394,14 @@ signal event(event_name: String)
 @export var speakers : Array[DialogueSpeaker] = []
 @onready var started : bool = false
 @onready var controller := ReDScribe.new()
+const DISPLAY_CHAR_INTERVAL := 0.05
 var current_speaker : String = ''
 var waiting : bool = false
+static var current : Dialogue
 
 
 func _ready() -> void:
+	current = self
 	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 
@@ -415,9 +429,6 @@ func says(
 	speaker_name: String, content: String, position: StringName,
 	face: String,
 ) -> void:
-	if current_speaker != speaker_name:
-		current_speaker = speaker_name
-		%AnimationPlayer.play("show")
 	if position == &'left':
 		%LeftSpeakerImage.visible = true
 		%RightSpeakerImage.visible = false
@@ -425,7 +436,20 @@ func says(
 		%LeftSpeakerImage.visible = false
 		%RightSpeakerImage.visible = true
 	set_speaker_image(speaker_name, position, face)
-	%Content.text = content
+	%Content.text = ''
+	if current_speaker != speaker_name:
+		current_speaker = speaker_name
+		%AnimationPlayer.play("show")
+		await get_tree().create_timer(1).timeout
+	show_content(content)
+
+
+func show_content(content: String) -> void:
+	var tween = create_tween()
+	%Content.visible_ratio = 0
+	%Content.text = "[dialogue]%s[/dialogue]" % content
+	var duration = %Content.get_parsed_text().length() * DISPLAY_CHAR_INTERVAL
+	tween.tween_property(%Content, 'visible_ratio', 1.0, duration)
 
 
 func set_speaker_image(speaker_name: String, position: StringName, face: String) -> void:

@@ -13,6 +13,7 @@ title: res://src/dialogue/dialogue.gd
 === Code
 ```gdscript
 extends CanvasLayer
+class_name Dialogue
 
 signal finished
 signal paused
@@ -22,11 +23,14 @@ signal event(event_name: String)
 @export var speakers : Array[DialogueSpeaker] = []
 @onready var started : bool = false
 @onready var controller := ReDScribe.new()
+const DISPLAY_CHAR_INTERVAL := 0.05
 var current_speaker : String = ''
 var waiting : bool = false
+static var current : Dialogue
 
 
 func _ready() -> void:
+	current = self
 	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 
@@ -54,9 +58,6 @@ func says(
 	speaker_name: String, content: String, position: StringName,
 	face: String,
 ) -> void:
-	if current_speaker != speaker_name:
-		current_speaker = speaker_name
-		%AnimationPlayer.play("show")
 	if position == &'left':
 		%LeftSpeakerImage.visible = true
 		%RightSpeakerImage.visible = false
@@ -64,7 +65,20 @@ func says(
 		%LeftSpeakerImage.visible = false
 		%RightSpeakerImage.visible = true
 	set_speaker_image(speaker_name, position, face)
-	%Content.text = content
+	%Content.text = ''
+	if current_speaker != speaker_name:
+		current_speaker = speaker_name
+		%AnimationPlayer.play("show")
+		await get_tree().create_timer(1).timeout
+	show_content(content)
+
+
+func show_content(content: String) -> void:
+	var tween = create_tween()
+	%Content.visible_ratio = 0
+	%Content.text = "[dialogue]%s[/dialogue]" % content
+	var duration = %Content.get_parsed_text().length() * DISPLAY_CHAR_INTERVAL
+	tween.tween_property(%Content, 'visible_ratio', 1.0, duration)
 
 
 func set_speaker_image(speaker_name: String, position: StringName, face: String) -> void:

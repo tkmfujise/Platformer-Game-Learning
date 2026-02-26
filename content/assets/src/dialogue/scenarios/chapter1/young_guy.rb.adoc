@@ -101,8 +101,8 @@ Dialogue.new do
   YoungGuy; with :sulky
   - "ブログぅ？"
   - "わかってないなぁ、マヂリンくん。"
-  - "時代は、Imstargoofだよ！"
   with :smile
+  - "時代は、Imstargoofだよ！"
   - ["ZeoUnderStarsってIDでやってるから、",
      "検索してみてよ！"]
 

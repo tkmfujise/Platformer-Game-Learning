@@ -24,18 +24,21 @@ class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
   ~ paused
   ~ event
 ---
+  - DISPLAY_CHAR_INTERVAL
   * boot_file
   * speakers
   * started
   * controller
   * current_speaker
   * waiting
+  * current
 ---
   + _ready()
   + start()
   + continue_dialogue()
   + stop()
   + says()
+  + show_content()
   + set_speaker_image()
   + _input()
   + _handle()
@@ -103,6 +106,7 @@ func _ready() -> void:
 .$Dialogue
 ```gdscript
 func _ready() -> void:
+	current = self
 	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 ```

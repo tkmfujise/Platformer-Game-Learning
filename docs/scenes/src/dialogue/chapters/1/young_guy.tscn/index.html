@@ -641,8 +641,20 @@
         
           
           
+          <li data-path="2:/src/dialogue/content.gd" data-category="scripts">
+            <a class="" href="../../../../../../scripts/src/dialogue/content.gd/">src/dialogue/content.gd</a>
+          </li>
+        
+          
+          
           <li data-path="2:/src/dialogue/dialogue.gd" data-category="scripts">
             <a class="" href="../../../../../../scripts/src/dialogue/dialogue.gd/">src/dialogue/dialogue.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="3:/src/dialogue/rich_text_effects/dialogue_effect.gd" data-category="scripts">
+            <a class="" href="../../../../../../scripts/src/dialogue/rich_text_effects/dialogue_effect.gd/">src/dialogue/rich_text_effects/dialogue_effect.gd</a>
           </li>
         
           
@@ -1861,7 +1873,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqVVE2L2zAQvftXqNtLvLVhk_0O6cJuAr0sJSS9lFKEYk9iEa9kJHm3Zml_e8eSZRzHpeRi3ozee5JmRk5ypjVZEabJ2XdZit2Xsjojs9noMcr5LjN6X23yEkLyqIBNFg8P5D0g5A-BVxAmiOMYo3OiDTNgEWZBQdqsfCIUZWk1Cm2ANGVaLIsGbrngOmsCykVRepJ18_gX92kqBWVoTJvdjtJIPcimnOVyVwItWKmHV-yFhhbc6azod5DYcn0d23otGoqt1zyqIM_lW0jmTLwy_cwqUG25vIkN3CEGyriR0uB-uSulLoDtQWlfYWWs6JwkUhgl8xyUC0ul0IU2fJt7Y9xwsft_G2ovLvCa_r7H7dGs0h5Cuw3lL2wHQ02jGRNpDp1a9mtrY2r4C9rUX1l2V496NNSByfHErnsTuy4UjkEzs63w0grXBUCSnSC7srKn0hgpnk7QXbvtsKcigRN0N24_KbZcwfCDFNgBHIlh_a3VLyUX5rmWTRbWZNkz6RIODe6swTds1AmnvreiOc4m11yKdcYKaHae9wz6pEOj8YVzYjgi7F8OzWJP6d6mqw7aL_P6ITYV9E-0t9o4rEgcS3TwYOLBjQd3Hty35IsWjQOcSgsvAxwzi65adB1gTy26DT6kgDMNhI5YtAkJI7P4x8f6UpHJeLIXoPXnyc-YbIIctoYYSVR9c5LiLCT1sQM6Wk2n_d9gRDDZTYR9nv0vdmg27rAO_4YRXmo6tXCI45-lo_loiOletOM5HP4F40gBow==" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqVVO9r2zAQ_e6_Quu-JF0Mbfo7ZIU0GVshlJCUQRlDKLYSi7iSkeRmYWx_-84ny3Mcj5Ev5t3pvSfp7uQoZcaQOWGGnLyoXK4_57sTMhx2Rr1UrBNrNrtlmvMuGWnO-pP7e_IzIOQ34W9c2iAMQ4hOibHMckSQ5ZrH5coHQkEW7zpdDICmbYVVVsKVkMIkZUCFzHJPQjePfwifpkpSBsa03O0gDdS9bCxYqtY5pxnLTfsKXqhtwZ0ORb-CCMv1dI71mpQUrNe4t-NpqrZdMmbyjZkp23FdlcubYOAOcVDGkEweF7Pp6IWOv4zm9PHp-dP862iKZV0qZeEkqSuyyTjbcG187bVFu1MSKWm1SlOuXZhrDf605GNuy4QVcl1f_3-zCl8hoRi-KodNNGxnPEzUlhaSvxU1vDoFFa9szdu6TRMm45TXmtBsCsbUilewKb4qr68eNLetdf3DUV80Rn2RaZifctgr4QUKFxnnUXKE7BJlD7m1Sj4cobty20HLZcSP0F27_ZRcCc3bX7KEDsDEtOtvUD9TQtppIetP0GTWMKkT9g1u0eAZGnXEqe9QNIbRFUYouUhYxsudxw2DJmnf6PzMOTEYEfYvh3KxoXSP2lUH7Gdp8YLLCvq33VgtHeYkDBU4eND34NqDWw_uKvJZhc4DmEqEFwGMGaLLCl0F0FNEN8G7mMNMc0I7rLfsEkaG4bf3xaV6NhHRRnJjPva_h2QZpHxliVVEFzcnMcxCVBw7oJ35YND8f_YIJOuJbpOHP9QaDeMaa_832oNLDQYI2zj-WTqaj9qY7kU7nsPdP0UyEik=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -1917,6 +1929,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="title">$Dialogue</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current</span> <span class="o">=</span> <span class="bp">self</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">boot_file</span> <span class="o">=</span> <span class="n">boot_file</span>
 	<span class="n">controller</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_handle</span><span class="p">)</span></code></pre>
 </div>

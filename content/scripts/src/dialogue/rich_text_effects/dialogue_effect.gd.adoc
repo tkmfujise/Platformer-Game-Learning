@@ -1,0 +1,33 @@
+---
+title: res://src/dialogue/rich_text_effects/dialogue_effect.gd
+---
+:toc:
+
+== src / dialogue / rich_text_effects / dialogue_effect.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+@tool
+extends RichTextEffect
+class_name RichTextDialogue
+
+var bbcode = 'dialogue'
+
+func _process_custom_fx(char_fx: CharFXTransform) -> bool:
+	var dialogue = Dialogue.current
+	if not dialogue: return true
+	var shown = dialogue.get_node('%Content').visible_characters
+	var distance = shown - char_fx.relative_index
+	if shown < 0 or char_fx.relative_index < shown - 1:
+		char_fx.color.a = 1
+		char_fx.offset.y = 0
+	else:
+		char_fx.color.a = 0.5
+		char_fx.offset.y = -2
+	return true
+
+```
