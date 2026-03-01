@@ -9,8 +9,10 @@ title: src/mixins/reset_on_player_restart/reset_on_player_restart.tscn
 [plantuml]
 ....
 class R as "ResetOnPlayerRestart" <<(N,darkgray) Node>> {
+  * duration
 ---
   + _ready()
+  + reset()
 }
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
@@ -25,11 +27,12 @@ left to right direction
 ```gdscript
 func _ready() -> void:
 	if owner and owner.has_method(&'reset'):
-		GameEvent.player_restarted.connect(owner.reset)
+		GameEvent.player_restarted.connect(reset)
 ```
 
 
 === Instantiators
+* link:/scenes/src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn]
 * link:/scenes/src/stages/gimmicks/diamond/diamond.tscn[res://src/stages/gimmicks/diamond/diamond.tscn]
 * link:/scenes/src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn[res://src/stages/gimmicks/flying_strawberry/flying_strawberry.tscn]
 * link:/scenes/src/stages/gimmicks/pulley/pulley.tscn[res://src/stages/gimmicks/pulley/pulley.tscn]
@@ -61,10 +64,17 @@ NOTE: No signal connections.
 ```gdscript
 extends Node
 
+@export var duration : float = 2.5
+
 
 func _ready() -> void:
 	if owner and owner.has_method(&'reset'):
-		GameEvent.player_restarted.connect(owner.reset)
+		GameEvent.player_restarted.connect(reset)
+
+
+func reset() -> void:
+	await get_tree().create_timer(duration).timeout
+	owner.reset()
 
 ```
 

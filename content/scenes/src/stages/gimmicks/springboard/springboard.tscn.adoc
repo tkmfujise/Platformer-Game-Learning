@@ -1,0 +1,211 @@
+---
+title: src/stages/gimmicks/springboard/springboard.tscn
+---
+:toc:
+
+== src / stages / gimmicks / springboard / springboard.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Springboard" <<(S,lightskyblue) Sprite2D>> {
+  - FORCE
+  * standby
+---
+  + hit()
+  + _on_area_2d_area_entered()
+  + _on_animation_player_animation_finished()
+}
+class N1 as "Area2D" <<(A,lightskyblue) Area2D>> {
+}
+class N2 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N3 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N3
+N1 --o N2
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_area_2d_area_entered, N1::area_entered)
+_(R::_on_animation_player_animation_finished, N3::animation_finished)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/gimmicks/Springboard.png]
+image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Springboard# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[.signal-connection]
+.$Area2D:[#_area_entered_#]=>$.
+```gdscript
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if standby: hit.call_deferred(area.owner as Player)
+```
+[.signal-connection]
+.$AnimationPlayer:[#_animation_finished_#]=>$.
+```gdscript
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	standby = true
+```
+
+
+=== Animations
+==== Animation_veh16
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
+==== hit
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+== Time: 0.0333 ==
+R  ->o  R : frame\n = 1
+== Time: 0.0666 ==
+R  ->o  R : frame\n = 2
+== Time: 0.09990001 ==
+R  ->o  R : frame\n = 3
+== Time: 0.1332 ==
+R  ->o  R : frame\n = 4
+== Time: 0.1665 ==
+R  ->o  R : frame\n = 5
+== Time: 0.19980001 ==
+R  ->o  R : frame\n = 6
+== Time: 0.23310001 ==
+R  ->o  R : frame\n = 7
+== Time: 0.2664 ==
+R  ->o  R : frame\n = 8
+== Time: 0.29970002 ==
+R  ->o  R : frame\n = 9
+== Time: 0.333 ==
+R  ->o  R : frame\n = 10
+== Time: 0.36630002 ==
+R  ->o  R : frame\n = 11
+== Time: 0.39960003 ==
+R  ->o  R : frame\n = 12
+== Time: 0.4329 ==
+R  ->o  R : frame\n = 13
+== Time: 0.46620002 ==
+R  ->o  R : frame\n = 14
+== Time: 0.4995 ==
+R  ->o  R : frame\n = 15
+== Time: 0.5328 ==
+R  ->o  R : frame\n = 16
+== Time: 0.5661 ==
+R  ->o  R : frame\n = 17
+== Time: 0.59940004 ==
+R  ->o  R : frame\n = 18
+== Time: 0.6327 ==
+R  ->o  R : frame\n = 18
+== Time: 0.6333 ==
+R  ->o  R : frame\n = 18
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scale* a|`Vector2(8, 8)`
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/Springboard.png]
+[.asset-image]
+.res://assets/images/stages/gimmicks/Springboard.png
+image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[]
+
+|*hframes* a|`19`
+|*script* a|link:/scripts/src/stages/gimmicks/springboard/springboard.gd[res://src/stages/gimmicks/springboard/springboard.gd]
+|===
+[.node-property.node-2d]
+.#$Area2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_mask* a|`2`
+|===
+[.node-property.node-2d]
+.#$Area2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(0.125, 6.125)`
+|*shape* a|`SubResource("RectangleShape2D_veh16")`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_vsbdv")
+}`
+|===
+
+
+=== link:/scripts/src/stages/gimmicks/springboard/springboard.gd[springboard.gd]
+
+```gdscript
+extends Sprite2D
+
+@onready var standby : bool = true
+const FORCE := -1800
+
+
+func hit(player: Player) -> void:
+	standby = false
+	player.velocity.y = FORCE
+	%AnimationPlayer.play(&'hit')
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if standby: hit.call_deferred(area.owner as Player)
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	standby = true
+
+```
+
+

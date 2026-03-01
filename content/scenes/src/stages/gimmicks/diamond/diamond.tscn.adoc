@@ -19,8 +19,10 @@ class R as "Diamond" <<(A,lightskyblue) Area2D>> {
   + _on_animation_player_animation_finished()
 }
 class N1 as "ResetOnPlayerRestart" <<(N,darkgray) Node>> {
+  * duration
 ---
   + _ready()
+  + reset()
 }
 class N2 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
 }
@@ -53,7 +55,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Diamond.png[200, 100]
 ```gdscript
 func _ready() -> void:
 	if owner and owner.has_method(&'reset'):
-		GameEvent.player_restarted.connect(owner.reset)
+		GameEvent.player_restarted.connect(reset)
 ```
 
 

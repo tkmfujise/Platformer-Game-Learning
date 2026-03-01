@@ -6,7 +6,7 @@ title: assets/images/stages/gimmicks/Springboard.png
 == assets / images / stages / gimmicks / Springboard.png
 
 === Attached Scenes
-* link:/scenes/src/stages/0/gimmicks/springboard/springboard.tscn[res://src/stages/0/gimmicks/springboard/springboard.tscn]
+* link:/scenes/src/stages/gimmicks/springboard/springboard.tscn[res://src/stages/gimmicks/springboard/springboard.tscn]
 
 
 

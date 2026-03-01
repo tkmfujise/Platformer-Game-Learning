@@ -14,9 +14,16 @@ title: res://src/mixins/reset_on_player_restart/reset_on_player_restart.gd
 ```gdscript
 extends Node
 
+@export var duration : float = 2.5
+
 
 func _ready() -> void:
 	if owner and owner.has_method(&'reset'):
-		GameEvent.player_restarted.connect(owner.reset)
+		GameEvent.player_restarted.connect(reset)
+
+
+func reset() -> void:
+	await get_tree().create_timer(duration).timeout
+	owner.reset()
 
 ```

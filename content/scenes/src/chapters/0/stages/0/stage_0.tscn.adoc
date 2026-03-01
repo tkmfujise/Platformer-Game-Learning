@@ -410,7 +410,7 @@ CAUTION: No other scene instantiate this scene.
 *** [.node-name.type-2d]#Area2D2# [.node-type.type-2d]#Area2D#
 **** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
 ** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
-*** [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#link:/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn]#
+*** [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn]#
 *** [.node-name.type-2d]#StoneBirdge# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn[res://src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn]#
 *** [.node-name.type-2d]#ClimbLecture# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]#
 *** [.node-name.type-2d]#DashLecture# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn[res://src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn]#

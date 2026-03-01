@@ -1,0 +1,191 @@
+---
+title: src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn
+---
+:toc:
+
+== src / stages / 0 / gimmicks / falling_ice_block / falling_ice_block.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+  * initial_position
+---
+  + _ready()
+  + _process()
+  + reset()
+  + fall()
+  + _on_detection_area_2d_body_entered()
+}
+class N1 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+}
+class N2 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N3 as "FailureCollision" <<(A,lightskyblue) Area2D>> {
+}
+class N4 as "FailureCollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N5 as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
+}
+class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+R --o N1
+R --o N2
+R --o N3
+R --o N5
+N3 --o N4
+N5 --o N6
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_detection_area_2d_body_entered, N5::body_entered)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/gimmicks/FallingIceBlock.png]
+image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	initial_position = position
+	freeze = true
+	%FailureCollisionShape2D.disabled = true
+```
+==== _process
+```gdscript
+func _process(_delta: float) -> void:
+	if not Player.playable: freeze = true
+```
+
+
+=== Instantiators
+* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#RigidBody2D#
+** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#FailureCollision# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#FailureCollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#DetectionArea2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+
+
+=== Signal Connections
+[.signal-connection]
+.$DetectionArea2D:[#_body_entered_#]=>$.
+```gdscript
+func _on_detection_area_2d_body_entered(_body: Node2D) -> void:
+	fall.call_deferred()
+```
+
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/stages/0/gimmicks/falling_ice_block/falling_ice_block.gd[res://src/stages/0/gimmicks/falling_ice_block/falling_ice_block.gd]
+|===
+[.node-property.node-2d]
+.#$Sprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*scale* a|`Vector2(8, 8)`
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/FallingIceBlock.png]
+[.asset-image]
+.res://assets/images/stages/gimmicks/FallingIceBlock.png
+image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[]
+
+|===
+[.node-property.node-2d]
+.#$CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-0.5, -4.3085938)`
+|*shape* a|`SubResource("RectangleShape2D_snubb")`
+|===
+[.node-property.node-2d]
+.#$FailureCollision# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
+|===
+[.node-property.node-2d]
+.#$FailureCollision/FailureCollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(-1, 9.5)`
+|*shape* a|`SubResource("RectangleShape2D_uwxa6")`
+|===
+[.node-property.node-2d]
+.#$DetectionArea2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_mask* a|`2`
+|===
+[.node-property.node-2d]
+.#$DetectionArea2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(0, 316.5)`
+|*shape* a|`SubResource("RectangleShape2D_51pa1")`
+|*debug_color* a|`Color(0.89528626, 0.7040168, 0.559312, 0.41960785)`
+|===
+
+
+=== link:/scripts/src/stages/0/gimmicks/falling_ice_block/falling_ice_block.gd[falling_ice_block.gd]
+
+```gdscript
+extends RigidBody2D
+
+@onready var initial_position : Vector2
+
+
+func _ready() -> void:
+	initial_position = position
+	freeze = true
+	%FailureCollisionShape2D.disabled = true
+
+
+func _process(_delta: float) -> void:
+	if not Player.playable: freeze = true
+
+
+func reset() -> void:
+	position = initial_position
+	freeze = true
+	%FailureCollisionShape2D.disabled = true
+
+
+func fall() -> void:
+	await get_tree().create_timer(0.5).timeout
+	freeze = false
+	%FailureCollisionShape2D.disabled = false
+
+
+func _on_detection_area_2d_body_entered(_body: Node2D) -> void:
+	fall.call_deferred()
+
+```
+
+

@@ -1372,7 +1372,7 @@ enum State {
 
 const SPEED = 700.0
 const DASH_SPEED = SPEED * 4
-const CLIMBING_SPEED = SPEED / 6
+const CLIMBING_SPEED = SPEED / 5
 const JUMP_VELOCITY = -1100.0
 const GRAVITY = 4000
 const MAX_VELOCITY_Y = 1300

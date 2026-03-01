@@ -1,0 +1,237 @@
+---
+title: src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn
+---
+:toc:
+
+== src / stages / 1 / gimmicks / falling_ice_block / falling_ice_block.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+  * initial_position
+  * prev_position
+  * player
+---
+  + _ready()
+  + set_initial_position()
+  + set_prev_position()
+  + _process()
+  + _physics_process()
+  + reset()
+  + fall()
+  + _on_detection_area_2d_body_entered()
+  + _on_detection_area_2d_area_exited()
+}
+class N1 as "ResetOnPlayerRestart" <<(N,darkgray) Node>> {
+  * duration
+---
+  + _ready()
+  + reset()
+}
+class N2 as "Spike" <<(A,lightskyblue) Area2D>> {
+}
+class N3 as "Sprite2D" <<(S,lightskyblue) Sprite2D>> {
+}
+class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N5 as "DetectionArea2D" <<(A,lightskyblue) Area2D>> {
+}
+class N6 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+R --o N1
+R --o N2
+R --o N3
+R --o N4
+R --o N5
+N5 --o N6
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_detection_area_2d_body_entered, N5::area_entered)
+_(R::_on_detection_area_2d_area_exited, N5::area_exited)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/gimmicks/FallingIceBlock.png]
+image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	set_initial_position()
+	freeze = true
+```
+.$ResetOnPlayerRestart
+```gdscript
+func _ready() -> void:
+	if owner and owner.has_method(&'reset'):
+		GameEvent.player_restarted.connect(reset)
+```
+==== _process
+```gdscript
+func _process(_delta: float) -> void:
+	if not Player.playable: freeze = true
+```
+==== _physics_process
+```gdscript
+func _physics_process(_delta: float) -> void:
+	if player and player.state == Player.State.CLIMBING:
+		var diff = global_position - prev_position
+		player.global_position += diff
+	set_prev_position()
+```
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#RigidBody2D#
+** [.node-name.type-plain]#ResetOnPlayerRestart# [.node-type.type-plain]#link:/scenes/src/mixins/reset_on_player_restart/reset_on_player_restart.tscn[res://src/mixins/reset_on_player_restart/reset_on_player_restart.tscn]#
+** [.node-name.type-2d]#Spike# [.node-type.type-2d]#link:/scenes/src/stages/traps/spike/spike.tscn[res://src/stages/traps/spike/spike.tscn]#
+** [.node-name.type-2d]#Sprite2D# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#DetectionArea2D# [.node-type.type-2d]#Area2D#
+*** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+
+
+=== Signal Connections
+[.signal-connection]
+.$DetectionArea2D:[#_area_entered_#]=>$.
+```gdscript
+func _on_detection_area_2d_body_entered(body: Node2D) -> void:
+	player = body.owner as Player
+	fall.call_deferred()
+```
+[.signal-connection]
+.$DetectionArea2D:[#_area_exited_#]=>$.
+```gdscript
+func _on_detection_area_2d_area_exited(area: Area2D) -> void:
+	player = null
+```
+
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*lock_rotation* a|`true`
+|*script* a|link:/scripts/src/stages/1/gimmicks/falling_ice_block/falling_ice_block.gd[res://src/stages/1/gimmicks/falling_ice_block/falling_ice_block.gd]
+|===
+[.node-property.node-2d]
+.#$Spike# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-42, -109)`
+|*scale* a|`Vector2(0.7, 1)`
+|===
+[.node-property.node-2d]
+.#$Sprite2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1.8771768, 81.557915)`
+|*rotation* a|`1.5707964`
+|*scale* a|`Vector2(6.349176, 4.7433963)`
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/FallingIceBlock.png]
+[.asset-image]
+.res://assets/images/stages/gimmicks/FallingIceBlock.png
+image::/assets/raw/assets/images/stages/gimmicks/FallingIceBlock.png[]
+
+|===
+[.node-property.node-2d]
+.#$CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*visible* a|`false`
+|*position* a|`Vector2(-1.5, 84)`
+|*shape* a|`SubResource("RectangleShape2D_olwuq")`
+|===
+[.node-property.node-2d]
+.#$DetectionArea2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`0`
+|*collision_mask* a|`2`
+|===
+[.node-property.node-2d]
+.#$DetectionArea2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1, 83.5)`
+|*shape* a|`SubResource("RectangleShape2D_4o7c0")`
+|===
+
+
+=== link:/scripts/src/stages/1/gimmicks/falling_ice_block/falling_ice_block.gd[falling_ice_block.gd]
+
+```gdscript
+extends RigidBody2D
+
+@onready var initial_position : Vector2
+@onready var prev_position : Vector2
+var player : Player = null
+
+
+func _ready() -> void:
+	set_initial_position()
+	freeze = true
+
+
+func set_initial_position() -> void:
+	initial_position = global_position
+	set_prev_position()
+
+
+func set_prev_position() -> void:
+	prev_position = global_position
+
+
+func _process(_delta: float) -> void:
+	if not Player.playable: freeze = true
+
+
+func _physics_process(_delta: float) -> void:
+	if player and player.state == Player.State.CLIMBING:
+		var diff = global_position - prev_position
+		player.global_position += diff
+	set_prev_position()
+
+
+func reset() -> void:
+	global_position = initial_position
+	freeze = true
+
+
+func fall() -> void:
+	await get_tree().create_timer(0.5).timeout
+	freeze = false
+
+
+func _on_detection_area_2d_body_entered(body: Node2D) -> void:
+	player = body.owner as Player
+	fall.call_deferred()
+
+
+func _on_detection_area_2d_area_exited(area: Area2D) -> void:
+	player = null
+
+```
+
+

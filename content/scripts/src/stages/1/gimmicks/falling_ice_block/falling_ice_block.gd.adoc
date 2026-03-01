@@ -1,0 +1,65 @@
+---
+title: res://src/stages/1/gimmicks/falling_ice_block/falling_ice_block.gd
+---
+:toc:
+
+== src / stages / 1 / gimmicks / falling_ice_block / falling_ice_block.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn]
+
+
+
+=== Code
+```gdscript
+extends RigidBody2D
+
+@onready var initial_position : Vector2
+@onready var prev_position : Vector2
+var player : Player = null
+
+
+func _ready() -> void:
+	set_initial_position()
+	freeze = true
+
+
+func set_initial_position() -> void:
+	initial_position = global_position
+	set_prev_position()
+
+
+func set_prev_position() -> void:
+	prev_position = global_position
+
+
+func _process(_delta: float) -> void:
+	if not Player.playable: freeze = true
+
+
+func _physics_process(_delta: float) -> void:
+	if player and player.state == Player.State.CLIMBING:
+		var diff = global_position - prev_position
+		player.global_position += diff
+	set_prev_position()
+
+
+func reset() -> void:
+	global_position = initial_position
+	freeze = true
+
+
+func fall() -> void:
+	await get_tree().create_timer(0.5).timeout
+	freeze = false
+
+
+func _on_detection_area_2d_body_entered(body: Node2D) -> void:
+	player = body.owner as Player
+	fall.call_deferred()
+
+
+func _on_detection_area_2d_area_exited(area: Area2D) -> void:
+	player = null
+
+```

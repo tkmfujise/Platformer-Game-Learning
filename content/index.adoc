@@ -26,9 +26,9 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 10.4 _nodes_
-| link:/scenes/src/chapters/1/chapter1.tscn[222 _nodes_]
-| 683 _nodes_
+| 11.4 _nodes_
+| link:/scenes/src/chapters/1/chapter1.tscn[284 _nodes_]
+| 747 _nodes_
 
 
 
@@ -37,14 +37,14 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 | *Functions*
 | link:/scripts/autoloads/game_event/game_event.gd[0 _funcs_]
-| 5.3 _funcs_
+| 5.4 _funcs_
 | link:/scripts/src/player/player.gd[34 _funcs_]
-| 450 _funcs_
+| 457 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.3 _lines_
 | link:/scripts/src/player/player.gd[54 _lines_]
-| 1,906 _lines_
+| 1,929 _lines_
 
 
 
@@ -137,8 +137,6 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.MTovZGVidWc=]#_# | ├ debug |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MjovZGVidWcvY2hhcHRlcnM=]#_# | │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MjovZGVidWcvY3VydGFpbg==]#_# | │ ├ curtain |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.MjovZGVidWcvZ2ltbWlja3M=]#_# | │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.MzovZGVidWcvZ2ltbWlja3MvcHVsbGV5]#_# | │  │ └ pulley |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MjovZGVidWcvc3RhZ2Vz]#_# | │ ├ stages |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MzovZGVidWcvc3RhZ2VzL2Jhc2lj]#_# | │  │ └ basic |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MTovZGV2]#_# | ├ dev |[.one]#1# |[.more]#2# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -190,14 +188,15 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL2NsaW1iX2xlY3R1cmU=]#_# | │  │  │  │ ├ climb_lecture |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL2Nyb3c=]#_# | │  │  │  │ ├ crow |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL2Rhc2hfbGVjdHVyZQ==]#_# | │  │  │  │ ├ dash_lecture |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3NwcmluZ2JvYXJk]#_# | │  │  │  │ ├ springboard |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL2ZhbGxpbmdfaWNlX2Jsb2Nr]#_# | │  │  │  │ ├ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZQ==]#_# | │  │  │  │ ├ stone_bridge |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Njovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZS9waWVjZQ==]#_# | │  │  │  │  │ ├ piece |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Njovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3N0b25lX2JyaWRnZS91bml0]#_# | │  │  │  │  │ └ unit |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8wL2dpbW1pY2tzL3Rvb2x0aXA=]#_# | │  │  │  │ └ tooltip |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL3N0YWdlcy8x]#_# | │  │ ├ 1 |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy8xL2dpbW1pY2tz]#_# | │  │  │ ├ gimmicks |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NTovc3JjL3N0YWdlcy8xL2dpbW1pY2tzL2JvbmZpcmU=]#_# | │  │  │  │ └ bonfire |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovc3JjL3N0YWdlcy8xL2dpbW1pY2tzL2JvbmZpcmU=]#_# | │  │  │  │ ├ bonfire |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovc3JjL3N0YWdlcy8xL2dpbW1pY2tzL2ZhbGxpbmdfaWNlX2Jsb2Nr]#_# | │  │  │  │ └ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy8xL3NjZW5hcnk=]#_# | │  │  │ ├ scenary |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy8xL3NjZW5hcnkveW91bmdfZ3V5]#_# | │  │  │  │ └ young_guy |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL3N0YWdlcy9iYWNrZ3JvdW5k]#_# | │  │ ├ background |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -207,11 +206,11 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9jcnVtYmxpbmdfcGxhdGZvcm0=]#_# | │  │  │ ├ crumbling_platform |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NTovc3JjL3N0YWdlcy9naW1taWNrcy9jcnVtYmxpbmdfcGxhdGZvcm0vcGllY2U=]#_# | │  │  │  │ └ piece |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9kaWFtb25k]#_# | │  │  │ ├ diamond |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
-|[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9mYWxsaW5nX2ljZV9ibG9jaw==]#_# | │  │  │ ├ falling_ice_block |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9mbHlpbmdfc3RyYXdiZXJyeQ==]#_# | │  │  │ ├ flying_strawberry |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9vbmVfd2F5X2Zsb29y]#_# | │  │  │ ├ one_way_floor |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9vbmVfd2F5X3NjYWZmb2xk]#_# | │  │  │ ├ one_way_scaffold |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9wdWxsZXk=]#_# | │  │  │ ├ pulley |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9zcHJpbmdib2FyZA==]#_# | │  │  │ ├ springboard |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy9naW1taWNrcy9zdHJhd2JlcnJ5]#_# | │  │  │ └ strawberry |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL3N0YWdlcy90cmFwcw==]#_# | │  │ ├ traps |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.NDovc3JjL3N0YWdlcy90cmFwcy9zcGlrZQ==]#_# | │  │  │ └ spike |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 

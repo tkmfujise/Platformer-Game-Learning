@@ -6,7 +6,8 @@ title: assets/images/stages/gimmicks/FallingIceBlock.png
 == assets / images / stages / gimmicks / FallingIceBlock.png
 
 === Attached Scenes
-* link:/scenes/src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/gimmicks/falling_ice_block/falling_ice_block.tscn]
+* link:/scenes/src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn]
+* link:/scenes/src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn]
 
 
 
