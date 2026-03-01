@@ -1914,7 +1914,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">func</span> <span class="nf">stop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">current_speaker</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"hide"</span><span class="p">)</span>
-	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
 	<span class="n">Player</span><span class="o">.</span><span class="n">playable</span> <span class="o">=</span> <span class="bp">true</span>
 
 

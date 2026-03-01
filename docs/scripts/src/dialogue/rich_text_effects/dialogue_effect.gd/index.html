@@ -1894,10 +1894,10 @@ No attached scenes.
 	<span class="k">var</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">shown</span> <span class="o">-</span> <span class="n">char_fx</span><span class="o">.</span><span class="n">relative_index</span>
 	<span class="k">if</span> <span class="n">shown</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">char_fx</span><span class="o">.</span><span class="n">relative_index</span> <span class="o">&lt;</span> <span class="n">shown</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
 		<span class="n">char_fx</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-		<span class="n">char_fx</span><span class="o">.</span><span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="n">char_fx</span><span class="o">.</span><span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">0</span>
 	<span class="k">else</span><span class="p">:</span>
 		<span class="n">char_fx</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span>
-		<span class="n">char_fx</span><span class="o">.</span><span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+		<span class="n">char_fx</span><span class="o">.</span><span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">2</span>
 	<span class="k">return</span> <span class="bp">true</span></code></pre>
 </div>
 </div>

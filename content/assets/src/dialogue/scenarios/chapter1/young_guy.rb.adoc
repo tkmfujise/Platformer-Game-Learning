@@ -35,8 +35,8 @@ Dialogue.new do
   - ["オレは、こんなわびしい場所で登山仲間に出会えて",
      "ハッピーモードだけどね。"]
   with :smile
-  - ["オレ、ゼヨっていいます。",
-     "遠い遠い国からやってきた、冒険者ぜよ！"]
+  - ["オレ、[color=orange]ゼヨ[/color]っていいます。",
+     "[wave amp=50]遠い遠い国[/wave]からやってきた、冒険者ぜよ！"]
   Player;
   - "⋯"
   YoungGuy;
@@ -50,20 +50,20 @@ Dialogue.new do
   (pause)
   Player;
   - ["あ⋯ごめんなさい。",
-     "私は、マヂリンです。"]
+     "私は、[color=red]マヂリン[/color]です。"]
   - "ちょっと、いろいろ考えごとしてて⋯もうマヂ無理"
   YoungGuy;
-  - ["よろしく、マヂリン。",
+  - ["よろしく、[color=red]マヂリン[/color]。",
      "たしかに、ここって、考えごとするにはうってつけだよね！"]
   with :sulky
   - ["寒くて凍えそうなのがちょっとツライけど、",
      "静かに物思いにふけるには、このうえない環境ぜよ。"]
   Player;
   - "うん。そうかも。"
-  - "「遠い遠い国」って、具体的には、どこ？"
+  - "[wave amp=50]「遠い遠い国」[/wave]って、具体的には、どこ？"
   YoungGuy; with :smile
   - ["ほほう、興味がおありかな？",
-     "わが故郷は、ナゾに満ちた魅惑の王国⋯"]
+     "わが故郷は、[wave amp=50]ナゾに満ちた魅惑[/wave]の王国⋯"]
   with :default
   - "コウチぜよ。"
   Player;
@@ -100,10 +100,10 @@ Dialogue.new do
   - "作品をブログにアップしたり？"
   YoungGuy; with :sulky
   - "ブログぅ？"
-  - "わかってないなぁ、マヂリンくん。"
+  - "わかってないなぁ、[color=red]マヂリン[/color]くん。"
   with :smile
-  - "時代は、Imstargoofだよ！"
-  - ["ZeoUnderStarsってIDでやってるから、",
+  - "時代は、[color=yellow]Imstargoof[/color]だよ！"
+  - ["[color=yellow]ZeoUnderStars[/color]ってIDでやってるから、",
      "検索してみてよ！"]
 
   (pause)
@@ -118,7 +118,7 @@ Dialogue.new do
   - "こっちまでやる気がみなぎってくる。"
   Player;
   - "そう⋯？"
-  - "ゼヨも、きっと頂上まで行けるよ。"
+  - "[color=orange]ゼヨ[/color]も、きっと頂上まで行けるよ。"
   YoungGuy;
   - "かなぁ。"
   with :sulky
@@ -126,7 +126,7 @@ Dialogue.new do
      "そんなにこだわってないんだよなー。"]
   with :default
   - ["でも！このゴーストタウンを抜けた先に、",
-     "かなりガチな遺跡があるらしくてさ。"]
+     "かなり[wave amp=50]ガチな遺跡[/wave]があるらしくてさ。"]
   with :smile
   - "1800年代級のヤツ。"
   with :default
@@ -144,7 +144,7 @@ Dialogue.new do
   with :smile
   - "あ、思い出した。"
   ~ :"01.zoom"
-  - "これ、絶対ばえるやつ〜！！"
+  - "[fill]これ、絶対ばえるやつ〜！！[/fill]"
 end
 
 ```

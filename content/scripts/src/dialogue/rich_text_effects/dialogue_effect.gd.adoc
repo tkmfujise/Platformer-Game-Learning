@@ -24,10 +24,10 @@ func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	var distance = shown - char_fx.relative_index
 	if shown < 0 or char_fx.relative_index < shown - 1:
 		char_fx.color.a = 1
-		char_fx.offset.y = 0
+		char_fx.offset.y += 0
 	else:
 		char_fx.color.a = 0.5
-		char_fx.offset.y = -2
+		char_fx.offset.y += -2
 	return true
 
 ```
