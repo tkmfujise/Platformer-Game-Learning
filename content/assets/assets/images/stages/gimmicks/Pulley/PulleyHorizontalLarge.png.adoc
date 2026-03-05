@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png
+---
+:toc:
+
+== assets / images / stages / gimmicks / Pulley / PulleyHorizontalLarge.png
+
+=== Attached Scenes
+* link:/scenes/src/stages/gimmicks/pulley/large_horizontal/large_horizontal_pulley.tscn[res://src/stages/gimmicks/pulley/large_horizontal/large_horizontal_pulley.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |27×12 px
+|Type |png
+|Content Length |663.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png[]
+

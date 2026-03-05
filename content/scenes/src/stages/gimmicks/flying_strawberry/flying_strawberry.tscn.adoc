@@ -14,6 +14,7 @@ class R as "FlyingStrawberry" <<(A,lightskyblue) Area2D>> {
   * player
   * touched
   * obtained
+  * flied_away
 ---
   + _ready()
   + reset()
@@ -344,6 +345,7 @@ extends Area2D
 @onready var player : Player
 @onready var touched : bool = false
 @export var obtained : bool = false
+var flied_away : bool = false
 const OFFSET := Vector2(0, -200)
 
 
@@ -357,6 +359,7 @@ func _ready() -> void:
 func reset() -> void:
 	%Pivot.position = Vector2(0, 0)
 	touched = false
+	flied_away = false
 	if obtained: hide()
 	play(&'RESET')
 	play.call_deferred(&'idle')
@@ -370,7 +373,9 @@ func _physics_process(_delta: float) -> void:
 
 func fly_away() -> void:
 	if %VisibleOnScreenNotifier2D.is_on_screen():
-		if not touched: play(&'fly_away')
+		if not touched and not flied_away:
+			flied_away = true
+			play(&'fly_away')
 
 
 func ascend() -> void:

@@ -50,10 +50,10 @@ Dialogue.new do
   (pause)
   Player;
   - ["あ⋯ごめんなさい。",
-     "私は、[color=red]マヂリン[/color]です。"]
+     "私は、[color=orangered]マヂリン[/color]です。"]
   - "ちょっと、いろいろ考えごとしてて⋯もうマヂ無理"
   YoungGuy;
-  - ["よろしく、[color=red]マヂリン[/color]。",
+  - ["よろしく、[color=orangered]マヂリン[/color]。",
      "たしかに、ここって、考えごとするにはうってつけだよね！"]
   with :sulky
   - ["寒くて凍えそうなのがちょっとツライけど、",
@@ -100,7 +100,7 @@ Dialogue.new do
   - "作品をブログにアップしたり？"
   YoungGuy; with :sulky
   - "ブログぅ？"
-  - "わかってないなぁ、[color=red]マヂリン[/color]くん。"
+  - "わかってないなぁ、[color=orangered]マヂリン[/color]くん。"
   with :smile
   - "時代は、[color=yellow]Imstargoof[/color]だよ！"
   - ["[color=yellow]ZeoUnderStars[/color]ってIDでやってるから、",

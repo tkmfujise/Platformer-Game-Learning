@@ -47,6 +47,7 @@ image::/assets/raw/assets/images/stages/traps/Needle.png[200, 100]
 === Instantiators
 * link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
 * link:/scenes/src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/1/gimmicks/falling_ice_block/falling_ice_block.tscn]
+* link:/scenes/src/stages/gimmicks/pulley/large_vertical/large_vertical_pulley.tscn[res://src/stages/gimmicks/pulley/large_vertical/large_vertical_pulley.tscn]
 
 
 === Scene Tree

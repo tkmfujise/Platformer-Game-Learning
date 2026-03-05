@@ -1,0 +1,101 @@
+---
+title: src/stages/gimmicks/pulley/large_horizontal/large_horizontal_pulley.tscn
+---
+:toc:
+
+== src / stages / gimmicks / pulley / large_horizontal / large_horizontal_pulley.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "LargePulley" <<(N,darkgray) Node>> {
+}
+class N1 as "Wire" <<(N,darkgray) Node>> {
+}
+class N2 as "Platform" <<(N,darkgray) Node>> {
+}
+class N3 as "CollisionShape2D" <<(N,darkgray) Node>> {
+}
+class N4 as "CollisionShape2D" <<(N,darkgray) Node>> {
+}
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png]
+image::/assets/raw/assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png[200, 100] 
+
+
+
+
+
+=== Instantiators
+* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-plain]#LargePulley# [.node-type.type-plain]#Node#
+*** [.node-name.type-plain]#Wire# [.node-type.type-plain]#Node#
+*** [.node-name.type-plain]#Platform# [.node-type.type-plain]#Node#
+***** [.node-name.type-plain]#CollisionShape2D# [.node-type.type-plain]#Node#
+***** [.node-name.type-plain]#CollisionShape2D# [.node-type.type-plain]#Node#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-plain]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*force* a|`1500`
+|===
+[.node-property.node-plain]
+.#$Sprites/Wire# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*offset_right* a|`59.42857`
+|===
+[.node-property.node-plain]
+.#$Sprites/Platform# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*texture* a|[link=/assets/assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png]
+[.asset-image]
+.res://assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png
+image::/assets/raw/assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.png[]
+
+|*region_enabled* a|`false`
+|===
+[.node-property.node-plain]
+.#$Sprites/Platform/Area2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-0.35713965, -2.4999993)`
+|*shape* a|`SubResource("RectangleShape2D_fhg62")`
+|===
+[.node-property.node-plain]
+.#$Sprites/Platform/StaticBody2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-0.20000324, 0.6)`
+|*shape* a|`SubResource("RectangleShape2D_ehone")`
+|===
+
+
+
+

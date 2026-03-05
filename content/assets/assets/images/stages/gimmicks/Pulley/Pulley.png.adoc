@@ -1,9 +1,9 @@
 ---
-title: assets/images/stages/gimmicks/Pulley.png
+title: assets/images/stages/gimmicks/Pulley/Pulley.png
 ---
 :toc:
 
-== assets / images / stages / gimmicks / Pulley.png
+== assets / images / stages / gimmicks / Pulley / Pulley.png
 
 === Attached Scenes
 * link:/scenes/src/stages/gimmicks/pulley/pulley.tscn[res://src/stages/gimmicks/pulley/pulley.tscn]
@@ -23,5 +23,5 @@ title: assets/images/stages/gimmicks/Pulley.png
 
 === Image
 [.asset-image]
-image::/assets/raw/assets/images/stages/gimmicks/Pulley.png[]
+image::/assets/raw/assets/images/stages/gimmicks/Pulley/Pulley.png[]
 
