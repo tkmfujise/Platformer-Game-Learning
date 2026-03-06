@@ -32,6 +32,7 @@ class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   - CLIMBING_SPEED
   - JUMP_VELOCITY
   - GRAVITY
+  - DOWNFORCE_ON_LITTLE_JUMP
   - MAX_VELOCITY_Y
   - ALLOWED_TIME_TO_JUMP
   - DASH_TIME
@@ -148,7 +149,7 @@ func _physics_process(delta: float) -> void:
 		State.FAILED:
 			velocity.x = lerp(velocity.x, 0.0, 0.2)
 			velocity.y = lerp(velocity.y, 0.0, 0.2)
-		State.FALLING:
+		State.FALLING, State.SLIDING:
 			if last_state == State.CLIMBING \
 			and dy < 0:
 				velocity.y = JUMP_VELOCITY * 0.8
@@ -158,7 +159,11 @@ func _physics_process(delta: float) -> void:
 				velocity.x = lerp(velocity.x, move_x, 0.2)
 				
 				velocity.y += GRAVITY * delta
+				if state == State.SLIDING: velocity.y *= 0.8
 				velocity.y = [velocity.y, MAX_VELOCITY_Y].min()
+				if falling_time < 0.1 \
+				and Input.is_action_just_released(&'move_jump'):
+					velocity.y += DOWNFORCE_ON_LITTLE_JUMP * delta
 		State.JUMPED:
 			velocity.y = JUMP_VELOCITY
 		State.KICKED:
