@@ -1,0 +1,31 @@
+---
+title: res://src/stages/1/gimmicks/bonfire/bonfire.gd
+---
+:toc:
+
+== src / stages / 1 / gimmicks / bonfire / bonfire.gd
+
+=== Attached Scenes
+* link:/scenes/src/stages/1/gimmicks/bonfire/bonfire.tscn[res://src/stages/1/gimmicks/bonfire/bonfire.tscn]
+
+
+
+=== Code
+```gdscript
+extends Sprite2D
+
+@export var on_fire : bool = true
+
+func _ready() -> void:
+	if on_fire: fire()
+	else: wood()
+
+
+func fire() -> void:
+	%AnimationPlayer.play("fire")
+
+
+func wood() -> void:
+	%AnimationPlayer.play("wood")
+
+```

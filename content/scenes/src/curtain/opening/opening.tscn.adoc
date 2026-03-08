@@ -51,7 +51,7 @@ _(R::_on_animation_player_animation_finished, N7::animation_finished)
 
 === Instantiators
 * link:/scenes/debug/curtain/curtain.tscn[res://debug/curtain/curtain.tscn]
-* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/chapters/0/chapter_0.tscn[res://src/chapters/0/chapter_0.tscn]
 * link:/scenes/src/player/player.tscn[res://src/player/player.tscn]
 
 

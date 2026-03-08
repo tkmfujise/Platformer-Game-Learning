@@ -1,0 +1,151 @@
+---
+title: src/dialogue/scenarios/chapter1/young_guy.ja.rb
+---
+:toc:
+
+== src / dialogue / scenarios / chapter1 / young_guy.ja.rb
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```rb
+require 'src/dialogue/helper'
+
+Dialogue.new do
+  speakers %w(YoungGuy Player)
+
+  YoungGuy;
+  - "お！こんばんはー！"
+  Player;
+  - "あ⋯ども。"
+  YoungGuy;
+  - "ハイキングには、ぴったりの夜だねえ！"
+  Player;
+  - "ですかね。"
+  YoungGuy; with :smile
+  - "この山、ヤバいよねー。"
+  - "こんな場所が存在してるってのが、まず、ヤバい！"
+  Player;
+  - "登るの、かなり大変ですよね？"
+  - "でも、それこそ、私が求めていたもの⋯"
+  YoungGuy;
+  - "おー、なんか、マジモード。"
+  - ["オレは、こんなわびしい場所で登山仲間に出会えて",
+     "ハッピーモードだけどね。"]
+  with :smile
+  - ["オレ、[color=orange]ゼヨ[/color]っていいます。",
+     "[wave amp=50]遠い遠い国[/wave]からやってきた、冒険者ぜよ！"]
+  Player;
+  - "⋯"
+  YoungGuy;
+  with :sulky
+  - "無口系キャラかー⋯"
+  with :default
+  - ["ミステリアスな一匹狼タイプだね。",
+     "じゃあ、適当に「人知れぬ闇を抱えている」みたいな",
+     "設定つけとこっかな。"]
+
+  (pause)
+  Player;
+  - ["あ⋯ごめんなさい。",
+     "私は、[color=orangered]マヂリン[/color]です。"]
+  - "ちょっと、いろいろ考えごとしてて⋯もうマヂ無理"
+  YoungGuy;
+  - ["よろしく、[color=orangered]マヂリン[/color]。",
+     "たしかに、ここって、考えごとするにはうってつけだよね！"]
+  with :sulky
+  - ["寒くて凍えそうなのがちょっとツライけど、",
+     "静かに物思いにふけるには、このうえない環境ぜよ。"]
+  Player;
+  - "うん。そうかも。"
+  - "[wave amp=50]「遠い遠い国」[/wave]って、具体的には、どこ？"
+  YoungGuy; with :smile
+  - ["ほほう、興味がおありかな？",
+     "わが故郷は、[wave amp=50]ナゾに満ちた魅惑[/wave]の王国⋯"]
+  with :default
+  - "コウチぜよ。"
+  Player;
+  - "へえ。きっとステキなところなんだろうな。"
+
+  (pause)
+  YoungGuy; with :smile
+  - "にしても、ここ、かなりヤバくない！？"
+  with :sulky
+  - "街中まるごと廃墟って。どうなってるんだ？"
+  Player;
+  - ["どこかの大企業が建設を始めたけど、",
+     "誰も住みたがらなかったって、何かで読んだよ。"]
+  - "なんでかな⋯"
+  YoungGuy; with :smile
+  - ["そりゃ、政府がなんか隠蔽してるに決まってるぜよ。",
+     "賭けてもいい。"]
+  Player;
+  - "せっかく造ったのに、もったいない⋯"
+  YoungGuy;
+  - ["ま、せいぜい、そのなれの果てを",
+     "オレたちで楽しんでやろうじゃない。"]
+
+  (pause)
+  Player;
+  - "ゴーストタウンを探検しに来たの？"
+  YoungGuy;
+  - "そ。「廃墟萌え」ってヤツ。"
+  with :sulky
+  - ["それに、じつはオレ、",
+     "フォトグラファーの卵でもあったりするんだよねー。"]
+  Player;
+  - "そうなの？すごい！"
+  - "作品をブログにアップしたり？"
+  YoungGuy; with :sulky
+  - "ブログぅ？"
+  - "わかってないなぁ、[color=orangered]マヂリン[/color]くん。"
+  with :smile
+  - "時代は、[color=yellow]Imstargoof[/color]だよ！"
+  - ["[color=yellow]ZeoUnderStars[/color]ってIDでやってるから、",
+     "検索してみてよ！"]
+
+  (pause)
+  YoungGuy;
+  - ["にしてもこの山、めちゃくちゃ険しいよねえ。",
+     "そろそろ引き返そうかな、って感じ？"]
+  Player;
+  - "引き返さないよ。頂上を目指すの。"
+  YoungGuy; with :smile
+  - "おー、その目は、本気だね！"
+  with :default
+  - "こっちまでやる気がみなぎってくる。"
+  Player;
+  - "そう⋯？"
+  - "[color=orange]ゼヨ[/color]も、きっと頂上まで行けるよ。"
+  YoungGuy;
+  - "かなぁ。"
+  with :sulky
+  - ["オレ、正直頂上には、",
+     "そんなにこだわってないんだよなー。"]
+  with :default
+  - ["でも！このゴーストタウンを抜けた先に、",
+     "かなり[wave amp=50]ガチな遺跡[/wave]があるらしくてさ。"]
+  with :smile
+  - "1800年代級のヤツ。"
+  with :default
+  - ["道中、かなり危なそうだとは思うけど、",
+     "どうしてもこの目で見たいんだよねぇ。"]
+
+  (pause)
+  YoungGuy;
+  - ["なんだっけ⋯ほら、",
+     "「これからムチャなことしまーす！」ってときに言うセリフ⋯"]
+  Player;
+  - "えっと⋯どこかの舞台から飛び降りる、みたいなやつ⋯？"
+  YoungGuy; with :sulky
+  - "いや、それじゃなくて⋯"
+  with :smile
+  - "あ、思い出した。"
+  ~ :"01.zoom"
+  - "[fill]これ、絶対ばえるやつ〜！！[/fill]"
+end
+
+```
+

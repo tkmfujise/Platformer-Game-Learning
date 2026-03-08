@@ -8,8 +8,19 @@ title: src/stages/1/gimmicks/bonfire/bonfire.tscn
 === Diagram
 [plantuml]
 ....
-class R as "Bonfire" <<(A,lightskyblue) AnimatedSprite2D>> {
+class R as "Bonfire" <<(S,lightskyblue) Sprite2D>> {
+  * on_fire
+---
+  + _ready()
+  + fire()
+  + wood()
 }
+class N1 as "PointLight2D" <<(P,lightskyblue) PointLight2D>> {
+}
+class N2 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N2
 !define _(a,b) a <-[#blue,thickness=2]- b
 left to right direction
 
@@ -22,21 +33,91 @@ left to right direction
 [link=/assets/assets/images/stages/chapter1/Bonfire.png]
 image::/assets/raw/assets/images/stages/chapter1/Bonfire.png[200, 100] 
 
+[.asset-image]
+[link=/assets/assets/images/particles/circle_blur.png]
+image::/assets/raw/assets/images/particles/circle_blur.png[200, 100] 
 
 
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if on_fire: fire()
+	else: wood()
+```
 
 
 === Instantiators
-* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
+* link:/scenes/src/dialogue/chapters/1/goal/goal.tscn[res://src/dialogue/chapters/1/goal/goal.tscn]
+* link:/scenes/src/dialogue/chapters/1/young_guy/young_guy.tscn[res://src/dialogue/chapters/1/young_guy/young_guy.tscn]
 
 
 === Scene Tree
 [.scene-tree]
-* [.node-name.type-2d]#Bonfire# [.node-type.type-2d]#AnimatedSprite2D#
+* [.node-name.type-2d]#Bonfire# [.node-type.type-2d]#Sprite2D#
+** [.node-name.type-2d]#PointLight2D# [.node-type.type-2d]#PointLight2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
 
 
 === Signal Connections
 NOTE: No signal connections.
+
+=== Animations
+==== Animation_ouooo
+
+[plantuml]
+....
+control "Root" as R
+participant "$PointLight2D" as T1 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+R  ->o  T1 : enabled\n = true
+
+
+....
+---
+
+==== fire (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$PointLight2D" as T1 #87CEFA
+
+
+loop
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+R  ->o  T1 : enabled\n = true
+== Time: 0.2 ==
+R  ->o  R : frame\n = 1
+== Time: 0.4 ==
+R  ->o  R : frame\n = 2
+
+end
+....
+---
+
+==== wood
+
+[plantuml]
+....
+control "Root" as R
+participant "$PointLight2D" as T1 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 3
+R  ->o  T1 : enabled\n = false
+
+
+....
+---
 
 
 
@@ -47,11 +128,61 @@ NOTE: No signal connections.
 |===
 |Name |Value
 |*scale* a|`Vector2(5, 5)`
-|*sprite_frames* a|`SubResource("SpriteFrames_2bgb5")`
-|*autoplay* a|`default`
-|*frame_progress* a|`0.629337`
+|*texture* a|[link=/assets/assets/images/stages/chapter1/Bonfire.png]
+[.asset-image]
+.res://assets/images/stages/chapter1/Bonfire.png
+image::/assets/raw/assets/images/stages/chapter1/Bonfire.png[]
+
+|*hframes* a|`4`
+|*script* a|link:/scripts/src/stages/1/gimmicks/bonfire/bonfire.gd[res://src/stages/1/gimmicks/bonfire/bonfire.gd]
+|===
+[.node-property.node-2d]
+.#$PointLight2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(0.40000534, -3.0999994)`
+|*scale* a|`Vector2(8.400001, 2.4624999)`
+|*color* a|`Color(0.8901961, 0.32941177, 0, 1)`
+|*energy* a|`1.2`
+|*texture* a|[link=/assets/assets/images/particles/circle_blur.png]
+[.asset-image]
+.res://assets/images/particles/circle_blur.png
+image::/assets/raw/assets/images/particles/circle_blur.png[]
+
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_dkmyn")
+}`
+|*autoplay* a|`fire`
 |===
 
 
+=== link:/scripts/src/stages/1/gimmicks/bonfire/bonfire.gd[bonfire.gd]
+
+```gdscript
+extends Sprite2D
+
+@export var on_fire : bool = true
+
+func _ready() -> void:
+	if on_fire: fire()
+	else: wood()
+
+
+func fire() -> void:
+	%AnimationPlayer.play("fire")
+
+
+func wood() -> void:
+	%AnimationPlayer.play("wood")
+
+```
 
 

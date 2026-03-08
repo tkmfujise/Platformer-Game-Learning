@@ -1,0 +1,38 @@
+---
+title: res://debug/redscribe/test.gd
+---
+:toc:
+
+== debug / redscribe / test.gd
+
+=== Attached Scenes
+* link:/scenes/debug/redscribe/test.tscn[res://debug/redscribe/test.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+@onready var res1 := ReDScribe.new()
+@onready var res2 := ReDScribe.new()
+
+
+func _ready() -> void:
+	res1.method_missing.connect(_method_missing)
+	res2.method_missing.connect(_method_missing)
+	res1.perform('@counter = 0')
+	res2.perform('@counter = 0')
+
+
+func _process(delta: float) -> void:
+	res1.perform('label1 @counter += 1')
+	res2.perform('label2 @counter += 2')
+
+
+func _method_missing(method_name: String, args: Array) -> void:
+	match method_name:
+		'label1': %Label1.text = str(args[0])
+		'label2': %Label2.text = str(args[0])
+
+```

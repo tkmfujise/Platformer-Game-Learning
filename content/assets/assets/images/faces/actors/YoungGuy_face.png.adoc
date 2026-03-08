@@ -6,7 +6,7 @@ title: assets/images/faces/actors/YoungGuy_face.png
 == assets / images / faces / actors / YoungGuy_face.png
 
 === Attached Scenes
-* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
+* link:/scenes/src/dialogue/chapters/1/young_guy/young_guy.tscn[res://src/dialogue/chapters/1/young_guy/young_guy.tscn]
 
 
 

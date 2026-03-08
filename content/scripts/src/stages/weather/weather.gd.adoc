@@ -14,10 +14,13 @@ title: res://src/stages/weather/weather.gd
 ```gdscript
 extends Node2D
 
+const OFFSET := Vector2(960, -1080)
+
 
 func _process(_delta: float) -> void:
 	var camera = current_camera()
-	if camera: global_position = camera.global_position
+	if camera:
+		global_position = camera.global_position + OFFSET
 
 
 func current_camera() -> Camera2D:

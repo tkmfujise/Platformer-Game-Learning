@@ -1,0 +1,129 @@
+---
+title: debug/redscribe/test.tscn
+---
+:toc:
+
+== debug / redscribe / test.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Test" <<(N,lightskyblue) Node2D>> {
+  * res1
+  * res2
+---
+  + _ready()
+  + _process()
+  + _method_missing()
+}
+class N1 as "Label1" <<(L,lightgreen) Label>> {
+}
+class N2 as "Label2" <<(L,lightgreen) Label>> {
+}
+R --o N1
+R --o N2
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	res1.method_missing.connect(_method_missing)
+	res2.method_missing.connect(_method_missing)
+	res1.perform('@counter = 0')
+	res2.perform('@counter = 0')
+```
+==== _process
+```gdscript
+func _process(delta: float) -> void:
+	res1.perform('label1 @counter += 1')
+	res2.perform('label2 @counter += 2')
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Test# [.node-type.type-2d]#Node2D#
+** [.node-name.type-control]#Label1# [.node-type.type-control]#Label#
+** [.node-name.type-control]#Label2# [.node-type.type-control]#Label#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/debug/redscribe/test.gd[res://debug/redscribe/test.gd]
+|===
+[.node-property.node-control]
+.#$Label1# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*offset_left* a|`171.0`
+|*offset_top* a|`158.0`
+|*offset_right* a|`524.0`
+|*offset_bottom* a|`294.0`
+|*theme_override_font_sizes/font_size* a|`64`
+|*text* a|`1`
+|===
+[.node-property.node-control]
+.#$Label2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*offset_left* a|`174.0`
+|*offset_top* a|`301.0`
+|*offset_right* a|`516.0`
+|*offset_bottom* a|`389.0`
+|*theme_override_font_sizes/font_size* a|`64`
+|*text* a|`2`
+|===
+
+
+=== link:/scripts/debug/redscribe/test.gd[test.gd]
+
+```gdscript
+extends Node2D
+
+@onready var res1 := ReDScribe.new()
+@onready var res2 := ReDScribe.new()
+
+
+func _ready() -> void:
+	res1.method_missing.connect(_method_missing)
+	res2.method_missing.connect(_method_missing)
+	res1.perform('@counter = 0')
+	res2.perform('@counter = 0')
+
+
+func _process(delta: float) -> void:
+	res1.perform('label1 @counter += 1')
+	res2.perform('label2 @counter += 2')
+
+
+func _method_missing(method_name: String, args: Array) -> void:
+	match method_name:
+		'label1': %Label1.text = str(args[0])
+		'label2': %Label2.text = str(args[0])
+
+```
+
+

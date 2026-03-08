@@ -1,0 +1,830 @@
+---
+title: src/chapters/0/chapter_0.tscn
+---
+:toc:
+
+== src / chapters / 0 / chapter_0.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Chapter0" <<(C,lightgreen) Control>> {
+---
+  + restart()
+  + _on_stage_0_event()
+  + _on_player_failed()
+  + _on_dash_lecture_finished()
+}
+class N1 as "CanvasLayer" <<(C,yellow) CanvasLayer>> {
+}
+class N2 as "OpeningCurtain" <<(C,lightgreen) Control>> {
+  ~ animation_finished
+---
+  * pattern
+  * center
+---
+  + set_center()
+  + play()
+  + _on_animation_player_animation_finished()
+}
+class N3 as "RestartCurtain" <<(C,lightgreen) Control>> {
+  ~ animation_finished
+---
+  * pattern
+  * center
+---
+  + set_center()
+  + play()
+  + _on_animation_player_animation_finished()
+}
+class N4 as "Background" <<(C,lightgreen) ColorRect>> {
+}
+class N5 as "Forest" <<(N,lightskyblue) Node2D>> {
+}
+class N6 as "Frames" <<(N,lightskyblue) Node2D>> {
+}
+class N7 as "CameralFrame" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N8 as "CameraFrame2" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N9 as "CameraFrame3" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N10 as "CameraFrame4" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N11 as "CameraFrame5" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N12 as "CameraFrame6" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N13 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+}
+class N14 as "Scenery" <<(N,lightskyblue) Node2D>> {
+}
+class N15 as "OldWoman" <<(N,lightskyblue) Node2D>> {
+  ~ event
+---
+  * started
+---
+  + _ready()
+  + start()
+  + _on_event_area_2d_area_entered()
+  + _on_dialogue_event()
+  + _on_dialogue_finished()
+}
+class N16 as "Voids" <<(N,lightskyblue) Node2D>> {
+}
+class N17 as "Area2D" <<(A,lightskyblue) Area2D>> {
+}
+class N18 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N19 as "Area2D2" <<(A,lightskyblue) Area2D>> {
+}
+class N20 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N21 as "Gimmicks" <<(N,lightskyblue) Node2D>> {
+}
+class N22 as "FallingIceBlock" <<(R,lightskyblue) RigidBody2D>> {
+  * initial_position
+---
+  + _ready()
+  + _process()
+  + reset()
+  + fall()
+  + _on_detection_area_2d_body_entered()
+}
+class N23 as "StoneBirdge" <<(N,lightskyblue) Node2D>> {
+---
+  + reset()
+}
+class N24 as "ClimbLecture" <<(N,lightskyblue) Node2D>> {
+  * finished
+---
+  + idle()
+  + show_hint()
+  + finish()
+  + _on_start_area_2d_area_entered()
+  + _on_start_area_2d_area_exited()
+  + _on_finish_area_2d_area_entered()
+  + _on_animation_player_animation_finished()
+}
+class N25 as "DashLecture" <<(N,lightskyblue) Node2D>> {
+  ~ finished
+---
+  * state
+  * player
+---
+  + start()
+  + _input()
+  + _on_start_area_2d_area_entered()
+  + _on_animation_player_animation_finished()
+}
+class N26 as "CheckPoints" <<(N,lightskyblue) Node2D>> {
+}
+class N27 as "Area2D" <<(A,lightskyblue) Area2D>> {
+}
+class N28 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N29 as "Area2D2" <<(A,lightskyblue) Area2D>> {
+}
+class N30 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N31 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+  ~ dashed
+  ~ jumped
+  ~ landed
+  ~ failed
+  ~ reached
+---
+  - SPEED
+  - DASH_SPEED
+  - CLIMBING_SPEED
+  - JUMP_VELOCITY
+  - GRAVITY
+  - DOWNFORCE_ON_LITTLE_JUMP
+  - MAX_VELOCITY_Y
+  - ALLOWED_TIME_TO_JUMP
+  - DASH_TIME
+  - DASH_ATTENUATION
+  - MAX_DASH_COUNT
+  - MAX_CLIMBING_TIME
+  - DEFAULT_SCALE
+  * GhostEffect
+  * LandedEffect
+  * fatigue_curve
+  * state
+  * falling_time
+  * dash_rest_time
+  * dash_rest_count
+  * climb_rest_time
+  * sprite_tween
+  * restart_position
+  * jump_boost
+  * last_owner_name
+  * playable
+---
+  + _ready()
+  + _physics_process()
+  + compute_state()
+  + may_drop_collisions()
+  + is_just_input_action()
+  + is_input_action()
+  + animate()
+  + animate_with()
+  + compute_dashed()
+  + regain_dash_charge()
+  + idle()
+  + walk_right()
+  + walk_left()
+  + turn_right()
+  + turn_left()
+  + restart()
+  + dash()
+  + lock()
+  + unlock()
+  + vibrate()
+  + get_state_by()
+  + tween_sprite()
+  + update_sprite_states_shader_parameters()
+  + spawn_ghost_effect()
+  + current_sprite_state()
+  + is_dashed()
+  + _on_dashed()
+  + _on_jumped()
+  + _on_landed()
+  + _on_failed()
+  + _on_reached()
+  + _on_frame_subject_area_entered()
+  + _on_frame_subject_area_exited()
+  + _on_area_collision_area_entered()
+}
+class N32 as "Weather" <<(N,lightskyblue) Node2D>> {
+  - OFFSET
+---
+  + _process()
+  + current_camera()
+}
+class N33 as "Transitionable" <<(N,darkgray) Node>> {
+  * menu_scene
+---
+  + transit()
+}
+class N34 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N4
+R --o N5
+R --o N6
+R --o N13
+R --o N14
+R --o N16
+R --o N21
+R --o N26
+R --o N31
+R --o N32
+R --o N33
+R --o N34
+N1 --o N2
+N1 --o N3
+N6 --o N7
+N6 --o N8
+N6 --o N9
+N6 --o N10
+N6 --o N11
+N6 --o N12
+N14 --o N15
+N16 --o N17
+N16 --o N19
+N17 --o N18
+N19 --o N20
+N21 --o N22
+N21 --o N23
+N21 --o N24
+N21 --o N25
+N26 --o N27
+N26 --o N29
+N27 --o N28
+N29 --o N30
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_stage_0_event, N15::event)
+_(R::_on_dash_lecture_finished, N25::finished)
+_(R::_on_player_failed, N31::failed)
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+.$Scenery/OldWoman
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
+.$Gimmicks/FallingIceBlock
+```gdscript
+func _ready() -> void:
+	initial_position = position
+	freeze = true
+	%FailureCollisionShape2D.disabled = true
+```
+.$Player
+```gdscript
+func _ready() -> void:
+	playable = true
+	if not owner: return
+	turn_right()
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
+```
+==== _process
+.$Gimmicks/FallingIceBlock
+```gdscript
+func _process(_delta: float) -> void:
+	if not Player.playable: freeze = true
+```
+.$Weather
+```gdscript
+func _process(_delta: float) -> void:
+	var camera = current_camera()
+	if camera:
+		global_position = camera.global_position + OFFSET
+```
+==== _input
+.$Gimmicks/DashLecture
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not state == State.AWAIT_INPUT: return
+	if event.is_action_pressed(&'move_dash'):
+		player.unlock()
+		player.dash(Vector2(1, -1))
+		%AnimationPlayer.play(&'finish')
+```
+==== _physics_process
+.$Player
+```gdscript
+func _physics_process(delta: float) -> void:
+	var dx := Input.get_axis(&'move_left', &'move_right')
+	var dy := Input.get_axis(&'move_up', &'move_down')
+	var direction := Vector2(dx, dy)
+	var last_state := state
+	state = compute_state(delta, direction)
+	match state:
+		State.CLIMBING:
+			dx = 0
+			velocity.y = dy * CLIMBING_SPEED
+		State.DASHED:
+			velocity = direction.normalized() * DASH_SPEED
+		State.DASHING:
+			velocity *= DASH_ATTENUATION * delta
+		State.EXHAUSTED:
+			dx = 0
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
+		State.FALLING, State.SLIDING:
+			if last_state == State.CLIMBING \
+			and dy < 0:
+				velocity.y = JUMP_VELOCITY * 0.8
+			else:
+				var move_x := dx * SPEED * 0.8
+				if velocity.x * dx < 0: move_x *= 0.1
+				velocity.x = lerp(velocity.x, move_x, 0.2)
+				
+				velocity.y += GRAVITY * delta
+				if state == State.SLIDING: velocity.y *= 0.8
+				velocity.y = [velocity.y, MAX_VELOCITY_Y].min()
+				if falling_time < 0.1 \
+				and Input.is_action_just_released(&'move_jump'):
+					velocity.y += DOWNFORCE_ON_LITTLE_JUMP * delta
+		State.JUMPED:
+			velocity.y = JUMP_VELOCITY
+		State.KICKED:
+			velocity.y = JUMP_VELOCITY * 0.9
+			velocity.x = get_wall_normal().x * DASH_SPEED * 0.4
+		State.LOCKED:
+			dx = 0
+			velocity = Vector2(0, 0)
+		_: pass
+	
+	if not playable: dx = 0
+	if not (state == State.DASHED \
+		or state == State.DASHING \
+		or state == State.FALLING \
+		or state == State.KICKED
+	):
+		if dx: velocity.x = dx * SPEED
+		else: velocity.x = move_toward(velocity.x, 0, SPEED*0.2)
+	if state == State.JUMPED:
+		velocity += jump_boost
+		jump_boost = Vector2(0, 0)
+	
+	animate(playable)
+	move_and_slide()
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Chapter0# [.node-type.type-control]#Control#
+** [.node-name.type-other]#CanvasLayer# [.node-type.type-other]#CanvasLayer#
+*** [.node-name.type-control]#OpeningCurtain# [.node-type.type-control]#link:/scenes/src/curtain/opening/opening.tscn[res://src/curtain/opening/opening.tscn]#
+*** [.node-name.type-control]#RestartCurtain# [.node-type.type-control]#link:/scenes/src/curtain/opening/opening.tscn[res://src/curtain/opening/opening.tscn]#
+** [.node-name.type-control]#Background# [.node-type.type-control]#ColorRect#
+** [.node-name.type-2d]#Forest# [.node-type.type-2d]#link:/scenes/src/stages/background/forest/forest.tscn[res://src/stages/background/forest/forest.tscn]#
+** [.node-name.type-2d]#Frames# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#CameralFrame# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame2# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame3# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame4# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame5# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+*** [.node-name.type-2d]#CameraFrame6# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]#
+** [.node-name.type-2d]#Scenery# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#OldWoman# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/0/old_woman/old_woman.tscn[res://src/dialogue/chapters/0/old_woman/old_woman.tscn]#
+** [.node-name.type-2d]#Voids# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Area2D2# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#Gimmicks# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#FallingIceBlock# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn[res://src/stages/0/gimmicks/falling_ice_block/falling_ice_block.tscn]#
+*** [.node-name.type-2d]#StoneBirdge# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn[res://src/stages/0/gimmicks/stone_bridge/stone_bridge.tscn]#
+*** [.node-name.type-2d]#ClimbLecture# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn[res://src/stages/0/gimmicks/climb_lecture/climb_lecture.tscn]#
+*** [.node-name.type-2d]#DashLecture# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn[res://src/stages/0/gimmicks/dash_lecture/dash_lecture.tscn]#
+** [.node-name.type-2d]#CheckPoints# [.node-type.type-2d]#Node2D#
+*** [.node-name.type-2d]#Area2D# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+*** [.node-name.type-2d]#Area2D2# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
+** [.node-name.type-2d]#Weather# [.node-type.type-2d]#link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]#
+** [.node-name.type-plain]#Transitionable# [.node-type.type-plain]#link:/scenes/src/mixins/transitionable/transitionable.tscn[res://src/mixins/transitionable/transitionable.tscn]#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[.signal-connection]
+.$Scenery/OldWoman:[#_event_#]=>$.
+```gdscript
+func _on_stage_0_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+```
+[.signal-connection]
+.$Gimmicks/DashLecture:[#_finished_#]=>$.
+```gdscript
+func _on_dash_lecture_finished() -> void:
+	%Transitionable.transit(self)
+```
+[.signal-connection]
+.$Player:[#_failed_#]=>$.
+```gdscript
+func _on_player_failed() -> void:
+	await get_tree().create_timer(3).timeout
+	restart()
+```
+
+
+=== Animations
+==== Animation_xb7cu
+
+[plantuml]
+....
+control "Root" as R
+participant "$Player" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(423.2688, 508.0891)
+
+
+....
+---
+
+==== 01.get_closer
+
+[plantuml]
+....
+control "Root" as R
+participant "$Player" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(6260, 242)
+R  ->o  T0 : &"idle"()
+== Time: 1.0 ==
+R  ->  T0 : position\n = Vector2(6643, 242)
+R  ->o  T0 : &"idle"()
+
+
+....
+---
+
+==== 02.pass_by
+
+[plantuml]
+....
+control "Root" as R
+participant "$Player" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(6643, 242)
+R  ->o  T0 : &"turn_left"()
+== Time: 1.0 ==
+R  ->  T0 : position\n = Vector2(7013, 242)
+R  ->o  T0 : &"turn_left"()
+== Time: 2.0 ==
+R  ->o  T0 : &"turn_left"()
+
+
+....
+---
+
+==== 03.laughing
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+
+
+....
+---
+
+==== event_04.zoom_in
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+
+
+....
+---
+
+==== event_05.zoom_out
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+
+
+....
+---
+
+==== opening (autoplay)
+
+[plantuml]
+....
+control "Root" as R
+participant "$CanvasLayer\n/OpeningCurtain" as T0 #90EE90
+
+
+
+== Time: 0.0 ==
+R  ->o  T0 : &"play"()
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-control]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*layout_mode* a|`3`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*script* a|link:/scripts/src/chapters/0/chapter_0.gd[res://src/chapters/0/chapter_0.gd]
+|*metadata/_edit_vertical_guides_* a|`[5389.0]`
+|===
+[.node-property.node-control]
+.#$CanvasLayer/OpeningCurtain# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*pattern* a|`1`
+|*center* a|`Vector2(0.3, 0.6)`
+|===
+[.node-property.node-control]
+.#$CanvasLayer/RestartCurtain# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*pattern* a|`3`
+|===
+[.node-property.node-control]
+.#$Background# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*layout_mode* a|`1`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*offset_left* a|`-199.0`
+|*offset_top* a|`-2046.0`
+|*offset_right* a|`13697.0`
+|*offset_bottom* a|`27.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|*color* a|`Color(0.066755, 0.066755, 0.066755, 1)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameralFrame# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(960, 540)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameraFrame2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1895, 540)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameraFrame3# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(3824, 547)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameraFrame4# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(4803, 542)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameraFrame5# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(6729, 106)`
+|===
+[.node-property.node-2d]
+.#$Frames/CameraFrame6# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(12630, 132)`
+|===
+[.node-property.node-other]
+.#$StageGround0# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*tile_map_data* a|`PackedByteArray("AAAKAAkAAAACAAAAAAAJAAoAAAAEAAEAAAAJAAsAAAAEAAEAAAAJAAkAAAABAAAAAAAIAAkAAAADAAAAAAAAAAoAAAAEAAAAAAABAAoAAAAEAAAAAAACAAoAAAAEAAAAAAADAAoAAAAEAAAAAAAEAAoAAAAEAAAAAAAFAAoAAAAEAAAAAAAGAAoAAAAEAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAIAAsAAAAEAAEAAAAHAAsAAAAEAAEAAAAGAAsAAAAEAAEAAAAFAAsAAAAEAAEAAAAEAAsAAAAEAAEAAAADAAsAAAAEAAEAAAACAAsAAAAEAAEAAAABAAsAAAAEAAEAAAAAAAsAAAAEAAEAAAAOAAsAAAADAAAAAAASAAsAAAAFAAAAAAARAAkAAAAFAAAAAAAQAAoAAAADAAEAAAAQAAkAAAADAAAAAAAPAAsAAAAEAAAAAAAQAAsAAAAEAAAAAAARAAsAAAAEAAEAAAARAAoAAAAFAAEAAAAOAAwAAAADAAEAAAAOAA0AAAADAAEAAAAPAAwAAAAEAAEAAAAPAA0AAAAEAAEAAAAQAAwAAAAEAAEAAAAQAA0AAAAEAAEAAAARAAwAAAAEAAEAAAARAA0AAAAEAAEAAAASAAwAAAAFAAEAAAASAA0AAAAFAAEAAAAAAAwAAAAEAAEAAAABAAwAAAAEAAEAAAACAAwAAAAEAAEAAAADAAwAAAAEAAEAAAAEAAwAAAAEAAEAAAAFAAwAAAAEAAEAAAAGAAwAAAAEAAEAAAAHAAwAAAAEAAEAAAAIAAwAAAAEAAEAAAAJAAwAAAACAAEAAAAKAAoAAAACAAEAAAAAAA0AAAAEAAEAAAABAA0AAAAEAAEAAAACAA0AAAAEAAEAAAADAA0AAAAEAAEAAAAEAA0AAAAEAAEAAAAFAA0AAAAEAAEAAAAGAA0AAAAEAAEAAAAHAA0AAAAEAAEAAAAIAA0AAAAEAAEAAAAJAA0AAAACAAEAAAAKAAsAAAACAAIAAAASAP7/AAAEAAAAAAASAP//AAAEAAEAAAASAAAAAAAEAAEAAAASAAEAAAAFAAIAAAATAP7/AAAEAAAAAAATAP//AAAEAAEAAAAUAP7/AAAEAAAAAAAUAP//AAAEAAEAAAAUAAAAAAAEAAIAAAAVAP7/AAAEAAAAAAAVAP//AAAEAAEAAAAVAAAAAAAEAAEAAAAWAP7/AAAEAAAAAAAWAP//AAAEAAEAAAAWAAAAAAAEAAEAAAAXAP7/AAAEAAAAAAAXAP//AAAEAAEAAAAXAAAAAAAEAAEAAAAYAP7/AAAEAAAAAAAYAP//AAAEAAEAAAAYAAAAAAAEAAEAAAAZAP7/AAAFAAAAAAAZAP//AAAEAAEAAAAZAAAAAAAEAAEAAAARAP7/AAADAAAAAAARAP//AAADAAEAAAARAAAAAAADAAEAAAARAAEAAAADAAIAAAAXAAwAAAAEAAEAAAAXAA0AAAAEAAEAAAAYAAwAAAAEAAEAAAAYAA0AAAAFAAEAAAAWAAwAAAAEAAEAAAAWAA0AAAADAAEAAAANAAMAAAADAAAAAAANAAQAAAADAAIAAAAOAAMAAAAFAAAAAAAOAAQAAAAFAAIAAAAUAAEAAAAAAAIAAAAVAAEAAAABAAEAAAAVAAIAAAAAAAIAAAAWAAEAAAABAAEAAAAWAAIAAAABAAIAAAAXAAEAAAABAAEAAAAXAAIAAAABAAIAAAAYAAEAAAAEAAEAAAAYAAIAAAABAAIAAAAZAAEAAAAFAAEAAAAZAAIAAAACAAIAAAATAAAAAAAEAAIAAAAaAAAAAAAFAAIAAAAaAP//AAAEAAEAAAAbAP//AAAFAAIAAAAbAP7/AAAFAAAAAAAaAP7/AAAEAAAAAAAdAAwAAAADAAAAAAAdAA0AAAADAAIAAAAeAAwAAAABAAAAAAAeAA0AAAAEAAEAAAAfAAoAAAADAAAAAAAfAAsAAAADAAEAAAAfAAwAAAAEAAEAAAAfAA0AAAAEAAEAAAAgAAoAAAAFAAAAAAAgAAsAAAAFAAEAAAAgAAwAAAAEAAEAAAAgAA0AAAAEAAEAAAAjAAwAAAAEAAAAAAAjAA0AAAAEAAEAAAAkAAwAAAAEAAAAAAAkAA0AAAAEAAEAAAAlAAwAAAAEAAAAAAAiAAwAAAAEAAAAAAAiAA0AAAAEAAEAAAAlAA0AAAAEAAEAAAAmAAwAAAAEAAAAAAAmAA0AAAAEAAEAAAAnAAwAAAACAAAAAAAnAA0AAAACAAIAAAArAAsAAAADAAAAAAArAAwAAAADAAIAAAAsAAsAAAABAAAAAAAsAAwAAAAEAAEAAAAsAA0AAAADAAEAAAAtAAYAAAAAAAAAAAAtAAcAAAAAAAEAAAAtAAgAAAAAAAEAAAAtAAkAAAAAAAEAAAAtAAoAAAAAAAEAAAAtAAsAAAAEAAEAAAAtAAwAAAAFAAEAAAAtAA0AAAAFAAEAAAAuAAYAAAABAAAAAAAuAAcAAAABAAEAAAAuAAgAAAABAAEAAAAuAAkAAAACAAEAAAAuAAoAAAACAAEAAAAuAAsAAAACAAIAAAAvAAYAAAACAAAAAAAvAAcAAAACAAEAAAAvAAgAAAACAAIAAAAyAAoAAAAAAAAAAAAyAAsAAAAAAAIAAAAzAAoAAAACAAAAAAAzAAsAAAACAAEAAAAzAAwAAAACAAEAAAA5AAYAAAACAAAAAAA5AAcAAAACAAEAAAA5AAgAAAABAAEAAAA6AAgAAAABAAAAAAA7AAgAAAACAAAAAAA5AAkAAAABAAEAAAA5AAoAAAABAAEAAAA5AAsAAAABAAEAAAA5AAwAAAAEAAEAAAAzAA0AAAAFAAEAAAAyAA0AAAADAAEAAAAyAAwAAAADAAEAAAA6AAkAAAABAAEAAAA6AAoAAAABAAEAAAA6AAsAAAABAAEAAAA7AAsAAAACAAEAAAA7AAwAAAACAAEAAAA6AAwAAAABAAEAAAA6AA0AAAABAAEAAAA5AA0AAAAEAAEAAAA7AAkAAAACAAEAAAA7AAoAAAACAAEAAAA7AA0AAAACAAEAAAA+AAwAAAAAAAAAAAA/AAwAAAABAAAAAABAAAwAAAABAAAAAABBAAoAAAACAAAAAABAAAoAAAAAAAAAAABAAAsAAAAAAAEAAABBAAsAAAAFAAEAAABBAAwAAAAFAAEAAABBAA0AAAAFAAEAAAA+AA0AAAAAAAIAAAA/AA0AAAABAAIAAABAAA0AAAAEAAEAAAA/AAQAAAAAAAEAAAA/AAMAAAAAAAEAAAA/AAIAAAAAAAEAAAA/AAEAAAAAAAAAAABAAAEAAAACAAAAAABAAAIAAAACAAEAAABAAAMAAAACAAEAAABAAAQAAAAFAAIAAAA/AAUAAAAAAAEAAAA/AAYAAAAAAAIAAABFAAcAAAADAAAAAABGAAcAAAAEAAAAAABHAAcAAAAEAAAAAABFAAgAAAADAAEAAABFAAkAAAADAAEAAABEAAoAAAADAAAAAABEAAsAAAADAAEAAABEAAwAAAADAAIAAABFAAwAAAAEAAIAAABFAA0AAAADAAEAAABFAAoAAAAEAAAAAABFAAsAAAAEAAEAAABGAAsAAAAEAAEAAABGAAwAAAAEAAEAAABGAA0AAAAEAAEAAABGAAoAAAAEAAEAAABGAAkAAAAEAAEAAABGAAgAAAAEAAEAAABHAAgAAAAEAAEAAABHAAkAAAAEAAEAAABHAAoAAAAEAAEAAABHAAsAAAAEAAEAAABHAAwAAAAEAAEAAABHAA0AAAAEAAEAAAAhAAwAAAAEAAAAAAAhAA0AAAAEAAEAAABIAAcAAAAEAAAAAABJAAcAAAAEAAAAAABKAAcAAAABAAAAAABLAAUAAAAAAAAAAABLAAYAAAAAAAEAAABLAAcAAAAAAAEAAABMAAUAAAABAAAAAABMAAMAAAAAAAAAAABMAAQAAAAAAAEAAABNAAMAAAABAAAAAABOAAMAAAABAAAAAABPAAMAAAABAAAAAABQAAMAAAABAAAAAABRAAMAAAABAAAAAABSAAMAAAABAAAAAABTAAMAAAABAAAAAABUAAMAAAABAAAAAABVAAMAAAABAAAAAABWAAMAAAABAAAAAABXAAMAAAABAAAAAABYAAMAAAAEAAAAAABZAAMAAAAFAAAAAABfAAQAAAAEAAAAAABeAAQAAAAEAAAAAABdAAQAAAABAAAAAABcAAQAAAABAAAAAABbAAQAAAAEAAAAAABaAAQAAAAEAAAAAABZAAQAAAAFAAEAAABNAAQAAAABAAEAAABOAAQAAAABAAEAAABPAAQAAAABAAEAAABQAAQAAAABAAEAAABRAAQAAAABAAEAAABSAAQAAAABAAEAAABTAAQAAAABAAEAAABUAAQAAAABAAEAAABVAAQAAAABAAEAAABWAAQAAAABAAEAAABXAAQAAAABAAEAAABNAAUAAAABAAEAAABMAAYAAAABAAEAAABMAAcAAAABAAEAAABKAAgAAAABAAEAAABJAAgAAAABAAEAAABIAAgAAAAEAAEAAABIAAkAAAAEAAEAAABIAAoAAAAEAAEAAABJAAoAAAAEAAEAAABJAAkAAAAEAAEAAABKAAkAAAAEAAEAAABLAAkAAAAEAAEAAABMAAkAAAAEAAEAAABLAAgAAAAEAAEAAABMAAgAAAAEAAEAAABNAAgAAAAEAAEAAABNAAcAAAAEAAEAAABOAAYAAAAEAAEAAABPAAYAAAAEAAEAAABPAAUAAAAEAAEAAABOAAUAAAAEAAEAAABNAAYAAAAEAAEAAABOAAcAAAAEAAEAAABPAAcAAAAEAAEAAABQAAcAAAAEAAEAAABRAAcAAAAEAAEAAABSAAcAAAAEAAEAAABTAAcAAAAEAAEAAABUAAcAAAAEAAEAAABVAAcAAAAEAAEAAABWAAcAAAAEAAEAAABXAAcAAAAEAAEAAABYAAcAAAAEAAEAAABZAAcAAAAEAAEAAABaAAcAAAAEAAEAAABbAAcAAAAEAAEAAABcAAcAAAAEAAEAAABdAAcAAAAEAAEAAABeAAcAAAAEAAEAAABfAAcAAAAEAAEAAABfAAYAAAAEAAEAAABfAAUAAAAEAAEAAABeAAUAAAAEAAEAAABdAAUAAAAEAAEAAABcAAUAAAAEAAEAAABbAAUAAAAEAAEAAABaAAUAAAAEAAEAAABZAAUAAAAEAAEAAABYAAUAAAAEAAEAAABYAAQAAAAEAAEAAABeAAYAAAAEAAEAAABdAAYAAAAEAAEAAABcAAYAAAAEAAEAAABbAAYAAAAEAAEAAABaAAYAAAAEAAEAAABZAAYAAAAEAAEAAABYAAYAAAAEAAEAAABXAAYAAAAEAAEAAABWAAYAAAAEAAEAAABXAAUAAAAEAAEAAABWAAUAAAAEAAEAAABVAAUAAAAEAAEAAABUAAUAAAAEAAEAAABTAAUAAAAEAAEAAABSAAUAAAAEAAEAAABRAAUAAAAEAAEAAABQAAUAAAAEAAEAAABQAAYAAAAEAAEAAABRAAYAAAAEAAEAAABSAAYAAAAEAAEAAABTAAYAAAAEAAEAAABUAAYAAAAEAAEAAABVAAYAAAAEAAEAAABOAAgAAAAEAAEAAABPAAgAAAAEAAEAAABQAAgAAAAEAAEAAABRAAgAAAAEAAEAAABSAAgAAAAEAAEAAABTAAgAAAAEAAEAAABUAAgAAAAEAAEAAABVAAgAAAAEAAEAAABWAAgAAAAEAAEAAABXAAgAAAAEAAEAAABYAAgAAAAEAAEAAABZAAgAAAAEAAEAAABaAAgAAAAEAAEAAABbAAgAAAAEAAEAAABcAAgAAAAEAAEAAABdAAgAAAAEAAEAAABeAAgAAAAEAAEAAABfAAgAAAAEAAEAAABNAAkAAAAEAAEAAAAVAAsAAAADAAAAAAAWAAsAAAAEAAAAAAAXAAsAAAAEAAAAAAAYAAsAAAAEAAAAAAAZAAsAAAAFAAAAAAAVAAwAAAADAAIAAAAZAAwAAAAFAAIAAABIAAsAAAAEAAEAAABJAAsAAAAEAAEAAABKAAsAAAAEAAEAAABKAAoAAAAEAAEAAABIAAwAAAAEAAEAAABJAAwAAAAEAAEAAABKAAwAAAAEAAEAAABLAAwAAAAEAAEAAABMAAwAAAAEAAEAAABNAAwAAAAEAAEAAABNAAsAAAAEAAEAAABNAAoAAAAEAAEAAABMAAsAAAAEAAEAAABMAAoAAAAEAAEAAABLAAoAAAAEAAEAAABLAAsAAAAEAAEAAABIAA0AAAAEAAEAAABJAA0AAAAEAAEAAABKAA0AAAAEAAEAAABLAA0AAAAEAAEAAABMAA0AAAAEAAEAAABNAA0AAAAEAAEAAABOAA0AAAAEAAEAAABOAAwAAAAEAAEAAABOAAsAAAAEAAEAAABOAAoAAAAEAAEAAABOAAkAAAAEAAEAAABPAAkAAAAEAAEAAABQAAkAAAAEAAEAAABRAAkAAAAEAAEAAABSAAkAAAAEAAEAAABTAAkAAAAEAAEAAABUAAkAAAAEAAEAAABdAAkAAAAEAAEAAABcAAkAAAAEAAEAAABbAAkAAAAEAAEAAABaAAkAAAAEAAEAAABZAAkAAAAEAAEAAABYAAkAAAAEAAEAAABXAAkAAAAEAAEAAABWAAkAAAAEAAEAAABVAAkAAAAEAAEAAABPAAoAAAAEAAEAAABQAAoAAAAEAAEAAABRAAoAAAAEAAEAAABSAAoAAAAEAAEAAABTAAoAAAAEAAEAAABUAAoAAAAEAAEAAABVAAoAAAAEAAEAAABWAAoAAAAEAAEAAABXAAoAAAAEAAEAAABYAAoAAAAEAAEAAABZAAoAAAAEAAEAAABaAAoAAAAEAAEAAABbAAoAAAAEAAEAAABcAAoAAAAEAAEAAABdAAoAAAAEAAEAAABdAAsAAAAEAAEAAABcAAsAAAAEAAEAAABbAAsAAAAEAAEAAABaAAsAAAAEAAEAAABZAAsAAAAEAAEAAABYAAsAAAAEAAEAAABXAAsAAAAEAAEAAABWAAsAAAAEAAEAAABVAAsAAAAEAAEAAABUAAsAAAAEAAEAAABTAAsAAAAEAAEAAABSAAsAAAAEAAEAAABRAAsAAAAEAAEAAABQAAsAAAAEAAEAAABQAAwAAAAEAAEAAABPAAwAAAAEAAEAAABPAAsAAAAEAAEAAABPAA0AAAAEAAEAAABQAA0AAAAEAAEAAABRAA0AAAAEAAEAAABSAA0AAAAEAAEAAABTAA0AAAAEAAEAAABUAA0AAAAEAAEAAABVAA0AAAAEAAEAAABWAA0AAAAEAAEAAABXAA0AAAAEAAEAAABYAA0AAAAEAAEAAABZAA0AAAAEAAEAAABaAA0AAAAEAAEAAABbAA0AAAAEAAEAAABcAA0AAAAEAAEAAABdAA0AAAAEAAEAAABdAAwAAAAEAAEAAABcAAwAAAAEAAEAAABbAAwAAAAEAAEAAABaAAwAAAAEAAEAAABZAAwAAAAEAAEAAABYAAwAAAAEAAEAAABXAAwAAAAEAAEAAABWAAwAAAAEAAEAAABVAAwAAAAEAAEAAABUAAwAAAAEAAEAAABTAAwAAAAEAAEAAABSAAwAAAAEAAEAAABRAAwAAAAEAAEAAABeAA0AAAAEAAEAAABfAA0AAAAEAAEAAABfAAwAAAAEAAEAAABfAAsAAAAEAAEAAABfAAoAAAAEAAEAAABfAAkAAAAEAAEAAABeAAkAAAAEAAEAAABeAAoAAAAEAAEAAABeAAsAAAAEAAEAAABeAAwAAAAEAAEAAABgAAQAAAABAAAAAABhAAQAAAABAAAAAABiAAQAAAABAAAAAABjAAQAAAABAAAAAABjAAUAAAABAAIAAABiAAUAAAABAAEAAABhAAUAAAABAAEAAABgAAUAAAAEAAEAAABgAAYAAAAEAAEAAABhAAYAAAAEAAEAAABhAAcAAAAEAAEAAABhAAgAAAAEAAIAAABhAAkAAAAFAAEAAABhAAoAAAAFAAEAAABhAAsAAAAFAAEAAABgAAoAAAAEAAEAAABgAAkAAAAEAAEAAABgAAgAAAAEAAEAAABgAAcAAAAEAAEAAABgAAsAAAAEAAEAAABgAAwAAAAEAAEAAABgAA0AAAAEAAEAAABhAA0AAAAFAAEAAABhAAwAAAAFAAEAAABiAAgAAAAFAAIAAABiAAcAAAACAAEAAABiAAYAAAACAAEAAABkAAQAAAACAAAAAABkAAUAAAACAAIAAACiAAQAAAADAAAAAACiAAUAAAADAAEAAACiAAYAAAADAAIAAACjAAQAAAAEAAAAAACjAAUAAAAEAAEAAACjAAYAAAAEAAIAAACkAAQAAAABAAAAAACkAAUAAAAEAAEAAACkAAYAAAADAAEAAACkAAcAAAADAAEAAACkAAgAAAADAAEAAACkAAkAAAADAAEAAAClAAQAAAABAAAAAAClAAUAAAAEAAEAAAClAAYAAAAEAAEAAAClAAcAAAAEAAEAAAClAAgAAAAEAAEAAAClAAkAAAAEAAEAAACmAAIAAAADAAAAAACmAAMAAAADAAEAAACmAAQAAAADAAEAAACmAAUAAAAEAAEAAACmAAYAAAAEAAEAAACmAAcAAAAEAAEAAACmAAgAAAAEAAEAAACmAAkAAAAEAAEAAACnAAIAAAAEAAAAAACnAAMAAAAEAAEAAACnAAQAAAAEAAEAAACnAAUAAAAEAAEAAACnAAYAAAAEAAEAAACnAAcAAAAEAAEAAACnAAgAAAAEAAEAAACnAAkAAAAEAAEAAACoAAAAAAADAAAAAACoAAEAAAADAAEAAACoAAIAAAAEAAEAAACoAAMAAAAEAAEAAACoAAQAAAAEAAEAAACoAAUAAAAEAAEAAACoAAYAAAAEAAEAAACoAAcAAAAEAAEAAACoAAgAAAAEAAEAAACoAAkAAAAEAAEAAACpAAAAAAAEAAAAAACpAAEAAAAEAAEAAACpAAIAAAAEAAEAAACpAAMAAAAEAAEAAACpAAQAAAAEAAEAAACpAAUAAAAEAAEAAACpAAYAAAAEAAEAAACpAAcAAAAEAAEAAACpAAgAAAAEAAEAAACpAAkAAAAEAAEAAAA3AAQAAAACAAAAAAA3AAUAAAACAAEAAAA3AAYAAAABAAEAAAA3AAcAAAABAAEAAAA3AAwAAAADAAEAAAA2AAQAAAAAAAAAAAA2AAUAAAAAAAEAAAA2AAYAAAAAAAEAAAA2AAcAAAAAAAEAAAA2AAwAAAADAAAAAAA3AAgAAAABAAEAAAA3AAkAAAAAAAEAAAA3AAoAAAAAAAEAAAA3AAsAAAAAAAEAAAA3AA0AAAADAAEAAAA4AAYAAAABAAAAAAA4AAcAAAABAAEAAAA4AAgAAAABAAEAAAA4AAkAAAABAAEAAAA4AAoAAAABAAEAAAA4AAsAAAABAAEAAAA4AAwAAAAEAAEAAAA4AA0AAAAEAAEAAAA2AAgAAAAAAAIAAAA=")`
+|===
+[.node-property.node-2d]
+.#$Scenery/OldWoman# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(5768, -433)`
+|===
+[.node-property.node-2d]
+.#$Voids/Area2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
+|===
+[.node-property.node-2d]
+.#$Voids/Area2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(2782.25, 1208.5)`
+|*shape* a|`SubResource("RectangleShape2D_xqlgn")`
+|===
+[.node-property.node-2d]
+.#$Voids/Area2D2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`8`
+|*collision_mask* a|`8`
+|===
+[.node-property.node-2d]
+.#$Voids/Area2D2/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(10538.25, 753)`
+|*shape* a|`SubResource("RectangleShape2D_fmjp6")`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/FallingIceBlock# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(1882, 332)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/StoneBirdge# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(8081.0005, 322)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/ClimbLecture# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(3490, 145)`
+|===
+[.node-property.node-2d]
+.#$Gimmicks/DashLecture# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(11941, -231)`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Area2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(2965, 777)`
+|*collision_layer* a|`32`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Area2D/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-4, 10)`
+|*shape* a|`SubResource("RectangleShape2D_338pp")`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Area2D2# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(7753, -7)`
+|*collision_layer* a|`32`
+|===
+[.node-property.node-2d]
+.#$CheckPoints/Area2D2/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(6, 161)`
+|*shape* a|`SubResource("RectangleShape2D_338pp")`
+|===
+[.node-property.node-2d]
+.#$Player# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(423.2688, 508.0891)`
+|===
+[.node-property.node-plain]
+.#$Transitionable# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_arpf2")
+}`
+|*autoplay* a|`opening`
+|===
+
+
+=== link:/scripts/src/chapters/0/chapter_0.gd[chapter_0.gd]
+
+```gdscript
+extends Control
+
+
+func restart() -> void:
+	%FallingIceBlock.reset()
+	%StoneBirdge.reset()
+
+
+func _on_stage_0_event(event_name: String) -> void:
+	var key = "event_%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+
+
+func _on_player_failed() -> void:
+	await get_tree().create_timer(3).timeout
+	restart()
+
+
+# TODO: 演出を入れる
+func _on_dash_lecture_finished() -> void:
+	%Transitionable.transit(self)
+
+```
+
+

@@ -1,0 +1,58 @@
+---
+title: res://src/dialogue/chapters/1/goal/goal.gd
+---
+:toc:
+
+== src / dialogue / chapters / 1 / goal / goal.gd
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/chapters/1/goal/goal.tscn[res://src/dialogue/chapters/1/goal/goal.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node2D
+
+signal event(event_name: String)
+signal finished
+
+@onready var started : bool = false
+
+
+func _ready() -> void:
+	%MonumentDescription.hide()
+
+
+func start() -> void:
+	started = true
+	%Dialogue.start()
+	event.emit('started')
+
+
+func ligth_firewood() -> void:
+	%Bonfire.fire()
+
+
+func _on_description_area_entered(area: Area2D) -> void:
+	%MonumentDescription.show()
+
+
+func _on_description_area_area_exited(area: Area2D) -> void:
+	%MonumentDescription.hide()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if not started: start()
+
+
+func _on_dialogue_event(event_name: String) -> void:
+	if %AnimationPlayer.has_animation(event_name):
+		%AnimationPlayer.play(event_name)
+	event.emit(event_name)
+
+
+func _on_dialogue_finished() -> void:
+	finished.emit()
+
+```

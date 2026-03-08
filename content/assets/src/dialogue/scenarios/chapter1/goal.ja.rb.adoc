@@ -1,0 +1,29 @@
+---
+title: src/dialogue/scenarios/chapter1/goal.ja.rb
+---
+:toc:
+
+== src / dialogue / scenarios / chapter1 / goal.ja.rb
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```rb
+require 'src/dialogue/helper'
+
+Dialogue.new do
+  speakers %w(Player)
+
+  Player;
+  - "はぁ⋯もう、クタクタ⋯"
+
+  ~:"01.fire_and_settle"
+  5.0.later
+
+  - "やっぱり、ここへ来たのは間違いだったのかな。"
+end
+
+```
+

@@ -199,8 +199,10 @@ class N46 as "Sprite2D" <<(N,darkgray) Node>> {
 class N47 as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
+  * center
 ---
   + play()
+  + set_center()
   + _on_animation_player_animation_finished()
 }
 class N48 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {

@@ -22,7 +22,7 @@ class R as "Dialogue" <<(C,yellow) CanvasLayer>> {
   * waiting
   * current
 ---
-  + _ready()
+  + setup_redscribe()
   + start()
   + continue_dialogue()
   + stop()
@@ -81,13 +81,6 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[200, 100]
 
 
 === Overridden virtual functions
-==== _ready
-```gdscript
-func _ready() -> void:
-	current = self
-	controller.boot_file = boot_file
-	controller.channel.connect(_handle)
-```
 ==== _input
 ```gdscript
 func _input(_event: InputEvent) -> void:
@@ -99,8 +92,9 @@ func _input(_event: InputEvent) -> void:
 
 
 === Instantiators
-* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
-* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
+* link:/scenes/src/dialogue/chapters/0/old_woman/old_woman.tscn[res://src/dialogue/chapters/0/old_woman/old_woman.tscn]
+* link:/scenes/src/dialogue/chapters/1/goal/goal.tscn[res://src/dialogue/chapters/1/goal/goal.tscn]
+* link:/scenes/src/dialogue/chapters/1/young_guy/young_guy.tscn[res://src/dialogue/chapters/1/young_guy/young_guy.tscn]
 
 
 === Scene Tree
@@ -128,8 +122,8 @@ func _on_event(_event_name: String) -> void:
 .$.:[#_finished_#]=>$.
 ```gdscript
 func _on_finished() -> void:
-	await stop()
-	queue_free()
+	stop()
+	#queue_free() FIXME ReDScribe を複数呼び出しているときに参照エラーになる
 ```
 [.signal-connection]
 .$.:[#_paused_#]=>$.
@@ -393,20 +387,22 @@ signal event(event_name: String)
 @export_file_path("*.rb") var boot_file : String
 @export var speakers : Array[DialogueSpeaker] = []
 @onready var started : bool = false
-@onready var controller := ReDScribe.new()
 const DISPLAY_CHAR_INTERVAL := 0.05
+var controller : ReDScribe
 var current_speaker : String = ''
 var waiting : bool = false
 static var current : Dialogue
 
 
-func _ready() -> void:
-	current = self
+func setup_redscribe() -> void:
+	controller = ReDScribe.new()
 	controller.boot_file = boot_file
 	controller.channel.connect(_handle)
 
 
 func start() -> void:
+	current = self
+	if not controller: setup_redscribe()
 	show()
 	continue_dialogue()
 	started = true
@@ -509,8 +505,8 @@ func _on_paused() -> void:
 
 
 func _on_finished() -> void:
-	await stop()
-	queue_free()
+	stop()
+	#queue_free() FIXME ReDScribe を複数呼び出しているときに参照エラーになる
 
 ```
 

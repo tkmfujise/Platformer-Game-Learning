@@ -6,7 +6,7 @@ title: assets/images/stages/chapter0/House.png
 == assets / images / stages / chapter0 / House.png
 
 === Attached Scenes
-* link:/scenes/src/dialogue/chapters/0/stage0.tscn[res://src/dialogue/chapters/0/stage0.tscn]
+* link:/scenes/src/dialogue/chapters/0/old_woman/old_woman.tscn[res://src/dialogue/chapters/0/old_woman/old_woman.tscn]
 
 
 

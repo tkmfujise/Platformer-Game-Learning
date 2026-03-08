@@ -9,6 +9,7 @@ title: src/stages/weather/weather.tscn
 [plantuml]
 ....
 class R as "Weather" <<(N,lightskyblue) Node2D>> {
+  - OFFSET
 ---
   + _process()
   + current_camera()
@@ -29,12 +30,13 @@ left to right direction
 ```gdscript
 func _process(_delta: float) -> void:
 	var camera = current_camera()
-	if camera: global_position = camera.global_position
+	if camera:
+		global_position = camera.global_position + OFFSET
 ```
 
 
 === Instantiators
-* link:/scenes/src/chapters/0/stages/0/stage_0.tscn[res://src/chapters/0/stages/0/stage_0.tscn]
+* link:/scenes/src/chapters/0/chapter_0.tscn[res://src/chapters/0/chapter_0.tscn]
 
 
 === Scene Tree
@@ -63,10 +65,13 @@ NOTE: No signal connections.
 ```gdscript
 extends Node2D
 
+const OFFSET := Vector2(960, -1080)
+
 
 func _process(_delta: float) -> void:
 	var camera = current_camera()
-	if camera: global_position = camera.global_position
+	if camera:
+		global_position = camera.global_position + OFFSET
 
 
 func current_camera() -> Camera2D:

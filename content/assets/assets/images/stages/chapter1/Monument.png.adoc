@@ -1,0 +1,27 @@
+---
+title: assets/images/stages/chapter1/Monument.png
+---
+:toc:
+
+== assets / images / stages / chapter1 / Monument.png
+
+=== Attached Scenes
+* link:/scenes/src/dialogue/chapters/1/goal/goal.tscn[res://src/dialogue/chapters/1/goal/goal.tscn]
+
+
+
+
+=== Metadata
+[cols="1,1" options="header"]
+|===
+|Name |Value
+|Size |32×48 px
+|Type |png
+|Content Length |747.0 B
+|===
+
+
+=== Image
+[.asset-image]
+image::/assets/raw/assets/images/stages/chapter1/Monument.png[]
+

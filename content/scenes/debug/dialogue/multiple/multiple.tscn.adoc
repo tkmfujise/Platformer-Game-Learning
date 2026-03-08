@@ -1,0 +1,327 @@
+---
+title: debug/dialogue/multiple/multiple.tscn
+---
+:toc:
+
+== debug / dialogue / multiple / multiple.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Dialogue" <<(C,lightgreen) Control>> {
+}
+class N1 as "StageGround0" <<(T,yellow) TileMapLayer>> {
+}
+class N2 as "CameraFrame" <<(A,lightskyblue) Area2D>> {
+  - HALF_SIZE
+---
+  + corner_of()
+  + corner()
+}
+class N3 as "Goal" <<(A,lightskyblue) Area2D>> {
+  ~ event
+  ~ finished
+---
+  * started
+---
+  + _ready()
+  + start()
+  + ligth_firewood()
+  + _on_description_area_entered()
+  + _on_description_area_area_exited()
+  + _on_area_entered()
+  + _on_dialogue_event()
+  + _on_dialogue_finished()
+}
+class N4 as "YoungGuy" <<(A,lightskyblue) Area2D>> {
+  ~ event
+---
+  * state
+  * entered
+---
+  + _ready()
+  + start()
+  + stop()
+  + finish()
+  + _input()
+  + enter()
+  + exit()
+  + _on_area_entered()
+  + _on_area_exited()
+  + _on_dialogue_paused()
+  + _on_dialogue_event()
+  + _on_dialogue_finished()
+}
+class N5 as "OldWoman" <<(N,lightskyblue) Node2D>> {
+  ~ event
+---
+  * started
+---
+  + _ready()
+  + start()
+  + _on_event_area_2d_area_entered()
+  + _on_dialogue_event()
+  + _on_dialogue_finished()
+}
+class N6 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
+  ~ dashed
+  ~ jumped
+  ~ landed
+  ~ failed
+  ~ reached
+---
+  - SPEED
+  - DASH_SPEED
+  - CLIMBING_SPEED
+  - JUMP_VELOCITY
+  - GRAVITY
+  - DOWNFORCE_ON_LITTLE_JUMP
+  - MAX_VELOCITY_Y
+  - ALLOWED_TIME_TO_JUMP
+  - DASH_TIME
+  - DASH_ATTENUATION
+  - MAX_DASH_COUNT
+  - MAX_CLIMBING_TIME
+  - DEFAULT_SCALE
+  * GhostEffect
+  * LandedEffect
+  * fatigue_curve
+  * state
+  * falling_time
+  * dash_rest_time
+  * dash_rest_count
+  * climb_rest_time
+  * sprite_tween
+  * restart_position
+  * jump_boost
+  * last_owner_name
+  * playable
+---
+  + _ready()
+  + _physics_process()
+  + compute_state()
+  + may_drop_collisions()
+  + is_just_input_action()
+  + is_input_action()
+  + animate()
+  + animate_with()
+  + compute_dashed()
+  + regain_dash_charge()
+  + idle()
+  + walk_right()
+  + walk_left()
+  + turn_right()
+  + turn_left()
+  + restart()
+  + dash()
+  + lock()
+  + unlock()
+  + vibrate()
+  + get_state_by()
+  + tween_sprite()
+  + update_sprite_states_shader_parameters()
+  + spawn_ghost_effect()
+  + current_sprite_state()
+  + is_dashed()
+  + _on_dashed()
+  + _on_jumped()
+  + _on_landed()
+  + _on_failed()
+  + _on_reached()
+  + _on_frame_subject_area_entered()
+  + _on_frame_subject_area_exited()
+  + _on_area_collision_area_entered()
+}
+R --o N1
+R --o N2
+R --o N3
+R --o N4
+R --o N5
+R --o N6
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+.$Goal
+```gdscript
+func _ready() -> void:
+	%MonumentDescription.hide()
+```
+.$YoungGuy
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
+.$OldWoman
+```gdscript
+func _ready() -> void:
+	if not owner: start()
+```
+.$Player
+```gdscript
+func _ready() -> void:
+	playable = true
+	if not owner: return
+	turn_right()
+	if last_owner_name == owner.name:
+		position = restart_position
+	else:
+		restart_position = position
+	last_owner_name = owner.name
+```
+==== _input
+.$YoungGuy
+```gdscript
+func _input(event: InputEvent) -> void:
+	if not state == State.ENTERED: return
+	if event.is_action_pressed(&'dialogue_start'):
+		start()
+```
+==== _physics_process
+.$Player
+```gdscript
+func _physics_process(delta: float) -> void:
+	var dx := Input.get_axis(&'move_left', &'move_right')
+	var dy := Input.get_axis(&'move_up', &'move_down')
+	var direction := Vector2(dx, dy)
+	var last_state := state
+	state = compute_state(delta, direction)
+	match state:
+		State.CLIMBING:
+			dx = 0
+			velocity.y = dy * CLIMBING_SPEED
+		State.DASHED:
+			velocity = direction.normalized() * DASH_SPEED
+		State.DASHING:
+			velocity *= DASH_ATTENUATION * delta
+		State.EXHAUSTED:
+			dx = 0
+		State.FAILED:
+			velocity.x = lerp(velocity.x, 0.0, 0.2)
+			velocity.y = lerp(velocity.y, 0.0, 0.2)
+		State.FALLING, State.SLIDING:
+			if last_state == State.CLIMBING \
+			and dy < 0:
+				velocity.y = JUMP_VELOCITY * 0.8
+			else:
+				var move_x := dx * SPEED * 0.8
+				if velocity.x * dx < 0: move_x *= 0.1
+				velocity.x = lerp(velocity.x, move_x, 0.2)
+				
+				velocity.y += GRAVITY * delta
+				if state == State.SLIDING: velocity.y *= 0.8
+				velocity.y = [velocity.y, MAX_VELOCITY_Y].min()
+				if falling_time < 0.1 \
+				and Input.is_action_just_released(&'move_jump'):
+					velocity.y += DOWNFORCE_ON_LITTLE_JUMP * delta
+		State.JUMPED:
+			velocity.y = JUMP_VELOCITY
+		State.KICKED:
+			velocity.y = JUMP_VELOCITY * 0.9
+			velocity.x = get_wall_normal().x * DASH_SPEED * 0.4
+		State.LOCKED:
+			dx = 0
+			velocity = Vector2(0, 0)
+		_: pass
+	
+	if not playable: dx = 0
+	if not (state == State.DASHED \
+		or state == State.DASHING \
+		or state == State.FALLING \
+		or state == State.KICKED
+	):
+		if dx: velocity.x = dx * SPEED
+		else: velocity.x = move_toward(velocity.x, 0, SPEED*0.2)
+	if state == State.JUMPED:
+		velocity += jump_boost
+		jump_boost = Vector2(0, 0)
+	
+	animate(playable)
+	move_and_slide()
+```
+
+
+=== Instantiators
+CAUTION: No other scene instantiate this scene.
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-control]#Dialogue# [.node-type.type-control]#Control#
+** [.node-name.type-other]#StageGround0# [.node-type.type-other]#link:/scenes/src/stages/0/stage_ground_0.tscn[res://src/stages/0/stage_ground_0.tscn]#
+** [.node-name.type-2d]#CameraFrame# [.node-type.type-2d]#link:/scenes/src/stages/frame/camera_frame.tscn[res://src/stages/frame/camera_frame.tscn]#
+** [.node-name.type-2d]#Goal# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/1/goal/goal.tscn[res://src/dialogue/chapters/1/goal/goal.tscn]#
+** [.node-name.type-2d]#YoungGuy# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/1/young_guy/young_guy.tscn[res://src/dialogue/chapters/1/young_guy/young_guy.tscn]#
+** [.node-name.type-2d]#OldWoman# [.node-type.type-2d]#link:/scenes/src/dialogue/chapters/0/old_woman/old_woman.tscn[res://src/dialogue/chapters/0/old_woman/old_woman.tscn]#
+** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-control]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*layout_mode* a|`3`
+|*anchors_preset* a|`15`
+|*anchor_right* a|`1.0`
+|*anchor_bottom* a|`1.0`
+|*grow_horizontal* a|`2`
+|*grow_vertical* a|`2`
+|===
+[.node-property.node-other]
+.#$StageGround0# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*tile_map_data* a|`PackedByteArray("AAAJAAoAAAAAAAAAAAAJAAsAAAAAAAEAAAAAAAwAAAAEAAAAAAAAAA0AAAAEAAEAAAAAAA4AAAAEAAEAAAAAAA8AAAAEAAEAAAABAAwAAAAEAAAAAAABAA0AAAAEAAEAAAABAA4AAAAEAAEAAAABAA8AAAAEAAEAAAACAAwAAAAEAAAAAAACAA0AAAAEAAEAAAACAA4AAAAEAAEAAAACAA8AAAAEAAEAAAADAAwAAAAEAAAAAAADAA0AAAAEAAEAAAADAA4AAAAEAAEAAAADAA8AAAAEAAEAAAAEAAwAAAAEAAAAAAAEAA0AAAAEAAEAAAAEAA4AAAAEAAEAAAAEAA8AAAAEAAEAAAAFAAwAAAAEAAAAAAAFAA0AAAAEAAEAAAAFAA4AAAAEAAEAAAAFAA8AAAAEAAEAAAAGAAwAAAAEAAAAAAAGAA0AAAAEAAEAAAAGAA4AAAAEAAEAAAAGAA8AAAAEAAEAAAAHAAwAAAAEAAAAAAAHAA0AAAAEAAEAAAAHAA4AAAAEAAEAAAAHAA8AAAAEAAEAAAAIAAwAAAAEAAAAAAAIAA0AAAAEAAEAAAAIAA4AAAAEAAEAAAAIAA8AAAAEAAEAAAAJAAwAAAAEAAAAAAAJAA0AAAAEAAEAAAAJAA4AAAAEAAEAAAAJAA8AAAAEAAEAAAAKAAwAAAAEAAAAAAAKAA0AAAAEAAEAAAAKAA4AAAAEAAEAAAAKAA8AAAAEAAEAAAALAAwAAAAEAAAAAAALAA0AAAAEAAEAAAALAA4AAAAEAAEAAAALAA8AAAAEAAEAAAAMAAwAAAAEAAAAAAAMAA0AAAAEAAEAAAAMAA4AAAAEAAEAAAAMAA8AAAAEAAEAAAANAAwAAAAEAAAAAAANAA0AAAAEAAEAAAANAA4AAAAEAAEAAAANAA8AAAAEAAEAAAAOAAwAAAAEAAAAAAAOAA0AAAAEAAEAAAAOAA4AAAAEAAEAAAAOAA8AAAAEAAEAAAAPAAwAAAAEAAAAAAAPAA0AAAAEAAEAAAAPAA4AAAAEAAEAAAAPAA8AAAAEAAEAAAAQAAwAAAAEAAAAAAAQAA0AAAAEAAEAAAAQAA4AAAAEAAEAAAAQAA8AAAAEAAEAAAARAAwAAAAEAAAAAAARAA0AAAAEAAEAAAARAA4AAAAEAAEAAAARAA8AAAAEAAEAAAASAAwAAAAEAAAAAAASAA0AAAAEAAEAAAASAA4AAAAEAAEAAAASAA8AAAAEAAEAAAATAAwAAAAEAAAAAAATAA0AAAAEAAEAAAATAA4AAAAEAAEAAAATAA8AAAAEAAEAAAAUAAwAAAAEAAAAAAAUAA0AAAAEAAEAAAAUAA4AAAAEAAEAAAAUAA8AAAAEAAEAAAAVAAwAAAAEAAAAAAAVAA0AAAAEAAEAAAAVAA4AAAAEAAEAAAAVAA8AAAAEAAEAAAAWAAwAAAAEAAAAAAAWAA0AAAAEAAEAAAAWAA4AAAAEAAEAAAAWAA8AAAAEAAEAAAAXAAwAAAAEAAAAAAAXAA0AAAAEAAEAAAAXAA4AAAAEAAEAAAAXAA8AAAAEAAEAAAAYAAwAAAAEAAAAAAAYAA0AAAAEAAEAAAAYAA4AAAAEAAEAAAAYAA8AAAAEAAEAAAAZAAwAAAAEAAAAAAAZAA0AAAAEAAEAAAAZAA4AAAAEAAEAAAAZAA8AAAAEAAEAAAAaAAwAAAAEAAAAAAAaAA0AAAAEAAEAAAAaAA4AAAAEAAEAAAAaAA8AAAAEAAEAAAAbAAwAAAAEAAAAAAAbAA0AAAAEAAEAAAAbAA4AAAAEAAEAAAAbAA8AAAAEAAEAAAAcAAwAAAAEAAAAAAAcAA0AAAAEAAEAAAAcAA4AAAAEAAEAAAAcAA8AAAAEAAEAAAAdAAwAAAAEAAAAAAAdAA0AAAAEAAEAAAAdAA4AAAAEAAEAAAAdAA8AAAAEAAEAAAAeAAwAAAAEAAAAAAAeAA0AAAAEAAEAAAAeAA4AAAAEAAEAAAAeAA8AAAAEAAEAAAAfAAwAAAAEAAAAAAAfAA0AAAAEAAEAAAAfAA4AAAAEAAEAAAAfAA8AAAAEAAEAAAD//wAAAAAFAAEAAAD//wEAAAAFAAEAAAD//wIAAAAFAAEAAAD//wMAAAAFAAEAAAD//wQAAAAFAAEAAAD//wUAAAAFAAEAAAD//wYAAAAFAAEAAAD//wcAAAAFAAEAAAD//wgAAAAFAAEAAAD//wsAAAAFAAEAAAD//woAAAAFAAEAAAD//wkAAAAFAAEAAAD//wwAAAAEAAEAAAD//w0AAAAEAAEAAAD//w4AAAAEAAEAAAD//w8AAAAEAAEAAAAKAAoAAAABAAAAAAALAAoAAAACAAAAAAAKAAsAAAABAAEAAAALAAsAAAACAAEAAAAgAAwAAAAEAAAAAAAhAAwAAAAEAAAAAAAiAAwAAAAEAAAAAAAjAAwAAAAEAAAAAAAkAAwAAAAEAAAAAAAlAAwAAAAEAAAAAAAgAA0AAAAEAAEAAAAgAA4AAAAEAAEAAAAgAA8AAAAEAAEAAAAhAA8AAAAEAAEAAAAiAA8AAAAEAAEAAAAjAA8AAAAEAAEAAAAjAA4AAAAEAAEAAAAkAA4AAAAEAAEAAAAlAA4AAAAEAAEAAAAlAA0AAAAEAAEAAAAlAA8AAAAEAAEAAAAkAA8AAAAEAAEAAAAhAA4AAAAEAAEAAAAiAA4AAAAEAAEAAAAkAA0AAAAEAAEAAAAjAA0AAAAEAAEAAAAiAA0AAAAEAAEAAAAhAA0AAAAEAAEAAAA=")`
+|===
+[.node-property.node-2d]
+.#$CameraFrame# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(958, 540)`
+|===
+[.node-property.node-2d]
+.#$Goal# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(112, 501)`
+|===
+[.node-property.node-2d]
+.#$YoungGuy# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-86, 734)`
+|===
+[.node-property.node-2d]
+.#$OldWoman# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1574, 285)`
+|===
+[.node-property.node-2d]
+.#$Player# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(434, 644)`
+|===
+
+
+
+

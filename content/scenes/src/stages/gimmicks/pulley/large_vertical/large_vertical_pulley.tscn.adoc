@@ -36,7 +36,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Pulley/PulleyVerticalLarge.png[
 
 
 === Instantiators
-* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+* link:/scenes/src/chapters/1/chapter_1.tscn[res://src/chapters/1/chapter_1.tscn]
 
 
 === Scene Tree
@@ -70,8 +70,8 @@ image::/assets/raw/assets/images/stages/gimmicks/Pulley/PulleyVerticalLarge.png[
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*position* a|`Vector2(-9.142858, -17.142857)`
-|*scale* a|`Vector2(0.15, 0.1)`
+|*position* a|`Vector2(-7.857143, -16.714287)`
+|*scale* a|`Vector2(0.13, 0.1)`
 |===
 [.node-property.node-plain]
 .#$Sprites/Platform/Area2D/CollisionShape2D# properties

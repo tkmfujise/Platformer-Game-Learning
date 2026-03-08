@@ -6,12 +6,22 @@ title: res://src/chapters/1/chapter_1.gd
 == src / chapters / 1 / chapter_1.gd
 
 === Attached Scenes
-* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+* link:/scenes/src/chapters/1/chapter_1.tscn[res://src/chapters/1/chapter_1.tscn]
 
 
 
 === Code
 ```gdscript
 extends Control
+
+
+func _on_goal_event(event_name: String) -> void:
+	var key := "goal.%s" % event_name
+	if %AnimationPlayer.has_animation(key):
+		%AnimationPlayer.play(key)
+
+
+func _on_goal_finished() -> void:
+	%ClosingCurtain.play()
 
 ```

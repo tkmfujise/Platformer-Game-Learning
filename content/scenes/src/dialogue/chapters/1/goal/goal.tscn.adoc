@@ -1,0 +1,384 @@
+---
+title: src/dialogue/chapters/1/goal/goal.tscn
+---
+:toc:
+
+== src / dialogue / chapters / 1 / goal / goal.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "Goal" <<(A,lightskyblue) Area2D>> {
+  ~ event
+  ~ finished
+---
+  * started
+---
+  + _ready()
+  + start()
+  + ligth_firewood()
+  + _on_description_area_entered()
+  + _on_description_area_area_exited()
+  + _on_area_entered()
+  + _on_dialogue_event()
+  + _on_dialogue_finished()
+}
+class N1 as "Dialogue" <<(C,yellow) CanvasLayer>> {
+  ~ finished
+  ~ paused
+  ~ event
+---
+  - DISPLAY_CHAR_INTERVAL
+  * boot_file
+  * speakers
+  * started
+  * controller
+  * current_speaker
+  * waiting
+  * current
+---
+  + setup_redscribe()
+  + start()
+  + continue_dialogue()
+  + stop()
+  + says()
+  + show_content()
+  + set_speaker_image()
+  + _input()
+  + _handle()
+  + _on_event()
+  + _on_event_timer_timeout()
+  + _on_paused()
+  + _on_finished()
+}
+class N2 as "Monument" <<(S,lightskyblue) Sprite2D>> {
+}
+class N3 as "DescriptionArea" <<(A,lightskyblue) Area2D>> {
+}
+class N4 as "CollisionShape2D" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N5 as "MonumentDescription" <<(R,lightgreen) RichTextLabel>> {
+}
+class N6 as "Bonfire" <<(S,lightskyblue) Sprite2D>> {
+  * on_fire
+---
+  + _ready()
+  + fire()
+  + wood()
+}
+class N7 as "Crow" <<(S,lightskyblue) Sprite2D>> {
+---
+  + idle()
+  + caw()
+  + peck()
+  + take_off()
+  + fly()
+  + play()
+}
+class N8 as "EventArea" <<(C,lightskyblue) CollisionShape2D>> {
+}
+class N9 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
+}
+R --o N1
+R --o N2
+R --o N6
+R --o N7
+R --o N8
+R --o N9
+N2 --o N3
+N3 --o N4
+N3 --o N5
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+_(R::_on_area_entered, R::area_entered)
+_(R::_on_dialogue_event, N1::event)
+_(R::_on_dialogue_finished, N1::finished)
+_(R::_on_description_area_entered, N3::area_entered)
+_(R::_on_description_area_area_exited, N3::area_exited)
+....
+
+
+[.scene-assets]
+=== Assets
+[.asset-image]
+[link=/assets/assets/images/stages/chapter1/Monument.png]
+image::/assets/raw/assets/images/stages/chapter1/Monument.png[200, 100] 
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	%MonumentDescription.hide()
+```
+.$Bonfire
+```gdscript
+func _ready() -> void:
+	if on_fire: fire()
+	else: wood()
+```
+==== _input
+.$Dialogue
+```gdscript
+func _input(_event: InputEvent) -> void:
+	if not started: return
+	if waiting: return
+	if _event.is_action_pressed('ui_accept'):
+		continue_dialogue()
+```
+
+
+=== Instantiators
+* link:/scenes/debug/dialogue/multiple/multiple.tscn[res://debug/dialogue/multiple/multiple.tscn]
+* link:/scenes/src/chapters/1/chapter_1.tscn[res://src/chapters/1/chapter_1.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-2d]#Goal# [.node-type.type-2d]#Area2D#
+** [.node-name.type-other]#Dialogue# [.node-type.type-other]#link:/scenes/src/dialogue/dialogue.tscn[res://src/dialogue/dialogue.tscn]#
+** [.node-name.type-2d]#Monument# [.node-type.type-2d]#Sprite2D#
+*** [.node-name.type-2d]#DescriptionArea# [.node-type.type-2d]#Area2D#
+**** [.node-name.type-2d]#CollisionShape2D# [.node-type.type-2d]#CollisionShape2D#
+**** [.node-name.type-control]#MonumentDescription# [.node-type.type-control]#RichTextLabel#
+** [.node-name.type-2d]#Bonfire# [.node-type.type-2d]#link:/scenes/src/stages/1/gimmicks/bonfire/bonfire.tscn[res://src/stages/1/gimmicks/bonfire/bonfire.tscn]#
+** [.node-name.type-2d]#Crow# [.node-type.type-2d]#link:/scenes/src/stages/0/gimmicks/crow/crow.tscn[res://src/stages/0/gimmicks/crow/crow.tscn]#
+** [.node-name.type-2d]#EventArea# [.node-type.type-2d]#CollisionShape2D#
+** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+
+
+=== Signal Connections
+[.signal-connection]
+.$.:[#_area_entered_#]=>$.
+```gdscript
+func _on_area_entered(area: Area2D) -> void:
+	if not started: start()
+```
+[.signal-connection]
+.$Dialogue:[#_event_#]=>$.
+```gdscript
+func _on_dialogue_event(event_name: String) -> void:
+	if %AnimationPlayer.has_animation(event_name):
+		%AnimationPlayer.play(event_name)
+	event.emit(event_name)
+```
+[.signal-connection]
+.$Dialogue:[#_finished_#]=>$.
+```gdscript
+func _on_dialogue_finished() -> void:
+	finished.emit()
+```
+[.signal-connection]
+.$Monument/DescriptionArea:[#_area_entered_#]=>$.
+```gdscript
+func _on_description_area_entered(area: Area2D) -> void:
+	%MonumentDescription.show()
+```
+[.signal-connection]
+.$Monument/DescriptionArea:[#_area_exited_#]=>$.
+```gdscript
+func _on_description_area_area_exited(area: Area2D) -> void:
+	%MonumentDescription.hide()
+```
+
+
+=== Animations
+==== 01.fire
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T1 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T1 : position\n = Vector2(2264.9998, -209.99998)
+R  ->o  T1 : &"caw"()
+R  ->o  T1 : flip_h\n = true
+== Time: 1.3 ==
+R  ->o  R : &"ligth_firewood"()
+== Time: 3.0 ==
+R  ->  T1 : position\n = Vector2(1522, 396)
+R  ->o  T1 : &"caw"()
+R  ->o  T1 : flip_h\n = false
+== Time: 4.0 ==
+R  ->o  T1 : &"caw"()
+
+
+....
+---
+
+==== Animation_ik2yi
+
+[plantuml]
+....
+control "Root" as R
+participant "$Crow" as T0 #87CEFA
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(2264.9998, -209.99998)
+R  ->o  T0 : flip_h\n = false
+
+
+....
+---
+
+
+
+=== Properties
+[.node-property.node-2d]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*collision_layer* a|`0`
+|*collision_mask* a|`16`
+|*script* a|link:/scripts/src/dialogue/chapters/1/goal/goal.gd[res://src/dialogue/chapters/1/goal/goal.gd]
+|===
+[.node-property.node-other]
+.#$Dialogue# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*visible* a|`false`
+|*boot_file* a|link:/assets/src/dialogue/scenarios/chapter1/goal.ja.rb[res://src/dialogue/scenarios/chapter1/goal.ja.rb]
+|===
+[.node-property.node-2d]
+.#$Monument# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(734, 181)`
+|*scale* a|`Vector2(5, 5)`
+|*texture* a|[link=/assets/assets/images/stages/chapter1/Monument.png]
+[.asset-image]
+.res://assets/images/stages/chapter1/Monument.png
+image::/assets/raw/assets/images/stages/chapter1/Monument.png[]
+
+|===
+[.node-property.node-2d]
+.#$Monument/DescriptionArea# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(-146.79999, -36.199997)`
+|*scale* a|`Vector2(0.19999999, 0.19999999)`
+|*collision_layer* a|`0`
+|*collision_mask* a|`16`
+|===
+[.node-property.node-2d]
+.#$Monument/DescriptionArea/CollisionShape2D# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(721.49994, 145.99997)`
+|*scale* a|`Vector2(0.9999998, 0.9999998)`
+|*shape* a|`SubResource("RectangleShape2D_pereq")`
+|===
+[.node-property.node-control]
+.#$Monument/DescriptionArea/MonumentDescription# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*offset_left* a|`351.99997`
+|*offset_top* a|`-190.00003`
+|*offset_right* a|`1130.0`
+|*offset_bottom* a|`-12.000061`
+|*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
+|*theme_override_font_sizes/normal_font_size* a|`40`
+|*text* a|`- - オレダケ山 鎮魂の碑 - -
+山中で亡くなられた登山者の
+安らかな眠りを願って`
+|*horizontal_alignment* a|`1`
+|===
+[.node-property.node-2d]
+.#$Bonfire# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(1301, 419.00003)`
+|*on_fire* a|`false`
+|===
+[.node-property.node-2d]
+.#$Crow# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(2264.9998, -209.99998)`
+|===
+[.node-property.node-2d]
+.#$EventArea# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*position* a|`Vector2(1477.25, 227.75)`
+|*shape* a|`SubResource("RectangleShape2D_mruft")`
+|===
+[.node-property.node-other]
+.#$AnimationPlayer# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*libraries* a|`{
+&"": SubResource("AnimationLibrary_ik2yi")
+}`
+|===
+
+
+=== link:/scripts/src/dialogue/chapters/1/goal/goal.gd[goal.gd]
+
+```gdscript
+extends Node2D
+
+signal event(event_name: String)
+signal finished
+
+@onready var started : bool = false
+
+
+func _ready() -> void:
+	%MonumentDescription.hide()
+
+
+func start() -> void:
+	started = true
+	%Dialogue.start()
+	event.emit('started')
+
+
+func ligth_firewood() -> void:
+	%Bonfire.fire()
+
+
+func _on_description_area_entered(area: Area2D) -> void:
+	%MonumentDescription.show()
+
+
+func _on_description_area_area_exited(area: Area2D) -> void:
+	%MonumentDescription.hide()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if not started: start()
+
+
+func _on_dialogue_event(event_name: String) -> void:
+	if %AnimationPlayer.has_animation(event_name):
+		%AnimationPlayer.play(event_name)
+	event.emit(event_name)
+
+
+func _on_dialogue_finished() -> void:
+	finished.emit()
+
+```
+
+

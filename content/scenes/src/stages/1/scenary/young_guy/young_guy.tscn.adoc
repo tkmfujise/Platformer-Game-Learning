@@ -30,7 +30,7 @@ image::/assets/raw/assets/images/actors/young_guy/YoungGuy.png[200, 100]
 
 
 === Instantiators
-* link:/scenes/src/dialogue/chapters/1/young_guy.tscn[res://src/dialogue/chapters/1/young_guy.tscn]
+* link:/scenes/src/dialogue/chapters/1/young_guy/young_guy.tscn[res://src/dialogue/chapters/1/young_guy/young_guy.tscn]
 
 
 === Scene Tree
@@ -43,6 +43,21 @@ image::/assets/raw/assets/images/actors/young_guy/YoungGuy.png[200, 100]
 NOTE: No signal connections.
 
 === Animations
+==== Animation_cph0o
+
+[plantuml]
+....
+control "Root" as R
+
+
+
+== Time: 0.0 ==
+R  ->o  R : frame\n = 0
+
+
+....
+---
+
 ==== idle (autoplay)
 
 [plantuml]
@@ -63,21 +78,6 @@ R  ->o  R : frame\n = 3
 R  ->o  R : frame\n = 4
 
 end
-....
----
-
-==== Animation_cph0o
-
-[plantuml]
-....
-control "Root" as R
-
-
-
-== Time: 0.0 ==
-R  ->o  R : frame\n = 0
-
-
 ....
 ---
 

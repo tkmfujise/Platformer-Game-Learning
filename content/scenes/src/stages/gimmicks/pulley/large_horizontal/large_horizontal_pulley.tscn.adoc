@@ -35,7 +35,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Pulley/PulleyHorizontalLarge.pn
 
 
 === Instantiators
-* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+* link:/scenes/src/chapters/1/chapter_1.tscn[res://src/chapters/1/chapter_1.tscn]
 
 
 === Scene Tree

@@ -17,12 +17,18 @@ extends Control
 enum Pattern { PATTERN_1, PATTERN_2, PATTERN_3 }
 @export var pattern : Pattern
 @export_file('*.tscn') var next_scene : String
+@export var center := Vector2(0.5, 0.5) : set = set_center
 
 
-func play(_next_scene: String) -> void:
-	next_scene = _next_scene
+func play(_next_scene: String = '') -> void:
+	if _next_scene: next_scene = _next_scene
 	var number = Pattern.keys()[pattern].split('_')[1]
 	%AnimationPlayer.play("pattern%s" % number)
+
+
+func set_center(val: Vector2) -> void:
+	center = val
+	%Pattern2.material.set_shader_parameter("center", val)
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:

@@ -27,7 +27,7 @@ image::/assets/raw/assets/images/particles/circle_blur.png[200, 100]
 
 
 === Instantiators
-* link:/scenes/src/chapters/1/chapter1.tscn[res://src/chapters/1/chapter1.tscn]
+* link:/scenes/src/chapters/1/chapter_1.tscn[res://src/chapters/1/chapter_1.tscn]
 * link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]
 
 

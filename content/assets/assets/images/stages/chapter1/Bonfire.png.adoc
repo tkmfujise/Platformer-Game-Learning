@@ -15,9 +15,9 @@ title: assets/images/stages/chapter1/Bonfire.png
 [cols="1,1" options="header"]
 |===
 |Name |Value
-|Size |96×16 px
+|Size |128×16 px
 |Type |png
-|Content Length |778.0 B
+|Content Length |936.0 B
 |===
 
 
