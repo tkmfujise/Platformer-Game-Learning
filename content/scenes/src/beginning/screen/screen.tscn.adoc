@@ -460,9 +460,7 @@ image::/assets/raw/assets/images/ui/Joy_A_button.svg[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_5ydpp")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_5ydpp")`
 |===
 [.node-property.node-other]
 .#$AnimationTree# properties

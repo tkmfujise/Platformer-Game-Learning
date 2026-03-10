@@ -1,0 +1,38 @@
+---
+title: src/helpers/gdshader/outline.gdshader
+---
+:toc:
+
+== src / helpers / gdshader / outline.gdshader
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Content
+```glsl
+shader_type canvas_item;
+
+uniform float width : hint_range(0.0, 30.0) = 2.0;
+uniform vec4 outline_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+
+void fragment() {
+    vec4 base = texture(TEXTURE, UV);
+    float alpha = -4.0 * base.a;
+	float size = width * 1.0 / float(textureSize(TEXTURE, 0).x);
+    
+    // 4方向の平均を足し込む
+    alpha += texture(TEXTURE, UV + vec2(size, 0.0)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size, 0.0)).a;
+    alpha += texture(TEXTURE, UV + vec2(0.0, size)).a;
+    alpha += texture(TEXTURE, UV + vec2(0.0, -size)).a;
+
+    // アウトラインの色とアルファ値を合成  
+    float blend_a = clamp(alpha, 0.0, 1.0); // 元のスプライトとの合成アルファ値
+    float outline_a = abs(alpha); // 輪郭線のアルファ値.
+    vec4 final_color = mix(base, outline_color, blend_a);
+    COLOR = vec4(final_color.rgb, clamp(base.a + outline_a, 0.0, 1.0));
+}
+
+```
+
