@@ -17,7 +17,7 @@ title: assets/images/player/Player_fall.png
 |Name |Value
 |Size |48×24 px
 |Type |png
-|Content Length |650.0 B
+|Content Length |629.0 B
 |===
 
 

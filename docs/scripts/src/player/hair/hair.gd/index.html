@@ -82,6 +82,12 @@
         
           
           
+          <li data-path="2:/debug/hair/node_2d.tscn" data-category="scenes">
+            <a class="" href="../../../../../scenes/debug/hair/node_2d.tscn/">debug/hair/node_2d.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="2:/debug/redscribe/test.tscn" data-category="scenes">
             <a class="" href="../../../../../scenes/debug/redscribe/test.tscn/">debug/redscribe/test.tscn</a>
           </li>
@@ -264,12 +270,6 @@
           
           <li data-path="3:/src/player/hair/hair.tscn" data-category="scenes">
             <a class="" href="../../../../../scenes/src/player/hair/hair.tscn/">src/player/hair/hair.tscn</a>
-          </li>
-        
-          
-          
-          <li data-path="4:/src/player/hair/segment/segment.tscn" data-category="scenes">
-            <a class="" href="../../../../../scenes/src/player/hair/segment/segment.tscn/">src/player/hair/segment/segment.tscn</a>
           </li>
         
           
@@ -1843,12 +1843,6 @@
         
           
           
-          <li data-path="3:/src/player/hair/hair.gdshader" data-category="assets">
-            <a class="" href="../../../../../assets/src/player/hair/hair.gdshader/">src/player/hair/hair.gdshader</a>
-          </li>
-        
-          
-          
           <li data-path="2:/src/player/player.gdshader" data-category="assets">
             <a class="" href="../../../../../assets/src/player/player.gdshader/">src/player/player.gdshader</a>
           </li>
@@ -1981,18 +1975,50 @@ document.addEventListener("DOMContentLoaded", () => {
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="err">@</span><span class="k">tool</span>
 <span class="k">extends</span> <span class="n">Node2D</span>
 
-<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">texture</span> <span class="p">:</span> <span class="n">Texture2D</span>
+<span class="k">var</span> <span class="n">base_color</span> <span class="p">:</span> <span class="kt">Color</span> <span class="o">=</span> <span class="kt">Color</span><span class="p">(</span><span class="s2">'</span><span class="s1">e0872f'</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">dash_color</span> <span class="p">:</span> <span class="kt">Color</span> <span class="o">=</span> <span class="kt">Color</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="err">@</span><span class="k">onready</span> <span class="k">var</span> <span class="n">color</span> <span class="p">:</span> <span class="kt">Color</span> <span class="o">=</span> <span class="n">base_color</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">segment_count</span> <span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">max_distance</span> <span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">lerp_speed</span> <span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">15.0</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">base_radius</span> <span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">4.0</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">outline_width</span> <span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="k">var</span> <span class="n">positions</span><span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="kt">Vector2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">func</span> <span class="nf">_ready</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">positions</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">segment_count</span><span class="p">):</span>
+		<span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">global_position</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="kt">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">positions</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span> <span class="k">return</span>
+	<span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">global_position</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">segment_count</span><span class="p">):</span>
+		<span class="k">var</span> <span class="n">target</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">var</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">target</span>
+		<span class="k">if</span> <span class="n">diff</span><span class="o">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">max_distance</span><span class="p">:</span>
+			<span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">target</span> <span class="o">+</span> <span class="n">diff</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="n">max_distance</span>
+		<span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="nb">lerp</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">lerp_speed</span> <span class="o">*</span> <span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span>
+
 	<span class="n">queue_redraw</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">_draw</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="c1">#draw_circle(Vector2(0, 0), 104, Color.YELLOW)</span>
-	<span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="p">[</span><span class="kt">Vector2</span><span class="o">.</span><span class="n">ZERO</span><span class="p">,</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)]:</span>
-		<span class="c1">#draw_texture(texture, pos)</span>
-		<span class="n">draw_circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="kt">Color</span><span class="o">.</span><span class="n">ORANGE</span><span class="p">)</span></code></pre>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">segment_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="k">var</span> <span class="n">r</span> <span class="o">=</span> <span class="n">base_radius</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="kt">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">segment_count</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+		<span class="n">draw_circle</span><span class="p">(</span><span class="n">to_local</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">r</span> <span class="o">+</span> <span class="n">outline_width</span><span class="p">,</span> <span class="kt">Color</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">segment_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="k">var</span> <span class="n">r</span> <span class="o">=</span> <span class="n">base_radius</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="kt">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">segment_count</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+		<span class="n">draw_circle</span><span class="p">(</span><span class="n">to_local</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">set_dashed</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="kt">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">color</span> <span class="o">=</span> <span class="n">dash_color</span> <span class="k">if</span> <span class="n">val</span> <span class="k">else</span> <span class="n">base_color</span></code></pre>
 </div>
 </div>
 </div>

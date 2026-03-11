@@ -82,6 +82,12 @@
         
           
           
+          <li data-path="2:/debug/hair/node_2d.tscn" data-category="scenes">
+            <a class="" href="../../../../../../scenes/debug/hair/node_2d.tscn/">debug/hair/node_2d.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="2:/debug/redscribe/test.tscn" data-category="scenes">
             <a class="" href="../../../../../../scenes/debug/redscribe/test.tscn/">debug/redscribe/test.tscn</a>
           </li>
@@ -264,12 +270,6 @@
           
           <li data-path="3:/src/player/hair/hair.tscn" data-category="scenes">
             <a class="" href="../../../../../../scenes/src/player/hair/hair.tscn/">src/player/hair/hair.tscn</a>
-          </li>
-        
-          
-          
-          <li data-path="4:/src/player/hair/segment/segment.tscn" data-category="scenes">
-            <a class="" href="../../../../../../scenes/src/player/hair/segment/segment.tscn/">src/player/hair/segment/segment.tscn</a>
           </li>
         
           
@@ -1843,12 +1843,6 @@
         
           
           
-          <li data-path="3:/src/player/hair/hair.gdshader" data-category="assets">
-            <a class="" href="../../../../../../assets/src/player/hair/hair.gdshader/">src/player/hair/hair.gdshader</a>
-          </li>
-        
-          
-          
           <li data-path="2:/src/player/player.gdshader" data-category="assets">
             <a class="" href="../../../../../../assets/src/player/player.gdshader/">src/player/player.gdshader</a>
           </li>
@@ -1987,6 +1981,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="k">func</span> <span class="nf">hit</span><span class="p">(</span><span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">standby</span> <span class="o">=</span> <span class="bp">false</span>
 	<span class="n">player</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">FORCE</span>
+	<span class="n">player</span><span class="o">.</span><span class="n">regain_dash_charge</span><span class="p">()</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">hit'</span><span class="p">)</span>
 
 

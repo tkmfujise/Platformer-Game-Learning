@@ -82,6 +82,12 @@
         
           
           
+          <li data-path="2:/debug/hair/node_2d.tscn" data-category="scenes">
+            <a class="" href="../../../../scenes/debug/hair/node_2d.tscn/">debug/hair/node_2d.tscn</a>
+          </li>
+        
+          
+          
           <li data-path="2:/debug/redscribe/test.tscn" data-category="scenes">
             <a class="" href="../../../../scenes/debug/redscribe/test.tscn/">debug/redscribe/test.tscn</a>
           </li>
@@ -264,12 +270,6 @@
           
           <li data-path="3:/src/player/hair/hair.tscn" data-category="scenes">
             <a class="" href="../../../../scenes/src/player/hair/hair.tscn/">src/player/hair/hair.tscn</a>
-          </li>
-        
-          
-          
-          <li data-path="4:/src/player/hair/segment/segment.tscn" data-category="scenes">
-            <a class="" href="../../../../scenes/src/player/hair/segment/segment.tscn/">src/player/hair/segment/segment.tscn</a>
           </li>
         
           
@@ -1843,12 +1843,6 @@
         
           
           
-          <li data-path="3:/src/player/hair/hair.gdshader" data-category="assets">
-            <a class="" href="../../../../assets/src/player/hair/hair.gdshader/">src/player/hair/hair.gdshader</a>
-          </li>
-        
-          
-          
           <li data-path="2:/src/player/player.gdshader" data-category="assets">
             <a class="" href="../../../../assets/src/player/player.gdshader/">src/player/player.gdshader</a>
           </li>
@@ -2005,13 +1999,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">SLIDING</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="k">const</span> <span class="n">SPEED</span> <span class="o">=</span> <span class="mf">700.0</span>
-<span class="k">const</span> <span class="n">DASH_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="k">const</span> <span class="n">CLIMBING_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="k">const</span> <span class="n">SPEED</span> <span class="o">=</span> <span class="mf">650.0</span>
+<span class="k">const</span> <span class="n">DASH_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">*</span> <span class="mf">4.2</span>
+<span class="k">const</span> <span class="n">CLIMBING_SPEED</span> <span class="o">=</span> <span class="n">SPEED</span> <span class="o">/</span> <span class="mi">3</span>
 <span class="k">const</span> <span class="n">JUMP_VELOCITY</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1100.0</span>
 <span class="k">const</span> <span class="n">GRAVITY</span> <span class="o">=</span> <span class="mi">4000</span>
 <span class="k">const</span> <span class="n">DOWNFORCE_ON_LITTLE_JUMP</span> <span class="o">=</span> <span class="n">GRAVITY</span> <span class="o">*</span> <span class="mi">7</span>
-<span class="k">const</span> <span class="n">MAX_VELOCITY_Y</span> <span class="o">=</span> <span class="mi">1300</span>
+<span class="k">const</span> <span class="n">MAX_VELOCITY_Y</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="k">const</span> <span class="n">ALLOWED_TIME_TO_JUMP</span> <span class="o">=</span> <span class="mf">0.13</span>
 <span class="k">const</span> <span class="n">DASH_TIME</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="k">const</span> <span class="n">DASH_ATTENUATION</span> <span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -2172,6 +2166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">LOCKED</span><span class="p">:</span> <span class="k">return</span>
 	<span class="k">if</span> <span class="n">force</span><span class="p">:</span> <span class="n">animate_with</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
 	<span class="n">update_sprite_states_shader_parameters</span><span class="p">()</span>
+	<span class="o">%</span><span class="n">Hair</span><span class="o">.</span><span class="n">set_dashed</span><span class="p">(</span><span class="n">is_dashed</span><span class="p">())</span>
 	<span class="k">if</span> <span class="n">dash_rest_time</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="kt">int</span><span class="p">(</span><span class="n">dash_rest_time</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="n">spawn_ghost_effect</span><span class="p">()</span>
 

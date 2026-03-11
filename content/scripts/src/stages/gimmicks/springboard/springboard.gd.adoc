@@ -21,6 +21,7 @@ const FORCE := -1800
 func hit(player: Player) -> void:
 	standby = false
 	player.velocity.y = FORCE
+	player.regain_dash_charge()
 	%AnimationPlayer.play(&'hit')
 
 

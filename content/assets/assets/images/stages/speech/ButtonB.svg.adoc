@@ -7,8 +7,6 @@ title: assets/images/stages/speech/ButtonB.svg
 
 === Attached Scenes
 * link:/scenes/src/dialogue/chapters/1/young_guy/young_guy.tscn[res://src/dialogue/chapters/1/young_guy/young_guy.tscn]
-* link:/scenes/src/player/hair/hair.tscn[res://src/player/hair/hair.tscn]
-* link:/scenes/src/player/hair/segment/segment.tscn[res://src/player/hair/segment/segment.tscn]
 
 
 

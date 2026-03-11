@@ -327,9 +327,7 @@ image::/assets/raw/assets/images/stages/chapter1/Monument.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_ik2yi")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_ik2yi")`
 |===
 
 

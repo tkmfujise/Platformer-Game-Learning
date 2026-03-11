@@ -178,9 +178,7 @@ image::/assets/raw/assets/images/stages/gimmicks/Springboard.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_vsbdv")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_vsbdv")`
 |===
 
 
@@ -196,6 +194,7 @@ const FORCE := -1800
 func hit(player: Player) -> void:
 	standby = false
 	player.velocity.y = FORCE
+	player.regain_dash_charge()
 	%AnimationPlayer.play(&'hit')
 
 

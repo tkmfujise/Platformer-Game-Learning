@@ -15,17 +15,49 @@ title: res://src/player/hair/hair.gd
 @tool
 extends Node2D
 
-@export var texture : Texture2D
+var base_color : Color = Color('e0872f')
+var dash_color : Color = Color(0.1, 0.8, 1.0)
+@onready var color : Color = base_color
+@export var segment_count : int = 5
+@export var max_distance : float = 20.0
+@export var lerp_speed : float = 15.0
+@export var base_radius : float = 4.0
+@export var outline_width : float = 1.0
+
+var positions: Array[Vector2] = []
+
+
+func _ready() -> void:
+	positions.clear()
+	for i in range(segment_count):
+		positions.append(global_position)
 
 
 func _process(delta: float) -> void:
+	if positions.is_empty(): return
+	positions[0] = global_position
+	
+	for i in range(1, segment_count):
+		var target = positions[i-1]
+		var diff = positions[i] - target
+		if diff.length() > max_distance:
+			positions[i] = target + diff.normalized() * max_distance
+		positions[i] = positions[i].lerp(target, lerp_speed * (sin(i) + 1.0) * delta)
+	
 	queue_redraw()
 
 
 func _draw() -> void:
-	#draw_circle(Vector2(0, 0), 104, Color.YELLOW)
-	for pos in [Vector2.ZERO, Vector2(10, 10), Vector2(20, 20)]:
-		#draw_texture(texture, pos)
-		draw_circle(pos, 10, Color.ORANGE)
+	for i in range(segment_count - 1, -1, -1):
+		var r = base_radius * (1.0 - float(i) / segment_count * 0.6)
+		draw_circle(to_local(positions[i]), r + outline_width, Color.BLACK)
+
+	for i in range(segment_count - 1, -1, -1):
+		var r = base_radius * (1.0 - float(i) / segment_count * 0.6)
+		draw_circle(to_local(positions[i]), r, color)
+
+
+func set_dashed(val: bool) -> void:
+	color = dash_color if val else base_color
 
 ```
