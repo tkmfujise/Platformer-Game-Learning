@@ -92,14 +92,15 @@ class N2 as "RestartCurtain" <<(C,lightgreen) Control>> {
 class N3 as "Sprites" <<(N,lightskyblue) Node2D>> {
 }
 class N4 as "Hair" <<(N,lightskyblue) Node2D>> {
+  - SEGMENT_COUNT
+  - MAX_DISTANCE
+  - LERP_SPEED
+  - BASE_RADIUS
+  - OUTLINE_WIDTH
+  - DECREASE_RATE
   * base_color
   * dash_color
   * color
-  * segment_count
-  * max_distance
-  * lerp_speed
-  * base_radius
-  * outline_width
   * positions
 ---
   + _ready()
@@ -241,7 +242,7 @@ func _ready() -> void:
 ```gdscript
 func _ready() -> void:
 	positions.clear()
-	for i in range(segment_count):
+	for i in range(SEGMENT_COUNT):
 		positions.append(global_position)
 ```
 ==== _physics_process
@@ -312,12 +313,12 @@ func _process(delta: float) -> void:
 	if positions.is_empty(): return
 	positions[0] = global_position
 	
-	for i in range(1, segment_count):
+	for i in range(1, SEGMENT_COUNT):
 		var target = positions[i-1]
 		var diff = positions[i] - target
-		if diff.length() > max_distance:
-			positions[i] = target + diff.normalized() * max_distance
-		positions[i] = positions[i].lerp(target, lerp_speed * (sin(i) + 1.0) * delta)
+		if diff.length() > MAX_DISTANCE:
+			positions[i] = target + diff.normalized() * MAX_DISTANCE
+		positions[i] = positions[i].lerp(target, LERP_SPEED * delta)
 	
 	queue_redraw()
 ```
@@ -332,12 +333,12 @@ func _process(delta: float) -> void:
 .$Sprites/Hair
 ```gdscript
 func _draw() -> void:
-	for i in range(segment_count - 1, -1, -1):
-		var r = base_radius * (1.0 - float(i) / segment_count * 0.6)
-		draw_circle(to_local(positions[i]), r + outline_width, Color.BLACK)
+	for i in range(SEGMENT_COUNT - 1, -1, -1):
+		var r = BASE_RADIUS * (1.0 - float(i) / SEGMENT_COUNT * DECREASE_RATE)
+		draw_circle(to_local(positions[i]), r + OUTLINE_WIDTH, Color.BLACK)
 
-	for i in range(segment_count - 1, -1, -1):
-		var r = base_radius * (1.0 - float(i) / segment_count * 0.6)
+	for i in range(SEGMENT_COUNT - 1, -1, -1):
+		var r = BASE_RADIUS * (1.0 - float(i) / SEGMENT_COUNT * DECREASE_RATE)
 		draw_circle(to_local(positions[i]), r, color)
 ```
 
@@ -974,9 +975,11 @@ R  ->  T4 : position\n = Vector2(12, -72)
 R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
 R  ->o  T7 : visible\n = false
+R  ->  T8 : position\n = Vector2(-2.8, 5)
 R  ->  T8 : scale\n = Vector2(1, 1)
-R  ->  T8 : modulate\n = Color(1, 1, 1, 1)
-R  ->  T8 : position\n = Vector2(-2, 5)
+R  ->o  T8 : modulate\n = Color(1, 1, 1, 0)
+== Time: 0.2 ==
+R  ->o  T8 : modulate\n = Color(1, 1, 1, 1)
 == Time: 0.2222 ==
 R  ->o  T1 : frame\n = 1
 == Time: 0.4444 ==
@@ -984,11 +987,11 @@ R  ->o  T1 : frame\n = 2
 == Time: 0.6666 ==
 R  ->o  T1 : frame\n = 3
 == Time: 0.8 ==
-R  ->  T8 : modulate\n = Color(1, 1, 1, 1)
+R  ->o  T8 : modulate\n = Color(1, 1, 1, 1)
 == Time: 0.8888 ==
 R  ->o  T1 : frame\n = 4
 == Time: 1.0 ==
-R  ->  T8 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T8 : modulate\n = Color(1, 1, 1, 0)
 == Time: 1.111 ==
 R  ->o  T1 : frame\n = 5
 == Time: 1.3332 ==
@@ -1032,7 +1035,7 @@ R  ->o  T1 : frame\n = 24
 == Time: 5.555 ==
 R  ->o  T1 : frame\n = 25
 == Time: 6.0 ==
-R  ->  T8 : modulate\n = Color(1, 1, 1, 0)
+R  ->o  T8 : modulate\n = Color(1, 1, 1, 0)
 
 end
 ....
@@ -1100,7 +1103,7 @@ R  ->o  T3 : frame\n = 0
 R  ->o  T3 : flip_h\n = true
 R  ->o  T7 : visible\n = false
 R  ->o  T8 : visible\n = false
-R  ->  T9 : position\n = Vector2(-2, 0)
+R  ->  T9 : position\n = Vector2(-2.8, 0)
 R  ->  T9 : modulate\n = Color(1, 1, 1, 1)
 R  ->  T9 : scale\n = Vector2(1, 1)
 == Time: 0.125 ==
@@ -1136,7 +1139,7 @@ R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
 R  ->o  T7 : visible\n = false
 R  ->o  T8 : visible\n = false
-R  ->  T9 : position\n = Vector2(1.8, 0)
+R  ->  T9 : position\n = Vector2(1.8, 2)
 R  ->  T9 : scale\n = Vector2(1, 1)
 R  ->  T9 : modulate\n = Color(1, 1, 1, 1)
 == Time: 0.125 ==
@@ -1182,11 +1185,12 @@ R  ->o  T5 : visible\n = false
 R  ->o  T6 : visible\n = false
 R  ->o  T7 : visible\n = false
 R  ->o  T8 : visible\n = false
-R  ->  T9 : position\n = Vector2(-1.8, 0)
+R  ->  T9 : position\n = Vector2(-2.8, 2)
 R  ->  T9 : scale\n = Vector2(1, 1)
-R  ->  T9 : modulate\n = Color(1, 1, 1, 1)
+R  ->  T9 : modulate\n = Color(1, 1, 1, 0)
 == Time: 0.125 ==
 R  ->o  T1 : frame\n = 1
+R  ->  T9 : modulate\n = Color(1, 1, 1, 1)
 == Time: 0.25 ==
 R  ->o  T1 : frame\n = 2
 == Time: 0.375 ==
@@ -1238,7 +1242,7 @@ end
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*position* a|`Vector2(-12, -72)`
+|*position* a|`Vector2(12, -72)`
 |*scale* a|`Vector2(6, 6)`
 |===
 [.node-property.node-2d]
@@ -1270,8 +1274,8 @@ end
 .res://assets/images/player/Player_idle.png
 image::/assets/raw/assets/images/player/Player_idle.png[]
 
+|*flip_h* a|`true`
 |*hframes* a|`27`
-|*frame* a|`22`
 |===
 [.node-property.node-2d]
 .#$Sprites/SpriteStates/RunSprite2D# properties
@@ -1284,6 +1288,7 @@ image::/assets/raw/assets/images/player/Player_idle.png[]
 .res://assets/images/player/Player_run.png
 image::/assets/raw/assets/images/player/Player_run.png[]
 
+|*flip_h* a|`true`
 |*hframes* a|`8`
 |===
 [.node-property.node-2d]
@@ -1298,6 +1303,7 @@ image::/assets/raw/assets/images/player/Player_run.png[]
 .res://assets/images/player/Player_jump.png
 image::/assets/raw/assets/images/player/Player_jump.png[]
 
+|*flip_h* a|`true`
 |*hframes* a|`2`
 |===
 [.node-property.node-2d]
@@ -1312,6 +1318,7 @@ image::/assets/raw/assets/images/player/Player_jump.png[]
 .res://assets/images/player/Player_fall.png
 image::/assets/raw/assets/images/player/Player_fall.png[]
 
+|*flip_h* a|`true`
 |*hframes* a|`2`
 |===
 [.node-property.node-2d]
