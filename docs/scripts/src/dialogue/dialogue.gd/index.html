@@ -2002,7 +2002,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">continue_dialogue</span><span class="p">()</span>
 	<span class="n">started</span> <span class="o">=</span> <span class="bp">true</span>
 	<span class="n">waiting</span> <span class="o">=</span> <span class="bp">false</span>
-	<span class="n">Player</span><span class="o">.</span><span class="n">playable</span> <span class="o">=</span> <span class="bp">false</span>
+	<span class="k">if</span> <span class="n">Player</span><span class="o">.</span><span class="n">current</span><span class="p">:</span> <span class="n">Player</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 
 
 <span class="k">func</span> <span class="nf">continue_dialogue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

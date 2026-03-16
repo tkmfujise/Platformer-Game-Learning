@@ -202,7 +202,7 @@ R  ->  T2 : size\n = Vector2(1870, 0)
 ....
 ---
 
-==== ready (autoplay)
+==== ready
 
 [plantuml]
 ....
@@ -367,10 +367,8 @@ image::/assets/raw/assets/images/faces/actors/OldWoman_face.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_5m8cj")
-}`
-|*autoplay* a|`ready`
+|*libraries/* a|`SubResource("AnimationLibrary_5m8cj")`
+|*autoplay* a|`&"ready"`
 |===
 
 
@@ -407,7 +405,7 @@ func start() -> void:
 	continue_dialogue()
 	started = true
 	waiting = false
-	Player.playable = false
+	if Player.current: Player.current.stop()
 
 
 func continue_dialogue() -> void:

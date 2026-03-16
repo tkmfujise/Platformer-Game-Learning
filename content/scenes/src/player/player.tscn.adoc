@@ -39,8 +39,8 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * sprite_tween
   * restart_position
   * jump_boost
-  * last_owner_name
   * playable
+  * current
 ---
   + _ready()
   + _physics_process()
@@ -57,6 +57,7 @@ class R as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + walk_left()
   + turn_right()
   + turn_left()
+  + stop()
   + restart()
   + dash()
   + lock()
@@ -230,13 +231,8 @@ image::/assets/raw/assets/images/player/effects/Burst.png[200, 100]
 ```gdscript
 func _ready() -> void:
 	playable = true
-	if not owner: return
+	current = self
 	turn_right()
-	if last_owner_name == owner.name:
-		position = restart_position
-	else:
-		restart_position = position
-	last_owner_name = owner.name
 ```
 .$Sprites/Hair
 ```gdscript
@@ -1506,19 +1502,14 @@ var climb_rest_time := 0.0
 var sprite_tween : Tween
 var restart_position : Vector2
 var jump_boost : Vector2
-static var last_owner_name : String
 static var playable : bool = false
+static var current : Player
 
 
 func _ready() -> void:
 	playable = true
-	if not owner: return
+	current = self
 	turn_right()
-	if last_owner_name == owner.name:
-		position = restart_position
-	else:
-		restart_position = position
-	last_owner_name = owner.name
 
 
 func _physics_process(delta: float) -> void:
@@ -1697,6 +1688,11 @@ func turn_right() -> void:
 
 func turn_left() -> void:
 	walk_left(); idle()
+
+
+func stop() -> void:
+	playable = false
+	idle()
 
 
 func restart() -> void:

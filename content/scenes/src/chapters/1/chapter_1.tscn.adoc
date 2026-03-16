@@ -1481,8 +1481,8 @@ class N420 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   * sprite_tween
   * restart_position
   * jump_boost
-  * last_owner_name
   * playable
+  * current
 ---
   + _ready()
   + _physics_process()
@@ -1499,6 +1499,7 @@ class N420 as "Player" <<(C,lightskyblue) CharacterBody2D>> {
   + walk_left()
   + turn_right()
   + turn_left()
+  + stop()
   + restart()
   + dash()
   + lock()
@@ -1999,13 +2000,8 @@ func _ready() -> void:
 ```gdscript
 func _ready() -> void:
 	playable = true
-	if not owner: return
+	current = self
 	turn_right()
-	if last_owner_name == owner.name:
-		position = restart_position
-	else:
-		restart_position = position
-	last_owner_name = owner.name
 ```
 ==== _physics_process
 .$Gimmicks/Stage4/Pulley1, $Gimmicks/Stage4/Pulley2, $Gimmicks/Stage6/Pulley, $Gimmicks/Stage15/Pulley1, $Gimmicks/Stage15/Pulley2

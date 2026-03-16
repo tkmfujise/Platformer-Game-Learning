@@ -42,7 +42,7 @@ func start() -> void:
 	continue_dialogue()
 	started = true
 	waiting = false
-	Player.playable = false
+	if Player.current: Player.current.stop()
 
 
 func continue_dialogue() -> void:
