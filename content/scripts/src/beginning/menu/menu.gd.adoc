@@ -25,6 +25,13 @@ func _ready() -> void:
 		%ClimbButton, %OptionsButton, %CreditsButton, %QuitButton])
 
 
+func enter_chapter(idx: int) -> void:
+	current_plate = Plate.CHAPTERS
+	%AnimationPlayer.play("chapters_selected")
+	%Chapters.force_show(idx)
+	%World.zoom_chapter(idx)
+
+
 func set_grab_focus_root(val: bool) -> void:
 	if val: %ClimbButton.grab_focus()
 
@@ -58,7 +65,7 @@ func _on_accounts_ui_backed() -> void:
 		%AnimationPlayer.play('climb_unselected')
 
 
-func _on_accounts_get_started(account: Account) -> void:
+func _on_accounts_get_started(_account: Account) -> void:
 	%Chapters.setup_from_account_resource()
 	%AnimationPlayer.play("chapters_show")
 

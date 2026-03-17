@@ -1,0 +1,48 @@
+---
+title: res://test/resources/test_method_caller.gd
+---
+:toc:
+
+== test / resources / test_method_caller.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends GutTest
+
+var mc = null
+var dummy = null
+
+class Dummy:
+	var result = null
+	
+	func foo() -> bool:
+		result = 'foo'
+		return true
+	
+	func bar(a, b) -> String:
+		result = str(a) + str(b)
+		return 'OK'
+
+
+func before_each():
+	mc = MethodCaller.new()
+	dummy = Dummy.new()
+
+
+func test_no_args():
+	mc.name = 'foo'
+	assert_eq(mc.perform(dummy), true)
+	assert_eq(dummy.result, 'foo')
+
+
+func test_some_args():
+	mc.name = 'bar'
+	mc.args = [1, false]
+	assert_eq(mc.perform(dummy), 'OK')
+	assert_eq(dummy.result, '1false')
+
+```

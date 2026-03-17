@@ -462,7 +462,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 ....
 ---
 
-==== opening (autoplay)
+==== opening
 
 [plantuml]
 ....
@@ -503,6 +503,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -513,6 +514,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 
 R  ->  T4 : environment\n = -0.1
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(2.627, 0.072, -0.594)
 R  ->  T0 : rotation\n = Vector3(-0.190241, 2.78904, 0.0279253)
@@ -531,6 +533,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -541,6 +544,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = -0.08
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(2.095, 0.153, -0.811)
 R  ->  T0 : rotation\n = Vector3(0.00872665, 2.77507, 0.0226893)
@@ -559,6 +563,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -569,6 +574,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = -0.05
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(1.54829, 0.245408, -0.742679)
 R  ->  T0 : rotation\n = Vector3(0.0820305, 3.49589, -0.0174533)
@@ -587,6 +593,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -597,6 +604,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = 0.0
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(1.205, 0.324, -0.205)
 R  ->  T0 : rotation\n = Vector3(0.0663225, -1.73486, -0.00523599)
@@ -615,6 +623,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -625,6 +634,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = 0.1
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(1.414, 0.365, 0.54)
 R  ->  T0 : rotation\n = Vector3(0.111701, -0.0453786, -0.0174533)
@@ -643,6 +653,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -653,6 +664,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = 0.2
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(1.433, 0.392, 0.255)
 R  ->  T0 : rotation\n = Vector3(0.20944, -1.72089, -0.00698132)
@@ -671,6 +683,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -681,6 +694,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = 0.6
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(2.075, 0.676, -0.28)
 R  ->  T0 : rotation\n = Vector3(-0.185005, 3.27947, -0.0558505)
@@ -699,6 +713,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -709,6 +724,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 0.0
 R  ->  T4 : environment\n = 0.75
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(2.238, 0.291302, -1.73145)
 R  ->  T0 : rotation\n = Vector3(0.241115, 3.02168, 0.0100912)
@@ -727,6 +743,7 @@ participant "$Path3D\n/PathFollow3D" as T2 #FFC0CB
 participant "$Mountain\n/MountainCoreSurface" as T3 
 participant "$WorldEnvironment" as T4 #FFFF00
 participant "$Mist" as T5 #87CEFA
+participant "$Blinder" as T6 #90EE90
 
 
 
@@ -737,6 +754,7 @@ R  ->  T2 : progress_ratio\n = 0.0
 R  ->  T3 : blend_shapes/Hide\n = 1.0
 R  ->  T4 : environment\n = 1.0
 R  ->o  T5 : visible\n = false
+R  ->  T6 : modulate\n = Color(0, 0, 0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector3(1.957, 0.812906, -0.450644)
 R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
@@ -849,7 +867,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*transform* a|`Transform3D(7.5485e-08, 0.000999828, 0.999827, -5.81978e-11, 0.999828, -0.000999827, -0.99983, 1.72872e-11, 7.54849e-08, -3.77489e-10, 2.91038e-13, 2.005)`
+|*transform* a|`Transform3D(7.548501e-08, 0.0009998279, 0.9998273, -5.8197773e-11, 0.999828, -0.0009998273, -0.99983, 1.7287196e-11, 7.548486e-08, -3.774892e-10, 2.9103833e-13, 2.005)`
 |*h_offset* a|`-0.005`
 |===
 [.node-property.node-3d]
@@ -858,7 +876,7 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*transform* a|`Transform3D(-0.519203, 0.0753502, -0.851524, 0.000438006, 0.996302, 0.0878944, 0.85485, 0.0452544, -0.517228, 0.52904, 0.621466, -0.783036)`
+|*transform* a|`Transform3D(-0.5192033, 0.07535022, -0.8515238, 0.00043800563, 0.996302, 0.08789438, 0.8548498, 0.045254376, -0.51722825, 0.52904, 0.621466, -0.783036)`
 |*fov* a|`40.0`
 |*near* a|`0.057`
 |===
@@ -879,7 +897,6 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*modulate* a|`Color(1, 1, 1, 1)`
 |*position* a|`Vector2(0, -1)`
 |===
 [.node-property.node-other]
@@ -888,10 +905,8 @@ R  ->  T0 : rotation\n = Vector3(-0.412425, 3.12036, 0.0462081)
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_as40k")
-}`
-|*autoplay* a|`opening`
+|*libraries/* a|`SubResource("AnimationLibrary_as40k")`
+|*autoplay* a|`&"opening"`
 |===
 
 

@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../../scripts/resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../../../scripts/resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../../../scripts/test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../../scripts/test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -1966,7 +1978,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNolzrEKwjAURuE9T_Fbl1abxbn2ETqIm0i5SW7b0JhAbjqI-O4qrgc-ODaQCC4gQXXNFMUXnyKZwBW6rh5aR3mdMz0bDMlx3-OlgAMeHLdRLEdWWutvOqL8ed2ot9o5nnxkjDW1pgGh07e9CRu3ZfF2jSxyPt01jAo8FZSE7OelwPnM9negPokFMKc=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNoljr0KwjAURvc8xWddWm0W59pH6CBuIuUmuW1DQwK5ERTx3f0bzxkOxwYSwQkkqM6ZovjiUyQTuELX1UPrKK9zpkeDITnuezwVsEPkexnFcuQfWgrBkF1Faa0_Zo_yj9WNeqmN48lHxlhTaxoQOn3ZmnDjtizerpFFjoerhlGBp4KSkP28FDif2X5_1BtE1jTl" alt="Diagram">
 </div>
 </div>
 </div>
@@ -2027,7 +2039,7 @@ No signal connections.
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>menu_scene</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>next_scene</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>uid://437m0awajwnw</code></p>
 </div></div></td>
@@ -2041,11 +2053,12 @@ No signal connections.
 <div class="content">
 <pre class="rouge highlight"><code data-lang="gdscript"><span class="k">extends</span> <span class="n">Node</span>
 
-<span class="err">@</span><span class="n">export_file</span><span class="p">(</span><span class="s2">'</span><span class="s1">*.tscn'</span><span class="p">)</span> <span class="k">var</span> <span class="n">menu_scene</span>
+<span class="err">@</span><span class="n">export_file</span><span class="p">(</span><span class="s2">'</span><span class="s1">*.tscn'</span><span class="p">)</span> <span class="k">var</span> <span class="n">next_scene</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">callbacks</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">MethodCaller</span><span class="p">]</span>
 
-<span class="c1"># TODO: チャプターの選択状態にする</span>
+
 <span class="k">func</span> <span class="nf">transit</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="n">SceneHelper</span><span class="o">.</span><span class="n">transit</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">menu_scene</span><span class="p">)</span></code></pre>
+	<span class="n">SceneHelper</span><span class="o">.</span><span class="n">transit</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">next_scene</span><span class="p">,</span> <span class="n">callbacks</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

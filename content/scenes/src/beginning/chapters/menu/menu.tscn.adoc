@@ -25,6 +25,7 @@ class R as "Menu" <<(C,lightgreen) Control>> {
   + load_chapter()
   + load_chapter_stages()
   + setup_from_account_resource()
+  + force_show()
   + set_grab_focus_first()
   + set_grab_focus_side()
   + set_grab_focus_stage()
@@ -200,6 +201,7 @@ class N47 as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
   * center
+  * callbacks
 ---
   + play()
   + set_center()
@@ -630,7 +632,7 @@ R  ->  T9 : scale\n = Vector2(1.38281, 1.38281)
 |*anchor_right* a|`1.0`
 |*anchor_bottom* a|`1.0`
 |*offset_left* a|`960.0`
-|*offset_right* a|`960.0`
+|*offset_right* a|`960.00024`
 |*grow_horizontal* a|`2`
 |*grow_vertical* a|`2`
 |*theme* a|link:/resources/themes/default_theme.tres[res://themes/default_theme.tres]
@@ -1186,9 +1188,7 @@ image::/assets/raw/assets/images/ui/Chapters/menu/Mountain.svg[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_ebi0a")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_ebi0a")`
 |===
 
 
@@ -1257,6 +1257,10 @@ func setup_from_account_resource() -> void:
 	for i in stage_count:
 		if hidden_numbers[i]:
 			hide_stage_button_and_photo(i + 1)
+
+
+func force_show(_idx: int) -> void:
+	%AnimationPlayer.play("show")
 
 
 func set_grab_focus_first(val) -> void:

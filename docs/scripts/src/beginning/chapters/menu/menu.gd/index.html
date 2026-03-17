@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../../resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../../../test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../../test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -2034,6 +2046,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">stage_count</span><span class="p">:</span>
 		<span class="k">if</span> <span class="n">hidden_numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
 			<span class="n">hide_stage_button_and_photo</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">force_show</span><span class="p">(</span><span class="n">_idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"show"</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">set_grab_focus_first</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

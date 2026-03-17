@@ -76,6 +76,10 @@ func setup_from_account_resource() -> void:
 			hide_stage_button_and_photo(i + 1)
 
 
+func force_show(_idx: int) -> void:
+	%AnimationPlayer.play("show")
+
+
 func set_grab_focus_first(val) -> void:
 	if val: %AnimationPlayer.play(&'show')
 

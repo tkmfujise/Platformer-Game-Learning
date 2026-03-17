@@ -1,0 +1,24 @@
+---
+title: res://resources/method_caller.gd
+---
+:toc:
+
+== resources / method_caller.gd
+
+=== Attached Scenes
+NOTE: No attached scenes.
+
+
+=== Code
+```gdscript
+extends Resource
+class_name MethodCaller
+
+@export var name : String
+@export var args : Array[Variant]
+
+
+func perform(target: Variant) -> Variant:
+	return Callable(target, name).callv(args)
+
+```

@@ -28,20 +28,19 @@ static func preload_scene(file_path: String) -> void:
 
 
 # @see https://zenn.dev/tyto/articles/a0f245a7136cb0
-static func transit(current: Node, file_path: String, transition: Array = []) -> void:
+static func transit(current: Node, file_path: String, callbacks: Array[MethodCaller] = []) -> void:
 	if file_path != next_scene_path: preload_scene(file_path)
-	if transition:
-		var callable = Callable(current, transition[0])
-		callable.callv(transition.slice(1, -1))
-
 	var status := ResourceLoader.load_threaded_get_status(file_path)
 	while status == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 		await current.get_tree().process_frame
 		status = ResourceLoader.load_threaded_get_status(file_path)
 
-	current.get_tree().change_scene_to_packed(
-		ResourceLoader.load_threaded_get(file_path))
-	current.queue_free()
+	var next_scene = ResourceLoader.load_threaded_get(file_path) \
+		.instantiate()
+	current.get_tree().change_scene_to_node(next_scene)
+	await next_scene.ready
+	for mc in callbacks: mc.perform(next_scene)
+	#current.queue_free()
 	change_finished.emit()
 
 ```

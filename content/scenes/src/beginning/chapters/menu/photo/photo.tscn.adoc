@@ -290,8 +290,8 @@ extends Sprite2D
 @export var image : Texture2D : set = set_image
 
 
-func set_image(image: Texture2D) -> void:
-	%Image.texture = image
+func set_image(img: Texture2D) -> void:
+	%Image.texture = img
 
 
 func flick() -> void:

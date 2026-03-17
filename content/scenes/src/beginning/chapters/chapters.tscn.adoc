@@ -25,6 +25,7 @@ class R as "Chapters" <<(C,lightgreen) Control>> {
   + _ready()
   + setup_from_account_resource()
   + _input()
+  + force_show()
   + go_back()
   + go_foward()
   + set_grab_focus_first()
@@ -35,6 +36,7 @@ class R as "Chapters" <<(C,lightgreen) Control>> {
   + load_focused_chapter_to_menu()
   + get_chapter()
   + set_chapters_animation_offset()
+  + focus_chapter()
   + _on_chapater_focused()
   + _on_animation_player_animation_finished()
   + _on_selected()
@@ -180,6 +182,7 @@ class N22 as "Menu" <<(C,lightgreen) Control>> {
   + load_chapter()
   + load_chapter_stages()
   + setup_from_account_resource()
+  + force_show()
   + set_grab_focus_first()
   + set_grab_focus_side()
   + set_grab_focus_stage()
@@ -352,13 +355,13 @@ func _input(event: InputEvent) -> void:
 [.signal-connection]
 .$.:[#_selected_#]=>$.
 ```gdscript
-func _on_selected(idx: int) -> void:
+func _on_selected(idx: int, force: bool = false) -> void:
 	%Menu.grab_focus_first = true
 	selected_chapter_idx = idx
 	zoom_pin_to(idx)
 	get_chapter(idx).selected()
 	set_chapters_animation_offset()
-	%ChaptersAnimationPlayer.play("selected")
+	if not force: %ChaptersAnimationPlayer.play("selected")
 	current_plate = Plate.MENU
 ```
 [.signal-connection]
@@ -752,6 +755,55 @@ R  ->o  T10 : play_opening\n = true
 R  ->o  T10 : visible\n = true
 == Time: 0.7 ==
 R  ->  T1 : position\n = Vector2(815, 8)
+R  ->o  R : shown\n = true
+
+
+....
+---
+
+==== shown
+
+[plantuml]
+....
+control "Root" as R
+participant "$Banner" as T0 #90EE90
+participant "$ChaptersContainer" as T1 #90EE90
+participant "$ChaptersContainer\n/Chapter_0" as T2 #90EE90
+participant "$ChaptersContainer\n/Chapter_1" as T3 #90EE90
+participant "$ChaptersContainer\n/Chapter_2" as T4 #90EE90
+participant "$ChaptersContainer\n/Chapter_3" as T5 #90EE90
+participant "$ChaptersContainer\n/Chapter_4" as T6 #90EE90
+participant "$ChaptersContainer\n/Chapter_5" as T7 #90EE90
+participant "$ChaptersContainer\n/Chapter_6" as T8 #90EE90
+participant "$ChaptersContainer\n/Chapter_7" as T9 #90EE90
+participant "$ChaptersContainer\n/Chapter_8" as T10 #90EE90
+participant "$Pin" as T20 #87CEFA
+
+
+
+== Time: -9.834766e-07 ==
+R  ->o  T8 : play_opening\n = true
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(800, 0)
+R  ->  T1 : position\n = Vector2(815, 0)
+R  ->o  T2 : play_opening\n = true
+R  ->o  T3 : play_opening\n = true
+R  ->o  T4 : play_opening\n = true
+R  ->o  T5 : play_opening\n = true
+R  ->o  T6 : play_opening\n = true
+R  ->o  T7 : play_opening\n = true
+R  ->o  T9 : play_opening\n = true
+R  ->o  T10 : play_opening\n = true
+R  ->o  T2 : visible\n = true
+R  ->o  T3 : visible\n = true
+R  ->o  T4 : visible\n = true
+R  ->o  T5 : visible\n = true
+R  ->o  T6 : visible\n = true
+R  ->o  T7 : visible\n = true
+R  ->o  T8 : visible\n = true
+R  ->o  T9 : visible\n = true
+R  ->o  T10 : visible\n = true
+R  ->o  T20 : visible\n = true
 R  ->o  R : shown\n = true
 
 
@@ -1234,9 +1286,7 @@ image::/assets/raw/assets/guide/grid_1920x1080.png[]
 |Name |Value
 |*unique_name_in_owner* a|`true`
 |*root_node* a|`NodePath("../ChaptersContainer")`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_c4ypt")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_c4ypt")`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
@@ -1244,9 +1294,7 @@ image::/assets/raw/assets/guide/grid_1920x1080.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_wkduh")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_wkduh")`
 |===
 
 
@@ -1294,6 +1342,14 @@ func _input(event: InputEvent) -> void:
 		go_back()
 	elif event.is_action_pressed("ui_accept"):
 		go_foward()
+
+
+func force_show(idx: int) -> void:
+	%AnimationPlayer.play('shown')
+	%ChaptersAnimationPlayer.play("RESET")
+	await get_tree().create_timer(0.1).timeout
+	focus_chapter(idx, true)
+	_on_selected(idx, true)
 
 
 func go_back() -> void:
@@ -1357,13 +1413,17 @@ func set_chapters_animation_offset() -> void:
 	anim.track_set_key_value(track_idx, 1, current_pos)
 
 
-func _on_chapater_focused(chapter: Node) -> void:
-	var idx = int(str(chapter.name)[-1])
+func focus_chapter(idx: int, force: bool = false) -> void:
 	focused_chapter_idx = idx
 	%ChaptersContainer.position.x = INITIAL_CHAPTERS_X - (ICON_OFFSET * idx)
-	focus_pin_to(idx)
 	load_focused_chapter_to_menu()
-	focused.emit(idx)
+	if not force: focused.emit(idx)
+
+
+func _on_chapater_focused(chapter: Node) -> void:
+	var idx = int(str(chapter.name)[-1])
+	focus_chapter(idx)
+	focus_pin_to(idx)
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
@@ -1371,13 +1431,13 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 		force_focus_return()
 
 
-func _on_selected(idx: int) -> void:
+func _on_selected(idx: int, force: bool = false) -> void:
 	%Menu.grab_focus_first = true
 	selected_chapter_idx = idx
 	zoom_pin_to(idx)
 	get_chapter(idx).selected()
 	set_chapters_animation_offset()
-	%ChaptersAnimationPlayer.play("selected")
+	if not force: %ChaptersAnimationPlayer.play("selected")
 	current_plate = Plate.MENU
 
 

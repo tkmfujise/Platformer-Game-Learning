@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../../test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -1985,6 +1997,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="o">%</span><span class="n">ClimbButton</span><span class="p">,</span> <span class="o">%</span><span class="n">OptionsButton</span><span class="p">,</span> <span class="o">%</span><span class="n">CreditsButton</span><span class="p">,</span> <span class="o">%</span><span class="n">QuitButton</span><span class="p">])</span>
 
 
+<span class="k">func</span> <span class="nf">enter_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="n">current_plate</span> <span class="o">=</span> <span class="n">Plate</span><span class="o">.</span><span class="n">CHAPTERS</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"chapters_selected"</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">Chapters</span><span class="o">.</span><span class="n">force_show</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">World</span><span class="o">.</span><span class="n">zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+
 <span class="k">func</span> <span class="nf">set_grab_focus_root</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="kt">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">val</span><span class="p">:</span> <span class="o">%</span><span class="n">ClimbButton</span><span class="o">.</span><span class="n">grab_focus</span><span class="p">()</span>
 
@@ -2018,7 +2037,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">climb_unselected'</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">_on_accounts_get_started</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="n">Account</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_on_accounts_get_started</span><span class="p">(</span><span class="n">_account</span><span class="p">:</span> <span class="n">Account</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">Chapters</span><span class="o">.</span><span class="n">setup_from_account_resource</span><span class="p">()</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"chapters_show"</span><span class="p">)</span>
 

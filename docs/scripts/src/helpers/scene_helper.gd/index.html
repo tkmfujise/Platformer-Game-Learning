@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -1994,20 +2006,19 @@ No attached scenes.
 
 
 <span class="c1"># @see https://zenn.dev/tyto/articles/a0f245a7136cb0</span>
-<span class="k">static</span> <span class="k">func</span> <span class="nf">transit</span><span class="p">(</span><span class="n">current</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">transition</span><span class="p">:</span> <span class="kt">Array</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">static</span> <span class="k">func</span> <span class="nf">transit</span><span class="p">(</span><span class="n">current</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">callbacks</span><span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">MethodCaller</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="n">file_path</span> <span class="o">!=</span> <span class="n">next_scene_path</span><span class="p">:</span> <span class="n">preload_scene</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">transition</span><span class="p">:</span>
-		<span class="k">var</span> <span class="n">callable</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">transition</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-		<span class="n">callable</span><span class="o">.</span><span class="n">callv</span><span class="p">(</span><span class="n">transition</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-
 	<span class="k">var</span> <span class="n">status</span> <span class="p">:</span><span class="o">=</span> <span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get_status</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 	<span class="k">while</span> <span class="n">status</span> <span class="o">==</span> <span class="n">ResourceLoader</span><span class="o">.</span><span class="n">THREAD_LOAD_IN_PROGRESS</span><span class="p">:</span>
 		<span class="n">await</span> <span class="n">current</span><span class="o">.</span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">process_frame</span>
 		<span class="n">status</span> <span class="o">=</span> <span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get_status</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 
-	<span class="n">current</span><span class="o">.</span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_packed</span><span class="p">(</span>
-		<span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
-	<span class="n">current</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
+	<span class="k">var</span> <span class="n">next_scene</span> <span class="o">=</span> <span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> \
+		<span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
+	<span class="n">current</span><span class="o">.</span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_node</span><span class="p">(</span><span class="n">next_scene</span><span class="p">)</span>
+	<span class="n">await</span> <span class="n">next_scene</span><span class="o">.</span><span class="n">ready</span>
+	<span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="p">:</span> <span class="n">mc</span><span class="o">.</span><span class="n">perform</span><span class="p">(</span><span class="n">next_scene</span><span class="p">)</span>
+	<span class="c1">#current.queue_free()</span>
 	<span class="n">change_finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>
 </div>
 </div>

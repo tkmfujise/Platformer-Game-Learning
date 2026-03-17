@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../../test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -1978,6 +1990,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">pattern</span> <span class="p">:</span> <span class="n">Pattern</span>
 <span class="err">@</span><span class="n">export_file</span><span class="p">(</span><span class="s2">'</span><span class="s1">*.tscn'</span><span class="p">)</span> <span class="k">var</span> <span class="n">next_scene</span> <span class="p">:</span> <span class="kt">String</span>
 <span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">center</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Vector2</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">:</span> <span class="n">set</span> <span class="o">=</span> <span class="n">set_center</span>
+<span class="err">@</span><span class="k">export</span> <span class="k">var</span> <span class="n">callbacks</span> <span class="p">:</span> <span class="kt">Array</span><span class="p">[</span><span class="n">MethodCaller</span><span class="p">]</span>
 
 
 <span class="k">func</span> <span class="nf">play</span><span class="p">(</span><span class="n">_next_scene</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -1992,7 +2005,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">_anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">if</span> <span class="n">next_scene</span><span class="p">:</span> <span class="n">SceneHelper</span><span class="o">.</span><span class="n">transit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">next_scene</span><span class="p">)</span></code></pre>
+	<span class="k">if</span> <span class="n">next_scene</span><span class="p">:</span> <span class="n">SceneHelper</span><span class="o">.</span><span class="n">transit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">next_scene</span><span class="p">,</span> <span class="n">callbacks</span><span class="p">)</span></code></pre>
 </div>
 </div>
 </div>

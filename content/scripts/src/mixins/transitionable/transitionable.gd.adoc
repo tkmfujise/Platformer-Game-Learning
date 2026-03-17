@@ -14,10 +14,11 @@ title: res://src/mixins/transitionable/transitionable.gd
 ```gdscript
 extends Node
 
-@export_file('*.tscn') var menu_scene
+@export_file('*.tscn') var next_scene
+@export var callbacks : Array[MethodCaller]
 
-# TODO: チャプターの選択状態にする
+
 func transit(node: Node) -> void:
-	SceneHelper.transit(node, menu_scene)
+	SceneHelper.transit(node, next_scene, callbacks)
 
 ```

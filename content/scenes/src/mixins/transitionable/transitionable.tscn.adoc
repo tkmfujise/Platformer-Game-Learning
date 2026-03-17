@@ -9,7 +9,8 @@ title: src/mixins/transitionable/transitionable.tscn
 [plantuml]
 ....
 class R as "Transitionable" <<(N,darkgray) Node>> {
-  * menu_scene
+  * next_scene
+  * callbacks
 ---
   + transit()
 }
@@ -44,7 +45,7 @@ NOTE: No signal connections.
 |===
 |Name |Value
 |*script* a|link:/scripts/src/mixins/transitionable/transitionable.gd[res://src/mixins/transitionable/transitionable.gd]
-|*menu_scene* a|`uid://437m0awajwnw`
+|*next_scene* a|`uid://437m0awajwnw`
 |===
 
 
@@ -53,11 +54,12 @@ NOTE: No signal connections.
 ```gdscript
 extends Node
 
-@export_file('*.tscn') var menu_scene
+@export_file('*.tscn') var next_scene
+@export var callbacks : Array[MethodCaller]
 
-# TODO: チャプターの選択状態にする
+
 func transit(node: Node) -> void:
-	SceneHelper.transit(node, menu_scene)
+	SceneHelper.transit(node, next_scene, callbacks)
 
 ```
 

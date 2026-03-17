@@ -12,6 +12,7 @@ class R as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
   * center
+  * callbacks
 ---
   + play()
   + set_center()
@@ -66,7 +67,7 @@ _(R::_on_animation_player_animation_finished, N6::animation_finished)
 .$AnimationPlayer:[#_animation_finished_#]=>$.
 ```gdscript
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	if next_scene: SceneHelper.transit(self, next_scene)
+	if next_scene: SceneHelper.transit(self, next_scene, callbacks)
 ```
 
 
@@ -255,9 +256,7 @@ R  ->  T2 : material\n = 1.0
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_kivlp")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_kivlp")`
 |===
 
 
@@ -270,6 +269,7 @@ enum Pattern { PATTERN_1, PATTERN_2, PATTERN_3 }
 @export var pattern : Pattern
 @export_file('*.tscn') var next_scene : String
 @export var center := Vector2(0.5, 0.5) : set = set_center
+@export var callbacks : Array[MethodCaller]
 
 
 func play(_next_scene: String = '') -> void:
@@ -284,7 +284,7 @@ func set_center(val: Vector2) -> void:
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	if next_scene: SceneHelper.transit(self, next_scene)
+	if next_scene: SceneHelper.transit(self, next_scene, callbacks)
 
 ```
 

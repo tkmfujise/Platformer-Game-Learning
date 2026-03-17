@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../../test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -1987,7 +1999,6 @@ No attached scenes.
 	<span class="k">var</span> <span class="n">dialogue</span> <span class="o">=</span> <span class="n">Dialogue</span><span class="o">.</span><span class="n">current</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">dialogue</span><span class="p">:</span> <span class="k">return</span> <span class="bp">true</span>
 	<span class="k">var</span> <span class="n">shown</span> <span class="o">=</span> <span class="n">dialogue</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s2">'</span><span class="s1">%Content'</span><span class="p">)</span><span class="o">.</span><span class="n">visible_characters</span>
-	<span class="k">var</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">shown</span> <span class="o">-</span> <span class="n">char_fx</span><span class="o">.</span><span class="n">relative_index</span>
 	<span class="k">if</span> <span class="n">shown</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">char_fx</span><span class="o">.</span><span class="n">relative_index</span> <span class="o">&lt;</span> <span class="n">shown</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
 		<span class="n">char_fx</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 		<span class="n">char_fx</span><span class="o">.</span><span class="n">offset</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">0</span>

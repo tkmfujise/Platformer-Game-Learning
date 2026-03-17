@@ -19,6 +19,7 @@ class N2 as "ClosingCurtain" <<(C,lightgreen) Control>> {
   * pattern
   * next_scene
   * center
+  * callbacks
 ---
   + play()
   + set_center()
@@ -2647,6 +2648,7 @@ R  ->  T0 : position\n = Vector2(24477, -17439)
 |*pattern* a|`1`
 |*next_scene* a|`uid://437m0awajwnw`
 |*center* a|`Vector2(0.76, 0.7)`
+|*callbacks* a|`Array("[SubResource("Resource_cgito")]")`
 |===
 [.node-property.node-other]
 .#$SnowLayer# properties

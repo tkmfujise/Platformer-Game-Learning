@@ -587,6 +587,12 @@
         
           
           
+          <li data-path="1:/resources/method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../resources/method_caller.gd/">resources/method_caller.gd</a>
+          </li>
+        
+          
+          
           <li data-path="1:/resources/stage_resource.gd" data-category="scripts">
             <a class="" href="../../../../resources/stage_resource.gd/">resources/stage_resource.gd</a>
           </li>
@@ -997,6 +1003,12 @@
           
           <li data-path="2:/test/resources/test_account_resource.gd" data-category="scripts">
             <a class="" href="../../../../test/resources/test_account_resource.gd/">test/resources/test_account_resource.gd</a>
+          </li>
+        
+          
+          
+          <li data-path="2:/test/resources/test_method_caller.gd" data-category="scripts">
+            <a class="" href="../../../../test/resources/test_method_caller.gd/">test/resources/test_method_caller.gd</a>
           </li>
         
           
@@ -2015,6 +2027,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">go_foward</span><span class="p">()</span>
 
 
+<span class="k">func</span> <span class="nf">force_show</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">shown'</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"RESET"</span><span class="p">)</span>
+	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+	<span class="n">focus_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+	<span class="n">_on_selected</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+
+
 <span class="k">func</span> <span class="nf">go_back</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">shown</span> <span class="o">=</span> <span class="bp">false</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"RESET"</span><span class="p">)</span>
@@ -2076,13 +2096,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">anim</span><span class="o">.</span><span class="n">track_set_key_value</span><span class="p">(</span><span class="n">track_idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">current_pos</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">_on_chapater_focused</span><span class="p">(</span><span class="n">chapter</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
-	<span class="k">var</span> <span class="n">idx</span> <span class="o">=</span> <span class="kt">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">chapter</span><span class="o">.</span><span class="n">name</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">func</span> <span class="nf">focus_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">focused_chapter_idx</span> <span class="o">=</span> <span class="n">idx</span>
 	<span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">INITIAL_CHAPTERS_X</span> <span class="o">-</span> <span class="p">(</span><span class="n">ICON_OFFSET</span> <span class="o">*</span> <span class="n">idx</span><span class="p">)</span>
-	<span class="n">focus_pin_to</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 	<span class="n">load_focused_chapter_to_menu</span><span class="p">()</span>
-	<span class="n">focused</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">force</span><span class="p">:</span> <span class="n">focused</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">_on_chapater_focused</span><span class="p">(</span><span class="n">chapter</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">var</span> <span class="n">idx</span> <span class="o">=</span> <span class="kt">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">chapter</span><span class="o">.</span><span class="n">name</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+	<span class="n">focus_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+	<span class="n">focus_pin_to</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">_on_animation_player_animation_finished</span><span class="p">(</span><span class="n">_anim_name</span><span class="p">:</span> <span class="n">StringName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -2090,13 +2114,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">force_focus_return</span><span class="p">()</span>
 
 
-<span class="k">func</span> <span class="nf">_on_selected</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_on_selected</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="o">%</span><span class="n">Menu</span><span class="o">.</span><span class="n">grab_focus_first</span> <span class="o">=</span> <span class="bp">true</span>
 	<span class="n">selected_chapter_idx</span> <span class="o">=</span> <span class="n">idx</span>
 	<span class="n">zoom_pin_to</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 	<span class="n">get_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">selected</span><span class="p">()</span>
 	<span class="n">set_chapters_animation_offset</span><span class="p">()</span>
-	<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"selected"</span><span class="p">)</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">force</span><span class="p">:</span> <span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"selected"</span><span class="p">)</span>
 	<span class="n">current_plate</span> <span class="o">=</span> <span class="n">Plate</span><span class="o">.</span><span class="n">MENU</span>
 
 

@@ -13,6 +13,7 @@ class R as "Menu" <<(C,lightgreen) Control>> {
   * grab_focus_root
 ---
   + _ready()
+  + enter_chapter()
   + set_grab_focus_root()
   + change_plate()
   + _on_climb_button_focus_entered()
@@ -159,6 +160,7 @@ class N21 as "Chapters" <<(C,lightgreen) Control>> {
   + _ready()
   + setup_from_account_resource()
   + _input()
+  + force_show()
   + go_back()
   + go_foward()
   + set_grab_focus_first()
@@ -169,6 +171,7 @@ class N21 as "Chapters" <<(C,lightgreen) Control>> {
   + load_focused_chapter_to_menu()
   + get_chapter()
   + set_chapters_animation_offset()
+  + focus_chapter()
   + _on_chapater_focused()
   + _on_animation_player_animation_finished()
   + _on_selected()
@@ -337,7 +340,7 @@ func _on_quit_button_pressed() -> void:
 [.signal-connection]
 .$Accounts:[#_get_started_#]=>$.
 ```gdscript
-func _on_accounts_get_started(account: Account) -> void:
+func _on_accounts_get_started(_account: Account) -> void:
 	%Chapters.setup_from_account_resource()
 	%AnimationPlayer.play("chapters_show")
 ```
@@ -416,6 +419,7 @@ participant "$Accounts" as T0 #90EE90
 participant "$Chapters" as T1 #90EE90
 participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T2 #87CEFA
 participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T3 #87CEFA
+participant "$RootContainer" as T6 #90EE90
 
 
 
@@ -424,6 +428,7 @@ R  ->  T0 : position\n = Vector2(-1920, 1080)
 R  ->  T1 : position\n = Vector2(0, 0)
 R  ->  T2 : position\n = Vector2(-1000, 0)
 R  ->  T3 : position\n = Vector2(-1000, 400)
+R  ->  T6 : position\n = Vector2(0, 0)
 == Time: 0.166667 ==
 R  ->o  T0 : focus_returned\n = true
 == Time: 0.5 ==
@@ -432,6 +437,32 @@ R  ->  T1 : position\n = Vector2(1920, 0)
 == Time: 1.0 ==
 R  ->  T1 : position\n = Vector2(1920, 0)
 R  ->o  R : current_plate\n = 2
+
+
+....
+---
+
+==== chapters_selected
+
+[plantuml]
+....
+control "Root" as R
+participant "$Accounts" as T0 #90EE90
+participant "$Chapters" as T1 #90EE90
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T3 #87CEFA
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T4 #87CEFA
+participant "$RootContainer" as T6 #90EE90
+
+
+
+== Time: 0.0 ==
+R  ->  T0 : position\n = Vector2(-1920, 1080)
+R  ->  T1 : position\n = Vector2(0, 0)
+R  ->o  T0 : grab_focus_first\n = false
+R  ->  T3 : position\n = Vector2(-1000, 0)
+R  ->  T4 : position\n = Vector2(-1000, 400)
+R  ->o  R : current_plate\n = 3
+R  ->  T6 : position\n = Vector2(0, 0)
 
 
 ....
@@ -446,6 +477,7 @@ participant "$Accounts" as T0 #90EE90
 participant "$Chapters" as T1 #90EE90
 participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T5 #87CEFA
 participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T6 #87CEFA
+participant "$RootContainer" as T8 #90EE90
 
 
 
@@ -456,6 +488,7 @@ R  ->o  T1 : play_opening\n = true
 R  ->o  T0 : grab_focus_first\n = false
 R  ->  T5 : position\n = Vector2(-1000, 0)
 R  ->  T6 : position\n = Vector2(-1000, 400)
+R  ->  T8 : position\n = Vector2(0, 0)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector2(-1920, 1080)
 R  ->o  R : current_plate\n = 3
@@ -596,7 +629,7 @@ R  ->  T2 : position\n = Vector2(0, 0)
 ....
 ---
 
-==== opening (autoplay)
+==== opening
 
 [plantuml]
 ....
@@ -605,6 +638,8 @@ participant "$RootContainer" as T0 #90EE90
 participant "$RootContainer\n/MenuContainer\n/ClimbContainer\n/LogoContainer\n/Sprite2D" as T1 #87CEFA
 participant "$Accounts" as T2 #90EE90
 participant "$Chapters" as T5 #90EE90
+participant "$RootContainer\n/MenuContainer\n/ClimbContainer" as T8 #87CEFA
+participant "$RootContainer\n/MenuContainer\n/OthersContainer" as T9 #87CEFA
 
 
 
@@ -615,6 +650,8 @@ R  ->o  R : current_plate\n = 0
 R  ->o  T5 : play_opening\n = false
 R  ->o  T2 : grab_focus_first\n = false
 R  ->o  T5 : grab_focus_first\n = false
+R  ->  T8 : position\n = Vector2(0, 0)
+R  ->  T9 : position\n = Vector2(10, 400)
 == Time: 0.5 ==
 R  ->  T0 : position\n = Vector2(-800, 0)
 == Time: 0.966667 ==
@@ -831,7 +868,8 @@ image::/assets/raw/assets/images/ui/Quit.svg[]
 |*unique_name_in_owner* a|`true`
 |*layout_mode* a|`1`
 |*offset_left* a|`1920.0`
-|*offset_right* a|`1920.0`
+|*offset_right* a|`1920.0027`
+|*offset_bottom* a|`-0.00048828125`
 |===
 [.node-property.node-control]
 .#$Chapters# properties
@@ -841,7 +879,7 @@ image::/assets/raw/assets/images/ui/Quit.svg[]
 |*unique_name_in_owner* a|`true`
 |*layout_mode* a|`1`
 |*offset_left* a|`1920.0`
-|*offset_right* a|`1920.0`
+|*offset_right* a|`1920.0007`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
@@ -849,10 +887,8 @@ image::/assets/raw/assets/images/ui/Quit.svg[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_dft0i")
-}`
-|*autoplay* a|`opening`
+|*libraries/* a|`SubResource("AnimationLibrary_dft0i")`
+|*autoplay* a|`&"opening"`
 |===
 
 
@@ -870,6 +906,13 @@ func _ready() -> void:
 	%ClimbButton.grab_focus()
 	FocusHelper.set_neighbors_v([
 		%ClimbButton, %OptionsButton, %CreditsButton, %QuitButton])
+
+
+func enter_chapter(idx: int) -> void:
+	current_plate = Plate.CHAPTERS
+	%AnimationPlayer.play("chapters_selected")
+	%Chapters.force_show(idx)
+	%World.zoom_chapter(idx)
 
 
 func set_grab_focus_root(val: bool) -> void:
@@ -905,7 +948,7 @@ func _on_accounts_ui_backed() -> void:
 		%AnimationPlayer.play('climb_unselected')
 
 
-func _on_accounts_get_started(account: Account) -> void:
+func _on_accounts_get_started(_account: Account) -> void:
 	%Chapters.setup_from_account_resource()
 	%AnimationPlayer.play("chapters_show")
 

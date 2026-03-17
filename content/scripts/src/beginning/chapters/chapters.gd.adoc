@@ -55,6 +55,14 @@ func _input(event: InputEvent) -> void:
 		go_foward()
 
 
+func force_show(idx: int) -> void:
+	%AnimationPlayer.play('shown')
+	%ChaptersAnimationPlayer.play("RESET")
+	await get_tree().create_timer(0.1).timeout
+	focus_chapter(idx, true)
+	_on_selected(idx, true)
+
+
 func go_back() -> void:
 	shown = false
 	%AnimationPlayer.play("RESET")
@@ -116,13 +124,17 @@ func set_chapters_animation_offset() -> void:
 	anim.track_set_key_value(track_idx, 1, current_pos)
 
 
-func _on_chapater_focused(chapter: Node) -> void:
-	var idx = int(str(chapter.name)[-1])
+func focus_chapter(idx: int, force: bool = false) -> void:
 	focused_chapter_idx = idx
 	%ChaptersContainer.position.x = INITIAL_CHAPTERS_X - (ICON_OFFSET * idx)
-	focus_pin_to(idx)
 	load_focused_chapter_to_menu()
-	focused.emit(idx)
+	if not force: focused.emit(idx)
+
+
+func _on_chapater_focused(chapter: Node) -> void:
+	var idx = int(str(chapter.name)[-1])
+	focus_chapter(idx)
+	focus_pin_to(idx)
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
@@ -130,13 +142,13 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 		force_focus_return()
 
 
-func _on_selected(idx: int) -> void:
+func _on_selected(idx: int, force: bool = false) -> void:
 	%Menu.grab_focus_first = true
 	selected_chapter_idx = idx
 	zoom_pin_to(idx)
 	get_chapter(idx).selected()
 	set_chapters_animation_offset()
-	%ChaptersAnimationPlayer.play("selected")
+	if not force: %ChaptersAnimationPlayer.play("selected")
 	current_plate = Plate.MENU
 
 
