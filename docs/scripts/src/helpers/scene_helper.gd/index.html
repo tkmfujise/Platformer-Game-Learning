@@ -2016,7 +2016,7 @@ No attached scenes.
 	<span class="k">var</span> <span class="n">next_scene</span> <span class="o">=</span> <span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> \
 		<span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
 	<span class="n">current</span><span class="o">.</span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_node</span><span class="p">(</span><span class="n">next_scene</span><span class="p">)</span>
-	<span class="n">await</span> <span class="n">next_scene</span><span class="o">.</span><span class="n">ready</span>
+	<span class="n">await</span> <span class="n">next_scene</span><span class="o">.</span><span class="n">tree_entered</span>
 	<span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="p">:</span> <span class="n">mc</span><span class="o">.</span><span class="n">perform</span><span class="p">(</span><span class="n">next_scene</span><span class="p">)</span>
 	<span class="c1">#current.queue_free()</span>
 	<span class="n">change_finished</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span></code></pre>

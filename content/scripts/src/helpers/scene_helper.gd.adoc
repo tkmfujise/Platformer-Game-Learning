@@ -38,7 +38,7 @@ static func transit(current: Node, file_path: String, callbacks: Array[MethodCal
 	var next_scene = ResourceLoader.load_threaded_get(file_path) \
 		.instantiate()
 	current.get_tree().change_scene_to_node(next_scene)
-	await next_scene.ready
+	await next_scene.tree_entered
 	for mc in callbacks: mc.perform(next_scene)
 	#current.queue_free()
 	change_finished.emit()

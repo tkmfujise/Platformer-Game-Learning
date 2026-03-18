@@ -232,6 +232,7 @@ image::/assets/raw/assets/images/player/effects/Burst.png[200, 100]
 func _ready() -> void:
 	playable = true
 	current = self
+	restart_position = global_position
 	turn_right()
 ```
 .$Sprites/Hair
@@ -1509,6 +1510,7 @@ static var current : Player
 func _ready() -> void:
 	playable = true
 	current = self
+	restart_position = global_position
 	turn_right()
 
 

@@ -37,6 +37,7 @@ class N4 as "World" <<(N,hotpink) Node3D>> {
 ---
   + back_to_circular_move()
   + focus_chapter()
+  + force_zoom_chapter()
   + zoom_chapter()
   + initialize_animation_camera_key()
   + smooth_rotation()
@@ -879,7 +880,7 @@ image::/assets/raw/assets/images/ui/Quit.svg[]
 |*unique_name_in_owner* a|`true`
 |*layout_mode* a|`1`
 |*offset_left* a|`1920.0`
-|*offset_right* a|`1920.0007`
+|*offset_right* a|`1920.0005`
 |===
 [.node-property.node-other]
 .#$AnimationPlayer# properties
@@ -910,9 +911,10 @@ func _ready() -> void:
 
 func enter_chapter(idx: int) -> void:
 	current_plate = Plate.CHAPTERS
+	%AnimationPlayer.autoplay = ''
 	%AnimationPlayer.play("chapters_selected")
 	%Chapters.force_show(idx)
-	%World.zoom_chapter(idx)
+	%World.force_zoom_chapter(idx)
 
 
 func set_grab_focus_root(val: bool) -> void:

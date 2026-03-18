@@ -374,6 +374,10 @@ func _on_menu_ui_backed() -> void:
 		%ChaptersAnimationPlayer.play("unselected")
 		selected_chapter_idx = -1
 		force_focus_return()
+		# FIXME なんでか %ChaptersContainer のポジションが動かないので強制的に上書きする
+		await %ChaptersAnimationPlayer.animation_finished
+		%AnimationPlayer.stop(true)
+		%ChaptersContainer.position.y = 8
 ```
 [.signal-connection]
 .$AnimationPlayer:[#_animation_finished_#]=>$.
@@ -784,8 +788,8 @@ participant "$Pin" as T20 #87CEFA
 == Time: -9.834766e-07 ==
 R  ->o  T8 : play_opening\n = true
 == Time: 0.0 ==
-R  ->  T0 : position\n = Vector2(800, 0)
-R  ->  T1 : position\n = Vector2(815, 0)
+R  ->  T0 : position\n = Vector2(800, -250)
+R  ->  T1 : position\n = Vector2(815, -250)
 R  ->o  T2 : play_opening\n = true
 R  ->o  T3 : play_opening\n = true
 R  ->o  T4 : play_opening\n = true
@@ -1345,11 +1349,13 @@ func _input(event: InputEvent) -> void:
 
 
 func force_show(idx: int) -> void:
+	if not is_inside_tree(): await tree_entered
+	%AnimationPlayer.autoplay = ''
 	%AnimationPlayer.play('shown')
-	%ChaptersAnimationPlayer.play("RESET")
-	await get_tree().create_timer(0.1).timeout
-	focus_chapter(idx, true)
+	await %AnimationPlayer.animation_finished
 	_on_selected(idx, true)
+	focus_chapter(idx, true)
+	
 
 
 func go_back() -> void:
@@ -1448,6 +1454,10 @@ func _on_menu_ui_backed() -> void:
 		%ChaptersAnimationPlayer.play("unselected")
 		selected_chapter_idx = -1
 		force_focus_return()
+		# FIXME なんでか %ChaptersContainer のポジションが動かないので強制的に上書きする
+		await %ChaptersAnimationPlayer.animation_finished
+		%AnimationPlayer.stop(true)
+		%ChaptersContainer.position.y = 8
 
 ```
 

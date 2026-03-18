@@ -2245,7 +2245,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">get_chapter</span><span class="p">(</span><span class="n">selected_chapter_idx</span><span class="p">)</span><span class="o">.</span><span class="n">unselected</span><span class="p">()</span>
 		<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"unselected"</span><span class="p">)</span>
 		<span class="n">selected_chapter_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-		<span class="n">force_focus_return</span><span class="p">()</span></code></pre>
+		<span class="n">force_focus_return</span><span class="p">()</span>
+		<span class="c1"># FIXME なんでか %ChaptersContainer のポジションが動かないので強制的に上書きする</span>
+		<span class="n">await</span> <span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">animation_finished</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
+		<span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">8</span></code></pre>
 </div>
 </div>
 <div class="listingblock signal-connection">
@@ -2389,7 +2393,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h4 id="_shown">shown</h4>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqdkl1LhTAYgO_9FS_WRUGe5temBwxK7Drk0NWBw5LRGdgmuor-ferEA4FbzEuf55Ht9W2kUL1swa-lVD7QAWqvo73iDe-oUOBfP1EhWD-jA4KrHFVVjv445Zl2ivVDOX6N8lUP_6sfxf3y7oR0GjmkoU5jhzTSaeKQxjpNHdJEp9ghTXVKHFKs08whJTrNHdJsWYmtFXrhYvnzo5GRsnp-9ManKODAP9gegnyXxQnBmAWIQFF4NUDwIGG6yB66lv6cZMcEF-9HAQWo_pNdYrRDawLTGo-FHLjiUsz2K2uU7KObDKE7QLerGG6KYXoRp0NEm4dYldiuJHYltSvYrhC7ktuVENmdaTBffOBvLduYyTZNjDQ1UmykxEgzI82NdJ7JNo6MuB7hcJbf4oK8X6LCuxM=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqdkl1rgzAUQN_9FZduDxvMLn4lWnCwiXseUvZUKJmENeAS0Wxj_35qxLKCyYiPnnMkud5aCtXJBjaVlGoDtIfKa2mneM1bKhRsrp-oEKyb0B7BVYbKMkMXTnGirWJdXwxfo3zRg__qB3E_vzsinYYOaaDTyCENdRo7pJFOE4c01il2SBOdEocU6zR1SIlOM4c0nVdibYVeuJj__GCkpCifH73hyXPY8w-2Az_bplFMMGY-IpDnXgXgP0gYL7KDtqE_R9kywcX7QUAOqvtk5xht0ZLAuMZDIXuuuBST_cpqJbvwJkXoDvwwQbeLG6y6QfLHHY8Srh5lUSK7EtuVxK5gu0LsSmZXAmR3xsF88Z6_NWxlJus0NtLESLGREiNNjTQz0mkm6zg04mqA_Ul-izPyfgGD-bw7" alt="Diagram">
 </div>
 </div>
 <hr>
@@ -3631,11 +3635,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <span class="k">func</span> <span class="nf">force_show</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">is_inside_tree</span><span class="p">():</span> <span class="n">await</span> <span class="n">tree_entered</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">autoplay</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">'</span><span class="s1">shown'</span><span class="p">)</span>
-	<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"RESET"</span><span class="p">)</span>
-	<span class="n">await</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
-	<span class="n">focus_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+	<span class="n">await</span> <span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">animation_finished</span>
 	<span class="n">_on_selected</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+	<span class="n">focus_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+
 
 
 <span class="k">func</span> <span class="nf">go_back</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
@@ -3733,7 +3739,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		<span class="n">get_chapter</span><span class="p">(</span><span class="n">selected_chapter_idx</span><span class="p">)</span><span class="o">.</span><span class="n">unselected</span><span class="p">()</span>
 		<span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"unselected"</span><span class="p">)</span>
 		<span class="n">selected_chapter_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-		<span class="n">force_focus_return</span><span class="p">()</span></code></pre>
+		<span class="n">force_focus_return</span><span class="p">()</span>
+		<span class="c1"># FIXME なんでか %ChaptersContainer のポジションが動かないので強制的に上書きする</span>
+		<span class="n">await</span> <span class="o">%</span><span class="n">ChaptersAnimationPlayer</span><span class="o">.</span><span class="n">animation_finished</span>
+		<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
+		<span class="o">%</span><span class="n">ChaptersContainer</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">8</span></code></pre>
 </div>
 </div>
 </div>

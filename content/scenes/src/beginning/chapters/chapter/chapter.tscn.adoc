@@ -236,9 +236,7 @@ image::/assets/raw/assets/images/ui/Chapters/Chapter_0.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_rglud")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_rglud")`
 |===
 
 

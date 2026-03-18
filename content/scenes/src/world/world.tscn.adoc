@@ -13,6 +13,7 @@ class R as "World" <<(N,hotpink) Node3D>> {
 ---
   + back_to_circular_move()
   + focus_chapter()
+  + force_zoom_chapter()
   + zoom_chapter()
   + initialize_animation_camera_key()
   + smooth_rotation()
@@ -928,6 +929,11 @@ func focus_chapter(idx: int) -> void:
 	initialize_animation_camera_key(animation, 'position')
 	initialize_animation_camera_key(animation, 'rotation')
 	%AnimationPlayer.play(anim_name)
+
+
+func force_zoom_chapter(idx: int) -> void:
+	%AnimationPlayer.autoplay = ''
+	zoom_chapter(idx)
 
 
 func zoom_chapter(idx: int) -> void:

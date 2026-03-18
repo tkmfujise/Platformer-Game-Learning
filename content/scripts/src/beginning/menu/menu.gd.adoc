@@ -27,9 +27,10 @@ func _ready() -> void:
 
 func enter_chapter(idx: int) -> void:
 	current_plate = Plate.CHAPTERS
+	%AnimationPlayer.autoplay = ''
 	%AnimationPlayer.play("chapters_selected")
 	%Chapters.force_show(idx)
-	%World.zoom_chapter(idx)
+	%World.force_zoom_chapter(idx)
 
 
 func set_grab_focus_root(val: bool) -> void:

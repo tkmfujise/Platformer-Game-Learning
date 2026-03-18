@@ -116,6 +116,7 @@ left to right direction
 func _ready() -> void:
 	playable = true
 	current = self
+	restart_position = global_position
 	turn_right()
 ```
 .$FirstStepsBGMPlayable

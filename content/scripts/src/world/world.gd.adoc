@@ -29,6 +29,11 @@ func focus_chapter(idx: int) -> void:
 	%AnimationPlayer.play(anim_name)
 
 
+func force_zoom_chapter(idx: int) -> void:
+	%AnimationPlayer.autoplay = ''
+	zoom_chapter(idx)
+
+
 func zoom_chapter(idx: int) -> void:
 	var anim_name = "zoom_chapter_%s" % idx
 	%AnimationPlayer.play(anim_name)

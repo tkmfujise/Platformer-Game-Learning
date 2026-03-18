@@ -1999,9 +1999,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">enter_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">current_plate</span> <span class="o">=</span> <span class="n">Plate</span><span class="o">.</span><span class="n">CHAPTERS</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">autoplay</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"chapters_selected"</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">Chapters</span><span class="o">.</span><span class="n">force_show</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-	<span class="o">%</span><span class="n">World</span><span class="o">.</span><span class="n">zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+	<span class="o">%</span><span class="n">World</span><span class="o">.</span><span class="n">force_zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">set_grab_focus_root</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="kt">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>

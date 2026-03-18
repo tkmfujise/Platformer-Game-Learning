@@ -1980,7 +1980,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h3 id="_diagram">Diagram</h3>
 <div class="imageblock kroki">
 <div class="content">
-<img src="https://kroki.io/plantuml/svg/eNqNlFFv2jAQx9_zKbzuBVYiQYCWIlapg-1pRYg-9GGaLOMYYsXxIdvplE777kscx6FpH_L219397uK_z6GCaI32iGh09QxKxFdotRpsRwmYM5fpEG0hZtPN_T36GyD0Ba1JxhSpgkEYhmXoGh0ITbEBTLmiuSAKZ_DCBkObOwLNNaYJORumXOwVIOuEuOSGE8FfGSaSZ8RwkJjaUThlhavSGYBJsAJjC1yU0NxU2Ek0Q3EJt23OghRMXQSO5TSdsLis_hdQe_7txBrwCLk0hEvnQUxUelKkqE2wFnggssDTGcxPfkqM7oFMLbKuDz62wFPrs2_lzPbY7BKb9Mbml1iE-4M3b8GoN3h7CU57Y4tLbNEbu7PYhitGq1slwlXZBpu2wfuKt30m43b3v8sXrkBmTBrb5nlUMCHgzxB1050e9frsiEncB-zaD6ijHSDywA-oJnyMNbkO7BbJPg8HrluwiXegeo2-CS5jphwjKkNOijFZYiBA7UurOly9R49cG7fiFtJpcRA5q9c86s6qV-iheXE7-wIt_uAd7WRdhz0KQyg7NCJqxJ1Pjb3yVZOZV3OvboLykVo59Wrm1dyrtu7Wq0VQ3WndJwqq66r1NPgUs_L_wRAekNFhiAhahb8-V1aMTMJpKpnWX6PfIToEgh0NMoBU5ReKmzUM8GC_XPb8RY2qcyyX7xPD_3Whxzw=" alt="Diagram">
+<img src="https://kroki.io/plantuml/svg/eNqNlFFv2jAQx9_zKbzuBbZEggAtRaxSB9vTihB96MM0WcYxxIrjQ7bTiVb77kscx6FpH_L21939_nbuzqGCaI12iGh09QRKJFdouRxswhTMictsiDaQsMn67g69Bgh9QSuSM0WqYBBFURn6ivaEZtgAplzRQhCFc3hmg6HNHYAWGtOUnAxTPqYowy8AeSfxQYhLbjgR_IVhInlODAeJqb0DztjZVekcwKRYgbEFLkpoYSrsKJrb4BJubU6CnJm6CBzK03TKkrL6X0BtYzZj25kHKKQhXLrmJERlR0XOdXdsbzwQW-DxBOYXP6ZG90AmFlnVHz6ywGM7AG_lpuCx6SU27o3NLrEY9wev34Jxb_DmEpz0xuaX2Lw3dmuxNVeMVlMlwlVZg3Vr8L7irc941D6KH_KZK5A5k8baPIVnJgT8HaJuuuNRr8-WmNRdYNteoI52gNgDP6E64WOsyXVgt0j2eThw1YJNvAPVa_RdcJkw5RhRNeSoGJMlBgLUrmxVh6v36IFr41bcQjo770XB6jWPu2fVK3TfvLitfYEWv_cd7WSdww5FEZQOjYgbcetTI6981Xjq1cyr66B8pFZOvJp6NfOqrbvxah5UM6194qAaV60nwaeElf8PhvCAhPshImgZ_f5ctSI0KaeZZFp_i_9EaB8IdjDIAFJVv1DSrGGAB7vFoucvKqy-Y7F4nxj-B3qRz5s=" alt="Diagram">
 </div>
 </div>
 </div>
@@ -2849,6 +2849,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">initialize_animation_camera_key</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span> <span class="s2">'</span><span class="s1">position'</span><span class="p">)</span>
 	<span class="n">initialize_animation_camera_key</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span> <span class="s2">'</span><span class="s1">rotation'</span><span class="p">)</span>
 	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">anim_name</span><span class="p">)</span>
+
+
+<span class="k">func</span> <span class="nf">force_zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+	<span class="o">%</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">autoplay</span> <span class="o">=</span> <span class="s2">'</span><span class="s1">'</span>
+	<span class="n">zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 
 
 <span class="k">func</span> <span class="nf">zoom_chapter</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
