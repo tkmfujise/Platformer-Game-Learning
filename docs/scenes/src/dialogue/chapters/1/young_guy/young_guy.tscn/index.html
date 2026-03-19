@@ -2041,9 +2041,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <h4 id="_input">_input</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event_</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">ENTERED</span><span class="p">:</span> <span class="k">return</span>
-	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dialogue_start'</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">event_</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dialogue_start'</span><span class="p">):</span>
 		<span class="n">start</span><span class="p">()</span></code></pre>
 </div>
 </div>
@@ -2129,14 +2129,14 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="listingblock signal-connection">
 <div class="title">$.:[<mark><em>area_entered</em></mark>]⇒$.</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_area_entered</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FINISHED</span><span class="p">:</span> <span class="n">enter</span><span class="p">()</span></code></pre>
 </div>
 </div>
 <div class="listingblock signal-connection">
 <div class="title">$.:[<mark><em>area_exited</em></mark>]⇒$.</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_area_exited</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<pre class="rouge highlight"><code data-lang="gdscript"><span class="k">func</span> <span class="nf">_on_area_exited</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FINISHED</span><span class="p">:</span> <span class="n">exit</span><span class="p">()</span></code></pre>
 </div>
 </div>
@@ -2588,9 +2588,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="o">%</span><span class="n">Speech</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="bp">false</span>
 
 
-<span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_input</span><span class="p">(</span><span class="n">event_</span><span class="p">:</span> <span class="n">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">ENTERED</span><span class="p">:</span> <span class="k">return</span>
-	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dialogue_start'</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">event_</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">'</span><span class="s1">dialogue_start'</span><span class="p">):</span>
 		<span class="n">start</span><span class="p">()</span>
 
 
@@ -2605,11 +2605,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	<span class="n">enter</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
 
 
-<span class="k">func</span> <span class="nf">_on_area_entered</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_on_area_entered</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FINISHED</span><span class="p">:</span> <span class="n">enter</span><span class="p">()</span>
 
 
-<span class="k">func</span> <span class="nf">_on_area_exited</span><span class="p">(</span><span class="n">area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
+<span class="k">func</span> <span class="nf">_on_area_exited</span><span class="p">(</span><span class="n">_area</span><span class="p">:</span> <span class="n">Area2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="k">if</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FINISHED</span><span class="p">:</span> <span class="n">exit</span><span class="p">()</span>
 
 

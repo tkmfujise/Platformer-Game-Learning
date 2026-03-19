@@ -140,9 +140,9 @@ func _ready() -> void:
 ```
 ==== _input
 ```gdscript
-func _input(event: InputEvent) -> void:
+func _input(event_: InputEvent) -> void:
 	if not state == State.ENTERED: return
-	if event.is_action_pressed(&'dialogue_start'):
+	if event_.is_action_pressed(&'dialogue_start'):
 		start()
 ```
 .$Dialogue
@@ -179,13 +179,13 @@ func _input(_event: InputEvent) -> void:
 [.signal-connection]
 .$.:[#_area_entered_#]=>$.
 ```gdscript
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	if not state == State.FINISHED: enter()
 ```
 [.signal-connection]
 .$.:[#_area_exited_#]=>$.
 ```gdscript
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	if not state == State.FINISHED: exit()
 ```
 [.signal-connection]
@@ -418,9 +418,9 @@ func finish() -> void:
 	%Speech.visible = false
 
 
-func _input(event: InputEvent) -> void:
+func _input(event_: InputEvent) -> void:
 	if not state == State.ENTERED: return
-	if event.is_action_pressed(&'dialogue_start'):
+	if event_.is_action_pressed(&'dialogue_start'):
 		start()
 
 
@@ -435,11 +435,11 @@ func exit() -> void:
 	enter(false)
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	if not state == State.FINISHED: enter()
 
 
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	if not state == State.FINISHED: exit()
 
 

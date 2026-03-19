@@ -1997,6 +1997,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class="k">func</span> <span class="nf">focus_returned</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">void</span><span class="p">:</span>
 	<span class="n">focus_animation_skip</span> <span class="o">=</span> <span class="bp">true</span>
+	<span class="k">if</span> <span class="n">focus_mode</span> <span class="o">==</span> <span class="n">FOCUS_NONE</span><span class="p">:</span>
+		<span class="n">focus_mode</span> <span class="o">=</span> <span class="n">FOCUS_ALL</span>
 	<span class="n">grab_focus</span><span class="p">()</span>
 	<span class="n">focus_animation_skip</span> <span class="o">=</span> <span class="bp">false</span>
 

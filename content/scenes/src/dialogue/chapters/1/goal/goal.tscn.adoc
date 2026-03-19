@@ -152,7 +152,7 @@ func _input(_event: InputEvent) -> void:
 [.signal-connection]
 .$.:[#_area_entered_#]=>$.
 ```gdscript
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	if not started: start()
 ```
 [.signal-connection]
@@ -172,13 +172,13 @@ func _on_dialogue_finished() -> void:
 [.signal-connection]
 .$Monument/DescriptionArea:[#_area_entered_#]=>$.
 ```gdscript
-func _on_description_area_entered(area: Area2D) -> void:
+func _on_description_area_entered(_area: Area2D) -> void:
 	%MonumentDescription.show()
 ```
 [.signal-connection]
 .$Monument/DescriptionArea:[#_area_exited_#]=>$.
 ```gdscript
-func _on_description_area_area_exited(area: Area2D) -> void:
+func _on_description_area_area_exited(_area: Area2D) -> void:
 	%MonumentDescription.hide()
 ```
 
@@ -356,15 +356,15 @@ func ligth_firewood() -> void:
 	%Bonfire.fire()
 
 
-func _on_description_area_entered(area: Area2D) -> void:
+func _on_description_area_entered(_area: Area2D) -> void:
 	%MonumentDescription.show()
 
 
-func _on_description_area_area_exited(area: Area2D) -> void:
+func _on_description_area_area_exited(_area: Area2D) -> void:
 	%MonumentDescription.hide()
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	if not started: start()
 
 

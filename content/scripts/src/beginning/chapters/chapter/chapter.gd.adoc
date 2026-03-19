@@ -25,6 +25,8 @@ func set_play_opening(val: bool) -> void:
 
 func focus_returned() -> void:
 	focus_animation_skip = true
+	if focus_mode == FOCUS_NONE:
+		focus_mode = FOCUS_ALL
 	grab_focus()
 	focus_animation_skip = false
 

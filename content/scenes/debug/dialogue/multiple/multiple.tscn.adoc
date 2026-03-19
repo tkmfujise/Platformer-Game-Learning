@@ -175,9 +175,9 @@ func _ready() -> void:
 ==== _input
 .$YoungGuy
 ```gdscript
-func _input(event: InputEvent) -> void:
+func _input(event_: InputEvent) -> void:
 	if not state == State.ENTERED: return
-	if event.is_action_pressed(&'dialogue_start'):
+	if event_.is_action_pressed(&'dialogue_start'):
 		start()
 ```
 ==== _physics_process

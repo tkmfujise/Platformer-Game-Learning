@@ -114,7 +114,7 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 [.signal-connection]
 .$DetectionArea2D:[#_area_exited_#]=>$.
 ```gdscript
-func _on_detection_area_2d_area_exited(area: Area2D) -> void:
+func _on_detection_area_2d_area_exited(_area: Area2D) -> void:
 	player = null
 ```
 
@@ -229,7 +229,7 @@ func _on_detection_area_2d_body_entered(body: Node2D) -> void:
 	fall.call_deferred()
 
 
-func _on_detection_area_2d_area_exited(area: Area2D) -> void:
+func _on_detection_area_2d_area_exited(_area: Area2D) -> void:
 	player = null
 
 ```
