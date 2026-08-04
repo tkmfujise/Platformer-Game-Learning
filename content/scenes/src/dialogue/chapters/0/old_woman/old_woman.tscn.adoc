@@ -363,9 +363,7 @@ image::/assets/raw/assets/images/particles/HA.png[]
 |===
 |Name |Value
 |*unique_name_in_owner* a|`true`
-|*libraries* a|`{
-&"": SubResource("AnimationLibrary_7eiyn")
-}`
+|*libraries/* a|`SubResource("AnimationLibrary_7eiyn")`
 |===
 
 

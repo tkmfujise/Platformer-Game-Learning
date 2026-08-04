@@ -22,40 +22,40 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 | | | Min | Mean | Max | All
 
 .1+| *🎬 Scenes* +
-73 _files_
+74 _files_
 
 | *Child Nodes*
 | link:/scenes/autoloads/current/current.tscn[0 _nodes_]
-| 12.7 _nodes_
+| 12.5 _nodes_
 | link:/scenes/src/chapters/1/chapter_1.tscn[424 _nodes_]
-| 921 _nodes_
+| 924 _nodes_
 
 
 
 .2+| *📝 Scripts* +
-91 _files_
+92 _files_
 
 | *Functions*
 | link:/scripts/autoloads/game_event/game_event.gd[0 _funcs_]
 | 5.4 _funcs_
 | link:/scripts/src/player/player.gd[35 _funcs_]
-| 489 _funcs_
+| 491 _funcs_
 | *Lines / Func*
 | link:/scripts/autoloads/preference/preference.gd[1 _lines_]
 | 4.3 _lines_
 | link:/scripts/src/player/player.gd[58 _lines_]
-| 2,060 _lines_
+| 2,065 _lines_
 
 
 
 .1+| *📊 Resources* +
-13 _files_
+14 _files_
 
 | *Properties*
-| link:/resources/data/test/account/empty_account.tres[6 _props_]
-| 20.5 _props_
+| link:/resources/default_bus_layout.tres[1 _props_]
+| 19.1 _props_
 | link:/resources/data/test/account/full_account.tres[84 _props_]
-| 266 _props_
+| 267 _props_
 
 
 
@@ -71,13 +71,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 
 .1+| *💬 Asset Texts* +
-15 _files_
+17 _files_
 
 | *Lines*
 | link:/assets/src/dialogue/scenarios/basic.rb[11 _lines_]
-| 38.5 _lines_
+| 36.2 _lines_
 | link:/assets/src/dialogue/helper.rb[184 _lines_]
-| 577 _lines_
+| 615 _lines_
 
 
 |===
@@ -87,8 +87,13 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 [cols="0,6,1,1,1,1,1" options="header"]
 |===
 | |File Tree |🎬 |📝 |📊 |💠 |💬
-|[.path.MDov]#_# |.  |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
+|[.path.MDov]#_# |.  |[.zero]#0# |[.zero]#0# |[.one]#1# |[.one]#1# |[.zero]#0# 
 |[.path.MTovYXNzZXRz]#_# | ├ assets |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.MjovYXNzZXRzL2F1ZGlv]#_# | │ ├ audio |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.MzovYXNzZXRzL2F1ZGlvL3Nl]#_# | │  │ ├ se |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NDovYXNzZXRzL2F1ZGlvL3NlL2xhbmRlZA==]#_# | │  │  │ ├ landed |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.NTovYXNzZXRzL2F1ZGlvL3NlL2xhbmRlZC9kaXJ0]#_# | │  │  │  │ ├ dirt |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
+|[.path.NTovYXNzZXRzL2F1ZGlvL3NlL2xhbmRlZC9zbm93]#_# | │  │  │  │ └ snow |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# 
 |[.path.MjovYXNzZXRzL2d1aWRl]#_# | │ ├ guide |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.one]#1# |[.zero]#0# 
 |[.path.MjovYXNzZXRzL2ltYWdlcw==]#_# | │ ├ images |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.MzovYXNzZXRzL2ltYWdlcy9hY3RvcnM=]#_# | │  │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -150,6 +155,8 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |[.path.Mjovc3JjL2FjY291bnQ=]#_# | │ ├ account |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mjovc3JjL2FjdG9ycw==]#_# | │ ├ actors |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL2FjdG9ycy9vbGRfd29tYW4=]#_# | │  │ └ old_woman |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.Mjovc3JjL2F1ZGlv]#_# | │ ├ audio |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
+|[.path.Mzovc3JjL2F1ZGlvL3NvdW5kX2VmZmVjdA==]#_# | │  │ └ sound_effect |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mjovc3JjL2JlZ2lubmluZw==]#_# | │ ├ beginning |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL2JlZ2lubmluZy9hY2NvdW50cw==]#_# | │  │ ├ accounts |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
 |[.path.Mzovc3JjL2JlZ2lubmluZy9jaGFwdGVycw==]#_# | │  │ ├ chapters |[.one]#1# |[.one]#1# |[.zero]#0# |[.zero]#0# |[.zero]#0# 
@@ -300,7 +307,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 
 |*run/main_scene* |`res://src/beginning/screen/screen.tscn`
 
-|*config/features* |`PackedStringArray("4.6", "Forward Plus")`
+|*config/features* |`PackedStringArray("4.7", "Forward Plus")`
 
 |*config/icon* |`res://icon.svg`
 
@@ -331,7 +338,7 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 [cols="1,3" options="header"]
 |===
 |Name |Value
-|*enabled* |`PackedStringArray("res://addons/gdscript_input_field/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/redscribe/plugin.cfg")`
+|*enabled* |`PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/redscribe/plugin.cfg", "res://addons/urakata/plugin.cfg")`
 
 |===
 
@@ -357,36 +364,46 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 |*move_jump* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }`
 
 |*move_dash* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }`
 
 |*move_left* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }`
 
 |*move_right* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }`
 
 |*move_up* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }`
 
 |*move_down* |`{
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }`
 
@@ -408,12 +425,14 @@ $ rake  # Analyze your Godot project, generate AsciiDoc files, and start the ser
 "deadzone": 0.2,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
 ]
 }`
 
 |*dialogue_start* |`{
 "deadzone": 0.2,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }`
 

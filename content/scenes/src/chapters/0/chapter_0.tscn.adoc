@@ -245,6 +245,12 @@ class N38 as "Weather" <<(N,lightskyblue) Node2D>> {
 }
 class N39 as "AnimationPlayer" <<(A,yellow) AnimationPlayer>> {
 }
+class N40 as "SoundEffect" <<(N,darkgray) Node>> {
+  * player
+---
+  + _ready()
+  + landed()
+}
 R --o N1
 R --o N2
 R --o N5
@@ -259,6 +265,7 @@ R --o N32
 R --o N37
 R --o N38
 R --o N39
+R --o N40
 N2 --o N3
 N2 --o N4
 N7 --o N8
@@ -315,6 +322,12 @@ func _ready() -> void:
 	current = self
 	restart_position = global_position
 	turn_right()
+```
+.$SoundEffect
+```gdscript
+func _ready() -> void:
+	if player:
+		player.landed.connect(landed)
 ```
 ==== _process
 .$Gimmicks/FallingIceBlock
@@ -448,6 +461,7 @@ CAUTION: No other scene instantiate this scene.
 ** [.node-name.type-2d]#Player# [.node-type.type-2d]#link:/scenes/src/player/player.tscn[res://src/player/player.tscn]#
 ** [.node-name.type-2d]#Weather# [.node-type.type-2d]#link:/scenes/src/stages/weather/weather.tscn[res://src/stages/weather/weather.tscn]#
 ** [.node-name.type-other]#AnimationPlayer# [.node-type.type-other]#AnimationPlayer#
+** [.node-name.type-plain]#SoundEffect# [.node-type.type-plain]#link:/scenes/src/audio/sound_effect/sound_effect.tscn[res://src/audio/sound_effect/sound_effect.tscn]#
 
 
 === Signal Connections
@@ -836,6 +850,13 @@ R  ->o  T0 : &"play"()
 |*unique_name_in_owner* a|`true`
 |*libraries/* a|`SubResource("AnimationLibrary_arpf2")`
 |*autoplay* a|`&"opening"`
+|===
+[.node-property.node-plain]
+.#$SoundEffect# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*player* a|`NodePath("../Player")`
 |===
 
 

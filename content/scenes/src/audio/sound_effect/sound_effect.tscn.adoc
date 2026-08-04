@@ -1,0 +1,102 @@
+---
+title: src/audio/sound_effect/sound_effect.tscn
+---
+:toc:
+
+== src / audio / sound_effect / sound_effect.tscn
+
+=== Diagram
+[plantuml]
+....
+class R as "SoundEffect" <<(N,darkgray) Node>> {
+  * player
+---
+  + _ready()
+  + landed()
+}
+class N1 as "LandedSnow" <<(A,lightskyblue) AudioStreamPlayer2D>> {
+}
+class N2 as "LandedDirt" <<(A,lightskyblue) AudioStreamPlayer2D>> {
+}
+R --o N1
+R --o N2
+!define _(a,b) a <-[#blue,thickness=2]- b
+left to right direction
+
+....
+
+
+
+
+=== Overridden virtual functions
+==== _ready
+```gdscript
+func _ready() -> void:
+	if player:
+		player.landed.connect(landed)
+```
+
+
+=== Instantiators
+* link:/scenes/src/chapters/0/chapter_0.tscn[res://src/chapters/0/chapter_0.tscn]
+
+
+=== Scene Tree
+[.scene-tree]
+* [.node-name.type-plain]#SoundEffect# [.node-type.type-plain]#Node#
+** [.node-name.type-2d]#LandedSnow# [.node-type.type-2d]#AudioStreamPlayer2D#
+** [.node-name.type-2d]#LandedDirt# [.node-type.type-2d]#AudioStreamPlayer2D#
+
+
+=== Signal Connections
+NOTE: No signal connections.
+
+
+
+=== Properties
+[.node-property.node-plain]
+.#Root# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*script* a|link:/scripts/src/audio/sound_effect/sound_effect.gd[res://src/audio/sound_effect/sound_effect.gd]
+|===
+[.node-property.node-2d]
+.#$LandedSnow# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(980, 1667)`
+|*stream* a|`res://assets/audio/se/landed/snow/landed_snow.wav`
+|===
+[.node-property.node-2d]
+.#$LandedDirt# properties
+[cols="1,3" options="header"]
+|===
+|Name |Value
+|*unique_name_in_owner* a|`true`
+|*position* a|`Vector2(776, 1243)`
+|*stream* a|`res://assets/audio/se/landed/dirt/landed_dirt.wav`
+|===
+
+
+=== link:/scripts/src/audio/sound_effect/sound_effect.gd[sound_effect.gd]
+
+```gdscript
+extends Node
+
+@export var player : Player
+
+
+func _ready() -> void:
+	if player:
+		player.landed.connect(landed)
+
+
+func landed() -> void:
+	[%LandedSnow, %LandedDirt].pick_random().play()
+
+```
+
+

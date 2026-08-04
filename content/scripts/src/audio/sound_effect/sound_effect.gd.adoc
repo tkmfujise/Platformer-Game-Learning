@@ -1,0 +1,28 @@
+---
+title: res://src/audio/sound_effect/sound_effect.gd
+---
+:toc:
+
+== src / audio / sound_effect / sound_effect.gd
+
+=== Attached Scenes
+* link:/scenes/src/audio/sound_effect/sound_effect.tscn[res://src/audio/sound_effect/sound_effect.tscn]
+
+
+
+=== Code
+```gdscript
+extends Node
+
+@export var player : Player
+
+
+func _ready() -> void:
+	if player:
+		player.landed.connect(landed)
+
+
+func landed() -> void:
+	[%LandedSnow, %LandedDirt].pick_random().play()
+
+```

@@ -1,9 +1,9 @@
 ---
-title: res://test/dialogue/chapters/0/test_stage_0.gd
+title: res://test/dialogue/chapters/0/test_old_woman.gd
 ---
 :toc:
 
-== test / dialogue / chapters / 0 / test_stage_0.gd
+== test / dialogue / chapters / 0 / test_old_woman.gd
 
 === Attached Scenes
 NOTE: No attached scenes.
@@ -13,7 +13,7 @@ NOTE: No attached scenes.
 ```gdscript
 extends GutTest
 
-var Stage0 = load("res://src/dialogue/chapters/0/stage0.tscn")
+var Stage0 = load("res://src/dialogue/chapters/0/old_woman/old_woman.tscn")
 var scene = null
 
 
